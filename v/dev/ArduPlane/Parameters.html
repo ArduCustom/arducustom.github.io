@@ -12256,6 +12256,17 @@ DO NOT EDIT
 <h1>LGR_ Parameters</h1>
 
 
+<h2>Enable landing gear (LGR_ENABLE)</h2>
+
+<p>Enable landing gear control</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
 <h2>Landing Gear Startup position (LGR_STARTUP)</h2>
 
 <p>Landing Gear Startup behaviour control</p>
@@ -13384,11 +13395,21 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ASPD warn level (OSD_W_ASPD)</h2>
+<h2>Underspeed warn speed (OSD_W_ASPD_LOW)</h2>
 
-<p>Set level at which ASPDx items will flash</p>
+<p>Set speed under which ASPDx items will flash</p>
 <ul>
-<li>Range: 0 100</li>
+<li>Range: 0 1000</li>
+<li>Units: meters per second</li>
+</ul>
+
+
+<h2>Overspeed warn speed (OSD_W_ASPD_HIGH)</h2>
+
+<p>Set speed above which ASPDx items will flash</p>
+<ul>
+<li>Range: 0 1000</li>
+<li>Units: meters per second</li>
 </ul>
 
 
@@ -23822,6 +23843,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -23952,6 +23974,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24082,6 +24105,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24212,6 +24236,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24342,6 +24367,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24472,6 +24498,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24602,6 +24629,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24732,6 +24760,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24862,6 +24891,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -24992,6 +25022,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -25122,6 +25153,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -25252,6 +25284,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -25382,6 +25415,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -25512,6 +25546,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -25642,6 +25677,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -25772,6 +25808,7 @@ DO NOT EDIT
 <tr><td>9</td><td>Camera Trigger</td></tr>
 <tr><td>11</td><td>Fence</td></tr>
 <tr><td>16</td><td>ModeAuto</td></tr>
+<tr><td>22</td><td>Parachute Release</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
 <tr><td>27</td><td>Retract Mount</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
@@ -30019,6 +30056,88 @@ DO NOT EDIT
 
 
 <h2>Serial8 options (SERIAL8_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire.</p>
+<ul>
+<li>Bitmask: 0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don&#x27;t forward mavlink to/from, 11: DisableFIFO</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Serial9 protocol selection (SERIAL9_PROTOCOL)</h2>
+
+<p>Control what protocol Serial9 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>None</td></tr>
+<tr><td>1</td><td>MAVLink1</td></tr>
+<tr><td>2</td><td>MAVLink2</td></tr>
+<tr><td>3</td><td>Frsky D</td></tr>
+<tr><td>4</td><td>Frsky SPort</td></tr>
+<tr><td>5</td><td>GPS</td></tr>
+<tr><td>7</td><td>Alexmos Gimbal Serial</td></tr>
+<tr><td>8</td><td>SToRM32 Gimbal Serial</td></tr>
+<tr><td>9</td><td>Rangefinder</td></tr>
+<tr><td>10</td><td>FrSky SPort Passthrough (OpenTX)</td></tr>
+<tr><td>11</td><td>Lidar360</td></tr>
+<tr><td>13</td><td>Beacon</td></tr>
+<tr><td>14</td><td>Volz servo out</td></tr>
+<tr><td>15</td><td>SBus servo out</td></tr>
+<tr><td>16</td><td>ESC Telemetry</td></tr>
+<tr><td>17</td><td>Devo Telemetry</td></tr>
+<tr><td>18</td><td>OpticalFlow</td></tr>
+<tr><td>19</td><td>RobotisServo</td></tr>
+<tr><td>20</td><td>NMEA Output</td></tr>
+<tr><td>21</td><td>WindVane</td></tr>
+<tr><td>22</td><td>SLCAN</td></tr>
+<tr><td>23</td><td>RCIN</td></tr>
+<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>25</td><td>LTM</td></tr>
+<tr><td>26</td><td>RunCam</td></tr>
+<tr><td>27</td><td>HottTelem</td></tr>
+<tr><td>28</td><td>Scripting</td></tr>
+<tr><td>29</td><td>Crossfire VTX</td></tr>
+<tr><td>30</td><td>Generator</td></tr>
+<tr><td>31</td><td>Winch</td></tr>
+<tr><td>32</td><td>MSP</td></tr>
+<tr><td>33</td><td>DJI FPV</td></tr>
+<tr><td>34</td><td>AirSpeed</td></tr>
+<tr><td>35</td><td>ADSB</td></tr>
+<tr><td>36</td><td>AHRS</td></tr>
+<tr><td>37</td><td>SmartAudio</td></tr>
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+<tr><td>39</td><td>Torqeedo</td></tr>
+<tr><td>40</td><td>AIS</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Serial 9 Baud Rate (SERIAL9_BAUD)</h2>
+
+<p>The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can&#x27;t connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>1</td><td>1200</td></tr>
+<tr><td>2</td><td>2400</td></tr>
+<tr><td>4</td><td>4800</td></tr>
+<tr><td>9</td><td>9600</td></tr>
+<tr><td>19</td><td>19200</td></tr>
+<tr><td>38</td><td>38400</td></tr>
+<tr><td>57</td><td>57600</td></tr>
+<tr><td>111</td><td>111100</td></tr>
+<tr><td>115</td><td>115200</td></tr>
+<tr><td>230</td><td>230400</td></tr>
+<tr><td>256</td><td>256000</td></tr>
+<tr><td>460</td><td>460800</td></tr>
+<tr><td>500</td><td>500000</td></tr>
+<tr><td>921</td><td>921600</td></tr>
+<tr><td>1500</td><td>1500000</td></tr>
+</table>
+</ul>
+
+
+<h2>Serial9 options (SERIAL9_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire.</p>
 <ul>

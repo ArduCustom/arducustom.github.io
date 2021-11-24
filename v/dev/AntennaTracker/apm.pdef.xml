@@ -5418,6 +5418,73 @@
         <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Serial9 protocol selection" name="SERIAL9_PROTOCOL" documentation="Control what protocol Serial9 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <values>
+          <value code="-1">None</value>
+          <value code="1">MAVLink1</value>
+          <value code="2">MAVLink2</value>
+          <value code="3">Frsky D</value>
+          <value code="4">Frsky SPort</value>
+          <value code="5">GPS</value>
+          <value code="7">Alexmos Gimbal Serial</value>
+          <value code="8">SToRM32 Gimbal Serial</value>
+          <value code="9">Rangefinder</value>
+          <value code="10">FrSky SPort Passthrough (OpenTX)</value>
+          <value code="11">Lidar360</value>
+          <value code="13">Beacon</value>
+          <value code="14">Volz servo out</value>
+          <value code="15">SBus servo out</value>
+          <value code="16">ESC Telemetry</value>
+          <value code="17">Devo Telemetry</value>
+          <value code="18">OpticalFlow</value>
+          <value code="19">RobotisServo</value>
+          <value code="20">NMEA Output</value>
+          <value code="21">WindVane</value>
+          <value code="22">SLCAN</value>
+          <value code="23">RCIN</value>
+          <value code="24">MegaSquirt EFI</value>
+          <value code="25">LTM</value>
+          <value code="26">RunCam</value>
+          <value code="27">HottTelem</value>
+          <value code="28">Scripting</value>
+          <value code="29">Crossfire VTX</value>
+          <value code="30">Generator</value>
+          <value code="31">Winch</value>
+          <value code="32">MSP</value>
+          <value code="33">DJI FPV</value>
+          <value code="34">AirSpeed</value>
+          <value code="35">ADSB</value>
+          <value code="36">AHRS</value>
+          <value code="37">SmartAudio</value>
+          <value code="38">FETtecOneWire</value>
+          <value code="39">Torqeedo</value>
+          <value code="40">AIS</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Serial 9 Baud Rate" name="SERIAL9_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
+        <values>
+          <value code="1">1200</value>
+          <value code="2">2400</value>
+          <value code="4">4800</value>
+          <value code="9">9600</value>
+          <value code="19">19200</value>
+          <value code="38">38400</value>
+          <value code="57">57600</value>
+          <value code="111">111100</value>
+          <value code="115">115200</value>
+          <value code="230">230400</value>
+          <value code="256">256000</value>
+          <value code="460">460800</value>
+          <value code="500">500000</value>
+          <value code="921">921600</value>
+          <value code="1500">1500000</value>
+        </values>
+      </param>
+      <param humanName="Serial9 options" name="SERIAL9_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="RebootRequired">True</field>
+      </param>
     </parameters>
     <parameters name="SERVO">
       <param humanName="Servo default output rate" name="SERVO_RATE" documentation="This sets the default output rate in Hz for all outputs." user="Advanced">
