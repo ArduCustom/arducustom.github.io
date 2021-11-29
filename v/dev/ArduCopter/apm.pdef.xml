@@ -9207,6 +9207,18 @@
       <param humanName="ENERGY_Y" name="OSD1_ENERGY_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="RC_THROTTLE_EN" name="OSD1_RC_THROTTLE_EN" documentation="Displays input throttle value (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_THROTTLE_X" name="OSD1_RC_THROTTLE_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_THROTTLE_Y" name="OSD1_RC_THROTTLE_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -9963,6 +9975,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="ENERGY_Y" name="OSD2_ENERGY_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_THROTTLE_EN" name="OSD2_RC_THROTTLE_EN" documentation="Displays input throttle value (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_THROTTLE_X" name="OSD2_RC_THROTTLE_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_THROTTLE_Y" name="OSD2_RC_THROTTLE_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -10723,6 +10747,18 @@
       <param humanName="ENERGY_Y" name="OSD3_ENERGY_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="RC_THROTTLE_EN" name="OSD3_RC_THROTTLE_EN" documentation="Displays input throttle value (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_THROTTLE_X" name="OSD3_RC_THROTTLE_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_THROTTLE_Y" name="OSD3_RC_THROTTLE_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -11479,6 +11515,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="ENERGY_Y" name="OSD4_ENERGY_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_THROTTLE_EN" name="OSD4_RC_THROTTLE_EN" documentation="Displays input throttle value (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_THROTTLE_X" name="OSD4_RC_THROTTLE_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_THROTTLE_Y" name="OSD4_RC_THROTTLE_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>

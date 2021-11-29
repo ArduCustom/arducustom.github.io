@@ -31555,6 +31555,62 @@ Vertical position on screen
 
 
 
+.. _OSD1_RC_THROTTLE_EN:
+
+OSD1\_RC\_THROTTLE\_EN: RC\_THROTTLE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays input throttle value \(plane only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_RC_THROTTLE_X:
+
+OSD1\_RC\_THROTTLE\_X: RC\_THROTTLE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_RC_THROTTLE_Y:
+
+OSD1\_RC\_THROTTLE\_Y: RC\_THROTTLE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -35076,6 +35132,62 @@ Horizontal position on screen
 
 OSD2\_ENERGY\_Y: ENERGY\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_RC_THROTTLE_EN:
+
+OSD2\_RC\_THROTTLE\_EN: RC\_THROTTLE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays input throttle value \(plane only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_RC_THROTTLE_X:
+
+OSD2\_RC\_THROTTLE\_X: RC\_THROTTLE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_RC_THROTTLE_Y:
+
+OSD2\_RC\_THROTTLE\_Y: RC\_THROTTLE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -38625,6 +38737,62 @@ Vertical position on screen
 
 
 
+.. _OSD3_RC_THROTTLE_EN:
+
+OSD3\_RC\_THROTTLE\_EN: RC\_THROTTLE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays input throttle value \(plane only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_RC_THROTTLE_X:
+
+OSD3\_RC\_THROTTLE\_X: RC\_THROTTLE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_RC_THROTTLE_Y:
+
+OSD3\_RC\_THROTTLE\_Y: RC\_THROTTLE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -42146,6 +42314,62 @@ Horizontal position on screen
 
 OSD4\_ENERGY\_Y: ENERGY\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_RC_THROTTLE_EN:
+
+OSD4\_RC\_THROTTLE\_EN: RC\_THROTTLE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays input throttle value \(plane only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_RC_THROTTLE_X:
+
+OSD4\_RC\_THROTTLE\_X: RC\_THROTTLE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_RC_THROTTLE_Y:
+
+OSD4\_RC\_THROTTLE\_Y: RC\_THROTTLE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
