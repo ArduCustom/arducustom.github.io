@@ -4,6 +4,44 @@
 <title>ArduCustom parameters documentation</title>
 </head>
 <body>
+<h1 id='changelog'>Full changelog between upstream's master branch and the latest release of ArduCustom</h1>
+<ul>
+<li>The battery cell count detection algorithm is moved from the OSD to the battery code. Param OSD_CELL_COUNT is replaced with BATT_CELL_COUNT and BATT_CELL_DT_V</li>
+<li>Power and energy counter have been added to analog OSD along with the possibility to have energy based efficiency items (configured with OSD_EFF_UNIT)</li>
+<li>Adds the possibility to build the firmware through Docker</li>
+<li>Adds the possibility to have up to 12 flight modes</li>
+<li>Do not force BLHeli ESCs to 3D mode when the ESC output is marked as being reversible allowing to use BLHeli's soft bidir mode</li>
+<li>Adds an OSD warning for low air speed</li>
+<li>Fixes upstream's MIXING_OFFSET implementation and adds MIXING_DIFF to setup differential aileron/elevon movement</li>
+<li>Reports relative home altitude instead of GPS/MSL altitude through CRSF telemetry</li>
+<li>Fixes ESC telemetry reporting through the OSD</li>
+<li>Adds OSD warnings for high motor RPM, low motor RPM and high ESC temperature</li>
+<li>Adds new OSD elements for ESC telemetry: highest current across all the ESCs, average current across all the ESCs, total current across all the ESCs, highest RPM across all the ESCs</li>
+<li>Changes wind speed from m/s to km/h on DJI FPV OSD</li>
+<li>Regularize ONESHOT output so that pulses are only sent on loop boundary</li>
+<li>Shortens takeoff heading hold delay</li>
+<li>Enables plus code on all builds</li>
+<li>Adds option to shorten plus code</li>
+<li>Suppresses CRSF system info messages by default</li>
+<li>The rangefinder altitude indication on the OSD is attitude corrected</li>
+<li>Manual throttle is increased</li>
+<li>Adds an option to increase the resolution of the throttle OSD element to one decimal</li>
+<li>Disable the output on the LED pad for MatekF405-Wing so that release builds have DMA available on UART3</li>
+<li>Plane: make arming switch/channel safe to use (#30, @shellixyz)</li>
+<li>Add OSD input throttle element for use with planes (#31, @shellixyz)</li>
+<li>Add option (bit 22 of OSD_OPTIONS) to increase OSD throttle resolution to 0.1% (@shellixyz)</li>
+<li>Increased throttle resolution in manual modes (@shellixyz)</li>
+<li>ELRS support (@yaapu)</li>
+<li>Add overspeed OSD warning OSD_W_ASPD_HIGH (@shellixyz)</li>
+<li>Rename underspeed OSD warning param from OSD_W_ASPD to OSD_W_ASPD_LOW (@shellixyz)</li>
+<li>Do not limit throttle in manual throttle modes (@shellixyz, #32)</li>
+<li>Voltage compensate throttle in manual throttle modes (@shellixyz, #33)</li>
+<li>Fix motors running at full reverse throttle when arming and THR_MIN>=0 when reverse thrust is configured (@shellixyz, #34)</li>
+<li>Add throttle deadzone (@shellixyz, #35)</li>
+<li>Fix the TECS (@shellixyz, #36)</li>
+<li>Only use positive throttle range for TECS throttle response calculations (@avsaase + @shellixyz, #37)</li>
+<li>Add OSD element to display the demanded airspeed in auto throttle modes (@shellixyz, #38)</li>
+</ul>
 <h1>ArduCustom parameters documentation</h1>
 <h2>Dev branch</h2>
 <ul>
@@ -23,7 +61,25 @@
 <a href='v/dev/Rover/Parameters.html'>Rover</a>
 </li>
 </ul>
-<h2>V6</h2>
+<h2 id='doc-V8'>V8</h2>
+<ul>
+<li>
+<a href='v/8/Blimp/Parameters.html'>Blimp</a>
+</li>
+<li>
+<a href='v/8/ArduCopter/Parameters.html'>Copter</a>
+</li>
+<li>
+<a href='v/8/ArduPlane/Parameters.html'>Plane</a>
+</li>
+<li>
+<a href='v/8/ArduSub/Parameters.html'>Sub</a>
+</li>
+<li>
+<a href='v/8/Rover/Parameters.html'>Rover</a>
+</li>
+</ul>
+<h2 id='doc-V6'>V6</h2>
 <ul>
 <li>
 <a href='v/6/Blimp/Parameters.html'>Blimp</a>

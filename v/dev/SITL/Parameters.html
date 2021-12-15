@@ -1787,7 +1787,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -2051,7 +2051,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -2315,7 +2315,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -2579,7 +2579,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -2843,7 +2843,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -3107,7 +3107,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -3371,7 +3371,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -3635,7 +3635,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -3899,7 +3899,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore UAVCAN SoC</li>
+<li>Bitmask: 0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</li>
 </ul>
 
 
@@ -4575,6 +4575,7 @@ DO NOT EDIT
 <tr><td>8</td><td>KDECAN</td></tr>
 <tr><td>9</td><td>PacketDigital</td></tr>
 <tr><td>10</td><td>Scripting</td></tr>
+<tr><td>11</td><td>Benewake</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -4726,6 +4727,7 @@ DO NOT EDIT
 <tr><td>8</td><td>KDECAN</td></tr>
 <tr><td>9</td><td>PacketDigital</td></tr>
 <tr><td>10</td><td>Scripting</td></tr>
+<tr><td>11</td><td>Benewake</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -4877,6 +4879,7 @@ DO NOT EDIT
 <tr><td>8</td><td>KDECAN</td></tr>
 <tr><td>9</td><td>PacketDigital</td></tr>
 <tr><td>10</td><td>Scripting</td></tr>
+<tr><td>11</td><td>Benewake</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11211,6 +11214,20 @@ DO NOT EDIT
 
 
 <h2>Scripting User Parameter4 (SCR_USER4)</h2>
+
+<p>General purpose user variable input for scripts</p>
+<ul>
+</ul>
+
+
+<h2>Scripting User Parameter5 (SCR_USER5)</h2>
+
+<p>General purpose user variable input for scripts</p>
+<ul>
+</ul>
+
+
+<h2>Scripting User Parameter6 (SCR_USER6)</h2>
 
 <p>General purpose user variable input for scripts</p>
 <ul>

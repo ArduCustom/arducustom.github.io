@@ -1064,7 +1064,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT2_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT2_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1214,7 +1214,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT3_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT3_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1364,7 +1364,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT4_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT4_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1514,7 +1514,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT5_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT5_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1664,7 +1664,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT6_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT6_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1814,7 +1814,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT7_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT7_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1964,7 +1964,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT8_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT8_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2114,7 +2114,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT9_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT9_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2264,7 +2264,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC</field>
+        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2633,6 +2633,7 @@
           <value code="8">KDECAN</value>
           <value code="9">PacketDigital</value>
           <value code="10">Scripting</value>
+          <value code="11">Benewake</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -2714,6 +2715,7 @@
           <value code="8">KDECAN</value>
           <value code="9">PacketDigital</value>
           <value code="10">Scripting</value>
+          <value code="11">Benewake</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -2795,6 +2797,7 @@
           <value code="8">KDECAN</value>
           <value code="9">PacketDigital</value>
           <value code="10">Scripting</value>
+          <value code="11">Benewake</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -6339,6 +6342,10 @@
       <param humanName="Scripting User Parameter3" name="SCR_USER3" documentation="General purpose user variable input for scripts" user="Standard">
 </param>
       <param humanName="Scripting User Parameter4" name="SCR_USER4" documentation="General purpose user variable input for scripts" user="Standard">
+</param>
+      <param humanName="Scripting User Parameter5" name="SCR_USER5" documentation="General purpose user variable input for scripts" user="Standard">
+</param>
+      <param humanName="Scripting User Parameter6" name="SCR_USER6" documentation="General purpose user variable input for scripts" user="Standard">
 </param>
       <param humanName="Directory disable" name="SCR_DIR_DISABLE" documentation="This will stop scripts being loaded from the given locations" user="Advanced">
         <field name="Bitmask">0:ROMFS, 1:APM/scripts</field>

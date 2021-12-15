@@ -3715,11 +3715,21 @@ BATT2\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -4259,11 +4269,21 @@ BATT3\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -4803,11 +4823,21 @@ BATT4\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -5347,11 +5377,21 @@ BATT5\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -5891,11 +5931,21 @@ BATT6\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -6435,11 +6485,21 @@ BATT7\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -6979,11 +7039,21 @@ BATT8\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -7523,11 +7593,21 @@ BATT9\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -8067,11 +8147,21 @@ BATT\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------+
-| Bit | Meaning           |
-+=====+===================+
-| 0   | Ignore UAVCAN SoC |
-+-----+-------------------+
++-----+----------------------------------------+
+| Bit | Meaning                                |
++=====+========================================+
+| 0   | Ignore UAVCAN SoC                      |
++-----+----------------------------------------+
+| 1   | MPPT reports input voltage and current |
++-----+----------------------------------------+
+| 2   | MPPT Powered off when disarmed         |
++-----+----------------------------------------+
+| 3   | MPPT Powered on when armed             |
++-----+----------------------------------------+
+| 4   | MPPT Powered off at boot               |
++-----+----------------------------------------+
+| 5   | MPPT Powered on at boot                |
++-----+----------------------------------------+
 
 
 
@@ -9535,6 +9625,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 +-------+---------------+
 | 10    | Scripting     |
 +-------+---------------+
+| 11    | Benewake      |
++-------+---------------+
 
 
 
@@ -9986,6 +10078,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 +-------+---------------+
 | 10    | Scripting     |
 +-------+---------------+
+| 11    | Benewake      |
++-------+---------------+
 
 
 
@@ -10436,6 +10530,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 | 9     | PacketDigital |
 +-------+---------------+
 | 10    | Scripting     |
++-------+---------------+
+| 11    | Benewake      |
 +-------+---------------+
 
 
@@ -23662,6 +23758,24 @@ General purpose user variable input for scripts
 .. _SCR_USER4:
 
 SCR\_USER4: Scripting User Parameter4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+General purpose user variable input for scripts
+
+
+.. _SCR_USER5:
+
+SCR\_USER5: Scripting User Parameter5
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+General purpose user variable input for scripts
+
+
+.. _SCR_USER6:
+
+SCR\_USER6: Scripting User Parameter6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
