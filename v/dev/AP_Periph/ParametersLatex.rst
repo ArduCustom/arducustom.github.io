@@ -83,27 +83,25 @@ CAN\_PROTOCOL: Enable use of specific protocol to be used on this port
 Enabling this option starts selected protocol that will use this virtual driver\. At least one CAN port must be UAVCAN or else CAN1 gets set to UAVCAN
 
 
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | UAVCAN        |
-+-------+---------------+
-| 3     | ToshibaCAN    |
-+-------+---------------+
-| 4     | PiccoloCAN    |
-+-------+---------------+
-| 5     | CANTester     |
-+-------+---------------+
-| 6     | EFI_NWPMU     |
-+-------+---------------+
-| 7     | USD1          |
-+-------+---------------+
-| 8     | KDECAN        |
-+-------+---------------+
-| 9     | PacketDigital |
-+-------+---------------+
++-------+------------+
+| Value | Meaning    |
++=======+============+
+| 0     | Disabled   |
++-------+------------+
+| 1     | UAVCAN     |
++-------+------------+
+| 3     | ToshibaCAN |
++-------+------------+
+| 4     | PiccoloCAN |
++-------+------------+
+| 5     | CANTester  |
++-------+------------+
+| 6     | EFI_NWPMU  |
++-------+------------+
+| 7     | USD1       |
++-------+------------+
+| 8     | KDECAN     |
++-------+------------+
 
 
 
@@ -139,27 +137,25 @@ CAN2\_PROTOCOL: Enable use of specific protocol to be used on this port
 Enabling this option starts selected protocol that will use this virtual driver\. At least one CAN port must be UAVCAN or else CAN1 gets set to UAVCAN
 
 
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | UAVCAN        |
-+-------+---------------+
-| 3     | ToshibaCAN    |
-+-------+---------------+
-| 4     | PiccoloCAN    |
-+-------+---------------+
-| 5     | CANTester     |
-+-------+---------------+
-| 6     | EFI_NWPMU     |
-+-------+---------------+
-| 7     | USD1          |
-+-------+---------------+
-| 8     | KDECAN        |
-+-------+---------------+
-| 9     | PacketDigital |
-+-------+---------------+
++-------+------------+
+| Value | Meaning    |
++=======+============+
+| 0     | Disabled   |
++-------+------------+
+| 1     | UAVCAN     |
++-------+------------+
+| 3     | ToshibaCAN |
++-------+------------+
+| 4     | PiccoloCAN |
++-------+------------+
+| 5     | CANTester  |
++-------+------------+
+| 6     | EFI_NWPMU  |
++-------+------------+
+| 7     | USD1       |
++-------+------------+
+| 8     | KDECAN     |
++-------+------------+
 
 
 
@@ -195,27 +191,25 @@ CAN3\_PROTOCOL: Enable use of specific protocol to be used on this port
 Enabling this option starts selected protocol that will use this virtual driver\. At least one CAN port must be UAVCAN or else CAN1 gets set to UAVCAN
 
 
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | UAVCAN        |
-+-------+---------------+
-| 3     | ToshibaCAN    |
-+-------+---------------+
-| 4     | PiccoloCAN    |
-+-------+---------------+
-| 5     | CANTester     |
-+-------+---------------+
-| 6     | EFI_NWPMU     |
-+-------+---------------+
-| 7     | USD1          |
-+-------+---------------+
-| 8     | KDECAN        |
-+-------+---------------+
-| 9     | PacketDigital |
-+-------+---------------+
++-------+------------+
+| Value | Meaning    |
++=======+============+
+| 0     | Disabled   |
++-------+------------+
+| 1     | UAVCAN     |
++-------+------------+
+| 3     | ToshibaCAN |
++-------+------------+
+| 4     | PiccoloCAN |
++-------+------------+
+| 5     | CANTester  |
++-------+------------+
+| 6     | EFI_NWPMU  |
++-------+------------+
+| 7     | USD1       |
++-------+------------+
+| 8     | KDECAN     |
++-------+------------+
 
 
 
@@ -612,6 +606,26 @@ This selects the output PWM type\, allowing for normal PWM continuous output\, O
 
 
 
+.. _ESC_TELEM_PORT:
+
+ESC\_TELEM\_PORT: ESC Telemetry Serial Port
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+This is the serial port number where SERIALx\_PROTOCOL will be set to ESC Telemetry
+
+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 0 - 10 |
++-----------+--------+
+
+
+
+
 .. _MSP_PORT:
 
 MSP\_PORT: MSP Serial Port
@@ -704,7 +718,7 @@ Type of airspeed sensor
 +-------+-------------------+
 | 7     | I2C-DLVR-5in      |
 +-------+-------------------+
-| 8     | UAVCAN            |
+| 8     | DroneCAN          |
 +-------+-------------------+
 | 9     | I2C-DLVR-10in     |
 +-------+-------------------+
@@ -997,7 +1011,7 @@ Type of 2nd airspeed sensor
 +-------+-------------------+
 | 7     | I2C-DLVR-5in      |
 +-------+-------------------+
-| 8     | UAVCAN            |
+| 8     | DroneCAN          |
 +-------+-------------------+
 | 9     | I2C-DLVR-10in     |
 +-------+-------------------+
@@ -1810,7 +1824,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -1871,7 +1885,7 @@ BATT2\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT2_LOW_TIMER:
@@ -2037,7 +2051,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -2324,7 +2338,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -2385,7 +2399,7 @@ BATT3\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT3_LOW_TIMER:
@@ -2551,7 +2565,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -2838,7 +2852,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -2899,7 +2913,7 @@ BATT4\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT4_LOW_TIMER:
@@ -3065,7 +3079,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -3352,7 +3366,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -3413,7 +3427,7 @@ BATT5\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT5_LOW_TIMER:
@@ -3579,7 +3593,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -3866,7 +3880,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -3927,7 +3941,7 @@ BATT6\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT6_LOW_TIMER:
@@ -4093,7 +4107,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -4380,7 +4394,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -4441,7 +4455,7 @@ BATT7\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT7_LOW_TIMER:
@@ -4607,7 +4621,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -4894,7 +4908,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -4955,7 +4969,7 @@ BATT8\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT8_LOW_TIMER:
@@ -5121,7 +5135,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -5408,7 +5422,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -5469,7 +5483,7 @@ BATT9\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT9_LOW_TIMER:
@@ -5635,7 +5649,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -5922,7 +5936,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -5983,7 +5997,7 @@ BATT\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT_LOW_TIMER:
@@ -6149,7 +6163,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -7850,7 +7864,7 @@ This is a bitmask of driver types to disable\. If a driver type is set in this m
 +-----+--------------+
 | 9   | MMC3416      |
 +-----+--------------+
-| 11  | UAVCAN       |
+| 11  | DroneCAN     |
 +-----+--------------+
 | 12  | QMC5883      |
 +-----+--------------+
@@ -9059,51 +9073,51 @@ GPS\_TYPE: 1st GPS type
 GPS type of 1st GPS
 
 
-+-------+-----------------------------+
-| Value | Meaning                     |
-+=======+=============================+
-| 0     | None                        |
-+-------+-----------------------------+
-| 1     | AUTO                        |
-+-------+-----------------------------+
-| 2     | uBlox                       |
-+-------+-----------------------------+
-| 5     | NMEA                        |
-+-------+-----------------------------+
-| 6     | SiRF                        |
-+-------+-----------------------------+
-| 7     | HIL                         |
-+-------+-----------------------------+
-| 8     | SwiftNav                    |
-+-------+-----------------------------+
-| 9     | UAVCAN                      |
-+-------+-----------------------------+
-| 10    | SBF                         |
-+-------+-----------------------------+
-| 11    | GSOF                        |
-+-------+-----------------------------+
-| 13    | ERB                         |
-+-------+-----------------------------+
-| 14    | MAV                         |
-+-------+-----------------------------+
-| 15    | NOVA                        |
-+-------+-----------------------------+
-| 16    | HemisphereNMEA              |
-+-------+-----------------------------+
-| 17    | uBlox-MovingBaseline-Base   |
-+-------+-----------------------------+
-| 18    | uBlox-MovingBaseline-Rover  |
-+-------+-----------------------------+
-| 19    | MSP                         |
-+-------+-----------------------------+
-| 20    | AllyStar                    |
-+-------+-----------------------------+
-| 21    | ExternalAHRS                |
-+-------+-----------------------------+
-| 22    | UAVCAN-MovingBaseline-Base  |
-+-------+-----------------------------+
-| 23    | UAVCAN-MovingBaseline-Rover |
-+-------+-----------------------------+
++-------+-------------------------------+
+| Value | Meaning                       |
++=======+===============================+
+| 0     | None                          |
++-------+-------------------------------+
+| 1     | AUTO                          |
++-------+-------------------------------+
+| 2     | uBlox                         |
++-------+-------------------------------+
+| 5     | NMEA                          |
++-------+-------------------------------+
+| 6     | SiRF                          |
++-------+-------------------------------+
+| 7     | HIL                           |
++-------+-------------------------------+
+| 8     | SwiftNav                      |
++-------+-------------------------------+
+| 9     | DroneCAN                      |
++-------+-------------------------------+
+| 10    | SBF                           |
++-------+-------------------------------+
+| 11    | GSOF                          |
++-------+-------------------------------+
+| 13    | ERB                           |
++-------+-------------------------------+
+| 14    | MAV                           |
++-------+-------------------------------+
+| 15    | NOVA                          |
++-------+-------------------------------+
+| 16    | HemisphereNMEA                |
++-------+-------------------------------+
+| 17    | uBlox-MovingBaseline-Base     |
++-------+-------------------------------+
+| 18    | uBlox-MovingBaseline-Rover    |
++-------+-------------------------------+
+| 19    | MSP                           |
++-------+-------------------------------+
+| 20    | AllyStar                      |
++-------+-------------------------------+
+| 21    | ExternalAHRS                  |
++-------+-------------------------------+
+| 22    | DroneCAN-MovingBaseline-Base  |
++-------+-------------------------------+
+| 23    | DroneCAN-MovingBaseline-Rover |
++-------+-------------------------------+
 
 
 
@@ -9119,51 +9133,51 @@ GPS\_TYPE2: 2nd GPS type
 GPS type of 2nd GPS
 
 
-+-------+-----------------------------+
-| Value | Meaning                     |
-+=======+=============================+
-| 0     | None                        |
-+-------+-----------------------------+
-| 1     | AUTO                        |
-+-------+-----------------------------+
-| 2     | uBlox                       |
-+-------+-----------------------------+
-| 5     | NMEA                        |
-+-------+-----------------------------+
-| 6     | SiRF                        |
-+-------+-----------------------------+
-| 7     | HIL                         |
-+-------+-----------------------------+
-| 8     | SwiftNav                    |
-+-------+-----------------------------+
-| 9     | UAVCAN                      |
-+-------+-----------------------------+
-| 10    | SBF                         |
-+-------+-----------------------------+
-| 11    | GSOF                        |
-+-------+-----------------------------+
-| 13    | ERB                         |
-+-------+-----------------------------+
-| 14    | MAV                         |
-+-------+-----------------------------+
-| 15    | NOVA                        |
-+-------+-----------------------------+
-| 16    | HemisphereNMEA              |
-+-------+-----------------------------+
-| 17    | uBlox-MovingBaseline-Base   |
-+-------+-----------------------------+
-| 18    | uBlox-MovingBaseline-Rover  |
-+-------+-----------------------------+
-| 19    | MSP                         |
-+-------+-----------------------------+
-| 20    | AllyStar                    |
-+-------+-----------------------------+
-| 21    | ExternalAHRS                |
-+-------+-----------------------------+
-| 22    | UAVCAN-MovingBaseline-Base  |
-+-------+-----------------------------+
-| 23    | UAVCAN-MovingBaseline-Rover |
-+-------+-----------------------------+
++-------+-------------------------------+
+| Value | Meaning                       |
++=======+===============================+
+| 0     | None                          |
++-------+-------------------------------+
+| 1     | AUTO                          |
++-------+-------------------------------+
+| 2     | uBlox                         |
++-------+-------------------------------+
+| 5     | NMEA                          |
++-------+-------------------------------+
+| 6     | SiRF                          |
++-------+-------------------------------+
+| 7     | HIL                           |
++-------+-------------------------------+
+| 8     | SwiftNav                      |
++-------+-------------------------------+
+| 9     | DroneCAN                      |
++-------+-------------------------------+
+| 10    | SBF                           |
++-------+-------------------------------+
+| 11    | GSOF                          |
++-------+-------------------------------+
+| 13    | ERB                           |
++-------+-------------------------------+
+| 14    | MAV                           |
++-------+-------------------------------+
+| 15    | NOVA                          |
++-------+-------------------------------+
+| 16    | HemisphereNMEA                |
++-------+-------------------------------+
+| 17    | uBlox-MovingBaseline-Base     |
++-------+-------------------------------+
+| 18    | uBlox-MovingBaseline-Rover    |
++-------+-------------------------------+
+| 19    | MSP                           |
++-------+-------------------------------+
+| 20    | AllyStar                      |
++-------+-------------------------------+
+| 21    | ExternalAHRS                  |
++-------+-------------------------------+
+| 22    | DroneCAN-MovingBaseline-Base  |
++-------+-------------------------------+
+| 23    | DroneCAN-MovingBaseline-Rover |
++-------+-------------------------------+
 
 
 
@@ -9466,7 +9480,7 @@ Controls if the autopilot should automatically configure the GPS based on the pa
 +-------+------------------------------------------------------+
 | 1     | Enable automatic configuration for Serial GPSes only |
 +-------+------------------------------------------------------+
-| 2     | Enable automatic configuration for UAVCAN as well    |
+| 2     | Enable automatic configuration for DroneCAN as well  |
 +-------+------------------------------------------------------+
 
 
@@ -9867,8 +9881,8 @@ GPS Node id for discovered second\.
 
 .. _GPS1_CAN_OVRIDE:
 
-GPS1\_CAN\_OVRIDE: First UAVCAN GPS NODE ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GPS1\_CAN\_OVRIDE: First DroneCAN GPS NODE ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -9877,8 +9891,8 @@ GPS Node id for first GPS\. If 0 the gps will be automatically selected on first
 
 .. _GPS2_CAN_OVRIDE:
 
-GPS2\_CAN\_OVRIDE: Second UAVCAN GPS NODE ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GPS2\_CAN\_OVRIDE: Second DroneCAN GPS NODE ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -10388,7 +10402,7 @@ Controls what types of Buzzer will be enabled
 +-----+-----------------+
 | 1   | DShot           |
 +-----+-----------------+
-| 2   | UAVCAN          |
+| 2   | DroneCAN        |
 +-----+-----------------+
 
 
@@ -10509,7 +10523,7 @@ Controls what types of LEDs will be enabled
 +-----+---------------------+
 | 4   | Oreo LED            |
 +-----+---------------------+
-| 5   | UAVCAN              |
+| 5   | DroneCAN            |
 +-----+---------------------+
 | 6   | NCP5623 External    |
 +-----+---------------------+
@@ -16730,7 +16744,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -16996,7 +17010,7 @@ RNGFND1\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -17321,7 +17335,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -17587,7 +17601,7 @@ RNGFND2\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -17912,7 +17926,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -18178,7 +18192,7 @@ RNGFND3\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -18503,7 +18517,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -18769,7 +18783,7 @@ RNGFND4\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -19094,7 +19108,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -19360,7 +19374,7 @@ RNGFND5\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -19685,7 +19699,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -19951,7 +19965,7 @@ RNGFND6\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -20276,7 +20290,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -20542,7 +20556,7 @@ RNGFND7\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -20867,7 +20881,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -21133,7 +21147,7 @@ RNGFND8\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -21458,7 +21472,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -21724,7 +21738,7 @@ RNGFND9\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -22049,7 +22063,7 @@ What type of rangefinder device that is connected
 +-------+------------------------+
 | 23    | BlueRoboticsPing       |
 +-------+------------------------+
-| 24    | UAVCAN                 |
+| 24    | DroneCAN               |
 +-------+------------------------+
 | 25    | BenewakeTFminiPlus-I2C |
 +-------+------------------------+
@@ -22315,7 +22329,7 @@ RNGFNDA\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -23702,6 +23716,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -23743,6 +23759,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 
@@ -23786,6 +23804,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -23827,6 +23847,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 
@@ -23870,6 +23892,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -23911,6 +23935,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 
@@ -24180,6 +24206,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -24363,6 +24391,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -24545,6 +24575,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 

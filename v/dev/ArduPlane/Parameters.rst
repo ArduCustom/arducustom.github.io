@@ -2072,14 +2072,14 @@ This is the minimum altitude in centimeters that FBWB and CRUISE modes will allo
 
 
 
-.. _FLAP_1_PERCNT:
+.. _FLAP_EXTED_PCT:
 
-FLAP\_1\_PERCNT: Flap 1 percentage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FLAP\_EXTED\_PCT: Auto flaps extended position percentage of max deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-The percentage change in flap position when FLAP\_1\_SPEED is reached\. Use zero to disable flaps
+The maximum percentage of flap deployment in automatic throttle modes\. It is the flaps position used when target airspeed is lower or equal to FLAP\_EXTED\_SPEED\. Use zero to disable auto flaps
 
 
 +-----------+---------+---------+
@@ -2091,58 +2091,39 @@ The percentage change in flap position when FLAP\_1\_SPEED is reached\. Use zero
 
 
 
-.. _FLAP_1_SPEED:
+.. _FLAP_RETED_SPD:
 
-FLAP\_1\_SPEED: Flap 1 speed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FLAP\_RETED\_SPD: Auto flaps retracted speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-The speed in meters per second at which to engage FLAP\_1\_PERCENT of flaps\. Note that FLAP\_1\_SPEED should be greater than or equal to FLAP\_2\_SPEED
+The speed in meters per second at which the flaps will start to be automatically extended in automatic throttle modes\.
 
 
 +-----------+---------+-------------------+
 | Increment | Range   | Units             |
 +===========+=========+===================+
-| 1         | 0 - 100 | meters per second |
+| 0.1       | 0 - 100 | meters per second |
 +-----------+---------+-------------------+
 
 
 
 
-.. _FLAP_2_PERCNT:
+.. _FLAP_EXTED_SPD:
 
-FLAP\_2\_PERCNT: Flap 2 percentage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-The percentage change in flap position when FLAP\_2\_SPEED is reached\. Use zero to disable flaps
-
-
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
-
-
-
-
-.. _FLAP_2_SPEED:
-
-FLAP\_2\_SPEED: Flap 2 speed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FLAP\_EXTED\_SPD: Auto flaps deployed speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-The speed in meters per second at which to engage FLAP\_2\_PERCENT of flaps\. Note that FLAP\_1\_SPEED should be greater than or equal to FLAP\_2\_SPEED
+The speed in meters per second at which the flaps will be extended to FLAP\_EXTED\_PCT of the maximum deployment in automatic throttle modes\.
 
 
 +-----------+---------+-------------------+
 | Increment | Range   | Units             |
 +===========+=========+===================+
-| 1         | 0 - 100 | meters per second |
+| 0.1       | 0 - 100 | meters per second |
 +-----------+---------+-------------------+
 
 
@@ -4554,7 +4535,7 @@ Type of airspeed sensor
 | +-------+-------------------+ |
 | | 7     | I2C-DLVR-5in      | |
 | +-------+-------------------+ |
-| | 8     | UAVCAN            | |
+| | 8     | DroneCAN          | |
 | +-------+-------------------+ |
 | | 9     | I2C-DLVR-10in     | |
 | +-------+-------------------+ |
@@ -4877,7 +4858,7 @@ Type of 2nd airspeed sensor
 | +-------+-------------------+ |
 | | 7     | I2C-DLVR-5in      | |
 | +-------+-------------------+ |
-| | 8     | UAVCAN            | |
+| | 8     | DroneCAN          | |
 | +-------+-------------------+ |
 | | 9     | I2C-DLVR-10in     | |
 | +-------+-------------------+ |
@@ -6013,7 +5994,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -6095,7 +6076,7 @@ BATT2\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT2_LOW_TIMER:
@@ -6337,7 +6318,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -6644,7 +6625,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -6726,7 +6707,7 @@ BATT3\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT3_LOW_TIMER:
@@ -6968,7 +6949,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -7275,7 +7256,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -7357,7 +7338,7 @@ BATT4\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT4_LOW_TIMER:
@@ -7599,7 +7580,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -7906,7 +7887,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -7988,7 +7969,7 @@ BATT5\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT5_LOW_TIMER:
@@ -8230,7 +8211,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -8537,7 +8518,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -8619,7 +8600,7 @@ BATT6\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT6_LOW_TIMER:
@@ -8861,7 +8842,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -9168,7 +9149,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -9250,7 +9231,7 @@ BATT7\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT7_LOW_TIMER:
@@ -9492,7 +9473,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -9799,7 +9780,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -9881,7 +9862,7 @@ BATT8\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT8_LOW_TIMER:
@@ -10123,7 +10104,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -10430,7 +10411,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -10512,7 +10493,7 @@ BATT9\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT9_LOW_TIMER:
@@ -10754,7 +10735,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -11061,7 +11042,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 7     | SMBus-Generic              | |
 | +-------+----------------------------+ |
-| | 8     | UAVCAN-BatteryInfo         | |
+| | 8     | DroneCAN-BatteryInfo       | |
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
@@ -11143,7 +11124,7 @@ BATT\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT_LOW_TIMER:
@@ -11385,7 +11366,7 @@ This sets options to change the behaviour of the battery monitor
 | +-----+----------------------------------------+ |
 | | Bit | Meaning                                | |
 | +=====+========================================+ |
-| | 0   | Ignore UAVCAN SoC                      | |
+| | 0   | Ignore DroneCAN SoC                    | |
 | +-----+----------------------------------------+ |
 | | 1   | MPPT reports input voltage and current | |
 | +-----+----------------------------------------+ |
@@ -13075,142 +13056,154 @@ BTN\_FUNC1: Button Pin 1 RC Channel function
 Auxiliary RC Options function executed on pin change
 
 
-+-----------------------------------------------+
-| Values                                        |
-+===============================================+
-| +-------+-----------------------------------+ |
-| | Value | Meaning                           | |
-| +=======+===================================+ |
-| | 0     | Do Nothing                        | |
-| +-------+-----------------------------------+ |
-| | 4     | ModeRTL                           | |
-| +-------+-----------------------------------+ |
-| | 9     | Camera Trigger                    | |
-| +-------+-----------------------------------+ |
-| | 11    | Fence                             | |
-| +-------+-----------------------------------+ |
-| | 16    | ModeAuto                          | |
-| +-------+-----------------------------------+ |
-| | 24    | Auto Mission Reset                | |
-| +-------+-----------------------------------+ |
-| | 27    | Retract Mount                     | |
-| +-------+-----------------------------------+ |
-| | 28    | Relay On/Off                      | |
-| +-------+-----------------------------------+ |
-| | 29    | Landing Gear                      | |
-| +-------+-----------------------------------+ |
-| | 30    | Lost Plane Sound                  | |
-| +-------+-----------------------------------+ |
-| | 31    | Motor Emergency Stop              | |
-| +-------+-----------------------------------+ |
-| | 34    | Relay2 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 35    | Relay3 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 36    | Relay4 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 38    | ADSB Avoidance En                 | |
-| +-------+-----------------------------------+ |
-| | 43    | InvertedFlight                    | |
-| +-------+-----------------------------------+ |
-| | 46    | RC Override Enable                | |
-| +-------+-----------------------------------+ |
-| | 51    | ModeManual                        | |
-| +-------+-----------------------------------+ |
-| | 52    | ModeACRO                          | |
-| +-------+-----------------------------------+ |
-| | 55    | ModeGuided                        | |
-| +-------+-----------------------------------+ |
-| | 56    | ModeLoiter                        | |
-| +-------+-----------------------------------+ |
-| | 58    | Clear Waypoints                   | |
-| +-------+-----------------------------------+ |
-| | 62    | Compass Learn                     | |
-| +-------+-----------------------------------+ |
-| | 64    | Reverse Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 65    | GPS Disable                       | |
-| +-------+-----------------------------------+ |
-| | 66    | Relay5 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 67    | Relay6 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 72    | ModeCircle                        | |
-| +-------+-----------------------------------+ |
-| | 77    | ModeTakeoff                       | |
-| +-------+-----------------------------------+ |
-| | 78    | RunCam Control                    | |
-| +-------+-----------------------------------+ |
-| | 79    | RunCam OSD Control                | |
-| +-------+-----------------------------------+ |
-| | 81    | Disarm                            | |
-| +-------+-----------------------------------+ |
-| | 82    | QAssist 3pos                      | |
-| +-------+-----------------------------------+ |
-| | 84    | Air Mode                          | |
-| +-------+-----------------------------------+ |
-| | 85    | Generator                         | |
-| +-------+-----------------------------------+ |
-| | 86    | Non Auto Terrain Follow Disable   | |
-| +-------+-----------------------------------+ |
-| | 87    | Crow Select                       | |
-| +-------+-----------------------------------+ |
-| | 88    | Soaring Enable                    | |
-| +-------+-----------------------------------+ |
-| | 89    | Landing Flare                     | |
-| +-------+-----------------------------------+ |
-| | 90    | EKF Pos Source                    | |
-| +-------+-----------------------------------+ |
-| | 91    | Airspeed Ratio Calibration        | |
-| +-------+-----------------------------------+ |
-| | 92    | FBWA                              | |
-| +-------+-----------------------------------+ |
-| | 94    | VTX Power                         | |
-| +-------+-----------------------------------+ |
-| | 95    | FBWA taildragger takeoff mode     | |
-| +-------+-----------------------------------+ |
-| | 96    | trigger re-reading of mode switch | |
-| +-------+-----------------------------------+ |
-| | 98    | ModeTraining                      | |
-| +-------+-----------------------------------+ |
-| | 100   | KillIMU1                          | |
-| +-------+-----------------------------------+ |
-| | 101   | KillIMU2                          | |
-| +-------+-----------------------------------+ |
-| | 102   | Camera Mode Toggle                | |
-| +-------+-----------------------------------+ |
-| | 105   | GPS Disable Yaw                   | |
-| +-------+-----------------------------------+ |
-| | 106   | Disable Airspeed Use              | |
-| +-------+-----------------------------------+ |
-| | 150   | CRUISE                            | |
-| +-------+-----------------------------------+ |
-| | 153   | ArmDisarm                         | |
-| +-------+-----------------------------------+ |
-| | 154   | ArmDisarm with Quadplane AirMode  | |
-| +-------+-----------------------------------+ |
-| | 208   | Flap                              | |
-| +-------+-----------------------------------+ |
-| | 209   | Forward Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 300   | Scripting1                        | |
-| +-------+-----------------------------------+ |
-| | 301   | Scripting2                        | |
-| +-------+-----------------------------------+ |
-| | 302   | Scripting3                        | |
-| +-------+-----------------------------------+ |
-| | 303   | Scripting4                        | |
-| +-------+-----------------------------------+ |
-| | 304   | Scripting5                        | |
-| +-------+-----------------------------------+ |
-| | 305   | Scripting6                        | |
-| +-------+-----------------------------------+ |
-| | 306   | Scripting7                        | |
-| +-------+-----------------------------------+ |
-| | 307   | Scripting8                        | |
-| +-------+-----------------------------------+ |
-|                                               |
-+-----------------------------------------------+
++-----------------------------------------------------------------+
+| Values                                                          |
++=================================================================+
+| +-------+-----------------------------------------------------+ |
+| | Value | Meaning                                             | |
+| +=======+=====================================================+ |
+| | 0     | Do Nothing                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 4     | ModeRTL                                             | |
+| +-------+-----------------------------------------------------+ |
+| | 9     | Camera Trigger                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 11    | Fence                                               | |
+| +-------+-----------------------------------------------------+ |
+| | 16    | ModeAuto                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 22    | Parachute Release                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 24    | Auto Mission Reset                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 27    | Retract Mount                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 28    | Relay On/Off                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 29    | Landing Gear                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 30    | Lost Plane Sound                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 31    | Motor Emergency Stop                                | |
+| +-------+-----------------------------------------------------+ |
+| | 34    | Relay2 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 35    | Relay3 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 36    | Relay4 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 38    | ADSB Avoidance En                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 41    | ArmDisarm (4.1 and lower)                           | |
+| +-------+-----------------------------------------------------+ |
+| | 43    | InvertedFlight                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 46    | RC Override Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 51    | ModeManual                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 52    | ModeACRO                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 55    | ModeGuided                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 56    | ModeLoiter                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 58    | Clear Waypoints                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 62    | Compass Learn                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 64    | Reverse Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 65    | GPS Disable                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 66    | Relay5 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 67    | Relay6 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 72    | ModeCircle                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 77    | ModeTakeoff                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 78    | RunCam Control                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 79    | RunCam OSD Control                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 81    | Disarm                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 82    | QAssist 3pos                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 84    | Air Mode                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 85    | Generator                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 86    | Non Auto Terrain Follow Disable                     | |
+| +-------+-----------------------------------------------------+ |
+| | 87    | Crow Select                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 88    | Soaring Enable                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 89    | Landing Flare                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 90    | EKF Pos Source                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 91    | Airspeed Ratio Calibration                          | |
+| +-------+-----------------------------------------------------+ |
+| | 92    | FBWA                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 94    | VTX Power                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 95    | FBWA taildragger takeoff mode                       | |
+| +-------+-----------------------------------------------------+ |
+| | 96    | trigger re-reading of mode switch                   | |
+| +-------+-----------------------------------------------------+ |
+| | 98    | ModeTraining                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 100   | KillIMU1                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 101   | KillIMU2                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 102   | Camera Mode Toggle                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 105   | GPS Disable Yaw                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 106   | Disable Airspeed Use                                | |
+| +-------+-----------------------------------------------------+ |
+| | 107   | EnableFixedWingAutotune                             | |
+| +-------+-----------------------------------------------------+ |
+| | 108   | ModeQRTL                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 150   | CRUISE                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 153   | ArmDisarm (4.2 and higher)                          | |
+| +-------+-----------------------------------------------------+ |
+| | 154   | ArmDisarm with Quadplane AirMode (4.2 and higher)   | |
+| +-------+-----------------------------------------------------+ |
+| | 155   | set roll pitch and yaw trim to current servo and RC | |
+| +-------+-----------------------------------------------------+ |
+| | 157   | Force FS Action to FBWA                             | |
+| +-------+-----------------------------------------------------+ |
+| | 208   | Flap                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 209   | Forward Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 300   | Scripting1                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 301   | Scripting2                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 302   | Scripting3                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 303   | Scripting4                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 304   | Scripting5                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 305   | Scripting6                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 306   | Scripting7                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+|                                                                 |
++-----------------------------------------------------------------+
 
 
 
@@ -13224,142 +13217,154 @@ BTN\_FUNC2: Button Pin 2 RC Channel function
 Auxiliary RC Options function executed on pin change
 
 
-+-----------------------------------------------+
-| Values                                        |
-+===============================================+
-| +-------+-----------------------------------+ |
-| | Value | Meaning                           | |
-| +=======+===================================+ |
-| | 0     | Do Nothing                        | |
-| +-------+-----------------------------------+ |
-| | 4     | ModeRTL                           | |
-| +-------+-----------------------------------+ |
-| | 9     | Camera Trigger                    | |
-| +-------+-----------------------------------+ |
-| | 11    | Fence                             | |
-| +-------+-----------------------------------+ |
-| | 16    | ModeAuto                          | |
-| +-------+-----------------------------------+ |
-| | 24    | Auto Mission Reset                | |
-| +-------+-----------------------------------+ |
-| | 27    | Retract Mount                     | |
-| +-------+-----------------------------------+ |
-| | 28    | Relay On/Off                      | |
-| +-------+-----------------------------------+ |
-| | 29    | Landing Gear                      | |
-| +-------+-----------------------------------+ |
-| | 30    | Lost Plane Sound                  | |
-| +-------+-----------------------------------+ |
-| | 31    | Motor Emergency Stop              | |
-| +-------+-----------------------------------+ |
-| | 34    | Relay2 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 35    | Relay3 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 36    | Relay4 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 38    | ADSB Avoidance En                 | |
-| +-------+-----------------------------------+ |
-| | 43    | InvertedFlight                    | |
-| +-------+-----------------------------------+ |
-| | 46    | RC Override Enable                | |
-| +-------+-----------------------------------+ |
-| | 51    | ModeManual                        | |
-| +-------+-----------------------------------+ |
-| | 52    | ModeACRO                          | |
-| +-------+-----------------------------------+ |
-| | 55    | ModeGuided                        | |
-| +-------+-----------------------------------+ |
-| | 56    | ModeLoiter                        | |
-| +-------+-----------------------------------+ |
-| | 58    | Clear Waypoints                   | |
-| +-------+-----------------------------------+ |
-| | 62    | Compass Learn                     | |
-| +-------+-----------------------------------+ |
-| | 64    | Reverse Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 65    | GPS Disable                       | |
-| +-------+-----------------------------------+ |
-| | 66    | Relay5 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 67    | Relay6 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 72    | ModeCircle                        | |
-| +-------+-----------------------------------+ |
-| | 77    | ModeTakeoff                       | |
-| +-------+-----------------------------------+ |
-| | 78    | RunCam Control                    | |
-| +-------+-----------------------------------+ |
-| | 79    | RunCam OSD Control                | |
-| +-------+-----------------------------------+ |
-| | 81    | Disarm                            | |
-| +-------+-----------------------------------+ |
-| | 82    | QAssist 3pos                      | |
-| +-------+-----------------------------------+ |
-| | 84    | Air Mode                          | |
-| +-------+-----------------------------------+ |
-| | 85    | Generator                         | |
-| +-------+-----------------------------------+ |
-| | 86    | Non Auto Terrain Follow Disable   | |
-| +-------+-----------------------------------+ |
-| | 87    | Crow Select                       | |
-| +-------+-----------------------------------+ |
-| | 88    | Soaring Enable                    | |
-| +-------+-----------------------------------+ |
-| | 89    | Landing Flare                     | |
-| +-------+-----------------------------------+ |
-| | 90    | EKF Pos Source                    | |
-| +-------+-----------------------------------+ |
-| | 91    | Airspeed Ratio Calibration        | |
-| +-------+-----------------------------------+ |
-| | 92    | FBWA                              | |
-| +-------+-----------------------------------+ |
-| | 94    | VTX Power                         | |
-| +-------+-----------------------------------+ |
-| | 95    | FBWA taildragger takeoff mode     | |
-| +-------+-----------------------------------+ |
-| | 96    | trigger re-reading of mode switch | |
-| +-------+-----------------------------------+ |
-| | 98    | ModeTraining                      | |
-| +-------+-----------------------------------+ |
-| | 100   | KillIMU1                          | |
-| +-------+-----------------------------------+ |
-| | 101   | KillIMU2                          | |
-| +-------+-----------------------------------+ |
-| | 102   | Camera Mode Toggle                | |
-| +-------+-----------------------------------+ |
-| | 105   | GPS Disable Yaw                   | |
-| +-------+-----------------------------------+ |
-| | 106   | Disable Airspeed Use              | |
-| +-------+-----------------------------------+ |
-| | 150   | CRUISE                            | |
-| +-------+-----------------------------------+ |
-| | 153   | ArmDisarm                         | |
-| +-------+-----------------------------------+ |
-| | 154   | ArmDisarm with Quadplane AirMode  | |
-| +-------+-----------------------------------+ |
-| | 208   | Flap                              | |
-| +-------+-----------------------------------+ |
-| | 209   | Forward Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 300   | Scripting1                        | |
-| +-------+-----------------------------------+ |
-| | 301   | Scripting2                        | |
-| +-------+-----------------------------------+ |
-| | 302   | Scripting3                        | |
-| +-------+-----------------------------------+ |
-| | 303   | Scripting4                        | |
-| +-------+-----------------------------------+ |
-| | 304   | Scripting5                        | |
-| +-------+-----------------------------------+ |
-| | 305   | Scripting6                        | |
-| +-------+-----------------------------------+ |
-| | 306   | Scripting7                        | |
-| +-------+-----------------------------------+ |
-| | 307   | Scripting8                        | |
-| +-------+-----------------------------------+ |
-|                                               |
-+-----------------------------------------------+
++-----------------------------------------------------------------+
+| Values                                                          |
++=================================================================+
+| +-------+-----------------------------------------------------+ |
+| | Value | Meaning                                             | |
+| +=======+=====================================================+ |
+| | 0     | Do Nothing                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 4     | ModeRTL                                             | |
+| +-------+-----------------------------------------------------+ |
+| | 9     | Camera Trigger                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 11    | Fence                                               | |
+| +-------+-----------------------------------------------------+ |
+| | 16    | ModeAuto                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 22    | Parachute Release                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 24    | Auto Mission Reset                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 27    | Retract Mount                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 28    | Relay On/Off                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 29    | Landing Gear                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 30    | Lost Plane Sound                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 31    | Motor Emergency Stop                                | |
+| +-------+-----------------------------------------------------+ |
+| | 34    | Relay2 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 35    | Relay3 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 36    | Relay4 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 38    | ADSB Avoidance En                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 41    | ArmDisarm (4.1 and lower)                           | |
+| +-------+-----------------------------------------------------+ |
+| | 43    | InvertedFlight                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 46    | RC Override Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 51    | ModeManual                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 52    | ModeACRO                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 55    | ModeGuided                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 56    | ModeLoiter                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 58    | Clear Waypoints                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 62    | Compass Learn                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 64    | Reverse Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 65    | GPS Disable                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 66    | Relay5 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 67    | Relay6 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 72    | ModeCircle                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 77    | ModeTakeoff                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 78    | RunCam Control                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 79    | RunCam OSD Control                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 81    | Disarm                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 82    | QAssist 3pos                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 84    | Air Mode                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 85    | Generator                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 86    | Non Auto Terrain Follow Disable                     | |
+| +-------+-----------------------------------------------------+ |
+| | 87    | Crow Select                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 88    | Soaring Enable                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 89    | Landing Flare                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 90    | EKF Pos Source                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 91    | Airspeed Ratio Calibration                          | |
+| +-------+-----------------------------------------------------+ |
+| | 92    | FBWA                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 94    | VTX Power                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 95    | FBWA taildragger takeoff mode                       | |
+| +-------+-----------------------------------------------------+ |
+| | 96    | trigger re-reading of mode switch                   | |
+| +-------+-----------------------------------------------------+ |
+| | 98    | ModeTraining                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 100   | KillIMU1                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 101   | KillIMU2                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 102   | Camera Mode Toggle                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 105   | GPS Disable Yaw                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 106   | Disable Airspeed Use                                | |
+| +-------+-----------------------------------------------------+ |
+| | 107   | EnableFixedWingAutotune                             | |
+| +-------+-----------------------------------------------------+ |
+| | 108   | ModeQRTL                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 150   | CRUISE                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 153   | ArmDisarm (4.2 and higher)                          | |
+| +-------+-----------------------------------------------------+ |
+| | 154   | ArmDisarm with Quadplane AirMode (4.2 and higher)   | |
+| +-------+-----------------------------------------------------+ |
+| | 155   | set roll pitch and yaw trim to current servo and RC | |
+| +-------+-----------------------------------------------------+ |
+| | 157   | Force FS Action to FBWA                             | |
+| +-------+-----------------------------------------------------+ |
+| | 208   | Flap                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 209   | Forward Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 300   | Scripting1                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 301   | Scripting2                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 302   | Scripting3                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 303   | Scripting4                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 304   | Scripting5                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 305   | Scripting6                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 306   | Scripting7                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+|                                                                 |
++-----------------------------------------------------------------+
 
 
 
@@ -13373,142 +13378,154 @@ BTN\_FUNC3: Button Pin 3 RC Channel function
 Auxiliary RC Options function executed on pin change
 
 
-+-----------------------------------------------+
-| Values                                        |
-+===============================================+
-| +-------+-----------------------------------+ |
-| | Value | Meaning                           | |
-| +=======+===================================+ |
-| | 0     | Do Nothing                        | |
-| +-------+-----------------------------------+ |
-| | 4     | ModeRTL                           | |
-| +-------+-----------------------------------+ |
-| | 9     | Camera Trigger                    | |
-| +-------+-----------------------------------+ |
-| | 11    | Fence                             | |
-| +-------+-----------------------------------+ |
-| | 16    | ModeAuto                          | |
-| +-------+-----------------------------------+ |
-| | 24    | Auto Mission Reset                | |
-| +-------+-----------------------------------+ |
-| | 27    | Retract Mount                     | |
-| +-------+-----------------------------------+ |
-| | 28    | Relay On/Off                      | |
-| +-------+-----------------------------------+ |
-| | 29    | Landing Gear                      | |
-| +-------+-----------------------------------+ |
-| | 30    | Lost Plane Sound                  | |
-| +-------+-----------------------------------+ |
-| | 31    | Motor Emergency Stop              | |
-| +-------+-----------------------------------+ |
-| | 34    | Relay2 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 35    | Relay3 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 36    | Relay4 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 38    | ADSB Avoidance En                 | |
-| +-------+-----------------------------------+ |
-| | 43    | InvertedFlight                    | |
-| +-------+-----------------------------------+ |
-| | 46    | RC Override Enable                | |
-| +-------+-----------------------------------+ |
-| | 51    | ModeManual                        | |
-| +-------+-----------------------------------+ |
-| | 52    | ModeACRO                          | |
-| +-------+-----------------------------------+ |
-| | 55    | ModeGuided                        | |
-| +-------+-----------------------------------+ |
-| | 56    | ModeLoiter                        | |
-| +-------+-----------------------------------+ |
-| | 58    | Clear Waypoints                   | |
-| +-------+-----------------------------------+ |
-| | 62    | Compass Learn                     | |
-| +-------+-----------------------------------+ |
-| | 64    | Reverse Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 65    | GPS Disable                       | |
-| +-------+-----------------------------------+ |
-| | 66    | Relay5 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 67    | Relay6 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 72    | ModeCircle                        | |
-| +-------+-----------------------------------+ |
-| | 77    | ModeTakeoff                       | |
-| +-------+-----------------------------------+ |
-| | 78    | RunCam Control                    | |
-| +-------+-----------------------------------+ |
-| | 79    | RunCam OSD Control                | |
-| +-------+-----------------------------------+ |
-| | 81    | Disarm                            | |
-| +-------+-----------------------------------+ |
-| | 82    | QAssist 3pos                      | |
-| +-------+-----------------------------------+ |
-| | 84    | Air Mode                          | |
-| +-------+-----------------------------------+ |
-| | 85    | Generator                         | |
-| +-------+-----------------------------------+ |
-| | 86    | Non Auto Terrain Follow Disable   | |
-| +-------+-----------------------------------+ |
-| | 87    | Crow Select                       | |
-| +-------+-----------------------------------+ |
-| | 88    | Soaring Enable                    | |
-| +-------+-----------------------------------+ |
-| | 89    | Landing Flare                     | |
-| +-------+-----------------------------------+ |
-| | 90    | EKF Pos Source                    | |
-| +-------+-----------------------------------+ |
-| | 91    | Airspeed Ratio Calibration        | |
-| +-------+-----------------------------------+ |
-| | 92    | FBWA                              | |
-| +-------+-----------------------------------+ |
-| | 94    | VTX Power                         | |
-| +-------+-----------------------------------+ |
-| | 95    | FBWA taildragger takeoff mode     | |
-| +-------+-----------------------------------+ |
-| | 96    | trigger re-reading of mode switch | |
-| +-------+-----------------------------------+ |
-| | 98    | ModeTraining                      | |
-| +-------+-----------------------------------+ |
-| | 100   | KillIMU1                          | |
-| +-------+-----------------------------------+ |
-| | 101   | KillIMU2                          | |
-| +-------+-----------------------------------+ |
-| | 102   | Camera Mode Toggle                | |
-| +-------+-----------------------------------+ |
-| | 105   | GPS Disable Yaw                   | |
-| +-------+-----------------------------------+ |
-| | 106   | Disable Airspeed Use              | |
-| +-------+-----------------------------------+ |
-| | 150   | CRUISE                            | |
-| +-------+-----------------------------------+ |
-| | 153   | ArmDisarm                         | |
-| +-------+-----------------------------------+ |
-| | 154   | ArmDisarm with Quadplane AirMode  | |
-| +-------+-----------------------------------+ |
-| | 208   | Flap                              | |
-| +-------+-----------------------------------+ |
-| | 209   | Forward Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 300   | Scripting1                        | |
-| +-------+-----------------------------------+ |
-| | 301   | Scripting2                        | |
-| +-------+-----------------------------------+ |
-| | 302   | Scripting3                        | |
-| +-------+-----------------------------------+ |
-| | 303   | Scripting4                        | |
-| +-------+-----------------------------------+ |
-| | 304   | Scripting5                        | |
-| +-------+-----------------------------------+ |
-| | 305   | Scripting6                        | |
-| +-------+-----------------------------------+ |
-| | 306   | Scripting7                        | |
-| +-------+-----------------------------------+ |
-| | 307   | Scripting8                        | |
-| +-------+-----------------------------------+ |
-|                                               |
-+-----------------------------------------------+
++-----------------------------------------------------------------+
+| Values                                                          |
++=================================================================+
+| +-------+-----------------------------------------------------+ |
+| | Value | Meaning                                             | |
+| +=======+=====================================================+ |
+| | 0     | Do Nothing                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 4     | ModeRTL                                             | |
+| +-------+-----------------------------------------------------+ |
+| | 9     | Camera Trigger                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 11    | Fence                                               | |
+| +-------+-----------------------------------------------------+ |
+| | 16    | ModeAuto                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 22    | Parachute Release                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 24    | Auto Mission Reset                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 27    | Retract Mount                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 28    | Relay On/Off                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 29    | Landing Gear                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 30    | Lost Plane Sound                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 31    | Motor Emergency Stop                                | |
+| +-------+-----------------------------------------------------+ |
+| | 34    | Relay2 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 35    | Relay3 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 36    | Relay4 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 38    | ADSB Avoidance En                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 41    | ArmDisarm (4.1 and lower)                           | |
+| +-------+-----------------------------------------------------+ |
+| | 43    | InvertedFlight                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 46    | RC Override Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 51    | ModeManual                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 52    | ModeACRO                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 55    | ModeGuided                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 56    | ModeLoiter                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 58    | Clear Waypoints                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 62    | Compass Learn                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 64    | Reverse Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 65    | GPS Disable                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 66    | Relay5 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 67    | Relay6 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 72    | ModeCircle                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 77    | ModeTakeoff                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 78    | RunCam Control                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 79    | RunCam OSD Control                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 81    | Disarm                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 82    | QAssist 3pos                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 84    | Air Mode                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 85    | Generator                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 86    | Non Auto Terrain Follow Disable                     | |
+| +-------+-----------------------------------------------------+ |
+| | 87    | Crow Select                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 88    | Soaring Enable                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 89    | Landing Flare                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 90    | EKF Pos Source                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 91    | Airspeed Ratio Calibration                          | |
+| +-------+-----------------------------------------------------+ |
+| | 92    | FBWA                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 94    | VTX Power                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 95    | FBWA taildragger takeoff mode                       | |
+| +-------+-----------------------------------------------------+ |
+| | 96    | trigger re-reading of mode switch                   | |
+| +-------+-----------------------------------------------------+ |
+| | 98    | ModeTraining                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 100   | KillIMU1                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 101   | KillIMU2                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 102   | Camera Mode Toggle                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 105   | GPS Disable Yaw                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 106   | Disable Airspeed Use                                | |
+| +-------+-----------------------------------------------------+ |
+| | 107   | EnableFixedWingAutotune                             | |
+| +-------+-----------------------------------------------------+ |
+| | 108   | ModeQRTL                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 150   | CRUISE                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 153   | ArmDisarm (4.2 and higher)                          | |
+| +-------+-----------------------------------------------------+ |
+| | 154   | ArmDisarm with Quadplane AirMode (4.2 and higher)   | |
+| +-------+-----------------------------------------------------+ |
+| | 155   | set roll pitch and yaw trim to current servo and RC | |
+| +-------+-----------------------------------------------------+ |
+| | 157   | Force FS Action to FBWA                             | |
+| +-------+-----------------------------------------------------+ |
+| | 208   | Flap                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 209   | Forward Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 300   | Scripting1                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 301   | Scripting2                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 302   | Scripting3                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 303   | Scripting4                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 304   | Scripting5                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 305   | Scripting6                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 306   | Scripting7                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+|                                                                 |
++-----------------------------------------------------------------+
 
 
 
@@ -13522,142 +13539,154 @@ BTN\_FUNC4: Button Pin 4 RC Channel function
 Auxiliary RC Options function executed on pin change
 
 
-+-----------------------------------------------+
-| Values                                        |
-+===============================================+
-| +-------+-----------------------------------+ |
-| | Value | Meaning                           | |
-| +=======+===================================+ |
-| | 0     | Do Nothing                        | |
-| +-------+-----------------------------------+ |
-| | 4     | ModeRTL                           | |
-| +-------+-----------------------------------+ |
-| | 9     | Camera Trigger                    | |
-| +-------+-----------------------------------+ |
-| | 11    | Fence                             | |
-| +-------+-----------------------------------+ |
-| | 16    | ModeAuto                          | |
-| +-------+-----------------------------------+ |
-| | 24    | Auto Mission Reset                | |
-| +-------+-----------------------------------+ |
-| | 27    | Retract Mount                     | |
-| +-------+-----------------------------------+ |
-| | 28    | Relay On/Off                      | |
-| +-------+-----------------------------------+ |
-| | 29    | Landing Gear                      | |
-| +-------+-----------------------------------+ |
-| | 30    | Lost Plane Sound                  | |
-| +-------+-----------------------------------+ |
-| | 31    | Motor Emergency Stop              | |
-| +-------+-----------------------------------+ |
-| | 34    | Relay2 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 35    | Relay3 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 36    | Relay4 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 38    | ADSB Avoidance En                 | |
-| +-------+-----------------------------------+ |
-| | 43    | InvertedFlight                    | |
-| +-------+-----------------------------------+ |
-| | 46    | RC Override Enable                | |
-| +-------+-----------------------------------+ |
-| | 51    | ModeManual                        | |
-| +-------+-----------------------------------+ |
-| | 52    | ModeACRO                          | |
-| +-------+-----------------------------------+ |
-| | 55    | ModeGuided                        | |
-| +-------+-----------------------------------+ |
-| | 56    | ModeLoiter                        | |
-| +-------+-----------------------------------+ |
-| | 58    | Clear Waypoints                   | |
-| +-------+-----------------------------------+ |
-| | 62    | Compass Learn                     | |
-| +-------+-----------------------------------+ |
-| | 64    | Reverse Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 65    | GPS Disable                       | |
-| +-------+-----------------------------------+ |
-| | 66    | Relay5 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 67    | Relay6 On/Off                     | |
-| +-------+-----------------------------------+ |
-| | 72    | ModeCircle                        | |
-| +-------+-----------------------------------+ |
-| | 77    | ModeTakeoff                       | |
-| +-------+-----------------------------------+ |
-| | 78    | RunCam Control                    | |
-| +-------+-----------------------------------+ |
-| | 79    | RunCam OSD Control                | |
-| +-------+-----------------------------------+ |
-| | 81    | Disarm                            | |
-| +-------+-----------------------------------+ |
-| | 82    | QAssist 3pos                      | |
-| +-------+-----------------------------------+ |
-| | 84    | Air Mode                          | |
-| +-------+-----------------------------------+ |
-| | 85    | Generator                         | |
-| +-------+-----------------------------------+ |
-| | 86    | Non Auto Terrain Follow Disable   | |
-| +-------+-----------------------------------+ |
-| | 87    | Crow Select                       | |
-| +-------+-----------------------------------+ |
-| | 88    | Soaring Enable                    | |
-| +-------+-----------------------------------+ |
-| | 89    | Landing Flare                     | |
-| +-------+-----------------------------------+ |
-| | 90    | EKF Pos Source                    | |
-| +-------+-----------------------------------+ |
-| | 91    | Airspeed Ratio Calibration        | |
-| +-------+-----------------------------------+ |
-| | 92    | FBWA                              | |
-| +-------+-----------------------------------+ |
-| | 94    | VTX Power                         | |
-| +-------+-----------------------------------+ |
-| | 95    | FBWA taildragger takeoff mode     | |
-| +-------+-----------------------------------+ |
-| | 96    | trigger re-reading of mode switch | |
-| +-------+-----------------------------------+ |
-| | 98    | ModeTraining                      | |
-| +-------+-----------------------------------+ |
-| | 100   | KillIMU1                          | |
-| +-------+-----------------------------------+ |
-| | 101   | KillIMU2                          | |
-| +-------+-----------------------------------+ |
-| | 102   | Camera Mode Toggle                | |
-| +-------+-----------------------------------+ |
-| | 105   | GPS Disable Yaw                   | |
-| +-------+-----------------------------------+ |
-| | 106   | Disable Airspeed Use              | |
-| +-------+-----------------------------------+ |
-| | 150   | CRUISE                            | |
-| +-------+-----------------------------------+ |
-| | 153   | ArmDisarm                         | |
-| +-------+-----------------------------------+ |
-| | 154   | ArmDisarm with Quadplane AirMode  | |
-| +-------+-----------------------------------+ |
-| | 208   | Flap                              | |
-| +-------+-----------------------------------+ |
-| | 209   | Forward Throttle                  | |
-| +-------+-----------------------------------+ |
-| | 300   | Scripting1                        | |
-| +-------+-----------------------------------+ |
-| | 301   | Scripting2                        | |
-| +-------+-----------------------------------+ |
-| | 302   | Scripting3                        | |
-| +-------+-----------------------------------+ |
-| | 303   | Scripting4                        | |
-| +-------+-----------------------------------+ |
-| | 304   | Scripting5                        | |
-| +-------+-----------------------------------+ |
-| | 305   | Scripting6                        | |
-| +-------+-----------------------------------+ |
-| | 306   | Scripting7                        | |
-| +-------+-----------------------------------+ |
-| | 307   | Scripting8                        | |
-| +-------+-----------------------------------+ |
-|                                               |
-+-----------------------------------------------+
++-----------------------------------------------------------------+
+| Values                                                          |
++=================================================================+
+| +-------+-----------------------------------------------------+ |
+| | Value | Meaning                                             | |
+| +=======+=====================================================+ |
+| | 0     | Do Nothing                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 4     | ModeRTL                                             | |
+| +-------+-----------------------------------------------------+ |
+| | 9     | Camera Trigger                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 11    | Fence                                               | |
+| +-------+-----------------------------------------------------+ |
+| | 16    | ModeAuto                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 22    | Parachute Release                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 24    | Auto Mission Reset                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 27    | Retract Mount                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 28    | Relay On/Off                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 29    | Landing Gear                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 30    | Lost Plane Sound                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 31    | Motor Emergency Stop                                | |
+| +-------+-----------------------------------------------------+ |
+| | 34    | Relay2 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 35    | Relay3 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 36    | Relay4 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 38    | ADSB Avoidance En                                   | |
+| +-------+-----------------------------------------------------+ |
+| | 41    | ArmDisarm (4.1 and lower)                           | |
+| +-------+-----------------------------------------------------+ |
+| | 43    | InvertedFlight                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 46    | RC Override Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 51    | ModeManual                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 52    | ModeACRO                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 55    | ModeGuided                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 56    | ModeLoiter                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 58    | Clear Waypoints                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 62    | Compass Learn                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 64    | Reverse Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 65    | GPS Disable                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 66    | Relay5 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 67    | Relay6 On/Off                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 72    | ModeCircle                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 77    | ModeTakeoff                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 78    | RunCam Control                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 79    | RunCam OSD Control                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 81    | Disarm                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 82    | QAssist 3pos                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 84    | Air Mode                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 85    | Generator                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 86    | Non Auto Terrain Follow Disable                     | |
+| +-------+-----------------------------------------------------+ |
+| | 87    | Crow Select                                         | |
+| +-------+-----------------------------------------------------+ |
+| | 88    | Soaring Enable                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 89    | Landing Flare                                       | |
+| +-------+-----------------------------------------------------+ |
+| | 90    | EKF Pos Source                                      | |
+| +-------+-----------------------------------------------------+ |
+| | 91    | Airspeed Ratio Calibration                          | |
+| +-------+-----------------------------------------------------+ |
+| | 92    | FBWA                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 94    | VTX Power                                           | |
+| +-------+-----------------------------------------------------+ |
+| | 95    | FBWA taildragger takeoff mode                       | |
+| +-------+-----------------------------------------------------+ |
+| | 96    | trigger re-reading of mode switch                   | |
+| +-------+-----------------------------------------------------+ |
+| | 98    | ModeTraining                                        | |
+| +-------+-----------------------------------------------------+ |
+| | 100   | KillIMU1                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 101   | KillIMU2                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 102   | Camera Mode Toggle                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 105   | GPS Disable Yaw                                     | |
+| +-------+-----------------------------------------------------+ |
+| | 106   | Disable Airspeed Use                                | |
+| +-------+-----------------------------------------------------+ |
+| | 107   | EnableFixedWingAutotune                             | |
+| +-------+-----------------------------------------------------+ |
+| | 108   | ModeQRTL                                            | |
+| +-------+-----------------------------------------------------+ |
+| | 150   | CRUISE                                              | |
+| +-------+-----------------------------------------------------+ |
+| | 153   | ArmDisarm (4.2 and higher)                          | |
+| +-------+-----------------------------------------------------+ |
+| | 154   | ArmDisarm with Quadplane AirMode (4.2 and higher)   | |
+| +-------+-----------------------------------------------------+ |
+| | 155   | set roll pitch and yaw trim to current servo and RC | |
+| +-------+-----------------------------------------------------+ |
+| | 157   | Force FS Action to FBWA                             | |
+| +-------+-----------------------------------------------------+ |
+| | 208   | Flap                                                | |
+| +-------+-----------------------------------------------------+ |
+| | 209   | Forward Throttle                                    | |
+| +-------+-----------------------------------------------------+ |
+| | 300   | Scripting1                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 301   | Scripting2                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 302   | Scripting3                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 303   | Scripting4                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 304   | Scripting5                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 305   | Scripting6                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 306   | Scripting7                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+|                                                                 |
++-----------------------------------------------------------------+
 
 
 
@@ -14135,36 +14164,34 @@ CAN\_D1\_PROTOCOL: Enable use of specific protocol over virtual driver
 Enabling this option starts selected protocol that will use this virtual driver
 
 
-+---------------------------+
-| Values                    |
-+===========================+
-| +-------+---------------+ |
-| | Value | Meaning       | |
-| +=======+===============+ |
-| | 0     | Disabled      | |
-| +-------+---------------+ |
-| | 1     | UAVCAN        | |
-| +-------+---------------+ |
-| | 3     | ToshibaCAN    | |
-| +-------+---------------+ |
-| | 4     | PiccoloCAN    | |
-| +-------+---------------+ |
-| | 5     | CANTester     | |
-| +-------+---------------+ |
-| | 6     | EFI_NWPMU     | |
-| +-------+---------------+ |
-| | 7     | USD1          | |
-| +-------+---------------+ |
-| | 8     | KDECAN        | |
-| +-------+---------------+ |
-| | 9     | PacketDigital | |
-| +-------+---------------+ |
-| | 10    | Scripting     | |
-| +-------+---------------+ |
-| | 11    | Benewake      | |
-| +-------+---------------+ |
-|                           |
-+---------------------------+
++------------------------+
+| Values                 |
++========================+
+| +-------+------------+ |
+| | Value | Meaning    | |
+| +=======+============+ |
+| | 0     | Disabled   | |
+| +-------+------------+ |
+| | 1     | DroneCAN   | |
+| +-------+------------+ |
+| | 3     | ToshibaCAN | |
+| +-------+------------+ |
+| | 4     | PiccoloCAN | |
+| +-------+------------+ |
+| | 5     | CANTester  | |
+| +-------+------------+ |
+| | 6     | EFI_NWPMU  | |
+| +-------+------------+ |
+| | 7     | USD1       | |
+| +-------+------------+ |
+| | 8     | KDECAN     | |
+| +-------+------------+ |
+| | 10    | Scripting  | |
+| +-------+------------+ |
+| | 11    | Benewake   | |
+| +-------+------------+ |
+|                        |
++------------------------+
 
 
 
@@ -14614,36 +14641,34 @@ CAN\_D2\_PROTOCOL: Enable use of specific protocol over virtual driver
 Enabling this option starts selected protocol that will use this virtual driver
 
 
-+---------------------------+
-| Values                    |
-+===========================+
-| +-------+---------------+ |
-| | Value | Meaning       | |
-| +=======+===============+ |
-| | 0     | Disabled      | |
-| +-------+---------------+ |
-| | 1     | UAVCAN        | |
-| +-------+---------------+ |
-| | 3     | ToshibaCAN    | |
-| +-------+---------------+ |
-| | 4     | PiccoloCAN    | |
-| +-------+---------------+ |
-| | 5     | CANTester     | |
-| +-------+---------------+ |
-| | 6     | EFI_NWPMU     | |
-| +-------+---------------+ |
-| | 7     | USD1          | |
-| +-------+---------------+ |
-| | 8     | KDECAN        | |
-| +-------+---------------+ |
-| | 9     | PacketDigital | |
-| +-------+---------------+ |
-| | 10    | Scripting     | |
-| +-------+---------------+ |
-| | 11    | Benewake      | |
-| +-------+---------------+ |
-|                           |
-+---------------------------+
++------------------------+
+| Values                 |
++========================+
+| +-------+------------+ |
+| | Value | Meaning    | |
+| +=======+============+ |
+| | 0     | Disabled   | |
+| +-------+------------+ |
+| | 1     | DroneCAN   | |
+| +-------+------------+ |
+| | 3     | ToshibaCAN | |
+| +-------+------------+ |
+| | 4     | PiccoloCAN | |
+| +-------+------------+ |
+| | 5     | CANTester  | |
+| +-------+------------+ |
+| | 6     | EFI_NWPMU  | |
+| +-------+------------+ |
+| | 7     | USD1       | |
+| +-------+------------+ |
+| | 8     | KDECAN     | |
+| +-------+------------+ |
+| | 10    | Scripting  | |
+| +-------+------------+ |
+| | 11    | Benewake   | |
+| +-------+------------+ |
+|                        |
++------------------------+
 
 
 
@@ -15093,36 +15118,34 @@ CAN\_D3\_PROTOCOL: Enable use of specific protocol over virtual driver
 Enabling this option starts selected protocol that will use this virtual driver
 
 
-+---------------------------+
-| Values                    |
-+===========================+
-| +-------+---------------+ |
-| | Value | Meaning       | |
-| +=======+===============+ |
-| | 0     | Disabled      | |
-| +-------+---------------+ |
-| | 1     | UAVCAN        | |
-| +-------+---------------+ |
-| | 3     | ToshibaCAN    | |
-| +-------+---------------+ |
-| | 4     | PiccoloCAN    | |
-| +-------+---------------+ |
-| | 5     | CANTester     | |
-| +-------+---------------+ |
-| | 6     | EFI_NWPMU     | |
-| +-------+---------------+ |
-| | 7     | USD1          | |
-| +-------+---------------+ |
-| | 8     | KDECAN        | |
-| +-------+---------------+ |
-| | 9     | PacketDigital | |
-| +-------+---------------+ |
-| | 10    | Scripting     | |
-| +-------+---------------+ |
-| | 11    | Benewake      | |
-| +-------+---------------+ |
-|                           |
-+---------------------------+
++------------------------+
+| Values                 |
++========================+
+| +-------+------------+ |
+| | Value | Meaning    | |
+| +=======+============+ |
+| | 0     | Disabled   | |
+| +-------+------------+ |
+| | 1     | DroneCAN   | |
+| +-------+------------+ |
+| | 3     | ToshibaCAN | |
+| +-------+------------+ |
+| | 4     | PiccoloCAN | |
+| +-------+------------+ |
+| | 5     | CANTester  | |
+| +-------+------------+ |
+| | 6     | EFI_NWPMU  | |
+| +-------+------------+ |
+| | 7     | USD1       | |
+| +-------+------------+ |
+| | 8     | KDECAN     | |
+| +-------+------------+ |
+| | 10    | Scripting  | |
+| +-------+------------+ |
+| | 11    | Benewake   | |
+| +-------+------------+ |
+|                        |
++------------------------+
 
 
 
@@ -17379,7 +17402,7 @@ This is a bitmask of driver types to disable\. If a driver type is set in this m
 | +-----+--------------+ |
 | | 9   | MMC3416      | |
 | +-----+--------------+ |
-| | 11  | UAVCAN       | |
+| | 11  | DroneCAN     | |
 | +-----+--------------+ |
 | | 12  | QMC5883      | |
 | +-----+--------------+ |
@@ -18145,7 +18168,7 @@ EK2\_VEL\_I\_GATE: GPS velocity innovation gate size
 
 | *Note: This parameter is for advanced users*
 
-This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements willbe rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
+This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
 +-----------+------------+
@@ -19279,7 +19302,7 @@ EK3\_VEL\_I\_GATE: GPS velocity innovation gate size
 
 | *Note: This parameter is for advanced users*
 
-This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements willbe rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
+This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
 +-----------+------------+
@@ -21642,32 +21665,32 @@ FLOW\_TYPE: Optical flow sensor type
 Optical flow sensor type
 
 
-+---------------------+
-| Values              |
-+=====================+
-| +-------+---------+ |
-| | Value | Meaning | |
-| +=======+=========+ |
-| | 0     | None    | |
-| +-------+---------+ |
-| | 1     | PX4Flow | |
-| +-------+---------+ |
-| | 2     | Pixart  | |
-| +-------+---------+ |
-| | 3     | Bebop   | |
-| +-------+---------+ |
-| | 4     | CXOF    | |
-| +-------+---------+ |
-| | 5     | MAVLink | |
-| +-------+---------+ |
-| | 6     | UAVCAN  | |
-| +-------+---------+ |
-| | 7     | MSP     | |
-| +-------+---------+ |
-| | 8     | UPFLOW  | |
-| +-------+---------+ |
-|                     |
-+---------------------+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | None     | |
+| +-------+----------+ |
+| | 1     | PX4Flow  | |
+| +-------+----------+ |
+| | 2     | Pixart   | |
+| +-------+----------+ |
+| | 3     | Bebop    | |
+| +-------+----------+ |
+| | 4     | CXOF     | |
+| +-------+----------+ |
+| | 5     | MAVLink  | |
+| +-------+----------+ |
+| | 6     | DroneCAN | |
+| +-------+----------+ |
+| | 7     | MSP      | |
+| +-------+----------+ |
+| | 8     | UPFLOW   | |
+| +-------+----------+ |
+|                      |
++----------------------+
 
 
 
@@ -22145,56 +22168,56 @@ GPS\_TYPE: 1st GPS type
 GPS type of 1st GPS
 
 
-+-----------------------------------------+
-| Values                                  |
-+=========================================+
-| +-------+-----------------------------+ |
-| | Value | Meaning                     | |
-| +=======+=============================+ |
-| | 0     | None                        | |
-| +-------+-----------------------------+ |
-| | 1     | AUTO                        | |
-| +-------+-----------------------------+ |
-| | 2     | uBlox                       | |
-| +-------+-----------------------------+ |
-| | 5     | NMEA                        | |
-| +-------+-----------------------------+ |
-| | 6     | SiRF                        | |
-| +-------+-----------------------------+ |
-| | 7     | HIL                         | |
-| +-------+-----------------------------+ |
-| | 8     | SwiftNav                    | |
-| +-------+-----------------------------+ |
-| | 9     | UAVCAN                      | |
-| +-------+-----------------------------+ |
-| | 10    | SBF                         | |
-| +-------+-----------------------------+ |
-| | 11    | GSOF                        | |
-| +-------+-----------------------------+ |
-| | 13    | ERB                         | |
-| +-------+-----------------------------+ |
-| | 14    | MAV                         | |
-| +-------+-----------------------------+ |
-| | 15    | NOVA                        | |
-| +-------+-----------------------------+ |
-| | 16    | HemisphereNMEA              | |
-| +-------+-----------------------------+ |
-| | 17    | uBlox-MovingBaseline-Base   | |
-| +-------+-----------------------------+ |
-| | 18    | uBlox-MovingBaseline-Rover  | |
-| +-------+-----------------------------+ |
-| | 19    | MSP                         | |
-| +-------+-----------------------------+ |
-| | 20    | AllyStar                    | |
-| +-------+-----------------------------+ |
-| | 21    | ExternalAHRS                | |
-| +-------+-----------------------------+ |
-| | 22    | UAVCAN-MovingBaseline-Base  | |
-| +-------+-----------------------------+ |
-| | 23    | UAVCAN-MovingBaseline-Rover | |
-| +-------+-----------------------------+ |
-|                                         |
-+-----------------------------------------+
++-------------------------------------------+
+| Values                                    |
++===========================================+
+| +-------+-------------------------------+ |
+| | Value | Meaning                       | |
+| +=======+===============================+ |
+| | 0     | None                          | |
+| +-------+-------------------------------+ |
+| | 1     | AUTO                          | |
+| +-------+-------------------------------+ |
+| | 2     | uBlox                         | |
+| +-------+-------------------------------+ |
+| | 5     | NMEA                          | |
+| +-------+-------------------------------+ |
+| | 6     | SiRF                          | |
+| +-------+-------------------------------+ |
+| | 7     | HIL                           | |
+| +-------+-------------------------------+ |
+| | 8     | SwiftNav                      | |
+| +-------+-------------------------------+ |
+| | 9     | DroneCAN                      | |
+| +-------+-------------------------------+ |
+| | 10    | SBF                           | |
+| +-------+-------------------------------+ |
+| | 11    | GSOF                          | |
+| +-------+-------------------------------+ |
+| | 13    | ERB                           | |
+| +-------+-------------------------------+ |
+| | 14    | MAV                           | |
+| +-------+-------------------------------+ |
+| | 15    | NOVA                          | |
+| +-------+-------------------------------+ |
+| | 16    | HemisphereNMEA                | |
+| +-------+-------------------------------+ |
+| | 17    | uBlox-MovingBaseline-Base     | |
+| +-------+-------------------------------+ |
+| | 18    | uBlox-MovingBaseline-Rover    | |
+| +-------+-------------------------------+ |
+| | 19    | MSP                           | |
+| +-------+-------------------------------+ |
+| | 20    | AllyStar                      | |
+| +-------+-------------------------------+ |
+| | 21    | ExternalAHRS                  | |
+| +-------+-------------------------------+ |
+| | 22    | DroneCAN-MovingBaseline-Base  | |
+| +-------+-------------------------------+ |
+| | 23    | DroneCAN-MovingBaseline-Rover | |
+| +-------+-------------------------------+ |
+|                                           |
++-------------------------------------------+
 
 
 
@@ -22210,56 +22233,56 @@ GPS\_TYPE2: 2nd GPS type
 GPS type of 2nd GPS
 
 
-+-----------------------------------------+
-| Values                                  |
-+=========================================+
-| +-------+-----------------------------+ |
-| | Value | Meaning                     | |
-| +=======+=============================+ |
-| | 0     | None                        | |
-| +-------+-----------------------------+ |
-| | 1     | AUTO                        | |
-| +-------+-----------------------------+ |
-| | 2     | uBlox                       | |
-| +-------+-----------------------------+ |
-| | 5     | NMEA                        | |
-| +-------+-----------------------------+ |
-| | 6     | SiRF                        | |
-| +-------+-----------------------------+ |
-| | 7     | HIL                         | |
-| +-------+-----------------------------+ |
-| | 8     | SwiftNav                    | |
-| +-------+-----------------------------+ |
-| | 9     | UAVCAN                      | |
-| +-------+-----------------------------+ |
-| | 10    | SBF                         | |
-| +-------+-----------------------------+ |
-| | 11    | GSOF                        | |
-| +-------+-----------------------------+ |
-| | 13    | ERB                         | |
-| +-------+-----------------------------+ |
-| | 14    | MAV                         | |
-| +-------+-----------------------------+ |
-| | 15    | NOVA                        | |
-| +-------+-----------------------------+ |
-| | 16    | HemisphereNMEA              | |
-| +-------+-----------------------------+ |
-| | 17    | uBlox-MovingBaseline-Base   | |
-| +-------+-----------------------------+ |
-| | 18    | uBlox-MovingBaseline-Rover  | |
-| +-------+-----------------------------+ |
-| | 19    | MSP                         | |
-| +-------+-----------------------------+ |
-| | 20    | AllyStar                    | |
-| +-------+-----------------------------+ |
-| | 21    | ExternalAHRS                | |
-| +-------+-----------------------------+ |
-| | 22    | UAVCAN-MovingBaseline-Base  | |
-| +-------+-----------------------------+ |
-| | 23    | UAVCAN-MovingBaseline-Rover | |
-| +-------+-----------------------------+ |
-|                                         |
-+-----------------------------------------+
++-------------------------------------------+
+| Values                                    |
++===========================================+
+| +-------+-------------------------------+ |
+| | Value | Meaning                       | |
+| +=======+===============================+ |
+| | 0     | None                          | |
+| +-------+-------------------------------+ |
+| | 1     | AUTO                          | |
+| +-------+-------------------------------+ |
+| | 2     | uBlox                         | |
+| +-------+-------------------------------+ |
+| | 5     | NMEA                          | |
+| +-------+-------------------------------+ |
+| | 6     | SiRF                          | |
+| +-------+-------------------------------+ |
+| | 7     | HIL                           | |
+| +-------+-------------------------------+ |
+| | 8     | SwiftNav                      | |
+| +-------+-------------------------------+ |
+| | 9     | DroneCAN                      | |
+| +-------+-------------------------------+ |
+| | 10    | SBF                           | |
+| +-------+-------------------------------+ |
+| | 11    | GSOF                          | |
+| +-------+-------------------------------+ |
+| | 13    | ERB                           | |
+| +-------+-------------------------------+ |
+| | 14    | MAV                           | |
+| +-------+-------------------------------+ |
+| | 15    | NOVA                          | |
+| +-------+-------------------------------+ |
+| | 16    | HemisphereNMEA                | |
+| +-------+-------------------------------+ |
+| | 17    | uBlox-MovingBaseline-Base     | |
+| +-------+-------------------------------+ |
+| | 18    | uBlox-MovingBaseline-Rover    | |
+| +-------+-------------------------------+ |
+| | 19    | MSP                           | |
+| +-------+-------------------------------+ |
+| | 20    | AllyStar                      | |
+| +-------+-------------------------------+ |
+| | 21    | ExternalAHRS                  | |
+| +-------+-------------------------------+ |
+| | 22    | DroneCAN-MovingBaseline-Base  | |
+| +-------+-------------------------------+ |
+| | 23    | DroneCAN-MovingBaseline-Rover | |
+| +-------+-------------------------------+ |
+|                                           |
++-------------------------------------------+
 
 
 
@@ -22615,7 +22638,7 @@ Controls if the autopilot should automatically configure the GPS based on the pa
 | +-------+------------------------------------------------------+ |
 | | 1     | Enable automatic configuration for Serial GPSes only | |
 | +-------+------------------------------------------------------+ |
-| | 2     | Enable automatic configuration for UAVCAN as well    | |
+| | 2     | Enable automatic configuration for DroneCAN as well  | |
 | +-------+------------------------------------------------------+ |
 |                                                                  |
 +------------------------------------------------------------------+
@@ -23016,8 +23039,8 @@ GPS Node id for discovered second\.
 
 .. _GPS1_CAN_OVRIDE:
 
-GPS1\_CAN\_OVRIDE: First UAVCAN GPS NODE ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GPS1\_CAN\_OVRIDE: First DroneCAN GPS NODE ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -23026,8 +23049,8 @@ GPS Node id for first GPS\. If 0 the gps will be automatically selected on first
 
 .. _GPS2_CAN_OVRIDE:
 
-GPS2\_CAN\_OVRIDE: Second UAVCAN GPS NODE ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GPS2\_CAN\_OVRIDE: Second DroneCAN GPS NODE ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -23351,10 +23374,10 @@ Time in seconds that gripper will regrab the cargo to ensure grip has not weaken
 
 
 
-.. _GRIP_UAVCAN_ID:
+.. _GRIP_CAN_ID:
 
-GRIP\_UAVCAN\_ID: EPM UAVCAN Hardpoint ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GRIP\_CAN\_ID: EPM UAVCAN Hardpoint ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Refer to https\:\/\/docs\.zubax\.com\/opengrab\_epm\_v3\#UAVCAN\_interface
@@ -25424,12 +25447,12 @@ INS\_NOTCH\_ Parameters
 
 .. _INS_NOTCH_ENABLE:
 
-INS\_NOTCH\_ENABLE: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+INS\_NOTCH\_ENABLE: Harmonic Notch Filter enable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Enable notch filter
+Harmonic Notch Filter enable
 
 
 +----------------------+
@@ -25448,39 +25471,20 @@ Enable notch filter
 
 
 
-.. _INS_NOTCH_ATT:
-
-INS\_NOTCH\_ATT: Attenuation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Notch attenuation in dB
-
-
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 30 | decibel |
-+--------+---------+
-
-
-
-
 .. _INS_NOTCH_FREQ:
 
-INS\_NOTCH\_FREQ: Frequency
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INS\_NOTCH\_FREQ: Harmonic Notch Filter base frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Notch center frequency in Hz
+Harmonic Notch Filter base center frequency in Hz\. This should be set at most half the backend gyro rate \(which is typically 1Khz\)\. For helicopters using RPM sensor to dynamically set the notch frequency\, use this parameter to provide a lower limit to the dynamic notch filter\.  Recommend setting it to half the operating rotor speed in Hz\.
 
 
 +----------+-------+
 | Range    | Units |
 +==========+=======+
-| 10 - 400 | hertz |
+| 10 - 495 | hertz |
 +----------+-------+
 
 
@@ -25488,19 +25492,158 @@ Notch center frequency in Hz
 
 .. _INS_NOTCH_BW:
 
-INS\_NOTCH\_BW: Bandwidth
-~~~~~~~~~~~~~~~~~~~~~~~~~
+INS\_NOTCH\_BW: Harmonic Notch Filter bandwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Notch bandwidth in Hz
+Harmonic Notch Filter bandwidth in Hz\. This is typically set to half the base frequency\. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics\.
 
 
 +---------+-------+
 | Range   | Units |
 +=========+=======+
-| 5 - 100 | hertz |
+| 5 - 250 | hertz |
 +---------+-------+
+
+
+
+
+.. _INS_NOTCH_ATT:
+
+INS\_NOTCH\_ATT: Harmonic Notch Filter attenuation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter attenuation in dB\. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise\.
+
+
++--------+---------+
+| Range  | Units   |
++========+=========+
+| 5 - 50 | decibel |
++--------+---------+
+
+
+
+
+.. _INS_NOTCH_HMNCS:
+
+INS\_NOTCH\_HMNCS: Harmonic Notch Filter harmonics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\. A maximum of 3 harmonics can be used at any one time\.
+
+
++------------------------+
+| Bitmask                |
++========================+
+| +-----+--------------+ |
+| | Bit | Meaning      | |
+| +=====+==============+ |
+| | 0   | 1st harmonic | |
+| +-----+--------------+ |
+| | 1   | 2nd harmonic | |
+| +-----+--------------+ |
+| | 2   | 3rd harmonic | |
+| +-----+--------------+ |
+| | 3   | 4th hamronic | |
+| +-----+--------------+ |
+| | 4   | 5th harmonic | |
+| +-----+--------------+ |
+| | 5   | 6th harmonic | |
+| +-----+--------------+ |
+| | 6   | 7th harmonic | |
+| +-----+--------------+ |
+| | 7   | 8th harmonic | |
+| +-----+--------------+ |
+|                        |
++------------------------+
+
+
+
+
+.. _INS_NOTCH_REF:
+
+INS\_NOTCH\_REF: Harmonic Notch Filter reference value
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter\.  For throttle\-based scaling\, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter\. For RPM and ESC telemetry based tracking\, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed\.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter\.  This reference value may also be used to scale the sensor data\, if required\.  For example\, rpm sensor data is required to measure heli motor RPM\. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM\.
+
+
++-----------+
+| Range     |
++===========+
+| 0.0 - 1.0 |
++-----------+
+
+
+
+
+.. _INS_NOTCH_MODE:
+
+INS\_NOTCH\_MODE: Harmonic Notch Filter dynamic frequency tracking mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter dynamic frequency tracking mode\. Dynamic updates can be throttle\, RPM sensor\, ESC telemetry or dynamic FFT based\. Throttle\-based updates should only be used with multicopters\.
+
+
++-------+---------------------------+
+| Range | Values                    |
++=======+===========================+
+| 0 - 4 | +-------+---------------+ |
+|       | | Value | Meaning       | |
+|       | +=======+===============+ |
+|       | | 0     | Disabled      | |
+|       | +-------+---------------+ |
+|       | | 1     | Throttle      | |
+|       | +-------+---------------+ |
+|       | | 2     | RPM Sensor    | |
+|       | +-------+---------------+ |
+|       | | 3     | ESC Telemetry | |
+|       | +-------+---------------+ |
+|       | | 4     | Dynamic FFT   | |
+|       | +-------+---------------+ |
+|       |                           |
++-------+---------------------------+
+
+
+
+
+.. _INS_NOTCH_OPTS:
+
+INS\_NOTCH\_OPTS: Harmonic Notch Filter options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
+
+
++-------------------------------+
+| Bitmask                       |
++===============================+
+| +-----+---------------------+ |
+| | Bit | Meaning             | |
+| +=====+=====================+ |
+| | 0   | Double notch        | |
+| +-----+---------------------+ |
+| | 1   | Dynamic harmonic    | |
+| +-----+---------------------+ |
+| | 2   | Update at loop rate | |
+| +-----+---------------------+ |
+|                               |
++-------------------------------+
 
 
 
@@ -29196,7 +29339,7 @@ Controls what types of Buzzer will be enabled
 | +-----+-----------------+ |
 | | 1   | DShot           | |
 | +-----+-----------------+ |
-| | 2   | UAVCAN          | |
+| | 2   | DroneCAN        | |
 | +-----+-----------------+ |
 |                           |
 +---------------------------+
@@ -29342,7 +29485,7 @@ Controls what types of LEDs will be enabled
 | +-----+---------------------+ |
 | | 4   | Oreo LED            | |
 | +-----+---------------------+ |
-| | 5   | UAVCAN              | |
+| | 5   | DroneCAN            | |
 | +-----+---------------------+ |
 | | 6   | NCP5623 External    | |
 | +-----+---------------------+ |
@@ -29850,6 +29993,24 @@ Set level at which RESTVOLT item will flash
 
 
 
+.. _OSD_W_VERT_ACC:
+
+OSD\_W\_VERT\_ACC: Underspeed warn speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Set speed under which ASPDx items will flash
+
+
++----------+-------------------+
+| Range    | Units             |
++==========+===================+
+| 0 - 1000 | meters per second |
++----------+-------------------+
+
+
+
+
 .. _OSD_W_ASPD_LOW:
 
 OSD\_W\_ASPD\_LOW: Underspeed warn speed
@@ -29882,6 +30043,31 @@ Set speed above which ASPDx items will flash
 +==========+===================+
 | 0 - 1000 | meters per second |
 +----------+-------------------+
+
+
+
+
+.. _OSD_EFF_UNIT:
+
+OSD\_EFF\_UNIT: Base unit for efficiency values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Base unit to be used for displaying distance and vertical speed efficiency values
+
+
++---------------------+
+| Values              |
++=====================+
+| +-------+---------+ |
+| | Value | Meaning | |
+| +=======+=========+ |
+| | 0     | mAh     | |
+| +-------+---------+ |
+| | 1     | Wh      | |
+| +-------+---------+ |
+|                     |
++---------------------+
 
 
 
@@ -33912,6 +34098,250 @@ Vertical position on screen
 
 
 
+.. _OSD1_ACC_LONG_EN:
+
+OSD1\_ACC\_LONG\_EN: ACC\_LONG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s longitudinal acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_ACC_LONG_X:
+
+OSD1\_ACC\_LONG\_X: ACC\_LONG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_ACC_LONG_Y:
+
+OSD1\_ACC\_LONG\_Y: ACC\_LONG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_ACC_LAT_EN:
+
+OSD1\_ACC\_LAT\_EN: ACC\_LAT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s lateral acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_ACC_LAT_X:
+
+OSD1\_ACC\_LAT\_X: ACC\_LAT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_ACC_LAT_Y:
+
+OSD1\_ACC\_LAT\_Y: ACC\_LAT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_ACC_VERT_EN:
+
+OSD1\_ACC\_VERT\_EN: ACC\_VERT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s vertical acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_ACC_VERT_X:
+
+OSD1\_ACC\_VERT\_X: ACC\_VERT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_ACC_VERT_Y:
+
+OSD1\_ACC\_VERT\_Y: ACC\_VERT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_AUTO_FLP_EN:
+
+OSD1\_AUTO\_FLP\_EN: AUTO\_FLAPS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the requested auto flaps position
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_AUTO_FLP_X:
+
+OSD1\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_AUTO_FLP_Y:
+
+OSD1\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -37870,6 +38300,250 @@ Horizontal position on screen
 
 OSD2\_ASPD\_DEM\_Y: ASPD\_DEM\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_ACC_LONG_EN:
+
+OSD2\_ACC\_LONG\_EN: ACC\_LONG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s longitudinal acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_ACC_LONG_X:
+
+OSD2\_ACC\_LONG\_X: ACC\_LONG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_ACC_LONG_Y:
+
+OSD2\_ACC\_LONG\_Y: ACC\_LONG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_ACC_LAT_EN:
+
+OSD2\_ACC\_LAT\_EN: ACC\_LAT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s lateral acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_ACC_LAT_X:
+
+OSD2\_ACC\_LAT\_X: ACC\_LAT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_ACC_LAT_Y:
+
+OSD2\_ACC\_LAT\_Y: ACC\_LAT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_ACC_VERT_EN:
+
+OSD2\_ACC\_VERT\_EN: ACC\_VERT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s vertical acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_ACC_VERT_X:
+
+OSD2\_ACC\_VERT\_X: ACC\_VERT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_ACC_VERT_Y:
+
+OSD2\_ACC\_VERT\_Y: ACC\_VERT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_AUTO_FLP_EN:
+
+OSD2\_AUTO\_FLP\_EN: AUTO\_FLAPS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the requested auto flaps position
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_AUTO_FLP_X:
+
+OSD2\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_AUTO_FLP_Y:
+
+OSD2\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -41856,6 +42530,250 @@ Vertical position on screen
 
 
 
+.. _OSD3_ACC_LONG_EN:
+
+OSD3\_ACC\_LONG\_EN: ACC\_LONG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s longitudinal acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_ACC_LONG_X:
+
+OSD3\_ACC\_LONG\_X: ACC\_LONG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_ACC_LONG_Y:
+
+OSD3\_ACC\_LONG\_Y: ACC\_LONG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_ACC_LAT_EN:
+
+OSD3\_ACC\_LAT\_EN: ACC\_LAT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s lateral acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_ACC_LAT_X:
+
+OSD3\_ACC\_LAT\_X: ACC\_LAT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_ACC_LAT_Y:
+
+OSD3\_ACC\_LAT\_Y: ACC\_LAT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_ACC_VERT_EN:
+
+OSD3\_ACC\_VERT\_EN: ACC\_VERT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s vertical acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_ACC_VERT_X:
+
+OSD3\_ACC\_VERT\_X: ACC\_VERT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_ACC_VERT_Y:
+
+OSD3\_ACC\_VERT\_Y: ACC\_VERT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_AUTO_FLP_EN:
+
+OSD3\_AUTO\_FLP\_EN: AUTO\_FLAPS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the requested auto flaps position
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_AUTO_FLP_X:
+
+OSD3\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_AUTO_FLP_Y:
+
+OSD3\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -45828,6 +46746,250 @@ Vertical position on screen
 
 
 
+.. _OSD4_ACC_LONG_EN:
+
+OSD4\_ACC\_LONG\_EN: ACC\_LONG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s longitudinal acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_ACC_LONG_X:
+
+OSD4\_ACC\_LONG\_X: ACC\_LONG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_ACC_LONG_Y:
+
+OSD4\_ACC\_LONG\_Y: ACC\_LONG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_ACC_LAT_EN:
+
+OSD4\_ACC\_LAT\_EN: ACC\_LAT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s lateral acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_ACC_LAT_X:
+
+OSD4\_ACC\_LAT\_X: ACC\_LAT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_ACC_LAT_Y:
+
+OSD4\_ACC\_LAT\_Y: ACC\_LAT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_ACC_VERT_EN:
+
+OSD4\_ACC\_VERT\_EN: ACC\_VERT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s vertical acceleration in g
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_ACC_VERT_X:
+
+OSD4\_ACC\_VERT\_X: ACC\_VERT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_ACC_VERT_Y:
+
+OSD4\_ACC\_VERT\_Y: ACC\_VERT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_AUTO_FLP_EN:
+
+OSD4\_AUTO\_FLP\_EN: AUTO\_FLAPS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the requested auto flaps position
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_AUTO_FLP_X:
+
+OSD4\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_AUTO_FLP_Y:
+
+OSD4\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -48710,7 +49872,7 @@ Transition time in milliseconds after minimum airspeed is reached
 +-----------+--------------+
 | Range     | Units        |
 +===========+==============+
-| 0 - 30000 | milliseconds |
+| 1 - 30000 | milliseconds |
 +-----------+--------------+
 
 
@@ -52045,6 +53207,60 @@ Throttle used during FW\-\>VTOL transition\, \-1 uses hover throttle
 
 
 
+.. _Q_TAILSIT_VT_R_P:
+
+Q\_TAILSIT\_VT\_R\_P: Tailsitter VTOL control surface roll gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Scale from PID output to control surface\, for use where a single axis is actuated by both motors and Tilt\/control surface on a copter style tailsitter\, increase to favor control surfaces and reduce motor output by reducing gains
+
+
++-------+
+| Range |
++=======+
+| 0 - 2 |
++-------+
+
+
+
+
+.. _Q_TAILSIT_VT_P_P:
+
+Q\_TAILSIT\_VT\_P\_P: Tailsitter VTOL control surface pitch gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Scale from PID output to control surface\, for use where a single axis is actuated by both motors and Tilt\/control surface on a copter style tailsitter\, increase to favor control surfaces and reduce motor output by reducing gains
+
+
++-------+
+| Range |
++=======+
+| 0 - 2 |
++-------+
+
+
+
+
+.. _Q_TAILSIT_VT_Y_P:
+
+Q\_TAILSIT\_VT\_Y\_P: Tailsitter VTOL control surface yaw gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Scale from PID output to control surface\, for use where a single axis is actuated by both motors and Tilt\/control surface on a copter style tailsitter\, increase to favor control surfaces and reduce motor output by reducing gains
+
+
++-------+
+| Range |
++=======+
+| 0 - 2 |
++-------+
+
+
+
+
 
 .. _parameters_Q_TILT_:
 
@@ -52544,6 +53760,8 @@ RC input options
 | | 9   | Suppress CRSF mode/rate message for ELRS systems                   | |
 | +-----+--------------------------------------------------------------------+ |
 | | 10  | Enable multiple receiver support                                   | |
+| +-----+--------------------------------------------------------------------+ |
+| | 11  | CRSF RSSI shows Link Quality                                       | |
 | +-----+--------------------------------------------------------------------+ |
 |                                                                              |
 +------------------------------------------------------------------------------+
@@ -57684,7 +58902,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -57972,7 +59190,7 @@ RNGFND1\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -58310,7 +59528,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -58598,7 +59816,7 @@ RNGFND2\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -58936,7 +60154,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -59224,7 +60442,7 @@ RNGFND3\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -59562,7 +60780,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -59850,7 +61068,7 @@ RNGFND4\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -60188,7 +61406,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -60476,7 +61694,7 @@ RNGFND5\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -60814,7 +62032,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -61102,7 +62320,7 @@ RNGFND6\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -61440,7 +62658,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -61728,7 +62946,7 @@ RNGFND7\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -62066,7 +63284,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -62354,7 +63572,7 @@ RNGFND8\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -62692,7 +63910,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -62980,7 +64198,7 @@ RNGFND9\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -63318,7 +64536,7 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 23    | BlueRoboticsPing       | |
 | +-------+------------------------+ |
-| | 24    | UAVCAN                 | |
+| | 24    | DroneCAN               | |
 | +-------+------------------------+ |
 | | 25    | BenewakeTFminiPlus-I2C | |
 | +-------+------------------------+ |
@@ -63606,7 +64824,7 @@ RNGFNDA\_ADDR: Bus address of sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the bus address of the sensor\, where applicable\. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses\.
+This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
 +-----------+---------+
@@ -65764,6 +66982,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
 | +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
+| +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
 
@@ -65810,6 +67030,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | | 10  | Don't forward mavlink to/from | |
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
+| +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
 | +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
@@ -65858,6 +67080,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
 | +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
+| +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
 
@@ -65904,6 +67128,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | | 10  | Don't forward mavlink to/from | |
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
+| +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
 | +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
@@ -65952,6 +67178,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
 | +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
+| +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
 
@@ -65998,6 +67226,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | | 10  | Don't forward mavlink to/from | |
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
+| +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
 | +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
@@ -66292,6 +67522,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
 | +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
+| +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
 
@@ -66490,6 +67722,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
 | +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
+| +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
 
@@ -66687,6 +67921,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | | 10  | Don't forward mavlink to/from | |
 | +-----+-------------------------------+ |
 | | 11  | DisableFIFO                   | |
+| +-----+-------------------------------+ |
+| | 12  | Ignore Streamrate             | |
 | +-----+-------------------------------+ |
 |                                         |
 +-----------------------------------------+
@@ -73045,6 +74281,63 @@ This parameter sets the bank angle to use when thermalling\. Typically 30 \- 45 
 +=========+=========+
 | 20 - 50 | degrees |
 +---------+---------+
+
+
+
+
+.. _SOAR_THML_ARSPD:
+
+SOAR\_THML\_ARSPD: Specific setting for airspeed when thermalling\.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+If non\-zero this airspeed will be used when thermalling\.
+
+
++--------+
+| Range  |
++========+
+| 5 - 50 |
++--------+
+
+
+
+
+.. _SOAR_CRSE_ARSPD:
+
+SOAR\_CRSE\_ARSPD: Specific setting for airspeed when cruising\.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+If non\-zero this airspeed will be used when cruising\. If set to \-1\, airspeed will be selected based on speed\-to\-fly theory\.
+
+
++--------+
+| Range  |
++========+
+| 5 - 50 |
++--------+
+
+
+
+
+.. _SOAR_THML_FLAP:
+
+SOAR\_THML\_FLAP: Flap percent to be used during thermalling flight\.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This sets the flap when in LOITER with soaring active\. Overrides the usual auto flap behaviour\.
+
+
++---------+
+| Range   |
++=========+
+| 0 - 100 |
++---------+
 
 
 

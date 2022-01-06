@@ -646,7 +646,7 @@
           <value code="5">I2C-MS5525 (0x77)</value>
           <value code="6">I2C-SDP3X</value>
           <value code="7">I2C-DLVR-5in</value>
-          <value code="8">UAVCAN</value>
+          <value code="8">DroneCAN</value>
           <value code="9">I2C-DLVR-10in</value>
           <value code="10">I2C-DLVR-20in</value>
           <value code="11">I2C-DLVR-30in</value>
@@ -720,7 +720,7 @@
           <value code="5">I2C-MS5525 (0x77)</value>
           <value code="6">I2C-SDP3X</value>
           <value code="7">I2C-DLVR-5in</value>
-          <value code="8">UAVCAN</value>
+          <value code="8">DroneCAN</value>
           <value code="9">I2C-DLVR-10in</value>
           <value code="10">I2C-DLVR-20in</value>
           <value code="11">I2C-DLVR-30in</value>
@@ -1190,7 +1190,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -1214,7 +1214,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT2_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT2_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT2_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -1279,7 +1279,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT2_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT2_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1348,7 +1348,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -1372,7 +1372,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT3_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT3_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT3_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -1437,7 +1437,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT3_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT3_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1506,7 +1506,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -1530,7 +1530,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT4_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT4_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT4_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -1595,7 +1595,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT4_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT4_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1664,7 +1664,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -1688,7 +1688,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT5_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT5_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT5_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -1753,7 +1753,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT5_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT5_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1822,7 +1822,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -1846,7 +1846,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT6_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT6_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT6_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -1911,7 +1911,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT6_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT6_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1980,7 +1980,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -2004,7 +2004,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT7_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT7_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT7_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -2069,7 +2069,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT7_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT7_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2138,7 +2138,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -2162,7 +2162,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT8_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT8_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT8_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -2227,7 +2227,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT8_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT8_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2296,7 +2296,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -2320,7 +2320,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT9_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT9_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT9_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -2385,7 +2385,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT9_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT9_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2454,7 +2454,7 @@
           <value code="5">Solo</value>
           <value code="6">Bebop</value>
           <value code="7">SMBus-Generic</value>
-          <value code="8">UAVCAN-BatteryInfo</value>
+          <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
           <value code="10">SumOfFollowing</value>
           <value code="11">FuelFlow</value>
@@ -2478,7 +2478,7 @@
         <field name="UnitText">milliampere hour</field>
         <field name="Increment">50</field>
       </param>
-      <param humanName="Battery serial number" name="BATT_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With UAVCAN it is the battery_id." user="Advanced">
+      <param humanName="Battery serial number" name="BATT_SERIAL_NUM" documentation="Battery serial number, automatically filled in for SMBus batteries, otherwise will be -1. With DroneCan it is the battery_id." user="Advanced">
 </param>
       <param humanName="Low voltage timeout" name="BATT_LOW_TIMER" documentation="This is the timeout in seconds before a low voltage event will be triggered. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs. A value of zero disables low voltage errors." user="Advanced">
         <field name="Units">s</field>
@@ -2543,7 +2543,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore UAVCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2969,7 +2969,7 @@
         <values>
           <value code="0">Do Nothing</value>
           <value code="4">RTL</value>
-          <value code="5">Save Trim</value>
+          <value code="5">Save Trim (4.1 and lower)</value>
           <value code="7">Save WP</value>
           <value code="9">Camera Trigger</value>
           <value code="11">Fence</value>
@@ -2984,6 +2984,7 @@
           <value code="35">Relay3 On/Off</value>
           <value code="36">Relay4 On/Off</value>
           <value code="40">Proximity Avoidance</value>
+          <value code="41">ArmDisarm (4.1 and lower)</value>
           <value code="42">SmartRTL</value>
           <value code="46">RC Override Enable</value>
           <value code="50">LearnCruise</value>
@@ -3014,12 +3015,14 @@
           <value code="102">Camera Mode Toggle</value>
           <value code="105">GPS Disable Yaw</value>
           <value code="106">Disable Airspeed Use</value>
-          <value code="153">ArmDisarm</value>
+          <value code="153">ArmDisarm (4.2 and higher)</value>
+          <value code="155">set steering trim to current servo and RC</value>
+          <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -3034,7 +3037,7 @@
         <values>
           <value code="0">Do Nothing</value>
           <value code="4">RTL</value>
-          <value code="5">Save Trim</value>
+          <value code="5">Save Trim (4.1 and lower)</value>
           <value code="7">Save WP</value>
           <value code="9">Camera Trigger</value>
           <value code="11">Fence</value>
@@ -3049,6 +3052,7 @@
           <value code="35">Relay3 On/Off</value>
           <value code="36">Relay4 On/Off</value>
           <value code="40">Proximity Avoidance</value>
+          <value code="41">ArmDisarm (4.1 and lower)</value>
           <value code="42">SmartRTL</value>
           <value code="46">RC Override Enable</value>
           <value code="50">LearnCruise</value>
@@ -3079,12 +3083,14 @@
           <value code="102">Camera Mode Toggle</value>
           <value code="105">GPS Disable Yaw</value>
           <value code="106">Disable Airspeed Use</value>
-          <value code="153">ArmDisarm</value>
+          <value code="153">ArmDisarm (4.2 and higher)</value>
+          <value code="155">set steering trim to current servo and RC</value>
+          <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -3099,7 +3105,7 @@
         <values>
           <value code="0">Do Nothing</value>
           <value code="4">RTL</value>
-          <value code="5">Save Trim</value>
+          <value code="5">Save Trim (4.1 and lower)</value>
           <value code="7">Save WP</value>
           <value code="9">Camera Trigger</value>
           <value code="11">Fence</value>
@@ -3114,6 +3120,7 @@
           <value code="35">Relay3 On/Off</value>
           <value code="36">Relay4 On/Off</value>
           <value code="40">Proximity Avoidance</value>
+          <value code="41">ArmDisarm (4.1 and lower)</value>
           <value code="42">SmartRTL</value>
           <value code="46">RC Override Enable</value>
           <value code="50">LearnCruise</value>
@@ -3144,12 +3151,14 @@
           <value code="102">Camera Mode Toggle</value>
           <value code="105">GPS Disable Yaw</value>
           <value code="106">Disable Airspeed Use</value>
-          <value code="153">ArmDisarm</value>
+          <value code="153">ArmDisarm (4.2 and higher)</value>
+          <value code="155">set steering trim to current servo and RC</value>
+          <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -3164,7 +3173,7 @@
         <values>
           <value code="0">Do Nothing</value>
           <value code="4">RTL</value>
-          <value code="5">Save Trim</value>
+          <value code="5">Save Trim (4.1 and lower)</value>
           <value code="7">Save WP</value>
           <value code="9">Camera Trigger</value>
           <value code="11">Fence</value>
@@ -3179,6 +3188,7 @@
           <value code="35">Relay3 On/Off</value>
           <value code="36">Relay4 On/Off</value>
           <value code="40">Proximity Avoidance</value>
+          <value code="41">ArmDisarm (4.1 and lower)</value>
           <value code="42">SmartRTL</value>
           <value code="46">RC Override Enable</value>
           <value code="50">LearnCruise</value>
@@ -3209,12 +3219,14 @@
           <value code="102">Camera Mode Toggle</value>
           <value code="105">GPS Disable Yaw</value>
           <value code="106">Disable Airspeed Use</value>
-          <value code="153">ArmDisarm</value>
+          <value code="153">ArmDisarm (4.2 and higher)</value>
+          <value code="155">set steering trim to current servo and RC</value>
+          <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -3340,14 +3352,13 @@
       <param humanName="Enable use of specific protocol over virtual driver" name="CAN_D1_PROTOCOL" documentation="Enabling this option starts selected protocol that will use this virtual driver" user="Advanced">
         <values>
           <value code="0">Disabled</value>
-          <value code="1">UAVCAN</value>
+          <value code="1">DroneCAN</value>
           <value code="3">ToshibaCAN</value>
           <value code="4">PiccoloCAN</value>
           <value code="5">CANTester</value>
           <value code="6">EFI_NWPMU</value>
           <value code="7">USD1</value>
           <value code="8">KDECAN</value>
-          <value code="9">PacketDigital</value>
           <value code="10">Scripting</value>
           <value code="11">Benewake</value>
         </values>
@@ -3422,14 +3433,13 @@
       <param humanName="Enable use of specific protocol over virtual driver" name="CAN_D2_PROTOCOL" documentation="Enabling this option starts selected protocol that will use this virtual driver" user="Advanced">
         <values>
           <value code="0">Disabled</value>
-          <value code="1">UAVCAN</value>
+          <value code="1">DroneCAN</value>
           <value code="3">ToshibaCAN</value>
           <value code="4">PiccoloCAN</value>
           <value code="5">CANTester</value>
           <value code="6">EFI_NWPMU</value>
           <value code="7">USD1</value>
           <value code="8">KDECAN</value>
-          <value code="9">PacketDigital</value>
           <value code="10">Scripting</value>
           <value code="11">Benewake</value>
         </values>
@@ -3504,14 +3514,13 @@
       <param humanName="Enable use of specific protocol over virtual driver" name="CAN_D3_PROTOCOL" documentation="Enabling this option starts selected protocol that will use this virtual driver" user="Advanced">
         <values>
           <value code="0">Disabled</value>
-          <value code="1">UAVCAN</value>
+          <value code="1">DroneCAN</value>
           <value code="3">ToshibaCAN</value>
           <value code="4">PiccoloCAN</value>
           <value code="5">CANTester</value>
           <value code="6">EFI_NWPMU</value>
           <value code="7">USD1</value>
           <value code="8">KDECAN</value>
-          <value code="9">PacketDigital</value>
           <value code="10">Scripting</value>
           <value code="11">Benewake</value>
         </values>
@@ -4056,7 +4065,7 @@
         <field name="Increment">1</field>
       </param>
       <param humanName="Compass disable driver type mask" name="COMPASS_TYPEMASK" documentation="This is a bitmask of driver types to disable. If a driver type is set in this mask then that driver will not try to find a sensor at startup" user="Advanced">
-        <field name="Bitmask">0:HMC5883,1:LSM303D,2:AK8963,3:BMM150,4:LSM9DS1,5:LIS3MDL,6:AK09916,7:IST8310,8:ICM20948,9:MMC3416,11:UAVCAN,12:QMC5883,14:MAG3110,15:IST8308,16:RM3100,17:MSP,18:ExternalAHRS</field>
+        <field name="Bitmask">0:HMC5883,1:LSM303D,2:AK8963,3:BMM150,4:LSM9DS1,5:LIS3MDL,6:AK09916,7:IST8310,8:ICM20948,9:MMC3416,11:DroneCAN,12:QMC5883,14:MAG3110,15:IST8308,16:RM3100,17:MSP,18:ExternalAHRS</field>
       </param>
       <param humanName="Range in which sample is accepted" name="COMPASS_FLTR_RNG" documentation="This sets the range around the average value that new samples must be within to be accepted. This can help reduce the impact of noise on sensors that are on long I2C cables. The value is a percentage from the average value. A value of zero disables this filter.">
         <field name="Units">%</field>
@@ -4230,7 +4239,7 @@
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
       </param>
-      <param humanName="GPS velocity innovation gate size" name="EK2_VEL_I_GATE" documentation="This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check. Decreasing it makes it more likely that good measurements willbe rejected. Increasing it makes it more likely that bad measurements will be accepted." user="Advanced">
+      <param humanName="GPS velocity innovation gate size" name="EK2_VEL_I_GATE" documentation="This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check. Decreasing it makes it more likely that good measurements will be rejected. Increasing it makes it more likely that bad measurements will be accepted." user="Advanced">
         <field name="Range">100 1000</field>
         <field name="Increment">25</field>
       </param>
@@ -4511,7 +4520,7 @@
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
       </param>
-      <param humanName="GPS velocity innovation gate size" name="EK3_VEL_I_GATE" documentation="This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check. Decreasing it makes it more likely that good measurements willbe rejected. Increasing it makes it more likely that bad measurements will be accepted." user="Advanced">
+      <param humanName="GPS velocity innovation gate size" name="EK3_VEL_I_GATE" documentation="This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check. Decreasing it makes it more likely that good measurements will be rejected. Increasing it makes it more likely that bad measurements will be accepted." user="Advanced">
         <field name="Range">100 1000</field>
         <field name="Increment">25</field>
       </param>
@@ -5252,7 +5261,7 @@
           <value code="6">SiRF</value>
           <value code="7">HIL</value>
           <value code="8">SwiftNav</value>
-          <value code="9">UAVCAN</value>
+          <value code="9">DroneCAN</value>
           <value code="10">SBF</value>
           <value code="11">GSOF</value>
           <value code="13">ERB</value>
@@ -5264,8 +5273,8 @@
           <value code="19">MSP</value>
           <value code="20">AllyStar</value>
           <value code="21">ExternalAHRS</value>
-          <value code="22">UAVCAN-MovingBaseline-Base</value>
-          <value code="23">UAVCAN-MovingBaseline-Rover</value>
+          <value code="22">DroneCAN-MovingBaseline-Base</value>
+          <value code="23">DroneCAN-MovingBaseline-Rover</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -5278,7 +5287,7 @@
           <value code="6">SiRF</value>
           <value code="7">HIL</value>
           <value code="8">SwiftNav</value>
-          <value code="9">UAVCAN</value>
+          <value code="9">DroneCAN</value>
           <value code="10">SBF</value>
           <value code="11">GSOF</value>
           <value code="13">ERB</value>
@@ -5290,8 +5299,8 @@
           <value code="19">MSP</value>
           <value code="20">AllyStar</value>
           <value code="21">ExternalAHRS</value>
-          <value code="22">UAVCAN-MovingBaseline-Base</value>
-          <value code="23">UAVCAN-MovingBaseline-Rover</value>
+          <value code="22">DroneCAN-MovingBaseline-Base</value>
+          <value code="23">DroneCAN-MovingBaseline-Rover</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -5375,7 +5384,7 @@
         <values>
           <value code="0">Disables automatic configuration</value>
           <value code="1">Enable automatic configuration for Serial GPSes only</value>
-          <value code="2">Enable automatic configuration for UAVCAN as well</value>
+          <value code="2">Enable automatic configuration for DroneCAN as well</value>
         </values>
       </param>
       <param humanName="GPS update rate in milliseconds" name="GPS_RATE_MS" documentation="Controls how often the GPS should provide a position update. Lowering below 5Hz(default) is not allowed. Raising the rate above 5Hz usually provides little benefit and for some GPS (eg Ublox M9N) can severely impact performance." user="Advanced">
@@ -5480,9 +5489,9 @@
       <param humanName="GPS Node ID 2" name="GPS_CAN_NODEID2" documentation="GPS Node id for discovered second." user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="First UAVCAN GPS NODE ID" name="GPS1_CAN_OVRIDE" documentation="GPS Node id for first GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
+      <param humanName="First DroneCAN GPS NODE ID" name="GPS1_CAN_OVRIDE" documentation="GPS Node id for first GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
 </param>
-      <param humanName="Second UAVCAN GPS NODE ID" name="GPS2_CAN_OVRIDE" documentation="GPS Node id for second GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
+      <param humanName="Second DroneCAN GPS NODE ID" name="GPS2_CAN_OVRIDE" documentation="GPS Node id for second GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
 </param>
     </parameters>
     <parameters name="GPS_MB1_">
@@ -5573,7 +5582,7 @@
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
       </param>
-      <param humanName="EPM UAVCAN Hardpoint ID" name="GRIP_UAVCAN_ID" documentation="Refer to https://docs.zubax.com/opengrab_epm_v3#UAVCAN_interface" user="Standard">
+      <param humanName="EPM UAVCAN Hardpoint ID" name="GRIP_CAN_ID" documentation="Refer to https://docs.zubax.com/opengrab_epm_v3#UAVCAN_interface" user="Standard">
         <field name="Range">0 255</field>
       </param>
     </parameters>
@@ -5951,26 +5960,48 @@
       </param>
     </parameters>
     <parameters name="INS_NOTCH_">
-      <param humanName="Enable" name="INS_NOTCH_ENABLE" documentation="Enable notch filter" user="Advanced">
+      <param humanName="Harmonic Notch Filter enable" name="INS_NOTCH_ENABLE" documentation="Harmonic Notch Filter enable" user="Advanced">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="Attenuation" name="INS_NOTCH_ATT" documentation="Notch attenuation in dB" user="Advanced">
-        <field name="Range">5 30</field>
+      <param humanName="Harmonic Notch Filter base frequency" name="INS_NOTCH_FREQ" documentation="Harmonic Notch Filter base center frequency in Hz. This should be set at most half the backend gyro rate (which is typically 1Khz). For helicopters using RPM sensor to dynamically set the notch frequency, use this parameter to provide a lower limit to the dynamic notch filter.  Recommend setting it to half the operating rotor speed in Hz." user="Advanced">
+        <field name="Range">10 495</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+      </param>
+      <param humanName="Harmonic Notch Filter bandwidth" name="INS_NOTCH_BW" documentation="Harmonic Notch Filter bandwidth in Hz. This is typically set to half the base frequency. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics." user="Advanced">
+        <field name="Range">5 250</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+      </param>
+      <param humanName="Harmonic Notch Filter attenuation" name="INS_NOTCH_ATT" documentation="Harmonic Notch Filter attenuation in dB. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise." user="Advanced">
+        <field name="Range">5 50</field>
         <field name="Units">dB</field>
         <field name="UnitText">decibel</field>
       </param>
-      <param humanName="Frequency" name="INS_NOTCH_FREQ" documentation="Notch center frequency in Hz" user="Advanced">
-        <field name="Range">10 400</field>
-        <field name="Units">Hz</field>
-        <field name="UnitText">hertz</field>
+      <param humanName="Harmonic Notch Filter harmonics" name="INS_NOTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time." user="Advanced">
+        <field name="Bitmask">0:1st harmonic,1:2nd harmonic,2:3rd harmonic,3:4th hamronic,4:5th harmonic,5:6th harmonic,6:7th harmonic,7:8th harmonic</field>
+        <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Bandwidth" name="INS_NOTCH_BW" documentation="Notch bandwidth in Hz" user="Advanced">
-        <field name="Range">5 100</field>
-        <field name="Units">Hz</field>
-        <field name="UnitText">hertz</field>
+      <param humanName="Harmonic Notch Filter reference value" name="INS_NOTCH_REF" documentation="A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter.  For throttle-based scaling, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter. For RPM and ESC telemetry based tracking, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter.  This reference value may also be used to scale the sensor data, if required.  For example, rpm sensor data is required to measure heli motor RPM. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM." user="Advanced">
+        <field name="Range">0.0 1.0</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Harmonic Notch Filter dynamic frequency tracking mode" name="INS_NOTCH_MODE" documentation="Harmonic Notch Filter dynamic frequency tracking mode. Dynamic updates can be throttle, RPM sensor, ESC telemetry or dynamic FFT based. Throttle-based updates should only be used with multicopters." user="Advanced">
+        <field name="Range">0 4</field>
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Throttle</value>
+          <value code="2">RPM Sensor</value>
+          <value code="3">ESC Telemetry</value>
+          <value code="4">Dynamic FFT</value>
+        </values>
+      </param>
+      <param humanName="Harmonic Notch Filter options" name="INS_NOTCH_OPTS" documentation="Harmonic Notch Filter options. Double-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz." user="Advanced">
+        <field name="Bitmask">0:Double notch,1:Dynamic harmonic,2:Update at loop rate</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="INS_TCAL1_">
@@ -6715,7 +6746,7 @@
         </values>
       </param>
       <param humanName="Buzzer Driver Types" name="NTF_BUZZ_TYPES" documentation="Controls what types of Buzzer will be enabled" user="Advanced">
-        <field name="Bitmask">0:Built-in buzzer, 1:DShot, 2:UAVCAN</field>
+        <field name="Bitmask">0:Built-in buzzer, 1:DShot, 2:DroneCAN</field>
       </param>
       <param humanName="Specifies colour source for the RGBLed" name="NTF_LED_OVERRIDE" documentation="Specifies the source for the colours and brightness for the LED.  OutbackChallenge conforms to the MedicalExpress (https://uavchallenge.org/medical-express/) rules, essentially &quot;Green&quot; is disarmed (safe-to-approach), &quot;Red&quot; is armed (not safe-to-approach). Traffic light is a simplified color set, red when armed, yellow when the safety switch is not surpressing outputs (but disarmed), and green when outputs are surpressed and disarmed, the LED will blink faster if disarmed and failing arming checks." user="Advanced">
         <values>
@@ -6746,7 +6777,7 @@
         </values>
       </param>
       <param humanName="LED Driver Types" name="NTF_LED_TYPES" documentation="Controls what types of LEDs will be enabled" user="Advanced">
-        <field name="Bitmask">0:Built-in LED, 1:Internal ToshibaLED, 2:External ToshibaLED, 3:External PCA9685, 4:Oreo LED, 5:UAVCAN, 6:NCP5623 External, 7:NCP5623 Internal, 8:NeoPixel, 9:ProfiLED, 10:Scripting, 11:DShot, 12:ProfiLED_SPI</field>
+        <field name="Bitmask">0:Built-in LED, 1:Internal ToshibaLED, 2:External ToshibaLED, 3:External PCA9685, 4:Oreo LED, 5:DroneCAN, 6:NCP5623 External, 7:NCP5623 Internal, 8:NeoPixel, 9:ProfiLED, 10:Scripting, 11:DShot, 12:ProfiLED_SPI</field>
       </param>
       <param humanName="Buzzer-on pin logic level" name="NTF_BUZZ_ON_LVL" documentation="Specifies pin level that indicates buzzer should play" user="Advanced">
         <values>
@@ -6931,6 +6962,11 @@
       <param humanName="RESTVOLT warn level" name="OSD_W_RESTVOLT" documentation="Set level at which RESTVOLT item will flash" user="Standard">
         <field name="Range">0 100</field>
       </param>
+      <param humanName="Underspeed warn speed" name="OSD_W_VERT_ACC" documentation="Set speed under which ASPDx items will flash" user="Standard">
+        <field name="Range">0 1000</field>
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+      </param>
       <param humanName="Underspeed warn speed" name="OSD_W_ASPD_LOW" documentation="Set speed under which ASPDx items will flash" user="Standard">
         <field name="Range">0 1000</field>
         <field name="Units">m/s</field>
@@ -6940,6 +6976,12 @@
         <field name="Range">0 1000</field>
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
+      </param>
+      <param humanName="Base unit for efficiency values" name="OSD_EFF_UNIT" documentation="Base unit to be used for displaying distance and vertical speed efficiency values" user="Standard">
+        <values>
+          <value code="0">mAh</value>
+          <value code="1">Wh</value>
+        </values>
       </param>
       <param humanName="BLHRPM warn level" name="OSD_W_BLHRPM" documentation="Set level above which BLHRPM item will flash" user="Standard">
         <field name="Range">0 500</field>
@@ -7738,6 +7780,54 @@
       <param humanName="ASPD_DEM_Y" name="OSD1_ASPD_DEM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="ACC_LONG_EN" name="OSD1_ACC_LONG_EN" documentation="Displays the aircraft's longitudinal acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LONG_X" name="OSD1_ACC_LONG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LONG_Y" name="OSD1_ACC_LONG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_LAT_EN" name="OSD1_ACC_LAT_EN" documentation="Displays the aircraft's lateral acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LAT_X" name="OSD1_ACC_LAT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LAT_Y" name="OSD1_ACC_LAT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_VERT_EN" name="OSD1_ACC_VERT_EN" documentation="Displays the aircraft's vertical acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_VERT_X" name="OSD1_ACC_VERT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_VERT_Y" name="OSD1_ACC_VERT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AUTO_FLAPS_EN" name="OSD1_AUTO_FLP_EN" documentation="Displays the requested auto flaps position">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AUTO_FLAPS_X" name="OSD1_AUTO_FLP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AUTO_FLAPS_Y" name="OSD1_AUTO_FLP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -8518,6 +8608,54 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="ASPD_DEM_Y" name="OSD2_ASPD_DEM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_LONG_EN" name="OSD2_ACC_LONG_EN" documentation="Displays the aircraft's longitudinal acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LONG_X" name="OSD2_ACC_LONG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LONG_Y" name="OSD2_ACC_LONG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_LAT_EN" name="OSD2_ACC_LAT_EN" documentation="Displays the aircraft's lateral acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LAT_X" name="OSD2_ACC_LAT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LAT_Y" name="OSD2_ACC_LAT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_VERT_EN" name="OSD2_ACC_VERT_EN" documentation="Displays the aircraft's vertical acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_VERT_X" name="OSD2_ACC_VERT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_VERT_Y" name="OSD2_ACC_VERT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AUTO_FLAPS_EN" name="OSD2_AUTO_FLP_EN" documentation="Displays the requested auto flaps position">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AUTO_FLAPS_X" name="OSD2_AUTO_FLP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AUTO_FLAPS_Y" name="OSD2_AUTO_FLP_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -9302,6 +9440,54 @@
       <param humanName="ASPD_DEM_Y" name="OSD3_ASPD_DEM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="ACC_LONG_EN" name="OSD3_ACC_LONG_EN" documentation="Displays the aircraft's longitudinal acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LONG_X" name="OSD3_ACC_LONG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LONG_Y" name="OSD3_ACC_LONG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_LAT_EN" name="OSD3_ACC_LAT_EN" documentation="Displays the aircraft's lateral acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LAT_X" name="OSD3_ACC_LAT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LAT_Y" name="OSD3_ACC_LAT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_VERT_EN" name="OSD3_ACC_VERT_EN" documentation="Displays the aircraft's vertical acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_VERT_X" name="OSD3_ACC_VERT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_VERT_Y" name="OSD3_ACC_VERT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AUTO_FLAPS_EN" name="OSD3_AUTO_FLP_EN" documentation="Displays the requested auto flaps position">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AUTO_FLAPS_X" name="OSD3_AUTO_FLP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AUTO_FLAPS_Y" name="OSD3_AUTO_FLP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10084,6 +10270,54 @@
       <param humanName="ASPD_DEM_Y" name="OSD4_ASPD_DEM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="ACC_LONG_EN" name="OSD4_ACC_LONG_EN" documentation="Displays the aircraft's longitudinal acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LONG_X" name="OSD4_ACC_LONG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LONG_Y" name="OSD4_ACC_LONG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_LAT_EN" name="OSD4_ACC_LAT_EN" documentation="Displays the aircraft's lateral acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LAT_X" name="OSD4_ACC_LAT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LAT_Y" name="OSD4_ACC_LAT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_VERT_EN" name="OSD4_ACC_VERT_EN" documentation="Displays the aircraft's vertical acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_VERT_X" name="OSD4_ACC_VERT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_VERT_Y" name="OSD4_ACC_VERT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AUTO_FLAPS_EN" name="OSD4_AUTO_FLP_EN" documentation="Displays the requested auto flaps position">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AUTO_FLAPS_X" name="OSD4_AUTO_FLP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AUTO_FLAPS_Y" name="OSD4_AUTO_FLP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD5_">
       <param humanName="Enable screen" name="OSD5_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10752,7 +10986,7 @@
         <field name="UnitText">seconds</field>
       </param>
       <param humanName="RC options" name="RC_OPTIONS" documentation="RC input options" user="Advanced">
-        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support</field>
+        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:CRSF RSSI shows Link Quality</field>
       </param>
       <param humanName="RC protocols enabled" name="RC_PROTOCOLS" documentation="Bitmask of enabled RC protocols. Allows narrowing the protocol detection to only specific types of RC receivers which can avoid issues with incorrect detection. Set to 1 to enable all protocols." user="Advanced">
         <field name="Bitmask">0:All,1:PPM,2:IBUS,3:SBUS,4:SBUS_NI,5:DSM,6:SUMD,7:SRXL,8:SRXL2,9:CRSF,10:ST24,11:FPORT,12:FPORT2,13:FastSBUS</field>
@@ -10843,9 +11077,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -10942,9 +11176,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11041,9 +11275,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11140,9 +11374,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11239,9 +11473,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11338,9 +11572,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11437,9 +11671,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11536,9 +11770,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11635,9 +11869,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11734,9 +11968,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11833,9 +12067,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -11932,9 +12166,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -12031,9 +12265,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -12130,9 +12364,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -12229,9 +12463,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -12328,9 +12562,9 @@
           <value code="156">Torqeedo Clear Err</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
-          <value code="203">Walking Height</value>
           <value code="207">MainSail</value>
           <value code="208">Flap</value>
+          <value code="211">Walking Height</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -12553,7 +12787,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -12644,7 +12878,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND1_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND1_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -12734,7 +12968,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -12825,7 +13059,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND2_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND2_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -12915,7 +13149,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -13006,7 +13240,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND3_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND3_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -13096,7 +13330,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -13187,7 +13421,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND4_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND4_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -13277,7 +13511,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -13368,7 +13602,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND5_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND5_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -13458,7 +13692,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -13549,7 +13783,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND6_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND6_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -13639,7 +13873,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -13730,7 +13964,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND7_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND7_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -13820,7 +14054,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -13911,7 +14145,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND8_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND8_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -14001,7 +14235,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -14092,7 +14326,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFND9_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFND9_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -14182,7 +14416,7 @@
           <value code="21">LidarLightV3HP</value>
           <value code="22">PWM</value>
           <value code="23">BlueRoboticsPing</value>
-          <value code="24">UAVCAN</value>
+          <value code="24">DroneCAN</value>
           <value code="25">BenewakeTFminiPlus-I2C</value>
           <value code="26">LanbaoPSK-CM8JL65-CC5</value>
           <value code="27">BenewakeTF03</value>
@@ -14273,7 +14507,7 @@
         <field name="Range">5 127</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Bus address of sensor" name="RNGFNDA_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and UAVCAN sensors to allow for multiple sensors on different addresses." user="Standard">
+      <param humanName="Bus address of sensor" name="RNGFNDA_ADDR" documentation="This sets the bus address of the sensor, where applicable. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses." user="Standard">
         <field name="Range">0 127</field>
         <field name="Increment">1</field>
       </param>
@@ -14674,6 +14908,7 @@
         </values>
       </param>
       <param humanName="Telemetry 2 protocol selection" name="SERIAL2_PROTOCOL" documentation="Control what protocol to use on the Telem2 port. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -14715,7 +14950,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Telemetry 2 Baud Rate" name="SERIAL2_BAUD" documentation="The baud rate of the Telem2 port. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -14737,6 +14971,7 @@
         </values>
       </param>
       <param humanName="Serial 3 (GPS) protocol selection" name="SERIAL3_PROTOCOL" documentation="Control what protocol Serial 3 (GPS) should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -14778,7 +15013,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial 3 (GPS) Baud Rate" name="SERIAL3_BAUD" documentation="The baud rate used for the Serial 3 (GPS). Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -14800,6 +15034,7 @@
         </values>
       </param>
       <param humanName="Serial4 protocol selection" name="SERIAL4_PROTOCOL" documentation="Control what protocol Serial4 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -14841,7 +15076,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial 4 Baud Rate" name="SERIAL4_BAUD" documentation="The baud rate used for Serial4. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -14863,6 +15097,7 @@
         </values>
       </param>
       <param humanName="Serial5 protocol selection" name="SERIAL5_PROTOCOL" documentation="Control what protocol Serial5 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -14904,7 +15139,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial 5 Baud Rate" name="SERIAL5_BAUD" documentation="The baud rate used for Serial5. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -14926,6 +15160,7 @@
         </values>
       </param>
       <param humanName="Serial6 protocol selection" name="SERIAL6_PROTOCOL" documentation="Control what protocol Serial6 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -14967,7 +15202,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial 6 Baud Rate" name="SERIAL6_BAUD" documentation="The baud rate used for Serial6. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -14989,27 +15223,27 @@
         </values>
       </param>
       <param humanName="Telem1 options" name="SERIAL1_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire. The Swap option allows the RX and TX pins to be swapped on STM32F7 based boards." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Telem2 options" name="SERIAL2_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial3 options" name="SERIAL3_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial4 options" name="SERIAL4_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial5 options" name="SERIAL5_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial6 options" name="SERIAL6_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial passthru first port" name="SERIAL_PASS1" documentation="This sets one side of pass-through between two serial ports. Once both sides are set then all data received on either port will be passed to the other port" user="Advanced">
@@ -15042,6 +15276,7 @@
         <field name="UnitText">seconds</field>
       </param>
       <param humanName="Serial7 protocol selection" name="SERIAL7_PROTOCOL" documentation="Control what protocol Serial7 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -15083,7 +15318,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial 7 Baud Rate" name="SERIAL7_BAUD" documentation="The baud rate used for Serial7. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -15105,10 +15339,11 @@
         </values>
       </param>
       <param humanName="Serial7 options" name="SERIAL7_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial8 protocol selection" name="SERIAL8_PROTOCOL" documentation="Control what protocol Serial8 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -15150,7 +15385,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial 8 Baud Rate" name="SERIAL8_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -15172,10 +15406,11 @@
         </values>
       </param>
       <param humanName="Serial8 options" name="SERIAL8_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial9 protocol selection" name="SERIAL9_PROTOCOL" documentation="Control what protocol Serial9 port should be used for. Note that the Frsky options require external converter hardware. See the wiki for details." user="Standard">
+        <field name="RebootRequired">True</field>
         <values>
           <value code="-1">None</value>
           <value code="1">MAVLink1</value>
@@ -15217,7 +15452,6 @@
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
         </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Serial 9 Baud Rate" name="SERIAL9_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
         <values>
@@ -15239,7 +15473,7 @@
         </values>
       </param>
       <param humanName="Serial9 options" name="SERIAL9_OPTIONS" documentation="Control over UART options. The InvertRX option controls invert of the receive pin. The InvertTX option controls invert of the transmit pin. The HalfDuplex option controls half-duplex (onewire) mode, where both transmit and receive is done on the transmit wire." user="Advanced">
-        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO</field>
+        <field name="Bitmask">0:InvertRX, 1:InvertTX, 2:HalfDuplex, 3:Swap, 4: RX_PullDown, 5: RX_PullUp, 6: TX_PullDown, 7: TX_PullUp, 8: RX_NoDMA, 9: TX_NoDMA, 10: Don't forward mavlink to/from, 11: DisableFIFO, 12: Ignore Streamrate</field>
         <field name="RebootRequired">True</field>
       </param>
     </parameters>
@@ -15265,7 +15499,7 @@
         </values>
       </param>
       <param humanName="Servo GPIO mask" name="SERVO_GPIO_MASK" documentation="This sets a bitmask of outputs which will be available as GPIOs. Any auxillary output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin" user="Advanced">
-        <field name="Bitmask">0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15, 15: Servo 16</field>
+        <field name="Bitmask">0:Servo 1, 1:Servo 2, 2:Servo 3, 3:Servo 4, 4:Servo 5, 5:Servo 6, 6:Servo 7, 7:Servo 8, 8:Servo 9, 9:Servo 10, 10:Servo 11, 11:Servo 12, 12:Servo 13, 13:Servo 14, 14:Servo 15, 15:Servo 16</field>
         <field name="RebootRequired">True</field>
       </param>
     </parameters>

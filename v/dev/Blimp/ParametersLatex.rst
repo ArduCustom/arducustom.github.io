@@ -3451,7 +3451,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -3512,7 +3512,7 @@ BATT2\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT2_LOW_TIMER:
@@ -3718,7 +3718,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -4005,7 +4005,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -4066,7 +4066,7 @@ BATT3\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT3_LOW_TIMER:
@@ -4272,7 +4272,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -4559,7 +4559,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -4620,7 +4620,7 @@ BATT4\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT4_LOW_TIMER:
@@ -4826,7 +4826,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -5113,7 +5113,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -5174,7 +5174,7 @@ BATT5\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT5_LOW_TIMER:
@@ -5380,7 +5380,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -5667,7 +5667,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -5728,7 +5728,7 @@ BATT6\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT6_LOW_TIMER:
@@ -5934,7 +5934,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -6221,7 +6221,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -6282,7 +6282,7 @@ BATT7\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT7_LOW_TIMER:
@@ -6488,7 +6488,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -6775,7 +6775,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -6836,7 +6836,7 @@ BATT8\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT8_LOW_TIMER:
@@ -7042,7 +7042,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -7329,7 +7329,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -7390,7 +7390,7 @@ BATT9\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT9_LOW_TIMER:
@@ -7596,7 +7596,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -7883,7 +7883,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 7     | SMBus-Generic              |
 +-------+----------------------------+
-| 8     | UAVCAN-BatteryInfo         |
+| 8     | DroneCAN-BatteryInfo       |
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
@@ -7944,7 +7944,7 @@ BATT\_SERIAL\_NUM: Battery serial number
 
 | *Note: This parameter is for advanced users*
 
-Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With UAVCAN it is the battery\_id\.
+Battery serial number\, automatically filled in for SMBus batteries\, otherwise will be \-1\. With DroneCan it is the battery\_id\.
 
 
 .. _BATT_LOW_TIMER:
@@ -8150,7 +8150,7 @@ This sets options to change the behaviour of the battery monitor
 +-----+----------------------------------------+
 | Bit | Meaning                                |
 +=====+========================================+
-| 0   | Ignore UAVCAN SoC                      |
+| 0   | Ignore DroneCAN SoC                    |
 +-----+----------------------------------------+
 | 1   | MPPT reports input voltage and current |
 +-----+----------------------------------------+
@@ -9602,31 +9602,29 @@ CAN\_D1\_PROTOCOL: Enable use of specific protocol over virtual driver
 Enabling this option starts selected protocol that will use this virtual driver
 
 
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | UAVCAN        |
-+-------+---------------+
-| 3     | ToshibaCAN    |
-+-------+---------------+
-| 4     | PiccoloCAN    |
-+-------+---------------+
-| 5     | CANTester     |
-+-------+---------------+
-| 6     | EFI_NWPMU     |
-+-------+---------------+
-| 7     | USD1          |
-+-------+---------------+
-| 8     | KDECAN        |
-+-------+---------------+
-| 9     | PacketDigital |
-+-------+---------------+
-| 10    | Scripting     |
-+-------+---------------+
-| 11    | Benewake      |
-+-------+---------------+
++-------+------------+
+| Value | Meaning    |
++=======+============+
+| 0     | Disabled   |
++-------+------------+
+| 1     | DroneCAN   |
++-------+------------+
+| 3     | ToshibaCAN |
++-------+------------+
+| 4     | PiccoloCAN |
++-------+------------+
+| 5     | CANTester  |
++-------+------------+
+| 6     | EFI_NWPMU  |
++-------+------------+
+| 7     | USD1       |
++-------+------------+
+| 8     | KDECAN     |
++-------+------------+
+| 10    | Scripting  |
++-------+------------+
+| 11    | Benewake   |
++-------+------------+
 
 
 
@@ -10055,31 +10053,29 @@ CAN\_D2\_PROTOCOL: Enable use of specific protocol over virtual driver
 Enabling this option starts selected protocol that will use this virtual driver
 
 
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | UAVCAN        |
-+-------+---------------+
-| 3     | ToshibaCAN    |
-+-------+---------------+
-| 4     | PiccoloCAN    |
-+-------+---------------+
-| 5     | CANTester     |
-+-------+---------------+
-| 6     | EFI_NWPMU     |
-+-------+---------------+
-| 7     | USD1          |
-+-------+---------------+
-| 8     | KDECAN        |
-+-------+---------------+
-| 9     | PacketDigital |
-+-------+---------------+
-| 10    | Scripting     |
-+-------+---------------+
-| 11    | Benewake      |
-+-------+---------------+
++-------+------------+
+| Value | Meaning    |
++=======+============+
+| 0     | Disabled   |
++-------+------------+
+| 1     | DroneCAN   |
++-------+------------+
+| 3     | ToshibaCAN |
++-------+------------+
+| 4     | PiccoloCAN |
++-------+------------+
+| 5     | CANTester  |
++-------+------------+
+| 6     | EFI_NWPMU  |
++-------+------------+
+| 7     | USD1       |
++-------+------------+
+| 8     | KDECAN     |
++-------+------------+
+| 10    | Scripting  |
++-------+------------+
+| 11    | Benewake   |
++-------+------------+
 
 
 
@@ -10508,31 +10504,29 @@ CAN\_D3\_PROTOCOL: Enable use of specific protocol over virtual driver
 Enabling this option starts selected protocol that will use this virtual driver
 
 
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | UAVCAN        |
-+-------+---------------+
-| 3     | ToshibaCAN    |
-+-------+---------------+
-| 4     | PiccoloCAN    |
-+-------+---------------+
-| 5     | CANTester     |
-+-------+---------------+
-| 6     | EFI_NWPMU     |
-+-------+---------------+
-| 7     | USD1          |
-+-------+---------------+
-| 8     | KDECAN        |
-+-------+---------------+
-| 9     | PacketDigital |
-+-------+---------------+
-| 10    | Scripting     |
-+-------+---------------+
-| 11    | Benewake      |
-+-------+---------------+
++-------+------------+
+| Value | Meaning    |
++=======+============+
+| 0     | Disabled   |
++-------+------------+
+| 1     | DroneCAN   |
++-------+------------+
+| 3     | ToshibaCAN |
++-------+------------+
+| 4     | PiccoloCAN |
++-------+------------+
+| 5     | CANTester  |
++-------+------------+
+| 6     | EFI_NWPMU  |
++-------+------------+
+| 7     | USD1       |
++-------+------------+
+| 8     | KDECAN     |
++-------+------------+
+| 10    | Scripting  |
++-------+------------+
+| 11    | Benewake   |
++-------+------------+
 
 
 
@@ -12517,7 +12511,7 @@ This is a bitmask of driver types to disable\. If a driver type is set in this m
 +-----+--------------+
 | 9   | MMC3416      |
 +-----+--------------+
-| 11  | UAVCAN       |
+| 11  | DroneCAN     |
 +-----+--------------+
 | 12  | QMC5883      |
 +-----+--------------+
@@ -13241,7 +13235,7 @@ EK2\_VEL\_I\_GATE: GPS velocity innovation gate size
 
 | *Note: This parameter is for advanced users*
 
-This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements willbe rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
+This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
 +-----------+------------+
@@ -14325,7 +14319,7 @@ EK3\_VEL\_I\_GATE: GPS velocity innovation gate size
 
 | *Note: This parameter is for advanced users*
 
-This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements willbe rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
+This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
 +-----------+------------+
@@ -16635,51 +16629,51 @@ GPS\_TYPE: 1st GPS type
 GPS type of 1st GPS
 
 
-+-------+-----------------------------+
-| Value | Meaning                     |
-+=======+=============================+
-| 0     | None                        |
-+-------+-----------------------------+
-| 1     | AUTO                        |
-+-------+-----------------------------+
-| 2     | uBlox                       |
-+-------+-----------------------------+
-| 5     | NMEA                        |
-+-------+-----------------------------+
-| 6     | SiRF                        |
-+-------+-----------------------------+
-| 7     | HIL                         |
-+-------+-----------------------------+
-| 8     | SwiftNav                    |
-+-------+-----------------------------+
-| 9     | UAVCAN                      |
-+-------+-----------------------------+
-| 10    | SBF                         |
-+-------+-----------------------------+
-| 11    | GSOF                        |
-+-------+-----------------------------+
-| 13    | ERB                         |
-+-------+-----------------------------+
-| 14    | MAV                         |
-+-------+-----------------------------+
-| 15    | NOVA                        |
-+-------+-----------------------------+
-| 16    | HemisphereNMEA              |
-+-------+-----------------------------+
-| 17    | uBlox-MovingBaseline-Base   |
-+-------+-----------------------------+
-| 18    | uBlox-MovingBaseline-Rover  |
-+-------+-----------------------------+
-| 19    | MSP                         |
-+-------+-----------------------------+
-| 20    | AllyStar                    |
-+-------+-----------------------------+
-| 21    | ExternalAHRS                |
-+-------+-----------------------------+
-| 22    | UAVCAN-MovingBaseline-Base  |
-+-------+-----------------------------+
-| 23    | UAVCAN-MovingBaseline-Rover |
-+-------+-----------------------------+
++-------+-------------------------------+
+| Value | Meaning                       |
++=======+===============================+
+| 0     | None                          |
++-------+-------------------------------+
+| 1     | AUTO                          |
++-------+-------------------------------+
+| 2     | uBlox                         |
++-------+-------------------------------+
+| 5     | NMEA                          |
++-------+-------------------------------+
+| 6     | SiRF                          |
++-------+-------------------------------+
+| 7     | HIL                           |
++-------+-------------------------------+
+| 8     | SwiftNav                      |
++-------+-------------------------------+
+| 9     | DroneCAN                      |
++-------+-------------------------------+
+| 10    | SBF                           |
++-------+-------------------------------+
+| 11    | GSOF                          |
++-------+-------------------------------+
+| 13    | ERB                           |
++-------+-------------------------------+
+| 14    | MAV                           |
++-------+-------------------------------+
+| 15    | NOVA                          |
++-------+-------------------------------+
+| 16    | HemisphereNMEA                |
++-------+-------------------------------+
+| 17    | uBlox-MovingBaseline-Base     |
++-------+-------------------------------+
+| 18    | uBlox-MovingBaseline-Rover    |
++-------+-------------------------------+
+| 19    | MSP                           |
++-------+-------------------------------+
+| 20    | AllyStar                      |
++-------+-------------------------------+
+| 21    | ExternalAHRS                  |
++-------+-------------------------------+
+| 22    | DroneCAN-MovingBaseline-Base  |
++-------+-------------------------------+
+| 23    | DroneCAN-MovingBaseline-Rover |
++-------+-------------------------------+
 
 
 
@@ -16695,51 +16689,51 @@ GPS\_TYPE2: 2nd GPS type
 GPS type of 2nd GPS
 
 
-+-------+-----------------------------+
-| Value | Meaning                     |
-+=======+=============================+
-| 0     | None                        |
-+-------+-----------------------------+
-| 1     | AUTO                        |
-+-------+-----------------------------+
-| 2     | uBlox                       |
-+-------+-----------------------------+
-| 5     | NMEA                        |
-+-------+-----------------------------+
-| 6     | SiRF                        |
-+-------+-----------------------------+
-| 7     | HIL                         |
-+-------+-----------------------------+
-| 8     | SwiftNav                    |
-+-------+-----------------------------+
-| 9     | UAVCAN                      |
-+-------+-----------------------------+
-| 10    | SBF                         |
-+-------+-----------------------------+
-| 11    | GSOF                        |
-+-------+-----------------------------+
-| 13    | ERB                         |
-+-------+-----------------------------+
-| 14    | MAV                         |
-+-------+-----------------------------+
-| 15    | NOVA                        |
-+-------+-----------------------------+
-| 16    | HemisphereNMEA              |
-+-------+-----------------------------+
-| 17    | uBlox-MovingBaseline-Base   |
-+-------+-----------------------------+
-| 18    | uBlox-MovingBaseline-Rover  |
-+-------+-----------------------------+
-| 19    | MSP                         |
-+-------+-----------------------------+
-| 20    | AllyStar                    |
-+-------+-----------------------------+
-| 21    | ExternalAHRS                |
-+-------+-----------------------------+
-| 22    | UAVCAN-MovingBaseline-Base  |
-+-------+-----------------------------+
-| 23    | UAVCAN-MovingBaseline-Rover |
-+-------+-----------------------------+
++-------+-------------------------------+
+| Value | Meaning                       |
++=======+===============================+
+| 0     | None                          |
++-------+-------------------------------+
+| 1     | AUTO                          |
++-------+-------------------------------+
+| 2     | uBlox                         |
++-------+-------------------------------+
+| 5     | NMEA                          |
++-------+-------------------------------+
+| 6     | SiRF                          |
++-------+-------------------------------+
+| 7     | HIL                           |
++-------+-------------------------------+
+| 8     | SwiftNav                      |
++-------+-------------------------------+
+| 9     | DroneCAN                      |
++-------+-------------------------------+
+| 10    | SBF                           |
++-------+-------------------------------+
+| 11    | GSOF                          |
++-------+-------------------------------+
+| 13    | ERB                           |
++-------+-------------------------------+
+| 14    | MAV                           |
++-------+-------------------------------+
+| 15    | NOVA                          |
++-------+-------------------------------+
+| 16    | HemisphereNMEA                |
++-------+-------------------------------+
+| 17    | uBlox-MovingBaseline-Base     |
++-------+-------------------------------+
+| 18    | uBlox-MovingBaseline-Rover    |
++-------+-------------------------------+
+| 19    | MSP                           |
++-------+-------------------------------+
+| 20    | AllyStar                      |
++-------+-------------------------------+
+| 21    | ExternalAHRS                  |
++-------+-------------------------------+
+| 22    | DroneCAN-MovingBaseline-Base  |
++-------+-------------------------------+
+| 23    | DroneCAN-MovingBaseline-Rover |
++-------+-------------------------------+
 
 
 
@@ -17042,7 +17036,7 @@ Controls if the autopilot should automatically configure the GPS based on the pa
 +-------+------------------------------------------------------+
 | 1     | Enable automatic configuration for Serial GPSes only |
 +-------+------------------------------------------------------+
-| 2     | Enable automatic configuration for UAVCAN as well    |
+| 2     | Enable automatic configuration for DroneCAN as well  |
 +-------+------------------------------------------------------+
 
 
@@ -17443,8 +17437,8 @@ GPS Node id for discovered second\.
 
 .. _GPS1_CAN_OVRIDE:
 
-GPS1\_CAN\_OVRIDE: First UAVCAN GPS NODE ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GPS1\_CAN\_OVRIDE: First DroneCAN GPS NODE ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -17453,8 +17447,8 @@ GPS Node id for first GPS\. If 0 the gps will be automatically selected on first
 
 .. _GPS2_CAN_OVRIDE:
 
-GPS2\_CAN\_OVRIDE: Second UAVCAN GPS NODE ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GPS2\_CAN\_OVRIDE: Second DroneCAN GPS NODE ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -19146,12 +19140,12 @@ INS\_NOTCH\_ Parameters
 
 .. _INS_NOTCH_ENABLE:
 
-INS\_NOTCH\_ENABLE: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+INS\_NOTCH\_ENABLE: Harmonic Notch Filter enable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Enable notch filter
+Harmonic Notch Filter enable
 
 
 +-------+----------+
@@ -19165,39 +19159,20 @@ Enable notch filter
 
 
 
-.. _INS_NOTCH_ATT:
-
-INS\_NOTCH\_ATT: Attenuation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Notch attenuation in dB
-
-
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 30 | decibel |
-+--------+---------+
-
-
-
-
 .. _INS_NOTCH_FREQ:
 
-INS\_NOTCH\_FREQ: Frequency
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INS\_NOTCH\_FREQ: Harmonic Notch Filter base frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Notch center frequency in Hz
+Harmonic Notch Filter base center frequency in Hz\. This should be set at most half the backend gyro rate \(which is typically 1Khz\)\. For helicopters using RPM sensor to dynamically set the notch frequency\, use this parameter to provide a lower limit to the dynamic notch filter\.  Recommend setting it to half the operating rotor speed in Hz\.
 
 
 +----------+-------+
 | Range    | Units |
 +==========+=======+
-| 10 - 400 | hertz |
+| 10 - 495 | hertz |
 +----------+-------+
 
 
@@ -19205,19 +19180,152 @@ Notch center frequency in Hz
 
 .. _INS_NOTCH_BW:
 
-INS\_NOTCH\_BW: Bandwidth
-~~~~~~~~~~~~~~~~~~~~~~~~~
+INS\_NOTCH\_BW: Harmonic Notch Filter bandwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Notch bandwidth in Hz
+Harmonic Notch Filter bandwidth in Hz\. This is typically set to half the base frequency\. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics\.
 
 
 +---------+-------+
 | Range   | Units |
 +=========+=======+
-| 5 - 100 | hertz |
+| 5 - 250 | hertz |
 +---------+-------+
+
+
+
+
+.. _INS_NOTCH_ATT:
+
+INS\_NOTCH\_ATT: Harmonic Notch Filter attenuation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter attenuation in dB\. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise\.
+
+
++--------+---------+
+| Range  | Units   |
++========+=========+
+| 5 - 50 | decibel |
++--------+---------+
+
+
+
+
+.. _INS_NOTCH_HMNCS:
+
+INS\_NOTCH\_HMNCS: Harmonic Notch Filter harmonics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\. A maximum of 3 harmonics can be used at any one time\.
+
+
++-----+--------------+
+| Bit | Meaning      |
++=====+==============+
+| 0   | 1st harmonic |
++-----+--------------+
+| 1   | 2nd harmonic |
++-----+--------------+
+| 2   | 3rd harmonic |
++-----+--------------+
+| 3   | 4th hamronic |
++-----+--------------+
+| 4   | 5th harmonic |
++-----+--------------+
+| 5   | 6th harmonic |
++-----+--------------+
+| 6   | 7th harmonic |
++-----+--------------+
+| 7   | 8th harmonic |
++-----+--------------+
+
+
+
+
+.. _INS_NOTCH_REF:
+
+INS\_NOTCH\_REF: Harmonic Notch Filter reference value
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter\.  For throttle\-based scaling\, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter\. For RPM and ESC telemetry based tracking\, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed\.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter\.  This reference value may also be used to scale the sensor data\, if required\.  For example\, rpm sensor data is required to measure heli motor RPM\. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM\.
+
+
++-----------+
+| Range     |
++===========+
+| 0.0 - 1.0 |
++-----------+
+
+
+
+
+.. _INS_NOTCH_MODE:
+
+INS\_NOTCH\_MODE: Harmonic Notch Filter dynamic frequency tracking mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter dynamic frequency tracking mode\. Dynamic updates can be throttle\, RPM sensor\, ESC telemetry or dynamic FFT based\. Throttle\-based updates should only be used with multicopters\.
+
+
++-------+---------------+
+| Value | Meaning       |
++=======+===============+
+| 0     | Disabled      |
++-------+---------------+
+| 1     | Throttle      |
++-------+---------------+
+| 2     | RPM Sensor    |
++-------+---------------+
+| 3     | ESC Telemetry |
++-------+---------------+
+| 4     | Dynamic FFT   |
++-------+---------------+
+
+
+
+
++-------+
+| Range |
++=======+
+| 0 - 4 |
++-------+
+
+
+
+
+.. _INS_NOTCH_OPTS:
+
+INS\_NOTCH\_OPTS: Harmonic Notch Filter options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
+
+
++-----+---------------------+
+| Bit | Meaning             |
++=====+=====================+
+| 0   | Double notch        |
++-----+---------------------+
+| 1   | Dynamic harmonic    |
++-----+---------------------+
+| 2   | Update at loop rate |
++-----+---------------------+
 
 
 
@@ -20786,7 +20894,7 @@ Controls what types of Buzzer will be enabled
 +-----+-----------------+
 | 1   | DShot           |
 +-----+-----------------+
-| 2   | UAVCAN          |
+| 2   | DroneCAN        |
 +-----+-----------------+
 
 
@@ -20907,7 +21015,7 @@ Controls what types of LEDs will be enabled
 +-----+---------------------+
 | 4   | Oreo LED            |
 +-----+---------------------+
-| 5   | UAVCAN              |
+| 5   | DroneCAN            |
 +-----+---------------------+
 | 6   | NCP5623 External    |
 +-----+---------------------+
@@ -21046,6 +21154,8 @@ RC input options
 | 9   | Suppress CRSF mode/rate message for ELRS systems                   |
 +-----+--------------------------------------------------------------------+
 | 10  | Enable multiple receiver support                                   |
++-----+--------------------------------------------------------------------+
+| 11  | CRSF RSSI shows Link Quality                                       |
 +-----+--------------------------------------------------------------------+
 
 
@@ -24762,6 +24872,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -24803,6 +24915,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 
@@ -24846,6 +24960,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -24887,6 +25003,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 
@@ -24930,6 +25048,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -24971,6 +25091,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 
@@ -25240,6 +25362,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -25423,6 +25547,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
 +-----+-------------------------------+
+| 12  | Ignore Streamrate             |
++-----+-------------------------------+
 
 
 
@@ -25605,6 +25731,8 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 | 10  | Don't forward mavlink to/from |
 +-----+-------------------------------+
 | 11  | DisableFIFO                   |
++-----+-------------------------------+
+| 12  | Ignore Streamrate             |
 +-----+-------------------------------+
 
 
