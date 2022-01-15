@@ -14180,6 +14180,8 @@
         "0": "UseDecimalPack",
         "1": "InvertedWindPointer",
         "2": "InvertedAHRoll",
+        "21": "One decimal attitude",
+        "22": "One decimal throttle",
         "23": "Shorten Pluscode",
         "3": "Convert feet to miles at 5280ft instead of 10000ft",
         "4": "DisableCrosshair"

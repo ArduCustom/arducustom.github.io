@@ -8406,7 +8406,7 @@
         </values>
       </param>
       <param humanName="OSD Options" name="OSD_OPTIONS" documentation="This sets options that change the display" user="Standard">
-        <field name="Bitmask">0:UseDecimalPack, 1:InvertedWindPointer, 2:InvertedAHRoll, 3:Convert feet to miles at 5280ft instead of 10000ft, 4:DisableCrosshair, 23:Shorten Pluscode</field>
+        <field name="Bitmask">0:UseDecimalPack, 1:InvertedWindPointer, 2:InvertedAHRoll, 3:Convert feet to miles at 5280ft instead of 10000ft, 4:DisableCrosshair, 21: One decimal attitude, 22:One decimal throttle, 23:Shorten Pluscode</field>
       </param>
       <param humanName="OSD Font" name="OSD_FONT" documentation="This sets which OSD font to use. It is an integer from 0 to the number of fonts available" user="Standard">
         <field name="RebootRequired">True</field>
