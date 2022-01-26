@@ -42,41 +42,43 @@ LOG\_BITMASK: Log bitmask
 Bitmap of what log types to enable in on\-board logger\. This value is made up of the sum of each of the log types you want to be saved\. On boards supporting microSD cards or other large block\-storage devices it is usually best just to enable all log types by setting this to 65535\. The individual bits are ATTITUDE\_FAST\=1\, ATTITUDE\_MEDIUM\=2\, GPS\=4\, PerformanceMonitoring\=8\, ControlTuning\=16\, NavigationTuning\=32\, Mode\=64\, IMU\=128\, Commands\=256\, Battery\=512\, Compass\=1024\, TECS\=2048\, Camera\=4096\, RCandServo\=8192\, Rangefinder\=16384\, Arming\=32768\, FullLogs\=65535
 
 
-+-----+---------------+
-| Bit | Meaning       |
-+=====+===============+
-| 0   | ATTITUDE_FAST |
-+-----+---------------+
-| 1   | ATTITUDE_MED  |
-+-----+---------------+
-| 2   | GPS           |
-+-----+---------------+
-| 3   | PM            |
-+-----+---------------+
-| 4   | THR           |
-+-----+---------------+
-| 5   | NTUN          |
-+-----+---------------+
-| 7   | IMU           |
-+-----+---------------+
-| 8   | CMD           |
-+-----+---------------+
-| 9   | CURRENT       |
-+-----+---------------+
-| 10  | RANGEFINDER   |
-+-----+---------------+
-| 11  | COMPASS       |
-+-----+---------------+
-| 12  | CAMERA        |
-+-----+---------------+
-| 13  | STEERING      |
-+-----+---------------+
-| 14  | RC            |
-+-----+---------------+
-| 15  | ARM/DISARM    |
-+-----+---------------+
-| 19  | IMU_RAW       |
-+-----+---------------+
++-----+--------------------+
+| Bit | Meaning            |
++=====+====================+
+| 0   | ATTITUDE_FAST      |
++-----+--------------------+
+| 1   | ATTITUDE_MED       |
++-----+--------------------+
+| 2   | GPS                |
++-----+--------------------+
+| 3   | PM                 |
++-----+--------------------+
+| 4   | THR                |
++-----+--------------------+
+| 5   | NTUN               |
++-----+--------------------+
+| 7   | IMU                |
++-----+--------------------+
+| 8   | CMD                |
++-----+--------------------+
+| 9   | CURRENT            |
++-----+--------------------+
+| 10  | RANGEFINDER        |
++-----+--------------------+
+| 11  | COMPASS            |
++-----+--------------------+
+| 12  | CAMERA             |
++-----+--------------------+
+| 13  | STEERING           |
++-----+--------------------+
+| 14  | RC                 |
++-----+--------------------+
+| 15  | ARM/DISARM         |
++-----+--------------------+
+| 19  | IMU_RAW            |
++-----+--------------------+
+| 20  | VideoStabilization |
++-----+--------------------+
 
 
 
@@ -9961,6 +9963,8 @@ Board specific option flags
 +-----+-----------------------------------+
 | 2   | Enable set of internal parameters |
 +-----+-----------------------------------+
+| 3   | Enable Debug Pins                 |
++-----+-----------------------------------+
 
 
 
@@ -15239,15 +15243,17 @@ EFI\_TYPE: EFI communication type
 What method of communication is used for EFI \#1
 
 
-+-------+-----------+
-| Value | Meaning   |
-+=======+===========+
-| 0     | None      |
-+-------+-----------+
-| 1     | Serial-MS |
-+-------+-----------+
-| 2     | NWPMU     |
-+-------+-----------+
++-------+--------------+
+| Value | Meaning      |
++=======+==============+
+| 0     | None         |
++-------+--------------+
+| 1     | Serial-MS    |
++-------+--------------+
+| 2     | NWPMU        |
++-------+--------------+
+| 3     | Serial-Lutan |
++-------+--------------+
 
 
 
@@ -23302,7 +23308,7 @@ LOG\_FILE\_RATEMAX: Maximum logging rate for file backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -23320,7 +23326,7 @@ LOG\_MAV\_RATEMAX: Maximum logging rate for mavlink backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -23338,7 +23344,7 @@ LOG\_BLK\_RATEMAX: Maximum logging rate for block backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -29676,6 +29682,62 @@ Vertical position on screen
 
 
 
+.. _OSD1_AOA_EN:
+
+OSD1\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_AOA_X:
+
+OSD1\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_AOA_Y:
+
+OSD1\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -33533,6 +33595,62 @@ Horizontal position on screen
 
 OSD2\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_AOA_EN:
+
+OSD2\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_AOA_X:
+
+OSD2\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_AOA_Y:
+
+OSD2\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -37418,6 +37536,62 @@ Vertical position on screen
 
 
 
+.. _OSD3_AOA_EN:
+
+OSD3\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_AOA_X:
+
+OSD3\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_AOA_Y:
+
+OSD3\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -41289,6 +41463,62 @@ Vertical position on screen
 
 
 
+.. _OSD4_AOA_EN:
+
+OSD4\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_AOA_X:
+
+OSD4\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_AOA_Y:
+
+OSD4\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -43776,33 +44006,31 @@ PRX\_TYPE: Proximity type
 What type of proximity sensor is connected
 
 
-+-------+-----------------------+
-| Value | Meaning               |
-+=======+=======================+
-| 0     | None                  |
-+-------+-----------------------+
-| 7     | LightwareSF40c        |
-+-------+-----------------------+
-| 1     | LightWareSF40C-legacy |
-+-------+-----------------------+
-| 2     | MAVLink               |
-+-------+-----------------------+
-| 3     | TeraRangerTower       |
-+-------+-----------------------+
-| 4     | RangeFinder           |
-+-------+-----------------------+
-| 5     | RPLidarA2             |
-+-------+-----------------------+
-| 6     | TeraRangerTowerEvo    |
-+-------+-----------------------+
-| 8     | LightwareSF45B        |
-+-------+-----------------------+
-| 10    | SITL                  |
-+-------+-----------------------+
-| 12    | AirSimSITL            |
-+-------+-----------------------+
-| 13    | CygbotD1              |
-+-------+-----------------------+
++-------+--------------------+
+| Value | Meaning            |
++=======+====================+
+| 0     | None               |
++-------+--------------------+
+| 7     | LightwareSF40c     |
++-------+--------------------+
+| 2     | MAVLink            |
++-------+--------------------+
+| 3     | TeraRangerTower    |
++-------+--------------------+
+| 4     | RangeFinder        |
++-------+--------------------+
+| 5     | RPLidarA2          |
++-------+--------------------+
+| 6     | TeraRangerTowerEvo |
++-------+--------------------+
+| 8     | LightwareSF45B     |
++-------+--------------------+
+| 10    | SITL               |
++-------+--------------------+
+| 12    | AirSimSITL         |
++-------+--------------------+
+| 13    | CygbotD1           |
++-------+--------------------+
 
 
 
@@ -48868,7 +49096,7 @@ RNGFND1\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -49459,7 +49687,7 @@ RNGFND2\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -50050,7 +50278,7 @@ RNGFND3\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -50641,7 +50869,7 @@ RNGFND4\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -51232,7 +51460,7 @@ RNGFND5\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -51823,7 +52051,7 @@ RNGFND6\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -52414,7 +52642,7 @@ RNGFND7\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -53005,7 +53233,7 @@ RNGFND8\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -53596,7 +53824,7 @@ RNGFND9\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -54187,7 +54415,7 @@ RNGFNDA\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -55763,6 +55991,10 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 +-------+----------------------------------+
 | 40    | AIS                              |
 +-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
++-------+----------------------------------+
 
 
 
@@ -55903,6 +56135,10 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | 39    | Torqeedo                         |
 +-------+----------------------------------+
 | 40    | AIS                              |
++-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
 +-------+----------------------------------+
 
 
@@ -56045,6 +56281,10 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 +-------+----------------------------------+
 | 40    | AIS                              |
 +-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
++-------+----------------------------------+
 
 
 
@@ -56185,6 +56425,10 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | 39    | Torqeedo                         |
 +-------+----------------------------------+
 | 40    | AIS                              |
++-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
 +-------+----------------------------------+
 
 
@@ -56327,6 +56571,10 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 +-------+----------------------------------+
 | 40    | AIS                              |
 +-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
++-------+----------------------------------+
 
 
 
@@ -56467,6 +56715,10 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | 39    | Torqeedo                         |
 +-------+----------------------------------+
 | 40    | AIS                              |
++-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
 +-------+----------------------------------+
 
 
@@ -56958,6 +57210,10 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 +-------+----------------------------------+
 | 40    | AIS                              |
 +-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
++-------+----------------------------------+
 
 
 
@@ -57143,6 +57399,10 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 +-------+----------------------------------+
 | 40    | AIS                              |
 +-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
++-------+----------------------------------+
 
 
 
@@ -57327,6 +57587,10 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | 39    | Torqeedo                         |
 +-------+----------------------------------+
 | 40    | AIS                              |
++-------+----------------------------------+
+| 41    | CoDevESC                         |
++-------+----------------------------------+
+| 42    | DisplayPort                      |
 +-------+----------------------------------+
 
 
@@ -63932,15 +64196,17 @@ VISO\_TYPE: Visual odometry camera connection type
 Visual odometry camera connection type
 
 
-+-------+-----------+
-| Value | Meaning   |
-+=======+===========+
-| 0     | None      |
-+-------+-----------+
-| 1     | MAVLink   |
-+-------+-----------+
-| 2     | IntelT265 |
-+-------+-----------+
++-------+---------------+
+| Value | Meaning       |
++=======+===============+
+| 0     | None          |
++-------+---------------+
+| 1     | MAVLink       |
++-------+---------------+
+| 2     | IntelT265     |
++-------+---------------+
+| 3     | VOXL(ModalAI) |
++-------+---------------+
 
 
 

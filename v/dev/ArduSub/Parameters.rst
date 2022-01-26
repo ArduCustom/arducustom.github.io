@@ -9688,6 +9688,8 @@ Board specific option flags
 | +-----+-----------------------------------+ |
 | | 2   | Enable set of internal parameters | |
 | +-----+-----------------------------------+ |
+| | 3   | Enable Debug Pins                 | |
+| +-----+-----------------------------------+ |
 |                                             |
 +---------------------------------------------+
 
@@ -20637,20 +20639,22 @@ EFI\_TYPE: EFI communication type
 What method of communication is used for EFI \#1
 
 
-+-----------------------+
-| Values                |
-+=======================+
-| +-------+-----------+ |
-| | Value | Meaning   | |
-| +=======+===========+ |
-| | 0     | None      | |
-| +-------+-----------+ |
-| | 1     | Serial-MS | |
-| +-------+-----------+ |
-| | 2     | NWPMU     | |
-| +-------+-----------+ |
-|                       |
-+-----------------------+
++--------------------------+
+| Values                   |
++==========================+
+| +-------+--------------+ |
+| | Value | Meaning      | |
+| +=======+==============+ |
+| | 0     | None         | |
+| +-------+--------------+ |
+| | 1     | Serial-MS    | |
+| +-------+--------------+ |
+| | 2     | NWPMU        | |
+| +-------+--------------+ |
+| | 3     | Serial-Lutan | |
+| +-------+--------------+ |
+|                          |
++--------------------------+
 
 
 
@@ -29376,7 +29380,7 @@ LOG\_FILE\_RATEMAX: Maximum logging rate for file backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -29394,7 +29398,7 @@ LOG\_MAV\_RATEMAX: Maximum logging rate for mavlink backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -29412,7 +29416,7 @@ LOG\_BLK\_RATEMAX: Maximum logging rate for block backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -31863,38 +31867,36 @@ PRX\_TYPE: Proximity type
 What type of proximity sensor is connected
 
 
-+-----------------------------------+
-| Values                            |
-+===================================+
-| +-------+-----------------------+ |
-| | Value | Meaning               | |
-| +=======+=======================+ |
-| | 0     | None                  | |
-| +-------+-----------------------+ |
-| | 7     | LightwareSF40c        | |
-| +-------+-----------------------+ |
-| | 1     | LightWareSF40C-legacy | |
-| +-------+-----------------------+ |
-| | 2     | MAVLink               | |
-| +-------+-----------------------+ |
-| | 3     | TeraRangerTower       | |
-| +-------+-----------------------+ |
-| | 4     | RangeFinder           | |
-| +-------+-----------------------+ |
-| | 5     | RPLidarA2             | |
-| +-------+-----------------------+ |
-| | 6     | TeraRangerTowerEvo    | |
-| +-------+-----------------------+ |
-| | 8     | LightwareSF45B        | |
-| +-------+-----------------------+ |
-| | 10    | SITL                  | |
-| +-------+-----------------------+ |
-| | 12    | AirSimSITL            | |
-| +-------+-----------------------+ |
-| | 13    | CygbotD1              | |
-| +-------+-----------------------+ |
-|                                   |
-+-----------------------------------+
++--------------------------------+
+| Values                         |
++================================+
+| +-------+--------------------+ |
+| | Value | Meaning            | |
+| +=======+====================+ |
+| | 0     | None               | |
+| +-------+--------------------+ |
+| | 7     | LightwareSF40c     | |
+| +-------+--------------------+ |
+| | 2     | MAVLink            | |
+| +-------+--------------------+ |
+| | 3     | TeraRangerTower    | |
+| +-------+--------------------+ |
+| | 4     | RangeFinder        | |
+| +-------+--------------------+ |
+| | 5     | RPLidarA2          | |
+| +-------+--------------------+ |
+| | 6     | TeraRangerTowerEvo | |
+| +-------+--------------------+ |
+| | 8     | LightwareSF45B     | |
+| +-------+--------------------+ |
+| | 10    | SITL               | |
+| +-------+--------------------+ |
+| | 12    | AirSimSITL         | |
+| +-------+--------------------+ |
+| | 13    | CygbotD1           | |
+| +-------+--------------------+ |
+|                                |
++--------------------------------+
 
 
 
@@ -35352,7 +35354,7 @@ RNGFND1\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -35978,7 +35980,7 @@ RNGFND2\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -36604,7 +36606,7 @@ RNGFND3\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -37230,7 +37232,7 @@ RNGFND4\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -37856,7 +37858,7 @@ RNGFND5\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -38482,7 +38484,7 @@ RNGFND6\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -39108,7 +39110,7 @@ RNGFND7\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -39734,7 +39736,7 @@ RNGFND8\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -40360,7 +40362,7 @@ RNGFND9\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -40986,7 +40988,7 @@ RNGFNDA\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -42323,6 +42325,10 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -42473,6 +42479,10 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -42625,6 +42635,10 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -42775,6 +42789,10 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -42927,6 +42945,10 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -43077,6 +43099,10 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -43618,6 +43644,10 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -43818,6 +43848,10 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -44017,6 +44051,10 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -51662,20 +51700,22 @@ VISO\_TYPE: Visual odometry camera connection type
 Visual odometry camera connection type
 
 
-+-----------------------+
-| Values                |
-+=======================+
-| +-------+-----------+ |
-| | Value | Meaning   | |
-| +=======+===========+ |
-| | 0     | None      | |
-| +-------+-----------+ |
-| | 1     | MAVLink   | |
-| +-------+-----------+ |
-| | 2     | IntelT265 | |
-| +-------+-----------+ |
-|                       |
-+-----------------------+
++---------------------------+
+| Values                    |
++===========================+
+| +-------+---------------+ |
+| | Value | Meaning       | |
+| +=======+===============+ |
+| | 0     | None          | |
+| +-------+---------------+ |
+| | 1     | MAVLink       | |
+| +-------+---------------+ |
+| | 2     | IntelT265     | |
+| +-------+---------------+ |
+| | 3     | VOXL(ModalAI) | |
+| +-------+---------------+ |
+|                           |
++---------------------------+
 
 
 

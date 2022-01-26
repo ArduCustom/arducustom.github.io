@@ -29,7 +29,7 @@ DO NOT EDIT
 
 <p>Bitmap of what log types to enable in on-board logger. This value is made up of the sum of each of the log types you want to be saved. On boards supporting microSD cards or other large block-storage devices it is usually best just to enable all log types by setting this to 65535. The individual bits are ATTITUDE_FAST=1, ATTITUDE_MEDIUM=2, GPS=4, PerformanceMonitoring=8, ControlTuning=16, NavigationTuning=32, Mode=64, IMU=128, Commands=256, Battery=512, Compass=1024, TECS=2048, Camera=4096, RCandServo=8192, Rangefinder=16384, Arming=32768, FullLogs=65535</p>
 <ul>
-<li>Bitmask: 0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:THR,5:NTUN,7:IMU,8:CMD,9:CURRENT,10:RANGEFINDER,11:COMPASS,12:CAMERA,13:STEERING,14:RC,15:ARM/DISARM,19:IMU_RAW</li>
+<li>Bitmask: 0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:THR,5:NTUN,7:IMU,8:CMD,9:CURRENT,10:RANGEFINDER,11:COMPASS,12:CAMERA,13:STEERING,14:RC,15:ARM/DISARM,19:IMU_RAW,20:VideoStabilization</li>
 </ul>
 
 
@@ -4867,7 +4867,7 @@ DO NOT EDIT
 
 <p>Board specific option flags</p>
 <ul>
-<li>Bitmask: 0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters</li>
+<li>Bitmask: 0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters, 3:Enable Debug Pins</li>
 </ul>
 
 
@@ -7278,6 +7278,7 @@ DO NOT EDIT
 <tr><td>0</td><td>None</td></tr>
 <tr><td>1</td><td>Serial-MS</td></tr>
 <tr><td>2</td><td>NWPMU</td></tr>
+<tr><td>3</td><td>Serial-Lutan</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11082,7 +11083,7 @@ DO NOT EDIT
 
 <h2>Maximum logging rate for file backend (LOG_FILE_RATEMAX)</h2>
 
-<p>This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means</p>
+<p>This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled.</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
@@ -11091,7 +11092,7 @@ DO NOT EDIT
 
 <h2>Maximum logging rate for mavlink backend (LOG_MAV_RATEMAX)</h2>
 
-<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means</p>
+<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
@@ -11100,7 +11101,7 @@ DO NOT EDIT
 
 <h2>Maximum logging rate for block backend (LOG_BLK_RATEMAX)</h2>
 
-<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means</p>
+<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
@@ -14212,6 +14213,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>AOA_EN (OSD1_AOA_EN)</h2>
+
+<p>Displays the estimated angle of attack</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AOA_X (OSD1_AOA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AOA_Y (OSD1_AOA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD2_ Parameters</h1>
 
 
@@ -16071,6 +16099,33 @@ DO NOT EDIT
 
 
 <h2>AUTO_FLAPS_Y (OSD2_AUTO_FLP_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AOA_EN (OSD2_AOA_EN)</h2>
+
+<p>Displays the estimated angle of attack</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AOA_X (OSD2_AOA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AOA_Y (OSD2_AOA_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -17944,6 +17999,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>AOA_EN (OSD3_AOA_EN)</h2>
+
+<p>Displays the estimated angle of attack</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AOA_X (OSD3_AOA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AOA_Y (OSD3_AOA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD4_ Parameters</h1>
 
 
@@ -19810,6 +19892,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>AOA_EN (OSD4_AOA_EN)</h2>
+
+<p>Displays the estimated angle of attack</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AOA_X (OSD4_AOA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AOA_Y (OSD4_AOA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD5_ Parameters</h1>
 
 
@@ -21334,7 +21443,6 @@ DO NOT EDIT
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
 <tr><td>7</td><td>LightwareSF40c</td></tr>
-<tr><td>1</td><td>LightWareSF40C-legacy</td></tr>
 <tr><td>2</td><td>MAVLink</td></tr>
 <tr><td>3</td><td>TeraRangerTower</td></tr>
 <tr><td>4</td><td>RangeFinder</td></tr>
@@ -23893,7 +24001,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND1_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -24186,7 +24294,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND2_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -24479,7 +24587,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND3_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -24772,7 +24880,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND4_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -25065,7 +25173,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND5_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -25358,7 +25466,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND6_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -25651,7 +25759,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND7_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -25944,7 +26052,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND8_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -26237,7 +26345,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND9_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -26530,7 +26638,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFNDA_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -27296,6 +27404,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -27370,6 +27480,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -27443,6 +27555,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -27516,6 +27630,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -27589,6 +27705,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -27662,6 +27780,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -27832,6 +27952,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -27914,6 +28036,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -27996,6 +28120,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -31267,6 +31393,7 @@ DO NOT EDIT
 <tr><td>0</td><td>None</td></tr>
 <tr><td>1</td><td>MAVLink</td></tr>
 <tr><td>2</td><td>IntelT265</td></tr>
+<tr><td>3</td><td>VOXL(ModalAI)</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>

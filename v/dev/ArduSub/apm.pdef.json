@@ -3583,7 +3583,8 @@
       "Bitmask": {
         "0": "Enable hardware watchdog",
         "1": "Disable MAVftp",
-        "2": "Enable set of internal parameters"
+        "2": "Enable set of internal parameters",
+        "3": "Enable Debug Pins"
       },
       "Description": "Board specific option flags",
       "DisplayName": "Board options",
@@ -8788,7 +8789,8 @@
       "Values": {
         "0": "None",
         "1": "Serial-MS",
-        "2": "NWPMU"
+        "2": "NWPMU",
+        "3": "Serial-Lutan"
       }
     }
   },
@@ -12582,7 +12584,7 @@
       "User": "Standard"
     },
     "LOG_BLK_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for block backend",
       "Range": {
         "high": "1000",
@@ -12625,7 +12627,7 @@
       "User": "Standard"
     },
     "LOG_FILE_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for file backend",
       "Range": {
         "high": "1000",
@@ -12647,7 +12649,7 @@
       "User": "Advanced"
     },
     "LOG_MAV_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for mavlink backend",
       "Range": {
         "high": "1000",
@@ -13932,7 +13934,6 @@
       "User": "Standard",
       "Values": {
         "0": "None",
-        "1": "LightWareSF40C-legacy",
         "10": "SITL",
         "12": "AirSimSITL",
         "13": "CygbotD1",
@@ -15582,7 +15583,7 @@
       }
     },
     "RNGFND1_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -15865,7 +15866,7 @@
       }
     },
     "RNGFND2_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -16148,7 +16149,7 @@
       }
     },
     "RNGFND3_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -16431,7 +16432,7 @@
       }
     },
     "RNGFND4_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -16714,7 +16715,7 @@
       }
     },
     "RNGFND5_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -16997,7 +16998,7 @@
       }
     },
     "RNGFND6_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -17280,7 +17281,7 @@
       }
     },
     "RNGFND7_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -17563,7 +17564,7 @@
       }
     },
     "RNGFND8_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -17846,7 +17847,7 @@
       }
     },
     "RNGFND9_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -18129,7 +18130,7 @@
       }
     },
     "RNGFNDA_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -18648,6 +18649,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -18738,6 +18741,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -18828,6 +18833,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -18918,6 +18925,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -19008,6 +19017,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -19098,6 +19109,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -19188,6 +19201,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -19278,6 +19293,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -19368,6 +19385,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -23654,7 +23673,8 @@
       "Values": {
         "0": "None",
         "1": "MAVLink",
-        "2": "IntelT265"
+        "2": "IntelT265",
+        "3": "VOXL(ModalAI)"
       }
     },
     "VISO_VEL_M_NSE": {

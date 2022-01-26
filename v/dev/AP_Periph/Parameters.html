@@ -608,6 +608,268 @@ DO NOT EDIT
 </ul>
 
 
+<h1>ARSPD Parameters</h1>
+
+
+<h2>Airspeed type (ARSPD_TYPE)</h2>
+
+<p>Type of airspeed sensor</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>I2C-MS4525D0</td></tr>
+<tr><td>2</td><td>Analog</td></tr>
+<tr><td>3</td><td>I2C-MS5525</td></tr>
+<tr><td>4</td><td>I2C-MS5525 (0x76)</td></tr>
+<tr><td>5</td><td>I2C-MS5525 (0x77)</td></tr>
+<tr><td>6</td><td>I2C-SDP3X</td></tr>
+<tr><td>7</td><td>I2C-DLVR-5in</td></tr>
+<tr><td>8</td><td>DroneCAN</td></tr>
+<tr><td>9</td><td>I2C-DLVR-10in</td></tr>
+<tr><td>10</td><td>I2C-DLVR-20in</td></tr>
+<tr><td>11</td><td>I2C-DLVR-30in</td></tr>
+<tr><td>12</td><td>I2C-DLVR-60in</td></tr>
+<tr><td>13</td><td>NMEA water speed</td></tr>
+<tr><td>14</td><td>MSP</td></tr>
+<tr><td>15</td><td>ASP5033</td></tr>
+</table>
+</ul>
+
+
+<h2>Airspeed ID (ARSPD_DEVID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Airspeed sensor ID, taking into account its type, bus and instance</p>
+<ul>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Airspeed use (ARSPD_USE)</h2>
+
+<p>Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>DoNotUse</td></tr>
+<tr><td>1</td><td>Use</td></tr>
+<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
+</table>
+</ul>
+
+
+<h2>Airspeed offset (ARSPD_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Airspeed calibration offset</p>
+<ul>
+<li>Increment: 0.1</li>
+</ul>
+
+
+<h2>Airspeed ratio (ARSPD_RATIO)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Calibrates pitot tube pressure to velocity. Increasing this value will indicate a higher airspeed at any given dynamic pressure.</p>
+<ul>
+<li>Increment: 0.1</li>
+</ul>
+
+
+<h2>Airspeed pin (ARSPD_PIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The pin number that the airspeed sensor is connected to for analog sensors. Set to 15 on the Pixhawk for the analog airspeed port. </p>
+<ul>
+</ul>
+
+
+<h2>Automatic airspeed ratio calibration (ARSPD_AUTOCAL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled.</p>
+<ul>
+</ul>
+
+
+<h2>Control pitot tube order (ARSPD_TUBE_ORDER)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Changes the pitot tube order to specify the dynamic pressure side of the sensor. Accepts either if set to 2. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed.</p>
+<ul>
+</ul>
+
+
+<h2>Skip airspeed calibration on startup (ARSPD_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disable</td></tr>
+<tr><td>1</td><td>Enable</td></tr>
+</table>
+</ul>
+
+
+<h2>The PSI range of the device (ARSPD_PSI_RANGE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device</p>
+<ul>
+</ul>
+
+
+<h2>Airspeed I2C bus (ARSPD_BUS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bus number of the I2C bus where the airspeed sensor is connected</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Bus0(internal)</td></tr>
+<tr><td>1</td><td>Bus1(external)</td></tr>
+<tr><td>2</td><td>Bus2(auxillary)</td></tr>
+</table>
+</ul>
+
+
+<h2>Primary airspeed sensor (ARSPD_PRIMARY)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This selects which airspeed sensor will be the primary if multiple sensors are found</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>FirstSensor</td></tr>
+<tr><td>1</td><td>2ndSensor</td></tr>
+</table>
+</ul>
+
+
+<h2>Airspeed options bitmask (ARSPD_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction</p>
+<ul>
+<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</li>
+</ul>
+
+
+<h2>Maximum airspeed and ground speed difference (ARSPD_WIND_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor.</p>
+<ul>
+<li>Units: meters per second</li>
+</ul>
+
+
+<h2>Airspeed and ground speed difference that gives a warning (ARSPD_WIND_WARN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used.</p>
+<ul>
+<li>Units: meters per second</li>
+</ul>
+
+
+<h2>Second Airspeed type (ARSPD2_TYPE)</h2>
+
+<p>Type of 2nd airspeed sensor</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>I2C-MS4525D0</td></tr>
+<tr><td>2</td><td>Analog</td></tr>
+<tr><td>3</td><td>I2C-MS5525</td></tr>
+<tr><td>4</td><td>I2C-MS5525 (0x76)</td></tr>
+<tr><td>5</td><td>I2C-MS5525 (0x77)</td></tr>
+<tr><td>6</td><td>I2C-SDP3X</td></tr>
+<tr><td>7</td><td>I2C-DLVR-5in</td></tr>
+<tr><td>8</td><td>DroneCAN</td></tr>
+<tr><td>9</td><td>I2C-DLVR-10in</td></tr>
+<tr><td>10</td><td>I2C-DLVR-20in</td></tr>
+<tr><td>11</td><td>I2C-DLVR-30in</td></tr>
+<tr><td>12</td><td>I2C-DLVR-60in</td></tr>
+<tr><td>13</td><td>NMEA water speed</td></tr>
+<tr><td>14</td><td>MSP</td></tr>
+<tr><td>15</td><td>ASP5033</td></tr>
+</table>
+</ul>
+
+
+<h2>Enable use of 2nd airspeed sensor (ARSPD2_USE)</h2>
+
+<p>use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won&#x27;t be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Don't Use</td></tr>
+<tr><td>1</td><td>use</td></tr>
+<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
+</table>
+</ul>
+
+
+<h2>Airspeed offset for 2nd airspeed sensor (ARSPD2_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Airspeed calibration offset</p>
+<ul>
+<li>Increment: 0.1</li>
+</ul>
+
+
+<h2>Airspeed ratio for 2nd airspeed sensor (ARSPD2_RATIO)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Airspeed calibration ratio</p>
+<ul>
+<li>Increment: 0.1</li>
+</ul>
+
+
+<h2>Airspeed pin for 2nd airspeed sensor (ARSPD2_PIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Pin number indicating location of analog airspeed sensors. Pixhawk/Cube if set to 15. </p>
+<ul>
+</ul>
+
+
+<h2>Automatic airspeed ratio calibration for 2nd airspeed sensor (ARSPD2_AUTOCAL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.</p>
+<ul>
+</ul>
+
+
+<h2>Control pitot tube order of 2nd airspeed sensor (ARSPD2_TUBE_ORDR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure. If set to 1 then the bottom connector needs to be the dynamic pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port, which would otherwise be seen as a positive airspeed.</p>
+<ul>
+</ul>
+
+
+<h2>Skip airspeed calibration on startup for 2nd sensor (ARSPD2_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disable</td></tr>
+<tr><td>1</td><td>Enable</td></tr>
+</table>
+</ul>
+
+
+<h2>The PSI range of the device for 2nd sensor (ARSPD2_PSI_RANGE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device</p>
+<ul>
+</ul>
+
+
+<h2>Airspeed I2C bus for 2nd sensor (ARSPD2_BUS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The bus number of the I2C bus to look for the sensor on</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Bus0(internal)</td></tr>
+<tr><td>1</td><td>Bus1(external)</td></tr>
+<tr><td>2</td><td>Bus2(auxillary)</td></tr>
+</table>
+</ul>
+
+
+<h2>Airspeed2 ID (ARSPD2_DEVID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Airspeed2 sensor ID, taking into account its type, bus and instance</p>
+<ul>
+<li>ReadOnly: True</li>
+</ul>
+
+
 <h1>BARO Parameters</h1>
 
 
@@ -4091,6 +4353,7 @@ DO NOT EDIT
 <tr><td>0</td><td>None</td></tr>
 <tr><td>1</td><td>Serial-MS</td></tr>
 <tr><td>2</td><td>NWPMU</td></tr>
+<tr><td>3</td><td>Serial-Lutan</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -4955,7 +5218,7 @@ DO NOT EDIT
 
 <h2>Maximum logging rate for file backend (LOG_FILE_RATEMAX)</h2>
 
-<p>This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means</p>
+<p>This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled.</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
@@ -4964,7 +5227,7 @@ DO NOT EDIT
 
 <h2>Maximum logging rate for mavlink backend (LOG_MAV_RATEMAX)</h2>
 
-<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means</p>
+<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
@@ -4973,7 +5236,7 @@ DO NOT EDIT
 
 <h2>Maximum logging rate for block backend (LOG_BLK_RATEMAX)</h2>
 
-<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means</p>
+<p>This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
@@ -8179,7 +8442,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND1_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -8472,7 +8735,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND2_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -8765,7 +9028,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND3_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -9058,7 +9321,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND4_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -9351,7 +9614,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND5_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -9644,7 +9907,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND6_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -9937,7 +10200,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND7_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -10230,7 +10493,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND8_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -10523,7 +10786,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFND9_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -10816,7 +11079,7 @@ DO NOT EDIT
 
 <h2>Rangefinder scaling (RNGFNDA_SCALING)</h2>
 
-<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.</p>
+<p>Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.</p>
 <ul>
 <li>Units: meters per volt</li>
 <li>Increment: 0.001</li>
@@ -11215,6 +11478,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11289,6 +11554,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11362,6 +11629,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11435,6 +11704,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11508,6 +11779,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11581,6 +11854,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11751,6 +12026,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11833,6 +12110,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11915,6 +12194,8 @@ DO NOT EDIT
 <tr><td>38</td><td>FETtecOneWire</td></tr>
 <tr><td>39</td><td>Torqeedo</td></tr>
 <tr><td>40</td><td>AIS</td></tr>
+<tr><td>41</td><td>CoDevESC</td></tr>
+<tr><td>42</td><td>DisplayPort</td></tr>
 </table>
 </ul>
 
@@ -11963,6 +12244,7 @@ DO NOT EDIT
 <tr><td>0</td><td>None</td></tr>
 <tr><td>1</td><td>MAVLink</td></tr>
 <tr><td>2</td><td>IntelT265</td></tr>
+<tr><td>3</td><td>VOXL(ModalAI)</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>

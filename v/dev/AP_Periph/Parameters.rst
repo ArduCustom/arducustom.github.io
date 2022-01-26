@@ -1277,6 +1277,567 @@ Airspeed2 sensor ID\, taking into account its type\, bus and instance
 
 
 
+.. _parameters_ARSPD:
+
+ARSPD Parameters
+----------------
+
+
+.. _ARSPD_TYPE:
+
+ARSPD\_TYPE: Airspeed type
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of airspeed sensor
+
+
++-------------------------------+
+| Values                        |
++===============================+
+| +-------+-------------------+ |
+| | Value | Meaning           | |
+| +=======+===================+ |
+| | 0     | None              | |
+| +-------+-------------------+ |
+| | 1     | I2C-MS4525D0      | |
+| +-------+-------------------+ |
+| | 2     | Analog            | |
+| +-------+-------------------+ |
+| | 3     | I2C-MS5525        | |
+| +-------+-------------------+ |
+| | 4     | I2C-MS5525 (0x76) | |
+| +-------+-------------------+ |
+| | 5     | I2C-MS5525 (0x77) | |
+| +-------+-------------------+ |
+| | 6     | I2C-SDP3X         | |
+| +-------+-------------------+ |
+| | 7     | I2C-DLVR-5in      | |
+| +-------+-------------------+ |
+| | 8     | DroneCAN          | |
+| +-------+-------------------+ |
+| | 9     | I2C-DLVR-10in     | |
+| +-------+-------------------+ |
+| | 10    | I2C-DLVR-20in     | |
+| +-------+-------------------+ |
+| | 11    | I2C-DLVR-30in     | |
+| +-------+-------------------+ |
+| | 12    | I2C-DLVR-60in     | |
+| +-------+-------------------+ |
+| | 13    | NMEA water speed  | |
+| +-------+-------------------+ |
+| | 14    | MSP               | |
+| +-------+-------------------+ |
+| | 15    | ASP5033           | |
+| +-------+-------------------+ |
+|                               |
++-------------------------------+
+
+
+
+
+.. _ARSPD_DEVID:
+
+ARSPD\_DEVID: Airspeed ID
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Airspeed sensor ID\, taking into account its type\, bus and instance
+
+
++----------+
+| ReadOnly |
++==========+
+| True     |
++----------+
+
+
+
+
+.. _ARSPD_USE:
+
+ARSPD\_USE: Airspeed use
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enables airspeed use for automatic throttle modes and replaces control from THR\_TRIM\. Continues to display and log airspeed if set to 0\. Uses airspeed for control if set to 1\. Only uses airspeed when throttle \= 0 if set to 2 \(useful for gliders with airspeed sensors behind propellers\)\.
+
+
++---------------------------------+
+| Values                          |
++=================================+
+| +-------+---------------------+ |
+| | Value | Meaning             | |
+| +=======+=====================+ |
+| | 0     | DoNotUse            | |
+| +-------+---------------------+ |
+| | 1     | Use                 | |
+| +-------+---------------------+ |
+| | 2     | UseWhenZeroThrottle | |
+| +-------+---------------------+ |
+|                                 |
++---------------------------------+
+
+
+
+
+.. _ARSPD_OFFSET:
+
+ARSPD\_OFFSET: Airspeed offset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Airspeed calibration offset
+
+
++-----------+
+| Increment |
++===========+
+| 0.1       |
++-----------+
+
+
+
+
+.. _ARSPD_RATIO:
+
+ARSPD\_RATIO: Airspeed ratio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Calibrates pitot tube pressure to velocity\. Increasing this value will indicate a higher airspeed at any given dynamic pressure\.
+
+
++-----------+
+| Increment |
++===========+
+| 0.1       |
++-----------+
+
+
+
+
+.. _ARSPD_PIN:
+
+ARSPD\_PIN: Airspeed pin
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The pin number that the airspeed sensor is connected to for analog sensors\. Set to 15 on the Pixhawk for the analog airspeed port\. 
+
+
+.. _ARSPD_AUTOCAL:
+
+ARSPD\_AUTOCAL: Automatic airspeed ratio calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Enables automatic adjustment of ARSPD\_RATIO during a calibration flight based on estimation of ground speed and true airspeed\. New ratio saved every 2 minutes if change is \> 5\%\. Should not be left enabled\.
+
+
+.. _ARSPD_TUBE_ORDER:
+
+ARSPD\_TUBE\_ORDER: Control pitot tube order
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Changes the pitot tube order to specify the dynamic pressure side of the sensor\. Accepts either if set to 2\. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed\.
+
+
+.. _ARSPD_SKIP_CAL:
+
+ARSPD\_SKIP\_CAL: Skip airspeed calibration on startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This parameter allows you to skip airspeed offset calibration on startup\, instead using the offset from the last calibration\. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot\.
+
+
++---------------------+
+| Values              |
++=====================+
+| +-------+---------+ |
+| | Value | Meaning | |
+| +=======+=========+ |
+| | 0     | Disable | |
+| +-------+---------+ |
+| | 1     | Enable  | |
+| +-------+---------+ |
+|                     |
++---------------------+
+
+
+
+
+.. _ARSPD_PSI_RANGE:
+
+ARSPD\_PSI\_RANGE: The PSI range of the device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This parameter allows you to to set the PSI \(pounds per square inch\) range for your sensor\. You should not change this unless you examine the datasheet for your device
+
+
+.. _ARSPD_BUS:
+
+ARSPD\_BUS: Airspeed I2C bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bus number of the I2C bus where the airspeed sensor is connected
+
+
++-----------------------------+
+| Values                      |
++=============================+
+| +-------+-----------------+ |
+| | Value | Meaning         | |
+| +=======+=================+ |
+| | 0     | Bus0(internal)  | |
+| +-------+-----------------+ |
+| | 1     | Bus1(external)  | |
+| +-------+-----------------+ |
+| | 2     | Bus2(auxillary) | |
+| +-------+-----------------+ |
+|                             |
++-----------------------------+
+
+
+
+
+.. _ARSPD_PRIMARY:
+
+ARSPD\_PRIMARY: Primary airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This selects which airspeed sensor will be the primary if multiple sensors are found
+
+
++-------------------------+
+| Values                  |
++=========================+
+| +-------+-------------+ |
+| | Value | Meaning     | |
+| +=======+=============+ |
+| | 0     | FirstSensor | |
+| +-------+-------------+ |
+| | 1     | 2ndSensor   | |
+| +-------+-------------+ |
+|                         |
++-------------------------+
+
+
+
+
+.. _ARSPD_OPTIONS:
+
+ARSPD\_OPTIONS: Airspeed options bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+
+
++--------------------------------------+
+| Bitmask                              |
++======================================+
+| +-----+----------------------------+ |
+| | Bit | Meaning                    | |
+| +=====+============================+ |
+| | 0   | SpeedMismatchDisable       | |
+| +-----+----------------------------+ |
+| | 1   | AllowSpeedMismatchRecovery | |
+| +-----+----------------------------+ |
+| | 2   | DisableVoltageCorrection   | |
+| +-----+----------------------------+ |
+|                                      |
++--------------------------------------+
+
+
+
+
+.. _ARSPD_WIND_MAX:
+
+ARSPD\_WIND\_MAX: Maximum airspeed and ground speed difference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy\. Using ARSPD\_OPTION this health value can be used to disable the sensor\.
+
+
++-------------------+
+| Units             |
++===================+
+| meters per second |
++-------------------+
+
+
+
+
+.. _ARSPD_WIND_WARN:
+
+ARSPD\_WIND\_WARN: Airspeed and ground speed difference that gives a warning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning\. If 0 ARSPD\_WIND\_MAX is used\.
+
+
++-------------------+
+| Units             |
++===================+
+| meters per second |
++-------------------+
+
+
+
+
+.. _ARSPD2_TYPE:
+
+ARSPD2\_TYPE: Second Airspeed type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of 2nd airspeed sensor
+
+
++-------------------------------+
+| Values                        |
++===============================+
+| +-------+-------------------+ |
+| | Value | Meaning           | |
+| +=======+===================+ |
+| | 0     | None              | |
+| +-------+-------------------+ |
+| | 1     | I2C-MS4525D0      | |
+| +-------+-------------------+ |
+| | 2     | Analog            | |
+| +-------+-------------------+ |
+| | 3     | I2C-MS5525        | |
+| +-------+-------------------+ |
+| | 4     | I2C-MS5525 (0x76) | |
+| +-------+-------------------+ |
+| | 5     | I2C-MS5525 (0x77) | |
+| +-------+-------------------+ |
+| | 6     | I2C-SDP3X         | |
+| +-------+-------------------+ |
+| | 7     | I2C-DLVR-5in      | |
+| +-------+-------------------+ |
+| | 8     | DroneCAN          | |
+| +-------+-------------------+ |
+| | 9     | I2C-DLVR-10in     | |
+| +-------+-------------------+ |
+| | 10    | I2C-DLVR-20in     | |
+| +-------+-------------------+ |
+| | 11    | I2C-DLVR-30in     | |
+| +-------+-------------------+ |
+| | 12    | I2C-DLVR-60in     | |
+| +-------+-------------------+ |
+| | 13    | NMEA water speed  | |
+| +-------+-------------------+ |
+| | 14    | MSP               | |
+| +-------+-------------------+ |
+| | 15    | ASP5033           | |
+| +-------+-------------------+ |
+|                               |
++-------------------------------+
+
+
+
+
+.. _ARSPD2_USE:
+
+ARSPD2\_USE: Enable use of 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+use airspeed for flight control\. When set to 0 airspeed sensor can be logged and displayed on a GCS but won\'t be used for flight\. When set to 1 it will be logged and used\. When set to 2 it will be only used when the throttle is zero\, which can be useful in gliders with airspeed sensors behind a propeller
+
+
++---------------------------------+
+| Values                          |
++=================================+
+| +-------+---------------------+ |
+| | Value | Meaning             | |
+| +=======+=====================+ |
+| | 0     | Don't Use           | |
+| +-------+---------------------+ |
+| | 1     | use                 | |
+| +-------+---------------------+ |
+| | 2     | UseWhenZeroThrottle | |
+| +-------+---------------------+ |
+|                                 |
++---------------------------------+
+
+
+
+
+.. _ARSPD2_OFFSET:
+
+ARSPD2\_OFFSET: Airspeed offset for 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Airspeed calibration offset
+
+
++-----------+
+| Increment |
++===========+
+| 0.1       |
++-----------+
+
+
+
+
+.. _ARSPD2_RATIO:
+
+ARSPD2\_RATIO: Airspeed ratio for 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Airspeed calibration ratio
+
+
++-----------+
+| Increment |
++===========+
+| 0.1       |
++-----------+
+
+
+
+
+.. _ARSPD2_PIN:
+
+ARSPD2\_PIN: Airspeed pin for 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Pin number indicating location of analog airspeed sensors\. Pixhawk\/Cube if set to 15\. 
+
+
+.. _ARSPD2_AUTOCAL:
+
+ARSPD2\_AUTOCAL: Automatic airspeed ratio calibration for 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+If this is enabled then the autopilot will automatically adjust the ARSPD\_RATIO during flight\, based upon an estimation filter using ground speed and true airspeed\. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5\%\. This option should be enabled for a calibration flight then disabled again when calibration is complete\. Leaving it enabled all the time is not recommended\.
+
+
+.. _ARSPD2_TUBE_ORDR:
+
+ARSPD2\_TUBE\_ORDR: Control pitot tube order of 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters\. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure\. If set to 1 then the bottom connector needs to be the dynamic pressure\. If set to 2 \(the default\) then the airspeed driver will accept either order\. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port\, which would otherwise be seen as a positive airspeed\.
+
+
+.. _ARSPD2_SKIP_CAL:
+
+ARSPD2\_SKIP\_CAL: Skip airspeed calibration on startup for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This parameter allows you to skip airspeed offset calibration on startup\, instead using the offset from the last calibration\. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot\.
+
+
++---------------------+
+| Values              |
++=====================+
+| +-------+---------+ |
+| | Value | Meaning | |
+| +=======+=========+ |
+| | 0     | Disable | |
+| +-------+---------+ |
+| | 1     | Enable  | |
+| +-------+---------+ |
+|                     |
++---------------------+
+
+
+
+
+.. _ARSPD2_PSI_RANGE:
+
+ARSPD2\_PSI\_RANGE: The PSI range of the device for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This parameter allows you to to set the PSI \(pounds per square inch\) range for your sensor\. You should not change this unless you examine the datasheet for your device
+
+
+.. _ARSPD2_BUS:
+
+ARSPD2\_BUS: Airspeed I2C bus for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The bus number of the I2C bus to look for the sensor on
+
+
++-----------------------------+
+| Values                      |
++=============================+
+| +-------+-----------------+ |
+| | Value | Meaning         | |
+| +=======+=================+ |
+| | 0     | Bus0(internal)  | |
+| +-------+-----------------+ |
+| | 1     | Bus1(external)  | |
+| +-------+-----------------+ |
+| | 2     | Bus2(auxillary) | |
+| +-------+-----------------+ |
+|                             |
++-----------------------------+
+
+
+
+
+.. _ARSPD2_DEVID:
+
+ARSPD2\_DEVID: Airspeed2 ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Airspeed2 sensor ID\, taking into account its type\, bus and instance
+
+
++----------+
+| ReadOnly |
++==========+
+| True     |
++----------+
+
+
+
+
+
 .. _parameters_BARO:
 
 BARO Parameters
@@ -8917,20 +9478,22 @@ EFI\_TYPE: EFI communication type
 What method of communication is used for EFI \#1
 
 
-+-----------------------+
-| Values                |
-+=======================+
-| +-------+-----------+ |
-| | Value | Meaning   | |
-| +=======+===========+ |
-| | 0     | None      | |
-| +-------+-----------+ |
-| | 1     | Serial-MS | |
-| +-------+-----------+ |
-| | 2     | NWPMU     | |
-| +-------+-----------+ |
-|                       |
-+-----------------------+
++--------------------------+
+| Values                   |
++==========================+
+| +-------+--------------+ |
+| | Value | Meaning      | |
+| +=======+==============+ |
+| | 0     | None         | |
+| +-------+--------------+ |
+| | 1     | Serial-MS    | |
+| +-------+--------------+ |
+| | 2     | NWPMU        | |
+| +-------+--------------+ |
+| | 3     | Serial-Lutan | |
+| +-------+--------------+ |
+|                          |
++--------------------------+
 
 
 
@@ -10847,7 +11410,7 @@ LOG\_FILE\_RATEMAX: Maximum logging rate for file backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -10865,7 +11428,7 @@ LOG\_MAV\_RATEMAX: Maximum logging rate for mavlink backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -10883,7 +11446,7 @@ LOG\_BLK\_RATEMAX: Maximum logging rate for block backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -17730,7 +18293,7 @@ RNGFND1\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -18356,7 +18919,7 @@ RNGFND2\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -18982,7 +19545,7 @@ RNGFND3\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -19608,7 +20171,7 @@ RNGFND4\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -20234,7 +20797,7 @@ RNGFND5\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -20860,7 +21423,7 @@ RNGFND6\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -21486,7 +22049,7 @@ RNGFND7\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -22112,7 +22675,7 @@ RNGFND8\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -22738,7 +23301,7 @@ RNGFND9\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -23364,7 +23927,7 @@ RNGFNDA\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -24203,6 +24766,10 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -24353,6 +24920,10 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -24505,6 +25076,10 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -24655,6 +25230,10 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -24807,6 +25386,10 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -24957,6 +25540,10 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -25498,6 +26085,10 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -25697,6 +26288,10 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -25898,6 +26493,10 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -26022,20 +26621,22 @@ VISO\_TYPE: Visual odometry camera connection type
 Visual odometry camera connection type
 
 
-+-----------------------+
-| Values                |
-+=======================+
-| +-------+-----------+ |
-| | Value | Meaning   | |
-| +=======+===========+ |
-| | 0     | None      | |
-| +-------+-----------+ |
-| | 1     | MAVLink   | |
-| +-------+-----------+ |
-| | 2     | IntelT265 | |
-| +-------+-----------+ |
-|                       |
-+-----------------------+
++---------------------------+
+| Values                    |
++===========================+
+| +-------+---------------+ |
+| | Value | Meaning       | |
+| +=======+===============+ |
+| | 0     | None          | |
+| +-------+---------------+ |
+| | 1     | MAVLink       | |
+| +-------+---------------+ |
+| | 2     | IntelT265     | |
+| +-------+---------------+ |
+| | 3     | VOXL(ModalAI) | |
+| +-------+---------------+ |
+|                           |
++---------------------------+
 
 
 

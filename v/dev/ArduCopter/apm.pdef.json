@@ -688,6 +688,219 @@
       "User": "Advanced"
     }
   },
+  "ARSPD": {
+    "ARSPD2_AUTOCAL": {
+      "Description": "If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.",
+      "DisplayName": "Automatic airspeed ratio calibration for 2nd airspeed sensor",
+      "User": "Advanced"
+    },
+    "ARSPD2_BUS": {
+      "Description": "The bus number of the I2C bus to look for the sensor on",
+      "DisplayName": "Airspeed I2C bus for 2nd sensor",
+      "User": "Advanced",
+      "Values": {
+        "0": "Bus0(internal)",
+        "1": "Bus1(external)",
+        "2": "Bus2(auxillary)"
+      }
+    },
+    "ARSPD2_DEVID": {
+      "Description": "Airspeed2 sensor ID, taking into account its type, bus and instance",
+      "DisplayName": "Airspeed2 ID",
+      "ReadOnly": "True",
+      "User": "Advanced"
+    },
+    "ARSPD2_OFFSET": {
+      "Description": "Airspeed calibration offset",
+      "DisplayName": "Airspeed offset for 2nd airspeed sensor",
+      "Increment": "0.1",
+      "User": "Advanced"
+    },
+    "ARSPD2_PIN": {
+      "Description": "Pin number indicating location of analog airspeed sensors. Pixhawk/Cube if set to 15. ",
+      "DisplayName": "Airspeed pin for 2nd airspeed sensor",
+      "User": "Advanced"
+    },
+    "ARSPD2_PSI_RANGE": {
+      "Description": "This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
+      "DisplayName": "The PSI range of the device for 2nd sensor",
+      "User": "Advanced"
+    },
+    "ARSPD2_RATIO": {
+      "Description": "Airspeed calibration ratio",
+      "DisplayName": "Airspeed ratio for 2nd airspeed sensor",
+      "Increment": "0.1",
+      "User": "Advanced"
+    },
+    "ARSPD2_SKIP_CAL": {
+      "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
+      "DisplayName": "Skip airspeed calibration on startup for 2nd sensor",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disable",
+        "1": "Enable"
+      }
+    },
+    "ARSPD2_TUBE_ORDR": {
+      "Description": "This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure. If set to 1 then the bottom connector needs to be the dynamic pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port, which would otherwise be seen as a positive airspeed.",
+      "DisplayName": "Control pitot tube order of 2nd airspeed sensor",
+      "User": "Advanced"
+    },
+    "ARSPD2_TYPE": {
+      "Description": "Type of 2nd airspeed sensor",
+      "DisplayName": "Second Airspeed type",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "I2C-MS4525D0",
+        "10": "I2C-DLVR-20in",
+        "11": "I2C-DLVR-30in",
+        "12": "I2C-DLVR-60in",
+        "13": "NMEA water speed",
+        "14": "MSP",
+        "15": "ASP5033",
+        "2": "Analog",
+        "3": "I2C-MS5525",
+        "4": "I2C-MS5525 (0x76)",
+        "5": "I2C-MS5525 (0x77)",
+        "6": "I2C-SDP3X",
+        "7": "I2C-DLVR-5in",
+        "8": "DroneCAN",
+        "9": "I2C-DLVR-10in"
+      }
+    },
+    "ARSPD2_USE": {
+      "Description": "use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller",
+      "DisplayName": "Enable use of 2nd airspeed sensor",
+      "User": "Standard",
+      "Values": {
+        "0": "Don't Use",
+        "1": "use",
+        "2": "UseWhenZeroThrottle"
+      }
+    },
+    "ARSPD_AUTOCAL": {
+      "Description": "Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is > 5%. Should not be left enabled.",
+      "DisplayName": "Automatic airspeed ratio calibration",
+      "User": "Advanced"
+    },
+    "ARSPD_BUS": {
+      "Description": "Bus number of the I2C bus where the airspeed sensor is connected",
+      "DisplayName": "Airspeed I2C bus",
+      "User": "Advanced",
+      "Values": {
+        "0": "Bus0(internal)",
+        "1": "Bus1(external)",
+        "2": "Bus2(auxillary)"
+      }
+    },
+    "ARSPD_DEVID": {
+      "Description": "Airspeed sensor ID, taking into account its type, bus and instance",
+      "DisplayName": "Airspeed ID",
+      "ReadOnly": "True",
+      "User": "Advanced"
+    },
+    "ARSPD_OFFSET": {
+      "Description": "Airspeed calibration offset",
+      "DisplayName": "Airspeed offset",
+      "Increment": "0.1",
+      "User": "Advanced"
+    },
+    "ARSPD_OPTIONS": {
+      "Bitmask": {
+        "0": "SpeedMismatchDisable",
+        "1": "AllowSpeedMismatchRecovery",
+        "2": "DisableVoltageCorrection"
+      },
+      "Description": "Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction",
+      "DisplayName": "Airspeed options bitmask",
+      "User": "Advanced"
+    },
+    "ARSPD_PIN": {
+      "Description": "The pin number that the airspeed sensor is connected to for analog sensors. Set to 15 on the Pixhawk for the analog airspeed port. ",
+      "DisplayName": "Airspeed pin",
+      "User": "Advanced"
+    },
+    "ARSPD_PRIMARY": {
+      "Description": "This selects which airspeed sensor will be the primary if multiple sensors are found",
+      "DisplayName": "Primary airspeed sensor",
+      "User": "Advanced",
+      "Values": {
+        "0": "FirstSensor",
+        "1": "2ndSensor"
+      }
+    },
+    "ARSPD_PSI_RANGE": {
+      "Description": "This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
+      "DisplayName": "The PSI range of the device",
+      "User": "Advanced"
+    },
+    "ARSPD_RATIO": {
+      "Description": "Calibrates pitot tube pressure to velocity. Increasing this value will indicate a higher airspeed at any given dynamic pressure.",
+      "DisplayName": "Airspeed ratio",
+      "Increment": "0.1",
+      "User": "Advanced"
+    },
+    "ARSPD_SKIP_CAL": {
+      "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
+      "DisplayName": "Skip airspeed calibration on startup",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disable",
+        "1": "Enable"
+      }
+    },
+    "ARSPD_TUBE_ORDER": {
+      "Description": "Changes the pitot tube order to specify the dynamic pressure side of the sensor. Accepts either if set to 2. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed.",
+      "DisplayName": "Control pitot tube order",
+      "User": "Advanced"
+    },
+    "ARSPD_TYPE": {
+      "Description": "Type of airspeed sensor",
+      "DisplayName": "Airspeed type",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "I2C-MS4525D0",
+        "10": "I2C-DLVR-20in",
+        "11": "I2C-DLVR-30in",
+        "12": "I2C-DLVR-60in",
+        "13": "NMEA water speed",
+        "14": "MSP",
+        "15": "ASP5033",
+        "2": "Analog",
+        "3": "I2C-MS5525",
+        "4": "I2C-MS5525 (0x76)",
+        "5": "I2C-MS5525 (0x77)",
+        "6": "I2C-SDP3X",
+        "7": "I2C-DLVR-5in",
+        "8": "DroneCAN",
+        "9": "I2C-DLVR-10in"
+      }
+    },
+    "ARSPD_USE": {
+      "Description": "Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).",
+      "DisplayName": "Airspeed use",
+      "User": "Standard",
+      "Values": {
+        "0": "DoNotUse",
+        "1": "Use",
+        "2": "UseWhenZeroThrottle"
+      }
+    },
+    "ARSPD_WIND_MAX": {
+      "Description": "If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor.",
+      "DisplayName": "Maximum airspeed and ground speed difference",
+      "Units": "m/s",
+      "User": "Advanced"
+    },
+    "ARSPD_WIND_WARN": {
+      "Description": "If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used.",
+      "DisplayName": "Airspeed and ground speed difference that gives a warning",
+      "Units": "m/s",
+      "User": "Advanced"
+    }
+  },
   "ATC_": {
     "ATC_ACCEL_P_MAX": {
       "Description": "Maximum acceleration in pitch axis",
@@ -4157,7 +4370,8 @@
       "Bitmask": {
         "0": "Enable hardware watchdog",
         "1": "Disable MAVftp",
-        "2": "Enable set of internal parameters"
+        "2": "Enable set of internal parameters",
+        "3": "Enable Debug Pins"
       },
       "Description": "Board specific option flags",
       "DisplayName": "Board options",
@@ -7654,6 +7868,7 @@
         "18": "IMU_FAST",
         "19": "IMU_RAW",
         "2": "GPS",
+        "20": "VideoStabilization",
         "3": "PM",
         "4": "CTUN",
         "5": "NTUN",
@@ -7699,12 +7914,12 @@
       "User": "Standard"
     },
     "PILOT_SPEED_DN": {
-      "Description": "The maximum vertical descending velocity the pilot may request in cm/s",
+      "Description": "The maximum vertical descending velocity the pilot may request in cm/s.  If 0 PILOT_SPEED_UP value is used.",
       "DisplayName": "Pilot maximum vertical speed descending",
       "Increment": "10",
       "Range": {
         "high": "500",
-        "low": "50"
+        "low": "0"
       },
       "Units": "cm/s",
       "User": "Standard"
@@ -8130,7 +8345,8 @@
       "Values": {
         "0": "None",
         "1": "Serial-MS",
-        "2": "NWPMU"
+        "2": "NWPMU",
+        "3": "Serial-Lutan"
       }
     }
   },
@@ -12846,7 +13062,7 @@
       "User": "Standard"
     },
     "LOG_BLK_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for block backend",
       "Range": {
         "high": "1000",
@@ -12889,7 +13105,7 @@
       "User": "Standard"
     },
     "LOG_FILE_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for file backend",
       "Range": {
         "high": "1000",
@@ -12911,7 +13127,7 @@
       "User": "Advanced"
     },
     "LOG_MAV_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for mavlink backend",
       "Range": {
         "high": "1000",
@@ -14442,6 +14658,30 @@
     "OSD1_ALTITUDE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "ALTITUDE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -16108,6 +16348,30 @@
         "low": "0"
       }
     },
+    "OSD2_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD2_ARMING_EN": {
       "Description": "Displays arming status (MSP OSD only)",
       "DisplayName": "ARMING_EN",
@@ -17769,6 +18033,30 @@
         "low": "0"
       }
     },
+    "OSD3_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_ARMING_EN": {
       "Description": "Displays arming status (MSP OSD only)",
       "DisplayName": "ARMING_EN",
@@ -19425,6 +19713,30 @@
     "OSD4_ALTITUDE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "ALTITUDE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -22597,7 +22909,6 @@
       "User": "Standard",
       "Values": {
         "0": "None",
-        "1": "LightWareSF40C-legacy",
         "10": "SITL",
         "12": "AirSimSITL",
         "13": "CygbotD1",
@@ -25745,7 +26056,7 @@
       }
     },
     "RNGFND1_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -26028,7 +26339,7 @@
       }
     },
     "RNGFND2_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -26311,7 +26622,7 @@
       }
     },
     "RNGFND3_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -26594,7 +26905,7 @@
       }
     },
     "RNGFND4_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -26877,7 +27188,7 @@
       }
     },
     "RNGFND5_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -27160,7 +27471,7 @@
       }
     },
     "RNGFND6_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -27443,7 +27754,7 @@
       }
     },
     "RNGFND7_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -27726,7 +28037,7 @@
       }
     },
     "RNGFND8_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -28009,7 +28320,7 @@
       }
     },
     "RNGFND9_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -28292,7 +28603,7 @@
       }
     },
     "RNGFNDA_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -28896,6 +29207,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -28986,6 +29299,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29076,6 +29391,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29166,6 +29483,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29256,6 +29575,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29346,6 +29667,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29436,6 +29759,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29526,6 +29851,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29616,6 +29943,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -33831,7 +34160,8 @@
       "Values": {
         "0": "None",
         "1": "MAVLink",
-        "2": "IntelT265"
+        "2": "IntelT265",
+        "3": "VOXL(ModalAI)"
       }
     },
     "VISO_VEL_M_NSE": {

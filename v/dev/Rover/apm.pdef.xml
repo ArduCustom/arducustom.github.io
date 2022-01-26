@@ -6,7 +6,7 @@
       <param humanName="Eeprom format version number" name="Rover:FORMAT_VERSION" documentation="This value is incremented when changes are made to the eeprom format" user="Advanced">
 </param>
       <param humanName="Log bitmask" name="Rover:LOG_BITMASK" documentation="Bitmap of what log types to enable in on-board logger. This value is made up of the sum of each of the log types you want to be saved. On boards supporting microSD cards or other large block-storage devices it is usually best just to enable all log types by setting this to 65535. The individual bits are ATTITUDE_FAST=1, ATTITUDE_MEDIUM=2, GPS=4, PerformanceMonitoring=8, ControlTuning=16, NavigationTuning=32, Mode=64, IMU=128, Commands=256, Battery=512, Compass=1024, TECS=2048, Camera=4096, RCandServo=8192, Rangefinder=16384, Arming=32768, FullLogs=65535" user="Advanced">
-        <field name="Bitmask">0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:THR,5:NTUN,7:IMU,8:CMD,9:CURRENT,10:RANGEFINDER,11:COMPASS,12:CAMERA,13:STEERING,14:RC,15:ARM/DISARM,19:IMU_RAW</field>
+        <field name="Bitmask">0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:THR,5:NTUN,7:IMU,8:CMD,9:CURRENT,10:RANGEFINDER,11:COMPASS,12:CAMERA,13:STEERING,14:RC,15:ARM/DISARM,19:IMU_RAW,20:VideoStabilization</field>
       </param>
       <param humanName="Reset Switch Channel" name="Rover:RST_SWITCH_CH" documentation="RC channel to use to reset to last flight mode after geofence takeover." user="Advanced">
 </param>
@@ -2772,7 +2772,7 @@
         </values>
       </param>
       <param humanName="Board options" name="BRD_OPTIONS" documentation="Board specific option flags" user="Advanced">
-        <field name="Bitmask">0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters</field>
+        <field name="Bitmask">0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters, 3:Enable Debug Pins</field>
       </param>
       <param humanName="Boot delay" name="BRD_BOOT_DELAY" documentation="This adds a delay in milliseconds to boot to ensure peripherals initialise fully" user="Advanced">
         <field name="Range">0 10000</field>
@@ -4201,6 +4201,7 @@
           <value code="0">None</value>
           <value code="1">Serial-MS</value>
           <value code="2">NWPMU</value>
+          <value code="3">Serial-Lutan</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -6269,17 +6270,17 @@
         <field name="UnitText">megabyte</field>
         <field name="Range">10 1000</field>
       </param>
-      <param humanName="Maximum logging rate for file backend" name="LOG_FILE_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means" user="Standard">
+      <param humanName="Maximum logging rate for file backend" name="LOG_FILE_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled." user="Standard">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
       </param>
-      <param humanName="Maximum logging rate for mavlink backend" name="LOG_MAV_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means" user="Standard">
+      <param humanName="Maximum logging rate for mavlink backend" name="LOG_MAV_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled." user="Standard">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
       </param>
-      <param humanName="Maximum logging rate for block backend" name="LOG_BLK_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means" user="Standard">
+      <param humanName="Maximum logging rate for block backend" name="LOG_BLK_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled." user="Standard">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
@@ -7828,6 +7829,18 @@
       <param humanName="AUTO_FLAPS_Y" name="OSD1_AUTO_FLP_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="AOA_EN" name="OSD1_AOA_EN" documentation="Displays the estimated angle of attack">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AOA_X" name="OSD1_AOA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AOA_Y" name="OSD1_AOA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -8656,6 +8669,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="AUTO_FLAPS_Y" name="OSD2_AUTO_FLP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AOA_EN" name="OSD2_AOA_EN" documentation="Displays the estimated angle of attack">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AOA_X" name="OSD2_AOA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AOA_Y" name="OSD2_AOA_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -9488,6 +9513,18 @@
       <param humanName="AUTO_FLAPS_Y" name="OSD3_AUTO_FLP_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="AOA_EN" name="OSD3_AOA_EN" documentation="Displays the estimated angle of attack">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AOA_X" name="OSD3_AOA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AOA_Y" name="OSD3_AOA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10318,6 +10355,18 @@
       <param humanName="AUTO_FLAPS_Y" name="OSD4_AUTO_FLP_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="AOA_EN" name="OSD4_AOA_EN" documentation="Displays the estimated angle of attack">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AOA_X" name="OSD4_AOA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AOA_Y" name="OSD4_AOA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD5_">
       <param humanName="Enable screen" name="OSD5_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10868,7 +10917,6 @@
         <values>
           <value code="0">None</value>
           <value code="7">LightwareSF40c</value>
-          <value code="1">LightWareSF40C-legacy</value>
           <value code="2">MAVLink</value>
           <value code="3">TeraRangerTower</value>
           <value code="4">RangeFinder</value>
@@ -12817,7 +12865,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND1_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND1_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -12998,7 +13046,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND2_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND2_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -13179,7 +13227,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND3_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND3_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -13360,7 +13408,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND4_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND4_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -13541,7 +13589,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND5_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND5_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -13722,7 +13770,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND6_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND6_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -13903,7 +13951,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND7_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND7_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -14084,7 +14132,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND8_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND8_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -14265,7 +14313,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFND9_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFND9_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -14446,7 +14494,7 @@
           <value code="103">Pixhawk SBUS</value>
         </values>
       </param>
-      <param humanName="Rangefinder scaling" name="RNGFNDA_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts." user="Standard">
+      <param humanName="Rangefinder scaling" name="RNGFNDA_SCALING" documentation="Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters." user="Standard">
         <field name="Units">m/V</field>
         <field name="UnitText">meters per volt</field>
         <field name="Increment">0.001</field>
@@ -14885,6 +14933,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -14949,6 +14999,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Telemetry 2 Baud Rate" name="SERIAL2_BAUD" documentation="The baud rate of the Telem2 port. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -15012,6 +15064,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Serial 3 (GPS) Baud Rate" name="SERIAL3_BAUD" documentation="The baud rate used for the Serial 3 (GPS). Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -15075,6 +15129,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Serial 4 Baud Rate" name="SERIAL4_BAUD" documentation="The baud rate used for Serial4. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -15138,6 +15194,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Serial 5 Baud Rate" name="SERIAL5_BAUD" documentation="The baud rate used for Serial5. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -15201,6 +15259,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Serial 6 Baud Rate" name="SERIAL6_BAUD" documentation="The baud rate used for Serial6. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -15317,6 +15377,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Serial 7 Baud Rate" name="SERIAL7_BAUD" documentation="The baud rate used for Serial7. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -15384,6 +15446,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Serial 8 Baud Rate" name="SERIAL8_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -15451,6 +15515,8 @@
           <value code="38">FETtecOneWire</value>
           <value code="39">Torqeedo</value>
           <value code="40">AIS</value>
+          <value code="41">CoDevESC</value>
+          <value code="42">DisplayPort</value>
         </values>
       </param>
       <param humanName="Serial 9 Baud Rate" name="SERIAL9_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17846,6 +17912,7 @@
           <value code="0">None</value>
           <value code="1">MAVLink</value>
           <value code="2">IntelT265</value>
+          <value code="3">VOXL(ModalAI)</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>

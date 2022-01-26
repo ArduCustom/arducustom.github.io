@@ -194,6 +194,25 @@ Degrees of down pitch added when throttle is below TRIM\_THROTTLE in FBWA and AU
 
 
 
+.. _STAB_PTCHDN_THR:
+
+STAB\_PTCHDN\_THR: Throttle under which to start pitching down to avoid stalling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Throttle under which to start pitching down to avoid stalling\. The applied down pitch scales linearly from 0 to STAB\_PITCH\_DOWN with throttle between STAB\_PTCHDN\_THR and 0
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.1       | 0 - 100 | percent |
++-----------+---------+---------+
+
+
+
+
 .. _GLIDE_SLOPE_MIN:
 
 GLIDE\_SLOPE\_MIN: Glide slope minimum
@@ -1913,50 +1932,52 @@ LOG\_BITMASK: Log bitmask
 Bitmap of what on\-board log types to enable\. This value is made up of the sum of each of the log types you want to be saved\. It is usually best just to enable all log types by setting this to 65535\. The individual bits are ATTITUDE\_FAST\=1\, ATTITUDE\_MEDIUM\=2\, GPS\=4\, PerformanceMonitoring\=8\, ControlTuning\=16\, NavigationTuning\=32\, Mode\=64\, IMU\=128\, Commands\=256\, Battery\=512\, Compass\=1024\, TECS\=2048\, Camera\=4096\, RCandServo\=8192\, Sonar\=16384\, Arming\=32768\, FullLogs\=65535
 
 
-+-----------------------------+
-| Bitmask                     |
-+=============================+
-| +-----+-------------------+ |
-| | Bit | Meaning           | |
-| +=====+===================+ |
-| | 0   | ATTITUDE_FAST     | |
-| +-----+-------------------+ |
-| | 1   | ATTITUDE_MED      | |
-| +-----+-------------------+ |
-| | 2   | GPS               | |
-| +-----+-------------------+ |
-| | 3   | PM                | |
-| +-----+-------------------+ |
-| | 4   | CTUN              | |
-| +-----+-------------------+ |
-| | 5   | NTUN              | |
-| +-----+-------------------+ |
-| | 6   | MODE              | |
-| +-----+-------------------+ |
-| | 7   | IMU               | |
-| +-----+-------------------+ |
-| | 8   | CMD               | |
-| +-----+-------------------+ |
-| | 9   | CURRENT           | |
-| +-----+-------------------+ |
-| | 10  | COMPASS           | |
-| +-----+-------------------+ |
-| | 11  | TECS              | |
-| +-----+-------------------+ |
-| | 12  | CAMERA            | |
-| +-----+-------------------+ |
-| | 13  | RC                | |
-| +-----+-------------------+ |
-| | 14  | SONAR             | |
-| +-----+-------------------+ |
-| | 15  | ARM/DISARM        | |
-| +-----+-------------------+ |
-| | 19  | IMU_RAW           | |
-| +-----+-------------------+ |
-| | 20  | ATTITUDE_FULLRATE | |
-| +-----+-------------------+ |
-|                             |
-+-----------------------------+
++------------------------------+
+| Bitmask                      |
++==============================+
+| +-----+--------------------+ |
+| | Bit | Meaning            | |
+| +=====+====================+ |
+| | 0   | ATTITUDE_FAST      | |
+| +-----+--------------------+ |
+| | 1   | ATTITUDE_MED       | |
+| +-----+--------------------+ |
+| | 2   | GPS                | |
+| +-----+--------------------+ |
+| | 3   | PM                 | |
+| +-----+--------------------+ |
+| | 4   | CTUN               | |
+| +-----+--------------------+ |
+| | 5   | NTUN               | |
+| +-----+--------------------+ |
+| | 6   | MODE               | |
+| +-----+--------------------+ |
+| | 7   | IMU                | |
+| +-----+--------------------+ |
+| | 8   | CMD                | |
+| +-----+--------------------+ |
+| | 9   | CURRENT            | |
+| +-----+--------------------+ |
+| | 10  | COMPASS            | |
+| +-----+--------------------+ |
+| | 11  | TECS               | |
+| +-----+--------------------+ |
+| | 12  | CAMERA             | |
+| +-----+--------------------+ |
+| | 13  | RC                 | |
+| +-----+--------------------+ |
+| | 14  | SONAR              | |
+| +-----+--------------------+ |
+| | 15  | ARM/DISARM         | |
+| +-----+--------------------+ |
+| | 19  | IMU_RAW            | |
+| +-----+--------------------+ |
+| | 20  | ATTITUDE_FULLRATE  | |
+| +-----+--------------------+ |
+| | 21  | VideoStabilization | |
+| +-----+--------------------+ |
+|                              |
++------------------------------+
 
 
 
@@ -3200,6 +3221,34 @@ Flight mode for switch position 12 \(1876 to 2049\)\, enabled with FLTMODE\_EXT
 | +-------+------------+ |
 |                        |
 +------------------------+
+
+
+
+
+.. _ARMING_MODE_SW:
+
+ARMING\_MODE\_SW: Selects what mode to switch to after arming
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Selects what mode to switch to after arming
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Takeoff  | |
+| +-------+----------+ |
+| | 2     | Auto     | |
+| +-------+----------+ |
+|                      |
++----------------------+
 
 
 
@@ -12173,6 +12222,8 @@ Board specific option flags
 | +-----+-----------------------------------+ |
 | | 2   | Enable set of internal parameters | |
 | +-----+-----------------------------------+ |
+| | 3   | Enable Debug Pins                 | |
+| +-----+-----------------------------------+ |
 |                                             |
 +---------------------------------------------+
 
@@ -18003,20 +18054,22 @@ EFI\_TYPE: EFI communication type
 What method of communication is used for EFI \#1
 
 
-+-----------------------+
-| Values                |
-+=======================+
-| +-------+-----------+ |
-| | Value | Meaning   | |
-| +=======+===========+ |
-| | 0     | None      | |
-| +-------+-----------+ |
-| | 1     | Serial-MS | |
-| +-------+-----------+ |
-| | 2     | NWPMU     | |
-| +-------+-----------+ |
-|                       |
-+-----------------------+
++--------------------------+
+| Values                   |
++==========================+
+| +-------+--------------+ |
+| | Value | Meaning      | |
+| +=======+==============+ |
+| | 0     | None         | |
+| +-------+--------------+ |
+| | 1     | Serial-MS    | |
+| +-------+--------------+ |
+| | 2     | NWPMU        | |
+| +-------+--------------+ |
+| | 3     | Serial-Lutan | |
+| +-------+--------------+ |
+|                          |
++--------------------------+
 
 
 
@@ -27945,7 +27998,7 @@ LOG\_FILE\_RATEMAX: Maximum logging rate for file backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -27963,7 +28016,7 @@ LOG\_MAV\_RATEMAX: Maximum logging rate for mavlink backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -27981,7 +28034,7 @@ LOG\_BLK\_RATEMAX: Maximum logging rate for block backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means
+This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
 +----------+-------+
@@ -34346,6 +34399,67 @@ Vertical position on screen
 
 
 
+.. _OSD1_AOA_EN:
+
+OSD1\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_AOA_X:
+
+OSD1\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_AOA_Y:
+
+OSD1\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -38548,6 +38662,67 @@ Horizontal position on screen
 
 OSD2\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_AOA_EN:
+
+OSD2\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_AOA_X:
+
+OSD2\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_AOA_Y:
+
+OSD2\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -42778,6 +42953,67 @@ Vertical position on screen
 
 
 
+.. _OSD3_AOA_EN:
+
+OSD3\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_AOA_X:
+
+OSD3\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_AOA_Y:
+
+OSD3\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -46994,6 +47230,67 @@ Vertical position on screen
 
 
 
+.. _OSD4_AOA_EN:
+
+OSD4\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_AOA_X:
+
+OSD4\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_AOA_Y:
+
+OSD4\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -49597,7 +49894,7 @@ PTCH2SRV\_RMAX\_UP: Pitch up max rate
 
 | *Note: This parameter is for advanced users*
 
-Maximum pitch up rate that the pitch controller demands \(degrees\/sec\) in angle control modes \(all but MANUAL and ACRO\)\.
+This sets the maximum nose up pitch rate that the attitude controller will demand \(degrees\/sec\) in angle stabilized modes \(all but MANUAL and ACRO\)\. Setting it to zero disables the limit\.
 
 
 +-----------+---------+--------------------+
@@ -49616,7 +49913,7 @@ PTCH2SRV\_RMAX\_DN: Pitch down max rate
 
 | *Note: This parameter is for advanced users*
 
-This sets the maximum nose down pitch rate that the controller will demand \(degrees\/sec\) in angle control modes \(all but MANUAL and ACRO\)\. Setting it to zero disables the limit\.
+This sets the maximum nose down pitch rate that the attitude controller will demand \(degrees\/sec\) in angle stabilized modes \(all but MANUAL and ACRO\)\. Setting it to zero disables the limit\.
 
 
 +-----------+---------+--------------------+
@@ -50413,7 +50710,7 @@ Q\_OPTIONS: quadplane options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Level Transition\:Keep wings within LEVEL\_ROLL\_LIMIT and only use forward motor\(s\) for climb during transition\, Allow FW Takeoff\: If bit is not set then NAV\_TAKEOFF command on quadplanes will instead perform a NAV\_VTOL takeoff\, Allow FW Land\:If bit is not set then NAV\_LAND command on quadplanes will instead perform a NAV\_VTOL\_LAND\, Vtol Takeoff Frame\: command NAV\_VTOL\_TAKEOFF altitude is as set by the command\'s reference frame rather than a delta above current location\, Use FW Approach\:Use a fixed wing approach for VTOL landings\, USE QRTL\:instead of QLAND for rc failsafe when in VTOL modes\, Use Governor\:Use ICE Idle Governor in MANUAL for forward motor\, Force Qassist\: on always\,Mtrs\_Only\_Qassist\: in tailsitters only\, uses VTOL motors and not flying surfaces for QASSIST\, Airmode\_On\_Arm\:Airmode enabled when arming by aux switch\, Disarmed Yaw Tilt\:Enable motor tilt for yaw when disarmed\, Delay Spoolup\:Delay VTOL spoolup for 2 seconds after arming\, ThrLandControl\: enable throttle stick control of landing rate\, DisableApproach\: Disable use of approach and airbrake stages in VTOL landing\, EnableLandResponsition\: enable pilot controlled repositioning in AUTO land\. Descent will pause while repositioning\.
+Level Transition\:Keep wings within LEVEL\_ROLL\_LIMIT and only use forward motor\(s\) for climb during transition\, Allow FW Takeoff\: If bit is not set then NAV\_TAKEOFF command on quadplanes will instead perform a NAV\_VTOL takeoff\, Allow FW Land\:If bit is not set then NAV\_LAND command on quadplanes will instead perform a NAV\_VTOL\_LAND\, Vtol Takeoff Frame\: command NAV\_VTOL\_TAKEOFF altitude is as set by the command\'s reference frame rather than a delta above current location\, Use FW Approach\:Use a fixed wing approach for VTOL landings\, USE QRTL\:instead of QLAND for rc failsafe when in VTOL modes\, Use Governor\:Use ICE Idle Governor in MANUAL for forward motor\, Force Qassist\: on always\,Mtrs\_Only\_Qassist\: in tailsitters only\, uses VTOL motors and not flying surfaces for QASSIST\, Airmode\_On\_Arm\:Airmode enabled when arming by aux switch\, Disarmed Yaw Tilt\:Enable motor tilt for yaw when disarmed\, Delay Spoolup\:Delay VTOL spoolup for 2 seconds after arming\, ThrLandControl\: enable throttle stick control of landing rate\, DisableApproach\: Disable use of approach and airbrake stages in VTOL landing\, EnableLandResposition\: enable pilot controlled repositioning in AUTO land\. Descent will pause while repositioning\. ARMVTOL\: Arm only in VTOL or AUTO modes\. CompleteTransition\: to fixed wing if Q\_TRANS\_FAIL timer times out instead of QLAND\.
 
 
 +--------------------------------------------------------+
@@ -50456,7 +50753,9 @@ Level Transition\:Keep wings within LEVEL\_ROLL\_LIMIT and only use forward moto
 | +-----+----------------------------------------------+ |
 | | 17  | EnableLandResponsition                       | |
 | +-----+----------------------------------------------+ |
-| | 18  | Only allow arming in Qmodes or auto          | |
+| | 18  | ARMVtol                                      | |
+| +-----+----------------------------------------------+ |
+| | 19  | CompleteTransition if Q_TRANS_FAIL           | |
 | +-----+----------------------------------------------+ |
 |                                                        |
 +--------------------------------------------------------+
@@ -50528,7 +50827,7 @@ Q\_TRANS\_FAIL: Quadplane transition failure time
 
 | *Note: This parameter is for advanced users*
 
-Maximum time allowed for forward transitions\, exceeding this time will cancel the transition and the aircraft will immediately change to QLAND\. 0 for no limit\.
+Maximum time allowed for forward transitions\, exceeding this time will cancel the transition and the aircraft will immediately change to the mode set by Q\_TRANS\_FAIL\_ACT or finish the transition depending on Q\_OPTIONS bit 19\. 0 for no limit\.
 
 
 +-----------+--------+---------+
@@ -50719,6 +51018,33 @@ Pitch angle will increase from 0 to angle max over this duration when switching 
 +===========+==============+
 | 0 - 10000 | milliseconds |
 +-----------+--------------+
+
+
+
+
+.. _Q_TRANS_FAIL_ACT:
+
+Q\_TRANS\_FAIL\_ACT: Quadplane transition failure action
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+This sets the mode that is changed to when Q\_TRANS\_FAIL time elapses\, if set\. See also Q\_OPTIONS bit 19\: CompleteTransition if Q\_TRANS\_FAIL
+
+
++-----------------------+
+| Values                |
++=======================+
+| +-------+-----------+ |
+| | Value | Meaning   | |
+| +=======+===========+ |
+| | -1    | Warn only | |
+| +-------+-----------+ |
+| | 0     | QLand     | |
+| +-------+-----------+ |
+| | 1     | QRTL      | |
+| +-------+-----------+ |
+|                       |
++-----------------------+
 
 
 
@@ -53261,6 +53587,24 @@ Scale from PID output to control surface\, for use where a single axis is actuat
 +=======+
 | 0 - 2 |
 +-------+
+
+
+
+
+.. _Q_TAILSIT_MIN_VO:
+
+Q\_TAILSIT\_MIN\_VO: Tailsitter Disk loading minimum outflow speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Use in conjunction with disk therory gain scaling and Q\_TAILSIT\_DSKLD to specify minumum airspeed over control surfaces\, this will be used to boost throttle\, when decending for example\, 0 disables
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
 
 
 
@@ -58663,7 +59007,7 @@ RLL2SRV\_RMAX: Maximum Roll Rate
 
 | *Note: This parameter is for advanced users*
 
-Maximum roll rate that the roll controller demands \(degrees\/sec\) in angle control modes \(all but MANUAL and ACRO\)\.
+This sets the maximum roll rate that the attitude controller will demand \(degrees\/sec\) in angle stabilized modes \(all but MANUAL and ACRO\)\. Setting it to zero disables this limit\.
 
 
 +-----------+---------+--------------------+
@@ -58987,7 +59331,7 @@ RNGFND1\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -59613,7 +59957,7 @@ RNGFND2\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -60239,7 +60583,7 @@ RNGFND3\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -60865,7 +61209,7 @@ RNGFND4\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -61491,7 +61835,7 @@ RNGFND5\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -62117,7 +62461,7 @@ RNGFND6\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -62743,7 +63087,7 @@ RNGFND7\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -63369,7 +63713,7 @@ RNGFND8\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -63995,7 +64339,7 @@ RNGFND9\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -64621,7 +64965,7 @@ RNGFNDA\_SCALING: Rangefinder scaling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\.
+Scaling factor between rangefinder reading and distance\. For the linear and inverted functions this is in meters per volt\. For the hyperbolic function the units are meterVolts\. For Maxbotix serial sonar this is unit conversion to meters\.
 
 
 +-----------+-----------------+
@@ -66133,6 +66477,10 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -66283,6 +66631,10 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -66435,6 +66787,10 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -66585,6 +66941,10 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -66737,6 +67097,10 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -66887,6 +67251,10 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -67428,6 +67796,10 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -67628,6 +68000,10 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
 | +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -67827,6 +68203,10 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | | 39    | Torqeedo                         | |
 | +-------+----------------------------------+ |
 | | 40    | AIS                              | |
+| +-------+----------------------------------+ |
+| | 41    | CoDevESC                         | |
+| +-------+----------------------------------+ |
+| | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -77150,20 +77530,22 @@ VISO\_TYPE: Visual odometry camera connection type
 Visual odometry camera connection type
 
 
-+-----------------------+
-| Values                |
-+=======================+
-| +-------+-----------+ |
-| | Value | Meaning   | |
-| +=======+===========+ |
-| | 0     | None      | |
-| +-------+-----------+ |
-| | 1     | MAVLink   | |
-| +-------+-----------+ |
-| | 2     | IntelT265 | |
-| +-------+-----------+ |
-|                       |
-+-----------------------+
++---------------------------+
+| Values                    |
++===========================+
+| +-------+---------------+ |
+| | Value | Meaning       | |
+| +=======+===============+ |
+| | 0     | None          | |
+| +-------+---------------+ |
+| | 1     | MAVLink       | |
+| +-------+---------------+ |
+| | 2     | IntelT265     | |
+| +-------+---------------+ |
+| | 3     | VOXL(ModalAI) | |
+| +-------+---------------+ |
+|                           |
++---------------------------+
 
 
 

@@ -3539,7 +3539,8 @@
       "Bitmask": {
         "0": "Enable hardware watchdog",
         "1": "Disable MAVftp",
-        "2": "Enable set of internal parameters"
+        "2": "Enable set of internal parameters",
+        "3": "Enable Debug Pins"
       },
       "Description": "Board specific option flags",
       "DisplayName": "Board options",
@@ -6271,7 +6272,8 @@
       "Values": {
         "0": "None",
         "1": "Serial-MS",
-        "2": "NWPMU"
+        "2": "NWPMU",
+        "3": "Serial-Lutan"
       }
     }
   },
@@ -10645,7 +10647,7 @@
       "User": "Standard"
     },
     "LOG_BLK_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for block backend",
       "Range": {
         "high": "1000",
@@ -10688,7 +10690,7 @@
       "User": "Standard"
     },
     "LOG_FILE_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for file backend",
       "Range": {
         "high": "1000",
@@ -10710,7 +10712,7 @@
       "User": "Advanced"
     },
     "LOG_MAV_RATEMAX": {
-      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means",
+      "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for mavlink backend",
       "Range": {
         "high": "1000",
@@ -11828,6 +11830,30 @@
     "OSD1_ALTITUDE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "ALTITUDE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -13494,6 +13520,30 @@
         "low": "0"
       }
     },
+    "OSD2_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD2_ARMING_EN": {
       "Description": "Displays arming status (MSP OSD only)",
       "DisplayName": "ARMING_EN",
@@ -15155,6 +15205,30 @@
         "low": "0"
       }
     },
+    "OSD3_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_ARMING_EN": {
       "Description": "Displays arming status (MSP OSD only)",
       "DisplayName": "ARMING_EN",
@@ -16811,6 +16885,30 @@
     "OSD4_ALTITUDE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "ALTITUDE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -19638,7 +19736,7 @@
       "User": "Standard"
     },
     "PTCH2SRV_RMAX_DN": {
-      "Description": "This sets the maximum nose down pitch rate that the controller will demand (degrees/sec) in angle control modes (all but MANUAL and ACRO). Setting it to zero disables the limit.",
+      "Description": "This sets the maximum nose down pitch rate that the attitude controller will demand (degrees/sec) in angle stabilized modes (all but MANUAL and ACRO). Setting it to zero disables the limit.",
       "DisplayName": "Pitch down max rate",
       "Increment": "1",
       "Range": {
@@ -19649,7 +19747,7 @@
       "User": "Advanced"
     },
     "PTCH2SRV_RMAX_UP": {
-      "Description": "Maximum pitch up rate that the pitch controller demands (degrees/sec) in angle control modes (all but MANUAL and ACRO).",
+      "Description": "This sets the maximum nose up pitch rate that the attitude controller will demand (degrees/sec) in angle stabilized modes (all but MANUAL and ACRO). Setting it to zero disables the limit.",
       "DisplayName": "Pitch up max rate",
       "Increment": "1",
       "Range": {
@@ -19829,6 +19927,16 @@
       },
       "Units": "m",
       "User": "Advanced"
+    },
+    "ARMING_MODE_SW": {
+      "Description": "Selects what mode to switch to after arming",
+      "DisplayName": "Selects what mode to switch to after arming",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "1": "Takeoff",
+        "2": "Auto"
+      }
     },
     "ARSPD_FBW_MAX": {
       "Description": "Maximum airspeed demanded in automatic throttle modes. Should be set slightly less than level flight speed at THR_MAX and also at least 50% above ARSPD_FBW_MIN to allow for accurate TECS altitude control.",
@@ -20691,6 +20799,7 @@
         "19": "IMU_RAW",
         "2": "GPS",
         "20": "ATTITUDE_FULLRATE",
+        "21": "VideoStabilization",
         "3": "PM",
         "4": "CTUN",
         "5": "NTUN",
@@ -20904,6 +21013,17 @@
         "low": "0"
       },
       "Units": "deg",
+      "User": "Advanced"
+    },
+    "STAB_PTCHDN_THR": {
+      "Description": "Throttle under which to start pitching down to avoid stalling. The applied down pitch scales linearly from 0 to STAB_PITCH_DOWN with throttle between STAB_PTCHDN_THR and 0",
+      "DisplayName": "Throttle under which to start pitching down to avoid stalling",
+      "Increment": "0.1",
+      "Range": {
+        "high": "100",
+        "low": "0"
+      },
+      "Units": "%",
       "User": "Advanced"
     },
     "STALL_PREVENTION": {
@@ -21577,7 +21697,8 @@
         "15": "ThrLandControl",
         "16": "DisableApproach",
         "17": "EnableLandResponsition",
-        "18": "Only allow arming in Qmodes or auto",
+        "18": "ARMVtol",
+        "19": "CompleteTransition if Q_TRANS_FAIL",
         "2": "Allow FW Land",
         "3": "Vtol Takeoff Frame",
         "4": "Use FW Approach",
@@ -21586,7 +21707,7 @@
         "7": "Force Qassist",
         "8": "Mtrs_Only_Qassist"
       },
-      "Description": "Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command's reference frame rather than a delta above current location, Use FW Approach:Use a fixed wing approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResponsition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning.",
+      "Description": "Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command's reference frame rather than a delta above current location, Use FW Approach:Use a fixed wing approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND.",
       "DisplayName": "quadplane options"
     },
     "Q_RC_SPEED": {
@@ -21675,7 +21796,7 @@
       "User": "Standard"
     },
     "Q_TRANS_FAIL": {
-      "Description": "Maximum time allowed for forward transitions, exceeding this time will cancel the transition and the aircraft will immediately change to QLAND. 0 for no limit.",
+      "Description": "Maximum time allowed for forward transitions, exceeding this time will cancel the transition and the aircraft will immediately change to the mode set by Q_TRANS_FAIL_ACT or finish the transition depending on Q_OPTIONS bit 19. 0 for no limit.",
       "DisplayName": "Quadplane transition failure time",
       "Increment": "1",
       "Range": {
@@ -21684,6 +21805,15 @@
       },
       "Units": "s",
       "User": "Advanced"
+    },
+    "Q_TRANS_FAIL_ACT": {
+      "Description": "This sets the mode that is changed to when Q_TRANS_FAIL time elapses, if set. See also Q_OPTIONS bit 19: CompleteTransition if Q_TRANS_FAIL",
+      "DisplayName": "Quadplane transition failure action",
+      "Values": {
+        "-1": "Warn only",
+        "0": "QLand",
+        "1": "QRTL"
+      }
     },
     "Q_TRAN_PIT_MAX": {
       "Description": "Maximum pitch during transition to auto fixed wing flight",
@@ -22977,6 +23107,14 @@
       },
       "Description": "This controls whether stick input when hovering as a tailsitter follows the conventions for fixed wing hovering or multicopter hovering. When PlaneMode is not enabled (bit0 = 0) the roll stick will roll the aircraft in earth frame and yaw stick will yaw in earth frame. When PlaneMode input is enabled, the roll and yaw sticks are swapped so that the roll stick controls earth-frame yaw and rudder controls earth-frame roll. When body-frame roll is enabled (bit1 = 1), the yaw stick controls earth-frame yaw rate and the roll stick controls roll in the tailsitter's body frame when flying level.",
       "DisplayName": "Tailsitter input type bitmask"
+    },
+    "Q_TAILSIT_MIN_VO": {
+      "Description": "Use in conjunction with disk therory gain scaling and Q_TAILSIT_DSKLD to specify minumum airspeed over control surfaces, this will be used to boost throttle, when decending for example, 0 disables",
+      "DisplayName": "Tailsitter Disk loading minimum outflow speed",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
     },
     "Q_TAILSIT_MOTMX": {
       "Bitmask": {
@@ -25670,7 +25808,7 @@
   },
   "RLL": {
     "RLL2SRV_RMAX": {
-      "Description": "Maximum roll rate that the roll controller demands (degrees/sec) in angle control modes (all but MANUAL and ACRO).",
+      "Description": "This sets the maximum roll rate that the attitude controller will demand (degrees/sec) in angle stabilized modes (all but MANUAL and ACRO). Setting it to zero disables this limit.",
       "DisplayName": "Maximum Roll Rate",
       "Increment": "1",
       "Range": {
@@ -25936,7 +26074,7 @@
       }
     },
     "RNGFND1_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -26219,7 +26357,7 @@
       }
     },
     "RNGFND2_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -26502,7 +26640,7 @@
       }
     },
     "RNGFND3_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -26785,7 +26923,7 @@
       }
     },
     "RNGFND4_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -27068,7 +27206,7 @@
       }
     },
     "RNGFND5_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -27351,7 +27489,7 @@
       }
     },
     "RNGFND6_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -27634,7 +27772,7 @@
       }
     },
     "RNGFND7_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -27917,7 +28055,7 @@
       }
     },
     "RNGFND8_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -28200,7 +28338,7 @@
       }
     },
     "RNGFND9_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -28483,7 +28621,7 @@
       }
     },
     "RNGFNDA_SCALING": {
-      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts.",
+      "Description": "Scaling factor between rangefinder reading and distance. For the linear and inverted functions this is in meters per volt. For the hyperbolic function the units are meterVolts. For Maxbotix serial sonar this is unit conversion to meters.",
       "DisplayName": "Rangefinder scaling",
       "Increment": "0.001",
       "Units": "m/V",
@@ -29087,6 +29225,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29177,6 +29317,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29267,6 +29409,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29357,6 +29501,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29447,6 +29593,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29537,6 +29685,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29627,6 +29777,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29717,6 +29869,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -29807,6 +29961,8 @@
         "39": "Torqeedo",
         "4": "Frsky SPort",
         "40": "AIS",
+        "41": "CoDevESC",
+        "42": "DisplayPort",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -34505,7 +34661,8 @@
       "Values": {
         "0": "None",
         "1": "MAVLink",
-        "2": "IntelT265"
+        "2": "IntelT265",
+        "3": "VOXL(ModalAI)"
       }
     },
     "VISO_VEL_M_NSE": {
