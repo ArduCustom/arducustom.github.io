@@ -15161,6 +15161,30 @@
         "low": "0"
       }
     },
+    "OSD1_CRSFPWR_EN": {
+      "Description": "Displays the TX power when using the CRSF RC protocol",
+      "DisplayName": "CRSFPWR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_CRSFPWR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFPWR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_CRSFPWR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFPWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_CRSSHAIR_EN": {
       "Description": "Displays artificial horizon crosshair (MSP OSD only)",
       "DisplayName": "CRSSHAIR_EN",
@@ -16841,6 +16865,30 @@
     "OSD2_COMPASS_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "COMPASS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_CRSFPWR_EN": {
+      "Description": "Displays the TX power when using the CRSF RC protocol",
+      "DisplayName": "CRSFPWR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_CRSFPWR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFPWR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_CRSFPWR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFPWR_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -18531,6 +18579,30 @@
         "low": "0"
       }
     },
+    "OSD3_CRSFPWR_EN": {
+      "Description": "Displays the TX power when using the CRSF RC protocol",
+      "DisplayName": "CRSFPWR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_CRSFPWR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFPWR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_CRSFPWR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFPWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_CRSSHAIR_EN": {
       "Description": "Displays artificial horizon crosshair (MSP OSD only)",
       "DisplayName": "CRSSHAIR_EN",
@@ -20211,6 +20283,30 @@
     "OSD4_COMPASS_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "COMPASS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_CRSFPWR_EN": {
+      "Description": "Displays the TX power when using the CRSF RC protocol",
+      "DisplayName": "CRSFPWR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_CRSFPWR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFPWR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_CRSFPWR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFPWR_Y",
       "Range": {
         "high": "15",
         "low": "0"
