@@ -675,7 +675,7 @@
         <field name="Bitmask">2:Ignore pilot yaw</field>
       </param>
       <param humanName="Flight mode options" name="ArduCopter:FLIGHT_OPTIONS" documentation="Flight mode specific options" user="Advanced">
-        <field name="Bitmask">0:Disable thrust loss check, 1:Disable yaw imbalance warning</field>
+        <field name="Bitmask">0:Disable thrust loss check, 1:Disable yaw imbalance warning, 2:Release gripper on thrust loss</field>
       </param>
       <param humanName="Rangefinder filter" name="ArduCopter:RNGFND_FILT" documentation="Rangefinder filter to smooth distance.  Set to zero to disable filtering" user="Standard">
         <field name="Units">Hz</field>
@@ -3807,6 +3807,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -3899,6 +3900,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -3991,6 +3993,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4083,6 +4086,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -12705,6 +12709,9 @@
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
       </param>
+      <param humanName="Precision Landing Extra Options" name="PLND_OPTIONS" documentation="Precision Landing Extra Options" user="Advanced">
+        <field name="Bitmask">0: Moving Landing Target</field>
+      </param>
     </parameters>
     <parameters name="PRX">
       <param humanName="Proximity type" name="PRX_TYPE" documentation="What type of proximity sensor is connected" user="Standard">
@@ -13085,6 +13092,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13208,6 +13216,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13331,6 +13340,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13454,6 +13464,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13577,6 +13588,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13700,6 +13712,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13823,6 +13836,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13946,6 +13960,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14069,6 +14084,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14192,6 +14208,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14315,6 +14332,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14438,6 +14456,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14561,6 +14580,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14684,6 +14704,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14807,6 +14828,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14930,6 +14952,7 @@
           <value code="152">simple heading reset</value>
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
+          <value code="158">Optflow Calibration</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>

@@ -1046,7 +1046,7 @@ DO NOT EDIT
 
 <p>Flight mode specific options</p>
 <ul>
-<li>Bitmask: 0:Disable thrust loss check, 1:Disable yaw imbalance warning</li>
+<li>Bitmask: 0:Disable thrust loss check, 1:Disable yaw imbalance warning, 2:Release gripper on thrust loss</li>
 </ul>
 
 
@@ -6547,6 +6547,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6644,6 +6645,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6741,6 +6743,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6838,6 +6841,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -24414,6 +24418,14 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Precision Landing Extra Options (PLND_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Precision Landing Extra Options</p>
+<ul>
+<li>Bitmask: 0: Moving Landing Target</li>
+</ul>
+
+
 <h1>PRX Parameters</h1>
 
 
@@ -25059,6 +25071,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25209,6 +25222,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25359,6 +25373,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25509,6 +25524,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25659,6 +25675,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25809,6 +25826,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25959,6 +25977,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26109,6 +26128,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26259,6 +26279,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26409,6 +26430,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26559,6 +26581,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26709,6 +26732,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26859,6 +26883,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -27009,6 +27034,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -27159,6 +27185,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -27309,6 +27336,7 @@ DO NOT EDIT
 <tr><td>152</td><td>simple heading reset</td></tr>
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
+<tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
