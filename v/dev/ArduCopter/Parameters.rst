@@ -6029,10 +6029,10 @@ AUTOTUNE\_ Parameters
 ---------------------
 
 
-.. _AUTOTUNE_AXES:
+.. _AUTOTUNE_AXES__AC_AutoTune_Multi:
 
-AUTOTUNE\_AXES: Autotune axis bitmask
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AUTOTUNE\_AXES \(AC\_AutoTune\_Multi\): Autotune axis bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 1\-byte bitmap of axes to autotune
@@ -6088,6 +6088,134 @@ Defines the minimum D gain
 +===============+
 | 0.001 - 0.006 |
 +---------------+
+
+
+
+
+.. _AUTOTUNE_AXES__AC_AutoTune_Heli:
+
+AUTOTUNE\_AXES \(AC\_AutoTune\_Heli\): Autotune axis bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+1\-byte bitmap of axes to autotune
+
+
++-------------------+
+| Bitmask           |
++===================+
+| +-----+---------+ |
+| | Bit | Meaning | |
+| +=====+=========+ |
+| | 0   | Roll    | |
+| +-----+---------+ |
+| | 1   | Pitch   | |
+| +-----+---------+ |
+| | 2   | Yaw     | |
+| +-----+---------+ |
+|                   |
++-------------------+
+
+
+
+
+.. _AUTOTUNE_SEQ:
+
+AUTOTUNE\_SEQ: AutoTune Sequence Bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+2\-byte bitmask to select what tuning should be performed\.  Max gain automatically performed if Rate D is selected\. Values\: 7\:All\,1\:VFF Only\,2\:Rate D Only\,4\:Angle P Only\,8\:Max Gain Only\,3\:VFF and Rate D \(incl max gain\)\,5\:VFF and Angle P\,13\:VFF max gain and angle P
+
+
++-------------------------+
+| Bitmask                 |
++=========================+
+| +-----+---------------+ |
+| | Bit | Meaning       | |
+| +=====+===============+ |
+| | 0   | VFF           | |
+| +-----+---------------+ |
+| | 1   | Rate D        | |
+| +-----+---------------+ |
+| | 2   | Angle P       | |
+| +-----+---------------+ |
+| | 3   | Max Gain Only | |
+| +-----+---------------+ |
+|                         |
++-------------------------+
+
+
+
+
+.. _AUTOTUNE_FRQ_MIN:
+
+AUTOTUNE\_FRQ\_MIN: AutoTune minimum sweep frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Defines the start frequency for sweeps and dwells
+
+
++---------+
+| Range   |
++=========+
+| 10 - 30 |
++---------+
+
+
+
+
+.. _AUTOTUNE_FRQ_MAX:
+
+AUTOTUNE\_FRQ\_MAX: AutoTune maximum sweep frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Defines the end frequency for sweeps and dwells
+
+
++----------+
+| Range    |
++==========+
+| 50 - 120 |
++----------+
+
+
+
+
+.. _AUTOTUNE_GN_MAX:
+
+AUTOTUNE\_GN\_MAX: AutoTune maximum response gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Defines the response gain \(output\/input\) to tune
+
+
++---------+
+| Range   |
++=========+
+| 1 - 2.5 |
++---------+
+
+
+
+
+.. _AUTOTUNE_VELXY_P:
+
+AUTOTUNE\_VELXY\_P: AutoTune velocity xy P gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Velocity xy P gain used to hold position during Max Gain\, Rate P\, and Rate D frequency sweeps
+
+
++-------+
+| Range |
++=======+
+| 0 - 1 |
++-------+
 
 
 

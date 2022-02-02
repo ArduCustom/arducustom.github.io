@@ -1668,6 +1668,24 @@
       <param humanName="AutoTune minimum D" name="AUTOTUNE_MIN_D" documentation="Defines the minimum D gain" user="Standard">
         <field name="Range">0.001 0.006</field>
       </param>
+      <param humanName="Autotune axis bitmask" name="AUTOTUNE_AXES" documentation="1-byte bitmap of axes to autotune" user="Standard">
+        <field name="Bitmask">0:Roll,1:Pitch,2:Yaw</field>
+      </param>
+      <param humanName="AutoTune Sequence Bitmask" name="AUTOTUNE_SEQ" documentation="2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D Only,4:Angle P Only,8:Max Gain Only,3:VFF and Rate D (incl max gain),5:VFF and Angle P,13:VFF max gain and angle P" user="Standard">
+        <field name="Bitmask">0:VFF,1:Rate D,2:Angle P,3:Max Gain Only</field>
+      </param>
+      <param humanName="AutoTune minimum sweep frequency" name="AUTOTUNE_FRQ_MIN" documentation="Defines the start frequency for sweeps and dwells" user="Standard">
+        <field name="Range">10 30</field>
+      </param>
+      <param humanName="AutoTune maximum sweep frequency" name="AUTOTUNE_FRQ_MAX" documentation="Defines the end frequency for sweeps and dwells" user="Standard">
+        <field name="Range">50 120</field>
+      </param>
+      <param humanName="AutoTune maximum response gain" name="AUTOTUNE_GN_MAX" documentation="Defines the response gain (output/input) to tune" user="Standard">
+        <field name="Range">1 2.5</field>
+      </param>
+      <param humanName="AutoTune velocity xy P gain" name="AUTOTUNE_VELXY_P" documentation="Velocity xy P gain used to hold position during Max Gain, Rate P, and Rate D frequency sweeps" user="Standard">
+        <field name="Range">0 1</field>
+      </param>
     </parameters>
     <parameters name="AVD_">
       <param humanName="Enable Avoidance using ADSB" name="AVD_ENABLE" documentation="Enable Avoidance using ADSB" user="Advanced">

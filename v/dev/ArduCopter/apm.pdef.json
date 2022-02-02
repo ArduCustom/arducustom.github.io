@@ -1516,6 +1516,34 @@
       },
       "Description": "1-byte bitmap of axes to autotune",
       "DisplayName": "Autotune axis bitmask",
+      "User": "Standard",
+      "path": "AC_AutoTune_Heli"
+    },
+    "AUTOTUNE_FRQ_MAX": {
+      "Description": "Defines the end frequency for sweeps and dwells",
+      "DisplayName": "AutoTune maximum sweep frequency",
+      "Range": {
+        "high": "120",
+        "low": "50"
+      },
+      "User": "Standard"
+    },
+    "AUTOTUNE_FRQ_MIN": {
+      "Description": "Defines the start frequency for sweeps and dwells",
+      "DisplayName": "AutoTune minimum sweep frequency",
+      "Range": {
+        "high": "30",
+        "low": "10"
+      },
+      "User": "Standard"
+    },
+    "AUTOTUNE_GN_MAX": {
+      "Description": "Defines the response gain (output/input) to tune",
+      "DisplayName": "AutoTune maximum response gain",
+      "Range": {
+        "high": "2.5",
+        "low": "1"
+      },
       "User": "Standard"
     },
     "AUTOTUNE_MIN_D": {
@@ -1524,6 +1552,26 @@
       "Range": {
         "high": "0.006",
         "low": "0.001"
+      },
+      "User": "Standard"
+    },
+    "AUTOTUNE_SEQ": {
+      "Bitmask": {
+        "0": "VFF",
+        "1": "Rate D",
+        "2": "Angle P",
+        "3": "Max Gain Only"
+      },
+      "Description": "2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D Only,4:Angle P Only,8:Max Gain Only,3:VFF and Rate D (incl max gain),5:VFF and Angle P,13:VFF max gain and angle P",
+      "DisplayName": "AutoTune Sequence Bitmask",
+      "User": "Standard"
+    },
+    "AUTOTUNE_VELXY_P": {
+      "Description": "Velocity xy P gain used to hold position during Max Gain, Rate P, and Rate D frequency sweeps",
+      "DisplayName": "AutoTune velocity xy P gain",
+      "Range": {
+        "high": "1",
+        "low": "0"
       },
       "User": "Standard"
     }

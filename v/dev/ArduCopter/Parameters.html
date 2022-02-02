@@ -2862,6 +2862,54 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Autotune axis bitmask (AUTOTUNE_AXES)</h2>
+
+<p>1-byte bitmap of axes to autotune</p>
+<ul>
+<li>Bitmask: 0:Roll,1:Pitch,2:Yaw</li>
+</ul>
+
+
+<h2>AutoTune Sequence Bitmask (AUTOTUNE_SEQ)</h2>
+
+<p>2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D Only,4:Angle P Only,8:Max Gain Only,3:VFF and Rate D (incl max gain),5:VFF and Angle P,13:VFF max gain and angle P</p>
+<ul>
+<li>Bitmask: 0:VFF,1:Rate D,2:Angle P,3:Max Gain Only</li>
+</ul>
+
+
+<h2>AutoTune minimum sweep frequency (AUTOTUNE_FRQ_MIN)</h2>
+
+<p>Defines the start frequency for sweeps and dwells</p>
+<ul>
+<li>Range: 10 30</li>
+</ul>
+
+
+<h2>AutoTune maximum sweep frequency (AUTOTUNE_FRQ_MAX)</h2>
+
+<p>Defines the end frequency for sweeps and dwells</p>
+<ul>
+<li>Range: 50 120</li>
+</ul>
+
+
+<h2>AutoTune maximum response gain (AUTOTUNE_GN_MAX)</h2>
+
+<p>Defines the response gain (output/input) to tune</p>
+<ul>
+<li>Range: 1 2.5</li>
+</ul>
+
+
+<h2>AutoTune velocity xy P gain (AUTOTUNE_VELXY_P)</h2>
+
+<p>Velocity xy P gain used to hold position during Max Gain, Rate P, and Rate D frequency sweeps</p>
+<ul>
+<li>Range: 0 1</li>
+</ul>
+
+
 <h1>AVD_ Parameters</h1>
 
 
