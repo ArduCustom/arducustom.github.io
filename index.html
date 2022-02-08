@@ -40,6 +40,27 @@
 <li>Fix the TECS (@shellixyz, #36)</li>
 <li>Only use positive throttle range for TECS throttle response calculations (@avsaase + @shellixyz, #37)</li>
 <li>Add OSD element to display the demanded airspeed in auto throttle modes (@shellixyz, #38)</li>
+<li>TECS: apply throttle slew rate in all cases (@shellixyz, #39)</li>
+<li>Plane: add deadband for cruise airspeed control when using mid stick as cruise speed (@avsaase, #42)</li>
+<li>OSD: add option for one decimal attitude: bit 21 of `OSD_OPTIONS` (@shellixyz, #45)</li>
+<li>OSD: add vehicle acceleration elements: longitudinal, lateral and vertical (@shellixyz, #46)</li>
+<li>Added targets: `SkystarsF405DJI`, `QF4MWGM` and `QMWV4` (@shellixyz, #40 & #41 & #44)</li>
+<li>Fix serial order so that SERIALx = UARTx in the targets: `omnibusf4pro`, `KakuteF7`, `MatekF405`, `MatekF405-STD`, `MatekF405-Wing`, `MatekF765` (@shellixyz, #48 & #49 & #50 & #51 & #52)</li>
+<li>AP_Mount: allow to define max number of camera mount instances in target definition (@shellixyz, #53)</li>
+<li>Plane: make auto flaps linearly deployed between set minimum and maximum target airspeeds. See params `FLAP_EXTED_PCT`, `FLAP_RETED_SPD` and `FLAP_RETED_SPD` in the [plane documentation for V9.0](https://arducustom.github.io/v/9.0/ArduPlane/Parameters.html) (@shellixyz, #55)</li>
+<li>OSD: add throttle position element for copter (@shellixyz, #58)</li>
+<li>Plane: add a parameter (`STAB_PTCHDN_THR`) to specify the throttle bellow which the FC needs to pitch down instead of using `TRIM_THROTTLE`  (@shellixyz, #61)</li>
+<li>Plane: add the option to switch automatically to TKOF or AUTO mode after arming with the `ARMING_MODE_SW` param (@shellixyz, #67)</li>
+<li>Tag variant of arducustom and version in the binaries (@shellixyz, #69)</li>
+<li>OSD: add angle of attack element (@shellixyz, #70)</li>
+<li>Plane: smooth throttle transition between manual and auto throttle during takeoff (@shellixyz, #71)</li>
+<li>OSD: add CRSF TX power element (@shellixyz, #56)</li>
+<li>MatekF765-Wing & MatekF405-Wing: remove serial ports from bootloader so that peripherals powered through USB can't interfere (@shellixyz, #74 & #75)</li>
+<li>OSD: numeric attitude so that it takes into account the AHRS view of the vehicle (@shellixyz, #73 & #76)</li>
+<li>OSD: add script to be able to regen MCM font files from the PNG grids so it is much easier to edit the fonts (@shellixyz, #79)</li>
+<li>OSD: the lateral acceleration item now has proper left/right arrows instead of reusing the roll direction arrows (@shellixyz, #80)</li>
+<li>Plane: improve documentation for the `MIXING_OFFSET` parameter (@shellixyz, #81)</li>
+<li>OSD: add CRSF RSSI dBm, SNR and active antenna items and add RF mode to the LQ item (@wvarty + @shellixyz, #78)</li>
 </ul>
 <h1>ArduCustom parameters documentation</h1>
 <h2>Dev branch</h2>
@@ -58,6 +79,24 @@
 </li>
 <li>
 <a href='v/dev/Rover/Parameters.html'>Rover</a>
+</li>
+</ul>
+<h2 id='doc-V9'>V9</h2>
+<ul>
+<li>
+<a href='v/9/Blimp/Parameters.html'>Blimp</a>
+</li>
+<li>
+<a href='v/9/ArduCopter/Parameters.html'>Copter</a>
+</li>
+<li>
+<a href='v/9/ArduPlane/Parameters.html'>Plane</a>
+</li>
+<li>
+<a href='v/9/ArduSub/Parameters.html'>Sub</a>
+</li>
+<li>
+<a href='v/9/Rover/Parameters.html'>Rover</a>
 </li>
 </ul>
 <h2 id='doc-V8'>V8</h2>
