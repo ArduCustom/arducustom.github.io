@@ -29240,7 +29240,7 @@ OSD1\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +-------+----------+
@@ -29779,6 +29779,174 @@ Horizontal position on screen
 .. _OSD1_CRSFPWR_Y:
 
 OSD1\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_CRSFRSSI_EN:
+
+OSD1\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_CRSFRSSI_X:
+
+OSD1\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRSFRSSI_Y:
+
+OSD1\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_CRSFSNR_EN:
+
+OSD1\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_CRSFSNR_X:
+
+OSD1\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRSFSNR_Y:
+
+OSD1\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_CRSFANT_EN:
+
+OSD1\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_CRSFANT_X:
+
+OSD1\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRSFANT_Y:
+
+OSD1\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -33223,7 +33391,7 @@ OSD2\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +-------+----------+
@@ -33762,6 +33930,174 @@ Horizontal position on screen
 .. _OSD2_CRSFPWR_Y:
 
 OSD2\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_CRSFRSSI_EN:
+
+OSD2\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_CRSFRSSI_X:
+
+OSD2\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRSFRSSI_Y:
+
+OSD2\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_CRSFSNR_EN:
+
+OSD2\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_CRSFSNR_X:
+
+OSD2\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRSFSNR_Y:
+
+OSD2\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_CRSFANT_EN:
+
+OSD2\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_CRSFANT_X:
+
+OSD2\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRSFANT_Y:
+
+OSD2\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -37206,7 +37542,7 @@ OSD3\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +-------+----------+
@@ -37745,6 +38081,174 @@ Horizontal position on screen
 .. _OSD3_CRSFPWR_Y:
 
 OSD3\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_CRSFRSSI_EN:
+
+OSD3\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_CRSFRSSI_X:
+
+OSD3\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRSFRSSI_Y:
+
+OSD3\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_CRSFSNR_EN:
+
+OSD3\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_CRSFSNR_X:
+
+OSD3\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRSFSNR_Y:
+
+OSD3\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_CRSFANT_EN:
+
+OSD3\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_CRSFANT_X:
+
+OSD3\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRSFANT_Y:
+
+OSD3\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -41189,7 +41693,7 @@ OSD4\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +-------+----------+
@@ -41728,6 +42232,174 @@ Horizontal position on screen
 .. _OSD4_CRSFPWR_Y:
 
 OSD4\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_CRSFRSSI_EN:
+
+OSD4\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_CRSFRSSI_X:
+
+OSD4\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRSFRSSI_Y:
+
+OSD4\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_CRSFSNR_EN:
+
+OSD4\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_CRSFSNR_X:
+
+OSD4\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRSFSNR_Y:
+
+OSD4\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_CRSFANT_EN:
+
+OSD4\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_CRSFANT_X:
+
+OSD4\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRSFANT_Y:
+
+OSD4\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -44549,6 +45221,44 @@ Cutoff frequency for low pass filter applied to each face in the proximity bound
 +========+=======+
 | 0 - 20 | hertz |
 +--------+-------+
+
+
+
+
+.. _PRX_MIN:
+
+PRX\_MIN: Proximity minimum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 - 500 | meters |
++---------+--------+
+
+
+
+
+.. _PRX_MAX:
+
+PRX\_MAX: Proximity maximum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Maximum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 - 500 | meters |
++---------+--------+
 
 
 
@@ -62193,24 +62903,24 @@ SERVO\_BLH\_PORT: Control port
 
 | *Note: This parameter is for advanced users*
 
-This sets the serial port to use for blheli pass\-thru
+This sets the mavlink channel to use for blheli pass\-thru\. The channel number is determined by the number of serial ports configured to use mavlink\. So 0 is always the console\, 1 is the next serial port using mavlink\, 2 the next after that and so on\.
 
 
-+-------+---------+
-| Value | Meaning |
-+=======+=========+
-| 0     | Console |
-+-------+---------+
-| 1     | Serial1 |
-+-------+---------+
-| 2     | Serial2 |
-+-------+---------+
-| 3     | Serial3 |
-+-------+---------+
-| 4     | Serial4 |
-+-------+---------+
-| 5     | Serial5 |
-+-------+---------+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | Console                 |
++-------+-------------------------+
+| 1     | Mavlink Serial Channel1 |
++-------+-------------------------+
+| 2     | Mavlink Serial Channel2 |
++-------+-------------------------+
+| 3     | Mavlink Serial Channel3 |
++-------+-------------------------+
+| 4     | Mavlink Serial Channel4 |
++-------+-------------------------+
+| 5     | Mavlink Serial Channel5 |
++-------+-------------------------+
 
 
 

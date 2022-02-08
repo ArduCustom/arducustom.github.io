@@ -4957,10 +4957,10 @@ Roll axis rate controller D gain\.  Compensates for short\-term change in desire
 
 
 
-.. _ATC_RAT_RLL_FF:
+.. _ATC_RAT_RLL_FF__AC_AttitudeControl_Multi:
 
-ATC\_RAT\_RLL\_FF: Roll axis rate controller feed forward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ATC\_RAT\_RLL\_FF \(AC\_AttitudeControl\_Multi\): Roll axis rate controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Roll axis rate controller feed forward
@@ -5120,10 +5120,10 @@ Pitch axis rate controller D gain\.  Compensates for short\-term change in desir
 
 
 
-.. _ATC_RAT_PIT_FF:
+.. _ATC_RAT_PIT_FF__AC_AttitudeControl_Multi:
 
-ATC\_RAT\_PIT\_FF: Pitch axis rate controller feed forward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ATC\_RAT\_PIT\_FF \(AC\_AttitudeControl\_Multi\): Pitch axis rate controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Pitch axis rate controller feed forward
@@ -5283,10 +5283,10 @@ Yaw axis rate controller D gain\.  Compensates for short\-term change in desired
 
 
 
-.. _ATC_RAT_YAW_FF:
+.. _ATC_RAT_YAW_FF__AC_AttitudeControl_Multi:
 
-ATC\_RAT\_YAW\_FF: Yaw axis rate controller feed forward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ATC\_RAT\_YAW\_FF \(AC\_AttitudeControl\_Multi\): Yaw axis rate controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Yaw axis rate controller feed forward
@@ -5541,10 +5541,10 @@ Roll axis rate controller D gain\.  Compensates for short\-term change in desire
 
 
 
-.. _ATC_RAT_RLL_VFF:
+.. _ATC_RAT_RLL_FF__AC_AttitudeControl_Heli:
 
-ATC\_RAT\_RLL\_VFF: Roll axis rate controller feed forward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ATC\_RAT\_RLL\_FF \(AC\_AttitudeControl\_Heli\): Roll axis rate controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Roll axis rate controller feed forward
@@ -5723,10 +5723,10 @@ Pitch axis rate controller D gain\.  Compensates for short\-term change in desir
 
 
 
-.. _ATC_RAT_PIT_VFF:
+.. _ATC_RAT_PIT_FF__AC_AttitudeControl_Heli:
 
-ATC\_RAT\_PIT\_VFF: Pitch axis rate controller feed forward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ATC\_RAT\_PIT\_FF \(AC\_AttitudeControl\_Heli\): Pitch axis rate controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Pitch axis rate controller feed forward
@@ -5905,10 +5905,10 @@ Yaw axis rate controller D gain\.  Compensates for short\-term change in desired
 
 
 
-.. _ATC_RAT_YAW_VFF:
+.. _ATC_RAT_YAW_FF__AC_AttitudeControl_Heli:
 
-ATC\_RAT\_YAW\_VFF: Yaw axis rate controller feed forward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ATC\_RAT\_YAW\_FF \(AC\_AttitudeControl\_Heli\): Yaw axis rate controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Yaw axis rate controller feed forward
@@ -6125,25 +6125,25 @@ AUTOTUNE\_SEQ: AutoTune Sequence Bitmask
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-2\-byte bitmask to select what tuning should be performed\.  Max gain automatically performed if Rate D is selected\. Values\: 7\:All\,1\:VFF Only\,2\:Rate D Only\,4\:Angle P Only\,8\:Max Gain Only\,3\:VFF and Rate D \(incl max gain\)\,5\:VFF and Angle P\,13\:VFF max gain and angle P
+2\-byte bitmask to select what tuning should be performed\.  Max gain automatically performed if Rate D is selected\. Values\: 7\:All\,1\:VFF Only\,2\:Rate D\/Rate P Only\(incl max gain\)\,4\:Angle P Only\,8\:Max Gain Only\,3\:VFF and Rate D\/Rate P\(incl max gain\)\,5\:VFF and Angle P\,6\:Rate D\/Rate P\(incl max gain\) and angle P
 
 
-+-------------------------+
-| Bitmask                 |
-+=========================+
-| +-----+---------------+ |
-| | Bit | Meaning       | |
-| +=====+===============+ |
-| | 0   | VFF           | |
-| +-----+---------------+ |
-| | 1   | Rate D        | |
-| +-----+---------------+ |
-| | 2   | Angle P       | |
-| +-----+---------------+ |
-| | 3   | Max Gain Only | |
-| +-----+---------------+ |
-|                         |
-+-------------------------+
++----------------------------------------+
+| Bitmask                                |
++========================================+
+| +-----+------------------------------+ |
+| | Bit | Meaning                      | |
+| +=====+==============================+ |
+| | 0   | VFF                          | |
+| +-----+------------------------------+ |
+| | 1   | Rate D/Rate P(incl max gain) | |
+| +-----+------------------------------+ |
+| | 2   | Angle P                      | |
+| +-----+------------------------------+ |
+| | 3   | Max Gain Only                | |
+| +-----+------------------------------+ |
+|                                        |
++----------------------------------------+
 
 
 
@@ -14535,6 +14535,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -14733,6 +14735,8 @@ Auxiliary RC Options function executed on pin change
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -14933,6 +14937,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -15131,6 +15137,8 @@ Auxiliary RC Options function executed on pin change
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -37055,7 +37063,7 @@ OSD1\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +----------------------+
@@ -37644,6 +37652,189 @@ Horizontal position on screen
 .. _OSD1_CRSFPWR_Y:
 
 OSD1\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_CRSFRSSI_EN:
+
+OSD1\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_CRSFRSSI_X:
+
+OSD1\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRSFRSSI_Y:
+
+OSD1\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_CRSFSNR_EN:
+
+OSD1\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_CRSFSNR_X:
+
+OSD1\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRSFSNR_Y:
+
+OSD1\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_CRSFANT_EN:
+
+OSD1\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_CRSFANT_X:
+
+OSD1\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRSFANT_Y:
+
+OSD1\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -41393,7 +41584,7 @@ OSD2\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +----------------------+
@@ -41982,6 +42173,189 @@ Horizontal position on screen
 .. _OSD2_CRSFPWR_Y:
 
 OSD2\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_CRSFRSSI_EN:
+
+OSD2\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_CRSFRSSI_X:
+
+OSD2\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRSFRSSI_Y:
+
+OSD2\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_CRSFSNR_EN:
+
+OSD2\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_CRSFSNR_X:
+
+OSD2\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRSFSNR_Y:
+
+OSD2\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_CRSFANT_EN:
+
+OSD2\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_CRSFANT_X:
+
+OSD2\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRSFANT_Y:
+
+OSD2\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -45731,7 +46105,7 @@ OSD3\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +----------------------+
@@ -46320,6 +46694,189 @@ Horizontal position on screen
 .. _OSD3_CRSFPWR_Y:
 
 OSD3\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_CRSFRSSI_EN:
+
+OSD3\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_CRSFRSSI_X:
+
+OSD3\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRSFRSSI_Y:
+
+OSD3\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_CRSFSNR_EN:
+
+OSD3\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_CRSFSNR_X:
+
+OSD3\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRSFSNR_Y:
+
+OSD3\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_CRSFANT_EN:
+
+OSD3\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_CRSFANT_X:
+
+OSD3\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRSFANT_Y:
+
+OSD3\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -50069,7 +50626,7 @@ OSD4\_LINK\_Q\_EN: LINK\_Q\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays Receiver link quality
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
 
 
 +----------------------+
@@ -50658,6 +51215,189 @@ Horizontal position on screen
 .. _OSD4_CRSFPWR_Y:
 
 OSD4\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_CRSFRSSI_EN:
+
+OSD4\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_CRSFRSSI_X:
+
+OSD4\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRSFRSSI_Y:
+
+OSD4\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_CRSFSNR_EN:
+
+OSD4\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_CRSFSNR_X:
+
+OSD4\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRSFSNR_Y:
+
+OSD4\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_CRSFANT_EN:
+
+OSD4\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_CRSFANT_X:
+
+OSD4\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRSFANT_Y:
+
+OSD4\_CRSFANT\_Y: CRSFANT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -54062,6 +54802,44 @@ Cutoff frequency for low pass filter applied to each face in the proximity bound
 
 
 
+.. _PRX_MIN:
+
+PRX\_MIN: Proximity minimum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 - 500 | meters |
++---------+--------+
+
+
+
+
+.. _PRX_MAX:
+
+PRX\_MAX: Proximity maximum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Maximum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 - 500 | meters |
++---------+--------+
+
+
+
+
 
 .. _parameters_PSC:
 
@@ -55077,6 +55855,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -55384,6 +56164,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -55693,6 +56475,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -56000,6 +56784,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -56309,6 +57095,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -56616,6 +57404,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -56925,6 +57715,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -57232,6 +58024,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -57541,6 +58335,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -57848,6 +58644,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -58157,6 +58955,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -58464,6 +59264,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -58773,6 +59575,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -59080,6 +59884,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -59389,6 +60195,8 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
 | +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
+| +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
 | | 301   | Scripting2                               | |
@@ -59696,6 +60504,8 @@ Function assigned to this RC channel
 | | 154   | ArmDisarm with AirMode  (4.2 and higher) | |
 | +-------+------------------------------------------+ |
 | | 158   | Optflow Calibration                      | |
+| +-------+------------------------------------------+ |
+| | 159   | Force Flying                             | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -74301,29 +75111,29 @@ SERVO\_BLH\_PORT: Control port
 
 | *Note: This parameter is for advanced users*
 
-This sets the serial port to use for blheli pass\-thru
+This sets the mavlink channel to use for blheli pass\-thru\. The channel number is determined by the number of serial ports configured to use mavlink\. So 0 is always the console\, 1 is the next serial port using mavlink\, 2 the next after that and so on\.
 
 
-+---------------------+
-| Values              |
-+=====================+
-| +-------+---------+ |
-| | Value | Meaning | |
-| +=======+=========+ |
-| | 0     | Console | |
-| +-------+---------+ |
-| | 1     | Serial1 | |
-| +-------+---------+ |
-| | 2     | Serial2 | |
-| +-------+---------+ |
-| | 3     | Serial3 | |
-| +-------+---------+ |
-| | 4     | Serial4 | |
-| +-------+---------+ |
-| | 5     | Serial5 | |
-| +-------+---------+ |
-|                     |
-+---------------------+
++-------------------------------------+
+| Values                              |
++=====================================+
+| +-------+-------------------------+ |
+| | Value | Meaning                 | |
+| +=======+=========================+ |
+| | 0     | Console                 | |
+| +-------+-------------------------+ |
+| | 1     | Mavlink Serial Channel1 | |
+| +-------+-------------------------+ |
+| | 2     | Mavlink Serial Channel2 | |
+| +-------+-------------------------+ |
+| | 3     | Mavlink Serial Channel3 | |
+| +-------+-------------------------+ |
+| | 4     | Mavlink Serial Channel4 | |
+| +-------+-------------------------+ |
+| | 5     | Mavlink Serial Channel5 | |
+| +-------+-------------------------+ |
+|                                     |
++-------------------------------------+
 
 
 

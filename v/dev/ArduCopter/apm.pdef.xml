@@ -1535,7 +1535,7 @@
         <field name="Range">0.0 0.03</field>
         <field name="Increment">0.001</field>
       </param>
-      <param humanName="Roll axis rate controller feed forward" name="ATC_RAT_RLL_VFF" documentation="Roll axis rate controller feed forward" user="Standard">
+      <param humanName="Roll axis rate controller feed forward" name="ATC_RAT_RLL_FF" documentation="Roll axis rate controller feed forward" user="Standard">
         <field name="Range">0.05 0.5</field>
         <field name="Increment">0.001</field>
       </param>
@@ -1580,7 +1580,7 @@
         <field name="Range">0.0 0.03</field>
         <field name="Increment">0.001</field>
       </param>
-      <param humanName="Pitch axis rate controller feed forward" name="ATC_RAT_PIT_VFF" documentation="Pitch axis rate controller feed forward" user="Standard">
+      <param humanName="Pitch axis rate controller feed forward" name="ATC_RAT_PIT_FF" documentation="Pitch axis rate controller feed forward" user="Standard">
         <field name="Range">0.05 0.5</field>
         <field name="Increment">0.001</field>
       </param>
@@ -1625,7 +1625,7 @@
         <field name="Range">0.000 0.02</field>
         <field name="Increment">0.001</field>
       </param>
-      <param humanName="Yaw axis rate controller feed forward" name="ATC_RAT_YAW_VFF" documentation="Yaw axis rate controller feed forward" user="Standard">
+      <param humanName="Yaw axis rate controller feed forward" name="ATC_RAT_YAW_FF" documentation="Yaw axis rate controller feed forward" user="Standard">
         <field name="Range">0 0.5</field>
         <field name="Increment">0.001</field>
       </param>
@@ -1671,8 +1671,8 @@
       <param humanName="Autotune axis bitmask" name="AUTOTUNE_AXES" documentation="1-byte bitmap of axes to autotune" user="Standard">
         <field name="Bitmask">0:Roll,1:Pitch,2:Yaw</field>
       </param>
-      <param humanName="AutoTune Sequence Bitmask" name="AUTOTUNE_SEQ" documentation="2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D Only,4:Angle P Only,8:Max Gain Only,3:VFF and Rate D (incl max gain),5:VFF and Angle P,13:VFF max gain and angle P" user="Standard">
-        <field name="Bitmask">0:VFF,1:Rate D,2:Angle P,3:Max Gain Only</field>
+      <param humanName="AutoTune Sequence Bitmask" name="AUTOTUNE_SEQ" documentation="2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D/Rate P Only(incl max gain),4:Angle P Only,8:Max Gain Only,3:VFF and Rate D/Rate P(incl max gain),5:VFF and Angle P,6:Rate D/Rate P(incl max gain) and angle P" user="Standard">
+        <field name="Bitmask">0:VFF,1:Rate D/Rate P(incl max gain),2:Angle P,3:Max Gain Only</field>
       </param>
       <param humanName="AutoTune minimum sweep frequency" name="AUTOTUNE_FRQ_MIN" documentation="Defines the start frequency for sweeps and dwells" user="Standard">
         <field name="Range">10 30</field>
@@ -3826,6 +3826,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -3919,6 +3920,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4012,6 +4014,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4105,6 +4108,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -9388,7 +9392,7 @@
       <param humanName="RNGF_Y" name="OSD1_RNGF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="LINK_Q_EN" name="OSD1_LINK_Q_EN" documentation="Displays Receiver link quality">
+      <param humanName="LINK_Q_EN" name="OSD1_LINK_Q_EN" documentation="Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -9506,6 +9510,42 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="CRSFPWR_Y" name="OSD1_CRSFPWR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFRSSI_EN" name="OSD1_CRSFRSSI_EN" documentation="Displays RC signal strength in dBm for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFRSSI_X" name="OSD1_CRSFRSSI_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFRSSI_Y" name="OSD1_CRSFRSSI_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFSNR_EN" name="OSD1_CRSFSNR_EN" documentation="Displays RC signal to noise ratio in dB for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFSNR_X" name="OSD1_CRSFSNR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFSNR_Y" name="OSD1_CRSFSNR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFANT_EN" name="OSD1_CRSFANT_EN" documentation="Displays the current active antenna for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFANT_X" name="OSD1_CRSFANT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFANT_Y" name="OSD1_CRSFANT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -10242,7 +10282,7 @@
       <param humanName="RNGF_Y" name="OSD2_RNGF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="LINK_Q_EN" name="OSD2_LINK_Q_EN" documentation="Displays Receiver link quality">
+      <param humanName="LINK_Q_EN" name="OSD2_LINK_Q_EN" documentation="Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -10360,6 +10400,42 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="CRSFPWR_Y" name="OSD2_CRSFPWR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFRSSI_EN" name="OSD2_CRSFRSSI_EN" documentation="Displays RC signal strength in dBm for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFRSSI_X" name="OSD2_CRSFRSSI_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFRSSI_Y" name="OSD2_CRSFRSSI_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFSNR_EN" name="OSD2_CRSFSNR_EN" documentation="Displays RC signal to noise ratio in dB for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFSNR_X" name="OSD2_CRSFSNR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFSNR_Y" name="OSD2_CRSFSNR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFANT_EN" name="OSD2_CRSFANT_EN" documentation="Displays the current active antenna for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFANT_X" name="OSD2_CRSFANT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFANT_Y" name="OSD2_CRSFANT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -11096,7 +11172,7 @@
       <param humanName="RNGF_Y" name="OSD3_RNGF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="LINK_Q_EN" name="OSD3_LINK_Q_EN" documentation="Displays Receiver link quality">
+      <param humanName="LINK_Q_EN" name="OSD3_LINK_Q_EN" documentation="Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -11214,6 +11290,42 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="CRSFPWR_Y" name="OSD3_CRSFPWR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFRSSI_EN" name="OSD3_CRSFRSSI_EN" documentation="Displays RC signal strength in dBm for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFRSSI_X" name="OSD3_CRSFRSSI_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFRSSI_Y" name="OSD3_CRSFRSSI_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFSNR_EN" name="OSD3_CRSFSNR_EN" documentation="Displays RC signal to noise ratio in dB for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFSNR_X" name="OSD3_CRSFSNR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFSNR_Y" name="OSD3_CRSFSNR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFANT_EN" name="OSD3_CRSFANT_EN" documentation="Displays the current active antenna for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFANT_X" name="OSD3_CRSFANT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFANT_Y" name="OSD3_CRSFANT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -11950,7 +12062,7 @@
       <param humanName="RNGF_Y" name="OSD4_RNGF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="LINK_Q_EN" name="OSD4_LINK_Q_EN" documentation="Displays Receiver link quality">
+      <param humanName="LINK_Q_EN" name="OSD4_LINK_Q_EN" documentation="Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -12068,6 +12180,42 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="CRSFPWR_Y" name="OSD4_CRSFPWR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFRSSI_EN" name="OSD4_CRSFRSSI_EN" documentation="Displays RC signal strength in dBm for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFRSSI_X" name="OSD4_CRSFRSSI_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFRSSI_Y" name="OSD4_CRSFRSSI_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFSNR_EN" name="OSD4_CRSFSNR_EN" documentation="Displays RC signal to noise ratio in dB for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFSNR_X" name="OSD4_CRSFSNR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFSNR_Y" name="OSD4_CRSFSNR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFANT_EN" name="OSD4_CRSFANT_EN" documentation="Displays the current active antenna for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFANT_X" name="OSD4_CRSFANT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFANT_Y" name="OSD4_CRSFANT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -12836,6 +12984,16 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 20</field>
       </param>
+      <param humanName="Proximity minimum range" name="PRX_MIN" documentation="Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
+      <param humanName="Proximity maximum range" name="PRX_MAX" documentation="Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
     </parameters>
     <parameters name="PSC">
       <param humanName="XY Acceleration filter cutoff frequency" name="PSC_ACC_XY_FILT" documentation="Lower values will slow the response of the navigation controller and reduce twitchiness" user="Advanced">
@@ -13111,6 +13269,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13235,6 +13394,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13359,6 +13519,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13483,6 +13644,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13607,6 +13769,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13731,6 +13894,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13855,6 +14019,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -13979,6 +14144,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14103,6 +14269,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14227,6 +14394,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14351,6 +14519,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14475,6 +14644,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14599,6 +14769,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14723,6 +14894,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14847,6 +15019,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -14971,6 +15144,7 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="154">ArmDisarm with AirMode  (4.2 and higher)</value>
           <value code="158">Optflow Calibration</value>
+          <value code="159">Force Flying</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -19831,14 +20005,14 @@
           <value code="7">DShot1200</value>
         </values>
       </param>
-      <param humanName="Control port" name="SERVO_BLH_PORT" documentation="This sets the serial port to use for blheli pass-thru" user="Advanced">
+      <param humanName="Control port" name="SERVO_BLH_PORT" documentation="This sets the mavlink channel to use for blheli pass-thru. The channel number is determined by the number of serial ports configured to use mavlink. So 0 is always the console, 1 is the next serial port using mavlink, 2 the next after that and so on." user="Advanced">
         <values>
           <value code="0">Console</value>
-          <value code="1">Serial1</value>
-          <value code="2">Serial2</value>
-          <value code="3">Serial3</value>
-          <value code="4">Serial4</value>
-          <value code="5">Serial5</value>
+          <value code="1">Mavlink Serial Channel1</value>
+          <value code="2">Mavlink Serial Channel2</value>
+          <value code="3">Mavlink Serial Channel3</value>
+          <value code="4">Mavlink Serial Channel4</value>
+          <value code="5">Mavlink Serial Channel5</value>
         </values>
       </param>
       <param humanName="BLHeli Motor Poles" name="SERVO_BLH_POLES" documentation="This allows calculation of true RPM from ESC's eRPM. The default is 14." user="Advanced">

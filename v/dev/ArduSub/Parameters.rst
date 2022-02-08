@@ -32205,6 +32205,44 @@ Cutoff frequency for low pass filter applied to each face in the proximity bound
 
 
 
+.. _PRX_MIN:
+
+PRX\_MIN: Proximity minimum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 - 500 | meters |
++---------+--------+
+
+
+
+
+.. _PRX_MAX:
+
+PRX\_MAX: Proximity maximum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Maximum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 - 500 | meters |
++---------+--------+
+
+
+
+
 
 .. _parameters_PSC:
 
@@ -50021,29 +50059,29 @@ SERVO\_BLH\_PORT: Control port
 
 | *Note: This parameter is for advanced users*
 
-This sets the serial port to use for blheli pass\-thru
+This sets the mavlink channel to use for blheli pass\-thru\. The channel number is determined by the number of serial ports configured to use mavlink\. So 0 is always the console\, 1 is the next serial port using mavlink\, 2 the next after that and so on\.
 
 
-+---------------------+
-| Values              |
-+=====================+
-| +-------+---------+ |
-| | Value | Meaning | |
-| +=======+=========+ |
-| | 0     | Console | |
-| +-------+---------+ |
-| | 1     | Serial1 | |
-| +-------+---------+ |
-| | 2     | Serial2 | |
-| +-------+---------+ |
-| | 3     | Serial3 | |
-| +-------+---------+ |
-| | 4     | Serial4 | |
-| +-------+---------+ |
-| | 5     | Serial5 | |
-| +-------+---------+ |
-|                     |
-+---------------------+
++-------------------------------------+
+| Values                              |
++=====================================+
+| +-------+-------------------------+ |
+| | Value | Meaning                 | |
+| +=======+=========================+ |
+| | 0     | Console                 | |
+| +-------+-------------------------+ |
+| | 1     | Mavlink Serial Channel1 | |
+| +-------+-------------------------+ |
+| | 2     | Mavlink Serial Channel2 | |
+| +-------+-------------------------+ |
+| | 3     | Mavlink Serial Channel3 | |
+| +-------+-------------------------+ |
+| | 4     | Mavlink Serial Channel4 | |
+| +-------+-------------------------+ |
+| | 5     | Mavlink Serial Channel5 | |
+| +-------+-------------------------+ |
+|                                     |
++-------------------------------------+
 
 
 

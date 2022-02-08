@@ -2592,7 +2592,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Roll axis rate controller feed forward (ATC_RAT_RLL_VFF)</h2>
+<h2>Roll axis rate controller feed forward (ATC_RAT_RLL_FF)</h2>
 
 <p>Roll axis rate controller feed forward</p>
 <ul>
@@ -2684,7 +2684,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Pitch axis rate controller feed forward (ATC_RAT_PIT_VFF)</h2>
+<h2>Pitch axis rate controller feed forward (ATC_RAT_PIT_FF)</h2>
 
 <p>Pitch axis rate controller feed forward</p>
 <ul>
@@ -2776,7 +2776,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Yaw axis rate controller feed forward (ATC_RAT_YAW_VFF)</h2>
+<h2>Yaw axis rate controller feed forward (ATC_RAT_YAW_FF)</h2>
 
 <p>Yaw axis rate controller feed forward</p>
 <ul>
@@ -2872,9 +2872,9 @@ DO NOT EDIT
 
 <h2>AutoTune Sequence Bitmask (AUTOTUNE_SEQ)</h2>
 
-<p>2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D Only,4:Angle P Only,8:Max Gain Only,3:VFF and Rate D (incl max gain),5:VFF and Angle P,13:VFF max gain and angle P</p>
+<p>2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D/Rate P Only(incl max gain),4:Angle P Only,8:Max Gain Only,3:VFF and Rate D/Rate P(incl max gain),5:VFF and Angle P,6:Rate D/Rate P(incl max gain) and angle P</p>
 <ul>
-<li>Bitmask: 0:VFF,1:Rate D,2:Angle P,3:Max Gain Only</li>
+<li>Bitmask: 0:VFF,1:Rate D/Rate P(incl max gain),2:Angle P,3:Max Gain Only</li>
 </ul>
 
 
@@ -6596,6 +6596,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6694,6 +6695,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6792,6 +6794,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6890,6 +6893,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -16726,7 +16730,7 @@ DO NOT EDIT
 
 <h2>LINK_Q_EN (OSD1_LINK_Q_EN)</h2>
 
-<p>Displays Receiver link quality</p>
+<p>Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -16987,6 +16991,87 @@ DO NOT EDIT
 
 
 <h2>CRSFPWR_Y (OSD1_CRSFPWR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFRSSI_EN (OSD1_CRSFRSSI_EN)</h2>
+
+<p>Displays RC signal strength in dBm for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFRSSI_X (OSD1_CRSFRSSI_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFRSSI_Y (OSD1_CRSFRSSI_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFSNR_EN (OSD1_CRSFSNR_EN)</h2>
+
+<p>Displays RC signal to noise ratio in dB for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFSNR_X (OSD1_CRSFSNR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFSNR_Y (OSD1_CRSFSNR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFANT_EN (OSD1_CRSFANT_EN)</h2>
+
+<p>Displays the current active antenna for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFANT_X (OSD1_CRSFANT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFANT_Y (OSD1_CRSFANT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -18646,7 +18731,7 @@ DO NOT EDIT
 
 <h2>LINK_Q_EN (OSD2_LINK_Q_EN)</h2>
 
-<p>Displays Receiver link quality</p>
+<p>Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -18907,6 +18992,87 @@ DO NOT EDIT
 
 
 <h2>CRSFPWR_Y (OSD2_CRSFPWR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFRSSI_EN (OSD2_CRSFRSSI_EN)</h2>
+
+<p>Displays RC signal strength in dBm for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFRSSI_X (OSD2_CRSFRSSI_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFRSSI_Y (OSD2_CRSFRSSI_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFSNR_EN (OSD2_CRSFSNR_EN)</h2>
+
+<p>Displays RC signal to noise ratio in dB for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFSNR_X (OSD2_CRSFSNR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFSNR_Y (OSD2_CRSFSNR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFANT_EN (OSD2_CRSFANT_EN)</h2>
+
+<p>Displays the current active antenna for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFANT_X (OSD2_CRSFANT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFANT_Y (OSD2_CRSFANT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -20566,7 +20732,7 @@ DO NOT EDIT
 
 <h2>LINK_Q_EN (OSD3_LINK_Q_EN)</h2>
 
-<p>Displays Receiver link quality</p>
+<p>Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -20827,6 +20993,87 @@ DO NOT EDIT
 
 
 <h2>CRSFPWR_Y (OSD3_CRSFPWR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFRSSI_EN (OSD3_CRSFRSSI_EN)</h2>
+
+<p>Displays RC signal strength in dBm for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFRSSI_X (OSD3_CRSFRSSI_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFRSSI_Y (OSD3_CRSFRSSI_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFSNR_EN (OSD3_CRSFSNR_EN)</h2>
+
+<p>Displays RC signal to noise ratio in dB for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFSNR_X (OSD3_CRSFSNR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFSNR_Y (OSD3_CRSFSNR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFANT_EN (OSD3_CRSFANT_EN)</h2>
+
+<p>Displays the current active antenna for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFANT_X (OSD3_CRSFANT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFANT_Y (OSD3_CRSFANT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22486,7 +22733,7 @@ DO NOT EDIT
 
 <h2>LINK_Q_EN (OSD4_LINK_Q_EN)</h2>
 
-<p>Displays Receiver link quality</p>
+<p>Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -22747,6 +22994,87 @@ DO NOT EDIT
 
 
 <h2>CRSFPWR_Y (OSD4_CRSFPWR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFRSSI_EN (OSD4_CRSFRSSI_EN)</h2>
+
+<p>Displays RC signal strength in dBm for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFRSSI_X (OSD4_CRSFRSSI_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFRSSI_Y (OSD4_CRSFRSSI_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFSNR_EN (OSD4_CRSFSNR_EN)</h2>
+
+<p>Displays RC signal to noise ratio in dB for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFSNR_X (OSD4_CRSFSNR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFSNR_Y (OSD4_CRSFSNR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFANT_EN (OSD4_CRSFANT_EN)</h2>
+
+<p>Displays the current active antenna for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFANT_X (OSD4_CRSFANT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFANT_Y (OSD4_CRSFANT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -24657,6 +24985,24 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Proximity minimum range (PRX_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h2>Proximity maximum range (PRX_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
 <h1>PSC Parameters</h1>
 
 
@@ -25120,6 +25466,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25271,6 +25618,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25422,6 +25770,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25573,6 +25922,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25724,6 +26074,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -25875,6 +26226,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26026,6 +26378,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26177,6 +26530,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26328,6 +26682,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26479,6 +26834,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26630,6 +26986,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26781,6 +27138,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -26932,6 +27290,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -27083,6 +27442,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -27234,6 +27594,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -27385,6 +27746,7 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>154</td><td>ArmDisarm with AirMode  (4.2 and higher)</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
+<tr><td>159</td><td>Force Flying</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -34184,15 +34546,15 @@ DO NOT EDIT
 
 <h2>Control port (SERVO_BLH_PORT)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>This sets the serial port to use for blheli pass-thru</p>
+<p>This sets the mavlink channel to use for blheli pass-thru. The channel number is determined by the number of serial ports configured to use mavlink. So 0 is always the console, 1 is the next serial port using mavlink, 2 the next after that and so on.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Console</td></tr>
-<tr><td>1</td><td>Serial1</td></tr>
-<tr><td>2</td><td>Serial2</td></tr>
-<tr><td>3</td><td>Serial3</td></tr>
-<tr><td>4</td><td>Serial4</td></tr>
-<tr><td>5</td><td>Serial5</td></tr>
+<tr><td>1</td><td>Mavlink Serial Channel1</td></tr>
+<tr><td>2</td><td>Mavlink Serial Channel2</td></tr>
+<tr><td>3</td><td>Mavlink Serial Channel3</td></tr>
+<tr><td>4</td><td>Mavlink Serial Channel4</td></tr>
+<tr><td>5</td><td>Mavlink Serial Channel5</td></tr>
 </table>
 </ul>
 

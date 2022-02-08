@@ -14669,6 +14669,24 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Proximity minimum range (PRX_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h2>Proximity maximum range (PRX_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
 <h1>PSC Parameters</h1>
 
 
@@ -23011,15 +23029,15 @@ DO NOT EDIT
 
 <h2>Control port (SERVO_BLH_PORT)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>This sets the serial port to use for blheli pass-thru</p>
+<p>This sets the mavlink channel to use for blheli pass-thru. The channel number is determined by the number of serial ports configured to use mavlink. So 0 is always the console, 1 is the next serial port using mavlink, 2 the next after that and so on.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Console</td></tr>
-<tr><td>1</td><td>Serial1</td></tr>
-<tr><td>2</td><td>Serial2</td></tr>
-<tr><td>3</td><td>Serial3</td></tr>
-<tr><td>4</td><td>Serial4</td></tr>
-<tr><td>5</td><td>Serial5</td></tr>
+<tr><td>1</td><td>Mavlink Serial Channel1</td></tr>
+<tr><td>2</td><td>Mavlink Serial Channel2</td></tr>
+<tr><td>3</td><td>Mavlink Serial Channel3</td></tr>
+<tr><td>4</td><td>Mavlink Serial Channel4</td></tr>
+<tr><td>5</td><td>Mavlink Serial Channel5</td></tr>
 </table>
 </ul>
 

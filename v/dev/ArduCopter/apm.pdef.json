@@ -1116,9 +1116,10 @@
       "Increment": "0.001",
       "Range": {
         "high": "0.5",
-        "low": "0"
+        "low": "0.05"
       },
-      "User": "Standard"
+      "User": "Standard",
+      "path": "AC_AttitudeControl_Heli"
     },
     "ATC_RAT_PIT_FLTD": {
       "Description": "Pitch axis rate controller derivative frequency in Hz",
@@ -1209,16 +1210,6 @@
       "User": "Advanced",
       "path": "AC_AttitudeControl_Heli"
     },
-    "ATC_RAT_PIT_VFF": {
-      "Description": "Pitch axis rate controller feed forward",
-      "DisplayName": "Pitch axis rate controller feed forward",
-      "Increment": "0.001",
-      "Range": {
-        "high": "0.5",
-        "low": "0.05"
-      },
-      "User": "Standard"
-    },
     "ATC_RAT_RLL_D": {
       "Description": "Roll axis rate controller D gain.  Compensates for short-term change in desired roll rate vs actual roll rate",
       "DisplayName": "Roll axis rate controller D gain",
@@ -1236,9 +1227,10 @@
       "Increment": "0.001",
       "Range": {
         "high": "0.5",
-        "low": "0"
+        "low": "0.05"
       },
-      "User": "Standard"
+      "User": "Standard",
+      "path": "AC_AttitudeControl_Heli"
     },
     "ATC_RAT_RLL_FLTD": {
       "Description": "Roll axis rate controller derivative frequency in Hz",
@@ -1329,16 +1321,6 @@
       "User": "Advanced",
       "path": "AC_AttitudeControl_Heli"
     },
-    "ATC_RAT_RLL_VFF": {
-      "Description": "Roll axis rate controller feed forward",
-      "DisplayName": "Roll axis rate controller feed forward",
-      "Increment": "0.001",
-      "Range": {
-        "high": "0.5",
-        "low": "0.05"
-      },
-      "User": "Standard"
-    },
     "ATC_RAT_YAW_D": {
       "Description": "Yaw axis rate controller D gain.  Compensates for short-term change in desired yaw rate vs actual yaw rate",
       "DisplayName": "Yaw axis rate controller D gain",
@@ -1358,7 +1340,8 @@
         "high": "0.5",
         "low": "0"
       },
-      "User": "Standard"
+      "User": "Standard",
+      "path": "AC_AttitudeControl_Heli"
     },
     "ATC_RAT_YAW_FLTD": {
       "Description": "Yaw axis rate controller derivative frequency in Hz",
@@ -1448,16 +1431,6 @@
       },
       "User": "Advanced",
       "path": "AC_AttitudeControl_Heli"
-    },
-    "ATC_RAT_YAW_VFF": {
-      "Description": "Yaw axis rate controller feed forward",
-      "DisplayName": "Yaw axis rate controller feed forward",
-      "Increment": "0.001",
-      "Range": {
-        "high": "0.5",
-        "low": "0"
-      },
-      "User": "Standard"
     },
     "ATC_SLEW_YAW": {
       "Description": "Maximum rate the yaw target can be updated in Loiter, RTL, Auto flight modes",
@@ -1558,11 +1531,11 @@
     "AUTOTUNE_SEQ": {
       "Bitmask": {
         "0": "VFF",
-        "1": "Rate D",
+        "1": "Rate D/Rate P(incl max gain)",
         "2": "Angle P",
         "3": "Max Gain Only"
       },
-      "Description": "2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D Only,4:Angle P Only,8:Max Gain Only,3:VFF and Rate D (incl max gain),5:VFF and Angle P,13:VFF max gain and angle P",
+      "Description": "2-byte bitmask to select what tuning should be performed.  Max gain automatically performed if Rate D is selected. Values: 7:All,1:VFF Only,2:Rate D/Rate P Only(incl max gain),4:Angle P Only,8:Max Gain Only,3:VFF and Rate D/Rate P(incl max gain),5:VFF and Angle P,6:Rate D/Rate P(incl max gain) and angle P",
       "DisplayName": "AutoTune Sequence Bitmask",
       "User": "Standard"
     },
@@ -4841,6 +4814,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -4937,6 +4911,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -5033,6 +5008,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -5129,6 +5105,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -15214,6 +15191,30 @@
         "low": "0"
       }
     },
+    "OSD1_CRSFANT_EN": {
+      "Description": "Displays the current active antenna for CRSF",
+      "DisplayName": "CRSFANT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_CRSFANT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFANT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_CRSFANT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFANT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_CRSFPWR_EN": {
       "Description": "Displays the TX power when using the CRSF RC protocol",
       "DisplayName": "CRSFPWR_EN",
@@ -15233,6 +15234,54 @@
     "OSD1_CRSFPWR_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CRSFPWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_CRSFRSSI_EN": {
+      "Description": "Displays RC signal strength in dBm for CRSF",
+      "DisplayName": "CRSFRSSI_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_CRSFRSSI_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFRSSI_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_CRSFRSSI_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFRSSI_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_CRSFSNR_EN": {
+      "Description": "Displays RC signal to noise ratio in dB for CRSF",
+      "DisplayName": "CRSFSNR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_CRSFSNR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFSNR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_CRSFSNR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFSNR_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -15824,7 +15873,7 @@
       }
     },
     "OSD1_LINK_Q_EN": {
-      "Description": "Displays Receiver link quality",
+      "Description": "Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set",
       "DisplayName": "LINK_Q_EN",
       "Values": {
         "0": "Disabled",
@@ -16923,6 +16972,30 @@
         "low": "0"
       }
     },
+    "OSD2_CRSFANT_EN": {
+      "Description": "Displays the current active antenna for CRSF",
+      "DisplayName": "CRSFANT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_CRSFANT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFANT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_CRSFANT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFANT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD2_CRSFPWR_EN": {
       "Description": "Displays the TX power when using the CRSF RC protocol",
       "DisplayName": "CRSFPWR_EN",
@@ -16942,6 +17015,54 @@
     "OSD2_CRSFPWR_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CRSFPWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_CRSFRSSI_EN": {
+      "Description": "Displays RC signal strength in dBm for CRSF",
+      "DisplayName": "CRSFRSSI_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_CRSFRSSI_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFRSSI_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_CRSFRSSI_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFRSSI_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_CRSFSNR_EN": {
+      "Description": "Displays RC signal to noise ratio in dB for CRSF",
+      "DisplayName": "CRSFSNR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_CRSFSNR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFSNR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_CRSFSNR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFSNR_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -17533,7 +17654,7 @@
       }
     },
     "OSD2_LINK_Q_EN": {
-      "Description": "Displays Receiver link quality",
+      "Description": "Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set",
       "DisplayName": "LINK_Q_EN",
       "Values": {
         "0": "Disabled",
@@ -18632,6 +18753,30 @@
         "low": "0"
       }
     },
+    "OSD3_CRSFANT_EN": {
+      "Description": "Displays the current active antenna for CRSF",
+      "DisplayName": "CRSFANT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_CRSFANT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFANT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_CRSFANT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFANT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_CRSFPWR_EN": {
       "Description": "Displays the TX power when using the CRSF RC protocol",
       "DisplayName": "CRSFPWR_EN",
@@ -18651,6 +18796,54 @@
     "OSD3_CRSFPWR_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CRSFPWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_CRSFRSSI_EN": {
+      "Description": "Displays RC signal strength in dBm for CRSF",
+      "DisplayName": "CRSFRSSI_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_CRSFRSSI_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFRSSI_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_CRSFRSSI_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFRSSI_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_CRSFSNR_EN": {
+      "Description": "Displays RC signal to noise ratio in dB for CRSF",
+      "DisplayName": "CRSFSNR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_CRSFSNR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFSNR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_CRSFSNR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFSNR_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -19242,7 +19435,7 @@
       }
     },
     "OSD3_LINK_Q_EN": {
-      "Description": "Displays Receiver link quality",
+      "Description": "Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set",
       "DisplayName": "LINK_Q_EN",
       "Values": {
         "0": "Disabled",
@@ -20341,6 +20534,30 @@
         "low": "0"
       }
     },
+    "OSD4_CRSFANT_EN": {
+      "Description": "Displays the current active antenna for CRSF",
+      "DisplayName": "CRSFANT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_CRSFANT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFANT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_CRSFANT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFANT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_CRSFPWR_EN": {
       "Description": "Displays the TX power when using the CRSF RC protocol",
       "DisplayName": "CRSFPWR_EN",
@@ -20360,6 +20577,54 @@
     "OSD4_CRSFPWR_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CRSFPWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_CRSFRSSI_EN": {
+      "Description": "Displays RC signal strength in dBm for CRSF",
+      "DisplayName": "CRSFRSSI_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_CRSFRSSI_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFRSSI_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_CRSFRSSI_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFRSSI_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_CRSFSNR_EN": {
+      "Description": "Displays RC signal to noise ratio in dB for CRSF",
+      "DisplayName": "CRSFSNR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_CRSFSNR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFSNR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_CRSFSNR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFSNR_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -20951,7 +21216,7 @@
       }
     },
     "OSD4_LINK_Q_EN": {
-      "Description": "Displays Receiver link quality",
+      "Description": "Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set",
       "DisplayName": "LINK_Q_EN",
       "Values": {
         "0": "Disabled",
@@ -23050,6 +23315,26 @@
         "1": "On"
       }
     },
+    "PRX_MAX": {
+      "Description": "Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.",
+      "DisplayName": "Proximity maximum range",
+      "Range": {
+        "high": "500",
+        "low": "0"
+      },
+      "Units": "m",
+      "User": "Advanced"
+    },
+    "PRX_MIN": {
+      "Description": "Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.",
+      "DisplayName": "Proximity minimum range",
+      "Range": {
+        "high": "500",
+        "low": "0"
+      },
+      "Units": "m",
+      "User": "Advanced"
+    },
     "PRX_ORIENT": {
       "Description": "Proximity sensor orientation",
       "DisplayName": "Proximity sensor orientation",
@@ -23511,6 +23796,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -23661,6 +23947,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -23811,6 +24098,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -23961,6 +24249,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -24111,6 +24400,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -24261,6 +24551,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -24411,6 +24702,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -24561,6 +24853,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -24711,6 +25004,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -24861,6 +25155,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -25011,6 +25306,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -25161,6 +25457,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -25311,6 +25608,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -25461,6 +25759,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -25611,6 +25910,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -25761,6 +26061,7 @@
         "153": "ArmDisarm (4.2 and higher)",
         "154": "ArmDisarm with AirMode  (4.2 and higher)",
         "158": "Optflow Calibration",
+        "159": "Force Flying",
         "16": "Auto",
         "17": "AutoTune",
         "18": "Land",
@@ -32591,16 +32892,16 @@
       "User": "Advanced"
     },
     "SERVO_BLH_PORT": {
-      "Description": "This sets the serial port to use for blheli pass-thru",
+      "Description": "This sets the mavlink channel to use for blheli pass-thru. The channel number is determined by the number of serial ports configured to use mavlink. So 0 is always the console, 1 is the next serial port using mavlink, 2 the next after that and so on.",
       "DisplayName": "Control port",
       "User": "Advanced",
       "Values": {
         "0": "Console",
-        "1": "Serial1",
-        "2": "Serial2",
-        "3": "Serial3",
-        "4": "Serial4",
-        "5": "Serial5"
+        "1": "Mavlink Serial Channel1",
+        "2": "Mavlink Serial Channel2",
+        "3": "Mavlink Serial Channel3",
+        "4": "Mavlink Serial Channel4",
+        "5": "Mavlink Serial Channel5"
       }
     },
     "SERVO_BLH_RVMASK": {
