@@ -1279,7 +1279,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT2_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT2_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT2_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT2_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT2_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT2__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT2_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1437,7 +1457,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT3_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT3_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT3_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT3_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT3_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT3__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT3_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1595,7 +1635,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT4_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT4_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT4_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT4_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT4_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT4__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT4_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1753,7 +1813,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT5_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT5_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT5_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT5_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT5_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT5__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT5_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -1911,7 +1991,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT6_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT6_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT6_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT6_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT6_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT6__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT6_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2069,7 +2169,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT7_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT7_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT7_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT7_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT7_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT7__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT7_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2227,7 +2347,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT8_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT8_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT8_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT8_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT8_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT8__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT8_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2385,7 +2525,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT9_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT9_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT9_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT9_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT9_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT9__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT9_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -2543,7 +2703,27 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Battery capacity in Wh" name="BATT_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Low battery capacity" name="BATT_LOW_WH" documentation="Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT_FS_LOW_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Battery critical capacity" name="BATT_CRT_WH" documentation="Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT__FS_CRT_ACT parameter." user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Required arming remaining capacity" name="BATT_ARM_WH" documentation="Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT__ARM_VOLT parameter." user="Advanced">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Battery cell max voltage" name="BATT_CELL_DT_V" documentation="Maximum cell voltage for cell count detection" user="Advanced">
         <field name="Units">V</field>
@@ -6965,8 +7145,8 @@
       </param>
       <param humanName="Underspeed warn speed" name="OSD_W_VERT_ACC" documentation="Set speed under which ASPDx items will flash" user="Standard">
         <field name="Range">0 1000</field>
-        <field name="Units">m/s</field>
-        <field name="UnitText">meters per second</field>
+        <field name="Units">gravities</field>
+        <field name="UnitText">standard acceleration due to gravity</field>
       </param>
       <param humanName="Underspeed warn speed" name="OSD_W_ASPD_LOW" documentation="Set speed under which ASPDx items will flash" user="Standard">
         <field name="Range">0 1000</field>
@@ -7889,6 +8069,18 @@
       <param humanName="CRSFANT_Y" name="OSD1_CRSFANT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="BAT_PCT_EN" name="OSD1_BAT_PCT_EN" documentation="Displays the remaining battery capacity as a percentage">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT_PCT_X" name="OSD1_BAT_PCT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT_PCT_Y" name="OSD1_BAT_PCT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -8777,6 +8969,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="CRSFANT_Y" name="OSD2_CRSFANT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT_PCT_EN" name="OSD2_BAT_PCT_EN" documentation="Displays the remaining battery capacity as a percentage">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT_PCT_X" name="OSD2_BAT_PCT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT_PCT_Y" name="OSD2_BAT_PCT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -9669,6 +9873,18 @@
       <param humanName="CRSFANT_Y" name="OSD3_CRSFANT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="BAT_PCT_EN" name="OSD3_BAT_PCT_EN" documentation="Displays the remaining battery capacity as a percentage">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT_PCT_X" name="OSD3_BAT_PCT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT_PCT_Y" name="OSD3_BAT_PCT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10557,6 +10773,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="CRSFANT_Y" name="OSD4_CRSFANT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT_PCT_EN" name="OSD4_BAT_PCT_EN" documentation="Displays the remaining battery capacity as a percentage">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT_PCT_X" name="OSD4_BAT_PCT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT_PCT_Y" name="OSD4_BAT_PCT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>

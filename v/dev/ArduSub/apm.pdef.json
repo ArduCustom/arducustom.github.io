@@ -1355,11 +1355,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT2_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT2__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT2_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT2_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT2_CELL_COUNT": {
@@ -1387,6 +1401,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT2_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT2_CURR_PIN": {
@@ -1478,6 +1499,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT2_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT2_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -1513,6 +1541,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -1596,11 +1626,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT3_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT3__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT3_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT3_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT3_CELL_COUNT": {
@@ -1628,6 +1672,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT3_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT3_CURR_PIN": {
@@ -1719,6 +1770,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT3_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT3_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -1754,6 +1812,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -1837,11 +1897,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT4_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT4__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT4_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT4_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT4_CELL_COUNT": {
@@ -1869,6 +1943,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT4_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT4_CURR_PIN": {
@@ -1960,6 +2041,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT4_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT4_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -1995,6 +2083,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -2078,11 +2168,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT5_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT5__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT5_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT5_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT5_CELL_COUNT": {
@@ -2110,6 +2214,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT5_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT5_CURR_PIN": {
@@ -2201,6 +2312,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT5_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT5_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -2236,6 +2354,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -2319,11 +2439,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT6_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT6__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT6_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT6_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT6_CELL_COUNT": {
@@ -2351,6 +2485,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT6_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT6_CURR_PIN": {
@@ -2442,6 +2583,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT6_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT6_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -2477,6 +2625,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -2560,11 +2710,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT7_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT7__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT7_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT7_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT7_CELL_COUNT": {
@@ -2592,6 +2756,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT7_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT7_CURR_PIN": {
@@ -2683,6 +2854,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT7_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT7_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -2718,6 +2896,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -2801,11 +2981,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT8_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT8__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT8_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT8_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT8_CELL_COUNT": {
@@ -2833,6 +3027,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT8_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT8_CURR_PIN": {
@@ -2924,6 +3125,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT8_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT8_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -2959,6 +3167,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -3042,11 +3252,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT9_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT9__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT9_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT9_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT9_CELL_COUNT": {
@@ -3074,6 +3298,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT9_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT9_CURR_PIN": {
@@ -3165,6 +3396,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT9_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT9_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -3200,6 +3438,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"
@@ -3283,11 +3523,25 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT_ARM_WH": {
+      "Description": "Battery capacity remaining which is required to arm the aircraft. Set to 0 to allow arming at any capacity. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate, which can lead to this check not providing sufficent protection, it is recommended to always use this in conjunction with the BATT__ARM_VOLT parameter.",
+      "DisplayName": "Required arming remaining capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Advanced"
+    },
     "BATT_CAPACITY": {
       "Description": "Capacity of the battery in mAh when full",
       "DisplayName": "Battery capacity",
       "Increment": "50",
       "Units": "mAh",
+      "User": "Standard"
+    },
+    "BATT_CAPA_WH": {
+      "Description": "Capacity of the battery in Wh when full",
+      "DisplayName": "Battery capacity in Wh",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT_CELL_COUNT": {
@@ -3315,6 +3569,13 @@
       "DisplayName": "Critical battery voltage",
       "Increment": "0.1",
       "Units": "V",
+      "User": "Standard"
+    },
+    "BATT_CRT_WH": {
+      "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT__FS_CRT_ACT parameter.",
+      "DisplayName": "Battery critical capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
       "User": "Standard"
     },
     "BATT_CURR_PIN": {
@@ -3406,6 +3667,13 @@
       "Units": "V",
       "User": "Standard"
     },
+    "BATT_LOW_WH": {
+      "Description": "Battery capacity at which the low battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT_FS_LOW_ACT parameter.",
+      "DisplayName": "Low battery capacity",
+      "Increment": "0.1",
+      "Units": "Wh",
+      "User": "Standard"
+    },
     "BATT_MONITOR": {
       "Description": "Controls enabling monitoring of the battery's voltage and current",
       "DisplayName": "Battery monitoring",
@@ -3441,6 +3709,8 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
+        "22": "Use Wh for remaining battery percentage calculation",
+        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
         "5": "MPPT Powered on at boot"

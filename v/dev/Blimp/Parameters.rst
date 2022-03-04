@@ -4416,26 +4416,103 @@ BATT2\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT2_CAPA_WH:
+
+BATT2\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT2_LOW_WH:
+
+BATT2\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT2_CRT_WH:
+
+BATT2\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT2_ARM_WH:
+
+BATT2\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT2\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -5010,26 +5087,103 @@ BATT3\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT3_CAPA_WH:
+
+BATT3\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT3_LOW_WH:
+
+BATT3\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT3_CRT_WH:
+
+BATT3\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT3_ARM_WH:
+
+BATT3\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT3\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -5604,26 +5758,103 @@ BATT4\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT4_CAPA_WH:
+
+BATT4\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT4_LOW_WH:
+
+BATT4\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT4_CRT_WH:
+
+BATT4\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT4_ARM_WH:
+
+BATT4\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT4\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -6198,26 +6429,103 @@ BATT5\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT5_CAPA_WH:
+
+BATT5\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT5_LOW_WH:
+
+BATT5\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT5_CRT_WH:
+
+BATT5\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT5_ARM_WH:
+
+BATT5\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT5\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -6792,26 +7100,103 @@ BATT6\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT6_CAPA_WH:
+
+BATT6\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT6_LOW_WH:
+
+BATT6\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT6_CRT_WH:
+
+BATT6\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT6_ARM_WH:
+
+BATT6\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT6\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -7386,26 +7771,103 @@ BATT7\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT7_CAPA_WH:
+
+BATT7\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT7_LOW_WH:
+
+BATT7\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT7_CRT_WH:
+
+BATT7\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT7_ARM_WH:
+
+BATT7\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT7\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -7980,26 +8442,103 @@ BATT8\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT8_CAPA_WH:
+
+BATT8\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT8_LOW_WH:
+
+BATT8\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT8_CRT_WH:
+
+BATT8\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT8_ARM_WH:
+
+BATT8\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT8\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -8574,26 +9113,103 @@ BATT9\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT9_CAPA_WH:
+
+BATT9\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT9_LOW_WH:
+
+BATT9\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT9_CRT_WH:
+
+BATT9\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT9_ARM_WH:
+
+BATT9\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT9\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
@@ -9168,26 +9784,103 @@ BATT\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+--------------------------------------------------+
-| Bitmask                                          |
-+==================================================+
-| +-----+----------------------------------------+ |
-| | Bit | Meaning                                | |
-| +=====+========================================+ |
-| | 0   | Ignore DroneCAN SoC                    | |
-| +-----+----------------------------------------+ |
-| | 1   | MPPT reports input voltage and current | |
-| +-----+----------------------------------------+ |
-| | 2   | MPPT Powered off when disarmed         | |
-| +-----+----------------------------------------+ |
-| | 3   | MPPT Powered on when armed             | |
-| +-----+----------------------------------------+ |
-| | 4   | MPPT Powered off at boot               | |
-| +-----+----------------------------------------+ |
-| | 5   | MPPT Powered on at boot                | |
-| +-----+----------------------------------------+ |
-|                                                  |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+| Bitmask                                                                                             |
++=====================================================================================================+
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                                   | |
+| +=====+===========================================================================================+ |
+| | 0   | Ignore DroneCAN SoC                                                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 1   | MPPT reports input voltage and current                                                    | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 2   | MPPT Powered off when disarmed                                                            | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 3   | MPPT Powered on when armed                                                                | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 4   | MPPT Powered off at boot                                                                  | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 5   | MPPT Powered on at boot                                                                   | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 22  | Use Wh for remaining battery percentage calculation                                       | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+| | 23  | Include energy losses upstream of the flight controller when using analog battery monitor | |
+| +-----+-------------------------------------------------------------------------------------------+ |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT_CAPA_WH:
+
+BATT\_CAPA\_WH: Battery capacity in Wh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Capacity of the battery in Wh when full
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT_LOW_WH:
+
+BATT\_LOW\_WH: Low battery capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the low battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT\_FS\_LOW\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT_CRT_WH:
+
+BATT\_CRT\_WH: Battery critical capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Battery capacity at which the critical battery failsafe is triggered\. Set to 0 to disable battery remaining failsafe\. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT\_\_FS\_CRT\_ACT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
+
+
+
+
+.. _BATT_ARM_WH:
+
+BATT\_ARM\_WH: Required arming remaining capacity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Battery capacity remaining which is required to arm the aircraft\. Set to 0 to allow arming at any capacity\. Note that execept for smart batteries rebooting the vehicle will always reset the remaining capacity estimate\, which can lead to this check not providing sufficent protection\, it is recommended to always use this in conjunction with the BATT\_\_ARM\_VOLT parameter\.
+
+
++-----------+-----------+
+| Increment | Units     |
++===========+===========+
+| 0.1       | Watt hour |
++-----------+-----------+
 
 
 
