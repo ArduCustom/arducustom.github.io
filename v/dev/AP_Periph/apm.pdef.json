@@ -1101,6 +1101,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT2_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT2_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -1184,7 +1193,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -1352,6 +1361,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT3_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT3_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -1435,7 +1453,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -1603,6 +1621,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT4_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT4_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -1686,7 +1713,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -1854,6 +1881,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT5_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT5_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -1937,7 +1973,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -2105,6 +2141,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT6_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT6_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -2188,7 +2233,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -2356,6 +2401,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT7_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT7_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -2439,7 +2493,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -2607,6 +2661,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT8_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT8_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -2690,7 +2753,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -2858,6 +2921,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT9_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT9_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -2941,7 +3013,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -3109,6 +3181,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -3192,7 +3273,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -3874,7 +3955,9 @@
         "0": "None",
         "1": "Yaw45",
         "10": "Yaw90Roll180",
-        "100": "Custom",
+        "100": "Custom 4.1 and older",
+        "101": "Custom 1",
+        "102": "Custom 2",
         "11": "Yaw135Roll180",
         "12": "Pitch180",
         "13": "Yaw225Roll180",
@@ -3924,48 +4007,50 @@
       "Values": {
         "0": "None",
         "1": "Yaw45",
-        "10": "Roll180Yaw90",
-        "100": "Custom",
-        "11": "Roll180Yaw135",
+        "10": "Yaw90Roll180",
+        "100": "Custom 4.1 and older",
+        "101": "Custom 1",
+        "102": "Custom 2",
+        "11": "Yaw135Roll180",
         "12": "Pitch180",
-        "13": "Roll180Yaw225",
-        "14": "Roll180Yaw270",
-        "15": "Roll180Yaw315",
+        "13": "Yaw225Roll180",
+        "14": "Yaw270Roll180",
+        "15": "Yaw315Roll180",
         "16": "Roll90",
-        "17": "Roll90Yaw45",
-        "18": "Roll90Yaw90",
-        "19": "Roll90Yaw135",
+        "17": "Yaw45Roll90",
+        "18": "Yaw90Roll90",
+        "19": "Yaw135Roll90",
         "2": "Yaw90",
         "20": "Roll270",
-        "21": "Roll270Yaw45",
-        "22": "Roll270Yaw90",
-        "23": "Roll270Yaw135",
+        "21": "Yaw45Roll270",
+        "22": "Yaw90Roll270",
+        "23": "Yaw135Roll270",
         "24": "Pitch90",
         "25": "Pitch270",
-        "26": "Pitch180Yaw90",
-        "27": "Pitch180Yaw270",
-        "28": "Roll90Pitch90",
-        "29": "Roll180Pitch90",
+        "26": "Yaw90Pitch180",
+        "27": "Yaw270Pitch180",
+        "28": "Pitch90Roll90",
+        "29": "Pitch90Roll180",
         "3": "Yaw135",
-        "30": "Roll270Pitch90",
-        "31": "Roll90Pitch180",
-        "32": "Roll270Pitch180",
-        "33": "Roll90Pitch270",
-        "34": "Roll180Pitch270",
-        "35": "Roll270Pitch270",
-        "36": "Roll90Pitch180Yaw90",
-        "37": "Roll90Yaw270",
+        "30": "Pitch90Roll270",
+        "31": "Pitch180Roll90",
+        "32": "Pitch180Roll270",
+        "33": "Pitch270Roll90",
+        "34": "Pitch270Roll180",
+        "35": "Pitch270Roll270",
+        "36": "Yaw90Pitch180Roll90",
+        "37": "Yaw270Roll90",
         "38": "Yaw293Pitch68Roll180",
         "39": "Pitch315",
         "4": "Yaw180",
-        "40": "Roll90Pitch315",
+        "40": "Pitch315Roll90",
         "42": "Roll45",
         "43": "Roll315",
         "5": "Yaw225",
         "6": "Yaw270",
         "7": "Yaw315",
         "8": "Roll180",
-        "9": "Roll180Yaw45"
+        "9": "Yaw45Roll180"
       }
     },
     "COMPASS_ORIENT3": {
@@ -3975,48 +4060,50 @@
       "Values": {
         "0": "None",
         "1": "Yaw45",
-        "10": "Roll180Yaw90",
-        "100": "Custom",
-        "11": "Roll180Yaw135",
+        "10": "Yaw90Roll180",
+        "100": "Custom 4.1 and older",
+        "101": "Custom 1",
+        "102": "Custom 2",
+        "11": "Yaw135Roll180",
         "12": "Pitch180",
-        "13": "Roll180Yaw225",
-        "14": "Roll180Yaw270",
-        "15": "Roll180Yaw315",
+        "13": "Yaw225Roll180",
+        "14": "Yaw270Roll180",
+        "15": "Yaw315Roll180",
         "16": "Roll90",
-        "17": "Roll90Yaw45",
-        "18": "Roll90Yaw90",
-        "19": "Roll90Yaw135",
+        "17": "Yaw45Roll90",
+        "18": "Yaw90Roll90",
+        "19": "Yaw135Roll90",
         "2": "Yaw90",
         "20": "Roll270",
-        "21": "Roll270Yaw45",
-        "22": "Roll270Yaw90",
-        "23": "Roll270Yaw135",
+        "21": "Yaw45Roll270",
+        "22": "Yaw90Roll270",
+        "23": "Yaw135Roll270",
         "24": "Pitch90",
         "25": "Pitch270",
-        "26": "Pitch180Yaw90",
-        "27": "Pitch180Yaw270",
-        "28": "Roll90Pitch90",
-        "29": "Roll180Pitch90",
+        "26": "Yaw90Pitch180",
+        "27": "Yaw270Pitch180",
+        "28": "Pitch90Roll90",
+        "29": "Pitch90Roll180",
         "3": "Yaw135",
-        "30": "Roll270Pitch90",
-        "31": "Roll90Pitch180",
-        "32": "Roll270Pitch180",
-        "33": "Roll90Pitch270",
-        "34": "Roll180Pitch270",
-        "35": "Roll270Pitch270",
-        "36": "Roll90Pitch180Yaw90",
-        "37": "Roll90Yaw270",
+        "30": "Pitch90Roll270",
+        "31": "Pitch180Roll90",
+        "32": "Pitch180Roll270",
+        "33": "Pitch270Roll90",
+        "34": "Pitch270Roll180",
+        "35": "Pitch270Roll270",
+        "36": "Yaw90Pitch180Roll90",
+        "37": "Yaw270Roll90",
         "38": "Yaw293Pitch68Roll180",
         "39": "Pitch315",
         "4": "Yaw180",
-        "40": "Roll90Pitch315",
+        "40": "Pitch315Roll90",
         "42": "Roll45",
         "43": "Roll315",
         "5": "Yaw225",
         "6": "Yaw270",
         "7": "Yaw315",
         "8": "Roll180",
-        "9": "Roll180Yaw45"
+        "9": "Yaw45Roll180"
       }
     },
     "COMPASS_PRIO1_ID": {
@@ -4195,6 +4282,58 @@
         "low": "0"
       },
       "User": "Advanced"
+    }
+  },
+  "CUST_ROT": {
+    "CUST_ROT_ENABLE": {
+      "Description": "This enables custom rotations",
+      "DisplayName": "Enable Custom rotations",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disable",
+        "1": "Enable"
+      }
+    }
+  },
+  "CUST_ROT1_": {
+    "CUST_ROT1_PITCH": {
+      "Description": "Custom euler pitch, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom pitch",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT1_ROLL": {
+      "Description": "Custom euler roll, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom roll",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT1_YAW": {
+      "Description": "Custom euler yaw, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom yaw",
+      "RebootRequired": "True",
+      "Units": "deg"
+    }
+  },
+  "CUST_ROT2_": {
+    "CUST_ROT2_PITCH": {
+      "Description": "Custom euler pitch, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom pitch",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT2_ROLL": {
+      "Description": "Custom euler roll, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom roll",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT2_YAW": {
+      "Description": "Custom euler yaw, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom yaw",
+      "RebootRequired": "True",
+      "Units": "deg"
     }
   },
   "EAHRS": {
@@ -5306,6 +5445,7 @@
     "OUT10_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -5342,6 +5482,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -5475,6 +5617,7 @@
     "OUT11_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -5511,6 +5654,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -5644,6 +5789,7 @@
     "OUT12_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -5680,6 +5826,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -5813,6 +5961,7 @@
     "OUT13_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -5849,6 +5998,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -5982,6 +6133,7 @@
     "OUT14_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -6018,6 +6170,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -6151,6 +6305,7 @@
     "OUT15_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -6187,6 +6342,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -6320,6 +6477,7 @@
     "OUT16_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -6356,6 +6514,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -6489,6 +6649,7 @@
     "OUT1_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -6525,6 +6686,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -6658,6 +6821,7 @@
     "OUT2_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -6694,6 +6858,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -6827,6 +6993,7 @@
     "OUT3_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -6863,6 +7030,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -6996,6 +7165,7 @@
     "OUT4_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -7032,6 +7202,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -7165,6 +7337,7 @@
     "OUT5_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -7201,6 +7374,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -7334,6 +7509,7 @@
     "OUT6_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -7370,6 +7546,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -7503,6 +7681,7 @@
     "OUT7_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -7539,6 +7718,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -7672,6 +7853,7 @@
     "OUT8_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -7708,6 +7890,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -7841,6 +8025,7 @@
     "OUT9_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -7877,6 +8062,8 @@
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
         "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
@@ -8485,7 +8672,7 @@
       }
     },
     "RNGFND1_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -8768,7 +8955,7 @@
       }
     },
     "RNGFND2_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -9051,7 +9238,7 @@
       }
     },
     "RNGFND3_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -9334,7 +9521,7 @@
       }
     },
     "RNGFND4_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -9617,7 +9804,7 @@
       }
     },
     "RNGFND5_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -9900,7 +10087,7 @@
       }
     },
     "RNGFND6_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -10183,7 +10370,7 @@
       }
     },
     "RNGFND7_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -10466,7 +10653,7 @@
       }
     },
     "RNGFND8_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -10749,7 +10936,7 @@
       }
     },
     "RNGFND9_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -11032,7 +11219,7 @@
       }
     },
     "RNGFNDA_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -11331,6 +11518,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -11423,6 +11611,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -11515,6 +11704,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -11607,6 +11797,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -11699,6 +11890,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -11791,6 +11983,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -11883,6 +12076,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -11975,6 +12169,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12067,6 +12262,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",

@@ -1235,7 +1235,9 @@
           <value code="40">Pitch315Roll90</value>
           <value code="42">Roll45</value>
           <value code="43">Roll315</value>
-          <value code="100">Custom</value>
+          <value code="100">Custom 4.1 and older</value>
+          <value code="101">Custom 1</value>
+          <value code="102">Custom 2</value>
         </values>
       </param>
       <param humanName="AHRS Velocity Complementary Filter Beta Coefficient" name="AHRS_COMP_BETA" documentation="This controls the time constant for the cross-over frequency used to fuse AHRS (airspeed and heading) and GPS data to estimate ground velocity. Time constant is 0.1/beta. A larger time constant will use GPS data less and a small time constant will use air data less." user="Advanced">
@@ -1651,7 +1653,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -1823,6 +1825,9 @@
       <param humanName="Battery Sum mask" name="BATT2_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT2_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT3_">
       <param humanName="Battery monitoring" name="BATT3_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -1835,7 +1840,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -2007,6 +2012,9 @@
       <param humanName="Battery Sum mask" name="BATT3_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT3_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT4_">
       <param humanName="Battery monitoring" name="BATT4_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2019,7 +2027,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -2191,6 +2199,9 @@
       <param humanName="Battery Sum mask" name="BATT4_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT4_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT5_">
       <param humanName="Battery monitoring" name="BATT5_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2203,7 +2214,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -2375,6 +2386,9 @@
       <param humanName="Battery Sum mask" name="BATT5_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT5_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT6_">
       <param humanName="Battery monitoring" name="BATT6_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2387,7 +2401,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -2559,6 +2573,9 @@
       <param humanName="Battery Sum mask" name="BATT6_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT6_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT7_">
       <param humanName="Battery monitoring" name="BATT7_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2571,7 +2588,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -2743,6 +2760,9 @@
       <param humanName="Battery Sum mask" name="BATT7_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT7_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT8_">
       <param humanName="Battery monitoring" name="BATT8_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2755,7 +2775,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -2927,6 +2947,9 @@
       <param humanName="Battery Sum mask" name="BATT8_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT8_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT9_">
       <param humanName="Battery monitoring" name="BATT9_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2939,7 +2962,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -3111,6 +3134,9 @@
       <param humanName="Battery Sum mask" name="BATT9_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT9_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BATT_">
       <param humanName="Battery monitoring" name="BATT_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -3123,7 +3149,7 @@
           <value code="7">SMBus-Generic</value>
           <value code="8">DroneCAN-BatteryInfo</value>
           <value code="9">ESC</value>
-          <value code="10">SumOfFollowing</value>
+          <value code="10">Sum Of Selected Monitors</value>
           <value code="11">FuelFlow</value>
           <value code="12">FuelLevelPWM</value>
           <value code="13">SMBUS-SUI3</value>
@@ -3295,6 +3321,9 @@
       <param humanName="Battery Sum mask" name="BATT_SUM_MASK" documentation="0: sum of remaining battery monitors, If none 0 sum of specified monitors. Current will be summed and voltages averaged." user="Standard">
         <field name="Bitmask">0:monitor 1, 1:monitor 2, 2:monitor 3, 3:monitor 4, 4:monitor 5, 5:monitor 6, 6:monitor 7, 7:monitor 8, 8:monitor 9</field>
       </param>
+      <param humanName="Scales reported power monitor current" name="BATT_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
+        <field name="Range">.1 10</field>
+      </param>
     </parameters>
     <parameters name="BRD_">
       <param humanName="Serial 1 flow control" name="BRD_SER1_RTSCTS" documentation="Enable flow control on serial 1 (telemetry 1). You must have the RTS and CTS pins connected to your radio. The standard DF13 6 pin connector for a 3DR radio does have those pins connected. If this is set to 2 then flow control will be auto-detected by checking for the output buffer filling on startup. Note that the PX4v1 does not have hardware flow control pins on this port, so you should leave this disabled." user="Advanced">
@@ -3430,7 +3459,7 @@
         </values>
       </param>
       <param humanName="Board options" name="BRD_OPTIONS" documentation="Board specific option flags" user="Advanced">
-        <field name="Bitmask">0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters, 3:Enable Debug Pins</field>
+        <field name="Bitmask">0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters, 3:Enable Debug Pins, 4:Unlock flash on reboot, 5:Write protect firmware flash on reboot, 6:Write protect bootloader flash on reboot</field>
       </param>
       <param humanName="Boot delay" name="BRD_BOOT_DELAY" documentation="This adds a delay in milliseconds to boot to ensure peripherals initialise fully" user="Advanced">
         <field name="Range">0 10000</field>
@@ -3611,16 +3640,16 @@
       <param humanName="Report send time" name="BTN_REPORT_SEND" documentation="The duration in seconds that a BUTTON_CHANGE report is repeatedly sent to the GCS regarding a button changing state. Note that the BUTTON_CHANGE message is MAVLink2 only." user="Standard">
         <field name="Range">0 3600</field>
       </param>
-      <param humanName="Button Pin 1 Options" name="BTN_OPTIONS1" documentation="Options for Pin 1. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input." user="Standard">
+      <param humanName="Button Pin 1 Options" name="BTN_OPTIONS1" documentation="Options for Pin 1. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input." user="Standard">
         <field name="Bitmask">0:PWM Input,1:InvertInput</field>
       </param>
-      <param humanName="Button Pin 2 Options" name="BTN_OPTIONS2" documentation="Options for Pin 2. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input." user="Standard">
+      <param humanName="Button Pin 2 Options" name="BTN_OPTIONS2" documentation="Options for Pin 2. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input." user="Standard">
         <field name="Bitmask">0:PWM Input,1:InvertInput</field>
       </param>
-      <param humanName="Button Pin 3 Options" name="BTN_OPTIONS3" documentation="Options for Pin 3. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.">
+      <param humanName="Button Pin 3 Options" name="BTN_OPTIONS3" documentation="Options for Pin 3. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.">
         <field name="Bitmask">0:PWM Input,1:InvertInput</field>
       </param>
-      <param humanName="Button Pin 4 Options" name="BTN_OPTIONS4" documentation="Options for Pin 4. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input." user="Standard">
+      <param humanName="Button Pin 4 Options" name="BTN_OPTIONS4" documentation="Options for Pin 4. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input." user="Standard">
         <field name="Bitmask">0:PWM Input,1:InvertInput</field>
       </param>
       <param humanName="Button Pin 1 RC Channel function" name="BTN_FUNC1" documentation="Auxiliary RC Options function executed on pin change" user="Standard">
@@ -3686,6 +3715,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -3761,6 +3791,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -3836,6 +3867,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -3911,6 +3943,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -4517,7 +4550,9 @@
           <value code="40">Pitch315Roll90</value>
           <value code="42">Roll45</value>
           <value code="43">Roll315</value>
-          <value code="100">Custom</value>
+          <value code="100">Custom 4.1 and older</value>
+          <value code="101">Custom 1</value>
+          <value code="102">Custom 2</value>
         </values>
       </param>
       <param humanName="Compass is attached via an external cable" name="COMPASS_EXTERNAL" documentation="Configure compass so it is attached externally. This is auto-detected on most boards. Set to 1 if the compass is externally connected. When externally connected the COMPASS_ORIENT option operates independently of the AHRS_ORIENTATION board orientation option. If set to 0 or 1 then auto-detection by bus connection can override the value. If set to 2 then auto-detection will be disabled." user="Advanced">
@@ -4633,41 +4668,43 @@
           <value code="6">Yaw270</value>
           <value code="7">Yaw315</value>
           <value code="8">Roll180</value>
-          <value code="9">Roll180Yaw45</value>
-          <value code="10">Roll180Yaw90</value>
-          <value code="11">Roll180Yaw135</value>
+          <value code="9">Yaw45Roll180</value>
+          <value code="10">Yaw90Roll180</value>
+          <value code="11">Yaw135Roll180</value>
           <value code="12">Pitch180</value>
-          <value code="13">Roll180Yaw225</value>
-          <value code="14">Roll180Yaw270</value>
-          <value code="15">Roll180Yaw315</value>
+          <value code="13">Yaw225Roll180</value>
+          <value code="14">Yaw270Roll180</value>
+          <value code="15">Yaw315Roll180</value>
           <value code="16">Roll90</value>
-          <value code="17">Roll90Yaw45</value>
-          <value code="18">Roll90Yaw90</value>
-          <value code="19">Roll90Yaw135</value>
+          <value code="17">Yaw45Roll90</value>
+          <value code="18">Yaw90Roll90</value>
+          <value code="19">Yaw135Roll90</value>
           <value code="20">Roll270</value>
-          <value code="21">Roll270Yaw45</value>
-          <value code="22">Roll270Yaw90</value>
-          <value code="23">Roll270Yaw135</value>
+          <value code="21">Yaw45Roll270</value>
+          <value code="22">Yaw90Roll270</value>
+          <value code="23">Yaw135Roll270</value>
           <value code="24">Pitch90</value>
           <value code="25">Pitch270</value>
-          <value code="26">Pitch180Yaw90</value>
-          <value code="27">Pitch180Yaw270</value>
-          <value code="28">Roll90Pitch90</value>
-          <value code="29">Roll180Pitch90</value>
-          <value code="30">Roll270Pitch90</value>
-          <value code="31">Roll90Pitch180</value>
-          <value code="32">Roll270Pitch180</value>
-          <value code="33">Roll90Pitch270</value>
-          <value code="34">Roll180Pitch270</value>
-          <value code="35">Roll270Pitch270</value>
-          <value code="36">Roll90Pitch180Yaw90</value>
-          <value code="37">Roll90Yaw270</value>
+          <value code="26">Yaw90Pitch180</value>
+          <value code="27">Yaw270Pitch180</value>
+          <value code="28">Pitch90Roll90</value>
+          <value code="29">Pitch90Roll180</value>
+          <value code="30">Pitch90Roll270</value>
+          <value code="31">Pitch180Roll90</value>
+          <value code="32">Pitch180Roll270</value>
+          <value code="33">Pitch270Roll90</value>
+          <value code="34">Pitch270Roll180</value>
+          <value code="35">Pitch270Roll270</value>
+          <value code="36">Yaw90Pitch180Roll90</value>
+          <value code="37">Yaw270Roll90</value>
           <value code="38">Yaw293Pitch68Roll180</value>
           <value code="39">Pitch315</value>
-          <value code="40">Roll90Pitch315</value>
+          <value code="40">Pitch315Roll90</value>
           <value code="42">Roll45</value>
           <value code="43">Roll315</value>
-          <value code="100">Custom</value>
+          <value code="100">Custom 4.1 and older</value>
+          <value code="101">Custom 1</value>
+          <value code="102">Custom 2</value>
         </values>
       </param>
       <param humanName="Compass2 is attached via an external cable" name="COMPASS_EXTERN2" documentation="Configure second compass so it is attached externally. This is auto-detected on most boards. If set to 0 or 1 then auto-detection by bus connection can override the value. If set to 2 then auto-detection will be disabled." user="Advanced">
@@ -4694,41 +4731,43 @@
           <value code="6">Yaw270</value>
           <value code="7">Yaw315</value>
           <value code="8">Roll180</value>
-          <value code="9">Roll180Yaw45</value>
-          <value code="10">Roll180Yaw90</value>
-          <value code="11">Roll180Yaw135</value>
+          <value code="9">Yaw45Roll180</value>
+          <value code="10">Yaw90Roll180</value>
+          <value code="11">Yaw135Roll180</value>
           <value code="12">Pitch180</value>
-          <value code="13">Roll180Yaw225</value>
-          <value code="14">Roll180Yaw270</value>
-          <value code="15">Roll180Yaw315</value>
+          <value code="13">Yaw225Roll180</value>
+          <value code="14">Yaw270Roll180</value>
+          <value code="15">Yaw315Roll180</value>
           <value code="16">Roll90</value>
-          <value code="17">Roll90Yaw45</value>
-          <value code="18">Roll90Yaw90</value>
-          <value code="19">Roll90Yaw135</value>
+          <value code="17">Yaw45Roll90</value>
+          <value code="18">Yaw90Roll90</value>
+          <value code="19">Yaw135Roll90</value>
           <value code="20">Roll270</value>
-          <value code="21">Roll270Yaw45</value>
-          <value code="22">Roll270Yaw90</value>
-          <value code="23">Roll270Yaw135</value>
+          <value code="21">Yaw45Roll270</value>
+          <value code="22">Yaw90Roll270</value>
+          <value code="23">Yaw135Roll270</value>
           <value code="24">Pitch90</value>
           <value code="25">Pitch270</value>
-          <value code="26">Pitch180Yaw90</value>
-          <value code="27">Pitch180Yaw270</value>
-          <value code="28">Roll90Pitch90</value>
-          <value code="29">Roll180Pitch90</value>
-          <value code="30">Roll270Pitch90</value>
-          <value code="31">Roll90Pitch180</value>
-          <value code="32">Roll270Pitch180</value>
-          <value code="33">Roll90Pitch270</value>
-          <value code="34">Roll180Pitch270</value>
-          <value code="35">Roll270Pitch270</value>
-          <value code="36">Roll90Pitch180Yaw90</value>
-          <value code="37">Roll90Yaw270</value>
+          <value code="26">Yaw90Pitch180</value>
+          <value code="27">Yaw270Pitch180</value>
+          <value code="28">Pitch90Roll90</value>
+          <value code="29">Pitch90Roll180</value>
+          <value code="30">Pitch90Roll270</value>
+          <value code="31">Pitch180Roll90</value>
+          <value code="32">Pitch180Roll270</value>
+          <value code="33">Pitch270Roll90</value>
+          <value code="34">Pitch270Roll180</value>
+          <value code="35">Pitch270Roll270</value>
+          <value code="36">Yaw90Pitch180Roll90</value>
+          <value code="37">Yaw270Roll90</value>
           <value code="38">Yaw293Pitch68Roll180</value>
           <value code="39">Pitch315</value>
-          <value code="40">Roll90Pitch315</value>
+          <value code="40">Pitch315Roll90</value>
           <value code="42">Roll45</value>
           <value code="43">Roll315</value>
-          <value code="100">Custom</value>
+          <value code="100">Custom 4.1 and older</value>
+          <value code="101">Custom 1</value>
+          <value code="102">Custom 2</value>
         </values>
       </param>
       <param humanName="Compass3 is attached via an external cable" name="COMPASS_EXTERN3" documentation="Configure third compass so it is attached externally. This is auto-detected on most boards. If set to 0 or 1 then auto-detection by bus connection can override the value. If set to 2 then auto-detection will be disabled." user="Advanced">
@@ -4917,6 +4956,49 @@
 </param>
       <param humanName="Compass per-motor4 Z" name="COMPASS_PMOT4_Z" documentation="Compensation for Z axis of motor4" user="Advanced">
 </param>
+    </parameters>
+    <parameters name="CUST_ROT">
+      <param humanName="Enable Custom rotations" name="CUST_ROT_ENABLE" documentation="This enables custom rotations" user="Standard">
+        <values>
+          <value code="0">Disable</value>
+          <value code="1">Enable</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+    </parameters>
+    <parameters name="CUST_ROT1_">
+      <param humanName="Custom roll" name="CUST_ROT1_ROLL" documentation="Custom euler roll, euler 321 (yaw, pitch, roll) ordering">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Custom pitch" name="CUST_ROT1_PITCH" documentation="Custom euler pitch, euler 321 (yaw, pitch, roll) ordering">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Custom yaw" name="CUST_ROT1_YAW" documentation="Custom euler yaw, euler 321 (yaw, pitch, roll) ordering">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="RebootRequired">True</field>
+      </param>
+    </parameters>
+    <parameters name="CUST_ROT2_">
+      <param humanName="Custom roll" name="CUST_ROT2_ROLL" documentation="Custom euler roll, euler 321 (yaw, pitch, roll) ordering">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Custom pitch" name="CUST_ROT2_PITCH" documentation="Custom euler pitch, euler 321 (yaw, pitch, roll) ordering">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Custom yaw" name="CUST_ROT2_YAW" documentation="Custom euler yaw, euler 321 (yaw, pitch, roll) ordering">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="RebootRequired">True</field>
+      </param>
     </parameters>
     <parameters name="EAHRS">
       <param humanName="AHRS type" name="EAHRS_TYPE" documentation="Type of AHRS device" user="Standard">
@@ -5223,15 +5305,15 @@
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
       </param>
-      <param humanName="Bitmask of which EKF-GSF yaw estimators run" name="EK2_GSF_RUN_MASK" documentation="1 byte bitmap of which EKF2 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF2 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK2_GSF_USE, EK2_GSF_DELAY and EK2_GSF_MAXCOUNT parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK2_GSF_USE to 0. " user="Advanced">
+      <param humanName="Bitmask of which EKF-GSF yaw estimators run" name="EK2_GSF_RUN_MASK" documentation="A bitmask of which EKF2 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF2 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK2_GSF_USE_MASK and EK2_GSF_RST_MAX parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK2_GSF_USE_MASK to 0. " user="Advanced">
         <field name="Bitmask">0:FirstEKF,1:SecondEKF,2:ThirdEKF,3:FourthEKF,4:FifthEKF,5:SixthEKF</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Bitmask of which EKF-GSF yaw estimators are used" name="EK2_GSF_USE_MASK" documentation="1 byte bitmap of which EKF2 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK2_GSF_RUN parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF2 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF2 instance. Additionally the EKF2 will  initiate a reset internally if navigation is lost for more than EK2_GSF_DELAY milli seconds." user="Advanced">
+      <param humanName="Bitmask of which EKF-GSF yaw estimators are used" name="EK2_GSF_USE_MASK" documentation="1 byte bitmap of which EKF2 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK2_GSF_RUN_MASK parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF2 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF2 instance." user="Advanced">
         <field name="Bitmask">0:FirstEKF,1:SecondEKF,2:ThirdEKF,3:FourthEKF,4:FifthEKF,5:SixthEKF</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Maximum number of resets to the EKF-GSF yaw estimate allowed" name="EK2_GSF_RST_MAX" documentation="Sets the maximum number of times the EKF2 will be allowed to reset it's yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK2_GSF_USE parameter." user="Advanced">
+      <param humanName="Maximum number of resets to the EKF-GSF yaw estimate allowed" name="EK2_GSF_RST_MAX" documentation="Sets the maximum number of times the EKF2 will be allowed to reset its yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK2_GSF_USE_MASK parameter." user="Advanced">
         <field name="Range">1 10</field>
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
@@ -5521,15 +5603,15 @@
         <field name="Units">mGauss</field>
         <field name="UnitText">milligauss</field>
       </param>
-      <param humanName="Bitmask of which EKF-GSF yaw estimators run" name="EK3_GSF_RUN_MASK" documentation="1 byte bitmap of which EKF3 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF3 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK3_GSF_USE, EK3_GSF_DELAY and EK3_GSF_MAXCOUNT parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK3_GSF_USE to 0. " user="Advanced">
+      <param humanName="Bitmask of which EKF-GSF yaw estimators run" name="EK3_GSF_RUN_MASK" documentation="1 byte bitmap of which EKF3 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF3 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK3_GSF_USE_MASK and EK3_GSF_RST_MAX parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK3_GSF_USE to 0. " user="Advanced">
         <field name="Bitmask">0:FirstEKF,1:SecondEKF,2:ThirdEKF,3:FourthEKF,4:FifthEKF,5:SixthEKF</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Bitmask of which EKF-GSF yaw estimators are used" name="EK3_GSF_USE_MASK" documentation="1 byte bitmap of which EKF3 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK3_GSF_RUN parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF3 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF3 instance. Additionally the EKF3 will  initiate a reset internally if navigation is lost for more than EK3_GSF_DELAY milli seconds." user="Advanced">
+      <param humanName="Bitmask of which EKF-GSF yaw estimators are used" name="EK3_GSF_USE_MASK" documentation="A bitmask of which EKF3 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK3_GSF_RUN_MASK parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF3 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF3 instance." user="Advanced">
         <field name="Bitmask">0:FirstEKF,1:SecondEKF,2:ThirdEKF,3:FourthEKF,4:FifthEKF,5:SixthEKF</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Maximum number of resets to the EKF-GSF yaw estimate allowed" name="EK3_GSF_RST_MAX" documentation="Sets the maximum number of times the EKF3 will be allowed to reset it's yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK3_GSF_USE parameter." user="Advanced">
+      <param humanName="Maximum number of resets to the EKF-GSF yaw estimate allowed" name="EK3_GSF_RST_MAX" documentation="Sets the maximum number of times the EKF3 will be allowed to reset its yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK3_GSF_USE_MASK parameter." user="Advanced">
         <field name="Range">1 10</field>
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
@@ -7871,7 +7953,7 @@
         </values>
       </param>
       <param humanName="OSD Options" name="OSD_OPTIONS" documentation="This sets options that change the display" user="Standard">
-        <field name="Bitmask">0:UseDecimalPack, 1:InvertedWindPointer, 2:InvertedAHRoll, 3:Convert feet to miles at 5280ft instead of 10000ft, 4:DisableCrosshair, 21: One decimal attitude, 22:One decimal throttle, 23:Shorten Pluscode</field>
+        <field name="Bitmask">0:UseDecimalPack, 1:InvertedWindPointer, 2:InvertedAHRoll, 3:Convert feet to miles at 5280ft instead of 10000ft, 4:DisableCrosshair, 20:Prefix LQ with RF Mode , 21:One decimal attitude, 22:One decimal throttle, 23:Shorten Pluscode </field>
       </param>
       <param humanName="OSD Font" name="OSD_FONT" documentation="This sets which OSD font to use. It is an integer from 0 to the number of fonts available" user="Standard">
         <field name="RebootRequired">True</field>
@@ -12295,14 +12377,6 @@
         <field name="Range">0 0.5</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Weathervaning gain" name="Q_WVANE_GAIN" documentation="This controls the tendency to yaw to face into the wind. A value of 0.1 is to start with and will give a slow turn into the wind. Use a value of 0.4 for more rapid response. The weathervaning works by turning into the direction of roll." user="Standard">
-        <field name="Range">0 1</field>
-        <field name="Increment">0.01</field>
-      </param>
-      <param humanName="Weathervaning min roll" name="Q_WVANE_MINROLL" documentation="This set the minimum roll in degrees before active weathervaning will start. This may need to be larger if your aircraft has bad roll trim." user="Standard">
-        <field name="Range">0 10</field>
-        <field name="Increment">0.1</field>
-      </param>
       <param humanName="QRTL return altitude" name="Q_RTL_ALT" documentation="The altitude which QRTL mode heads to initially" user="Standard">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
@@ -13216,6 +13290,65 @@
         <field name="Range">0.1 100</field>
       </param>
     </parameters>
+    <parameters name="Q_WVANE_">
+      <param humanName="Enable" name="Q_WVANE_ENABLE" documentation="Enable weather vaning.  When active, the aircraft will automatically yaw into wind when in a VTOL position controlled mode. Pilot yaw commands overide the weathervaning action." user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Nose into wind</value>
+          <value code="2">Nose or tail into wind</value>
+          <value code="3">Side into wind</value>
+          <value code="4">tail into wind</value>
+        </values>
+      </param>
+      <param humanName="Weathervaning gain" name="Q_WVANE_GAIN" documentation="This converts the target roll/pitch angle of the aircraft into the correcting (into wind) yaw rate. e.g. Gain = 2, roll = 30 deg, pitch = 0 deg, yaw rate = 60 deg/s." user="Standard">
+        <field name="Range">0.5 4</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Weathervaning min angle" name="Q_WVANE_ANG_MIN" documentation="The minimum target roll/pitch angle before active weathervaning will start.  This provides a dead zone that is particularly useful for poorly trimmed quadplanes." user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 10</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Weathervaning min height" name="Q_WVANE_HGT_MIN" documentation="Above this height weathervaning is permitted.  If RNGFND_LANDING is enabled or terrain is enabled then this parameter sets height AGL. Otherwise this parameter sets height above home.  Set zero to ignore minimum height requirement to activate weathervaning" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 50</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Weathervaning max ground speed" name="Q_WVANE_SPD_MAX" documentation="Below this ground speed weathervaning is permitted. Set to 0 to ignore this condition when checking if vehicle should weathervane." user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="Range">0 50</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Weathervaning max vertical speed" name="Q_WVANE_VELZ_MAX" documentation="The maximum climb or descent speed that the vehicle will still attempt to weathervane. Set to 0 to ignore this condition to get the aircraft to weathervane at any climb/descent rate.  This is particularly useful for aircraft with low disc loading that struggle with yaw control in decent." user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="Range">0 5</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Takeoff override" name="Q_WVANE_TAKEOFF" documentation="Override the weather vaning behaviour when in takeoffs" user="Standard">
+        <values>
+          <value code="-1">No override</value>
+          <value code="0">Disabled</value>
+          <value code="1">Nose into wind</value>
+          <value code="2">Nose or tail into wind</value>
+          <value code="3">Side into wind</value>
+          <value code="4">tail into wind</value>
+        </values>
+      </param>
+      <param humanName="Landing override" name="Q_WVANE_LAND" documentation="Override the weather vaning behaviour when in landing" user="Standard">
+        <values>
+          <value code="-1">No override</value>
+          <value code="0">Disabled</value>
+          <value code="1">Nose into wind</value>
+          <value code="2">Nose or tail into wind</value>
+          <value code="3">Side into wind</value>
+          <value code="4">tail into wind</value>
+        </values>
+      </param>
+    </parameters>
     <parameters name="RALLY_">
       <param humanName="Rally Total" name="RALLY_TOTAL" documentation="Number of rally points currently loaded" user="Advanced">
 </param>
@@ -13337,6 +13470,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -13443,6 +13577,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -13549,6 +13684,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -13655,6 +13791,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -13761,6 +13898,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -13867,6 +14005,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -13973,6 +14112,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14079,6 +14219,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14185,6 +14326,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14291,6 +14433,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14397,6 +14540,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14503,6 +14647,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14609,6 +14754,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14715,6 +14861,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14821,6 +14968,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -14927,6 +15075,7 @@
           <value code="155">set roll pitch and yaw trim to current servo and RC</value>
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
+          <value code="160">Weathervane Enable</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15172,7 +15321,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND1_">
-      <param humanName="Rangefinder type" name="RNGFND1_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND1_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -15353,7 +15502,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND2_">
-      <param humanName="Rangefinder type" name="RNGFND2_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND2_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -15534,7 +15683,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND3_">
-      <param humanName="Rangefinder type" name="RNGFND3_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND3_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -15715,7 +15864,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND4_">
-      <param humanName="Rangefinder type" name="RNGFND4_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND4_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -15896,7 +16045,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND5_">
-      <param humanName="Rangefinder type" name="RNGFND5_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND5_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -16077,7 +16226,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND6_">
-      <param humanName="Rangefinder type" name="RNGFND6_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND6_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -16258,7 +16407,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND7_">
-      <param humanName="Rangefinder type" name="RNGFND7_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND7_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -16439,7 +16588,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND8_">
-      <param humanName="Rangefinder type" name="RNGFND8_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND8_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -16620,7 +16769,7 @@
       </param>
     </parameters>
     <parameters name="RNGFND9_">
-      <param humanName="Rangefinder type" name="RNGFND9_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFND9_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -16801,7 +16950,7 @@
       </param>
     </parameters>
     <parameters name="RNGFNDA_">
-      <param humanName="Rangefinder type" name="RNGFNDA_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
+      <param humanName="Rangefinder type" name="RNGFNDA_TYPE" documentation="Type of connected rangefinder" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Analog</value>
@@ -17240,6 +17389,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -17306,6 +17456,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Telemetry 2 Baud Rate" name="SERIAL2_BAUD" documentation="The baud rate of the Telem2 port. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17371,6 +17522,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Serial 3 (GPS) Baud Rate" name="SERIAL3_BAUD" documentation="The baud rate used for the Serial 3 (GPS). Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17436,6 +17588,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Serial 4 Baud Rate" name="SERIAL4_BAUD" documentation="The baud rate used for Serial4. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17501,6 +17654,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Serial 5 Baud Rate" name="SERIAL5_BAUD" documentation="The baud rate used for Serial5. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17566,6 +17720,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Serial 6 Baud Rate" name="SERIAL6_BAUD" documentation="The baud rate used for Serial6. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17684,6 +17839,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Serial 7 Baud Rate" name="SERIAL7_BAUD" documentation="The baud rate used for Serial7. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17753,6 +17909,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Serial 8 Baud Rate" name="SERIAL8_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17822,6 +17979,7 @@
           <value code="40">AIS</value>
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
+          <value code="43">MAVLink High Latency</value>
         </values>
       </param>
       <param humanName="Serial 9 Baud Rate" name="SERIAL9_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -18015,7 +18173,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO11_">
@@ -18153,7 +18314,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO12_">
@@ -18291,7 +18455,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO13_">
@@ -18429,7 +18596,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO14_">
@@ -18567,7 +18737,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO15_">
@@ -18705,7 +18878,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO16_">
@@ -18843,7 +19019,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO1_">
@@ -18981,7 +19160,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO2_">
@@ -19119,7 +19301,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO3_">
@@ -19257,7 +19442,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO4_">
@@ -19395,7 +19583,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO5_">
@@ -19533,7 +19724,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO6_">
@@ -19671,7 +19865,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO7_">
@@ -19809,7 +20006,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO8_">
@@ -19947,7 +20147,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO9_">
@@ -20085,7 +20288,10 @@
           <value code="134">SERVOn_MIN</value>
           <value code="135">SERVOn_TRIM</value>
           <value code="136">SERVOn_MAX</value>
+          <value code="138">Alarm</value>
+          <value code="139">Alarm Inverted</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO_BLH_">
@@ -20283,60 +20489,70 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extended status stream rate to ground station" name="SR0_EXT_STAT" documentation="Extended status stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="RC Channel stream rate to ground station" name="SR0_RC_CHAN" documentation="RC Channel stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Raw Control stream rate to ground station" name="SR0_RAW_CTRL" documentation="Raw Control stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Position stream rate to ground station" name="SR0_POSITION" documentation="Position stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 1 stream rate to ground station" name="SR0_EXTRA1" documentation="Extra data type 1 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 2 stream rate to ground station" name="SR0_EXTRA2" documentation="Extra data type 2 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 3 stream rate to ground station" name="SR0_EXTRA3" documentation="Extra data type 3 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Parameter stream rate to ground station" name="SR0_PARAMS" documentation="Parameter stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="ADSB stream rate to ground station" name="SR0_ADSB" documentation="ADSB stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SR1_">
@@ -20345,60 +20561,70 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extended status stream rate to ground station" name="SR1_EXT_STAT" documentation="Extended status stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="RC Channel stream rate to ground station" name="SR1_RC_CHAN" documentation="RC Channel stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Raw Control stream rate to ground station" name="SR1_RAW_CTRL" documentation="Raw Control stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Position stream rate to ground station" name="SR1_POSITION" documentation="Position stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 1 stream rate to ground station" name="SR1_EXTRA1" documentation="Extra data type 1 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 2 stream rate to ground station" name="SR1_EXTRA2" documentation="Extra data type 2 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 3 stream rate to ground station" name="SR1_EXTRA3" documentation="Extra data type 3 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Parameter stream rate to ground station" name="SR1_PARAMS" documentation="Parameter stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="ADSB stream rate to ground station" name="SR1_ADSB" documentation="ADSB stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SR2_">
@@ -20407,60 +20633,70 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extended status stream rate to ground station" name="SR2_EXT_STAT" documentation="Extended status stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="RC Channel stream rate to ground station" name="SR2_RC_CHAN" documentation="RC Channel stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Raw Control stream rate to ground station" name="SR2_RAW_CTRL" documentation="Raw Control stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Position stream rate to ground station" name="SR2_POSITION" documentation="Position stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 1 stream rate to ground station" name="SR2_EXTRA1" documentation="Extra data type 1 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 2 stream rate to ground station" name="SR2_EXTRA2" documentation="Extra data type 2 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 3 stream rate to ground station" name="SR2_EXTRA3" documentation="Extra data type 3 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Parameter stream rate to ground station" name="SR2_PARAMS" documentation="Parameter stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="ADSB stream rate to ground station" name="SR2_ADSB" documentation="ADSB stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SR3_">
@@ -20469,60 +20705,70 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extended status stream rate to ground station" name="SR3_EXT_STAT" documentation="Extended status stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="RC Channel stream rate to ground station" name="SR3_RC_CHAN" documentation="RC Channel stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Raw Control stream rate to ground station" name="SR3_RAW_CTRL" documentation="Raw Control stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Position stream rate to ground station" name="SR3_POSITION" documentation="Position stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 1 stream rate to ground station" name="SR3_EXTRA1" documentation="Extra data type 1 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 2 stream rate to ground station" name="SR3_EXTRA2" documentation="Extra data type 2 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 3 stream rate to ground station" name="SR3_EXTRA3" documentation="Extra data type 3 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Parameter stream rate to ground station" name="SR3_PARAMS" documentation="Parameter stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="ADSB stream rate to ground station" name="SR3_ADSB" documentation="ADSB stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SR4_">
@@ -20531,60 +20777,70 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extended status stream rate to ground station" name="SR4_EXT_STAT" documentation="Extended status stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="RC Channel stream rate to ground station" name="SR4_RC_CHAN" documentation="RC Channel stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Raw Control stream rate to ground station" name="SR4_RAW_CTRL" documentation="Raw Control stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Position stream rate to ground station" name="SR4_POSITION" documentation="Position stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 1 stream rate to ground station" name="SR4_EXTRA1" documentation="Extra data type 1 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 2 stream rate to ground station" name="SR4_EXTRA2" documentation="Extra data type 2 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 3 stream rate to ground station" name="SR4_EXTRA3" documentation="Extra data type 3 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Parameter stream rate to ground station" name="SR4_PARAMS" documentation="Parameter stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="ADSB stream rate to ground station" name="SR4_ADSB" documentation="ADSB stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SR5_">
@@ -20593,60 +20849,70 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extended status stream rate to ground station" name="SR5_EXT_STAT" documentation="Extended status stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="RC Channel stream rate to ground station" name="SR5_RC_CHAN" documentation="RC Channel stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Raw Control stream rate to ground station" name="SR5_RAW_CTRL" documentation="Raw Control stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Position stream rate to ground station" name="SR5_POSITION" documentation="Position stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 1 stream rate to ground station" name="SR5_EXTRA1" documentation="Extra data type 1 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 2 stream rate to ground station" name="SR5_EXTRA2" documentation="Extra data type 2 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 3 stream rate to ground station" name="SR5_EXTRA3" documentation="Extra data type 3 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Parameter stream rate to ground station" name="SR5_PARAMS" documentation="Parameter stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="ADSB stream rate to ground station" name="SR5_ADSB" documentation="ADSB stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SR6_">
@@ -20655,60 +20921,70 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extended status stream rate to ground station" name="SR6_EXT_STAT" documentation="Extended status stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="RC Channel stream rate to ground station" name="SR6_RC_CHAN" documentation="RC Channel stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Raw Control stream rate to ground station" name="SR6_RAW_CTRL" documentation="Raw Control stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Position stream rate to ground station" name="SR6_POSITION" documentation="Position stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 1 stream rate to ground station" name="SR6_EXTRA1" documentation="Extra data type 1 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 2 stream rate to ground station" name="SR6_EXTRA2" documentation="Extra data type 2 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Extra data type 3 stream rate to ground station" name="SR6_EXTRA3" documentation="Extra data type 3 stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Parameter stream rate to ground station" name="SR6_PARAMS" documentation="Parameter stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="ADSB stream rate to ground station" name="SR6_ADSB" documentation="ADSB stream rate to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
         <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="STAT">

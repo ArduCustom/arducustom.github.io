@@ -2339,7 +2339,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -2894,6 +2894,25 @@ BATT2\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT2_CURR_MULT:
+
+BATT2\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT3_:
 
@@ -2930,7 +2949,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -3485,6 +3504,25 @@ BATT3\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT3_CURR_MULT:
+
+BATT3\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT4_:
 
@@ -3521,7 +3559,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -4076,6 +4114,25 @@ BATT4\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT4_CURR_MULT:
+
+BATT4\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT5_:
 
@@ -4112,7 +4169,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -4667,6 +4724,25 @@ BATT5\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT5_CURR_MULT:
+
+BATT5\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT6_:
 
@@ -4703,7 +4779,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -5258,6 +5334,25 @@ BATT6\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT6_CURR_MULT:
+
+BATT6\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT7_:
 
@@ -5294,7 +5389,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -5849,6 +5944,25 @@ BATT7\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT7_CURR_MULT:
+
+BATT7\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT8_:
 
@@ -5885,7 +5999,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -6440,6 +6554,25 @@ BATT8\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT8_CURR_MULT:
+
+BATT8\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT9_:
 
@@ -6476,7 +6609,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -7031,6 +7164,25 @@ BATT9\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT9_CURR_MULT:
+
+BATT9\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT_:
 
@@ -7067,7 +7219,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 +-------+----------------------------+
 | 9     | ESC                        |
 +-------+----------------------------+
-| 10    | SumOfFollowing             |
+| 10    | Sum Of Selected Monitors   |
 +-------+----------------------------+
 | 11    | FuelFlow                   |
 +-------+----------------------------+
@@ -7622,6 +7774,25 @@ BATT\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT_CURR_MULT:
+
+BATT\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_CAM_RC_:
 
@@ -8082,7 +8253,11 @@ The orientation of the first external compass relative to the vehicle frame\. Th
 +-------+----------------------+
 | 43    | Roll315              |
 +-------+----------------------+
-| 100   | Custom               |
+| 100   | Custom 4.1 and older |
++-------+----------------------+
+| 101   | Custom 1             |
++-------+----------------------+
+| 102   | Custom 2             |
 +-------+----------------------+
 
 
@@ -8448,75 +8623,79 @@ The orientation of a second external compass relative to the vehicle frame\. Thi
 +-------+----------------------+
 | 8     | Roll180              |
 +-------+----------------------+
-| 9     | Roll180Yaw45         |
+| 9     | Yaw45Roll180         |
 +-------+----------------------+
-| 10    | Roll180Yaw90         |
+| 10    | Yaw90Roll180         |
 +-------+----------------------+
-| 11    | Roll180Yaw135        |
+| 11    | Yaw135Roll180        |
 +-------+----------------------+
 | 12    | Pitch180             |
 +-------+----------------------+
-| 13    | Roll180Yaw225        |
+| 13    | Yaw225Roll180        |
 +-------+----------------------+
-| 14    | Roll180Yaw270        |
+| 14    | Yaw270Roll180        |
 +-------+----------------------+
-| 15    | Roll180Yaw315        |
+| 15    | Yaw315Roll180        |
 +-------+----------------------+
 | 16    | Roll90               |
 +-------+----------------------+
-| 17    | Roll90Yaw45          |
+| 17    | Yaw45Roll90          |
 +-------+----------------------+
-| 18    | Roll90Yaw90          |
+| 18    | Yaw90Roll90          |
 +-------+----------------------+
-| 19    | Roll90Yaw135         |
+| 19    | Yaw135Roll90         |
 +-------+----------------------+
 | 20    | Roll270              |
 +-------+----------------------+
-| 21    | Roll270Yaw45         |
+| 21    | Yaw45Roll270         |
 +-------+----------------------+
-| 22    | Roll270Yaw90         |
+| 22    | Yaw90Roll270         |
 +-------+----------------------+
-| 23    | Roll270Yaw135        |
+| 23    | Yaw135Roll270        |
 +-------+----------------------+
 | 24    | Pitch90              |
 +-------+----------------------+
 | 25    | Pitch270             |
 +-------+----------------------+
-| 26    | Pitch180Yaw90        |
+| 26    | Yaw90Pitch180        |
 +-------+----------------------+
-| 27    | Pitch180Yaw270       |
+| 27    | Yaw270Pitch180       |
 +-------+----------------------+
-| 28    | Roll90Pitch90        |
+| 28    | Pitch90Roll90        |
 +-------+----------------------+
-| 29    | Roll180Pitch90       |
+| 29    | Pitch90Roll180       |
 +-------+----------------------+
-| 30    | Roll270Pitch90       |
+| 30    | Pitch90Roll270       |
 +-------+----------------------+
-| 31    | Roll90Pitch180       |
+| 31    | Pitch180Roll90       |
 +-------+----------------------+
-| 32    | Roll270Pitch180      |
+| 32    | Pitch180Roll270      |
 +-------+----------------------+
-| 33    | Roll90Pitch270       |
+| 33    | Pitch270Roll90       |
 +-------+----------------------+
-| 34    | Roll180Pitch270      |
+| 34    | Pitch270Roll180      |
 +-------+----------------------+
-| 35    | Roll270Pitch270      |
+| 35    | Pitch270Roll270      |
 +-------+----------------------+
-| 36    | Roll90Pitch180Yaw90  |
+| 36    | Yaw90Pitch180Roll90  |
 +-------+----------------------+
-| 37    | Roll90Yaw270         |
+| 37    | Yaw270Roll90         |
 +-------+----------------------+
 | 38    | Yaw293Pitch68Roll180 |
 +-------+----------------------+
 | 39    | Pitch315             |
 +-------+----------------------+
-| 40    | Roll90Pitch315       |
+| 40    | Pitch315Roll90       |
 +-------+----------------------+
 | 42    | Roll45               |
 +-------+----------------------+
 | 43    | Roll315              |
 +-------+----------------------+
-| 100   | Custom               |
+| 100   | Custom 4.1 and older |
++-------+----------------------+
+| 101   | Custom 1             |
++-------+----------------------+
+| 102   | Custom 2             |
 +-------+----------------------+
 
 
@@ -8597,75 +8776,79 @@ The orientation of a third external compass relative to the vehicle frame\. This
 +-------+----------------------+
 | 8     | Roll180              |
 +-------+----------------------+
-| 9     | Roll180Yaw45         |
+| 9     | Yaw45Roll180         |
 +-------+----------------------+
-| 10    | Roll180Yaw90         |
+| 10    | Yaw90Roll180         |
 +-------+----------------------+
-| 11    | Roll180Yaw135        |
+| 11    | Yaw135Roll180        |
 +-------+----------------------+
 | 12    | Pitch180             |
 +-------+----------------------+
-| 13    | Roll180Yaw225        |
+| 13    | Yaw225Roll180        |
 +-------+----------------------+
-| 14    | Roll180Yaw270        |
+| 14    | Yaw270Roll180        |
 +-------+----------------------+
-| 15    | Roll180Yaw315        |
+| 15    | Yaw315Roll180        |
 +-------+----------------------+
 | 16    | Roll90               |
 +-------+----------------------+
-| 17    | Roll90Yaw45          |
+| 17    | Yaw45Roll90          |
 +-------+----------------------+
-| 18    | Roll90Yaw90          |
+| 18    | Yaw90Roll90          |
 +-------+----------------------+
-| 19    | Roll90Yaw135         |
+| 19    | Yaw135Roll90         |
 +-------+----------------------+
 | 20    | Roll270              |
 +-------+----------------------+
-| 21    | Roll270Yaw45         |
+| 21    | Yaw45Roll270         |
 +-------+----------------------+
-| 22    | Roll270Yaw90         |
+| 22    | Yaw90Roll270         |
 +-------+----------------------+
-| 23    | Roll270Yaw135        |
+| 23    | Yaw135Roll270        |
 +-------+----------------------+
 | 24    | Pitch90              |
 +-------+----------------------+
 | 25    | Pitch270             |
 +-------+----------------------+
-| 26    | Pitch180Yaw90        |
+| 26    | Yaw90Pitch180        |
 +-------+----------------------+
-| 27    | Pitch180Yaw270       |
+| 27    | Yaw270Pitch180       |
 +-------+----------------------+
-| 28    | Roll90Pitch90        |
+| 28    | Pitch90Roll90        |
 +-------+----------------------+
-| 29    | Roll180Pitch90       |
+| 29    | Pitch90Roll180       |
 +-------+----------------------+
-| 30    | Roll270Pitch90       |
+| 30    | Pitch90Roll270       |
 +-------+----------------------+
-| 31    | Roll90Pitch180       |
+| 31    | Pitch180Roll90       |
 +-------+----------------------+
-| 32    | Roll270Pitch180      |
+| 32    | Pitch180Roll270      |
 +-------+----------------------+
-| 33    | Roll90Pitch270       |
+| 33    | Pitch270Roll90       |
 +-------+----------------------+
-| 34    | Roll180Pitch270      |
+| 34    | Pitch270Roll180      |
 +-------+----------------------+
-| 35    | Roll270Pitch270      |
+| 35    | Pitch270Roll270      |
 +-------+----------------------+
-| 36    | Roll90Pitch180Yaw90  |
+| 36    | Yaw90Pitch180Roll90  |
 +-------+----------------------+
-| 37    | Roll90Yaw270         |
+| 37    | Yaw270Roll90         |
 +-------+----------------------+
 | 38    | Yaw293Pitch68Roll180 |
 +-------+----------------------+
 | 39    | Pitch315             |
 +-------+----------------------+
-| 40    | Roll90Pitch315       |
+| 40    | Pitch315Roll90       |
 +-------+----------------------+
 | 42    | Roll45               |
 +-------+----------------------+
 | 43    | Roll315              |
 +-------+----------------------+
-| 100   | Custom               |
+| 100   | Custom 4.1 and older |
++-------+----------------------+
+| 101   | Custom 1             |
++-------+----------------------+
+| 102   | Custom 2             |
 +-------+----------------------+
 
 
@@ -9575,6 +9758,162 @@ COMPASS\_PMOT4\_Z: Compass per\-motor4 Z
 | *Note: This parameter is for advanced users*
 
 Compensation for Z axis of motor4
+
+
+
+.. _parameters_CUST_ROT:
+
+CUST\_ROT Parameters
+--------------------
+
+
+.. _CUST_ROT_ENABLE:
+
+CUST\_ROT\_ENABLE: Enable Custom rotations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+This enables custom rotations
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 0     | Disable |
++-------+---------+
+| 1     | Enable  |
++-------+---------+
+
+
+
+
+
+.. _parameters_CUST_ROT1_:
+
+CUST\_ROT1\_ Parameters
+-----------------------
+
+
+.. _CUST_ROT1_ROLL:
+
+CUST\_ROT1\_ROLL: Custom roll
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler roll\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT1_PITCH:
+
+CUST\_ROT1\_PITCH: Custom pitch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler pitch\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT1_YAW:
+
+CUST\_ROT1\_YAW: Custom yaw
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler yaw\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+
+.. _parameters_CUST_ROT2_:
+
+CUST\_ROT2\_ Parameters
+-----------------------
+
+
+.. _CUST_ROT2_ROLL:
+
+CUST\_ROT2\_ROLL: Custom roll
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler roll\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT2_PITCH:
+
+CUST\_ROT2\_PITCH: Custom pitch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler pitch\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT2_YAW:
+
+CUST\_ROT2\_YAW: Custom yaw
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler yaw\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
 
 
 
@@ -12018,6 +12357,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT10\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -12260,6 +12600,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -12351,6 +12695,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT11\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -12593,6 +12938,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -12684,6 +13033,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT12\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -12926,6 +13276,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -13017,6 +13371,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT13\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -13259,6 +13614,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -13350,6 +13709,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT14\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -13592,6 +13952,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -13683,6 +14047,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT15\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -13925,6 +14290,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -14016,6 +14385,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT16\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -14258,6 +14628,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -14349,6 +14723,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT1\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -14591,6 +14966,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -14682,6 +15061,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT2\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -14924,6 +15304,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -15015,6 +15399,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT3\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -15257,6 +15642,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -15348,6 +15737,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT4\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -15590,6 +15980,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -15681,6 +16075,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT5\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -15923,6 +16318,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -16014,6 +16413,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT6\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -16256,6 +16656,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -16347,6 +16751,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT7\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -16589,6 +16994,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -16680,6 +17089,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT8\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -16922,6 +17332,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -17013,6 +17427,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 OUT9\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -17255,6 +17670,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | 136   | SERVOn_MAX                |
 +-------+---------------------------+
 | 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
 +-------+---------------------------+
 
 
@@ -17898,7 +18317,7 @@ RNGFND1\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -18489,7 +18908,7 @@ RNGFND2\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -19080,7 +19499,7 @@ RNGFND3\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -19671,7 +20090,7 @@ RNGFND4\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -20262,7 +20681,7 @@ RNGFND5\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -20853,7 +21272,7 @@ RNGFND6\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -21444,7 +21863,7 @@ RNGFND7\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -22035,7 +22454,7 @@ RNGFND8\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -22626,7 +23045,7 @@ RNGFND9\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -23217,7 +23636,7 @@ RNGFNDA\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +-------+------------------------+
@@ -24133,6 +24552,8 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
 +-------+----------------------------------+
+| 43    | MAVLink High Latency             |
++-------+----------------------------------+
 
 
 
@@ -24277,6 +24698,8 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | 41    | CoDevESC                         |
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
++-------+----------------------------------+
+| 43    | MAVLink High Latency             |
 +-------+----------------------------------+
 
 
@@ -24423,6 +24846,8 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
 +-------+----------------------------------+
+| 43    | MAVLink High Latency             |
++-------+----------------------------------+
 
 
 
@@ -24567,6 +24992,8 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | 41    | CoDevESC                         |
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
++-------+----------------------------------+
+| 43    | MAVLink High Latency             |
 +-------+----------------------------------+
 
 
@@ -24713,6 +25140,8 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
 +-------+----------------------------------+
+| 43    | MAVLink High Latency             |
++-------+----------------------------------+
 
 
 
@@ -24857,6 +25286,8 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | 41    | CoDevESC                         |
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
++-------+----------------------------------+
+| 43    | MAVLink High Latency             |
 +-------+----------------------------------+
 
 
@@ -25352,6 +25783,8 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
 +-------+----------------------------------+
+| 43    | MAVLink High Latency             |
++-------+----------------------------------+
 
 
 
@@ -25541,6 +25974,8 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
 +-------+----------------------------------+
+| 43    | MAVLink High Latency             |
++-------+----------------------------------+
 
 
 
@@ -25729,6 +26164,8 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | 41    | CoDevESC                         |
 +-------+----------------------------------+
 | 42    | DisplayPort                      |
++-------+----------------------------------+
+| 43    | MAVLink High Latency             |
 +-------+----------------------------------+
 
 

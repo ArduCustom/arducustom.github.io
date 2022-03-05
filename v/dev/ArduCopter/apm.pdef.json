@@ -401,7 +401,9 @@
         "0": "None",
         "1": "Yaw45",
         "10": "Yaw90Roll180",
-        "100": "Custom",
+        "100": "Custom 4.1 and older",
+        "101": "Custom 1",
+        "102": "Custom 2",
         "11": "Yaw135Roll180",
         "12": "Pitch180",
         "13": "Yaw225Roll180",
@@ -2088,6 +2090,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT2_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT2_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -2199,7 +2210,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -2367,6 +2378,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT3_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT3_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -2478,7 +2498,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -2646,6 +2666,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT4_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT4_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -2757,7 +2786,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -2925,6 +2954,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT5_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT5_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -3036,7 +3074,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -3204,6 +3242,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT6_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT6_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -3315,7 +3362,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -3483,6 +3530,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT7_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT7_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -3594,7 +3650,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -3762,6 +3818,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT8_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT8_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -3873,7 +3938,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -4041,6 +4106,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT9_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT9_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -4152,7 +4226,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -4320,6 +4394,15 @@
       "Units": "Wh",
       "User": "Standard"
     },
+    "BATT_CURR_MULT": {
+      "Description": "Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications",
+      "DisplayName": "Scales reported power monitor current",
+      "Range": {
+        "high": "10",
+        "low": ".1"
+      },
+      "User": "Advanced"
+    },
     "BATT_CURR_PIN": {
       "Description": "Sets the analog input pin that should be used for current monitoring.",
       "DisplayName": "Battery Current sensing pin",
@@ -4431,7 +4514,7 @@
       "User": "Standard",
       "Values": {
         "0": "Disabled",
-        "10": "SumOfFollowing",
+        "10": "Sum Of Selected Monitors",
         "11": "FuelFlow",
         "12": "FuelLevelPWM",
         "13": "SMBUS-SUI3",
@@ -4662,7 +4745,10 @@
         "0": "Enable hardware watchdog",
         "1": "Disable MAVftp",
         "2": "Enable set of internal parameters",
-        "3": "Enable Debug Pins"
+        "3": "Enable Debug Pins",
+        "4": "Unlock flash on reboot",
+        "5": "Write protect firmware flash on reboot",
+        "6": "Write protect bootloader flash on reboot"
       },
       "Description": "Board specific option flags",
       "DisplayName": "Board options",
@@ -5086,6 +5172,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -5183,6 +5270,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -5280,6 +5368,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -5377,6 +5466,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -5457,7 +5547,7 @@
         "0": "PWM Input",
         "1": "InvertInput"
       },
-      "Description": "Options for Pin 1. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
+      "Description": "Options for Pin 1. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
       "DisplayName": "Button Pin 1 Options",
       "User": "Standard"
     },
@@ -5466,7 +5556,7 @@
         "0": "PWM Input",
         "1": "InvertInput"
       },
-      "Description": "Options for Pin 2. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
+      "Description": "Options for Pin 2. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
       "DisplayName": "Button Pin 2 Options",
       "User": "Standard"
     },
@@ -5475,7 +5565,7 @@
         "0": "PWM Input",
         "1": "InvertInput"
       },
-      "Description": "Options for Pin 3. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
+      "Description": "Options for Pin 3. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
       "DisplayName": "Button Pin 3 Options"
     },
     "BTN_OPTIONS4": {
@@ -5483,7 +5573,7 @@
         "0": "PWM Input",
         "1": "InvertInput"
       },
-      "Description": "Options for Pin 4. PWM input detects PWM above or below 1800/1200us instead of logic level. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
+      "Description": "Options for Pin 4. PWM input detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Invert changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.",
       "DisplayName": "Button Pin 4 Options",
       "User": "Standard"
     },
@@ -7140,7 +7230,9 @@
         "0": "None",
         "1": "Yaw45",
         "10": "Yaw90Roll180",
-        "100": "Custom",
+        "100": "Custom 4.1 and older",
+        "101": "Custom 1",
+        "102": "Custom 2",
         "11": "Yaw135Roll180",
         "12": "Pitch180",
         "13": "Yaw225Roll180",
@@ -7190,48 +7282,50 @@
       "Values": {
         "0": "None",
         "1": "Yaw45",
-        "10": "Roll180Yaw90",
-        "100": "Custom",
-        "11": "Roll180Yaw135",
+        "10": "Yaw90Roll180",
+        "100": "Custom 4.1 and older",
+        "101": "Custom 1",
+        "102": "Custom 2",
+        "11": "Yaw135Roll180",
         "12": "Pitch180",
-        "13": "Roll180Yaw225",
-        "14": "Roll180Yaw270",
-        "15": "Roll180Yaw315",
+        "13": "Yaw225Roll180",
+        "14": "Yaw270Roll180",
+        "15": "Yaw315Roll180",
         "16": "Roll90",
-        "17": "Roll90Yaw45",
-        "18": "Roll90Yaw90",
-        "19": "Roll90Yaw135",
+        "17": "Yaw45Roll90",
+        "18": "Yaw90Roll90",
+        "19": "Yaw135Roll90",
         "2": "Yaw90",
         "20": "Roll270",
-        "21": "Roll270Yaw45",
-        "22": "Roll270Yaw90",
-        "23": "Roll270Yaw135",
+        "21": "Yaw45Roll270",
+        "22": "Yaw90Roll270",
+        "23": "Yaw135Roll270",
         "24": "Pitch90",
         "25": "Pitch270",
-        "26": "Pitch180Yaw90",
-        "27": "Pitch180Yaw270",
-        "28": "Roll90Pitch90",
-        "29": "Roll180Pitch90",
+        "26": "Yaw90Pitch180",
+        "27": "Yaw270Pitch180",
+        "28": "Pitch90Roll90",
+        "29": "Pitch90Roll180",
         "3": "Yaw135",
-        "30": "Roll270Pitch90",
-        "31": "Roll90Pitch180",
-        "32": "Roll270Pitch180",
-        "33": "Roll90Pitch270",
-        "34": "Roll180Pitch270",
-        "35": "Roll270Pitch270",
-        "36": "Roll90Pitch180Yaw90",
-        "37": "Roll90Yaw270",
+        "30": "Pitch90Roll270",
+        "31": "Pitch180Roll90",
+        "32": "Pitch180Roll270",
+        "33": "Pitch270Roll90",
+        "34": "Pitch270Roll180",
+        "35": "Pitch270Roll270",
+        "36": "Yaw90Pitch180Roll90",
+        "37": "Yaw270Roll90",
         "38": "Yaw293Pitch68Roll180",
         "39": "Pitch315",
         "4": "Yaw180",
-        "40": "Roll90Pitch315",
+        "40": "Pitch315Roll90",
         "42": "Roll45",
         "43": "Roll315",
         "5": "Yaw225",
         "6": "Yaw270",
         "7": "Yaw315",
         "8": "Roll180",
-        "9": "Roll180Yaw45"
+        "9": "Yaw45Roll180"
       }
     },
     "COMPASS_ORIENT3": {
@@ -7241,48 +7335,50 @@
       "Values": {
         "0": "None",
         "1": "Yaw45",
-        "10": "Roll180Yaw90",
-        "100": "Custom",
-        "11": "Roll180Yaw135",
+        "10": "Yaw90Roll180",
+        "100": "Custom 4.1 and older",
+        "101": "Custom 1",
+        "102": "Custom 2",
+        "11": "Yaw135Roll180",
         "12": "Pitch180",
-        "13": "Roll180Yaw225",
-        "14": "Roll180Yaw270",
-        "15": "Roll180Yaw315",
+        "13": "Yaw225Roll180",
+        "14": "Yaw270Roll180",
+        "15": "Yaw315Roll180",
         "16": "Roll90",
-        "17": "Roll90Yaw45",
-        "18": "Roll90Yaw90",
-        "19": "Roll90Yaw135",
+        "17": "Yaw45Roll90",
+        "18": "Yaw90Roll90",
+        "19": "Yaw135Roll90",
         "2": "Yaw90",
         "20": "Roll270",
-        "21": "Roll270Yaw45",
-        "22": "Roll270Yaw90",
-        "23": "Roll270Yaw135",
+        "21": "Yaw45Roll270",
+        "22": "Yaw90Roll270",
+        "23": "Yaw135Roll270",
         "24": "Pitch90",
         "25": "Pitch270",
-        "26": "Pitch180Yaw90",
-        "27": "Pitch180Yaw270",
-        "28": "Roll90Pitch90",
-        "29": "Roll180Pitch90",
+        "26": "Yaw90Pitch180",
+        "27": "Yaw270Pitch180",
+        "28": "Pitch90Roll90",
+        "29": "Pitch90Roll180",
         "3": "Yaw135",
-        "30": "Roll270Pitch90",
-        "31": "Roll90Pitch180",
-        "32": "Roll270Pitch180",
-        "33": "Roll90Pitch270",
-        "34": "Roll180Pitch270",
-        "35": "Roll270Pitch270",
-        "36": "Roll90Pitch180Yaw90",
-        "37": "Roll90Yaw270",
+        "30": "Pitch90Roll270",
+        "31": "Pitch180Roll90",
+        "32": "Pitch180Roll270",
+        "33": "Pitch270Roll90",
+        "34": "Pitch270Roll180",
+        "35": "Pitch270Roll270",
+        "36": "Yaw90Pitch180Roll90",
+        "37": "Yaw270Roll90",
         "38": "Yaw293Pitch68Roll180",
         "39": "Pitch315",
         "4": "Yaw180",
-        "40": "Roll90Pitch315",
+        "40": "Pitch315Roll90",
         "42": "Roll45",
         "43": "Roll315",
         "5": "Yaw225",
         "6": "Yaw270",
         "7": "Yaw315",
         "8": "Roll180",
-        "9": "Roll180Yaw45"
+        "9": "Yaw45Roll180"
       }
     },
     "COMPASS_PRIO1_ID": {
@@ -7461,6 +7557,58 @@
         "low": "0"
       },
       "User": "Advanced"
+    }
+  },
+  "CUST_ROT": {
+    "CUST_ROT_ENABLE": {
+      "Description": "This enables custom rotations",
+      "DisplayName": "Enable Custom rotations",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disable",
+        "1": "Enable"
+      }
+    }
+  },
+  "CUST_ROT1_": {
+    "CUST_ROT1_PITCH": {
+      "Description": "Custom euler pitch, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom pitch",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT1_ROLL": {
+      "Description": "Custom euler roll, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom roll",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT1_YAW": {
+      "Description": "Custom euler yaw, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom yaw",
+      "RebootRequired": "True",
+      "Units": "deg"
+    }
+  },
+  "CUST_ROT2_": {
+    "CUST_ROT2_PITCH": {
+      "Description": "Custom euler pitch, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom pitch",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT2_ROLL": {
+      "Description": "Custom euler roll, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom roll",
+      "RebootRequired": "True",
+      "Units": "deg"
+    },
+    "CUST_ROT2_YAW": {
+      "Description": "Custom euler yaw, euler 321 (yaw, pitch, roll) ordering",
+      "DisplayName": "Custom yaw",
+      "RebootRequired": "True",
+      "Units": "deg"
     }
   },
   "Copter": {
@@ -8871,7 +9019,7 @@
       "User": "Advanced"
     },
     "EK2_GSF_RST_MAX": {
-      "Description": "Sets the maximum number of times the EKF2 will be allowed to reset it's yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK2_GSF_USE parameter.",
+      "Description": "Sets the maximum number of times the EKF2 will be allowed to reset its yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK2_GSF_USE_MASK parameter.",
       "DisplayName": "Maximum number of resets to the EKF-GSF yaw estimate allowed",
       "Increment": "1",
       "Range": {
@@ -8890,7 +9038,7 @@
         "4": "FifthEKF",
         "5": "SixthEKF"
       },
-      "Description": "1 byte bitmap of which EKF2 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF2 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK2_GSF_USE, EK2_GSF_DELAY and EK2_GSF_MAXCOUNT parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK2_GSF_USE to 0. ",
+      "Description": "A bitmask of which EKF2 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF2 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK2_GSF_USE_MASK and EK2_GSF_RST_MAX parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK2_GSF_USE_MASK to 0. ",
       "DisplayName": "Bitmask of which EKF-GSF yaw estimators run",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -8904,7 +9052,7 @@
         "4": "FifthEKF",
         "5": "SixthEKF"
       },
-      "Description": "1 byte bitmap of which EKF2 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK2_GSF_RUN parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF2 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF2 instance. Additionally the EKF2 will  initiate a reset internally if navigation is lost for more than EK2_GSF_DELAY milli seconds.",
+      "Description": "1 byte bitmap of which EKF2 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK2_GSF_RUN_MASK parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF2 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF2 instance.",
       "DisplayName": "Bitmask of which EKF-GSF yaw estimators are used",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -9517,7 +9665,7 @@
       "User": "Advanced"
     },
     "EK3_GSF_RST_MAX": {
-      "Description": "Sets the maximum number of times the EKF3 will be allowed to reset it's yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK3_GSF_USE parameter.",
+      "Description": "Sets the maximum number of times the EKF3 will be allowed to reset its yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK3_GSF_USE_MASK parameter.",
       "DisplayName": "Maximum number of resets to the EKF-GSF yaw estimate allowed",
       "Increment": "1",
       "Range": {
@@ -9536,7 +9684,7 @@
         "4": "FifthEKF",
         "5": "SixthEKF"
       },
-      "Description": "1 byte bitmap of which EKF3 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF3 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK3_GSF_USE, EK3_GSF_DELAY and EK3_GSF_MAXCOUNT parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK3_GSF_USE to 0. ",
+      "Description": "1 byte bitmap of which EKF3 instances run an independant EKF-GSF yaw estimator to provide a backup yaw estimate that doesn't rely on magnetometer data. This estimator uses IMU, GPS and, if available, airspeed data. EKF-GSF yaw estimator data for the primary EKF3 instance will be logged as GSF0 and GSF1 messages. Use of the yaw estimate generated by this algorithm is controlled by the EK3_GSF_USE_MASK and EK3_GSF_RST_MAX parameters. To run the EKF-GSF yaw estimator in ride-along and logging only, set EK3_GSF_USE to 0. ",
       "DisplayName": "Bitmask of which EKF-GSF yaw estimators run",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -9550,7 +9698,7 @@
         "4": "FifthEKF",
         "5": "SixthEKF"
       },
-      "Description": "1 byte bitmap of which EKF3 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK3_GSF_RUN parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF3 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF3 instance. Additionally the EKF3 will  initiate a reset internally if navigation is lost for more than EK3_GSF_DELAY milli seconds.",
+      "Description": "A bitmask of which EKF3 instances will use the output from the EKF-GSF yaw estimator that has been turned on by the EK3_GSF_RUN_MASK parameter. If the inertial navigation calculation stops following the GPS, then the vehicle code can request EKF3 to attempt to resolve the issue, either by performing a yaw reset if enabled by this parameter by switching to another EKF3 instance.",
       "DisplayName": "Bitmask of which EKF-GSF yaw estimators are used",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -14696,6 +14844,7 @@
         "0": "UseDecimalPack",
         "1": "InvertedWindPointer",
         "2": "InvertedAHRoll",
+        "20": "Prefix LQ with RF Mode",
         "21": "One decimal attitude",
         "22": "One decimal throttle",
         "23": "Shorten Pluscode",
@@ -24164,6 +24313,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -24315,6 +24465,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -24466,6 +24617,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -24617,6 +24769,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -24768,6 +24921,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -24919,6 +25073,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -25070,6 +25225,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -25221,6 +25377,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -25372,6 +25529,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -25523,6 +25681,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -25674,6 +25833,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -25825,6 +25985,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -25976,6 +26137,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -26127,6 +26289,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -26278,6 +26441,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -26429,6 +26593,7 @@
         "158": "Optflow Calibration",
         "159": "Force Flying",
         "16": "Auto",
+        "161": "Turbine Start(heli)",
         "17": "AutoTune",
         "18": "Land",
         "19": "Gripper",
@@ -26932,7 +27097,7 @@
       }
     },
     "RNGFND1_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -27215,7 +27380,7 @@
       }
     },
     "RNGFND2_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -27498,7 +27663,7 @@
       }
     },
     "RNGFND3_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -27781,7 +27946,7 @@
       }
     },
     "RNGFND4_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -28064,7 +28229,7 @@
       }
     },
     "RNGFND5_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -28347,7 +28512,7 @@
       }
     },
     "RNGFND6_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -28630,7 +28795,7 @@
       }
     },
     "RNGFND7_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -28913,7 +29078,7 @@
       }
     },
     "RNGFND8_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -29196,7 +29361,7 @@
       }
     },
     "RNGFND9_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -29479,7 +29644,7 @@
       }
     },
     "RNGFNDA_TYPE": {
-      "Description": "What type of rangefinder device that is connected",
+      "Description": "Type of connected rangefinder",
       "DisplayName": "Rangefinder type",
       "User": "Standard",
       "Values": {
@@ -30049,6 +30214,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30141,6 +30307,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30233,6 +30400,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30325,6 +30493,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30417,6 +30586,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30509,6 +30679,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30601,6 +30772,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30693,6 +30865,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30785,6 +30958,7 @@
         "40": "AIS",
         "41": "CoDevESC",
         "42": "DisplayPort",
+        "43": "MAVLink High Latency",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -30893,6 +31067,7 @@
     "SERVO10_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -30927,6 +31102,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -31034,6 +31211,7 @@
     "SERVO11_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -31068,6 +31246,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -31175,6 +31355,7 @@
     "SERVO12_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -31209,6 +31390,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -31316,6 +31499,7 @@
     "SERVO13_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -31350,6 +31534,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -31457,6 +31643,7 @@
     "SERVO14_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -31491,6 +31678,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -31598,6 +31787,7 @@
     "SERVO15_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -31632,6 +31822,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -31739,6 +31931,7 @@
     "SERVO16_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -31773,6 +31966,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -31880,6 +32075,7 @@
     "SERVO1_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -31914,6 +32110,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -32021,6 +32219,7 @@
     "SERVO2_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -32055,6 +32254,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -32162,6 +32363,7 @@
     "SERVO3_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -32196,6 +32398,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -32303,6 +32507,7 @@
     "SERVO4_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -32337,6 +32542,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -32444,6 +32651,7 @@
     "SERVO5_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -32478,6 +32686,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -32585,6 +32795,7 @@
     "SERVO6_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -32619,6 +32830,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -32726,6 +32939,7 @@
     "SERVO7_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -32760,6 +32974,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -32867,6 +33083,7 @@
     "SERVO8_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -32901,6 +33118,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -33008,6 +33227,7 @@
     "SERVO9_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "-1": "GPIO",
@@ -33042,6 +33262,8 @@
         "134": "SERVOn_MIN",
         "135": "SERVOn_TRIM",
         "136": "SERVOn_MAX",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
         "14": "Mount2Roll",
         "15": "Mount2Open",
         "22": "SprayerPump",
@@ -33575,6 +33797,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33586,6 +33809,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33597,6 +33821,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33608,6 +33833,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33619,6 +33845,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33630,6 +33857,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33641,6 +33869,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33652,6 +33881,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33663,6 +33893,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33674,6 +33905,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     }
@@ -33687,6 +33919,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33698,6 +33931,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33709,6 +33943,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33720,6 +33955,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33731,6 +33967,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33742,6 +33979,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33753,6 +33991,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33764,6 +34003,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33775,6 +34015,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33786,6 +34027,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     }
@@ -33799,6 +34041,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33810,6 +34053,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33821,6 +34065,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33832,6 +34077,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33843,6 +34089,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33854,6 +34101,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33865,6 +34113,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33876,6 +34125,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33887,6 +34137,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33898,6 +34149,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     }
@@ -33911,6 +34163,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33922,6 +34175,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33933,6 +34187,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33944,6 +34199,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33955,6 +34211,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33966,6 +34223,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33977,6 +34235,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33988,6 +34247,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -33999,6 +34259,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34010,6 +34271,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     }
@@ -34023,6 +34285,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34034,6 +34297,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34045,6 +34309,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34056,6 +34321,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34067,6 +34333,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34078,6 +34345,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34089,6 +34357,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34100,6 +34369,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34111,6 +34381,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34122,6 +34393,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     }
@@ -34135,6 +34407,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34146,6 +34419,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34157,6 +34431,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34168,6 +34443,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34179,6 +34455,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34190,6 +34467,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34201,6 +34479,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34212,6 +34491,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34223,6 +34503,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34234,6 +34515,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     }
@@ -34247,6 +34529,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34258,6 +34541,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34269,6 +34553,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34280,6 +34565,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34291,6 +34577,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34302,6 +34589,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34313,6 +34601,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34324,6 +34613,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34335,6 +34625,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     },
@@ -34346,6 +34637,7 @@
         "high": "50",
         "low": "0"
       },
+      "RebootRequired": "True",
       "Units": "Hz",
       "User": "Advanced"
     }

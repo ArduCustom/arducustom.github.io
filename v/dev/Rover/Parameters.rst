@@ -1896,7 +1896,11 @@ Overall board orientation relative to the standard orientation for the board typ
 | +-------+----------------------+ |
 | | 43    | Roll315              | |
 | +-------+----------------------+ |
-| | 100   | Custom               | |
+| | 100   | Custom 4.1 and older | |
+| +-------+----------------------+ |
+| | 101   | Custom 1             | |
+| +-------+----------------------+ |
+| | 102   | Custom 2             | |
 | +-------+----------------------+ |
 |                                  |
 +----------------------------------+
@@ -4542,7 +4546,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -5190,6 +5194,25 @@ BATT2\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT2_CURR_MULT:
+
+BATT2\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT3_:
 
@@ -5229,7 +5252,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -5877,6 +5900,25 @@ BATT3\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT3_CURR_MULT:
+
+BATT3\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT4_:
 
@@ -5916,7 +5958,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -6564,6 +6606,25 @@ BATT4\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT4_CURR_MULT:
+
+BATT4\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT5_:
 
@@ -6603,7 +6664,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -7251,6 +7312,25 @@ BATT5\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT5_CURR_MULT:
+
+BATT5\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT6_:
 
@@ -7290,7 +7370,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -7938,6 +8018,25 @@ BATT6\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT6_CURR_MULT:
+
+BATT6\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT7_:
 
@@ -7977,7 +8076,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -8625,6 +8724,25 @@ BATT7\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT7_CURR_MULT:
+
+BATT7\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT8_:
 
@@ -8664,7 +8782,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -9312,6 +9430,25 @@ BATT8\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT8_CURR_MULT:
+
+BATT8\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT9_:
 
@@ -9351,7 +9488,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -9999,6 +10136,25 @@ BATT9\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT9_CURR_MULT:
+
+BATT9\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BATT_:
 
@@ -10038,7 +10194,7 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 9     | ESC                        | |
 | +-------+----------------------------+ |
-| | 10    | SumOfFollowing             | |
+| | 10    | Sum Of Selected Monitors   | |
 | +-------+----------------------------+ |
 | | 11    | FuelFlow                   | |
 | +-------+----------------------------+ |
@@ -10686,6 +10842,25 @@ BATT\_SUM\_MASK: Battery Sum mask
 
 
 
+.. _BATT_CURR_MULT:
+
+BATT\_CURR\_MULT: Scales reported power monitor current
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
+
+
++---------+
+| Range   |
++=========+
+| .1 - 10 |
++---------+
+
+
+
+
 
 .. _parameters_BCN:
 
@@ -11324,22 +11499,28 @@ BRD\_OPTIONS: Board options
 Board specific option flags
 
 
-+---------------------------------------------+
-| Bitmask                                     |
-+=============================================+
-| +-----+-----------------------------------+ |
-| | Bit | Meaning                           | |
-| +=====+===================================+ |
-| | 0   | Enable hardware watchdog          | |
-| +-----+-----------------------------------+ |
-| | 1   | Disable MAVftp                    | |
-| +-----+-----------------------------------+ |
-| | 2   | Enable set of internal parameters | |
-| +-----+-----------------------------------+ |
-| | 3   | Enable Debug Pins                 | |
-| +-----+-----------------------------------+ |
-|                                             |
-+---------------------------------------------+
++----------------------------------------------------+
+| Bitmask                                            |
++====================================================+
+| +-----+------------------------------------------+ |
+| | Bit | Meaning                                  | |
+| +=====+==========================================+ |
+| | 0   | Enable hardware watchdog                 | |
+| +-----+------------------------------------------+ |
+| | 1   | Disable MAVftp                           | |
+| +-----+------------------------------------------+ |
+| | 2   | Enable set of internal parameters        | |
+| +-----+------------------------------------------+ |
+| | 3   | Enable Debug Pins                        | |
+| +-----+------------------------------------------+ |
+| | 4   | Unlock flash on reboot                   | |
+| +-----+------------------------------------------+ |
+| | 5   | Write protect firmware flash on reboot   | |
+| +-----+------------------------------------------+ |
+| | 6   | Write protect bootloader flash on reboot | |
+| +-----+------------------------------------------+ |
+|                                                    |
++----------------------------------------------------+
 
 
 
@@ -12118,7 +12299,7 @@ BTN\_OPTIONS1: Button Pin 1 Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Options for Pin 1\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
+Options for Pin 1\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
 
 
 +-----------------------+
@@ -12143,7 +12324,7 @@ BTN\_OPTIONS2: Button Pin 2 Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Options for Pin 2\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
+Options for Pin 2\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
 
 
 +-----------------------+
@@ -12168,7 +12349,7 @@ BTN\_OPTIONS3: Button Pin 3 Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Options for Pin 3\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
+Options for Pin 3\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
 
 
 +-----------------------+
@@ -12193,7 +12374,7 @@ BTN\_OPTIONS4: Button Pin 4 Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Options for Pin 4\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
+Options for Pin 4\. PWM input detects PWM above or below 1800\/1200us instead of logic level\. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low\. Invert changes HIGH state to be logic low voltage on pin\, or below 1200us\, if PWM input\.
 
 
 +-----------------------+
@@ -15321,7 +15502,11 @@ The orientation of the first external compass relative to the vehicle frame\. Th
 | +-------+----------------------+ |
 | | 43    | Roll315              | |
 | +-------+----------------------+ |
-| | 100   | Custom               | |
+| | 100   | Custom 4.1 and older | |
+| +-------+----------------------+ |
+| | 101   | Custom 1             | |
+| +-------+----------------------+ |
+| | 102   | Custom 2             | |
 | +-------+----------------------+ |
 |                                  |
 +----------------------------------+
@@ -15702,75 +15887,79 @@ The orientation of a second external compass relative to the vehicle frame\. Thi
 | +-------+----------------------+ |
 | | 8     | Roll180              | |
 | +-------+----------------------+ |
-| | 9     | Roll180Yaw45         | |
+| | 9     | Yaw45Roll180         | |
 | +-------+----------------------+ |
-| | 10    | Roll180Yaw90         | |
+| | 10    | Yaw90Roll180         | |
 | +-------+----------------------+ |
-| | 11    | Roll180Yaw135        | |
+| | 11    | Yaw135Roll180        | |
 | +-------+----------------------+ |
 | | 12    | Pitch180             | |
 | +-------+----------------------+ |
-| | 13    | Roll180Yaw225        | |
+| | 13    | Yaw225Roll180        | |
 | +-------+----------------------+ |
-| | 14    | Roll180Yaw270        | |
+| | 14    | Yaw270Roll180        | |
 | +-------+----------------------+ |
-| | 15    | Roll180Yaw315        | |
+| | 15    | Yaw315Roll180        | |
 | +-------+----------------------+ |
 | | 16    | Roll90               | |
 | +-------+----------------------+ |
-| | 17    | Roll90Yaw45          | |
+| | 17    | Yaw45Roll90          | |
 | +-------+----------------------+ |
-| | 18    | Roll90Yaw90          | |
+| | 18    | Yaw90Roll90          | |
 | +-------+----------------------+ |
-| | 19    | Roll90Yaw135         | |
+| | 19    | Yaw135Roll90         | |
 | +-------+----------------------+ |
 | | 20    | Roll270              | |
 | +-------+----------------------+ |
-| | 21    | Roll270Yaw45         | |
+| | 21    | Yaw45Roll270         | |
 | +-------+----------------------+ |
-| | 22    | Roll270Yaw90         | |
+| | 22    | Yaw90Roll270         | |
 | +-------+----------------------+ |
-| | 23    | Roll270Yaw135        | |
+| | 23    | Yaw135Roll270        | |
 | +-------+----------------------+ |
 | | 24    | Pitch90              | |
 | +-------+----------------------+ |
 | | 25    | Pitch270             | |
 | +-------+----------------------+ |
-| | 26    | Pitch180Yaw90        | |
+| | 26    | Yaw90Pitch180        | |
 | +-------+----------------------+ |
-| | 27    | Pitch180Yaw270       | |
+| | 27    | Yaw270Pitch180       | |
 | +-------+----------------------+ |
-| | 28    | Roll90Pitch90        | |
+| | 28    | Pitch90Roll90        | |
 | +-------+----------------------+ |
-| | 29    | Roll180Pitch90       | |
+| | 29    | Pitch90Roll180       | |
 | +-------+----------------------+ |
-| | 30    | Roll270Pitch90       | |
+| | 30    | Pitch90Roll270       | |
 | +-------+----------------------+ |
-| | 31    | Roll90Pitch180       | |
+| | 31    | Pitch180Roll90       | |
 | +-------+----------------------+ |
-| | 32    | Roll270Pitch180      | |
+| | 32    | Pitch180Roll270      | |
 | +-------+----------------------+ |
-| | 33    | Roll90Pitch270       | |
+| | 33    | Pitch270Roll90       | |
 | +-------+----------------------+ |
-| | 34    | Roll180Pitch270      | |
+| | 34    | Pitch270Roll180      | |
 | +-------+----------------------+ |
-| | 35    | Roll270Pitch270      | |
+| | 35    | Pitch270Roll270      | |
 | +-------+----------------------+ |
-| | 36    | Roll90Pitch180Yaw90  | |
+| | 36    | Yaw90Pitch180Roll90  | |
 | +-------+----------------------+ |
-| | 37    | Roll90Yaw270         | |
+| | 37    | Yaw270Roll90         | |
 | +-------+----------------------+ |
 | | 38    | Yaw293Pitch68Roll180 | |
 | +-------+----------------------+ |
 | | 39    | Pitch315             | |
 | +-------+----------------------+ |
-| | 40    | Roll90Pitch315       | |
+| | 40    | Pitch315Roll90       | |
 | +-------+----------------------+ |
 | | 42    | Roll45               | |
 | +-------+----------------------+ |
 | | 43    | Roll315              | |
 | +-------+----------------------+ |
-| | 100   | Custom               | |
+| | 100   | Custom 4.1 and older | |
+| +-------+----------------------+ |
+| | 101   | Custom 1             | |
+| +-------+----------------------+ |
+| | 102   | Custom 2             | |
 | +-------+----------------------+ |
 |                                  |
 +----------------------------------+
@@ -15866,75 +16055,79 @@ The orientation of a third external compass relative to the vehicle frame\. This
 | +-------+----------------------+ |
 | | 8     | Roll180              | |
 | +-------+----------------------+ |
-| | 9     | Roll180Yaw45         | |
+| | 9     | Yaw45Roll180         | |
 | +-------+----------------------+ |
-| | 10    | Roll180Yaw90         | |
+| | 10    | Yaw90Roll180         | |
 | +-------+----------------------+ |
-| | 11    | Roll180Yaw135        | |
+| | 11    | Yaw135Roll180        | |
 | +-------+----------------------+ |
 | | 12    | Pitch180             | |
 | +-------+----------------------+ |
-| | 13    | Roll180Yaw225        | |
+| | 13    | Yaw225Roll180        | |
 | +-------+----------------------+ |
-| | 14    | Roll180Yaw270        | |
+| | 14    | Yaw270Roll180        | |
 | +-------+----------------------+ |
-| | 15    | Roll180Yaw315        | |
+| | 15    | Yaw315Roll180        | |
 | +-------+----------------------+ |
 | | 16    | Roll90               | |
 | +-------+----------------------+ |
-| | 17    | Roll90Yaw45          | |
+| | 17    | Yaw45Roll90          | |
 | +-------+----------------------+ |
-| | 18    | Roll90Yaw90          | |
+| | 18    | Yaw90Roll90          | |
 | +-------+----------------------+ |
-| | 19    | Roll90Yaw135         | |
+| | 19    | Yaw135Roll90         | |
 | +-------+----------------------+ |
 | | 20    | Roll270              | |
 | +-------+----------------------+ |
-| | 21    | Roll270Yaw45         | |
+| | 21    | Yaw45Roll270         | |
 | +-------+----------------------+ |
-| | 22    | Roll270Yaw90         | |
+| | 22    | Yaw90Roll270         | |
 | +-------+----------------------+ |
-| | 23    | Roll270Yaw135        | |
+| | 23    | Yaw135Roll270        | |
 | +-------+----------------------+ |
 | | 24    | Pitch90              | |
 | +-------+----------------------+ |
 | | 25    | Pitch270             | |
 | +-------+----------------------+ |
-| | 26    | Pitch180Yaw90        | |
+| | 26    | Yaw90Pitch180        | |
 | +-------+----------------------+ |
-| | 27    | Pitch180Yaw270       | |
+| | 27    | Yaw270Pitch180       | |
 | +-------+----------------------+ |
-| | 28    | Roll90Pitch90        | |
+| | 28    | Pitch90Roll90        | |
 | +-------+----------------------+ |
-| | 29    | Roll180Pitch90       | |
+| | 29    | Pitch90Roll180       | |
 | +-------+----------------------+ |
-| | 30    | Roll270Pitch90       | |
+| | 30    | Pitch90Roll270       | |
 | +-------+----------------------+ |
-| | 31    | Roll90Pitch180       | |
+| | 31    | Pitch180Roll90       | |
 | +-------+----------------------+ |
-| | 32    | Roll270Pitch180      | |
+| | 32    | Pitch180Roll270      | |
 | +-------+----------------------+ |
-| | 33    | Roll90Pitch270       | |
+| | 33    | Pitch270Roll90       | |
 | +-------+----------------------+ |
-| | 34    | Roll180Pitch270      | |
+| | 34    | Pitch270Roll180      | |
 | +-------+----------------------+ |
-| | 35    | Roll270Pitch270      | |
+| | 35    | Pitch270Roll270      | |
 | +-------+----------------------+ |
-| | 36    | Roll90Pitch180Yaw90  | |
+| | 36    | Yaw90Pitch180Roll90  | |
 | +-------+----------------------+ |
-| | 37    | Roll90Yaw270         | |
+| | 37    | Yaw270Roll90         | |
 | +-------+----------------------+ |
 | | 38    | Yaw293Pitch68Roll180 | |
 | +-------+----------------------+ |
 | | 39    | Pitch315             | |
 | +-------+----------------------+ |
-| | 40    | Roll90Pitch315       | |
+| | 40    | Pitch315Roll90       | |
 | +-------+----------------------+ |
 | | 42    | Roll45               | |
 | +-------+----------------------+ |
 | | 43    | Roll315              | |
 | +-------+----------------------+ |
-| | 100   | Custom               | |
+| | 100   | Custom 4.1 and older | |
+| +-------+----------------------+ |
+| | 101   | Custom 1             | |
+| +-------+----------------------+ |
+| | 102   | Custom 2             | |
 | +-------+----------------------+ |
 |                                  |
 +----------------------------------+
@@ -16872,6 +17065,167 @@ COMPASS\_PMOT4\_Z: Compass per\-motor4 Z
 | *Note: This parameter is for advanced users*
 
 Compensation for Z axis of motor4
+
+
+
+.. _parameters_CUST_ROT:
+
+CUST\_ROT Parameters
+--------------------
+
+
+.. _CUST_ROT_ENABLE:
+
+CUST\_ROT\_ENABLE: Enable Custom rotations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+This enables custom rotations
+
+
++---------------------+
+| Values              |
++=====================+
+| +-------+---------+ |
+| | Value | Meaning | |
+| +=======+=========+ |
+| | 0     | Disable | |
+| +-------+---------+ |
+| | 1     | Enable  | |
+| +-------+---------+ |
+|                     |
++---------------------+
+
+
+
+
+
+.. _parameters_CUST_ROT1_:
+
+CUST\_ROT1\_ Parameters
+-----------------------
+
+
+.. _CUST_ROT1_ROLL:
+
+CUST\_ROT1\_ROLL: Custom roll
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler roll\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT1_PITCH:
+
+CUST\_ROT1\_PITCH: Custom pitch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler pitch\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT1_YAW:
+
+CUST\_ROT1\_YAW: Custom yaw
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler yaw\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+
+.. _parameters_CUST_ROT2_:
+
+CUST\_ROT2\_ Parameters
+-----------------------
+
+
+.. _CUST_ROT2_ROLL:
+
+CUST\_ROT2\_ROLL: Custom roll
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler roll\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT2_PITCH:
+
+CUST\_ROT2\_PITCH: Custom pitch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler pitch\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
+
+
+.. _CUST_ROT2_YAW:
+
+CUST\_ROT2\_YAW: Custom yaw
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Custom euler yaw\, euler 321 \(yaw\, pitch\, roll\) ordering
+
+
++---------+
+| Units   |
++=========+
+| degrees |
++---------+
+
+
 
 
 
@@ -18084,7 +18438,7 @@ EK2\_GSF\_RUN\_MASK: Bitmask of which EKF\-GSF yaw estimators run
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-1 byte bitmap of which EKF2 instances run an independant EKF\-GSF yaw estimator to provide a backup yaw estimate that doesn\'t rely on magnetometer data\. This estimator uses IMU\, GPS and\, if available\, airspeed data\. EKF\-GSF yaw estimator data for the primary EKF2 instance will be logged as GSF0 and GSF1 messages\. Use of the yaw estimate generated by this algorithm is controlled by the EK2\_GSF\_USE\, EK2\_GSF\_DELAY and EK2\_GSF\_MAXCOUNT parameters\. To run the EKF\-GSF yaw estimator in ride\-along and logging only\, set EK2\_GSF\_USE to 0\. 
+A bitmask of which EKF2 instances run an independant EKF\-GSF yaw estimator to provide a backup yaw estimate that doesn\'t rely on magnetometer data\. This estimator uses IMU\, GPS and\, if available\, airspeed data\. EKF\-GSF yaw estimator data for the primary EKF2 instance will be logged as GSF0 and GSF1 messages\. Use of the yaw estimate generated by this algorithm is controlled by the EK2\_GSF\_USE\_MASK and EK2\_GSF\_RST\_MAX parameters\. To run the EKF\-GSF yaw estimator in ride\-along and logging only\, set EK2\_GSF\_USE\_MASK to 0\. 
 
 
 +---------------------+
@@ -18119,7 +18473,7 @@ EK2\_GSF\_USE\_MASK: Bitmask of which EKF\-GSF yaw estimators are used
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-1 byte bitmap of which EKF2 instances will use the output from the EKF\-GSF yaw estimator that has been turned on by the EK2\_GSF\_RUN parameter\. If the inertial navigation calculation stops following the GPS\, then the vehicle code can request EKF2 to attempt to resolve the issue\, either by performing a yaw reset if enabled by this parameter by switching to another EKF2 instance\. Additionally the EKF2 will  initiate a reset internally if navigation is lost for more than EK2\_GSF\_DELAY milli seconds\.
+1 byte bitmap of which EKF2 instances will use the output from the EKF\-GSF yaw estimator that has been turned on by the EK2\_GSF\_RUN\_MASK parameter\. If the inertial navigation calculation stops following the GPS\, then the vehicle code can request EKF2 to attempt to resolve the issue\, either by performing a yaw reset if enabled by this parameter by switching to another EKF2 instance\.
 
 
 +---------------------+
@@ -18154,7 +18508,7 @@ EK2\_GSF\_RST\_MAX: Maximum number of resets to the EKF\-GSF yaw estimate allowe
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Sets the maximum number of times the EKF2 will be allowed to reset it\'s yaw to the estimate from the EKF\-GSF yaw estimator\. No resets will be allowed unless the use of the EKF\-GSF yaw estimate is enabled via the EK2\_GSF\_USE parameter\.
+Sets the maximum number of times the EKF2 will be allowed to reset its yaw to the estimate from the EKF\-GSF yaw estimator\. No resets will be allowed unless the use of the EKF\-GSF yaw estimate is enabled via the EK2\_GSF\_USE\_MASK parameter\.
 
 
 +-----------+--------+
@@ -19276,7 +19630,7 @@ EK3\_GSF\_RUN\_MASK: Bitmask of which EKF\-GSF yaw estimators run
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-1 byte bitmap of which EKF3 instances run an independant EKF\-GSF yaw estimator to provide a backup yaw estimate that doesn\'t rely on magnetometer data\. This estimator uses IMU\, GPS and\, if available\, airspeed data\. EKF\-GSF yaw estimator data for the primary EKF3 instance will be logged as GSF0 and GSF1 messages\. Use of the yaw estimate generated by this algorithm is controlled by the EK3\_GSF\_USE\, EK3\_GSF\_DELAY and EK3\_GSF\_MAXCOUNT parameters\. To run the EKF\-GSF yaw estimator in ride\-along and logging only\, set EK3\_GSF\_USE to 0\. 
+1 byte bitmap of which EKF3 instances run an independant EKF\-GSF yaw estimator to provide a backup yaw estimate that doesn\'t rely on magnetometer data\. This estimator uses IMU\, GPS and\, if available\, airspeed data\. EKF\-GSF yaw estimator data for the primary EKF3 instance will be logged as GSF0 and GSF1 messages\. Use of the yaw estimate generated by this algorithm is controlled by the EK3\_GSF\_USE\_MASK and EK3\_GSF\_RST\_MAX parameters\. To run the EKF\-GSF yaw estimator in ride\-along and logging only\, set EK3\_GSF\_USE to 0\. 
 
 
 +---------------------+
@@ -19311,7 +19665,7 @@ EK3\_GSF\_USE\_MASK: Bitmask of which EKF\-GSF yaw estimators are used
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-1 byte bitmap of which EKF3 instances will use the output from the EKF\-GSF yaw estimator that has been turned on by the EK3\_GSF\_RUN parameter\. If the inertial navigation calculation stops following the GPS\, then the vehicle code can request EKF3 to attempt to resolve the issue\, either by performing a yaw reset if enabled by this parameter by switching to another EKF3 instance\. Additionally the EKF3 will  initiate a reset internally if navigation is lost for more than EK3\_GSF\_DELAY milli seconds\.
+A bitmask of which EKF3 instances will use the output from the EKF\-GSF yaw estimator that has been turned on by the EK3\_GSF\_RUN\_MASK parameter\. If the inertial navigation calculation stops following the GPS\, then the vehicle code can request EKF3 to attempt to resolve the issue\, either by performing a yaw reset if enabled by this parameter by switching to another EKF3 instance\.
 
 
 +---------------------+
@@ -19346,7 +19700,7 @@ EK3\_GSF\_RST\_MAX: Maximum number of resets to the EKF\-GSF yaw estimate allowe
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Sets the maximum number of times the EKF3 will be allowed to reset it\'s yaw to the estimate from the EKF\-GSF yaw estimator\. No resets will be allowed unless the use of the EKF\-GSF yaw estimate is enabled via the EK3\_GSF\_USE parameter\.
+Sets the maximum number of times the EKF3 will be allowed to reset its yaw to the estimate from the EKF\-GSF yaw estimator\. No resets will be allowed unless the use of the EKF\-GSF yaw estimate is enabled via the EK3\_GSF\_USE\_MASK parameter\.
 
 
 +-----------+--------+
@@ -27755,6 +28109,8 @@ This sets options that change the display
 | | 3   | Convert feet to miles at 5280ft instead of 10000ft | |
 | +-----+----------------------------------------------------+ |
 | | 4   | DisableCrosshair                                   | |
+| +-----+----------------------------------------------------+ |
+| | 20  | Prefix LQ with RF Mode                             | |
 | +-----+----------------------------------------------------+ |
 | | 21  | One decimal attitude                               | |
 | +-----+----------------------------------------------------+ |
@@ -54319,7 +54675,7 @@ RNGFND1\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -54945,7 +55301,7 @@ RNGFND2\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -55571,7 +55927,7 @@ RNGFND3\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -56197,7 +56553,7 @@ RNGFND4\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -56823,7 +57179,7 @@ RNGFND5\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -57449,7 +57805,7 @@ RNGFND6\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -58075,7 +58431,7 @@ RNGFND7\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -58701,7 +59057,7 @@ RNGFND8\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -59327,7 +59683,7 @@ RNGFND9\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -59953,7 +60309,7 @@ RNGFNDA\_TYPE: Rangefinder type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What type of rangefinder device that is connected
+Type of connected rangefinder
 
 
 +------------------------------------+
@@ -61782,6 +62138,8 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -61936,6 +62294,8 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | | 41    | CoDevESC                         | |
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -62092,6 +62452,8 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -62246,6 +62608,8 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | | 41    | CoDevESC                         | |
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -62402,6 +62766,8 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -62556,6 +62922,8 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | | 41    | CoDevESC                         | |
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -63101,6 +63469,8 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -63305,6 +63675,8 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -63508,6 +63880,8 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | | 41    | CoDevESC                         | |
 | +-------+----------------------------------+ |
 | | 42    | DisplayPort                      | |
+| +-------+----------------------------------+ |
+| | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -63845,6 +64219,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO10\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -64004,6 +64379,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -64102,6 +64481,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO11\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -64261,6 +64641,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -64359,6 +64743,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO12\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -64518,6 +64903,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -64616,6 +65005,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO13\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -64775,6 +65165,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -64873,6 +65267,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO14\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -65032,6 +65427,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -65130,6 +65529,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO15\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -65289,6 +65689,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -65387,6 +65791,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO16\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -65546,6 +65951,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -65644,6 +66053,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO1\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -65803,6 +66213,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -65901,6 +66315,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO2\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -66060,6 +66475,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -66158,6 +66577,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO3\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -66317,6 +66737,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -66415,6 +66839,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO4\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -66574,6 +66999,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -66672,6 +67101,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO5\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -66831,6 +67261,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -66929,6 +67363,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO6\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -67088,6 +67523,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -67186,6 +67625,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO7\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -67345,6 +67785,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -67443,6 +67887,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO8\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -67602,6 +68047,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -67700,6 +68149,7 @@ Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse th
 SERVO9\_FUNCTION: Servo output function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
 
@@ -67859,6 +68309,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 136   | SERVOn_MAX         | |
 | +-------+--------------------+ |
 | | 137   | SailMastRotation   | |
+| +-------+--------------------+ |
+| | 138   | Alarm              | |
+| +-------+--------------------+ |
+| | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -68668,6 +69122,7 @@ SR0\_RAW\_SENS: Raw sensor stream rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw sensor stream rate to ground station
 
@@ -68687,6 +69142,7 @@ SR0\_EXT\_STAT: Extended status stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extended status stream rate to ground station
 
@@ -68706,6 +69162,7 @@ SR0\_RC\_CHAN: RC Channel stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 RC Channel stream rate to ground station
 
@@ -68725,6 +69182,7 @@ SR0\_RAW\_CTRL: Raw Control stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw Control stream rate to ground station
 
@@ -68744,6 +69202,7 @@ SR0\_POSITION: Position stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Position stream rate to ground station
 
@@ -68763,6 +69222,7 @@ SR0\_EXTRA1: Extra data type 1 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 1 stream rate to ground station
 
@@ -68782,6 +69242,7 @@ SR0\_EXTRA2: Extra data type 2 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 2 stream rate to ground station
 
@@ -68801,6 +69262,7 @@ SR0\_EXTRA3: Extra data type 3 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 3 stream rate to ground station
 
@@ -68820,6 +69282,7 @@ SR0\_PARAMS: Parameter stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Parameter stream rate to ground station
 
@@ -68839,6 +69302,7 @@ SR0\_ADSB: ADSB stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 ADSB stream rate to ground station
 
@@ -68865,6 +69329,7 @@ SR1\_RAW\_SENS: Raw sensor stream rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw sensor stream rate to ground station
 
@@ -68884,6 +69349,7 @@ SR1\_EXT\_STAT: Extended status stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extended status stream rate to ground station
 
@@ -68903,6 +69369,7 @@ SR1\_RC\_CHAN: RC Channel stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 RC Channel stream rate to ground station
 
@@ -68922,6 +69389,7 @@ SR1\_RAW\_CTRL: Raw Control stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw Control stream rate to ground station
 
@@ -68941,6 +69409,7 @@ SR1\_POSITION: Position stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Position stream rate to ground station
 
@@ -68960,6 +69429,7 @@ SR1\_EXTRA1: Extra data type 1 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 1 stream rate to ground station
 
@@ -68979,6 +69449,7 @@ SR1\_EXTRA2: Extra data type 2 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 2 stream rate to ground station
 
@@ -68998,6 +69469,7 @@ SR1\_EXTRA3: Extra data type 3 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 3 stream rate to ground station
 
@@ -69017,6 +69489,7 @@ SR1\_PARAMS: Parameter stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Parameter stream rate to ground station
 
@@ -69036,6 +69509,7 @@ SR1\_ADSB: ADSB stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 ADSB stream rate to ground station
 
@@ -69062,6 +69536,7 @@ SR2\_RAW\_SENS: Raw sensor stream rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw sensor stream rate to ground station
 
@@ -69081,6 +69556,7 @@ SR2\_EXT\_STAT: Extended status stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extended status stream rate to ground station
 
@@ -69100,6 +69576,7 @@ SR2\_RC\_CHAN: RC Channel stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 RC Channel stream rate to ground station
 
@@ -69119,6 +69596,7 @@ SR2\_RAW\_CTRL: Raw Control stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw Control stream rate to ground station
 
@@ -69138,6 +69616,7 @@ SR2\_POSITION: Position stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Position stream rate to ground station
 
@@ -69157,6 +69636,7 @@ SR2\_EXTRA1: Extra data type 1 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 1 stream rate to ground station
 
@@ -69176,6 +69656,7 @@ SR2\_EXTRA2: Extra data type 2 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 2 stream rate to ground station
 
@@ -69195,6 +69676,7 @@ SR2\_EXTRA3: Extra data type 3 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 3 stream rate to ground station
 
@@ -69214,6 +69696,7 @@ SR2\_PARAMS: Parameter stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Parameter stream rate to ground station
 
@@ -69233,6 +69716,7 @@ SR2\_ADSB: ADSB stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 ADSB stream rate to ground station
 
@@ -69259,6 +69743,7 @@ SR3\_RAW\_SENS: Raw sensor stream rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw sensor stream rate to ground station
 
@@ -69278,6 +69763,7 @@ SR3\_EXT\_STAT: Extended status stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extended status stream rate to ground station
 
@@ -69297,6 +69783,7 @@ SR3\_RC\_CHAN: RC Channel stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 RC Channel stream rate to ground station
 
@@ -69316,6 +69803,7 @@ SR3\_RAW\_CTRL: Raw Control stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw Control stream rate to ground station
 
@@ -69335,6 +69823,7 @@ SR3\_POSITION: Position stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Position stream rate to ground station
 
@@ -69354,6 +69843,7 @@ SR3\_EXTRA1: Extra data type 1 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 1 stream rate to ground station
 
@@ -69373,6 +69863,7 @@ SR3\_EXTRA2: Extra data type 2 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 2 stream rate to ground station
 
@@ -69392,6 +69883,7 @@ SR3\_EXTRA3: Extra data type 3 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 3 stream rate to ground station
 
@@ -69411,6 +69903,7 @@ SR3\_PARAMS: Parameter stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Parameter stream rate to ground station
 
@@ -69430,6 +69923,7 @@ SR3\_ADSB: ADSB stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 ADSB stream rate to ground station
 
@@ -69456,6 +69950,7 @@ SR4\_RAW\_SENS: Raw sensor stream rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw sensor stream rate to ground station
 
@@ -69475,6 +69970,7 @@ SR4\_EXT\_STAT: Extended status stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extended status stream rate to ground station
 
@@ -69494,6 +69990,7 @@ SR4\_RC\_CHAN: RC Channel stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 RC Channel stream rate to ground station
 
@@ -69513,6 +70010,7 @@ SR4\_RAW\_CTRL: Raw Control stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw Control stream rate to ground station
 
@@ -69532,6 +70030,7 @@ SR4\_POSITION: Position stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Position stream rate to ground station
 
@@ -69551,6 +70050,7 @@ SR4\_EXTRA1: Extra data type 1 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 1 stream rate to ground station
 
@@ -69570,6 +70070,7 @@ SR4\_EXTRA2: Extra data type 2 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 2 stream rate to ground station
 
@@ -69589,6 +70090,7 @@ SR4\_EXTRA3: Extra data type 3 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 3 stream rate to ground station
 
@@ -69608,6 +70110,7 @@ SR4\_PARAMS: Parameter stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Parameter stream rate to ground station
 
@@ -69627,6 +70130,7 @@ SR4\_ADSB: ADSB stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 ADSB stream rate to ground station
 
@@ -69653,6 +70157,7 @@ SR5\_RAW\_SENS: Raw sensor stream rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw sensor stream rate to ground station
 
@@ -69672,6 +70177,7 @@ SR5\_EXT\_STAT: Extended status stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extended status stream rate to ground station
 
@@ -69691,6 +70197,7 @@ SR5\_RC\_CHAN: RC Channel stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 RC Channel stream rate to ground station
 
@@ -69710,6 +70217,7 @@ SR5\_RAW\_CTRL: Raw Control stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw Control stream rate to ground station
 
@@ -69729,6 +70237,7 @@ SR5\_POSITION: Position stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Position stream rate to ground station
 
@@ -69748,6 +70257,7 @@ SR5\_EXTRA1: Extra data type 1 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 1 stream rate to ground station
 
@@ -69767,6 +70277,7 @@ SR5\_EXTRA2: Extra data type 2 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 2 stream rate to ground station
 
@@ -69786,6 +70297,7 @@ SR5\_EXTRA3: Extra data type 3 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 3 stream rate to ground station
 
@@ -69805,6 +70317,7 @@ SR5\_PARAMS: Parameter stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Parameter stream rate to ground station
 
@@ -69824,6 +70337,7 @@ SR5\_ADSB: ADSB stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 ADSB stream rate to ground station
 
@@ -69850,6 +70364,7 @@ SR6\_RAW\_SENS: Raw sensor stream rate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw sensor stream rate to ground station
 
@@ -69869,6 +70384,7 @@ SR6\_EXT\_STAT: Extended status stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extended status stream rate to ground station
 
@@ -69888,6 +70404,7 @@ SR6\_RC\_CHAN: RC Channel stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 RC Channel stream rate to ground station
 
@@ -69907,6 +70424,7 @@ SR6\_RAW\_CTRL: Raw Control stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Raw Control stream rate to ground station
 
@@ -69926,6 +70444,7 @@ SR6\_POSITION: Position stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Position stream rate to ground station
 
@@ -69945,6 +70464,7 @@ SR6\_EXTRA1: Extra data type 1 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 1 stream rate to ground station
 
@@ -69964,6 +70484,7 @@ SR6\_EXTRA2: Extra data type 2 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 2 stream rate to ground station
 
@@ -69983,6 +70504,7 @@ SR6\_EXTRA3: Extra data type 3 stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Extra data type 3 stream rate to ground station
 
@@ -70002,6 +70524,7 @@ SR6\_PARAMS: Parameter stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Parameter stream rate to ground station
 
@@ -70021,6 +70544,7 @@ SR6\_ADSB: ADSB stream rate to ground station
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 ADSB stream rate to ground station
 
