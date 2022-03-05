@@ -38,7 +38,7 @@
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
       </param>
-      <param humanName="Throttle under which to start pitching down to avoid stalling" name="ArduPlane:STAB_PTCHDN_THR" documentation="Throttle under which to start pitching down to avoid stalling. The applied down pitch scales linearly from 0 to STAB_PITCH_DOWN with throttle between STAB_PTCHDN_THR and 0" user="Advanced">
+      <param humanName="Throttle under which to start pitching down to avoid stalling" name="ArduPlane:STAB_PTCHDN_THR" documentation="Throttle under which to start pitching down to avoid stalling. The applied down pitch scales linearly from 0 to STAB_PITCH_DOWN with throttle between STAB_PTCHDN_THR and 0. If set to 0 (default) then TRIM_THROTTLE is used." user="Advanced">
         <field name="Range">0 100</field>
         <field name="Increment">0.1</field>
         <field name="Units">%</field>

@@ -201,7 +201,7 @@ STAB\_PTCHDN\_THR: Throttle under which to start pitching down to avoid stalling
 
 | *Note: This parameter is for advanced users*
 
-Throttle under which to start pitching down to avoid stalling\. The applied down pitch scales linearly from 0 to STAB\_PITCH\_DOWN with throttle between STAB\_PTCHDN\_THR and 0
+Throttle under which to start pitching down to avoid stalling\. The applied down pitch scales linearly from 0 to STAB\_PITCH\_DOWN with throttle between STAB\_PTCHDN\_THR and 0\. If set to 0 \(default\) then TRIM\_THROTTLE is used\.
 
 
 +-----------+---------+---------+

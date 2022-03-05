@@ -21919,7 +21919,7 @@
       "User": "Advanced"
     },
     "STAB_PTCHDN_THR": {
-      "Description": "Throttle under which to start pitching down to avoid stalling. The applied down pitch scales linearly from 0 to STAB_PITCH_DOWN with throttle between STAB_PTCHDN_THR and 0",
+      "Description": "Throttle under which to start pitching down to avoid stalling. The applied down pitch scales linearly from 0 to STAB_PITCH_DOWN with throttle between STAB_PTCHDN_THR and 0. If set to 0 (default) then TRIM_THROTTLE is used.",
       "DisplayName": "Throttle under which to start pitching down to avoid stalling",
       "Increment": "0.1",
       "Range": {
