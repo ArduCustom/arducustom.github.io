@@ -636,9 +636,14 @@
       }
     },
     "ARSPD2_TUBE_ORDR": {
-      "Description": "This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure. If set to 1 then the bottom connector needs to be the dynamic pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port, which would otherwise be seen as a positive airspeed.",
+      "Description": "This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.",
       "DisplayName": "Control pitot tube order of 2nd airspeed sensor",
-      "User": "Advanced"
+      "User": "Advanced",
+      "Values": {
+        "0": "Normal",
+        "1": "Swapped",
+        "2": "Auto Detect"
+      }
     },
     "ARSPD2_TYPE": {
       "Description": "Type of 2nd airspeed sensor",
@@ -745,9 +750,14 @@
       }
     },
     "ARSPD_TUBE_ORDER": {
-      "Description": "Changes the pitot tube order to specify the dynamic pressure side of the sensor. Accepts either if set to 2. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed.",
+      "Description": "This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.",
       "DisplayName": "Control pitot tube order",
-      "User": "Advanced"
+      "User": "Advanced",
+      "Values": {
+        "0": "Normal",
+        "1": "Swapped",
+        "2": "Auto Detect"
+      }
     },
     "ARSPD_TYPE": {
       "Description": "Type of airspeed sensor",
@@ -1221,6 +1231,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT2_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT2_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT2_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -1320,6 +1344,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT2_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT2_LOW_MAH": {
@@ -1515,6 +1546,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT3_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT3_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT3_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -1614,6 +1659,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT3_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT3_LOW_MAH": {
@@ -1809,6 +1861,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT4_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT4_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT4_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -1908,6 +1974,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT4_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT4_LOW_MAH": {
@@ -2103,6 +2176,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT5_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT5_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT5_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -2202,6 +2289,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT5_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT5_LOW_MAH": {
@@ -2397,6 +2491,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT6_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT6_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT6_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -2496,6 +2604,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT6_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT6_LOW_MAH": {
@@ -2691,6 +2806,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT7_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT7_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT7_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -2790,6 +2919,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT7_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT7_LOW_MAH": {
@@ -2985,6 +3121,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT8_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT8_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT8_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -3084,6 +3234,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT8_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT8_LOW_MAH": {
@@ -3279,6 +3436,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT9_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT9_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT9_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -3378,6 +3549,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT9_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT9_LOW_MAH": {
@@ -3573,6 +3751,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -3672,6 +3864,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT_LOW_MAH": {
@@ -8525,6 +8724,108 @@
       }
     }
   },
+  "FOLL": {
+    "FOLL_ALT_TYPE": {
+      "Description": "Follow altitude type",
+      "DisplayName": "Follow altitude type",
+      "User": "Standard",
+      "Values": {
+        "0": "absolute",
+        "1": "relative"
+      }
+    },
+    "FOLL_DIST_MAX": {
+      "Description": "Follow distance maximum.  targets further than this will be ignored",
+      "DisplayName": "Follow distance maximum",
+      "Range": {
+        "high": "1000",
+        "low": "1"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
+    "FOLL_ENABLE": {
+      "Description": "Enabled/disable following a target",
+      "DisplayName": "Follow enable/disable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "FOLL_OFS_TYPE": {
+      "Description": "Follow offset type",
+      "DisplayName": "Follow offset type",
+      "User": "Standard",
+      "Values": {
+        "0": "North-East-Down",
+        "1": "Relative to lead vehicle heading"
+      }
+    },
+    "FOLL_OFS_X": {
+      "Description": "Follow offsets in meters north/forward.  If positive, this vehicle fly ahead or north of lead vehicle.  Depends on FOLL_OFS_TYPE",
+      "DisplayName": "Follow offsets in meters north/forward",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
+    "FOLL_OFS_Y": {
+      "Description": "Follow offsets in meters east/right.  If positive, this vehicle will fly to the right or east of lead vehicle.  Depends on FOLL_OFS_TYPE",
+      "DisplayName": "Follow offsets in meters east/right",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
+    "FOLL_OFS_Z": {
+      "Description": "Follow offsets in meters down.  If positive, this vehicle will fly below the lead vehicle",
+      "DisplayName": "Follow offsets in meters down",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
+    "FOLL_POS_P": {
+      "Description": "Follow position error P gain.  Converts the difference between desired vertical speed and actual speed into a desired acceleration that is passed to the throttle acceleration controller",
+      "DisplayName": "Follow position error P gain",
+      "Increment": "0.01",
+      "Range": {
+        "high": "1.00",
+        "low": "0.01"
+      },
+      "User": "Standard"
+    },
+    "FOLL_SYSID": {
+      "Description": "Follow target's mavlink system id",
+      "DisplayName": "Follow target's mavlink system id",
+      "Range": {
+        "high": "255",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "FOLL_YAW_BEHAVE": {
+      "Description": "Follow yaw behaviour",
+      "DisplayName": "Follow yaw behaviour",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "Face Lead Vehicle",
+        "2": "Same as Lead vehicle",
+        "3": "Direction of Flight"
+      }
+    }
+  },
   "FRSKY_": {
     "FRSKY_DNLINK1_ID": {
       "Description": "Change the first extra downlink sensor id (SPort only)",
@@ -12063,24 +12364,6 @@
         "low": "0"
       },
       "Units": "m/s",
-      "User": "Standard"
-    },
-    "OSD_W_AVGCELLV": {
-      "Description": "Set level at which AVGCELLV item will flash",
-      "DisplayName": "AVGCELLV warn level",
-      "Range": {
-        "high": "100",
-        "low": "0"
-      },
-      "User": "Standard"
-    },
-    "OSD_W_BATVOLT": {
-      "Description": "Set level at which BAT_VOLT item will flash",
-      "DisplayName": "BAT_VOLT warn level",
-      "Range": {
-        "high": "100",
-        "low": "0"
-      },
       "User": "Standard"
     },
     "OSD_W_BLHLRPM": {
@@ -21635,9 +21918,9 @@
       },
       "User": "Standard"
     },
-    "KFF_THR2PTCH": {
-      "Description": "Pitch up to add in proportion to throttle. 100% throttle will add this number of degrees to the pitch target.",
-      "DisplayName": "Throttle to Pitch Mix",
+    "KFF_THRAT2PTCH": {
+      "Description": "Pitch up to add in proportion to throttle above trim throttle. TRIM_THROTTLE throttle and under will add 0\u00b0 to the pitch target. 100% throttle will add this number of degrees to the pitch target.",
+      "DisplayName": "Throttle ratio above trim throttle to pitch mix",
       "Increment": "0.01",
       "Range": {
         "high": "5",
@@ -22266,7 +22549,7 @@
     "TRIM_THROTTLE": {
       "Description": "Target percentage of throttle to apply for flight in automatic throttle modes and throttle percentage that maintains TRIM_ARSPD_CM. Caution: low battery voltages at the end of flights may require higher throttle to maintain airspeed.",
       "DisplayName": "Throttle cruise percentage",
-      "Increment": "1",
+      "Increment": "0.1",
       "Range": {
         "high": "100",
         "low": "0"
@@ -22534,6 +22817,17 @@
         "0": "Disabled",
         "1": "Enabled"
       }
+    },
+    "Q_LAND_ALTCHG": {
+      "Description": "The maximum altitude change allowed during land detection. You can raise this value if you find that landing detection takes a long time to complete. It is the maximum change in altitude over a period of 4 seconds for landing to be detected",
+      "DisplayName": "Land detection altitude change threshold",
+      "Increment": "0.05",
+      "Range": {
+        "high": "0.6",
+        "low": "0.1"
+      },
+      "Units": "m",
+      "User": "Standard"
     },
     "Q_LAND_FINAL_ALT": {
       "Description": "The altitude at which we should switch to Q_LAND_SPEED descent rate",

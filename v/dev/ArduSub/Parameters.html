@@ -766,8 +766,13 @@ DO NOT EDIT
 
 <h2>Control pitot tube order (ARSPD_TUBE_ORDER)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Changes the pitot tube order to specify the dynamic pressure side of the sensor. Accepts either if set to 2. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed.</p>
+<p>This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.</p>
 <ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Normal</td></tr>
+<tr><td>1</td><td>Swapped</td></tr>
+<tr><td>2</td><td>Auto Detect</td></tr>
+</table>
 </ul>
 
 
@@ -905,8 +910,13 @@ DO NOT EDIT
 
 <h2>Control pitot tube order of 2nd airspeed sensor (ARSPD2_TUBE_ORDR)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure. If set to 1 then the bottom connector needs to be the dynamic pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port, which would otherwise be seen as a positive airspeed.</p>
+<p>This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.</p>
 <ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Normal</td></tr>
+<tr><td>1</td><td>Swapped</td></tr>
+<tr><td>2</td><td>Auto Detect</td></tr>
+</table>
 </ul>
 
 
@@ -1924,6 +1934,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Minimum battery cell voltage to consider the battery full (BATT2_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT2_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT2_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
 <h2>Battery capacity in Wh (BATT2_CAPA_WH)</h2>
 
 <p>Capacity of the battery in Wh when full</p>
@@ -2231,6 +2268,33 @@ DO NOT EDIT
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
 <li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT3_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT3_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT3_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
 </ul>
 
 
@@ -2544,6 +2608,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Minimum battery cell voltage to consider the battery full (BATT4_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT4_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT4_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
 <h2>Battery capacity in Wh (BATT4_CAPA_WH)</h2>
 
 <p>Capacity of the battery in Wh when full</p>
@@ -2851,6 +2942,33 @@ DO NOT EDIT
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
 <li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT5_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT5_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT5_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
 </ul>
 
 
@@ -3164,6 +3282,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Minimum battery cell voltage to consider the battery full (BATT6_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT6_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT6_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
 <h2>Battery capacity in Wh (BATT6_CAPA_WH)</h2>
 
 <p>Capacity of the battery in Wh when full</p>
@@ -3471,6 +3616,33 @@ DO NOT EDIT
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
 <li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT7_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT7_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT7_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
 </ul>
 
 
@@ -3784,6 +3956,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Minimum battery cell voltage to consider the battery full (BATT8_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT8_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT8_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
 <h2>Battery capacity in Wh (BATT8_CAPA_WH)</h2>
 
 <p>Capacity of the battery in Wh when full</p>
@@ -4094,6 +4293,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Minimum battery cell voltage to consider the battery full (BATT9_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT9_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT9_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
 <h2>Battery capacity in Wh (BATT9_CAPA_WH)</h2>
 
 <p>Capacity of the battery in Wh when full</p>
@@ -4401,6 +4627,33 @@ DO NOT EDIT
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
 <li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT_LOW_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT_CRT_CV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Minimum battery cell voltage to consider the battery full (BATT_CELL_VFULL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum battery cell voltage to consider the battery full</p>
+<ul>
+<li>Units: volt</li>
+<li>Increment: 0.01</li>
 </ul>
 
 

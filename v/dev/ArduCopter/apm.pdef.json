@@ -744,9 +744,14 @@
       }
     },
     "ARSPD2_TUBE_ORDR": {
-      "Description": "This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure. If set to 1 then the bottom connector needs to be the dynamic pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port, which would otherwise be seen as a positive airspeed.",
+      "Description": "This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.",
       "DisplayName": "Control pitot tube order of 2nd airspeed sensor",
-      "User": "Advanced"
+      "User": "Advanced",
+      "Values": {
+        "0": "Normal",
+        "1": "Swapped",
+        "2": "Auto Detect"
+      }
     },
     "ARSPD2_TYPE": {
       "Description": "Type of 2nd airspeed sensor",
@@ -853,9 +858,14 @@
       }
     },
     "ARSPD_TUBE_ORDER": {
-      "Description": "Changes the pitot tube order to specify the dynamic pressure side of the sensor. Accepts either if set to 2. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed.",
+      "Description": "This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.",
       "DisplayName": "Control pitot tube order",
-      "User": "Advanced"
+      "User": "Advanced",
+      "Values": {
+        "0": "Normal",
+        "1": "Swapped",
+        "2": "Auto Detect"
+      }
     },
     "ARSPD_TYPE": {
       "Description": "Type of airspeed sensor",
@@ -2069,6 +2079,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT2_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT2_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT2_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT2__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -2169,6 +2193,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT2_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT2_LOW_MAH": {
@@ -2357,6 +2388,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT3_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT3_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT3_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT3__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -2457,6 +2502,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT3_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT3_LOW_MAH": {
@@ -2645,6 +2697,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT4_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT4_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT4_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT4__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -2745,6 +2811,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT4_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT4_LOW_MAH": {
@@ -2933,6 +3006,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT5_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT5_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT5_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT5__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -3033,6 +3120,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT5_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT5_LOW_MAH": {
@@ -3221,6 +3315,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT6_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT6_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT6_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT6__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -3321,6 +3429,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT6_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT6_LOW_MAH": {
@@ -3509,6 +3624,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT7_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT7_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT7_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT7__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -3609,6 +3738,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT7_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT7_LOW_MAH": {
@@ -3797,6 +3933,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT8_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT8_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT8_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT8__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -3897,6 +4047,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT8_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT8_LOW_MAH": {
@@ -4085,6 +4242,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT9_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT9_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT9_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT9__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -4185,6 +4356,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT9_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT9_LOW_MAH": {
@@ -4373,6 +4551,20 @@
       "Units": "V",
       "User": "Advanced"
     },
+    "BATT_CELL_VFULL": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT_CRT_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
+      "User": "Advanced"
+    },
     "BATT_CRT_MAH": {
       "Description": "Battery capacity at which the critical battery failsafe is triggered. Set to 0 to disable battery remaining failsafe. If the battery capacity drops below this level the vehicle will perform the failsafe specified by the BATT__FS_CRT_ACT parameter.",
       "DisplayName": "Battery critical capacity",
@@ -4473,6 +4665,13 @@
         "low": "0"
       },
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "BATT_LOW_CV": {
+      "Description": "Minimum battery cell voltage to consider the battery full",
+      "DisplayName": "Minimum battery cell voltage to consider the battery full",
+      "Increment": "0.01",
+      "Units": "V",
       "User": "Advanced"
     },
     "BATT_LOW_MAH": {
@@ -14917,24 +15116,6 @@
         "low": "0"
       },
       "Units": "m/s",
-      "User": "Standard"
-    },
-    "OSD_W_AVGCELLV": {
-      "Description": "Set level at which AVGCELLV item will flash",
-      "DisplayName": "AVGCELLV warn level",
-      "Range": {
-        "high": "100",
-        "low": "0"
-      },
-      "User": "Standard"
-    },
-    "OSD_W_BATVOLT": {
-      "Description": "Set level at which BAT_VOLT item will flash",
-      "DisplayName": "BAT_VOLT warn level",
-      "Range": {
-        "high": "100",
-        "low": "0"
-      },
       "User": "Standard"
     },
     "OSD_W_BLHLRPM": {

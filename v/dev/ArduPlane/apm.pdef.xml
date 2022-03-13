@@ -28,7 +28,7 @@
         <field name="Range">0 1</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Throttle to Pitch Mix" name="ArduPlane:KFF_THR2PTCH" documentation="Pitch up to add in proportion to throttle. 100% throttle will add this number of degrees to the pitch target." user="Advanced">
+      <param humanName="Throttle ratio above trim throttle to pitch mix" name="ArduPlane:KFF_THRAT2PTCH" documentation="Pitch up to add in proportion to throttle above trim throttle. TRIM_THROTTLE throttle and under will add 0° to the pitch target. 100% throttle will add this number of degrees to the pitch target." user="Advanced">
         <field name="Range">0 5</field>
         <field name="Increment">0.01</field>
       </param>
@@ -266,7 +266,7 @@
         <field name="Units">%</field>
         <field name="UnitText">percent</field>
         <field name="Range">0 100</field>
-        <field name="Increment">1</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Throttle nudge enable" name="ArduPlane:THROTTLE_NUDGE" documentation="When enabled, this uses the throttle input in auto-throttle modes to 'nudge' the throttle or airspeed to higher or lower values. When you have an airspeed sensor the nudge affects the target airspeed, so that throttle inputs above 50% will increase the target airspeed from TRIM_ARSPD_CM up to a maximum of ARSPD_FBW_MAX. When no airspeed sensor is enabled the throttle nudge will push up the target throttle for throttle inputs above 50%." user="Standard">
         <values>
@@ -1343,8 +1343,13 @@
 </param>
       <param humanName="Automatic airspeed ratio calibration" name="ARSPD_AUTOCAL" documentation="Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled." user="Advanced">
 </param>
-      <param humanName="Control pitot tube order" name="ARSPD_TUBE_ORDER" documentation="Changes the pitot tube order to specify the dynamic pressure side of the sensor. Accepts either if set to 2. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed." user="Advanced">
-</param>
+      <param humanName="Control pitot tube order" name="ARSPD_TUBE_ORDER" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
+        <values>
+          <value code="0">Normal</value>
+          <value code="1">Swapped</value>
+          <value code="2">Auto Detect</value>
+        </values>
+      </param>
       <param humanName="Skip airspeed calibration on startup" name="ARSPD_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
@@ -1414,8 +1419,13 @@
 </param>
       <param humanName="Automatic airspeed ratio calibration for 2nd airspeed sensor" name="ARSPD2_AUTOCAL" documentation="If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended." user="Advanced">
 </param>
-      <param humanName="Control pitot tube order of 2nd airspeed sensor" name="ARSPD2_TUBE_ORDR" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure. If set to 1 then the bottom connector needs to be the dynamic pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port, which would otherwise be seen as a positive airspeed." user="Advanced">
-</param>
+      <param humanName="Control pitot tube order of 2nd airspeed sensor" name="ARSPD2_TUBE_ORDR" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
+        <values>
+          <value code="0">Normal</value>
+          <value code="1">Swapped</value>
+          <value code="2">Auto Detect</value>
+        </values>
+      </param>
       <param humanName="Skip airspeed calibration on startup for 2nd sensor" name="ARSPD2_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
@@ -1748,6 +1758,21 @@
       <param humanName="Battery monitor options" name="BATT2_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
       </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT2_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT2_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT2_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
       <param humanName="Battery capacity in Wh" name="BATT2_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
         <field name="UnitText">Watt hour</field>
@@ -1934,6 +1959,21 @@
       </param>
       <param humanName="Battery monitor options" name="BATT3_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT3_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT3_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT3_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
       </param>
       <param humanName="Battery capacity in Wh" name="BATT3_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
@@ -2122,6 +2162,21 @@
       <param humanName="Battery monitor options" name="BATT4_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
       </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT4_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT4_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT4_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
       <param humanName="Battery capacity in Wh" name="BATT4_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
         <field name="UnitText">Watt hour</field>
@@ -2308,6 +2363,21 @@
       </param>
       <param humanName="Battery monitor options" name="BATT5_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT5_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT5_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT5_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
       </param>
       <param humanName="Battery capacity in Wh" name="BATT5_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
@@ -2496,6 +2566,21 @@
       <param humanName="Battery monitor options" name="BATT6_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
       </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT6_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT6_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT6_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
       <param humanName="Battery capacity in Wh" name="BATT6_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
         <field name="UnitText">Watt hour</field>
@@ -2682,6 +2767,21 @@
       </param>
       <param humanName="Battery monitor options" name="BATT7_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT7_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT7_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT7_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
       </param>
       <param humanName="Battery capacity in Wh" name="BATT7_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
@@ -2870,6 +2970,21 @@
       <param humanName="Battery monitor options" name="BATT8_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
       </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT8_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT8_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT8_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
       <param humanName="Battery capacity in Wh" name="BATT8_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
         <field name="UnitText">Watt hour</field>
@@ -3057,6 +3172,21 @@
       <param humanName="Battery monitor options" name="BATT9_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
       </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT9_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT9_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT9_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
       <param humanName="Battery capacity in Wh" name="BATT9_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
         <field name="UnitText">Watt hour</field>
@@ -3243,6 +3373,21 @@
       </param>
       <param humanName="Battery monitor options" name="BATT_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
         <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT_CRT_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT_CELL_VFULL" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+        <field name="Increment">0.01</field>
       </param>
       <param humanName="Battery capacity in Wh" name="BATT_CAPA_WH" documentation="Capacity of the battery in Wh when full" user="Standard">
         <field name="Units">Wh</field>
@@ -5981,6 +6126,64 @@
         <field name="Range">0 127</field>
       </param>
     </parameters>
+    <parameters name="FOLL">
+      <param humanName="Follow enable/disable" name="FOLL_ENABLE" documentation="Enabled/disable following a target" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="Follow target's mavlink system id" name="FOLL_SYSID" documentation="Follow target's mavlink system id" user="Standard">
+        <field name="Range">0 255</field>
+      </param>
+      <param humanName="Follow distance maximum" name="FOLL_DIST_MAX" documentation="Follow distance maximum.  targets further than this will be ignored" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">1 1000</field>
+      </param>
+      <param humanName="Follow offset type" name="FOLL_OFS_TYPE" documentation="Follow offset type" user="Standard">
+        <values>
+          <value code="0">North-East-Down</value>
+          <value code="1">Relative to lead vehicle heading</value>
+        </values>
+      </param>
+      <param humanName="Follow offsets in meters north/forward" name="FOLL_OFS_X" documentation="Follow offsets in meters north/forward.  If positive, this vehicle fly ahead or north of lead vehicle.  Depends on FOLL_OFS_TYPE" user="Standard">
+        <field name="Range">-100 100</field>
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Follow offsets in meters east/right" name="FOLL_OFS_Y" documentation="Follow offsets in meters east/right.  If positive, this vehicle will fly to the right or east of lead vehicle.  Depends on FOLL_OFS_TYPE" user="Standard">
+        <field name="Range">-100 100</field>
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Follow offsets in meters down" name="FOLL_OFS_Z" documentation="Follow offsets in meters down.  If positive, this vehicle will fly below the lead vehicle" user="Standard">
+        <field name="Range">-100 100</field>
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Follow yaw behaviour" name="FOLL_YAW_BEHAVE" documentation="Follow yaw behaviour" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">Face Lead Vehicle</value>
+          <value code="2">Same as Lead vehicle</value>
+          <value code="3">Direction of Flight</value>
+        </values>
+      </param>
+      <param humanName="Follow position error P gain" name="FOLL_POS_P" documentation="Follow position error P gain.  Converts the difference between desired vertical speed and actual speed into a desired acceleration that is passed to the throttle acceleration controller" user="Standard">
+        <field name="Range">0.01 1.00</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Follow altitude type" name="FOLL_ALT_TYPE" documentation="Follow altitude type" user="Standard">
+        <values>
+          <value code="0">absolute</value>
+          <value code="1">relative</value>
+        </values>
+      </param>
+    </parameters>
     <parameters name="FRSKY_">
       <param humanName="Uplink sensor id" name="FRSKY_UPLINK_ID" documentation="Change the uplink sensor id (SPort only)" user="Advanced">
         <values>
@@ -7972,9 +8175,6 @@
       <param humanName="NSAT warn level" name="OSD_W_NSAT" documentation="Set level at which NSAT item will flash" user="Standard">
         <field name="Range">1 30</field>
       </param>
-      <param humanName="BAT_VOLT warn level" name="OSD_W_BATVOLT" documentation="Set level at which BAT_VOLT item will flash" user="Standard">
-        <field name="Range">0 100</field>
-      </param>
       <param humanName="Display Units" name="OSD_UNITS" documentation="Sets the units to use in displaying items" user="Standard">
         <values>
           <value code="0">Metric</value>
@@ -8002,9 +8202,6 @@
         <field name="Range">-1 3000</field>
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
-      </param>
-      <param humanName="AVGCELLV warn level" name="OSD_W_AVGCELLV" documentation="Set level at which AVGCELLV item will flash" user="Standard">
-        <field name="Range">0 100</field>
       </param>
       <param humanName="RESTVOLT warn level" name="OSD_W_RESTVOLT" documentation="Set level at which RESTVOLT item will flash" user="Standard">
         <field name="Range">0 100</field>
@@ -12528,6 +12725,12 @@
           <value code="0">QLand</value>
           <value code="1">QRTL</value>
         </values>
+      </param>
+      <param humanName="Land detection altitude change threshold" name="Q_LAND_ALTCHG" documentation="The maximum altitude change allowed during land detection. You can raise this value if you find that landing detection takes a long time to complete. It is the maximum change in altitude over a period of 4 seconds for landing to be detected" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0.1 0.6</field>
+        <field name="Increment">0.05</field>
       </param>
     </parameters>
     <parameters name="Q_AUTOTUNE_">

@@ -151,14 +151,14 @@ Amount of rudder to add during aileron movement\. Increase if nose initially yaw
 
 
 
-.. _KFF_THR2PTCH:
+.. _KFF_THRAT2PTCH:
 
-KFF\_THR2PTCH: Throttle to Pitch Mix
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+KFF\_THRAT2PTCH: Throttle ratio above trim throttle to pitch mix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Pitch up to add in proportion to throttle\. 100\% throttle will add this number of degrees to the pitch target\.
+Pitch up to add in proportion to throttle above trim throttle\. TRIM\_THROTTLE throttle and under will add 0\° to the pitch target\. 100\% throttle will add this number of degrees to the pitch target\.
 
 
 +-----------+-------+
@@ -974,7 +974,7 @@ Target percentage of throttle to apply for flight in automatic throttle modes an
 +-----------+---------+---------+
 | Increment | Range   | Units   |
 +===========+=========+=========+
-| 1         | 0 - 100 | percent |
+| 0.1       | 0 - 100 | percent |
 +-----------+---------+---------+
 
 
@@ -4471,7 +4471,20 @@ ARSPD\_TUBE\_ORDER: Control pitot tube order
 
 | *Note: This parameter is for advanced users*
 
-Changes the pitot tube order to specify the dynamic pressure side of the sensor\. Accepts either if set to 2\. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed\.
+This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters\. If you set this to 0 then the first \(often the top\) connector on the sensor needs to be the stagnation pressure \(the pressure at the tip of the pitot tube\)\. If set to 1 then the second \(often the bottom\) connector needs to be the stagnation pressure\. If set to 2 \(the default\) then the airspeed driver will accept either order\. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall\, which would otherwise be seen as a positive airspeed\.
+
+
++-------+-------------+
+| Value | Meaning     |
++=======+=============+
+| 0     | Normal      |
++-------+-------------+
+| 1     | Swapped     |
++-------+-------------+
+| 2     | Auto Detect |
++-------+-------------+
+
+
 
 
 .. _ARSPD_SKIP_CAL:
@@ -4745,7 +4758,20 @@ ARSPD2\_TUBE\_ORDR: Control pitot tube order of 2nd airspeed sensor
 
 | *Note: This parameter is for advanced users*
 
-This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters\. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure\. If set to 1 then the bottom connector needs to be the dynamic pressure\. If set to 2 \(the default\) then the airspeed driver will accept either order\. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port\, which would otherwise be seen as a positive airspeed\.
+This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters\. If you set this to 0 then the first \(often the top\) connector on the sensor needs to be the stagnation pressure \(the pressure at the tip of the pitot tube\)\. If set to 1 then the second \(often the bottom\) connector needs to be the stagnation pressure\. If set to 2 \(the default\) then the airspeed driver will accept either order\. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall\, which would otherwise be seen as a positive airspeed\.
+
+
++-------+-------------+
+| Value | Meaning     |
++=======+=============+
+| 0     | Normal      |
++-------+-------------+
+| 1     | Swapped     |
++-------+-------------+
+| 2     | Auto Detect |
++-------+-------------+
+
+
 
 
 .. _ARSPD2_SKIP_CAL:
@@ -6023,6 +6049,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT2_LOW_CV:
+
+BATT2\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT2_CRT_CV:
+
+BATT2\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT2_CELL_VFULL:
+
+BATT2\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT2_CAPA_WH:
 
 BATT2\_CAPA\_WH: Battery capacity in Wh
@@ -6706,6 +6789,63 @@ This sets options to change the behaviour of the battery monitor
 +-----+-------------------------------------------------------------------------------------------+
 | 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
 +-----+-------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT3_LOW_CV:
+
+BATT3\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT3_CRT_CV:
+
+BATT3\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT3_CELL_VFULL:
+
+BATT3\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
@@ -7397,6 +7537,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT4_LOW_CV:
+
+BATT4\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT4_CRT_CV:
+
+BATT4\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT4_CELL_VFULL:
+
+BATT4\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT4_CAPA_WH:
 
 BATT4\_CAPA\_WH: Battery capacity in Wh
@@ -8080,6 +8277,63 @@ This sets options to change the behaviour of the battery monitor
 +-----+-------------------------------------------------------------------------------------------+
 | 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
 +-----+-------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT5_LOW_CV:
+
+BATT5\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT5_CRT_CV:
+
+BATT5\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT5_CELL_VFULL:
+
+BATT5\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
@@ -8771,6 +9025,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT6_LOW_CV:
+
+BATT6\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT6_CRT_CV:
+
+BATT6\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT6_CELL_VFULL:
+
+BATT6\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT6_CAPA_WH:
 
 BATT6\_CAPA\_WH: Battery capacity in Wh
@@ -9454,6 +9765,63 @@ This sets options to change the behaviour of the battery monitor
 +-----+-------------------------------------------------------------------------------------------+
 | 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
 +-----+-------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT7_LOW_CV:
+
+BATT7\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT7_CRT_CV:
+
+BATT7\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT7_CELL_VFULL:
+
+BATT7\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
@@ -10145,6 +10513,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT8_LOW_CV:
+
+BATT8\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT8_CRT_CV:
+
+BATT8\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT8_CELL_VFULL:
+
+BATT8\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT8_CAPA_WH:
 
 BATT8\_CAPA\_WH: Battery capacity in Wh
@@ -10832,6 +11257,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT9_LOW_CV:
+
+BATT9\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT9_CRT_CV:
+
+BATT9\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT9_CELL_VFULL:
+
+BATT9\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT9_CAPA_WH:
 
 BATT9\_CAPA\_WH: Battery capacity in Wh
@@ -11515,6 +11997,63 @@ This sets options to change the behaviour of the battery monitor
 +-----+-------------------------------------------------------------------------------------------+
 | 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
 +-----+-------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT_LOW_CV:
+
+BATT\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT_CRT_CV:
+
+BATT\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT_CELL_VFULL:
+
+BATT\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
@@ -21609,6 +22148,205 @@ This is used to select between multiple possible I2C addresses for some sensor t
 
 
 
+.. _parameters_FOLL:
+
+FOLL Parameters
+---------------
+
+
+.. _FOLL_ENABLE:
+
+FOLL\_ENABLE: Follow enable\/disable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enabled\/disable following a target
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _FOLL_SYSID:
+
+FOLL\_SYSID: Follow target\'s mavlink system id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow target\'s mavlink system id
+
+
++---------+
+| Range   |
++=========+
+| 0 - 255 |
++---------+
+
+
+
+
+.. _FOLL_DIST_MAX:
+
+FOLL\_DIST\_MAX: Follow distance maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow distance maximum\.  targets further than this will be ignored
+
+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 1 - 1000 | meters |
++----------+--------+
+
+
+
+
+.. _FOLL_OFS_TYPE:
+
+FOLL\_OFS\_TYPE: Follow offset type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow offset type
+
+
++-------+----------------------------------+
+| Value | Meaning                          |
++=======+==================================+
+| 0     | North-East-Down                  |
++-------+----------------------------------+
+| 1     | Relative to lead vehicle heading |
++-------+----------------------------------+
+
+
+
+
+.. _FOLL_OFS_X:
+
+FOLL\_OFS\_X: Follow offsets in meters north\/forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow offsets in meters north\/forward\.  If positive\, this vehicle fly ahead or north of lead vehicle\.  Depends on FOLL\_OFS\_TYPE
+
+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | -100 - 100 | meters |
++-----------+------------+--------+
+
+
+
+
+.. _FOLL_OFS_Y:
+
+FOLL\_OFS\_Y: Follow offsets in meters east\/right
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow offsets in meters east\/right\.  If positive\, this vehicle will fly to the right or east of lead vehicle\.  Depends on FOLL\_OFS\_TYPE
+
+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | -100 - 100 | meters |
++-----------+------------+--------+
+
+
+
+
+.. _FOLL_OFS_Z:
+
+FOLL\_OFS\_Z: Follow offsets in meters down
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow offsets in meters down\.  If positive\, this vehicle will fly below the lead vehicle
+
+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | -100 - 100 | meters |
++-----------+------------+--------+
+
+
+
+
+.. _FOLL_YAW_BEHAVE:
+
+FOLL\_YAW\_BEHAVE: Follow yaw behaviour
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow yaw behaviour
+
+
++-------+----------------------+
+| Value | Meaning              |
++=======+======================+
+| 0     | None                 |
++-------+----------------------+
+| 1     | Face Lead Vehicle    |
++-------+----------------------+
+| 2     | Same as Lead vehicle |
++-------+----------------------+
+| 3     | Direction of Flight  |
++-------+----------------------+
+
+
+
+
+.. _FOLL_POS_P:
+
+FOLL\_POS\_P: Follow position error P gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow position error P gain\.  Converts the difference between desired vertical speed and actual speed into a desired acceleration that is passed to the throttle acceleration controller
+
+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 - 1.00 |
++-----------+-------------+
+
+
+
+
+.. _FOLL_ALT_TYPE:
+
+FOLL\_ALT\_TYPE: Follow altitude type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Follow altitude type
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | absolute |
++-------+----------+
+| 1     | relative |
++-------+----------+
+
+
+
+
+
 .. _parameters_FRSKY_:
 
 FRSKY\_ Parameters
@@ -29125,24 +29863,6 @@ Set level at which NSAT item will flash
 
 
 
-.. _OSD_W_BATVOLT:
-
-OSD\_W\_BATVOLT: BAT\_VOLT warn level
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Set level at which BAT\_VOLT item will flash
-
-
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
-
-
-
-
 .. _OSD_UNITS:
 
 OSD\_UNITS: Display Units
@@ -29272,24 +29992,6 @@ Set level below which TER\_HGT item will flash\. \-1 disables\.
 +===========+========+
 | -1 - 3000 | meters |
 +-----------+--------+
-
-
-
-
-.. _OSD_W_AVGCELLV:
-
-OSD\_W\_AVGCELLV: AVGCELLV warn level
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Set level at which AVGCELLV item will flash
-
-
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
 
 
 
@@ -49836,6 +50538,24 @@ This sets the mode that is changed to when Q\_TRANS\_FAIL time elapses\, if set\
 +-------+-----------+
 | 1     | QRTL      |
 +-------+-----------+
+
+
+
+
+.. _Q_LAND_ALTCHG:
+
+Q\_LAND\_ALTCHG: Land detection altitude change threshold
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+The maximum altitude change allowed during land detection\. You can raise this value if you find that landing detection takes a long time to complete\. It is the maximum change in altitude over a period of 4 seconds for landing to be detected
+
+
++-----------+-----------+--------+
+| Increment | Range     | Units  |
++===========+===========+========+
+| 0.05      | 0.1 - 0.6 | meters |
++-----------+-----------+--------+
 
 
 

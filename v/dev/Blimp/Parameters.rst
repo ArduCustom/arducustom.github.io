@@ -3081,7 +3081,25 @@ ARSPD\_TUBE\_ORDER: Control pitot tube order
 
 | *Note: This parameter is for advanced users*
 
-Changes the pitot tube order to specify the dynamic pressure side of the sensor\. Accepts either if set to 2\. Accepts only one side if set to 0 or 1 and can help detect excessive pressure on the static port without indicating positive airspeed\.
+This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters\. If you set this to 0 then the first \(often the top\) connector on the sensor needs to be the stagnation pressure \(the pressure at the tip of the pitot tube\)\. If set to 1 then the second \(often the bottom\) connector needs to be the stagnation pressure\. If set to 2 \(the default\) then the airspeed driver will accept either order\. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall\, which would otherwise be seen as a positive airspeed\.
+
+
++-------------------------+
+| Values                  |
++=========================+
+| +-------+-------------+ |
+| | Value | Meaning     | |
+| +=======+=============+ |
+| | 0     | Normal      | |
+| +-------+-------------+ |
+| | 1     | Swapped     | |
+| +-------+-------------+ |
+| | 2     | Auto Detect | |
+| +-------+-------------+ |
+|                         |
++-------------------------+
+
+
 
 
 .. _ARSPD_SKIP_CAL:
@@ -3385,7 +3403,25 @@ ARSPD2\_TUBE\_ORDR: Control pitot tube order of 2nd airspeed sensor
 
 | *Note: This parameter is for advanced users*
 
-This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters\. If you set this to 0 then the top connector on the sensor needs to be the dynamic pressure\. If set to 1 then the bottom connector needs to be the dynamic pressure\. If set to 2 \(the default\) then the airspeed driver will accept either order\. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft it receiving excessive pressure on the static port\, which would otherwise be seen as a positive airspeed\.
+This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters\. If you set this to 0 then the first \(often the top\) connector on the sensor needs to be the stagnation pressure \(the pressure at the tip of the pitot tube\)\. If set to 1 then the second \(often the bottom\) connector needs to be the stagnation pressure\. If set to 2 \(the default\) then the airspeed driver will accept either order\. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall\, which would otherwise be seen as a positive airspeed\.
+
+
++-------------------------+
+| Values                  |
++=========================+
+| +-------+-------------+ |
+| | Value | Meaning     | |
+| +=======+=============+ |
+| | 0     | Normal      | |
+| +-------+-------------+ |
+| | 1     | Swapped     | |
+| +-------+-------------+ |
+| | 2     | Auto Detect | |
+| +-------+-------------+ |
+|                         |
++-------------------------+
+
+
 
 
 .. _ARSPD2_SKIP_CAL:
@@ -4448,6 +4484,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT2_LOW_CV:
+
+BATT2\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT2_CRT_CV:
+
+BATT2\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT2_CELL_VFULL:
+
+BATT2\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT2_CAPA_WH:
 
 BATT2\_CAPA\_WH: Battery capacity in Wh
@@ -5134,6 +5227,63 @@ This sets options to change the behaviour of the battery monitor
 | +-----+-------------------------------------------------------------------------------------------+ |
 |                                                                                                     |
 +-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT3_LOW_CV:
+
+BATT3\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT3_CRT_CV:
+
+BATT3\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT3_CELL_VFULL:
+
+BATT3\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
@@ -5828,6 +5978,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT4_LOW_CV:
+
+BATT4\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT4_CRT_CV:
+
+BATT4\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT4_CELL_VFULL:
+
+BATT4\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT4_CAPA_WH:
 
 BATT4\_CAPA\_WH: Battery capacity in Wh
@@ -6514,6 +6721,63 @@ This sets options to change the behaviour of the battery monitor
 | +-----+-------------------------------------------------------------------------------------------+ |
 |                                                                                                     |
 +-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT5_LOW_CV:
+
+BATT5\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT5_CRT_CV:
+
+BATT5\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT5_CELL_VFULL:
+
+BATT5\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
@@ -7208,6 +7472,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT6_LOW_CV:
+
+BATT6\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT6_CRT_CV:
+
+BATT6\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT6_CELL_VFULL:
+
+BATT6\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT6_CAPA_WH:
 
 BATT6\_CAPA\_WH: Battery capacity in Wh
@@ -7894,6 +8215,63 @@ This sets options to change the behaviour of the battery monitor
 | +-----+-------------------------------------------------------------------------------------------+ |
 |                                                                                                     |
 +-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT7_LOW_CV:
+
+BATT7\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT7_CRT_CV:
+
+BATT7\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT7_CELL_VFULL:
+
+BATT7\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
@@ -8588,6 +8966,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT8_LOW_CV:
+
+BATT8\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT8_CRT_CV:
+
+BATT8\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT8_CELL_VFULL:
+
+BATT8\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT8_CAPA_WH:
 
 BATT8\_CAPA\_WH: Battery capacity in Wh
@@ -9278,6 +9713,63 @@ This sets options to change the behaviour of the battery monitor
 
 
 
+.. _BATT9_LOW_CV:
+
+BATT9\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT9_CRT_CV:
+
+BATT9\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT9_CELL_VFULL:
+
+BATT9\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
 .. _BATT9_CAPA_WH:
 
 BATT9\_CAPA\_WH: Battery capacity in Wh
@@ -9964,6 +10456,63 @@ This sets options to change the behaviour of the battery monitor
 | +-----+-------------------------------------------------------------------------------------------+ |
 |                                                                                                     |
 +-----------------------------------------------------------------------------------------------------+
+
+
+
+
+.. _BATT_LOW_CV:
+
+BATT\_LOW\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT_CRT_CV:
+
+BATT\_CRT\_CV: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
+
+
+
+
+.. _BATT_CELL_VFULL:
+
+BATT\_CELL\_VFULL: Minimum battery cell voltage to consider the battery full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum battery cell voltage to consider the battery full
+
+
++-----------+-------+
+| Increment | Units |
++===========+=======+
+| 0.01      | volt  |
++-----------+-------+
 
 
 
