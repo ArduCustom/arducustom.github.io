@@ -36562,6 +36562,67 @@ Vertical position on screen
 
 
 
+.. _OSD1_R_AVG_CV_EN:
+
+OSD1\_R\_AVG\_CV\_EN: AVGCELLV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average resting cell voltage\. WARNING\: this can be inaccurate if the cell count is not detected properly\. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate\. Use BATT\_CELL\_COUNT to force the number of cells\.
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD1\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD1\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -41130,6 +41191,67 @@ Horizontal position on screen
 
 OSD2\_BAT\_PCT\_Y: BAT\_PCT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_R_AVG_CV_EN:
+
+OSD2\_R\_AVG\_CV\_EN: AVGCELLV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average resting cell voltage\. WARNING\: this can be inaccurate if the cell count is not detected properly\. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate\. Use BATT\_CELL\_COUNT to force the number of cells\.
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD2\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD2\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -45726,6 +45848,67 @@ Vertical position on screen
 
 
 
+.. _OSD3_R_AVG_CV_EN:
+
+OSD3\_R\_AVG\_CV\_EN: AVGCELLV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average resting cell voltage\. WARNING\: this can be inaccurate if the cell count is not detected properly\. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate\. Use BATT\_CELL\_COUNT to force the number of cells\.
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD3\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD3\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -50294,6 +50477,67 @@ Horizontal position on screen
 
 OSD4\_BAT\_PCT\_Y: BAT\_PCT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_R_AVG_CV_EN:
+
+OSD4\_R\_AVG\_CV\_EN: AVGCELLV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average resting cell voltage\. WARNING\: this can be inaccurate if the cell count is not detected properly\. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate\. Use BATT\_CELL\_COUNT to force the number of cells\.
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD4\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_R_AVG_CV_X__AP_OSD_Screen:
+
+OSD4\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen

@@ -13656,6 +13656,23 @@
         "low": "0"
       }
     },
+    "OSD1_R_AVG_CV_EN": {
+      "Description": "Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.",
+      "DisplayName": "AVGCELLV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_R_AVG_CV_X": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "R_AVG_CV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "path": "AP_OSD_Screen"
+    },
     "OSD1_SATS_EN": {
       "Description": "Displays number of acquired satellites",
       "DisplayName": "SATS_EN",
@@ -15460,6 +15477,23 @@
         "high": "15",
         "low": "0"
       }
+    },
+    "OSD2_R_AVG_CV_EN": {
+      "Description": "Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.",
+      "DisplayName": "AVGCELLV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_R_AVG_CV_X": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "R_AVG_CV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "path": "AP_OSD_Screen"
     },
     "OSD2_SATS_EN": {
       "Description": "Displays number of acquired satellites",
@@ -17266,6 +17300,23 @@
         "low": "0"
       }
     },
+    "OSD3_R_AVG_CV_EN": {
+      "Description": "Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.",
+      "DisplayName": "AVGCELLV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_R_AVG_CV_X": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "R_AVG_CV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "path": "AP_OSD_Screen"
+    },
     "OSD3_SATS_EN": {
       "Description": "Displays number of acquired satellites",
       "DisplayName": "SATS_EN",
@@ -19070,6 +19121,23 @@
         "high": "15",
         "low": "0"
       }
+    },
+    "OSD4_R_AVG_CV_EN": {
+      "Description": "Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.",
+      "DisplayName": "AVGCELLV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_R_AVG_CV_X": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "R_AVG_CV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "path": "AP_OSD_Screen"
     },
     "OSD4_SATS_EN": {
       "Description": "Displays number of acquired satellites",

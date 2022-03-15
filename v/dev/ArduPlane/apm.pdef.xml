@@ -9144,6 +9144,18 @@
       <param humanName="BAT_PCT_Y" name="OSD1_BAT_PCT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="AVGCELLV_EN" name="OSD1_R_AVG_CV_EN" documentation="Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="R_AVG_CV_X" name="OSD1_R_AVG_CV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="R_AVG_CV_Y" name="OSD1_R_AVG_CV_X" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10044,6 +10056,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="BAT_PCT_Y" name="OSD2_BAT_PCT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVGCELLV_EN" name="OSD2_R_AVG_CV_EN" documentation="Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="R_AVG_CV_X" name="OSD2_R_AVG_CV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="R_AVG_CV_Y" name="OSD2_R_AVG_CV_X" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -10948,6 +10972,18 @@
       <param humanName="BAT_PCT_Y" name="OSD3_BAT_PCT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="AVGCELLV_EN" name="OSD3_R_AVG_CV_EN" documentation="Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="R_AVG_CV_X" name="OSD3_R_AVG_CV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="R_AVG_CV_Y" name="OSD3_R_AVG_CV_X" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -11848,6 +11884,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="BAT_PCT_Y" name="OSD4_BAT_PCT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVGCELLV_EN" name="OSD4_R_AVG_CV_EN" documentation="Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="R_AVG_CV_X" name="OSD4_R_AVG_CV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="R_AVG_CV_Y" name="OSD4_R_AVG_CV_X" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
