@@ -39506,10 +39506,10 @@ Displays average resting cell voltage\. WARNING\: this can be inaccurate if the 
 
 
 
-.. _OSD1_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD1_R_AVG_CV_X:
 
-OSD1\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -39524,10 +39524,10 @@ Horizontal position on screen
 
 
 
-.. _OSD1_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD1_R_AVG_CV_Y:
 
-OSD1\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -44149,10 +44149,10 @@ Displays average resting cell voltage\. WARNING\: this can be inaccurate if the 
 
 
 
-.. _OSD2_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD2_R_AVG_CV_X:
 
-OSD2\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -44167,10 +44167,10 @@ Horizontal position on screen
 
 
 
-.. _OSD2_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD2_R_AVG_CV_Y:
 
-OSD2\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -48792,10 +48792,10 @@ Displays average resting cell voltage\. WARNING\: this can be inaccurate if the 
 
 
 
-.. _OSD3_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD3_R_AVG_CV_X:
 
-OSD3\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -48810,10 +48810,10 @@ Horizontal position on screen
 
 
 
-.. _OSD3_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD3_R_AVG_CV_Y:
 
-OSD3\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -53435,10 +53435,10 @@ Displays average resting cell voltage\. WARNING\: this can be inaccurate if the 
 
 
 
-.. _OSD4_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD4_R_AVG_CV_X:
 
-OSD4\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -53453,10 +53453,10 @@ Horizontal position on screen
 
 
 
-.. _OSD4_R_AVG_CV_X__AP_OSD_Screen:
+.. _OSD4_R_AVG_CV_Y:
 
-OSD4\_R\_AVG\_CV\_X \(AP\_OSD\_Screen\): R\_AVG\_CV\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen

@@ -9153,7 +9153,7 @@
       <param humanName="R_AVG_CV_X" name="OSD1_R_AVG_CV_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="R_AVG_CV_Y" name="OSD1_R_AVG_CV_X" documentation="Vertical position on screen">
+      <param humanName="R_AVG_CV_Y" name="OSD1_R_AVG_CV_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -10067,7 +10067,7 @@
       <param humanName="R_AVG_CV_X" name="OSD2_R_AVG_CV_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="R_AVG_CV_Y" name="OSD2_R_AVG_CV_X" documentation="Vertical position on screen">
+      <param humanName="R_AVG_CV_Y" name="OSD2_R_AVG_CV_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -10981,7 +10981,7 @@
       <param humanName="R_AVG_CV_X" name="OSD3_R_AVG_CV_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="R_AVG_CV_Y" name="OSD3_R_AVG_CV_X" documentation="Vertical position on screen">
+      <param humanName="R_AVG_CV_Y" name="OSD3_R_AVG_CV_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -11895,7 +11895,7 @@
       <param humanName="R_AVG_CV_X" name="OSD4_R_AVG_CV_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="R_AVG_CV_Y" name="OSD4_R_AVG_CV_X" documentation="Vertical position on screen">
+      <param humanName="R_AVG_CV_Y" name="OSD4_R_AVG_CV_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
