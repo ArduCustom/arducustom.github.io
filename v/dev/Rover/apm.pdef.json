@@ -11868,6 +11868,15 @@
     }
   },
   "OSD": {
+    "OSD_AH_PITCH_MAX": {
+      "Description": "Maximum pitch the artificial horizon can display",
+      "DisplayName": "Maximum pitch the artificial horizon can display",
+      "Range": {
+        "high": "90",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
     "OSD_ARM_SCR": {
       "Description": "Screen to be shown on Arm event. Zero to disable the feature.",
       "DisplayName": "Arm screen",
@@ -11974,6 +11983,16 @@
       "DisplayName": "OSD Options",
       "User": "Standard"
     },
+    "OSD_PEAKR_TMOUT": {
+      "Description": "Time the peak rate will be displayed for PEAK_RR and PEAK_PR elements",
+      "DisplayName": "Time the peak rate will be displayed for PEAK_RR and PEAK_PR elements",
+      "Range": {
+        "high": "60",
+        "low": "0.5"
+      },
+      "Units": "s",
+      "User": "Standard"
+    },
     "OSD_SW_METHOD": {
       "Description": "This sets the method used to switch different OSD screens.",
       "DisplayName": "Screen switch method",
@@ -11983,6 +12002,16 @@
         "1": "select screen based on pwm ranges specified for each screen",
         "2": "switch to next screen after low to high transition and every 1s while channel value is high"
       }
+    },
+    "OSD_TUNE_DTMOUT": {
+      "Description": "Time the tuning name/value stay displayed after being changed",
+      "DisplayName": "Time the tuning name/value stay displayed after being changed",
+      "Range": {
+        "high": "60",
+        "low": "0.5"
+      },
+      "Units": "s",
+      "User": "Standard"
     },
     "OSD_TYPE": {
       "Description": "OSD type. TXONLY makes the OSD parameter selection available to other modules even if there is no native OSD support on the board, for instance CRSF.",
@@ -12074,15 +12103,6 @@
       "Range": {
         "high": "30",
         "low": "1"
-      },
-      "User": "Standard"
-    },
-    "OSD_W_RESTVOLT": {
-      "Description": "Set level at which RESTVOLT item will flash",
-      "DisplayName": "RESTVOLT warn level",
-      "Range": {
-        "high": "100",
-        "low": "0"
       },
       "User": "Standard"
     },
@@ -12429,6 +12449,78 @@
         "low": "0"
       }
     },
+    "OSD1_AVG_EFFA_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_AVG_EFFA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_AVG_EFFA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_AVG_EFFG_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_AVG_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_AVG_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_BAT2REM_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "BAT2REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_BAT2REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT2REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_BAT2REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT2REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_BAT2USED_EN": {
       "Description": "Displays secondary battery mAh consumed",
       "DisplayName": "BAT2USED_EN",
@@ -12472,6 +12564,30 @@
     "OSD1_BAT2_VLT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "BAT2VLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_BATREM_EN": {
+      "Description": "Displays primary battery mAh remaining",
+      "DisplayName": "BATREM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_BATREM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATREM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_BATREM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATREM_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -12927,25 +13043,49 @@
         "low": "0"
       }
     },
-    "OSD1_EFF_EN": {
-      "Description": "Displays flight efficiency (mAh/km or /mi)",
-      "DisplayName": "EFF_EN",
+    "OSD1_EFFA_EN": {
+      "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFA_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD1_EFF_X": {
+    "OSD1_EFFA_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "EFF_X",
+      "DisplayName": "EFFA_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD1_EFF_Y": {
+    "OSD1_EFFA_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "EFF_Y",
+      "DisplayName": "EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_EFFG_EN": {
+      "Description": "Displays ground flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "EFFG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -12958,30 +13098,6 @@
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
-      }
-    },
-    "OSD1_ENERGY_EN": {
-      "Description": "Displays total energy consumed from primary battery",
-      "DisplayName": "ENERGY_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD1_ENERGY_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "ENERGY_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD1_ENERGY_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "ENERGY_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
       }
     },
     "OSD1_ESCAAMPS_EN": {
@@ -13464,6 +13580,102 @@
         "low": "0"
       }
     },
+    "OSD1_NRG_CONS_EN": {
+      "Description": "Displays total energy consumed from primary battery",
+      "DisplayName": "NRG_CONS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_NRG_CONS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_CONS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_NRG_CONS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_CONS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_NRG_REM_EN": {
+      "Description": "Displays energy remaining in primary battery",
+      "DisplayName": "NRG_REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_NRG_REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_NRG_REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_PEAK_PR_EN": {
+      "Description": "Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_PR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_PEAK_PR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_PR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_PEAK_PR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_PR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_PEAK_RR_EN": {
+      "Description": "Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_RR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_PEAK_RR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_RR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_PEAK_RR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_RR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_PITCH_EN": {
       "Description": "Displays degrees of pitch from level",
       "DisplayName": "PITCH_EN",
@@ -13819,6 +14031,54 @@
     "OSD1_THROTTLE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "THROTTLE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_TUNED_PN_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PN_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_TUNED_PN_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PN_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_TUNED_PN_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PN_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_TUNED_PV_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_TUNED_PV_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PV_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_TUNED_PV_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PV_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -14258,6 +14518,78 @@
         "low": "0"
       }
     },
+    "OSD2_AVG_EFFA_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_AVG_EFFA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_AVG_EFFA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_AVG_EFFG_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_AVG_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_AVG_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_BAT2REM_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "BAT2REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_BAT2REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT2REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_BAT2REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT2REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD2_BAT2USED_EN": {
       "Description": "Displays secondary battery mAh consumed",
       "DisplayName": "BAT2USED_EN",
@@ -14301,6 +14633,30 @@
     "OSD2_BAT2_VLT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "BAT2VLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_BATREM_EN": {
+      "Description": "Displays primary battery mAh remaining",
+      "DisplayName": "BATREM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_BATREM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATREM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_BATREM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATREM_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -14756,25 +15112,49 @@
         "low": "0"
       }
     },
-    "OSD2_EFF_EN": {
-      "Description": "Displays flight efficiency (mAh/km or /mi)",
-      "DisplayName": "EFF_EN",
+    "OSD2_EFFA_EN": {
+      "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFA_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD2_EFF_X": {
+    "OSD2_EFFA_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "EFF_X",
+      "DisplayName": "EFFA_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD2_EFF_Y": {
+    "OSD2_EFFA_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "EFF_Y",
+      "DisplayName": "EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_EFFG_EN": {
+      "Description": "Displays ground flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "EFFG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -14787,30 +15167,6 @@
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
-      }
-    },
-    "OSD2_ENERGY_EN": {
-      "Description": "Displays total energy consumed from primary battery",
-      "DisplayName": "ENERGY_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD2_ENERGY_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "ENERGY_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD2_ENERGY_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "ENERGY_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
       }
     },
     "OSD2_ESCAAMPS_EN": {
@@ -15293,6 +15649,102 @@
         "low": "0"
       }
     },
+    "OSD2_NRG_CONS_EN": {
+      "Description": "Displays total energy consumed from primary battery",
+      "DisplayName": "NRG_CONS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_NRG_CONS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_CONS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_NRG_CONS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_CONS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_NRG_REM_EN": {
+      "Description": "Displays energy remaining in primary battery",
+      "DisplayName": "NRG_REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_NRG_REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_NRG_REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_PEAK_PR_EN": {
+      "Description": "Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_PR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_PEAK_PR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_PR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_PEAK_PR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_PR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_PEAK_RR_EN": {
+      "Description": "Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_RR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_PEAK_RR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_RR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_PEAK_RR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_RR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD2_PITCH_EN": {
       "Description": "Displays degrees of pitch from level",
       "DisplayName": "PITCH_EN",
@@ -15648,6 +16100,54 @@
     "OSD2_THROTTLE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "THROTTLE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_TUNED_PN_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PN_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_TUNED_PN_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PN_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_TUNED_PN_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PN_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_TUNED_PV_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_TUNED_PV_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PV_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_TUNED_PV_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PV_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -16087,6 +16587,78 @@
         "low": "0"
       }
     },
+    "OSD3_AVG_EFFA_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_AVG_EFFA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_AVG_EFFA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_AVG_EFFG_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_AVG_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_AVG_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_BAT2REM_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "BAT2REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_BAT2REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT2REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_BAT2REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT2REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_BAT2USED_EN": {
       "Description": "Displays secondary battery mAh consumed",
       "DisplayName": "BAT2USED_EN",
@@ -16130,6 +16702,30 @@
     "OSD3_BAT2_VLT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "BAT2VLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_BATREM_EN": {
+      "Description": "Displays primary battery mAh remaining",
+      "DisplayName": "BATREM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_BATREM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATREM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_BATREM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATREM_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -16585,25 +17181,49 @@
         "low": "0"
       }
     },
-    "OSD3_EFF_EN": {
-      "Description": "Displays flight efficiency (mAh/km or /mi)",
-      "DisplayName": "EFF_EN",
+    "OSD3_EFFA_EN": {
+      "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFA_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD3_EFF_X": {
+    "OSD3_EFFA_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "EFF_X",
+      "DisplayName": "EFFA_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD3_EFF_Y": {
+    "OSD3_EFFA_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "EFF_Y",
+      "DisplayName": "EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_EFFG_EN": {
+      "Description": "Displays ground flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "EFFG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -16616,30 +17236,6 @@
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
-      }
-    },
-    "OSD3_ENERGY_EN": {
-      "Description": "Displays total energy consumed from primary battery",
-      "DisplayName": "ENERGY_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD3_ENERGY_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "ENERGY_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD3_ENERGY_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "ENERGY_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
       }
     },
     "OSD3_ESCAAMPS_EN": {
@@ -17122,6 +17718,102 @@
         "low": "0"
       }
     },
+    "OSD3_NRG_CONS_EN": {
+      "Description": "Displays total energy consumed from primary battery",
+      "DisplayName": "NRG_CONS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_NRG_CONS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_CONS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_NRG_CONS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_CONS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_NRG_REM_EN": {
+      "Description": "Displays energy remaining in primary battery",
+      "DisplayName": "NRG_REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_NRG_REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_NRG_REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_PEAK_PR_EN": {
+      "Description": "Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_PR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_PEAK_PR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_PR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_PEAK_PR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_PR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_PEAK_RR_EN": {
+      "Description": "Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_RR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_PEAK_RR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_RR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_PEAK_RR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_RR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_PITCH_EN": {
       "Description": "Displays degrees of pitch from level",
       "DisplayName": "PITCH_EN",
@@ -17477,6 +18169,54 @@
     "OSD3_THROTTLE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "THROTTLE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_TUNED_PN_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PN_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_TUNED_PN_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PN_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_TUNED_PN_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PN_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_TUNED_PV_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_TUNED_PV_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PV_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_TUNED_PV_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PV_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -17916,6 +18656,78 @@
         "low": "0"
       }
     },
+    "OSD4_AVG_EFFA_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_AVG_EFFA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_AVG_EFFA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_AVG_EFFG_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_AVG_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_AVG_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_BAT2REM_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "BAT2REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_BAT2REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT2REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_BAT2REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT2REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_BAT2USED_EN": {
       "Description": "Displays secondary battery mAh consumed",
       "DisplayName": "BAT2USED_EN",
@@ -17959,6 +18771,30 @@
     "OSD4_BAT2_VLT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "BAT2VLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_BATREM_EN": {
+      "Description": "Displays primary battery mAh remaining",
+      "DisplayName": "BATREM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_BATREM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATREM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_BATREM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATREM_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -18414,25 +19250,49 @@
         "low": "0"
       }
     },
-    "OSD4_EFF_EN": {
-      "Description": "Displays flight efficiency (mAh/km or /mi)",
-      "DisplayName": "EFF_EN",
+    "OSD4_EFFA_EN": {
+      "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFA_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD4_EFF_X": {
+    "OSD4_EFFA_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "EFF_X",
+      "DisplayName": "EFFA_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD4_EFF_Y": {
+    "OSD4_EFFA_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "EFF_Y",
+      "DisplayName": "EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_EFFG_EN": {
+      "Description": "Displays ground flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "EFFG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -18445,30 +19305,6 @@
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
-      }
-    },
-    "OSD4_ENERGY_EN": {
-      "Description": "Displays total energy consumed from primary battery",
-      "DisplayName": "ENERGY_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD4_ENERGY_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "ENERGY_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD4_ENERGY_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "ENERGY_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
       }
     },
     "OSD4_ESCAAMPS_EN": {
@@ -18951,6 +19787,102 @@
         "low": "0"
       }
     },
+    "OSD4_NRG_CONS_EN": {
+      "Description": "Displays total energy consumed from primary battery",
+      "DisplayName": "NRG_CONS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_NRG_CONS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_CONS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_NRG_CONS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_CONS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_NRG_REM_EN": {
+      "Description": "Displays energy remaining in primary battery",
+      "DisplayName": "NRG_REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_NRG_REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_NRG_REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_PEAK_PR_EN": {
+      "Description": "Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_PR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_PEAK_PR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_PR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_PEAK_PR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_PR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_PEAK_RR_EN": {
+      "Description": "Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_RR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_PEAK_RR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_RR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_PEAK_RR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_RR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_PITCH_EN": {
       "Description": "Displays degrees of pitch from level",
       "DisplayName": "PITCH_EN",
@@ -19311,6 +20243,54 @@
         "low": "0"
       }
     },
+    "OSD4_TUNED_PN_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PN_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_TUNED_PN_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PN_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_TUNED_PN_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PN_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_TUNED_PV_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_TUNED_PV_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PV_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_TUNED_PV_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_VSPEED_EN": {
       "Description": "Displays climb rate",
       "DisplayName": "VSPEED_EN",
@@ -19433,6 +20413,630 @@
     }
   },
   "OSD5_": {
+    "OSD5_ACC_LAT_EN": {
+      "Description": "Displays the aircraft's lateral acceleration in g",
+      "DisplayName": "ACC_LAT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ACC_LAT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ACC_LAT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ACC_LAT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ACC_LAT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ACC_LONG_EN": {
+      "Description": "Displays the aircraft's longitudinal acceleration in g",
+      "DisplayName": "ACC_LONG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ACC_LONG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ACC_LONG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ACC_LONG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ACC_LONG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ACC_VERT_EN": {
+      "Description": "Displays the aircraft's vertical acceleration in g",
+      "DisplayName": "ACC_VERT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ACC_VERT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ACC_VERT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ACC_VERT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ACC_VERT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ALTITUDE_EN": {
+      "Description": "Enables display of altitude AGL",
+      "DisplayName": "ALTITUDE_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ALTITUDE_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ALTITUDE_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ALTITUDE_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ALTITUDE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_AOA_EN": {
+      "Description": "Displays the estimated angle of attack",
+      "DisplayName": "AOA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_AOA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AOA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_AOA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AOA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ARMING_EN": {
+      "Description": "Displays arming status (MSP OSD only)",
+      "DisplayName": "ARMING_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ARMING_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ARMING_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ARMING_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ARMING_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPD1_EN": {
+      "Description": "Displays airspeed reported directly from primary airspeed sensor",
+      "DisplayName": "ASPD1_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ASPD1_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ASPD1_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPD1_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ASPD1_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPD2_EN": {
+      "Description": "Displays airspeed reported directly from secondary airspeed sensor",
+      "DisplayName": "ASPD2_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ASPD2_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ASPD2_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPD2_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ASPD2_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPD_DEM_EN": {
+      "Description": "Displays the demanded airspeed in auto throttle modes (plane only)",
+      "DisplayName": "ASPD_DEM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ASPD_DEM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ASPD_DEM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPD_DEM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ASPD_DEM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPEED_EN": {
+      "Description": "Displays airspeed value being used by TECS (fused value)",
+      "DisplayName": "ASPEED_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ASPEED_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ASPEED_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ASPEED_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ASPEED_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ATEMP_EN": {
+      "Description": "Displays temperature reported by primary airspeed sensor",
+      "DisplayName": "ATEMP_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ATEMP_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ATEMP_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ATEMP_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ATEMP_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_AUTO_FLP_EN": {
+      "Description": "Displays the requested auto flaps position",
+      "DisplayName": "AUTO_FLAPS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_AUTO_FLP_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AUTO_FLAPS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_AUTO_FLP_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AUTO_FLAPS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_AVGCELLV_EN": {
+      "Description": "Displays average cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.",
+      "DisplayName": "AVGCELLV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_AVGCELLV_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVGCELLV_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_AVGCELLV_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVGCELLV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_AVG_EFFA_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_AVG_EFFA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_AVG_EFFA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_AVG_EFFG_EN": {
+      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "AVG_EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_AVG_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "AVG_EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_AVG_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "AVG_EFFG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT2REM_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "BAT2REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BAT2REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT2REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT2REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT2REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT2USED_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "BAT2USED_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BAT2USED_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT2USED_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT2USED_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT2USED_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT2_VLT_EN": {
+      "Description": "Displays battery2 voltage",
+      "DisplayName": "BAT2VLT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BAT2_VLT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT2VLT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT2_VLT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT2VLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BATREM_EN": {
+      "Description": "Displays primary battery mAh remaining",
+      "DisplayName": "BATREM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BATREM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATREM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BATREM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATREM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BATTBAR_EN": {
+      "Description": "Displays battery usage bar (MSP OSD only)",
+      "DisplayName": "BATT_BAR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BATTBAR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATT_BAR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BATTBAR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATT_BAR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BATUSED_EN": {
+      "Description": "Displays primary battery mAh consumed",
+      "DisplayName": "BATUSED_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BATUSED_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATUSED_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BATUSED_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATUSED_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT_PCT_EN": {
+      "Description": "Displays the remaining battery capacity as a percentage",
+      "DisplayName": "BAT_PCT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BAT_PCT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BAT_PCT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT_PCT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BAT_PCT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT_VOLT_EN": {
+      "Description": "Displays main battery voltage",
+      "DisplayName": "BATVOLT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BAT_VOLT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BATVOLT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BAT_VOLT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BATVOLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_BTEMP_EN": {
+      "Description": "Displays temperature reported by secondary barometer",
+      "DisplayName": "BTEMP_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_BTEMP_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "BTEMP_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_BTEMP_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "BTEMP_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CALLSIGN_EN": {
+      "Description": "Displays callsign from callsign.txt on microSD card",
+      "DisplayName": "CALLSIGN_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CALLSIGN_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CALLSIGN_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CALLSIGN_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CALLSIGN_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CELLVOLT_EN": {
+      "Description": "Displays average cell voltage (MSP OSD only)",
+      "DisplayName": "CELL_VOLT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CELLVOLT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CELL_VOLT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CELLVOLT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CELL_VOLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD5_CHAN_MAX": {
       "Description": "This sets the PWM upper limit for this screen",
       "DisplayName": "Transmitter switch screen maximum pwm",
@@ -19451,6 +21055,318 @@
       },
       "User": "Standard"
     },
+    "OSD5_CLIMBEFF_EN": {
+      "Description": "Displays climb efficiency (climb rate/current)",
+      "DisplayName": "CLIMBEFF_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CLIMBEFF_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CLIMBEFF_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CLIMBEFF_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CLIMBEFF_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CLK_EN": {
+      "Description": "Displays a clock panel based on AP_RTC local time",
+      "DisplayName": "CLK_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CLK_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CLK_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CLK_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CLK_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_COMPASS_EN": {
+      "Description": "Enables display of compass rose",
+      "DisplayName": "COMPASS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_COMPASS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "COMPASS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_COMPASS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "COMPASS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFANT_EN": {
+      "Description": "Displays the current active antenna for CRSF",
+      "DisplayName": "CRSFANT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CRSFANT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFANT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFANT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFANT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFPWR_EN": {
+      "Description": "Displays the TX power when using the CRSF RC protocol",
+      "DisplayName": "CRSFPWR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CRSFPWR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFPWR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFPWR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFPWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFRSSI_EN": {
+      "Description": "Displays RC signal strength in dBm for CRSF",
+      "DisplayName": "CRSFRSSI_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CRSFRSSI_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFRSSI_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFRSSI_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFRSSI_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFSNR_EN": {
+      "Description": "Displays RC signal to noise ratio in dB for CRSF",
+      "DisplayName": "CRSFSNR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CRSFSNR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRSFSNR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSFSNR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRSFSNR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSSHAIR_EN": {
+      "Description": "Displays artificial horizon crosshair (MSP OSD only)",
+      "DisplayName": "CRSSHAIR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CRSSHAIR_X": {
+      "Description": "Horizontal position on screen (MSP OSD only)",
+      "DisplayName": "CRSSHAIR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CRSSHAIR_Y": {
+      "Description": "Vertical position on screen (MSP OSD only)",
+      "DisplayName": "CRSSHAIR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CURRENT2_EN": {
+      "Description": "Displays 2nd battery current",
+      "DisplayName": "CURRENT2_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CURRENT2_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CURRENT2_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CURRENT2_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CURRENT2_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CURRENT_EN": {
+      "Description": "Displays main battery current",
+      "DisplayName": "CURRENT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CURRENT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CURRENT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CURRENT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CURRENT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_DIST_EN": {
+      "Description": "Displays total distance flown",
+      "DisplayName": "DIST_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_DIST_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DIST_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_DIST_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DIST_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_EFFA_EN": {
+      "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFA_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_EFFA_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "EFFA_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_EFFA_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "EFFA_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_EFFG_EN": {
+      "Description": "Displays ground flight efficiency (mAh or Wh / km or mi)",
+      "DisplayName": "EFFG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_EFFG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "EFFG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_EFFG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "EFFG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD5_ENABLE": {
       "Description": "Enable this screen",
       "DisplayName": "Enable screen",
@@ -19460,599 +21376,1109 @@
         "1": "Enabled"
       }
     },
-    "OSD5_SAVE_X": {
-      "Description": "Horizontal position of Save button on screen",
-      "DisplayName": "SAVE_X",
-      "Range": {
-        "high": "25",
-        "low": "0"
-      },
-      "User": "Advanced"
-    },
-    "OSD5_SAVE_Y": {
-      "Description": "Vertical position of Save button on screen",
-      "DisplayName": "SAVE_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
-      },
-      "User": "Advanced"
-    }
-  },
-  "OSD5_PARAM1": {
-    "OSD5_PARAM1_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+    "OSD5_ESCAAMPS_EN": {
+      "Description": "Display the average current going through the ESCs",
+      "DisplayName": "ESCAAMPS_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM1_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM1_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM1_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM1_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM1_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM1_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM1_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM1_X": {
+    "OSD5_ESCAAMPS_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "ESCAAMPS_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM1_Y": {
+    "OSD5_ESCAAMPS_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "ESCAAMPS_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM2": {
-    "OSD5_PARAM2_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_ESCARPM_EN": {
+      "Description": "Displays the average motor RPM as reported by the ESCs",
+      "DisplayName": "ESCARPM_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM2_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM2_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM2_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM2_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM2_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM2_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM2_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM2_X": {
+    "OSD5_ESCARPM_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "ESCARPM_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM2_Y": {
+    "OSD5_ESCARPM_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "ESCARPM_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM3": {
-    "OSD5_PARAM3_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_ESCHAMPS_EN": {
+      "Description": "Display the current going through the ESC with highest measured current",
+      "DisplayName": "ESCHAMPS_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM3_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM3_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM3_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM3_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM3_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM3_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM3_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM3_X": {
+    "OSD5_ESCHAMPS_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "ESCHAMPS_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM3_Y": {
+    "OSD5_ESCHAMPS_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "ESCHAMPS_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM4": {
-    "OSD5_PARAM4_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_ESCHRPM_EN": {
+      "Description": "Displays the highest motor RPM as reported by the ESCs",
+      "DisplayName": "ESCHRPM_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM4_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM4_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM4_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM4_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM4_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM4_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM4_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM4_X": {
+    "OSD5_ESCHRPM_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "ESCHRPM_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM4_Y": {
+    "OSD5_ESCHRPM_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "ESCHRPM_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM5": {
-    "OSD5_PARAM5_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_ESCTAMPS_EN": {
+      "Description": "Display the total current going through the ESCs",
+      "DisplayName": "ESCTAMPS_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM5_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM5_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM5_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM5_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM5_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM5_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM5_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM5_X": {
+    "OSD5_ESCTAMPS_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "ESCTAMPS_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM5_Y": {
+    "OSD5_ESCTAMPS_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "ESCTAMPS_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM6": {
-    "OSD5_PARAM6_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_ESCTEMP_EN": {
+      "Description": "Displays the temperature of the ESC with highest temperature",
+      "DisplayName": "ESCTEMP_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM6_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM6_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM6_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM6_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM6_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM6_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM6_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM6_X": {
+    "OSD5_ESCTEMP_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "ESCTEMP_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM6_Y": {
+    "OSD5_ESCTEMP_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "ESCTEMP_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM7": {
-    "OSD5_PARAM7_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_FENCE_EN": {
+      "Description": "Displays indication of fence enable and breach",
+      "DisplayName": "FENCE_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM7_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM7_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM7_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM7_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM7_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM7_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM7_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM7_X": {
+    "OSD5_FENCE_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "FENCE_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM7_Y": {
+    "OSD5_FENCE_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "FENCE_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM8": {
-    "OSD5_PARAM8_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_FLTIME_EN": {
+      "Description": "Displays total flight time",
+      "DisplayName": "FLTIME_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM8_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM8_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM8_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM8_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM8_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM8_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM8_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM8_X": {
+    "OSD5_FLTIME_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "FLTIME_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM8_Y": {
+    "OSD5_FLTIME_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "FLTIME_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
-    }
-  },
-  "OSD5_PARAM9": {
-    "OSD5_PARAM9_EN": {
-      "Description": "Enable setting",
-      "DisplayName": "Enable",
-      "User": "Standard",
+      }
+    },
+    "OSD5_FLTMODE_EN": {
+      "Description": "Displays flight mode",
+      "DisplayName": "FLTMODE_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_PARAM9_GRP": {
-      "Description": "Group of the parameter to be displayed and modified",
-      "DisplayName": "Parameter group",
-      "User": "Standard"
-    },
-    "OSD5_PARAM9_IDX": {
-      "Description": "Index of the parameter to be displayed and modified",
-      "DisplayName": "Parameter index",
-      "User": "Standard"
-    },
-    "OSD5_PARAM9_INCR": {
-      "Description": "Increment of the parameter to be displayed and modified",
-      "DisplayName": "Parameter increment",
-      "User": "Standard"
-    },
-    "OSD5_PARAM9_KEY": {
-      "Description": "Key of the parameter to be displayed and modified",
-      "DisplayName": "Parameter key",
-      "User": "Standard"
-    },
-    "OSD5_PARAM9_MAX": {
-      "Description": "Maximum of the parameter to be displayed and modified",
-      "DisplayName": "Parameter maximum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM9_MIN": {
-      "Description": "Minimum value of the parameter to be displayed and modified",
-      "DisplayName": "Parameter minimum",
-      "User": "Standard"
-    },
-    "OSD5_PARAM9_TYPE": {
-      "Description": "Type of the parameter to be displayed and modified",
-      "DisplayName": "Parameter type",
-      "User": "Standard"
-    },
-    "OSD5_PARAM9_X": {
+    "OSD5_FLTMODE_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "X position",
+      "DisplayName": "FLTMODE_X",
       "Range": {
         "high": "29",
         "low": "0"
-      },
-      "User": "Standard"
+      }
     },
-    "OSD5_PARAM9_Y": {
+    "OSD5_FLTMODE_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "Y position",
+      "DisplayName": "FLTMODE_Y",
       "Range": {
         "high": "15",
         "low": "0"
-      },
-      "User": "Standard"
+      }
+    },
+    "OSD5_GPSLAT_EN": {
+      "Description": "Displays GPS latitude",
+      "DisplayName": "GPSLAT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_GPSLAT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GPSLAT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_GPSLAT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GPSLAT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_GPSLONG_EN": {
+      "Description": "Displays GPS longitude",
+      "DisplayName": "GPSLONG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_GPSLONG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GPSLONG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_GPSLONG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GPSLONG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_GSPEED_EN": {
+      "Description": "Displays GPS ground speed",
+      "DisplayName": "GSPEED_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_GSPEED_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GSPEED_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_GSPEED_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GSPEED_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_HDOP_EN": {
+      "Description": "Displays Horizontal Dilution Of Position",
+      "DisplayName": "HDOP_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_HDOP_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "HDOP_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_HDOP_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "HDOP_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_HEADING_EN": {
+      "Description": "Displays heading",
+      "DisplayName": "HEADING_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_HEADING_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "HEADING_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_HEADING_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "HEADING_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_HOMEDIR_EN": {
+      "Description": "Displays relative direction to HOME (MSP OSD only)",
+      "DisplayName": "HOMEDIR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_HOMEDIR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "HOMEDIR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_HOMEDIR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "HOMEDIR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_HOMEDIST_EN": {
+      "Description": "Displays distance from HOME (MSP OSD only)",
+      "DisplayName": "HOMEDIST_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_HOMEDIST_X": {
+      "Description": "Horizontal position on screen (MSP OSD only)",
+      "DisplayName": "HOMEDIST_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_HOMEDIST_Y": {
+      "Description": "Vertical position on screen (MSP OSD only)",
+      "DisplayName": "HOMEDIST_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_HOME_EN": {
+      "Description": "Displays distance and relative direction to HOME",
+      "DisplayName": "HOME_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_HOME_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "HOME_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_HOME_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "HOME_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_HORIZON_EN": {
+      "Description": "Displays artificial horizon",
+      "DisplayName": "HORIZON_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_HORIZON_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "HORIZON_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_HORIZON_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "HORIZON_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_LINK_Q_EN": {
+      "Description": "Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set",
+      "DisplayName": "LINK_Q_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_LINK_Q_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "LINK_Q_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_LINK_Q_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "LINK_Q_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_MESSAGE_EN": {
+      "Description": "Displays Mavlink messages",
+      "DisplayName": "MESSAGE_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_MESSAGE_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "MESSAGE_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_MESSAGE_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "MESSAGE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_NRG_CONS_EN": {
+      "Description": "Displays total energy consumed from primary battery",
+      "DisplayName": "NRG_CONS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_NRG_CONS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_CONS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_NRG_CONS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_CONS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_NRG_REM_EN": {
+      "Description": "Displays energy remaining in primary battery",
+      "DisplayName": "NRG_REM_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_NRG_REM_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "NRG_REM_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_NRG_REM_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "NRG_REM_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_PEAK_PR_EN": {
+      "Description": "Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_PR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_PEAK_PR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_PR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_PEAK_PR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_PR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_PEAK_RR_EN": {
+      "Description": "Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds",
+      "DisplayName": "PEAK_RR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_PEAK_RR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PEAK_RR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_PEAK_RR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PEAK_RR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_PITCH_EN": {
+      "Description": "Displays degrees of pitch from level",
+      "DisplayName": "PITCH_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_PITCH_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PITCH_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_PITCH_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PITCH_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_PLUSCODE_EN": {
+      "Description": "Displays pluscode (OLC) element",
+      "DisplayName": "PLUSCODE_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_PLUSCODE_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "PLUSCODE_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_PLUSCODE_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "PLUSCODE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_POWER_EN": {
+      "Description": "Displays total power draw from all batteries",
+      "DisplayName": "POWER_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_POWER_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "POWER_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_POWER_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "POWER_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_RC_THR_EN": {
+      "Description": "Displays input throttle value (plane only)",
+      "DisplayName": "RC_THR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_RC_THR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RC_THR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_RC_THR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RC_THR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_RESTVOLT_EN": {
+      "Description": "Displays main battery resting voltage",
+      "DisplayName": "RESTVOLT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_RESTVOLT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RESTVOLT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_RESTVOLT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RESTVOLT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_RNGF_EN": {
+      "Description": "Displays a rangefinder's distance in cm",
+      "DisplayName": "RNGF_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_RNGF_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RNGF_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_RNGF_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RNGF_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_ROLL_EN": {
+      "Description": "Displays degrees of roll from level",
+      "DisplayName": "ROLL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_ROLL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "ROLL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_ROLL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "ROLL_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_RSSI_EN": {
+      "Description": "Displays RC signal strength",
+      "DisplayName": "RSSI_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_RSSI_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RSSI_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_RSSI_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RSSI_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_R_AVG_CV_EN": {
+      "Description": "Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.",
+      "DisplayName": "AVGCELLV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_R_AVG_CV_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "R_AVG_CV_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_R_AVG_CV_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "R_AVG_CV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_SATS_EN": {
+      "Description": "Displays number of acquired satellites",
+      "DisplayName": "SATS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_SATS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "SATS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_SATS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "SATS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_SIDEBARS_EN": {
+      "Description": "Displays artificial horizon side bars",
+      "DisplayName": "SIDEBARS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_SIDEBARS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "SIDEBARS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_SIDEBARS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "SIDEBARS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_STATS_EN": {
+      "Description": "Displays flight stats",
+      "DisplayName": "STATS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_STATS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "STATS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_STATS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "STATS_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_TEMP_EN": {
+      "Description": "Displays temperature reported by primary barometer",
+      "DisplayName": "TEMP_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_TEMP_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TEMP_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_TEMP_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TEMP_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_TER_HGT_EN": {
+      "Description": "Displays Height above terrain",
+      "DisplayName": "TER_HGT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_TER_HGT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TER_HGT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_TER_HGT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TER_HGT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_THROTTLE_EN": {
+      "Description": "Displays actual throttle percentage being sent to motor(s)",
+      "DisplayName": "THROTTLE_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_THROTTLE_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "THROTTLE_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_THROTTLE_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "THROTTLE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_TUNED_PN_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PN_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_TUNED_PN_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PN_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_TUNED_PN_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PN_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_TUNED_PV_EN": {
+      "Description": "Displays secondary battery mAh consumed",
+      "DisplayName": "TUNED_PV_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_TUNED_PV_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "TUNED_PV_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_TUNED_PV_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "TUNED_PV_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_VSPEED_EN": {
+      "Description": "Displays climb rate",
+      "DisplayName": "VSPEED_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_VSPEED_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "VSPEED_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_VSPEED_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "VSPEED_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_VTX_PWR_EN": {
+      "Description": "Displays VTX Power",
+      "DisplayName": "VTX_PWR_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_VTX_PWR_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "VTX_PWR_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_VTX_PWR_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "VTX_PWR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_WAYPOINT_EN": {
+      "Description": "Displays bearing and distance to next waypoint",
+      "DisplayName": "WAYPOINT_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_WAYPOINT_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "WAYPOINT_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_WAYPOINT_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "WAYPOINT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_WIND_EN": {
+      "Description": "Displays wind speed and relative direction, on Rover this is the apparent wind speed and direction from the windvane, if fitted",
+      "DisplayName": "WIND_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_WIND_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "WIND_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_WIND_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "WIND_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_XTRACK_EN": {
+      "Description": "Displays crosstrack error",
+      "DisplayName": "XTRACK_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_XTRACK_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "XTRACK_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_XTRACK_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "XTRACK_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
     }
   },
   "OSD6_": {
@@ -20669,6 +23095,629 @@
       "User": "Standard"
     },
     "OSD6_PARAM9_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_": {
+    "OSD7_CHAN_MAX": {
+      "Description": "This sets the PWM upper limit for this screen",
+      "DisplayName": "Transmitter switch screen maximum pwm",
+      "Range": {
+        "high": "2100",
+        "low": "900"
+      },
+      "User": "Standard"
+    },
+    "OSD7_CHAN_MIN": {
+      "Description": "This sets the PWM lower limit for this screen",
+      "DisplayName": "Transmitter switch screen minimum pwm",
+      "Range": {
+        "high": "2100",
+        "low": "900"
+      },
+      "User": "Standard"
+    },
+    "OSD7_ENABLE": {
+      "Description": "Enable this screen",
+      "DisplayName": "Enable screen",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_SAVE_X": {
+      "Description": "Horizontal position of Save button on screen",
+      "DisplayName": "SAVE_X",
+      "Range": {
+        "high": "25",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "OSD7_SAVE_Y": {
+      "Description": "Vertical position of Save button on screen",
+      "DisplayName": "SAVE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Advanced"
+    }
+  },
+  "OSD7_PARAM1": {
+    "OSD7_PARAM1_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM1_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM1_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM2": {
+    "OSD7_PARAM2_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM2_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM2_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM3": {
+    "OSD7_PARAM3_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM3_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM3_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM4": {
+    "OSD7_PARAM4_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM4_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM4_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM5": {
+    "OSD7_PARAM5_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM5_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM5_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM6": {
+    "OSD7_PARAM6_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM6_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM6_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM7": {
+    "OSD7_PARAM7_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM7_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM7_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM8": {
+    "OSD7_PARAM8_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM8_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM8_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "Y position",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "OSD7_PARAM9": {
+    "OSD7_PARAM9_EN": {
+      "Description": "Enable setting",
+      "DisplayName": "Enable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD7_PARAM9_GRP": {
+      "Description": "Group of the parameter to be displayed and modified",
+      "DisplayName": "Parameter group",
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_IDX": {
+      "Description": "Index of the parameter to be displayed and modified",
+      "DisplayName": "Parameter index",
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_INCR": {
+      "Description": "Increment of the parameter to be displayed and modified",
+      "DisplayName": "Parameter increment",
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_KEY": {
+      "Description": "Key of the parameter to be displayed and modified",
+      "DisplayName": "Parameter key",
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_MAX": {
+      "Description": "Maximum of the parameter to be displayed and modified",
+      "DisplayName": "Parameter maximum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_MIN": {
+      "Description": "Minimum value of the parameter to be displayed and modified",
+      "DisplayName": "Parameter minimum",
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_TYPE": {
+      "Description": "Type of the parameter to be displayed and modified",
+      "DisplayName": "Parameter type",
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "X position",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
+    "OSD7_PARAM9_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "Y position",
       "Range": {

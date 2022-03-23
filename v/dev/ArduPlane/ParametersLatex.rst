@@ -161,11 +161,11 @@ KFF\_THRAT2PTCH: Throttle ratio above trim throttle to pitch mix
 Pitch up to add in proportion to throttle above trim throttle\. TRIM\_THROTTLE throttle and under will add 0\° to the pitch target\. 100\% throttle will add this number of degrees to the pitch target\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 5 |
-+-----------+-------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.1       | -20 - 20 |
++-----------+----------+
 
 
 
@@ -185,25 +185,6 @@ Degrees of down pitch added when throttle is below TRIM\_THROTTLE in FBWA and AU
 +===========+========+=========+
 | 0.1       | 0 - 15 | degrees |
 +-----------+--------+---------+
-
-
-
-
-.. _STAB_PTCHDN_THR:
-
-STAB\_PTCHDN\_THR: Throttle under which to start pitching down to avoid stalling
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Throttle under which to start pitching down to avoid stalling\. The applied down pitch scales linearly from 0 to STAB\_PITCH\_DOWN with throttle between STAB\_PTCHDN\_THR and 0\. If set to 0 \(default\) then TRIM\_THROTTLE is used\.
-
-
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 0.1       | 0 - 100 | percent |
-+-----------+---------+---------+
 
 
 
@@ -813,6 +794,25 @@ THR\_DZ: Throttle deadzone
 | *Note: This parameter is for advanced users*
 
 No command will be applied to the throttle ESC or servo unless the command is at least this value
+
+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 0 - 100 | percent |
++---------+---------+
+
+
+
+
+.. _THR_EXPO:
+
+THR\_EXPO: Manual throttle square response curve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Amount of square response curve to apply to throttle in manual throttle modes
 
 
 +---------+---------+
@@ -1947,21 +1947,21 @@ Minimum ground speed in cm\/s when under airspeed control
 
 
 
-.. _TRIM_PITCH_CD:
+.. _TRIM_PITCH:
 
-TRIM\_PITCH\_CD: Pitch angle offset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TRIM\_PITCH: Pitch angle offset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
 Offset applied to AHRS pitch used for in\-flight pitch trimming\. Correct ground leveling is better than changing this parameter\.
 
 
-+-----------+--------------+--------------+
-| Increment | Range        | Units        |
-+===========+==============+==============+
-| 10        | -4500 - 4500 | centidegrees |
-+-----------+--------------+--------------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 0.1       | -45 - 45 | degrees |
++-----------+----------+---------+
 
 
 
@@ -29996,20 +29996,56 @@ Set level below which TER\_HGT item will flash\. \-1 disables\.
 
 
 
-.. _OSD_W_RESTVOLT:
+.. _OSD_PEAKR_TMOUT:
 
-OSD\_W\_RESTVOLT: RESTVOLT warn level
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Set level at which RESTVOLT item will flash
+OSD\_PEAKR\_TMOUT: Time the peak rate will be displayed for PEAK\_RR and PEAK\_PR elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
+Time the peak rate will be displayed for PEAK\_RR and PEAK\_PR elements
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0.5 - 60 | seconds |
++----------+---------+
+
+
+
+
+.. _OSD_TUNE_DTMOUT:
+
+OSD\_TUNE\_DTMOUT: Time the tuning name\/value stay displayed after being changed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Time the tuning name\/value stay displayed after being changed
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0.5 - 60 | seconds |
++----------+---------+
+
+
+
+
+.. _OSD_AH_PITCH_MAX:
+
+OSD\_AH\_PITCH\_MAX: Maximum pitch the artificial horizon can display
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum pitch the artificial horizon can display
+
+
++--------+
+| Range  |
++========+
+| 0 - 90 |
++--------+
 
 
 
@@ -32165,13 +32201,13 @@ Vertical position on screen
 
 
 
-.. _OSD1_EFF_EN:
+.. _OSD1_EFFG_EN:
 
-OSD1\_EFF\_EN: EFF\_EN
-~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_EFFG\_EN: EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays flight efficiency \(mAh\/km or \/mi\)
+Displays ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +-------+----------+
@@ -32185,10 +32221,10 @@ Displays flight efficiency \(mAh\/km or \/mi\)
 
 
 
-.. _OSD1_EFF_X:
+.. _OSD1_EFFG_X:
 
-OSD1\_EFF\_X: EFF\_X
-~~~~~~~~~~~~~~~~~~~~
+OSD1\_EFFG\_X: EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -32203,10 +32239,10 @@ Horizontal position on screen
 
 
 
-.. _OSD1_EFF_Y:
+.. _OSD1_EFFG_Y:
 
-OSD1\_EFF\_Y: EFF\_Y
-~~~~~~~~~~~~~~~~~~~~
+OSD1\_EFFG\_Y: EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -33621,10 +33657,10 @@ Vertical position on screen
 
 
 
-.. _OSD1_ENERGY_EN:
+.. _OSD1_NRG_CONS_EN:
 
-OSD1\_ENERGY\_EN: ENERGY\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_NRG\_CONS\_EN: NRG\_CONS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Displays total energy consumed from primary battery
@@ -33641,10 +33677,10 @@ Displays total energy consumed from primary battery
 
 
 
-.. _OSD1_ENERGY_X:
+.. _OSD1_NRG_CONS_X:
 
-OSD1\_ENERGY\_X: ENERGY\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_NRG\_CONS\_X: NRG\_CONS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -33659,10 +33695,10 @@ Horizontal position on screen
 
 
 
-.. _OSD1_ENERGY_Y:
+.. _OSD1_NRG_CONS_Y:
 
-OSD1\_ENERGY\_Y: ENERGY\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_NRG\_CONS\_Y: NRG\_CONS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -34391,6 +34427,566 @@ Horizontal position on screen
 
 OSD1\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_NRG_REM_EN:
+
+OSD1\_NRG\_REM\_EN: NRG\_REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays energy remaining in primary battery
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_NRG_REM_X:
+
+OSD1\_NRG\_REM\_X: NRG\_REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_NRG_REM_Y:
+
+OSD1\_NRG\_REM\_Y: NRG\_REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_AVG_EFFG_EN:
+
+OSD1\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_AVG_EFFG_X:
+
+OSD1\_AVG\_EFFG\_X: AVG\_EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_AVG_EFFG_Y:
+
+OSD1\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_AVG_EFFA_EN:
+
+OSD1\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_AVG_EFFA_X:
+
+OSD1\_AVG\_EFFA\_X: AVG\_EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_AVG_EFFA_Y:
+
+OSD1\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_EFFA_EN:
+
+OSD1\_EFFA\_EN: EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays air flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_EFFA_X:
+
+OSD1\_EFFA\_X: EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_EFFA_Y:
+
+OSD1\_EFFA\_Y: EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_BATREM_EN:
+
+OSD1\_BATREM\_EN: BATREM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays primary battery mAh remaining
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_BATREM_X:
+
+OSD1\_BATREM\_X: BATREM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_BATREM_Y:
+
+OSD1\_BATREM\_Y: BATREM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_BAT2REM_EN:
+
+OSD1\_BAT2REM\_EN: BAT2REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_BAT2REM_X:
+
+OSD1\_BAT2REM\_X: BAT2REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_BAT2REM_Y:
+
+OSD1\_BAT2REM\_Y: BAT2REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_TUNED_PN_EN:
+
+OSD1\_TUNED\_PN\_EN: TUNED\_PN\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_TUNED_PN_X:
+
+OSD1\_TUNED\_PN\_X: TUNED\_PN\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_TUNED_PN_Y:
+
+OSD1\_TUNED\_PN\_Y: TUNED\_PN\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_TUNED_PV_EN:
+
+OSD1\_TUNED\_PV\_EN: TUNED\_PV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_TUNED_PV_X:
+
+OSD1\_TUNED\_PV\_X: TUNED\_PV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_TUNED_PV_Y:
+
+OSD1\_TUNED\_PV\_Y: TUNED\_PV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_PEAK_RR_EN:
+
+OSD1\_PEAK\_RR\_EN: PEAK\_RR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak roll rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_PEAK_RR_X:
+
+OSD1\_PEAK\_RR\_X: PEAK\_RR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_PEAK_RR_Y:
+
+OSD1\_PEAK\_RR\_Y: PEAK\_RR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_PEAK_PR_EN:
+
+OSD1\_PEAK\_PR\_EN: PEAK\_PR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak pitch rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_PEAK_PR_X:
+
+OSD1\_PEAK\_PR\_X: PEAK\_PR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_PEAK_PR_Y:
+
+OSD1\_PEAK\_PR\_Y: PEAK\_PR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -36428,13 +37024,13 @@ Vertical position on screen
 
 
 
-.. _OSD2_EFF_EN:
+.. _OSD2_EFFG_EN:
 
-OSD2\_EFF\_EN: EFF\_EN
-~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_EFFG\_EN: EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays flight efficiency \(mAh\/km or \/mi\)
+Displays ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +-------+----------+
@@ -36448,10 +37044,10 @@ Displays flight efficiency \(mAh\/km or \/mi\)
 
 
 
-.. _OSD2_EFF_X:
+.. _OSD2_EFFG_X:
 
-OSD2\_EFF\_X: EFF\_X
-~~~~~~~~~~~~~~~~~~~~
+OSD2\_EFFG\_X: EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -36466,10 +37062,10 @@ Horizontal position on screen
 
 
 
-.. _OSD2_EFF_Y:
+.. _OSD2_EFFG_Y:
 
-OSD2\_EFF\_Y: EFF\_Y
-~~~~~~~~~~~~~~~~~~~~
+OSD2\_EFFG\_Y: EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -37884,10 +38480,10 @@ Vertical position on screen
 
 
 
-.. _OSD2_ENERGY_EN:
+.. _OSD2_NRG_CONS_EN:
 
-OSD2\_ENERGY\_EN: ENERGY\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_NRG\_CONS\_EN: NRG\_CONS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Displays total energy consumed from primary battery
@@ -37904,10 +38500,10 @@ Displays total energy consumed from primary battery
 
 
 
-.. _OSD2_ENERGY_X:
+.. _OSD2_NRG_CONS_X:
 
-OSD2\_ENERGY\_X: ENERGY\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_NRG\_CONS\_X: NRG\_CONS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -37922,10 +38518,10 @@ Horizontal position on screen
 
 
 
-.. _OSD2_ENERGY_Y:
+.. _OSD2_NRG_CONS_Y:
 
-OSD2\_ENERGY\_Y: ENERGY\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_NRG\_CONS\_Y: NRG\_CONS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -38654,6 +39250,566 @@ Horizontal position on screen
 
 OSD2\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_NRG_REM_EN:
+
+OSD2\_NRG\_REM\_EN: NRG\_REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays energy remaining in primary battery
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_NRG_REM_X:
+
+OSD2\_NRG\_REM\_X: NRG\_REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_NRG_REM_Y:
+
+OSD2\_NRG\_REM\_Y: NRG\_REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_AVG_EFFG_EN:
+
+OSD2\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_AVG_EFFG_X:
+
+OSD2\_AVG\_EFFG\_X: AVG\_EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_AVG_EFFG_Y:
+
+OSD2\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_AVG_EFFA_EN:
+
+OSD2\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_AVG_EFFA_X:
+
+OSD2\_AVG\_EFFA\_X: AVG\_EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_AVG_EFFA_Y:
+
+OSD2\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_EFFA_EN:
+
+OSD2\_EFFA\_EN: EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays air flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_EFFA_X:
+
+OSD2\_EFFA\_X: EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_EFFA_Y:
+
+OSD2\_EFFA\_Y: EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_BATREM_EN:
+
+OSD2\_BATREM\_EN: BATREM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays primary battery mAh remaining
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_BATREM_X:
+
+OSD2\_BATREM\_X: BATREM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_BATREM_Y:
+
+OSD2\_BATREM\_Y: BATREM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_BAT2REM_EN:
+
+OSD2\_BAT2REM\_EN: BAT2REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_BAT2REM_X:
+
+OSD2\_BAT2REM\_X: BAT2REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_BAT2REM_Y:
+
+OSD2\_BAT2REM\_Y: BAT2REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_TUNED_PN_EN:
+
+OSD2\_TUNED\_PN\_EN: TUNED\_PN\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_TUNED_PN_X:
+
+OSD2\_TUNED\_PN\_X: TUNED\_PN\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_TUNED_PN_Y:
+
+OSD2\_TUNED\_PN\_Y: TUNED\_PN\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_TUNED_PV_EN:
+
+OSD2\_TUNED\_PV\_EN: TUNED\_PV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_TUNED_PV_X:
+
+OSD2\_TUNED\_PV\_X: TUNED\_PV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_TUNED_PV_Y:
+
+OSD2\_TUNED\_PV\_Y: TUNED\_PV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_PEAK_RR_EN:
+
+OSD2\_PEAK\_RR\_EN: PEAK\_RR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak roll rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_PEAK_RR_X:
+
+OSD2\_PEAK\_RR\_X: PEAK\_RR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_PEAK_RR_Y:
+
+OSD2\_PEAK\_RR\_Y: PEAK\_RR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_PEAK_PR_EN:
+
+OSD2\_PEAK\_PR\_EN: PEAK\_PR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak pitch rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_PEAK_PR_X:
+
+OSD2\_PEAK\_PR\_X: PEAK\_PR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_PEAK_PR_Y:
+
+OSD2\_PEAK\_PR\_Y: PEAK\_PR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -40691,13 +41847,13 @@ Vertical position on screen
 
 
 
-.. _OSD3_EFF_EN:
+.. _OSD3_EFFG_EN:
 
-OSD3\_EFF\_EN: EFF\_EN
-~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_EFFG\_EN: EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays flight efficiency \(mAh\/km or \/mi\)
+Displays ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +-------+----------+
@@ -40711,10 +41867,10 @@ Displays flight efficiency \(mAh\/km or \/mi\)
 
 
 
-.. _OSD3_EFF_X:
+.. _OSD3_EFFG_X:
 
-OSD3\_EFF\_X: EFF\_X
-~~~~~~~~~~~~~~~~~~~~
+OSD3\_EFFG\_X: EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -40729,10 +41885,10 @@ Horizontal position on screen
 
 
 
-.. _OSD3_EFF_Y:
+.. _OSD3_EFFG_Y:
 
-OSD3\_EFF\_Y: EFF\_Y
-~~~~~~~~~~~~~~~~~~~~
+OSD3\_EFFG\_Y: EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -42147,10 +43303,10 @@ Vertical position on screen
 
 
 
-.. _OSD3_ENERGY_EN:
+.. _OSD3_NRG_CONS_EN:
 
-OSD3\_ENERGY\_EN: ENERGY\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_NRG\_CONS\_EN: NRG\_CONS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Displays total energy consumed from primary battery
@@ -42167,10 +43323,10 @@ Displays total energy consumed from primary battery
 
 
 
-.. _OSD3_ENERGY_X:
+.. _OSD3_NRG_CONS_X:
 
-OSD3\_ENERGY\_X: ENERGY\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_NRG\_CONS\_X: NRG\_CONS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -42185,10 +43341,10 @@ Horizontal position on screen
 
 
 
-.. _OSD3_ENERGY_Y:
+.. _OSD3_NRG_CONS_Y:
 
-OSD3\_ENERGY\_Y: ENERGY\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_NRG\_CONS\_Y: NRG\_CONS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -42917,6 +44073,566 @@ Horizontal position on screen
 
 OSD3\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_NRG_REM_EN:
+
+OSD3\_NRG\_REM\_EN: NRG\_REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays energy remaining in primary battery
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_NRG_REM_X:
+
+OSD3\_NRG\_REM\_X: NRG\_REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_NRG_REM_Y:
+
+OSD3\_NRG\_REM\_Y: NRG\_REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_AVG_EFFG_EN:
+
+OSD3\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_AVG_EFFG_X:
+
+OSD3\_AVG\_EFFG\_X: AVG\_EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_AVG_EFFG_Y:
+
+OSD3\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_AVG_EFFA_EN:
+
+OSD3\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_AVG_EFFA_X:
+
+OSD3\_AVG\_EFFA\_X: AVG\_EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_AVG_EFFA_Y:
+
+OSD3\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_EFFA_EN:
+
+OSD3\_EFFA\_EN: EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays air flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_EFFA_X:
+
+OSD3\_EFFA\_X: EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_EFFA_Y:
+
+OSD3\_EFFA\_Y: EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_BATREM_EN:
+
+OSD3\_BATREM\_EN: BATREM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays primary battery mAh remaining
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_BATREM_X:
+
+OSD3\_BATREM\_X: BATREM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_BATREM_Y:
+
+OSD3\_BATREM\_Y: BATREM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_BAT2REM_EN:
+
+OSD3\_BAT2REM\_EN: BAT2REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_BAT2REM_X:
+
+OSD3\_BAT2REM\_X: BAT2REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_BAT2REM_Y:
+
+OSD3\_BAT2REM\_Y: BAT2REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_TUNED_PN_EN:
+
+OSD3\_TUNED\_PN\_EN: TUNED\_PN\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_TUNED_PN_X:
+
+OSD3\_TUNED\_PN\_X: TUNED\_PN\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_TUNED_PN_Y:
+
+OSD3\_TUNED\_PN\_Y: TUNED\_PN\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_TUNED_PV_EN:
+
+OSD3\_TUNED\_PV\_EN: TUNED\_PV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_TUNED_PV_X:
+
+OSD3\_TUNED\_PV\_X: TUNED\_PV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_TUNED_PV_Y:
+
+OSD3\_TUNED\_PV\_Y: TUNED\_PV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_PEAK_RR_EN:
+
+OSD3\_PEAK\_RR\_EN: PEAK\_RR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak roll rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_PEAK_RR_X:
+
+OSD3\_PEAK\_RR\_X: PEAK\_RR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_PEAK_RR_Y:
+
+OSD3\_PEAK\_RR\_Y: PEAK\_RR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_PEAK_PR_EN:
+
+OSD3\_PEAK\_PR\_EN: PEAK\_PR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak pitch rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_PEAK_PR_X:
+
+OSD3\_PEAK\_PR\_X: PEAK\_PR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_PEAK_PR_Y:
+
+OSD3\_PEAK\_PR\_Y: PEAK\_PR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -44954,13 +46670,13 @@ Vertical position on screen
 
 
 
-.. _OSD4_EFF_EN:
+.. _OSD4_EFFG_EN:
 
-OSD4\_EFF\_EN: EFF\_EN
-~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_EFFG\_EN: EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays flight efficiency \(mAh\/km or \/mi\)
+Displays ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +-------+----------+
@@ -44974,10 +46690,10 @@ Displays flight efficiency \(mAh\/km or \/mi\)
 
 
 
-.. _OSD4_EFF_X:
+.. _OSD4_EFFG_X:
 
-OSD4\_EFF\_X: EFF\_X
-~~~~~~~~~~~~~~~~~~~~
+OSD4\_EFFG\_X: EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -44992,10 +46708,10 @@ Horizontal position on screen
 
 
 
-.. _OSD4_EFF_Y:
+.. _OSD4_EFFG_Y:
 
-OSD4\_EFF\_Y: EFF\_Y
-~~~~~~~~~~~~~~~~~~~~
+OSD4\_EFFG\_Y: EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -46410,10 +48126,10 @@ Vertical position on screen
 
 
 
-.. _OSD4_ENERGY_EN:
+.. _OSD4_NRG_CONS_EN:
 
-OSD4\_ENERGY\_EN: ENERGY\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_NRG\_CONS\_EN: NRG\_CONS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Displays total energy consumed from primary battery
@@ -46430,10 +48146,10 @@ Displays total energy consumed from primary battery
 
 
 
-.. _OSD4_ENERGY_X:
+.. _OSD4_NRG_CONS_X:
 
-OSD4\_ENERGY\_X: ENERGY\_X
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_NRG\_CONS\_X: NRG\_CONS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -46448,10 +48164,10 @@ Horizontal position on screen
 
 
 
-.. _OSD4_ENERGY_Y:
+.. _OSD4_NRG_CONS_Y:
 
-OSD4\_ENERGY\_Y: ENERGY\_Y
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_NRG\_CONS\_Y: NRG\_CONS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47194,6 +48910,566 @@ Vertical position on screen
 
 
 
+.. _OSD4_NRG_REM_EN:
+
+OSD4\_NRG\_REM\_EN: NRG\_REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays energy remaining in primary battery
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_NRG_REM_X:
+
+OSD4\_NRG\_REM\_X: NRG\_REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_NRG_REM_Y:
+
+OSD4\_NRG\_REM\_Y: NRG\_REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_AVG_EFFG_EN:
+
+OSD4\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_AVG_EFFG_X:
+
+OSD4\_AVG\_EFFG\_X: AVG\_EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_AVG_EFFG_Y:
+
+OSD4\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_AVG_EFFA_EN:
+
+OSD4\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_AVG_EFFA_X:
+
+OSD4\_AVG\_EFFA\_X: AVG\_EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_AVG_EFFA_Y:
+
+OSD4\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_EFFA_EN:
+
+OSD4\_EFFA\_EN: EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays air flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_EFFA_X:
+
+OSD4\_EFFA\_X: EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_EFFA_Y:
+
+OSD4\_EFFA\_Y: EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_BATREM_EN:
+
+OSD4\_BATREM\_EN: BATREM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays primary battery mAh remaining
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_BATREM_X:
+
+OSD4\_BATREM\_X: BATREM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_BATREM_Y:
+
+OSD4\_BATREM\_Y: BATREM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_BAT2REM_EN:
+
+OSD4\_BAT2REM\_EN: BAT2REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_BAT2REM_X:
+
+OSD4\_BAT2REM\_X: BAT2REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_BAT2REM_Y:
+
+OSD4\_BAT2REM\_Y: BAT2REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_TUNED_PN_EN:
+
+OSD4\_TUNED\_PN\_EN: TUNED\_PN\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_TUNED_PN_X:
+
+OSD4\_TUNED\_PN\_X: TUNED\_PN\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_TUNED_PN_Y:
+
+OSD4\_TUNED\_PN\_Y: TUNED\_PN\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_TUNED_PV_EN:
+
+OSD4\_TUNED\_PV\_EN: TUNED\_PV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_TUNED_PV_X:
+
+OSD4\_TUNED\_PV\_X: TUNED\_PV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_TUNED_PV_Y:
+
+OSD4\_TUNED\_PV\_Y: TUNED\_PV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_PEAK_RR_EN:
+
+OSD4\_PEAK\_RR\_EN: PEAK\_RR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak roll rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_PEAK_RR_X:
+
+OSD4\_PEAK\_RR\_X: PEAK\_RR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_PEAK_RR_Y:
+
+OSD4\_PEAK\_RR\_Y: PEAK\_RR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_PEAK_PR_EN:
+
+OSD4\_PEAK\_PR\_EN: PEAK\_PR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak pitch rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_PEAK_PR_X:
+
+OSD4\_PEAK\_PR\_X: PEAK\_PR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_PEAK_PR_Y:
+
+OSD4\_PEAK\_PR\_Y: PEAK\_PR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -47257,33 +49533,163 @@ This sets the PWM upper limit for this screen
 
 
 
-.. _OSD5_SAVE_X:
+.. _OSD5_ALTITUDE_EN:
 
-OSD5\_SAVE\_X: SAVE\_X
+OSD5\_ALTITUDE\_EN: ALTITUDE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enables display of altitude AGL
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ALTITUDE_X:
+
+OSD5\_ALTITUDE\_X: ALTITUDE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ALTITUDE_Y:
+
+OSD5\_ALTITUDE\_Y: ALTITUDE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BAT_VOLT_EN:
+
+OSD5\_BAT\_VOLT\_EN: BATVOLT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays main battery voltage
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BAT_VOLT_X:
+
+OSD5\_BAT\_VOLT\_X: BATVOLT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BAT_VOLT_Y:
+
+OSD5\_BAT\_VOLT\_Y: BATVOLT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_RSSI_EN:
+
+OSD5\_RSSI\_EN: RSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_RSSI_X:
+
+OSD5\_RSSI\_X: RSSI\_X
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| *Note: This parameter is for advanced users*
 
-Horizontal position of Save button on screen
+Horizontal position on screen
 
 
 +--------+
 | Range  |
 +========+
-| 0 - 25 |
+| 0 - 29 |
 +--------+
 
 
 
 
-.. _OSD5_SAVE_Y:
+.. _OSD5_RSSI_Y:
 
-OSD5\_SAVE\_Y: SAVE\_Y
+OSD5\_RSSI\_Y: RSSI\_Y
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| *Note: This parameter is for advanced users*
 
-Vertical position of Save button on screen
+Vertical position on screen
 
 
 +--------+
@@ -47295,20 +49701,13 @@ Vertical position of Save button on screen
 
 
 
+.. _OSD5_CURRENT_EN:
 
-.. _parameters_OSD5_PARAM1:
-
-OSD5\_PARAM1 Parameters
------------------------
-
-
-.. _OSD5_PARAM1_EN:
-
-OSD5\_PARAM1\_EN: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_CURRENT\_EN: CURRENT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Enable setting
+Displays main battery current
 
 
 +-------+----------+
@@ -47322,10 +49721,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM1_X:
+.. _OSD5_CURRENT_X:
 
-OSD5\_PARAM1\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_CURRENT\_X: CURRENT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -47340,10 +49739,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM1_Y:
+.. _OSD5_CURRENT_Y:
 
-OSD5\_PARAM1\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_CURRENT\_Y: CURRENT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47358,83 +49757,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM1_KEY:
+.. _OSD5_BATUSED_EN:
 
-OSD5\_PARAM1\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
+OSD5\_BATUSED\_EN: BATUSED\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. _OSD5_PARAM1_IDX:
-
-OSD5\_PARAM1\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM1_GRP:
-
-OSD5\_PARAM1\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM1_MIN:
-
-OSD5\_PARAM1\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM1_MAX:
-
-OSD5\_PARAM1\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM1_INCR:
-
-OSD5\_PARAM1\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM1_TYPE:
-
-OSD5\_PARAM1\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM2:
-
-OSD5\_PARAM2 Parameters
------------------------
-
-
-.. _OSD5_PARAM2_EN:
-
-OSD5\_PARAM2\_EN: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Enable setting
+Displays primary battery mAh consumed
 
 
 +-------+----------+
@@ -47448,10 +49777,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM2_X:
+.. _OSD5_BATUSED_X:
 
-OSD5\_PARAM2\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_BATUSED\_X: BATUSED\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -47466,10 +49795,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM2_Y:
+.. _OSD5_BATUSED_Y:
 
-OSD5\_PARAM2\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_BATUSED\_Y: BATUSED\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47484,83 +49813,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM2_KEY:
+.. _OSD5_SATS_EN:
 
-OSD5\_PARAM2\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM2_IDX:
-
-OSD5\_PARAM2\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM2_GRP:
-
-OSD5\_PARAM2\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM2_MIN:
-
-OSD5\_PARAM2\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM2_MAX:
-
-OSD5\_PARAM2\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM2_INCR:
-
-OSD5\_PARAM2\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM2_TYPE:
-
-OSD5\_PARAM2\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM3:
-
-OSD5\_PARAM3 Parameters
------------------------
-
-
-.. _OSD5_PARAM3_EN:
-
-OSD5\_PARAM3\_EN: Enable
+OSD5\_SATS\_EN: SATS\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Enable setting
+Displays number of acquired satellites
 
 
 +-------+----------+
@@ -47574,10 +49833,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM3_X:
+.. _OSD5_SATS_X:
 
-OSD5\_PARAM3\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_SATS\_X: SATS\_X
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -47592,10 +49851,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM3_Y:
+.. _OSD5_SATS_Y:
 
-OSD5\_PARAM3\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_SATS\_Y: SATS\_Y
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47610,83 +49869,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM3_KEY:
+.. _OSD5_FLTMODE_EN:
 
-OSD5\_PARAM3\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
+OSD5\_FLTMODE\_EN: FLTMODE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. _OSD5_PARAM3_IDX:
-
-OSD5\_PARAM3\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM3_GRP:
-
-OSD5\_PARAM3\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM3_MIN:
-
-OSD5\_PARAM3\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM3_MAX:
-
-OSD5\_PARAM3\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM3_INCR:
-
-OSD5\_PARAM3\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM3_TYPE:
-
-OSD5\_PARAM3\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM4:
-
-OSD5\_PARAM4 Parameters
------------------------
-
-
-.. _OSD5_PARAM4_EN:
-
-OSD5\_PARAM4\_EN: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Enable setting
+Displays flight mode
 
 
 +-------+----------+
@@ -47700,10 +49889,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM4_X:
+.. _OSD5_FLTMODE_X:
 
-OSD5\_PARAM4\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_FLTMODE\_X: FLTMODE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -47718,10 +49907,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM4_Y:
+.. _OSD5_FLTMODE_Y:
 
-OSD5\_PARAM4\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_FLTMODE\_Y: FLTMODE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47736,83 +49925,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM4_KEY:
+.. _OSD5_MESSAGE_EN:
 
-OSD5\_PARAM4\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
+OSD5\_MESSAGE\_EN: MESSAGE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. _OSD5_PARAM4_IDX:
-
-OSD5\_PARAM4\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM4_GRP:
-
-OSD5\_PARAM4\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM4_MIN:
-
-OSD5\_PARAM4\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM4_MAX:
-
-OSD5\_PARAM4\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM4_INCR:
-
-OSD5\_PARAM4\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM4_TYPE:
-
-OSD5\_PARAM4\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM5:
-
-OSD5\_PARAM5 Parameters
------------------------
-
-
-.. _OSD5_PARAM5_EN:
-
-OSD5\_PARAM5\_EN: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Enable setting
+Displays Mavlink messages
 
 
 +-------+----------+
@@ -47826,10 +49945,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM5_X:
+.. _OSD5_MESSAGE_X:
 
-OSD5\_PARAM5\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_MESSAGE\_X: MESSAGE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -47844,10 +49963,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM5_Y:
+.. _OSD5_MESSAGE_Y:
 
-OSD5\_PARAM5\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_MESSAGE\_Y: MESSAGE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47862,83 +49981,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM5_KEY:
+.. _OSD5_GSPEED_EN:
 
-OSD5\_PARAM5\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
+OSD5\_GSPEED\_EN: GSPEED\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. _OSD5_PARAM5_IDX:
-
-OSD5\_PARAM5\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM5_GRP:
-
-OSD5\_PARAM5\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM5_MIN:
-
-OSD5\_PARAM5\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM5_MAX:
-
-OSD5\_PARAM5\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM5_INCR:
-
-OSD5\_PARAM5\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM5_TYPE:
-
-OSD5\_PARAM5\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM6:
-
-OSD5\_PARAM6 Parameters
------------------------
-
-
-.. _OSD5_PARAM6_EN:
-
-OSD5\_PARAM6\_EN: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Enable setting
+Displays GPS ground speed
 
 
 +-------+----------+
@@ -47952,10 +50001,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM6_X:
+.. _OSD5_GSPEED_X:
 
-OSD5\_PARAM6\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_GSPEED\_X: GSPEED\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -47970,10 +50019,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM6_Y:
+.. _OSD5_GSPEED_Y:
 
-OSD5\_PARAM6\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_GSPEED\_Y: GSPEED\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47988,83 +50037,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM6_KEY:
+.. _OSD5_HORIZON_EN:
 
-OSD5\_PARAM6\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
+OSD5\_HORIZON\_EN: HORIZON\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. _OSD5_PARAM6_IDX:
-
-OSD5\_PARAM6\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM6_GRP:
-
-OSD5\_PARAM6\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM6_MIN:
-
-OSD5\_PARAM6\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM6_MAX:
-
-OSD5\_PARAM6\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM6_INCR:
-
-OSD5\_PARAM6\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM6_TYPE:
-
-OSD5\_PARAM6\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM7:
-
-OSD5\_PARAM7 Parameters
------------------------
-
-
-.. _OSD5_PARAM7_EN:
-
-OSD5\_PARAM7\_EN: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Enable setting
+Displays artificial horizon
 
 
 +-------+----------+
@@ -48078,10 +50057,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM7_X:
+.. _OSD5_HORIZON_X:
 
-OSD5\_PARAM7\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_HORIZON\_X: HORIZON\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -48096,10 +50075,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM7_Y:
+.. _OSD5_HORIZON_Y:
 
-OSD5\_PARAM7\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_HORIZON\_Y: HORIZON\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -48114,83 +50093,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM7_KEY:
+.. _OSD5_HOME_EN:
 
-OSD5\_PARAM7\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM7_IDX:
-
-OSD5\_PARAM7\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM7_GRP:
-
-OSD5\_PARAM7\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM7_MIN:
-
-OSD5\_PARAM7\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM7_MAX:
-
-OSD5\_PARAM7\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM7_INCR:
-
-OSD5\_PARAM7\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM7_TYPE:
-
-OSD5\_PARAM7\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM8:
-
-OSD5\_PARAM8 Parameters
------------------------
-
-
-.. _OSD5_PARAM8_EN:
-
-OSD5\_PARAM8\_EN: Enable
+OSD5\_HOME\_EN: HOME\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Enable setting
+Displays distance and relative direction to HOME
 
 
 +-------+----------+
@@ -48204,10 +50113,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM8_X:
+.. _OSD5_HOME_X:
 
-OSD5\_PARAM8\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_HOME\_X: HOME\_X
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -48222,10 +50131,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM8_Y:
+.. _OSD5_HOME_Y:
 
-OSD5\_PARAM8\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_HOME\_Y: HOME\_Y
+~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -48240,83 +50149,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM8_KEY:
+.. _OSD5_HEADING_EN:
 
-OSD5\_PARAM8\_KEY: Parameter key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Key of the parameter to be displayed and modified
+OSD5\_HEADING\_EN: HEADING\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. _OSD5_PARAM8_IDX:
-
-OSD5\_PARAM8\_IDX: Parameter index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Index of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM8_GRP:
-
-OSD5\_PARAM8\_GRP: Parameter group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Group of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM8_MIN:
-
-OSD5\_PARAM8\_MIN: Parameter minimum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum value of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM8_MAX:
-
-OSD5\_PARAM8\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM8_INCR:
-
-OSD5\_PARAM8\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Increment of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM8_TYPE:
-
-OSD5\_PARAM8\_TYPE: Parameter type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Type of the parameter to be displayed and modified
-
-
-
-.. _parameters_OSD5_PARAM9:
-
-OSD5\_PARAM9 Parameters
------------------------
-
-
-.. _OSD5_PARAM9_EN:
-
-OSD5\_PARAM9\_EN: Enable
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Enable setting
+Displays heading
 
 
 +-------+----------+
@@ -48330,10 +50169,10 @@ Enable setting
 
 
 
-.. _OSD5_PARAM9_X:
+.. _OSD5_HEADING_X:
 
-OSD5\_PARAM9\_X: X position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_HEADING\_X: HEADING\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -48348,10 +50187,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_PARAM9_Y:
+.. _OSD5_HEADING_Y:
 
-OSD5\_PARAM9\_Y: Y position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_HEADING\_Y: HEADING\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -48366,67 +50205,4092 @@ Vertical position on screen
 
 
 
-.. _OSD5_PARAM9_KEY:
+.. _OSD5_THROTTLE_EN:
 
-OSD5\_PARAM9\_KEY: Parameter key
+OSD5\_THROTTLE\_EN: THROTTLE\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Key of the parameter to be displayed and modified
+Displays actual throttle percentage being sent to motor\(s\)
 
 
-.. _OSD5_PARAM9_IDX:
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
 
-OSD5\_PARAM9\_IDX: Parameter index
+
+
+
+.. _OSD5_THROTTLE_X:
+
+OSD5\_THROTTLE\_X: THROTTLE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_THROTTLE_Y:
+
+OSD5\_THROTTLE\_Y: THROTTLE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_COMPASS_EN:
+
+OSD5\_COMPASS\_EN: COMPASS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enables display of compass rose
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_COMPASS_X:
+
+OSD5\_COMPASS\_X: COMPASS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_COMPASS_Y:
+
+OSD5\_COMPASS\_Y: COMPASS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_WIND_EN:
+
+OSD5\_WIND\_EN: WIND\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays wind speed and relative direction\, on Rover this is the apparent wind speed and direction from the windvane\, if fitted
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_WIND_X:
+
+OSD5\_WIND\_X: WIND\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_WIND_Y:
+
+OSD5\_WIND\_Y: WIND\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ASPEED_EN:
+
+OSD5\_ASPEED\_EN: ASPEED\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays airspeed value being used by TECS \(fused value\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ASPEED_X:
+
+OSD5\_ASPEED\_X: ASPEED\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ASPEED_Y:
+
+OSD5\_ASPEED\_Y: ASPEED\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_VSPEED_EN:
+
+OSD5\_VSPEED\_EN: VSPEED\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays climb rate
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_VSPEED_X:
+
+OSD5\_VSPEED\_X: VSPEED\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_VSPEED_Y:
+
+OSD5\_VSPEED\_Y: VSPEED\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ESCTEMP_EN:
+
+OSD5\_ESCTEMP\_EN: ESCTEMP\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the temperature of the ESC with highest temperature
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ESCTEMP_X:
+
+OSD5\_ESCTEMP\_X: ESCTEMP\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ESCTEMP_Y:
+
+OSD5\_ESCTEMP\_Y: ESCTEMP\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ESCARPM_EN:
+
+OSD5\_ESCARPM\_EN: ESCARPM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the average motor RPM as reported by the ESCs
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ESCARPM_X:
+
+OSD5\_ESCARPM\_X: ESCARPM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ESCARPM_Y:
+
+OSD5\_ESCARPM\_Y: ESCARPM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ESCHAMPS_EN:
+
+OSD5\_ESCHAMPS\_EN: ESCHAMPS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Display the current going through the ESC with highest measured current
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ESCHAMPS_X:
+
+OSD5\_ESCHAMPS\_X: ESCHAMPS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ESCHAMPS_Y:
+
+OSD5\_ESCHAMPS\_Y: ESCHAMPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ESCAAMPS_EN:
+
+OSD5\_ESCAAMPS\_EN: ESCAAMPS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Display the average current going through the ESCs
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ESCAAMPS_X:
+
+OSD5\_ESCAAMPS\_X: ESCAAMPS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ESCAAMPS_Y:
+
+OSD5\_ESCAAMPS\_Y: ESCAAMPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ESCTAMPS_EN:
+
+OSD5\_ESCTAMPS\_EN: ESCTAMPS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Display the total current going through the ESCs
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ESCTAMPS_X:
+
+OSD5\_ESCTAMPS\_X: ESCTAMPS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ESCTAMPS_Y:
+
+OSD5\_ESCTAMPS\_Y: ESCTAMPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ESCHRPM_EN:
+
+OSD5\_ESCHRPM\_EN: ESCHRPM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the highest motor RPM as reported by the ESCs
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ESCHRPM_X:
+
+OSD5\_ESCHRPM\_X: ESCHRPM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ESCHRPM_Y:
+
+OSD5\_ESCHRPM\_Y: ESCHRPM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_GPSLAT_EN:
+
+OSD5\_GPSLAT\_EN: GPSLAT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays GPS latitude
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_GPSLAT_X:
+
+OSD5\_GPSLAT\_X: GPSLAT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_GPSLAT_Y:
+
+OSD5\_GPSLAT\_Y: GPSLAT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_GPSLONG_EN:
+
+OSD5\_GPSLONG\_EN: GPSLONG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays GPS longitude
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_GPSLONG_X:
+
+OSD5\_GPSLONG\_X: GPSLONG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_GPSLONG_Y:
+
+OSD5\_GPSLONG\_Y: GPSLONG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ROLL_EN:
+
+OSD5\_ROLL\_EN: ROLL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays degrees of roll from level
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ROLL_X:
+
+OSD5\_ROLL\_X: ROLL\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ROLL_Y:
+
+OSD5\_ROLL\_Y: ROLL\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_PITCH_EN:
+
+OSD5\_PITCH\_EN: PITCH\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays degrees of pitch from level
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_PITCH_X:
+
+OSD5\_PITCH\_X: PITCH\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_PITCH_Y:
+
+OSD5\_PITCH\_Y: PITCH\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_TEMP_EN:
+
+OSD5\_TEMP\_EN: TEMP\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays temperature reported by primary barometer
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_TEMP_X:
+
+OSD5\_TEMP\_X: TEMP\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_TEMP_Y:
+
+OSD5\_TEMP\_Y: TEMP\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_HDOP_EN:
+
+OSD5\_HDOP\_EN: HDOP\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays Horizontal Dilution Of Position
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_HDOP_X:
+
+OSD5\_HDOP\_X: HDOP\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_HDOP_Y:
+
+OSD5\_HDOP\_Y: HDOP\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_WAYPOINT_EN:
+
+OSD5\_WAYPOINT\_EN: WAYPOINT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays bearing and distance to next waypoint
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_WAYPOINT_X:
+
+OSD5\_WAYPOINT\_X: WAYPOINT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_WAYPOINT_Y:
+
+OSD5\_WAYPOINT\_Y: WAYPOINT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_XTRACK_EN:
+
+OSD5\_XTRACK\_EN: XTRACK\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays crosstrack error
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_XTRACK_X:
+
+OSD5\_XTRACK\_X: XTRACK\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_XTRACK_Y:
+
+OSD5\_XTRACK\_Y: XTRACK\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_DIST_EN:
+
+OSD5\_DIST\_EN: DIST\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays total distance flown
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_DIST_X:
+
+OSD5\_DIST\_X: DIST\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_DIST_Y:
+
+OSD5\_DIST\_Y: DIST\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_STATS_EN:
+
+OSD5\_STATS\_EN: STATS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays flight stats
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_STATS_X:
+
+OSD5\_STATS\_X: STATS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_STATS_Y:
+
+OSD5\_STATS\_Y: STATS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_FLTIME_EN:
+
+OSD5\_FLTIME\_EN: FLTIME\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays total flight time
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_FLTIME_X:
+
+OSD5\_FLTIME\_X: FLTIME\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_FLTIME_Y:
+
+OSD5\_FLTIME\_Y: FLTIME\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CLIMBEFF_EN:
+
+OSD5\_CLIMBEFF\_EN: CLIMBEFF\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays climb efficiency \(climb rate\/current\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CLIMBEFF_X:
+
+OSD5\_CLIMBEFF\_X: CLIMBEFF\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CLIMBEFF_Y:
+
+OSD5\_CLIMBEFF\_Y: CLIMBEFF\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_EFFG_EN:
+
+OSD5\_EFFG\_EN: EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays ground flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_EFFG_X:
+
+OSD5\_EFFG\_X: EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_EFFG_Y:
+
+OSD5\_EFFG\_Y: EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BTEMP_EN:
+
+OSD5\_BTEMP\_EN: BTEMP\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays temperature reported by secondary barometer
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BTEMP_X:
+
+OSD5\_BTEMP\_X: BTEMP\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BTEMP_Y:
+
+OSD5\_BTEMP\_Y: BTEMP\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ATEMP_EN:
+
+OSD5\_ATEMP\_EN: ATEMP\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays temperature reported by primary airspeed sensor
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ATEMP_X:
+
+OSD5\_ATEMP\_X: ATEMP\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ATEMP_Y:
+
+OSD5\_ATEMP\_Y: ATEMP\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BAT2_VLT_EN:
+
+OSD5\_BAT2\_VLT\_EN: BAT2VLT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays battery2 voltage
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BAT2_VLT_X:
+
+OSD5\_BAT2\_VLT\_X: BAT2VLT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BAT2_VLT_Y:
+
+OSD5\_BAT2\_VLT\_Y: BAT2VLT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BAT2USED_EN:
+
+OSD5\_BAT2USED\_EN: BAT2USED\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BAT2USED_X:
+
+OSD5\_BAT2USED\_X: BAT2USED\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BAT2USED_Y:
+
+OSD5\_BAT2USED\_Y: BAT2USED\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ASPD2_EN:
+
+OSD5\_ASPD2\_EN: ASPD2\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays airspeed reported directly from secondary airspeed sensor
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ASPD2_X:
+
+OSD5\_ASPD2\_X: ASPD2\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ASPD2_Y:
+
+OSD5\_ASPD2\_Y: ASPD2\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ASPD1_EN:
+
+OSD5\_ASPD1\_EN: ASPD1\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays airspeed reported directly from primary airspeed sensor
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ASPD1_X:
+
+OSD5\_ASPD1\_X: ASPD1\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ASPD1_Y:
+
+OSD5\_ASPD1\_Y: ASPD1\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CLK_EN:
+
+OSD5\_CLK\_EN: CLK\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays a clock panel based on AP\_RTC local time
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CLK_X:
+
+OSD5\_CLK\_X: CLK\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CLK_Y:
+
+OSD5\_CLK\_Y: CLK\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_SIDEBARS_EN:
+
+OSD5\_SIDEBARS\_EN: SIDEBARS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays artificial horizon side bars
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_SIDEBARS_X:
+
+OSD5\_SIDEBARS\_X: SIDEBARS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_SIDEBARS_Y:
+
+OSD5\_SIDEBARS\_Y: SIDEBARS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CRSSHAIR_EN:
+
+OSD5\_CRSSHAIR\_EN: CRSSHAIR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays artificial horizon crosshair \(MSP OSD only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CRSSHAIR_X:
+
+OSD5\_CRSSHAIR\_X: CRSSHAIR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen \(MSP OSD only\)
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CRSSHAIR_Y:
+
+OSD5\_CRSSHAIR\_Y: CRSSHAIR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen \(MSP OSD only\)
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_HOMEDIST_EN:
+
+OSD5\_HOMEDIST\_EN: HOMEDIST\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays distance from HOME \(MSP OSD only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_HOMEDIST_X:
+
+OSD5\_HOMEDIST\_X: HOMEDIST\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen \(MSP OSD only\)
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_HOMEDIST_Y:
+
+OSD5\_HOMEDIST\_Y: HOMEDIST\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen \(MSP OSD only\)
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_HOMEDIR_EN:
+
+OSD5\_HOMEDIR\_EN: HOMEDIR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays relative direction to HOME \(MSP OSD only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_HOMEDIR_X:
+
+OSD5\_HOMEDIR\_X: HOMEDIR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_HOMEDIR_Y:
+
+OSD5\_HOMEDIR\_Y: HOMEDIR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CELLVOLT_EN:
+
+OSD5\_CELLVOLT\_EN: CELL\_VOLT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Index of the parameter to be displayed and modified
+Displays average cell voltage \(MSP OSD only\)
 
 
-.. _OSD5_PARAM9_GRP:
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
 
-OSD5\_PARAM9\_GRP: Parameter group
+
+
+
+.. _OSD5_CELLVOLT_X:
+
+OSD5\_CELLVOLT\_X: CELL\_VOLT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CELLVOLT_Y:
+
+OSD5\_CELLVOLT\_Y: CELL\_VOLT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BATTBAR_EN:
+
+OSD5\_BATTBAR\_EN: BATT\_BAR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays battery usage bar \(MSP OSD only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BATTBAR_X:
+
+OSD5\_BATTBAR\_X: BATT\_BAR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BATTBAR_Y:
+
+OSD5\_BATTBAR\_Y: BATT\_BAR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ARMING_EN:
+
+OSD5\_ARMING\_EN: ARMING\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays arming status \(MSP OSD only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ARMING_X:
+
+OSD5\_ARMING\_X: ARMING\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ARMING_Y:
+
+OSD5\_ARMING\_Y: ARMING\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_POWER_EN:
+
+OSD5\_POWER\_EN: POWER\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays total power draw from all batteries
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_POWER_X:
+
+OSD5\_POWER\_X: POWER\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_POWER_Y:
+
+OSD5\_POWER\_Y: POWER\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_PLUSCODE_EN:
+
+OSD5\_PLUSCODE\_EN: PLUSCODE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays pluscode \(OLC\) element
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_PLUSCODE_X:
+
+OSD5\_PLUSCODE\_X: PLUSCODE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_PLUSCODE_Y:
+
+OSD5\_PLUSCODE\_Y: PLUSCODE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CALLSIGN_EN:
+
+OSD5\_CALLSIGN\_EN: CALLSIGN\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays callsign from callsign\.txt on microSD card
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CALLSIGN_X:
+
+OSD5\_CALLSIGN\_X: CALLSIGN\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CALLSIGN_Y:
+
+OSD5\_CALLSIGN\_Y: CALLSIGN\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CURRENT2_EN:
+
+OSD5\_CURRENT2\_EN: CURRENT2\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays 2nd battery current
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CURRENT2_X:
+
+OSD5\_CURRENT2\_X: CURRENT2\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CURRENT2_Y:
+
+OSD5\_CURRENT2\_Y: CURRENT2\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_VTX_PWR_EN:
+
+OSD5\_VTX\_PWR\_EN: VTX\_PWR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays VTX Power
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_VTX_PWR_X:
+
+OSD5\_VTX\_PWR\_X: VTX\_PWR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_VTX_PWR_Y:
+
+OSD5\_VTX\_PWR\_Y: VTX\_PWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_TER_HGT_EN:
+
+OSD5\_TER\_HGT\_EN: TER\_HGT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays Height above terrain
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_TER_HGT_X:
+
+OSD5\_TER\_HGT\_X: TER\_HGT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_TER_HGT_Y:
+
+OSD5\_TER\_HGT\_Y: TER\_HGT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_AVGCELLV_EN:
+
+OSD5\_AVGCELLV\_EN: AVGCELLV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average cell voltage\. WARNING\: this can be inaccurate if the cell count is not detected properly\. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate\. Use BATT\_CELL\_COUNT to force the number of cells\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_AVGCELLV_X:
+
+OSD5\_AVGCELLV\_X: AVGCELLV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_AVGCELLV_Y:
+
+OSD5\_AVGCELLV\_Y: AVGCELLV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_RESTVOLT_EN:
+
+OSD5\_RESTVOLT\_EN: RESTVOLT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays main battery resting voltage
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_RESTVOLT_X:
+
+OSD5\_RESTVOLT\_X: RESTVOLT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_RESTVOLT_Y:
+
+OSD5\_RESTVOLT\_Y: RESTVOLT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_FENCE_EN:
+
+OSD5\_FENCE\_EN: FENCE\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays indication of fence enable and breach
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_FENCE_X:
+
+OSD5\_FENCE\_X: FENCE\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_FENCE_Y:
+
+OSD5\_FENCE\_Y: FENCE\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_RNGF_EN:
+
+OSD5\_RNGF\_EN: RNGF\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays a rangefinder\'s distance in cm
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_RNGF_X:
+
+OSD5\_RNGF\_X: RNGF\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_RNGF_Y:
+
+OSD5\_RNGF\_Y: RNGF\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_LINK_Q_EN:
+
+OSD5\_LINK\_Q\_EN: LINK\_Q\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays Receiver link quality and also RF mode if bit 20 of OSD\_OPTIONS is set
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_LINK_Q_X:
+
+OSD5\_LINK\_Q\_X: LINK\_Q\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_LINK_Q_Y:
+
+OSD5\_LINK\_Q\_Y: LINK\_Q\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_NRG_CONS_EN:
+
+OSD5\_NRG\_CONS\_EN: NRG\_CONS\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Group of the parameter to be displayed and modified
+Displays total energy consumed from primary battery
 
 
-.. _OSD5_PARAM9_MIN:
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
 
-OSD5\_PARAM9\_MIN: Parameter minimum
+
+
+
+.. _OSD5_NRG_CONS_X:
+
+OSD5\_NRG\_CONS\_X: NRG\_CONS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_NRG_CONS_Y:
+
+OSD5\_NRG\_CONS\_Y: NRG\_CONS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_RC_THR_EN:
+
+OSD5\_RC\_THR\_EN: RC\_THR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays input throttle value \(plane only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_RC_THR_X:
+
+OSD5\_RC\_THR\_X: RC\_THR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_RC_THR_Y:
+
+OSD5\_RC\_THR\_Y: RC\_THR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ASPD_DEM_EN:
+
+OSD5\_ASPD\_DEM\_EN: ASPD\_DEM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the demanded airspeed in auto throttle modes \(plane only\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ASPD_DEM_X:
+
+OSD5\_ASPD\_DEM\_X: ASPD\_DEM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ASPD_DEM_Y:
+
+OSD5\_ASPD\_DEM\_Y: ASPD\_DEM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ACC_LONG_EN:
+
+OSD5\_ACC\_LONG\_EN: ACC\_LONG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s longitudinal acceleration in g
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ACC_LONG_X:
+
+OSD5\_ACC\_LONG\_X: ACC\_LONG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ACC_LONG_Y:
+
+OSD5\_ACC\_LONG\_Y: ACC\_LONG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ACC_LAT_EN:
+
+OSD5\_ACC\_LAT\_EN: ACC\_LAT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s lateral acceleration in g
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ACC_LAT_X:
+
+OSD5\_ACC\_LAT\_X: ACC\_LAT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ACC_LAT_Y:
+
+OSD5\_ACC\_LAT\_Y: ACC\_LAT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_ACC_VERT_EN:
+
+OSD5\_ACC\_VERT\_EN: ACC\_VERT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the aircraft\'s vertical acceleration in g
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_ACC_VERT_X:
+
+OSD5\_ACC\_VERT\_X: ACC\_VERT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_ACC_VERT_Y:
+
+OSD5\_ACC\_VERT\_Y: ACC\_VERT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_AUTO_FLP_EN:
+
+OSD5\_AUTO\_FLP\_EN: AUTO\_FLAPS\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Minimum value of the parameter to be displayed and modified
+Displays the requested auto flaps position
 
 
-.. _OSD5_PARAM9_MAX:
-
-OSD5\_PARAM9\_MAX: Parameter maximum
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum of the parameter to be displayed and modified
-
-
-.. _OSD5_PARAM9_INCR:
-
-OSD5\_PARAM9\_INCR: Parameter increment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
 
 
-Increment of the parameter to be displayed and modified
 
 
-.. _OSD5_PARAM9_TYPE:
+.. _OSD5_AUTO_FLP_X:
 
-OSD5\_PARAM9\_TYPE: Parameter type
+OSD5\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Type of the parameter to be displayed and modified
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_AUTO_FLP_Y:
+
+OSD5\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_AOA_EN:
+
+OSD5\_AOA\_EN: AOA\_EN
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the estimated angle of attack
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_AOA_X:
+
+OSD5\_AOA\_X: AOA\_X
+~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_AOA_Y:
+
+OSD5\_AOA\_Y: AOA\_Y
+~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CRSFPWR_EN:
+
+OSD5\_CRSFPWR\_EN: CRSFPWR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the TX power when using the CRSF RC protocol
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CRSFPWR_X:
+
+OSD5\_CRSFPWR\_X: CRSFPWR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CRSFPWR_Y:
+
+OSD5\_CRSFPWR\_Y: CRSFPWR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CRSFRSSI_EN:
+
+OSD5\_CRSFRSSI\_EN: CRSFRSSI\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal strength in dBm for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CRSFRSSI_X:
+
+OSD5\_CRSFRSSI\_X: CRSFRSSI\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CRSFRSSI_Y:
+
+OSD5\_CRSFRSSI\_Y: CRSFRSSI\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CRSFSNR_EN:
+
+OSD5\_CRSFSNR\_EN: CRSFSNR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays RC signal to noise ratio in dB for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CRSFSNR_X:
+
+OSD5\_CRSFSNR\_X: CRSFSNR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CRSFSNR_Y:
+
+OSD5\_CRSFSNR\_Y: CRSFSNR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CRSFANT_EN:
+
+OSD5\_CRSFANT\_EN: CRSFANT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the current active antenna for CRSF
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_CRSFANT_X:
+
+OSD5\_CRSFANT\_X: CRSFANT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CRSFANT_Y:
+
+OSD5\_CRSFANT\_Y: CRSFANT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BAT_PCT_EN:
+
+OSD5\_BAT\_PCT\_EN: BAT\_PCT\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the remaining battery capacity as a percentage
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BAT_PCT_X:
+
+OSD5\_BAT\_PCT\_X: BAT\_PCT\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BAT_PCT_Y:
+
+OSD5\_BAT\_PCT\_Y: BAT\_PCT\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_R_AVG_CV_EN:
+
+OSD5\_R\_AVG\_CV\_EN: AVGCELLV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average resting cell voltage\. WARNING\: this can be inaccurate if the cell count is not detected properly\. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate\. Use BATT\_CELL\_COUNT to force the number of cells\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_R_AVG_CV_X:
+
+OSD5\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_R_AVG_CV_Y:
+
+OSD5\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_NRG_REM_EN:
+
+OSD5\_NRG\_REM\_EN: NRG\_REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays energy remaining in primary battery
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_NRG_REM_X:
+
+OSD5\_NRG\_REM\_X: NRG\_REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_NRG_REM_Y:
+
+OSD5\_NRG\_REM\_Y: NRG\_REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_AVG_EFFG_EN:
+
+OSD5\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_AVG_EFFG_X:
+
+OSD5\_AVG\_EFFG\_X: AVG\_EFFG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_AVG_EFFG_Y:
+
+OSD5\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_AVG_EFFA_EN:
+
+OSD5\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_AVG_EFFA_X:
+
+OSD5\_AVG\_EFFA\_X: AVG\_EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_AVG_EFFA_Y:
+
+OSD5\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_EFFA_EN:
+
+OSD5\_EFFA\_EN: EFFA\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays air flight efficiency \(mAh or Wh \/ km or mi\)
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_EFFA_X:
+
+OSD5\_EFFA\_X: EFFA\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_EFFA_Y:
+
+OSD5\_EFFA\_Y: EFFA\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BATREM_EN:
+
+OSD5\_BATREM\_EN: BATREM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays primary battery mAh remaining
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BATREM_X:
+
+OSD5\_BATREM\_X: BATREM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BATREM_Y:
+
+OSD5\_BATREM\_Y: BATREM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_BAT2REM_EN:
+
+OSD5\_BAT2REM\_EN: BAT2REM\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_BAT2REM_X:
+
+OSD5\_BAT2REM\_X: BAT2REM\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_BAT2REM_Y:
+
+OSD5\_BAT2REM\_Y: BAT2REM\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_TUNED_PN_EN:
+
+OSD5\_TUNED\_PN\_EN: TUNED\_PN\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_TUNED_PN_X:
+
+OSD5\_TUNED\_PN\_X: TUNED\_PN\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_TUNED_PN_Y:
+
+OSD5\_TUNED\_PN\_Y: TUNED\_PN\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_TUNED_PV_EN:
+
+OSD5\_TUNED\_PV\_EN: TUNED\_PV\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays secondary battery mAh consumed
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_TUNED_PV_X:
+
+OSD5\_TUNED\_PV\_X: TUNED\_PV\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_TUNED_PV_Y:
+
+OSD5\_TUNED\_PV\_Y: TUNED\_PV\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_PEAK_RR_EN:
+
+OSD5\_PEAK\_RR\_EN: PEAK\_RR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak roll rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_PEAK_RR_X:
+
+OSD5\_PEAK\_RR\_X: PEAK\_RR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_PEAK_RR_Y:
+
+OSD5\_PEAK\_RR\_Y: PEAK\_RR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_PEAK_PR_EN:
+
+OSD5\_PEAK\_PR\_EN: PEAK\_PR\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the peak pitch rate in the last OSD\_PEAKR\_TMOUT seconds
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_PEAK_PR_X:
+
+OSD5\_PEAK\_PR\_X: PEAK\_PR\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_PEAK_PR_Y:
+
+OSD5\_PEAK\_PR\_Y: PEAK\_PR\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
 
 
 
@@ -49665,35 +55529,1251 @@ Type of the parameter to be displayed and modified
 
 
 
+.. _parameters_OSD7_:
+
+OSD7\_ Parameters
+-----------------
+
+
+.. _OSD7_ENABLE:
+
+OSD7\_ENABLE: Enable screen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable this screen
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_CHAN_MIN:
+
+OSD7\_CHAN\_MIN: Transmitter switch screen minimum pwm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+This sets the PWM lower limit for this screen
+
+
++------------+
+| Range      |
++============+
+| 900 - 2100 |
++------------+
+
+
+
+
+.. _OSD7_CHAN_MAX:
+
+OSD7\_CHAN\_MAX: Transmitter switch screen maximum pwm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+This sets the PWM upper limit for this screen
+
+
++------------+
+| Range      |
++============+
+| 900 - 2100 |
++------------+
+
+
+
+
+.. _OSD7_SAVE_X:
+
+OSD7\_SAVE\_X: SAVE\_X
+~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Horizontal position of Save button on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 25 |
++--------+
+
+
+
+
+.. _OSD7_SAVE_Y:
+
+OSD7\_SAVE\_Y: SAVE\_Y
+~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Vertical position of Save button on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+
+.. _parameters_OSD7_PARAM1:
+
+OSD7\_PARAM1 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM1_EN:
+
+OSD7\_PARAM1\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM1_X:
+
+OSD7\_PARAM1\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM1_Y:
+
+OSD7\_PARAM1\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM1_KEY:
+
+OSD7\_PARAM1\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM1_IDX:
+
+OSD7\_PARAM1\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM1_GRP:
+
+OSD7\_PARAM1\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM1_MIN:
+
+OSD7\_PARAM1\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM1_MAX:
+
+OSD7\_PARAM1\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM1_INCR:
+
+OSD7\_PARAM1\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM1_TYPE:
+
+OSD7\_PARAM1\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM2:
+
+OSD7\_PARAM2 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM2_EN:
+
+OSD7\_PARAM2\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM2_X:
+
+OSD7\_PARAM2\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM2_Y:
+
+OSD7\_PARAM2\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM2_KEY:
+
+OSD7\_PARAM2\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM2_IDX:
+
+OSD7\_PARAM2\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM2_GRP:
+
+OSD7\_PARAM2\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM2_MIN:
+
+OSD7\_PARAM2\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM2_MAX:
+
+OSD7\_PARAM2\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM2_INCR:
+
+OSD7\_PARAM2\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM2_TYPE:
+
+OSD7\_PARAM2\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM3:
+
+OSD7\_PARAM3 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM3_EN:
+
+OSD7\_PARAM3\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM3_X:
+
+OSD7\_PARAM3\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM3_Y:
+
+OSD7\_PARAM3\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM3_KEY:
+
+OSD7\_PARAM3\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM3_IDX:
+
+OSD7\_PARAM3\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM3_GRP:
+
+OSD7\_PARAM3\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM3_MIN:
+
+OSD7\_PARAM3\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM3_MAX:
+
+OSD7\_PARAM3\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM3_INCR:
+
+OSD7\_PARAM3\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM3_TYPE:
+
+OSD7\_PARAM3\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM4:
+
+OSD7\_PARAM4 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM4_EN:
+
+OSD7\_PARAM4\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM4_X:
+
+OSD7\_PARAM4\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM4_Y:
+
+OSD7\_PARAM4\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM4_KEY:
+
+OSD7\_PARAM4\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM4_IDX:
+
+OSD7\_PARAM4\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM4_GRP:
+
+OSD7\_PARAM4\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM4_MIN:
+
+OSD7\_PARAM4\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM4_MAX:
+
+OSD7\_PARAM4\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM4_INCR:
+
+OSD7\_PARAM4\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM4_TYPE:
+
+OSD7\_PARAM4\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM5:
+
+OSD7\_PARAM5 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM5_EN:
+
+OSD7\_PARAM5\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM5_X:
+
+OSD7\_PARAM5\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM5_Y:
+
+OSD7\_PARAM5\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM5_KEY:
+
+OSD7\_PARAM5\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM5_IDX:
+
+OSD7\_PARAM5\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM5_GRP:
+
+OSD7\_PARAM5\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM5_MIN:
+
+OSD7\_PARAM5\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM5_MAX:
+
+OSD7\_PARAM5\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM5_INCR:
+
+OSD7\_PARAM5\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM5_TYPE:
+
+OSD7\_PARAM5\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM6:
+
+OSD7\_PARAM6 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM6_EN:
+
+OSD7\_PARAM6\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM6_X:
+
+OSD7\_PARAM6\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM6_Y:
+
+OSD7\_PARAM6\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM6_KEY:
+
+OSD7\_PARAM6\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM6_IDX:
+
+OSD7\_PARAM6\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM6_GRP:
+
+OSD7\_PARAM6\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM6_MIN:
+
+OSD7\_PARAM6\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM6_MAX:
+
+OSD7\_PARAM6\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM6_INCR:
+
+OSD7\_PARAM6\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM6_TYPE:
+
+OSD7\_PARAM6\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM7:
+
+OSD7\_PARAM7 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM7_EN:
+
+OSD7\_PARAM7\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM7_X:
+
+OSD7\_PARAM7\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM7_Y:
+
+OSD7\_PARAM7\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM7_KEY:
+
+OSD7\_PARAM7\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM7_IDX:
+
+OSD7\_PARAM7\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM7_GRP:
+
+OSD7\_PARAM7\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM7_MIN:
+
+OSD7\_PARAM7\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM7_MAX:
+
+OSD7\_PARAM7\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM7_INCR:
+
+OSD7\_PARAM7\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM7_TYPE:
+
+OSD7\_PARAM7\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM8:
+
+OSD7\_PARAM8 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM8_EN:
+
+OSD7\_PARAM8\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM8_X:
+
+OSD7\_PARAM8\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM8_Y:
+
+OSD7\_PARAM8\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM8_KEY:
+
+OSD7\_PARAM8\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM8_IDX:
+
+OSD7\_PARAM8\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM8_GRP:
+
+OSD7\_PARAM8\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM8_MIN:
+
+OSD7\_PARAM8\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM8_MAX:
+
+OSD7\_PARAM8\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM8_INCR:
+
+OSD7\_PARAM8\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM8_TYPE:
+
+OSD7\_PARAM8\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
+.. _parameters_OSD7_PARAM9:
+
+OSD7\_PARAM9 Parameters
+-----------------------
+
+
+.. _OSD7_PARAM9_EN:
+
+OSD7\_PARAM9\_EN: Enable
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable setting
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD7_PARAM9_X:
+
+OSD7\_PARAM9\_X: X position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD7_PARAM9_Y:
+
+OSD7\_PARAM9\_Y: Y position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD7_PARAM9_KEY:
+
+OSD7\_PARAM9\_KEY: Parameter key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Key of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM9_IDX:
+
+OSD7\_PARAM9\_IDX: Parameter index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Index of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM9_GRP:
+
+OSD7\_PARAM9\_GRP: Parameter group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Group of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM9_MIN:
+
+OSD7\_PARAM9\_MIN: Parameter minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Minimum value of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM9_MAX:
+
+OSD7\_PARAM9\_MAX: Parameter maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM9_INCR:
+
+OSD7\_PARAM9\_INCR: Parameter increment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Increment of the parameter to be displayed and modified
+
+
+.. _OSD7_PARAM9_TYPE:
+
+OSD7\_PARAM9\_TYPE: Parameter type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Type of the parameter to be displayed and modified
+
+
+
 .. _parameters_PTCH:
 
 PTCH Parameters
 ---------------
 
 
-.. _PTCH2SRV_TCONST:
+.. _PTCH_AGL_RMAX_UP:
 
-PTCH2SRV\_TCONST: Pitch Time Constant
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Time constant in seconds from demanded to achieved pitch angle in all angle control modes \(all but MANUAL and ACRO\)\. Most models respond well to 0\.5\. May be reduced for faster responses\, but setting lower than a model can achieve will not help\.
-
-
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| 0.1       | 0.4 - 1.0 | seconds |
-+-----------+-----------+---------+
-
-
-
-
-.. _PTCH2SRV_RMAX_UP:
-
-PTCH2SRV\_RMAX\_UP: Pitch up max rate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PTCH\_AGL\_RMAX\_UP: Pitch up max rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -49709,10 +56789,10 @@ This sets the maximum nose up pitch rate that the attitude controller will deman
 
 
 
-.. _PTCH2SRV_RMAX_DN:
+.. _PTCH_AGL_RMAX_DN:
 
-PTCH2SRV\_RMAX\_DN: Pitch down max rate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PTCH\_AGL\_RMAX\_DN: Pitch down max rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -49728,10 +56808,10 @@ This sets the maximum nose down pitch rate that the attitude controller will dem
 
 
 
-.. _PTCH2SRV_RLL:
+.. _PTCH_AGL_RLLCOMP:
 
-PTCH2SRV\_RLL: Roll compensation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PTCH\_AGL\_RLLCOMP: Roll compensation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Gain added to pitch to keep aircraft from descending or ascending in turns\. Increase in increments of 0\.05 to reduce altitude loss\. Decrease for altitude gain\.
@@ -49894,6 +56974,169 @@ Pitch axis rate controller derivative frequency in Hz
 
 PTCH\_RATE\_SMAX: Pitch slew rate limit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
+
+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 0.5       | 0 - 200 |
++-----------+---------+
+
+
+
+
+.. _PTCH_AGL_P:
+
+PTCH\_AGL\_P: Pitch axis angle controller P gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller P gain\.  Converts the difference between desired roll rate and actual roll rate into a motor speed output
+
+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.005     | 0.08 - 0.35 |
++-----------+-------------+
+
+
+
+
+.. _PTCH_AGL_I:
+
+PTCH\_AGL\_I: Pitch axis angle controller I gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller I gain\.  Corrects long\-term difference in desired roll rate vs actual roll rate
+
+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.01      | 0.01 - 0.6 |
++-----------+------------+
+
+
+
+
+.. _PTCH_AGL_IMAX:
+
+PTCH\_AGL\_IMAX: Pitch axis angle controller I gain maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
+
+
++-----------+-------+
+| Increment | Range |
++===========+=======+
+| 0.01      | 0 - 1 |
++-----------+-------+
+
+
+
+
+.. _PTCH_AGL_D:
+
+PTCH\_AGL\_D: Pitch axis angle controller D gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller D gain\.  Compensates for short\-term change in desired roll rate vs actual roll rate
+
+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.001     | 0.001 - 0.03 |
++-----------+--------------+
+
+
+
+
+.. _PTCH_AGL_FF:
+
+PTCH\_AGL\_FF: Pitch axis angle controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller feed forward
+
+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 0.001     | 0 - 3.0 |
++-----------+---------+
+
+
+
+
+.. _PTCH_AGL_FLTT:
+
+PTCH\_AGL\_FLTT: Pitch axis angle controller target frequency in Hz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller target frequency in Hz
+
+
++-----------+--------+-------+
+| Increment | Range  | Units |
++===========+========+=======+
+| 1         | 2 - 50 | hertz |
++-----------+--------+-------+
+
+
+
+
+.. _PTCH_AGL_FLTE:
+
+PTCH\_AGL\_FLTE: Pitch axis angle controller error frequency in Hz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller error frequency in Hz
+
+
++-----------+--------+-------+
+| Increment | Range  | Units |
++===========+========+=======+
+| 1         | 2 - 50 | hertz |
++-----------+--------+-------+
+
+
+
+
+.. _PTCH_AGL_FLTD:
+
+PTCH\_AGL\_FLTD: Pitch axis angle controller derivative frequency in Hz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pitch axis angle controller derivative frequency in Hz
+
+
++-----------+--------+-------+
+| Increment | Range  | Units |
++===========+========+=======+
+| 1         | 0 - 50 | hertz |
++-----------+--------+-------+
+
+
+
+
+.. _PTCH_AGL_SMAX:
+
+PTCH\_AGL\_SMAX: Requested pitch rate slew rate limit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -58692,29 +65935,10 @@ RLL Parameters
 --------------
 
 
-.. _RLL2SRV_TCONST:
+.. _RLL_AGL_RMAX:
 
-RLL2SRV\_TCONST: Roll Time Constant
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Time constant in seconds from demanded to achieved roll angle in angle control modes \(all but MANUAL and ACRO\)\. Most models respond well to 0\.5\. May be reduced for faster responses\, but setting lower than a model can achieve will not help\.
-
-
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| 0.1       | 0.4 - 1.0 | seconds |
-+-----------+-----------+---------+
-
-
-
-
-.. _RLL2SRV_RMAX:
-
-RLL2SRV\_RMAX: Maximum Roll Rate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RLL\_AGL\_RMAX: Maximum Roll Rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -58878,6 +66102,169 @@ Roll axis rate controller derivative frequency in Hz
 
 RLL\_RATE\_SMAX: Roll slew rate limit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
+
+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 0.5       | 0 - 200 |
++-----------+---------+
+
+
+
+
+.. _RLL_AGL_P:
+
+RLL\_AGL\_P: Roll axis angle controller P gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller P gain\.  Converts the difference between desired roll rate and actual roll rate into a motor speed output
+
+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.005     | 0.08 - 0.35 |
++-----------+-------------+
+
+
+
+
+.. _RLL_AGL_I:
+
+RLL\_AGL\_I: Roll axis angle controller I gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller I gain\.  Corrects long\-term difference in desired roll rate vs actual roll rate
+
+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.01      | 0.01 - 0.6 |
++-----------+------------+
+
+
+
+
+.. _RLL_AGL_IMAX:
+
+RLL\_AGL\_IMAX: Roll axis angle controller I gain maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
+
+
++-----------+-------+
+| Increment | Range |
++===========+=======+
+| 0.01      | 0 - 1 |
++-----------+-------+
+
+
+
+
+.. _RLL_AGL_D:
+
+RLL\_AGL\_D: Roll axis angle controller D gain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller D gain\.  Compensates for short\-term change in desired roll rate vs actual roll rate
+
+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.001     | 0.001 - 0.03 |
++-----------+--------------+
+
+
+
+
+.. _RLL_AGL_FF:
+
+RLL\_AGL\_FF: Roll axis angle controller feed forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller feed forward
+
+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 0.001     | 0 - 3.0 |
++-----------+---------+
+
+
+
+
+.. _RLL_AGL_FLTT:
+
+RLL\_AGL\_FLTT: Roll axis angle controller target frequency in Hz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller target frequency in Hz
+
+
++-----------+--------+-------+
+| Increment | Range  | Units |
++===========+========+=======+
+| 1         | 2 - 50 | hertz |
++-----------+--------+-------+
+
+
+
+
+.. _RLL_AGL_FLTE:
+
+RLL\_AGL\_FLTE: Roll axis angle controller error frequency in Hz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller error frequency in Hz
+
+
++-----------+--------+-------+
+| Increment | Range  | Units |
++===========+========+=======+
+| 1         | 2 - 50 | hertz |
++-----------+--------+-------+
+
+
+
+
+.. _RLL_AGL_FLTD:
+
+RLL\_AGL\_FLTD: Roll axis angle controller derivative frequency in Hz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Roll axis angle controller derivative frequency in Hz
+
+
++-----------+--------+-------+
+| Increment | Range  | Units |
++===========+========+=======+
+| 1         | 0 - 50 | hertz |
++-----------+--------+-------+
+
+
+
+
+.. _RLL_AGL_SMAX:
+
+RLL\_AGL\_SMAX: Requested roll rate slew rate limit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -76028,6 +83415,63 @@ This parameter sets the gain between demanded airspeed and pitch\. It has units 
 
 
 
+.. _TECS_THR_EXPO:
+
+TECS\_THR\_EXPO: Auto throttle square response curve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Amount of square response curve to apply to throttle in auto throttle modes
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 - 100 | percent |
++-----------+---------+---------+
+
+
+
+
+.. _TECS_THR_FF_FILT:
+
+TECS\_THR\_FF\_FILT: Throttle FF component filter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Throttle FF component filter value which determines what proportion of the current state vs newly calculated throttle FF value are used\. 1\.0 means used 100\% of the newly calculated value \(no filtering\)
+
+
++-----------+-----------+
+| Increment | Range     |
++===========+===========+
+| 0.1       | 0.2 - 1.0 |
++-----------+-----------+
+
+
+
+
+.. _TECS_THR_FF_DAMP:
+
+TECS\_THR\_FF\_DAMP: Throttle FF component dampening factor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Throttle FF component dampening factor\. 0 means not use FF for throttle calculations\. 1 means use 100\% of the calculated throttle FF value\.
+
+
++-----------+-----------+
+| Increment | Range     |
++===========+===========+
+| 0.1       | 0.0 - 1.0 |
++-----------+-----------+
+
+
+
+
 .. _TECS_SPDRATE_ACC:
 
 TECS\_SPDRATE\_ACC: Speed demand rate acceleration \(m\/s\^3\)
@@ -76265,93 +83709,137 @@ TUNE\_PARAM: Transmitter tuning parameter or set of parameters
 This sets which parameter or set of parameters will be tuned\. Values greater than 100 indicate a set of parameters rather than a single parameter\. Parameters less than 50 are for QuadPlane vertical lift motors only\.
 
 
-+-------+--------------------+
-| Value | Meaning            |
-+=======+====================+
-| 0     | None               |
-+-------+--------------------+
-| 1     | RateRollPI         |
-+-------+--------------------+
-| 2     | RateRollP          |
-+-------+--------------------+
-| 3     | RateRollI          |
-+-------+--------------------+
-| 4     | RateRollD          |
-+-------+--------------------+
-| 5     | RatePitchPI        |
-+-------+--------------------+
-| 6     | RatePitchP         |
-+-------+--------------------+
-| 7     | RatePitchI         |
-+-------+--------------------+
-| 8     | RatePitchD         |
-+-------+--------------------+
-| 9     | RateYawPI          |
-+-------+--------------------+
-| 10    | RateYawP           |
-+-------+--------------------+
-| 11    | RateYawI           |
-+-------+--------------------+
-| 12    | RateYawD           |
-+-------+--------------------+
-| 13    | AngleRollP         |
-+-------+--------------------+
-| 14    | AnglePitchP        |
-+-------+--------------------+
-| 15    | AngleYawP          |
-+-------+--------------------+
-| 16    | PosXYP             |
-+-------+--------------------+
-| 17    | PosZP              |
-+-------+--------------------+
-| 18    | VelXYP             |
-+-------+--------------------+
-| 19    | VelXYI             |
-+-------+--------------------+
-| 20    | VelZP              |
-+-------+--------------------+
-| 21    | AccelZP            |
-+-------+--------------------+
-| 22    | AccelZI            |
-+-------+--------------------+
-| 23    | AccelZD            |
-+-------+--------------------+
-| 24    | RatePitchFF        |
-+-------+--------------------+
-| 25    | RateRollFF         |
-+-------+--------------------+
-| 26    | RateYawFF          |
-+-------+--------------------+
-| 50    | FixedWingRollP     |
-+-------+--------------------+
-| 51    | FixedWingRollI     |
-+-------+--------------------+
-| 52    | FixedWingRollD     |
-+-------+--------------------+
-| 53    | FixedWingRollFF    |
-+-------+--------------------+
-| 54    | FixedWingPitchP    |
-+-------+--------------------+
-| 55    | FixedWingPitchI    |
-+-------+--------------------+
-| 56    | FixedWingPitchD    |
-+-------+--------------------+
-| 57    | FixedWingPitchFF   |
-+-------+--------------------+
-| 101   | Set_RateRollPitch  |
-+-------+--------------------+
-| 102   | Set_RateRoll       |
-+-------+--------------------+
-| 103   | Set_RatePitch      |
-+-------+--------------------+
-| 104   | Set_RateYaw        |
-+-------+--------------------+
-| 105   | Set_AngleRollPitch |
-+-------+--------------------+
-| 106   | Set_VelXY          |
-+-------+--------------------+
-| 107   | Set_AccelZ         |
-+-------+--------------------+
++-------+-----------------------+
+| Value | Meaning               |
++=======+=======================+
+| 0     | None                  |
++-------+-----------------------+
+| 1     | RateRollPI            |
++-------+-----------------------+
+| 2     | RateRollP             |
++-------+-----------------------+
+| 3     | RateRollI             |
++-------+-----------------------+
+| 4     | RateRollD             |
++-------+-----------------------+
+| 5     | RatePitchPI           |
++-------+-----------------------+
+| 6     | RatePitchP            |
++-------+-----------------------+
+| 7     | RatePitchI            |
++-------+-----------------------+
+| 8     | RatePitchD            |
++-------+-----------------------+
+| 9     | RateYawPI             |
++-------+-----------------------+
+| 10    | RateYawP              |
++-------+-----------------------+
+| 11    | RateYawI              |
++-------+-----------------------+
+| 12    | RateYawD              |
++-------+-----------------------+
+| 13    | AngleRollP            |
++-------+-----------------------+
+| 14    | AnglePitchP           |
++-------+-----------------------+
+| 15    | AngleYawP             |
++-------+-----------------------+
+| 16    | PosXYP                |
++-------+-----------------------+
+| 17    | PosZP                 |
++-------+-----------------------+
+| 18    | VelXYP                |
++-------+-----------------------+
+| 19    | VelXYI                |
++-------+-----------------------+
+| 20    | VelZP                 |
++-------+-----------------------+
+| 21    | AccelZP               |
++-------+-----------------------+
+| 22    | AccelZI               |
++-------+-----------------------+
+| 23    | AccelZD               |
++-------+-----------------------+
+| 24    | RatePitchFF           |
++-------+-----------------------+
+| 25    | RateRollFF            |
++-------+-----------------------+
+| 26    | RateYawFF             |
++-------+-----------------------+
+| 50    | FixedWingRollP        |
++-------+-----------------------+
+| 51    | FixedWingRollI        |
++-------+-----------------------+
+| 52    | FixedWingRollD        |
++-------+-----------------------+
+| 53    | FixedWingRollFF       |
++-------+-----------------------+
+| 54    | FixedWingPitchP       |
++-------+-----------------------+
+| 55    | FixedWingPitchI       |
++-------+-----------------------+
+| 56    | FixedWingPitchD       |
++-------+-----------------------+
+| 57    | FixedWingPitchFF      |
++-------+-----------------------+
+| 58    | TRIM_THROTTLE         |
++-------+-----------------------+
+| 59    | TRIM_PITCH            |
++-------+-----------------------+
+| 60    | KFF_THRAT2PTCH        |
++-------+-----------------------+
+| 61    | FW STAB PITCH DOWN    |
++-------+-----------------------+
+| 62    | RLL2PTCH              |
++-------+-----------------------+
+| 63    | KFF_RDDRMIX           |
++-------+-----------------------+
+| 64    | TECSTFFDAMP           |
++-------+-----------------------+
+| 65    | TECSTFF_FILT          |
++-------+-----------------------+
+| 66    | FWAglRollP            |
++-------+-----------------------+
+| 67    | FWAglRollI            |
++-------+-----------------------+
+| 68    | AglRollD              |
++-------+-----------------------+
+| 69    | AglRollFLTT           |
++-------+-----------------------+
+| 70    | FWAglPitchP           |
++-------+-----------------------+
+| 71    | FWAglPitchI           |
++-------+-----------------------+
+| 72    | AglPitchD             |
++-------+-----------------------+
+| 73    | AglPitchFLTT          |
++-------+-----------------------+
+| 101   | Set_RateRollPitch     |
++-------+-----------------------+
+| 102   | Set_RateRoll          |
++-------+-----------------------+
+| 103   | Set_RatePitch         |
++-------+-----------------------+
+| 104   | Set_RateYaw           |
++-------+-----------------------+
+| 105   | Set_AngleRollPitch    |
++-------+-----------------------+
+| 106   | Set_VelXY             |
++-------+-----------------------+
+| 107   | Set_AccelZ            |
++-------+-----------------------+
+| 108   | Set_TRIM_THR_PTCH     |
++-------+-----------------------+
+| 109   | Set turn coordination |
++-------+-----------------------+
+| 110   | TECSTHRFF             |
++-------+-----------------------+
+| 111   | Set_AglRollPitch      |
++-------+-----------------------+
+| 112   | Set_AglRoll           |
++-------+-----------------------+
+| 113   | Set_AglPitch          |
++-------+-----------------------+
 
 
 

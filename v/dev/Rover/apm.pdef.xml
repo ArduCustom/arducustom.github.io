@@ -7357,8 +7357,18 @@
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
       </param>
-      <param humanName="RESTVOLT warn level" name="OSD_W_RESTVOLT" documentation="Set level at which RESTVOLT item will flash" user="Standard">
-        <field name="Range">0 100</field>
+      <param humanName="Time the peak rate will be displayed for PEAK_RR and PEAK_PR elements" name="OSD_PEAKR_TMOUT" documentation="Time the peak rate will be displayed for PEAK_RR and PEAK_PR elements" user="Standard">
+        <field name="Range">0.5 60</field>
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+      </param>
+      <param humanName="Time the tuning name/value stay displayed after being changed" name="OSD_TUNE_DTMOUT" documentation="Time the tuning name/value stay displayed after being changed" user="Standard">
+        <field name="Range">0.5 60</field>
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+      </param>
+      <param humanName="Maximum pitch the artificial horizon can display" name="OSD_AH_PITCH_MAX" documentation="Maximum pitch the artificial horizon can display" user="Standard">
+        <field name="Range">0 90</field>
       </param>
       <param humanName="Underspeed warn speed" name="OSD_W_VERT_ACC" documentation="Set speed under which ASPDx items will flash" user="Standard">
         <field name="Range">0 1000</field>
@@ -7830,16 +7840,16 @@
       <param humanName="CLIMBEFF_Y" name="OSD1_CLIMBEFF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="EFF_EN" name="OSD1_EFF_EN" documentation="Displays flight efficiency (mAh/km or /mi)">
+      <param humanName="EFFG_EN" name="OSD1_EFFG_EN" documentation="Displays ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="EFF_X" name="OSD1_EFF_X" documentation="Horizontal position on screen">
+      <param humanName="EFFG_X" name="OSD1_EFFG_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="EFF_Y" name="OSD1_EFF_Y" documentation="Vertical position on screen">
+      <param humanName="EFFG_Y" name="OSD1_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="BTEMP_EN" name="OSD1_BTEMP_EN" documentation="Displays temperature reported by secondary barometer">
@@ -8142,16 +8152,16 @@
       <param humanName="LINK_Q_Y" name="OSD1_LINK_Q_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="ENERGY_EN" name="OSD1_ENERGY_EN" documentation="Displays total energy consumed from primary battery">
+      <param humanName="NRG_CONS_EN" name="OSD1_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="ENERGY_X" name="OSD1_ENERGY_X" documentation="Horizontal position on screen">
+      <param humanName="NRG_CONS_X" name="OSD1_NRG_CONS_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="ENERGY_Y" name="OSD1_ENERGY_Y" documentation="Vertical position on screen">
+      <param humanName="NRG_CONS_Y" name="OSD1_NRG_CONS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="RC_THR_EN" name="OSD1_RC_THR_EN" documentation="Displays input throttle value (plane only)">
@@ -8308,6 +8318,126 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="R_AVG_CV_Y" name="OSD1_R_AVG_CV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="NRG_REM_EN" name="OSD1_NRG_REM_EN" documentation="Displays energy remaining in primary battery">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="NRG_REM_X" name="OSD1_NRG_REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="NRG_REM_Y" name="OSD1_NRG_REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFG_EN" name="OSD1_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFG_X" name="OSD1_AVG_EFFG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFG_Y" name="OSD1_AVG_EFFG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFA_EN" name="OSD1_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFA_X" name="OSD1_AVG_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFA_Y" name="OSD1_AVG_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="EFFA_EN" name="OSD1_EFFA_EN" documentation="Displays air flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="EFFA_X" name="OSD1_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="EFFA_Y" name="OSD1_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BATREM_EN" name="OSD1_BATREM_EN" documentation="Displays primary battery mAh remaining">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BATREM_X" name="OSD1_BATREM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BATREM_Y" name="OSD1_BATREM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT2REM_EN" name="OSD1_BAT2REM_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT2REM_X" name="OSD1_BAT2REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT2REM_Y" name="OSD1_BAT2REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PN_EN" name="OSD1_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PN_X" name="OSD1_TUNED_PN_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PN_Y" name="OSD1_TUNED_PN_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PV_EN" name="OSD1_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PV_X" name="OSD1_TUNED_PV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PV_Y" name="OSD1_TUNED_PV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_RR_EN" name="OSD1_PEAK_RR_EN" documentation="Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_RR_X" name="OSD1_PEAK_RR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_RR_Y" name="OSD1_PEAK_RR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_PR_EN" name="OSD1_PEAK_PR_EN" documentation="Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_PR_X" name="OSD1_PEAK_PR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_PR_Y" name="OSD1_PEAK_PR_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -8744,16 +8874,16 @@
       <param humanName="CLIMBEFF_Y" name="OSD2_CLIMBEFF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="EFF_EN" name="OSD2_EFF_EN" documentation="Displays flight efficiency (mAh/km or /mi)">
+      <param humanName="EFFG_EN" name="OSD2_EFFG_EN" documentation="Displays ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="EFF_X" name="OSD2_EFF_X" documentation="Horizontal position on screen">
+      <param humanName="EFFG_X" name="OSD2_EFFG_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="EFF_Y" name="OSD2_EFF_Y" documentation="Vertical position on screen">
+      <param humanName="EFFG_Y" name="OSD2_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="BTEMP_EN" name="OSD2_BTEMP_EN" documentation="Displays temperature reported by secondary barometer">
@@ -9056,16 +9186,16 @@
       <param humanName="LINK_Q_Y" name="OSD2_LINK_Q_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="ENERGY_EN" name="OSD2_ENERGY_EN" documentation="Displays total energy consumed from primary battery">
+      <param humanName="NRG_CONS_EN" name="OSD2_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="ENERGY_X" name="OSD2_ENERGY_X" documentation="Horizontal position on screen">
+      <param humanName="NRG_CONS_X" name="OSD2_NRG_CONS_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="ENERGY_Y" name="OSD2_ENERGY_Y" documentation="Vertical position on screen">
+      <param humanName="NRG_CONS_Y" name="OSD2_NRG_CONS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="RC_THR_EN" name="OSD2_RC_THR_EN" documentation="Displays input throttle value (plane only)">
@@ -9222,6 +9352,126 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="R_AVG_CV_Y" name="OSD2_R_AVG_CV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="NRG_REM_EN" name="OSD2_NRG_REM_EN" documentation="Displays energy remaining in primary battery">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="NRG_REM_X" name="OSD2_NRG_REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="NRG_REM_Y" name="OSD2_NRG_REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFG_EN" name="OSD2_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFG_X" name="OSD2_AVG_EFFG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFG_Y" name="OSD2_AVG_EFFG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFA_EN" name="OSD2_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFA_X" name="OSD2_AVG_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFA_Y" name="OSD2_AVG_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="EFFA_EN" name="OSD2_EFFA_EN" documentation="Displays air flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="EFFA_X" name="OSD2_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="EFFA_Y" name="OSD2_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BATREM_EN" name="OSD2_BATREM_EN" documentation="Displays primary battery mAh remaining">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BATREM_X" name="OSD2_BATREM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BATREM_Y" name="OSD2_BATREM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT2REM_EN" name="OSD2_BAT2REM_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT2REM_X" name="OSD2_BAT2REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT2REM_Y" name="OSD2_BAT2REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PN_EN" name="OSD2_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PN_X" name="OSD2_TUNED_PN_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PN_Y" name="OSD2_TUNED_PN_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PV_EN" name="OSD2_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PV_X" name="OSD2_TUNED_PV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PV_Y" name="OSD2_TUNED_PV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_RR_EN" name="OSD2_PEAK_RR_EN" documentation="Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_RR_X" name="OSD2_PEAK_RR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_RR_Y" name="OSD2_PEAK_RR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_PR_EN" name="OSD2_PEAK_PR_EN" documentation="Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_PR_X" name="OSD2_PEAK_PR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_PR_Y" name="OSD2_PEAK_PR_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -9658,16 +9908,16 @@
       <param humanName="CLIMBEFF_Y" name="OSD3_CLIMBEFF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="EFF_EN" name="OSD3_EFF_EN" documentation="Displays flight efficiency (mAh/km or /mi)">
+      <param humanName="EFFG_EN" name="OSD3_EFFG_EN" documentation="Displays ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="EFF_X" name="OSD3_EFF_X" documentation="Horizontal position on screen">
+      <param humanName="EFFG_X" name="OSD3_EFFG_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="EFF_Y" name="OSD3_EFF_Y" documentation="Vertical position on screen">
+      <param humanName="EFFG_Y" name="OSD3_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="BTEMP_EN" name="OSD3_BTEMP_EN" documentation="Displays temperature reported by secondary barometer">
@@ -9970,16 +10220,16 @@
       <param humanName="LINK_Q_Y" name="OSD3_LINK_Q_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="ENERGY_EN" name="OSD3_ENERGY_EN" documentation="Displays total energy consumed from primary battery">
+      <param humanName="NRG_CONS_EN" name="OSD3_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="ENERGY_X" name="OSD3_ENERGY_X" documentation="Horizontal position on screen">
+      <param humanName="NRG_CONS_X" name="OSD3_NRG_CONS_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="ENERGY_Y" name="OSD3_ENERGY_Y" documentation="Vertical position on screen">
+      <param humanName="NRG_CONS_Y" name="OSD3_NRG_CONS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="RC_THR_EN" name="OSD3_RC_THR_EN" documentation="Displays input throttle value (plane only)">
@@ -10136,6 +10386,126 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="R_AVG_CV_Y" name="OSD3_R_AVG_CV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="NRG_REM_EN" name="OSD3_NRG_REM_EN" documentation="Displays energy remaining in primary battery">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="NRG_REM_X" name="OSD3_NRG_REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="NRG_REM_Y" name="OSD3_NRG_REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFG_EN" name="OSD3_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFG_X" name="OSD3_AVG_EFFG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFG_Y" name="OSD3_AVG_EFFG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFA_EN" name="OSD3_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFA_X" name="OSD3_AVG_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFA_Y" name="OSD3_AVG_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="EFFA_EN" name="OSD3_EFFA_EN" documentation="Displays air flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="EFFA_X" name="OSD3_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="EFFA_Y" name="OSD3_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BATREM_EN" name="OSD3_BATREM_EN" documentation="Displays primary battery mAh remaining">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BATREM_X" name="OSD3_BATREM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BATREM_Y" name="OSD3_BATREM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT2REM_EN" name="OSD3_BAT2REM_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT2REM_X" name="OSD3_BAT2REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT2REM_Y" name="OSD3_BAT2REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PN_EN" name="OSD3_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PN_X" name="OSD3_TUNED_PN_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PN_Y" name="OSD3_TUNED_PN_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PV_EN" name="OSD3_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PV_X" name="OSD3_TUNED_PV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PV_Y" name="OSD3_TUNED_PV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_RR_EN" name="OSD3_PEAK_RR_EN" documentation="Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_RR_X" name="OSD3_PEAK_RR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_RR_Y" name="OSD3_PEAK_RR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_PR_EN" name="OSD3_PEAK_PR_EN" documentation="Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_PR_X" name="OSD3_PEAK_PR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_PR_Y" name="OSD3_PEAK_PR_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -10572,16 +10942,16 @@
       <param humanName="CLIMBEFF_Y" name="OSD4_CLIMBEFF_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="EFF_EN" name="OSD4_EFF_EN" documentation="Displays flight efficiency (mAh/km or /mi)">
+      <param humanName="EFFG_EN" name="OSD4_EFFG_EN" documentation="Displays ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="EFF_X" name="OSD4_EFF_X" documentation="Horizontal position on screen">
+      <param humanName="EFFG_X" name="OSD4_EFFG_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="EFF_Y" name="OSD4_EFF_Y" documentation="Vertical position on screen">
+      <param humanName="EFFG_Y" name="OSD4_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="BTEMP_EN" name="OSD4_BTEMP_EN" documentation="Displays temperature reported by secondary barometer">
@@ -10884,16 +11254,16 @@
       <param humanName="LINK_Q_Y" name="OSD4_LINK_Q_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="ENERGY_EN" name="OSD4_ENERGY_EN" documentation="Displays total energy consumed from primary battery">
+      <param humanName="NRG_CONS_EN" name="OSD4_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="ENERGY_X" name="OSD4_ENERGY_X" documentation="Horizontal position on screen">
+      <param humanName="NRG_CONS_X" name="OSD4_NRG_CONS_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="ENERGY_Y" name="OSD4_ENERGY_Y" documentation="Vertical position on screen">
+      <param humanName="NRG_CONS_Y" name="OSD4_NRG_CONS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="RC_THR_EN" name="OSD4_RC_THR_EN" documentation="Displays input throttle value (plane only)">
@@ -11052,6 +11422,126 @@
       <param humanName="R_AVG_CV_Y" name="OSD4_R_AVG_CV_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="NRG_REM_EN" name="OSD4_NRG_REM_EN" documentation="Displays energy remaining in primary battery">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="NRG_REM_X" name="OSD4_NRG_REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="NRG_REM_Y" name="OSD4_NRG_REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFG_EN" name="OSD4_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFG_X" name="OSD4_AVG_EFFG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFG_Y" name="OSD4_AVG_EFFG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFA_EN" name="OSD4_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFA_X" name="OSD4_AVG_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFA_Y" name="OSD4_AVG_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="EFFA_EN" name="OSD4_EFFA_EN" documentation="Displays air flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="EFFA_X" name="OSD4_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="EFFA_Y" name="OSD4_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BATREM_EN" name="OSD4_BATREM_EN" documentation="Displays primary battery mAh remaining">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BATREM_X" name="OSD4_BATREM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BATREM_Y" name="OSD4_BATREM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT2REM_EN" name="OSD4_BAT2REM_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT2REM_X" name="OSD4_BAT2REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT2REM_Y" name="OSD4_BAT2REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PN_EN" name="OSD4_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PN_X" name="OSD4_TUNED_PN_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PN_Y" name="OSD4_TUNED_PN_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PV_EN" name="OSD4_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PV_X" name="OSD4_TUNED_PV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PV_Y" name="OSD4_TUNED_PV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_RR_EN" name="OSD4_PEAK_RR_EN" documentation="Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_RR_X" name="OSD4_PEAK_RR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_RR_Y" name="OSD4_PEAK_RR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_PR_EN" name="OSD4_PEAK_PR_EN" documentation="Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_PR_X" name="OSD4_PEAK_PR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_PR_Y" name="OSD4_PEAK_PR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD5_">
       <param humanName="Enable screen" name="OSD5_ENABLE" documentation="Enable this screen" user="Standard">
@@ -11066,264 +11556,1026 @@
       <param humanName="Transmitter switch screen maximum pwm" name="OSD5_CHAN_MAX" documentation="This sets the PWM upper limit for this screen" user="Standard">
         <field name="Range">900 2100</field>
       </param>
-      <param humanName="SAVE_X" name="OSD5_SAVE_X" documentation="Horizontal position of Save button on screen" user="Advanced">
-        <field name="Range">0 25</field>
-      </param>
-      <param humanName="SAVE_Y" name="OSD5_SAVE_Y" documentation="Vertical position of Save button on screen" user="Advanced">
-        <field name="Range">0 15</field>
-      </param>
-    </parameters>
-    <parameters name="OSD5_PARAM1">
-      <param humanName="Enable" name="OSD5_PARAM1_EN" documentation="Enable setting" user="Standard">
+      <param humanName="ALTITUDE_EN" name="OSD5_ALTITUDE_EN" documentation="Enables display of altitude AGL">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM1_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="ALTITUDE_X" name="OSD5_ALTITUDE_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM1_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="ALTITUDE_Y" name="OSD5_ALTITUDE_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM1_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM1_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM1_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM1_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM1_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM1_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM1_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM2">
-      <param humanName="Enable" name="OSD5_PARAM2_EN" documentation="Enable setting" user="Standard">
+      <param humanName="BATVOLT_EN" name="OSD5_BAT_VOLT_EN" documentation="Displays main battery voltage">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM2_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="BATVOLT_X" name="OSD5_BAT_VOLT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM2_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="BATVOLT_Y" name="OSD5_BAT_VOLT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM2_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM2_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM2_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM2_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM2_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM2_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM2_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM3">
-      <param humanName="Enable" name="OSD5_PARAM3_EN" documentation="Enable setting" user="Standard">
+      <param humanName="RSSI_EN" name="OSD5_RSSI_EN" documentation="Displays RC signal strength">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM3_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="RSSI_X" name="OSD5_RSSI_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM3_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="RSSI_Y" name="OSD5_RSSI_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM3_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM3_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM3_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM3_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM3_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM3_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM3_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM4">
-      <param humanName="Enable" name="OSD5_PARAM4_EN" documentation="Enable setting" user="Standard">
+      <param humanName="CURRENT_EN" name="OSD5_CURRENT_EN" documentation="Displays main battery current">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM4_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="CURRENT_X" name="OSD5_CURRENT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM4_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="CURRENT_Y" name="OSD5_CURRENT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM4_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM4_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM4_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM4_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM4_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM4_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM4_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM5">
-      <param humanName="Enable" name="OSD5_PARAM5_EN" documentation="Enable setting" user="Standard">
+      <param humanName="BATUSED_EN" name="OSD5_BATUSED_EN" documentation="Displays primary battery mAh consumed">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM5_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="BATUSED_X" name="OSD5_BATUSED_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM5_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="BATUSED_Y" name="OSD5_BATUSED_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM5_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM5_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM5_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM5_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM5_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM5_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM5_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM6">
-      <param humanName="Enable" name="OSD5_PARAM6_EN" documentation="Enable setting" user="Standard">
+      <param humanName="SATS_EN" name="OSD5_SATS_EN" documentation="Displays number of acquired satellites">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM6_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="SATS_X" name="OSD5_SATS_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM6_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="SATS_Y" name="OSD5_SATS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM6_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM6_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM6_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM6_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM6_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM6_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM6_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM7">
-      <param humanName="Enable" name="OSD5_PARAM7_EN" documentation="Enable setting" user="Standard">
+      <param humanName="FLTMODE_EN" name="OSD5_FLTMODE_EN" documentation="Displays flight mode">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM7_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="FLTMODE_X" name="OSD5_FLTMODE_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM7_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="FLTMODE_Y" name="OSD5_FLTMODE_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM7_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM7_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM7_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM7_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM7_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM7_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM7_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM8">
-      <param humanName="Enable" name="OSD5_PARAM8_EN" documentation="Enable setting" user="Standard">
+      <param humanName="MESSAGE_EN" name="OSD5_MESSAGE_EN" documentation="Displays Mavlink messages">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM8_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="MESSAGE_X" name="OSD5_MESSAGE_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM8_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="MESSAGE_Y" name="OSD5_MESSAGE_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM8_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM8_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM8_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM8_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM8_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM8_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM8_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
-    </parameters>
-    <parameters name="OSD5_PARAM9">
-      <param humanName="Enable" name="OSD5_PARAM9_EN" documentation="Enable setting" user="Standard">
+      <param humanName="GSPEED_EN" name="OSD5_GSPEED_EN" documentation="Displays GPS ground speed">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="X position" name="OSD5_PARAM9_X" documentation="Horizontal position on screen" user="Standard">
+      <param humanName="GSPEED_X" name="OSD5_GSPEED_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="Y position" name="OSD5_PARAM9_Y" documentation="Vertical position on screen" user="Standard">
+      <param humanName="GSPEED_Y" name="OSD5_GSPEED_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="Parameter key" name="OSD5_PARAM9_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter index" name="OSD5_PARAM9_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter group" name="OSD5_PARAM9_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter minimum" name="OSD5_PARAM9_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter maximum" name="OSD5_PARAM9_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter increment" name="OSD5_PARAM9_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
-</param>
-      <param humanName="Parameter type" name="OSD5_PARAM9_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
-</param>
+      <param humanName="HORIZON_EN" name="OSD5_HORIZON_EN" documentation="Displays artificial horizon">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="HORIZON_X" name="OSD5_HORIZON_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="HORIZON_Y" name="OSD5_HORIZON_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="HOME_EN" name="OSD5_HOME_EN" documentation="Displays distance and relative direction to HOME">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="HOME_X" name="OSD5_HOME_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="HOME_Y" name="OSD5_HOME_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="HEADING_EN" name="OSD5_HEADING_EN" documentation="Displays heading">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="HEADING_X" name="OSD5_HEADING_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="HEADING_Y" name="OSD5_HEADING_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="THROTTLE_EN" name="OSD5_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="THROTTLE_X" name="OSD5_THROTTLE_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="THROTTLE_Y" name="OSD5_THROTTLE_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="COMPASS_EN" name="OSD5_COMPASS_EN" documentation="Enables display of compass rose">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="COMPASS_X" name="OSD5_COMPASS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="COMPASS_Y" name="OSD5_COMPASS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="WIND_EN" name="OSD5_WIND_EN" documentation="Displays wind speed and relative direction, on Rover this is the apparent wind speed and direction from the windvane, if fitted">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="WIND_X" name="OSD5_WIND_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="WIND_Y" name="OSD5_WIND_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ASPEED_EN" name="OSD5_ASPEED_EN" documentation="Displays airspeed value being used by TECS (fused value)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ASPEED_X" name="OSD5_ASPEED_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ASPEED_Y" name="OSD5_ASPEED_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="VSPEED_EN" name="OSD5_VSPEED_EN" documentation="Displays climb rate">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="VSPEED_X" name="OSD5_VSPEED_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="VSPEED_Y" name="OSD5_VSPEED_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ESCTEMP_EN" name="OSD5_ESCTEMP_EN" documentation="Displays the temperature of the ESC with highest temperature">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ESCTEMP_X" name="OSD5_ESCTEMP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ESCTEMP_Y" name="OSD5_ESCTEMP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ESCARPM_EN" name="OSD5_ESCARPM_EN" documentation="Displays the average motor RPM as reported by the ESCs">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ESCARPM_X" name="OSD5_ESCARPM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ESCARPM_Y" name="OSD5_ESCARPM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ESCHAMPS_EN" name="OSD5_ESCHAMPS_EN" documentation="Display the current going through the ESC with highest measured current">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ESCHAMPS_X" name="OSD5_ESCHAMPS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ESCHAMPS_Y" name="OSD5_ESCHAMPS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ESCAAMPS_EN" name="OSD5_ESCAAMPS_EN" documentation="Display the average current going through the ESCs">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ESCAAMPS_X" name="OSD5_ESCAAMPS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ESCAAMPS_Y" name="OSD5_ESCAAMPS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ESCTAMPS_EN" name="OSD5_ESCTAMPS_EN" documentation="Display the total current going through the ESCs">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ESCTAMPS_X" name="OSD5_ESCTAMPS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ESCTAMPS_Y" name="OSD5_ESCTAMPS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ESCHRPM_EN" name="OSD5_ESCHRPM_EN" documentation="Displays the highest motor RPM as reported by the ESCs">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ESCHRPM_X" name="OSD5_ESCHRPM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ESCHRPM_Y" name="OSD5_ESCHRPM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="GPSLAT_EN" name="OSD5_GPSLAT_EN" documentation="Displays GPS latitude">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="GPSLAT_X" name="OSD5_GPSLAT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="GPSLAT_Y" name="OSD5_GPSLAT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="GPSLONG_EN" name="OSD5_GPSLONG_EN" documentation="Displays GPS longitude">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="GPSLONG_X" name="OSD5_GPSLONG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="GPSLONG_Y" name="OSD5_GPSLONG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ROLL_EN" name="OSD5_ROLL_EN" documentation="Displays degrees of roll from level">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ROLL_X" name="OSD5_ROLL_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ROLL_Y" name="OSD5_ROLL_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PITCH_EN" name="OSD5_PITCH_EN" documentation="Displays degrees of pitch from level">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PITCH_X" name="OSD5_PITCH_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PITCH_Y" name="OSD5_PITCH_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TEMP_EN" name="OSD5_TEMP_EN" documentation="Displays temperature reported by primary barometer">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TEMP_X" name="OSD5_TEMP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TEMP_Y" name="OSD5_TEMP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="HDOP_EN" name="OSD5_HDOP_EN" documentation="Displays Horizontal Dilution Of Position">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="HDOP_X" name="OSD5_HDOP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="HDOP_Y" name="OSD5_HDOP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="WAYPOINT_EN" name="OSD5_WAYPOINT_EN" documentation="Displays bearing and distance to next waypoint">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="WAYPOINT_X" name="OSD5_WAYPOINT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="WAYPOINT_Y" name="OSD5_WAYPOINT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="XTRACK_EN" name="OSD5_XTRACK_EN" documentation="Displays crosstrack error">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="XTRACK_X" name="OSD5_XTRACK_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="XTRACK_Y" name="OSD5_XTRACK_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="DIST_EN" name="OSD5_DIST_EN" documentation="Displays total distance flown">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="DIST_X" name="OSD5_DIST_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="DIST_Y" name="OSD5_DIST_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="STATS_EN" name="OSD5_STATS_EN" documentation="Displays flight stats">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="STATS_X" name="OSD5_STATS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="STATS_Y" name="OSD5_STATS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="FLTIME_EN" name="OSD5_FLTIME_EN" documentation="Displays total flight time">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="FLTIME_X" name="OSD5_FLTIME_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="FLTIME_Y" name="OSD5_FLTIME_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CLIMBEFF_EN" name="OSD5_CLIMBEFF_EN" documentation="Displays climb efficiency (climb rate/current)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CLIMBEFF_X" name="OSD5_CLIMBEFF_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CLIMBEFF_Y" name="OSD5_CLIMBEFF_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="EFFG_EN" name="OSD5_EFFG_EN" documentation="Displays ground flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="EFFG_X" name="OSD5_EFFG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="EFFG_Y" name="OSD5_EFFG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BTEMP_EN" name="OSD5_BTEMP_EN" documentation="Displays temperature reported by secondary barometer">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BTEMP_X" name="OSD5_BTEMP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BTEMP_Y" name="OSD5_BTEMP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ATEMP_EN" name="OSD5_ATEMP_EN" documentation="Displays temperature reported by primary airspeed sensor">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ATEMP_X" name="OSD5_ATEMP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ATEMP_Y" name="OSD5_ATEMP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT2VLT_EN" name="OSD5_BAT2_VLT_EN" documentation="Displays battery2 voltage">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT2VLT_X" name="OSD5_BAT2_VLT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT2VLT_Y" name="OSD5_BAT2_VLT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT2USED_EN" name="OSD5_BAT2USED_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT2USED_X" name="OSD5_BAT2USED_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT2USED_Y" name="OSD5_BAT2USED_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ASPD2_EN" name="OSD5_ASPD2_EN" documentation="Displays airspeed reported directly from secondary airspeed sensor">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ASPD2_X" name="OSD5_ASPD2_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ASPD2_Y" name="OSD5_ASPD2_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ASPD1_EN" name="OSD5_ASPD1_EN" documentation="Displays airspeed reported directly from primary airspeed sensor">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ASPD1_X" name="OSD5_ASPD1_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ASPD1_Y" name="OSD5_ASPD1_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CLK_EN" name="OSD5_CLK_EN" documentation="Displays a clock panel based on AP_RTC local time">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CLK_X" name="OSD5_CLK_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CLK_Y" name="OSD5_CLK_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="SIDEBARS_EN" name="OSD5_SIDEBARS_EN" documentation="Displays artificial horizon side bars">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="SIDEBARS_X" name="OSD5_SIDEBARS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="SIDEBARS_Y" name="OSD5_SIDEBARS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSSHAIR_EN" name="OSD5_CRSSHAIR_EN" documentation="Displays artificial horizon crosshair (MSP OSD only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSSHAIR_X" name="OSD5_CRSSHAIR_X" documentation="Horizontal position on screen (MSP OSD only)">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSSHAIR_Y" name="OSD5_CRSSHAIR_Y" documentation="Vertical position on screen (MSP OSD only)">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="HOMEDIST_EN" name="OSD5_HOMEDIST_EN" documentation="Displays distance from HOME (MSP OSD only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="HOMEDIST_X" name="OSD5_HOMEDIST_X" documentation="Horizontal position on screen (MSP OSD only)">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="HOMEDIST_Y" name="OSD5_HOMEDIST_Y" documentation="Vertical position on screen (MSP OSD only)">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="HOMEDIR_EN" name="OSD5_HOMEDIR_EN" documentation="Displays relative direction to HOME (MSP OSD only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="HOMEDIR_X" name="OSD5_HOMEDIR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="HOMEDIR_Y" name="OSD5_HOMEDIR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CELL_VOLT_EN" name="OSD5_CELLVOLT_EN" documentation="Displays average cell voltage (MSP OSD only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CELL_VOLT_X" name="OSD5_CELLVOLT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CELL_VOLT_Y" name="OSD5_CELLVOLT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BATT_BAR_EN" name="OSD5_BATTBAR_EN" documentation="Displays battery usage bar (MSP OSD only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BATT_BAR_X" name="OSD5_BATTBAR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BATT_BAR_Y" name="OSD5_BATTBAR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ARMING_EN" name="OSD5_ARMING_EN" documentation="Displays arming status (MSP OSD only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ARMING_X" name="OSD5_ARMING_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ARMING_Y" name="OSD5_ARMING_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="POWER_EN" name="OSD5_POWER_EN" documentation="Displays total power draw from all batteries">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="POWER_X" name="OSD5_POWER_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="POWER_Y" name="OSD5_POWER_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PLUSCODE_EN" name="OSD5_PLUSCODE_EN" documentation="Displays pluscode (OLC) element">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PLUSCODE_X" name="OSD5_PLUSCODE_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PLUSCODE_Y" name="OSD5_PLUSCODE_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CALLSIGN_EN" name="OSD5_CALLSIGN_EN" documentation="Displays callsign from callsign.txt on microSD card">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CALLSIGN_X" name="OSD5_CALLSIGN_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CALLSIGN_Y" name="OSD5_CALLSIGN_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CURRENT2_EN" name="OSD5_CURRENT2_EN" documentation="Displays 2nd battery current">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CURRENT2_X" name="OSD5_CURRENT2_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CURRENT2_Y" name="OSD5_CURRENT2_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="VTX_PWR_EN" name="OSD5_VTX_PWR_EN" documentation="Displays VTX Power">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="VTX_PWR_X" name="OSD5_VTX_PWR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="VTX_PWR_Y" name="OSD5_VTX_PWR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TER_HGT_EN" name="OSD5_TER_HGT_EN" documentation="Displays Height above terrain">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TER_HGT_X" name="OSD5_TER_HGT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TER_HGT_Y" name="OSD5_TER_HGT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVGCELLV_EN" name="OSD5_AVGCELLV_EN" documentation="Displays average cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVGCELLV_X" name="OSD5_AVGCELLV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVGCELLV_Y" name="OSD5_AVGCELLV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RESTVOLT_EN" name="OSD5_RESTVOLT_EN" documentation="Displays main battery resting voltage">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RESTVOLT_X" name="OSD5_RESTVOLT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RESTVOLT_Y" name="OSD5_RESTVOLT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="FENCE_EN" name="OSD5_FENCE_EN" documentation="Displays indication of fence enable and breach">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="FENCE_X" name="OSD5_FENCE_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="FENCE_Y" name="OSD5_FENCE_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RNGF_EN" name="OSD5_RNGF_EN" documentation="Displays a rangefinder's distance in cm">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RNGF_X" name="OSD5_RNGF_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RNGF_Y" name="OSD5_RNGF_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="LINK_Q_EN" name="OSD5_LINK_Q_EN" documentation="Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="LINK_Q_X" name="OSD5_LINK_Q_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="LINK_Q_Y" name="OSD5_LINK_Q_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="NRG_CONS_EN" name="OSD5_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="NRG_CONS_X" name="OSD5_NRG_CONS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="NRG_CONS_Y" name="OSD5_NRG_CONS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_THR_EN" name="OSD5_RC_THR_EN" documentation="Displays input throttle value (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_THR_X" name="OSD5_RC_THR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_THR_Y" name="OSD5_RC_THR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ASPD_DEM_EN" name="OSD5_ASPD_DEM_EN" documentation="Displays the demanded airspeed in auto throttle modes (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ASPD_DEM_X" name="OSD5_ASPD_DEM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ASPD_DEM_Y" name="OSD5_ASPD_DEM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_LONG_EN" name="OSD5_ACC_LONG_EN" documentation="Displays the aircraft's longitudinal acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LONG_X" name="OSD5_ACC_LONG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LONG_Y" name="OSD5_ACC_LONG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_LAT_EN" name="OSD5_ACC_LAT_EN" documentation="Displays the aircraft's lateral acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_LAT_X" name="OSD5_ACC_LAT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_LAT_Y" name="OSD5_ACC_LAT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="ACC_VERT_EN" name="OSD5_ACC_VERT_EN" documentation="Displays the aircraft's vertical acceleration in g">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="ACC_VERT_X" name="OSD5_ACC_VERT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="ACC_VERT_Y" name="OSD5_ACC_VERT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AUTO_FLAPS_EN" name="OSD5_AUTO_FLP_EN" documentation="Displays the requested auto flaps position">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AUTO_FLAPS_X" name="OSD5_AUTO_FLP_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AUTO_FLAPS_Y" name="OSD5_AUTO_FLP_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AOA_EN" name="OSD5_AOA_EN" documentation="Displays the estimated angle of attack">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AOA_X" name="OSD5_AOA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AOA_Y" name="OSD5_AOA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFPWR_EN" name="OSD5_CRSFPWR_EN" documentation="Displays the TX power when using the CRSF RC protocol">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFPWR_X" name="OSD5_CRSFPWR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFPWR_Y" name="OSD5_CRSFPWR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFRSSI_EN" name="OSD5_CRSFRSSI_EN" documentation="Displays RC signal strength in dBm for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFRSSI_X" name="OSD5_CRSFRSSI_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFRSSI_Y" name="OSD5_CRSFRSSI_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFSNR_EN" name="OSD5_CRSFSNR_EN" documentation="Displays RC signal to noise ratio in dB for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFSNR_X" name="OSD5_CRSFSNR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFSNR_Y" name="OSD5_CRSFSNR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRSFANT_EN" name="OSD5_CRSFANT_EN" documentation="Displays the current active antenna for CRSF">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRSFANT_X" name="OSD5_CRSFANT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRSFANT_Y" name="OSD5_CRSFANT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT_PCT_EN" name="OSD5_BAT_PCT_EN" documentation="Displays the remaining battery capacity as a percentage">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT_PCT_X" name="OSD5_BAT_PCT_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT_PCT_Y" name="OSD5_BAT_PCT_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVGCELLV_EN" name="OSD5_R_AVG_CV_EN" documentation="Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="R_AVG_CV_X" name="OSD5_R_AVG_CV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="R_AVG_CV_Y" name="OSD5_R_AVG_CV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="NRG_REM_EN" name="OSD5_NRG_REM_EN" documentation="Displays energy remaining in primary battery">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="NRG_REM_X" name="OSD5_NRG_REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="NRG_REM_Y" name="OSD5_NRG_REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFG_EN" name="OSD5_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFG_X" name="OSD5_AVG_EFFG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFG_Y" name="OSD5_AVG_EFFG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="AVG_EFFA_EN" name="OSD5_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="AVG_EFFA_X" name="OSD5_AVG_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="AVG_EFFA_Y" name="OSD5_AVG_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="EFFA_EN" name="OSD5_EFFA_EN" documentation="Displays air flight efficiency (mAh or Wh / km or mi)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="EFFA_X" name="OSD5_EFFA_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="EFFA_Y" name="OSD5_EFFA_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BATREM_EN" name="OSD5_BATREM_EN" documentation="Displays primary battery mAh remaining">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BATREM_X" name="OSD5_BATREM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BATREM_Y" name="OSD5_BATREM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="BAT2REM_EN" name="OSD5_BAT2REM_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="BAT2REM_X" name="OSD5_BAT2REM_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="BAT2REM_Y" name="OSD5_BAT2REM_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PN_EN" name="OSD5_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PN_X" name="OSD5_TUNED_PN_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PN_Y" name="OSD5_TUNED_PN_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="TUNED_PV_EN" name="OSD5_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="TUNED_PV_X" name="OSD5_TUNED_PV_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="TUNED_PV_Y" name="OSD5_TUNED_PV_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_RR_EN" name="OSD5_PEAK_RR_EN" documentation="Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_RR_X" name="OSD5_PEAK_RR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_RR_Y" name="OSD5_PEAK_RR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="PEAK_PR_EN" name="OSD5_PEAK_PR_EN" documentation="Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="PEAK_PR_X" name="OSD5_PEAK_PR_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="PEAK_PR_Y" name="OSD5_PEAK_PR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD6_">
       <param humanName="Enable screen" name="OSD6_ENABLE" documentation="Enable this screen" user="Standard">
@@ -11595,6 +12847,278 @@
       <param humanName="Parameter increment" name="OSD6_PARAM9_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
 </param>
       <param humanName="Parameter type" name="OSD6_PARAM9_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_">
+      <param humanName="Enable screen" name="OSD7_ENABLE" documentation="Enable this screen" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="Transmitter switch screen minimum pwm" name="OSD7_CHAN_MIN" documentation="This sets the PWM lower limit for this screen" user="Standard">
+        <field name="Range">900 2100</field>
+      </param>
+      <param humanName="Transmitter switch screen maximum pwm" name="OSD7_CHAN_MAX" documentation="This sets the PWM upper limit for this screen" user="Standard">
+        <field name="Range">900 2100</field>
+      </param>
+      <param humanName="SAVE_X" name="OSD7_SAVE_X" documentation="Horizontal position of Save button on screen" user="Advanced">
+        <field name="Range">0 25</field>
+      </param>
+      <param humanName="SAVE_Y" name="OSD7_SAVE_Y" documentation="Vertical position of Save button on screen" user="Advanced">
+        <field name="Range">0 15</field>
+      </param>
+    </parameters>
+    <parameters name="OSD7_PARAM1">
+      <param humanName="Enable" name="OSD7_PARAM1_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM1_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM1_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM1_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM1_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM1_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM1_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM1_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM1_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM1_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM2">
+      <param humanName="Enable" name="OSD7_PARAM2_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM2_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM2_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM2_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM2_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM2_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM2_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM2_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM2_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM2_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM3">
+      <param humanName="Enable" name="OSD7_PARAM3_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM3_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM3_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM3_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM3_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM3_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM3_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM3_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM3_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM3_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM4">
+      <param humanName="Enable" name="OSD7_PARAM4_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM4_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM4_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM4_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM4_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM4_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM4_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM4_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM4_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM4_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM5">
+      <param humanName="Enable" name="OSD7_PARAM5_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM5_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM5_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM5_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM5_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM5_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM5_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM5_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM5_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM5_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM6">
+      <param humanName="Enable" name="OSD7_PARAM6_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM6_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM6_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM6_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM6_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM6_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM6_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM6_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM6_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM6_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM7">
+      <param humanName="Enable" name="OSD7_PARAM7_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM7_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM7_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM7_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM7_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM7_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM7_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM7_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM7_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM7_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM8">
+      <param humanName="Enable" name="OSD7_PARAM8_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM8_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM8_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM8_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM8_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM8_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM8_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM8_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM8_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM8_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
+</param>
+    </parameters>
+    <parameters name="OSD7_PARAM9">
+      <param humanName="Enable" name="OSD7_PARAM9_EN" documentation="Enable setting" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="X position" name="OSD7_PARAM9_X" documentation="Horizontal position on screen" user="Standard">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="Y position" name="OSD7_PARAM9_Y" documentation="Vertical position on screen" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Parameter key" name="OSD7_PARAM9_KEY" documentation="Key of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter index" name="OSD7_PARAM9_IDX" documentation="Index of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter group" name="OSD7_PARAM9_GRP" documentation="Group of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter minimum" name="OSD7_PARAM9_MIN" documentation="Minimum value of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter maximum" name="OSD7_PARAM9_MAX" documentation="Maximum of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter increment" name="OSD7_PARAM9_INCR" documentation="Increment of the parameter to be displayed and modified" user="Standard">
+</param>
+      <param humanName="Parameter type" name="OSD7_PARAM9_TYPE" documentation="Type of the parameter to be displayed and modified" user="Standard">
 </param>
     </parameters>
     <parameters name="PRX">

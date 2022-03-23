@@ -81,8 +81,8 @@ DO NOT EDIT
 
 <p>Pitch up to add in proportion to throttle above trim throttle. TRIM_THROTTLE throttle and under will add 0° to the pitch target. 100% throttle will add this number of degrees to the pitch target.</p>
 <ul>
-<li>Range: 0 5</li>
-<li>Increment: 0.01</li>
+<li>Range: -20 20</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -93,16 +93,6 @@ DO NOT EDIT
 <li>Range: 0 15</li>
 <li>Increment: 0.1</li>
 <li>Units: degrees</li>
-</ul>
-
-
-<h2>Throttle under which to start pitching down to avoid stalling (ArduPlane:STAB_PTCHDN_THR)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Throttle under which to start pitching down to avoid stalling. The applied down pitch scales linearly from 0 to STAB_PITCH_DOWN with throttle between STAB_PTCHDN_THR and 0. If set to 0 (default) then TRIM_THROTTLE is used.</p>
-<ul>
-<li>Range: 0 100</li>
-<li>Increment: 0.1</li>
-<li>Units: percent</li>
 </ul>
 
 
@@ -398,6 +388,15 @@ DO NOT EDIT
 <h2>Throttle deadzone (ArduPlane:THR_DZ)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>No command will be applied to the throttle ESC or servo unless the command is at least this value</p>
+<ul>
+<li>Units: percent</li>
+<li>Range: 0 100</li>
+</ul>
+
+
+<h2>Manual throttle square response curve (ArduPlane:THR_EXPO)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Amount of square response curve to apply to throttle in manual throttle modes</p>
 <ul>
 <li>Units: percent</li>
 <li>Range: 0 100</li>
@@ -968,13 +967,13 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Pitch angle offset (ArduPlane:TRIM_PITCH_CD)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Pitch angle offset (ArduPlane:TRIM_PITCH)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Offset applied to AHRS pitch used for in-flight pitch trimming. Correct ground leveling is better than changing this parameter.</p>
 <ul>
-<li>Units: centidegrees</li>
-<li>Range: -4500 4500</li>
-<li>Increment: 10</li>
+<li>Units: degrees</li>
+<li>Range: -45 45</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -14314,11 +14313,29 @@ DO NOT EDIT
 </ul>
 
 
-<h2>RESTVOLT warn level (OSD_W_RESTVOLT)</h2>
+<h2>Time the peak rate will be displayed for PEAK_RR and PEAK_PR elements (OSD_PEAKR_TMOUT)</h2>
 
-<p>Set level at which RESTVOLT item will flash</p>
+<p>Time the peak rate will be displayed for PEAK_RR and PEAK_PR elements</p>
 <ul>
-<li>Range: 0 100</li>
+<li>Range: 0.5 60</li>
+<li>Units: seconds</li>
+</ul>
+
+
+<h2>Time the tuning name/value stay displayed after being changed (OSD_TUNE_DTMOUT)</h2>
+
+<p>Time the tuning name/value stay displayed after being changed</p>
+<ul>
+<li>Range: 0.5 60</li>
+<li>Units: seconds</li>
+</ul>
+
+
+<h2>Maximum pitch the artificial horizon can display (OSD_AH_PITCH_MAX)</h2>
+
+<p>Maximum pitch the artificial horizon can display</p>
+<ul>
+<li>Range: 0 90</li>
 </ul>
 
 
@@ -15362,9 +15379,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_EN (OSD1_EFF_EN)</h2>
+<h2>EFFG_EN (OSD1_EFFG_EN)</h2>
 
-<p>Displays flight efficiency (mAh/km or /mi)</p>
+<p>Displays ground flight efficiency (mAh or Wh / km or mi)</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -15373,7 +15390,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_X (OSD1_EFF_X)</h2>
+<h2>EFFG_X (OSD1_EFFG_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -15381,7 +15398,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_Y (OSD1_EFF_Y)</h2>
+<h2>EFFG_Y (OSD1_EFFG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -16064,7 +16081,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_EN (OSD1_ENERGY_EN)</h2>
+<h2>NRG_CONS_EN (OSD1_NRG_CONS_EN)</h2>
 
 <p>Displays total energy consumed from primary battery</p>
 <ul>
@@ -16075,7 +16092,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_X (OSD1_ENERGY_X)</h2>
+<h2>NRG_CONS_X (OSD1_NRG_CONS_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -16083,7 +16100,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_Y (OSD1_ENERGY_Y)</h2>
+<h2>NRG_CONS_Y (OSD1_NRG_CONS_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -16435,6 +16452,276 @@ DO NOT EDIT
 
 
 <h2>R_AVG_CV_Y (OSD1_R_AVG_CV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>NRG_REM_EN (OSD1_NRG_REM_EN)</h2>
+
+<p>Displays energy remaining in primary battery</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>NRG_REM_X (OSD1_NRG_REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>NRG_REM_Y (OSD1_NRG_REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFG_EN (OSD1_AVG_EFFG_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFG_X (OSD1_AVG_EFFG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFG_Y (OSD1_AVG_EFFG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFA_EN (OSD1_AVG_EFFA_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFA_X (OSD1_AVG_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFA_Y (OSD1_AVG_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>EFFA_EN (OSD1_EFFA_EN)</h2>
+
+<p>Displays air flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>EFFA_X (OSD1_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>EFFA_Y (OSD1_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BATREM_EN (OSD1_BATREM_EN)</h2>
+
+<p>Displays primary battery mAh remaining</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BATREM_X (OSD1_BATREM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BATREM_Y (OSD1_BATREM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT2REM_EN (OSD1_BAT2REM_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT2REM_X (OSD1_BAT2REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT2REM_Y (OSD1_BAT2REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PN_EN (OSD1_TUNED_PN_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PN_X (OSD1_TUNED_PN_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PN_Y (OSD1_TUNED_PN_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PV_EN (OSD1_TUNED_PV_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PV_X (OSD1_TUNED_PV_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PV_Y (OSD1_TUNED_PV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_RR_EN (OSD1_PEAK_RR_EN)</h2>
+
+<p>Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_RR_X (OSD1_PEAK_RR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_RR_Y (OSD1_PEAK_RR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_PR_EN (OSD1_PEAK_PR_EN)</h2>
+
+<p>Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_PR_X (OSD1_PEAK_PR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_PR_Y (OSD1_PEAK_PR_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -17417,9 +17704,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_EN (OSD2_EFF_EN)</h2>
+<h2>EFFG_EN (OSD2_EFFG_EN)</h2>
 
-<p>Displays flight efficiency (mAh/km or /mi)</p>
+<p>Displays ground flight efficiency (mAh or Wh / km or mi)</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -17428,7 +17715,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_X (OSD2_EFF_X)</h2>
+<h2>EFFG_X (OSD2_EFFG_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -17436,7 +17723,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_Y (OSD2_EFF_Y)</h2>
+<h2>EFFG_Y (OSD2_EFFG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -18119,7 +18406,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_EN (OSD2_ENERGY_EN)</h2>
+<h2>NRG_CONS_EN (OSD2_NRG_CONS_EN)</h2>
 
 <p>Displays total energy consumed from primary battery</p>
 <ul>
@@ -18130,7 +18417,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_X (OSD2_ENERGY_X)</h2>
+<h2>NRG_CONS_X (OSD2_NRG_CONS_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -18138,7 +18425,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_Y (OSD2_ENERGY_Y)</h2>
+<h2>NRG_CONS_Y (OSD2_NRG_CONS_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -18490,6 +18777,276 @@ DO NOT EDIT
 
 
 <h2>R_AVG_CV_Y (OSD2_R_AVG_CV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>NRG_REM_EN (OSD2_NRG_REM_EN)</h2>
+
+<p>Displays energy remaining in primary battery</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>NRG_REM_X (OSD2_NRG_REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>NRG_REM_Y (OSD2_NRG_REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFG_EN (OSD2_AVG_EFFG_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFG_X (OSD2_AVG_EFFG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFG_Y (OSD2_AVG_EFFG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFA_EN (OSD2_AVG_EFFA_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFA_X (OSD2_AVG_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFA_Y (OSD2_AVG_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>EFFA_EN (OSD2_EFFA_EN)</h2>
+
+<p>Displays air flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>EFFA_X (OSD2_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>EFFA_Y (OSD2_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BATREM_EN (OSD2_BATREM_EN)</h2>
+
+<p>Displays primary battery mAh remaining</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BATREM_X (OSD2_BATREM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BATREM_Y (OSD2_BATREM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT2REM_EN (OSD2_BAT2REM_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT2REM_X (OSD2_BAT2REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT2REM_Y (OSD2_BAT2REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PN_EN (OSD2_TUNED_PN_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PN_X (OSD2_TUNED_PN_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PN_Y (OSD2_TUNED_PN_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PV_EN (OSD2_TUNED_PV_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PV_X (OSD2_TUNED_PV_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PV_Y (OSD2_TUNED_PV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_RR_EN (OSD2_PEAK_RR_EN)</h2>
+
+<p>Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_RR_X (OSD2_PEAK_RR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_RR_Y (OSD2_PEAK_RR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_PR_EN (OSD2_PEAK_PR_EN)</h2>
+
+<p>Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_PR_X (OSD2_PEAK_PR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_PR_Y (OSD2_PEAK_PR_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -19472,9 +20029,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_EN (OSD3_EFF_EN)</h2>
+<h2>EFFG_EN (OSD3_EFFG_EN)</h2>
 
-<p>Displays flight efficiency (mAh/km or /mi)</p>
+<p>Displays ground flight efficiency (mAh or Wh / km or mi)</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -19483,7 +20040,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_X (OSD3_EFF_X)</h2>
+<h2>EFFG_X (OSD3_EFFG_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -19491,7 +20048,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_Y (OSD3_EFF_Y)</h2>
+<h2>EFFG_Y (OSD3_EFFG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -20174,7 +20731,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_EN (OSD3_ENERGY_EN)</h2>
+<h2>NRG_CONS_EN (OSD3_NRG_CONS_EN)</h2>
 
 <p>Displays total energy consumed from primary battery</p>
 <ul>
@@ -20185,7 +20742,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_X (OSD3_ENERGY_X)</h2>
+<h2>NRG_CONS_X (OSD3_NRG_CONS_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -20193,7 +20750,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_Y (OSD3_ENERGY_Y)</h2>
+<h2>NRG_CONS_Y (OSD3_NRG_CONS_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -20545,6 +21102,276 @@ DO NOT EDIT
 
 
 <h2>R_AVG_CV_Y (OSD3_R_AVG_CV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>NRG_REM_EN (OSD3_NRG_REM_EN)</h2>
+
+<p>Displays energy remaining in primary battery</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>NRG_REM_X (OSD3_NRG_REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>NRG_REM_Y (OSD3_NRG_REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFG_EN (OSD3_AVG_EFFG_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFG_X (OSD3_AVG_EFFG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFG_Y (OSD3_AVG_EFFG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFA_EN (OSD3_AVG_EFFA_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFA_X (OSD3_AVG_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFA_Y (OSD3_AVG_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>EFFA_EN (OSD3_EFFA_EN)</h2>
+
+<p>Displays air flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>EFFA_X (OSD3_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>EFFA_Y (OSD3_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BATREM_EN (OSD3_BATREM_EN)</h2>
+
+<p>Displays primary battery mAh remaining</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BATREM_X (OSD3_BATREM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BATREM_Y (OSD3_BATREM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT2REM_EN (OSD3_BAT2REM_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT2REM_X (OSD3_BAT2REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT2REM_Y (OSD3_BAT2REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PN_EN (OSD3_TUNED_PN_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PN_X (OSD3_TUNED_PN_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PN_Y (OSD3_TUNED_PN_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PV_EN (OSD3_TUNED_PV_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PV_X (OSD3_TUNED_PV_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PV_Y (OSD3_TUNED_PV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_RR_EN (OSD3_PEAK_RR_EN)</h2>
+
+<p>Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_RR_X (OSD3_PEAK_RR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_RR_Y (OSD3_PEAK_RR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_PR_EN (OSD3_PEAK_PR_EN)</h2>
+
+<p>Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_PR_X (OSD3_PEAK_PR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_PR_Y (OSD3_PEAK_PR_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -21527,9 +22354,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_EN (OSD4_EFF_EN)</h2>
+<h2>EFFG_EN (OSD4_EFFG_EN)</h2>
 
-<p>Displays flight efficiency (mAh/km or /mi)</p>
+<p>Displays ground flight efficiency (mAh or Wh / km or mi)</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -21538,7 +22365,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_X (OSD4_EFF_X)</h2>
+<h2>EFFG_X (OSD4_EFFG_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -21546,7 +22373,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>EFF_Y (OSD4_EFF_Y)</h2>
+<h2>EFFG_Y (OSD4_EFFG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22229,7 +23056,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_EN (OSD4_ENERGY_EN)</h2>
+<h2>NRG_CONS_EN (OSD4_NRG_CONS_EN)</h2>
 
 <p>Displays total energy consumed from primary battery</p>
 <ul>
@@ -22240,7 +23067,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_X (OSD4_ENERGY_X)</h2>
+<h2>NRG_CONS_X (OSD4_NRG_CONS_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22248,7 +23075,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>ENERGY_Y (OSD4_ENERGY_Y)</h2>
+<h2>NRG_CONS_Y (OSD4_NRG_CONS_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22607,6 +23434,276 @@ DO NOT EDIT
 </ul>
 
 
+<h2>NRG_REM_EN (OSD4_NRG_REM_EN)</h2>
+
+<p>Displays energy remaining in primary battery</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>NRG_REM_X (OSD4_NRG_REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>NRG_REM_Y (OSD4_NRG_REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFG_EN (OSD4_AVG_EFFG_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFG_X (OSD4_AVG_EFFG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFG_Y (OSD4_AVG_EFFG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFA_EN (OSD4_AVG_EFFA_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFA_X (OSD4_AVG_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFA_Y (OSD4_AVG_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>EFFA_EN (OSD4_EFFA_EN)</h2>
+
+<p>Displays air flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>EFFA_X (OSD4_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>EFFA_Y (OSD4_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BATREM_EN (OSD4_BATREM_EN)</h2>
+
+<p>Displays primary battery mAh remaining</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BATREM_X (OSD4_BATREM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BATREM_Y (OSD4_BATREM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT2REM_EN (OSD4_BAT2REM_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT2REM_X (OSD4_BAT2REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT2REM_Y (OSD4_BAT2REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PN_EN (OSD4_TUNED_PN_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PN_X (OSD4_TUNED_PN_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PN_Y (OSD4_TUNED_PN_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PV_EN (OSD4_TUNED_PV_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PV_X (OSD4_TUNED_PV_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PV_Y (OSD4_TUNED_PV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_RR_EN (OSD4_PEAK_RR_EN)</h2>
+
+<p>Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_RR_X (OSD4_PEAK_RR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_RR_Y (OSD4_PEAK_RR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_PR_EN (OSD4_PEAK_PR_EN)</h2>
+
+<p>Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_PR_X (OSD4_PEAK_PR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_PR_Y (OSD4_PEAK_PR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD5_ Parameters</h1>
 
 
@@ -22637,28 +23734,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>SAVE_X (OSD5_SAVE_X)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>ALTITUDE_EN (OSD5_ALTITUDE_EN)</h2>
 
-<p>Horizontal position of Save button on screen</p>
-<ul>
-<li>Range: 0 25</li>
-</ul>
-
-
-<h2>SAVE_Y (OSD5_SAVE_Y)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Vertical position of Save button on screen</p>
-<ul>
-<li>Range: 0 15</li>
-</ul>
-
-
-<h1>OSD5_PARAM1 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM1_EN)</h2>
-
-<p>Enable setting</p>
+<p>Enables display of altitude AGL</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -22667,7 +23745,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM1_X)</h2>
+<h2>ALTITUDE_X (OSD5_ALTITUDE_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22675,7 +23753,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM1_Y)</h2>
+<h2>ALTITUDE_Y (OSD5_ALTITUDE_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22683,61 +23761,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM1_KEY)</h2>
+<h2>BATVOLT_EN (OSD5_BAT_VOLT_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM1_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM1_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM1_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM1_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM1_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM1_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM2 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM2_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays main battery voltage</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -22746,7 +23772,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM2_X)</h2>
+<h2>BATVOLT_X (OSD5_BAT_VOLT_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22754,7 +23780,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM2_Y)</h2>
+<h2>BATVOLT_Y (OSD5_BAT_VOLT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22762,61 +23788,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM2_KEY)</h2>
+<h2>RSSI_EN (OSD5_RSSI_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM2_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM2_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM2_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM2_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM2_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM2_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM3 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM3_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays RC signal strength</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -22825,7 +23799,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM3_X)</h2>
+<h2>RSSI_X (OSD5_RSSI_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22833,7 +23807,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM3_Y)</h2>
+<h2>RSSI_Y (OSD5_RSSI_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22841,61 +23815,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM3_KEY)</h2>
+<h2>CURRENT_EN (OSD5_CURRENT_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM3_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM3_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM3_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM3_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM3_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM3_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM4 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM4_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays main battery current</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -22904,7 +23826,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM4_X)</h2>
+<h2>CURRENT_X (OSD5_CURRENT_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22912,7 +23834,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM4_Y)</h2>
+<h2>CURRENT_Y (OSD5_CURRENT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22920,61 +23842,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM4_KEY)</h2>
+<h2>BATUSED_EN (OSD5_BATUSED_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM4_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM4_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM4_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM4_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM4_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM4_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM5 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM5_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays primary battery mAh consumed</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -22983,7 +23853,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM5_X)</h2>
+<h2>BATUSED_X (OSD5_BATUSED_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22991,7 +23861,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM5_Y)</h2>
+<h2>BATUSED_Y (OSD5_BATUSED_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22999,61 +23869,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM5_KEY)</h2>
+<h2>SATS_EN (OSD5_SATS_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM5_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM5_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM5_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM5_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM5_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM5_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM6 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM6_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays number of acquired satellites</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -23062,7 +23880,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM6_X)</h2>
+<h2>SATS_X (OSD5_SATS_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -23070,7 +23888,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM6_Y)</h2>
+<h2>SATS_Y (OSD5_SATS_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -23078,61 +23896,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM6_KEY)</h2>
+<h2>FLTMODE_EN (OSD5_FLTMODE_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM6_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM6_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM6_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM6_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM6_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM6_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM7 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM7_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays flight mode</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -23141,7 +23907,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM7_X)</h2>
+<h2>FLTMODE_X (OSD5_FLTMODE_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -23149,7 +23915,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM7_Y)</h2>
+<h2>FLTMODE_Y (OSD5_FLTMODE_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -23157,61 +23923,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM7_KEY)</h2>
+<h2>MESSAGE_EN (OSD5_MESSAGE_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM7_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM7_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM7_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM7_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM7_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM7_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM8 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM8_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays Mavlink messages</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -23220,7 +23934,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM8_X)</h2>
+<h2>MESSAGE_X (OSD5_MESSAGE_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -23228,7 +23942,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM8_Y)</h2>
+<h2>MESSAGE_Y (OSD5_MESSAGE_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -23236,61 +23950,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM8_KEY)</h2>
+<h2>GSPEED_EN (OSD5_GSPEED_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter index (OSD5_PARAM8_IDX)</h2>
-
-<p>Index of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter group (OSD5_PARAM8_GRP)</h2>
-
-<p>Group of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter minimum (OSD5_PARAM8_MIN)</h2>
-
-<p>Minimum value of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter maximum (OSD5_PARAM8_MAX)</h2>
-
-<p>Maximum of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter increment (OSD5_PARAM8_INCR)</h2>
-
-<p>Increment of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h2>Parameter type (OSD5_PARAM8_TYPE)</h2>
-
-<p>Type of the parameter to be displayed and modified</p>
-<ul>
-</ul>
-
-
-<h1>OSD5_PARAM9 Parameters</h1>
-
-
-<h2>Enable (OSD5_PARAM9_EN)</h2>
-
-<p>Enable setting</p>
+<p>Displays GPS ground speed</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -23299,7 +23961,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>X position (OSD5_PARAM9_X)</h2>
+<h2>GSPEED_X (OSD5_GSPEED_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -23307,7 +23969,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Y position (OSD5_PARAM9_Y)</h2>
+<h2>GSPEED_Y (OSD5_GSPEED_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -23315,52 +23977,2055 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Parameter key (OSD5_PARAM9_KEY)</h2>
+<h2>HORIZON_EN (OSD5_HORIZON_EN)</h2>
 
-<p>Key of the parameter to be displayed and modified</p>
+<p>Displays artificial horizon</p>
 <ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
 </ul>
 
 
-<h2>Parameter index (OSD5_PARAM9_IDX)</h2>
+<h2>HORIZON_X (OSD5_HORIZON_X)</h2>
 
-<p>Index of the parameter to be displayed and modified</p>
+<p>Horizontal position on screen</p>
 <ul>
+<li>Range: 0 29</li>
 </ul>
 
 
-<h2>Parameter group (OSD5_PARAM9_GRP)</h2>
+<h2>HORIZON_Y (OSD5_HORIZON_Y)</h2>
 
-<p>Group of the parameter to be displayed and modified</p>
+<p>Vertical position on screen</p>
 <ul>
+<li>Range: 0 15</li>
 </ul>
 
 
-<h2>Parameter minimum (OSD5_PARAM9_MIN)</h2>
+<h2>HOME_EN (OSD5_HOME_EN)</h2>
 
-<p>Minimum value of the parameter to be displayed and modified</p>
+<p>Displays distance and relative direction to HOME</p>
 <ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
 </ul>
 
 
-<h2>Parameter maximum (OSD5_PARAM9_MAX)</h2>
+<h2>HOME_X (OSD5_HOME_X)</h2>
 
-<p>Maximum of the parameter to be displayed and modified</p>
+<p>Horizontal position on screen</p>
 <ul>
+<li>Range: 0 29</li>
 </ul>
 
 
-<h2>Parameter increment (OSD5_PARAM9_INCR)</h2>
+<h2>HOME_Y (OSD5_HOME_Y)</h2>
 
-<p>Increment of the parameter to be displayed and modified</p>
+<p>Vertical position on screen</p>
 <ul>
+<li>Range: 0 15</li>
 </ul>
 
 
-<h2>Parameter type (OSD5_PARAM9_TYPE)</h2>
+<h2>HEADING_EN (OSD5_HEADING_EN)</h2>
 
-<p>Type of the parameter to be displayed and modified</p>
+<p>Displays heading</p>
 <ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>HEADING_X (OSD5_HEADING_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>HEADING_Y (OSD5_HEADING_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>THROTTLE_EN (OSD5_THROTTLE_EN)</h2>
+
+<p>Displays actual throttle percentage being sent to motor(s)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>THROTTLE_X (OSD5_THROTTLE_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>THROTTLE_Y (OSD5_THROTTLE_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>COMPASS_EN (OSD5_COMPASS_EN)</h2>
+
+<p>Enables display of compass rose</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>COMPASS_X (OSD5_COMPASS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>COMPASS_Y (OSD5_COMPASS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>WIND_EN (OSD5_WIND_EN)</h2>
+
+<p>Displays wind speed and relative direction, on Rover this is the apparent wind speed and direction from the windvane, if fitted</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>WIND_X (OSD5_WIND_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>WIND_Y (OSD5_WIND_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ASPEED_EN (OSD5_ASPEED_EN)</h2>
+
+<p>Displays airspeed value being used by TECS (fused value)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ASPEED_X (OSD5_ASPEED_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ASPEED_Y (OSD5_ASPEED_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>VSPEED_EN (OSD5_VSPEED_EN)</h2>
+
+<p>Displays climb rate</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>VSPEED_X (OSD5_VSPEED_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>VSPEED_Y (OSD5_VSPEED_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ESCTEMP_EN (OSD5_ESCTEMP_EN)</h2>
+
+<p>Displays the temperature of the ESC with highest temperature</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ESCTEMP_X (OSD5_ESCTEMP_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ESCTEMP_Y (OSD5_ESCTEMP_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ESCARPM_EN (OSD5_ESCARPM_EN)</h2>
+
+<p>Displays the average motor RPM as reported by the ESCs</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ESCARPM_X (OSD5_ESCARPM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ESCARPM_Y (OSD5_ESCARPM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ESCHAMPS_EN (OSD5_ESCHAMPS_EN)</h2>
+
+<p>Display the current going through the ESC with highest measured current</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ESCHAMPS_X (OSD5_ESCHAMPS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ESCHAMPS_Y (OSD5_ESCHAMPS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ESCAAMPS_EN (OSD5_ESCAAMPS_EN)</h2>
+
+<p>Display the average current going through the ESCs</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ESCAAMPS_X (OSD5_ESCAAMPS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ESCAAMPS_Y (OSD5_ESCAAMPS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ESCTAMPS_EN (OSD5_ESCTAMPS_EN)</h2>
+
+<p>Display the total current going through the ESCs</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ESCTAMPS_X (OSD5_ESCTAMPS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ESCTAMPS_Y (OSD5_ESCTAMPS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ESCHRPM_EN (OSD5_ESCHRPM_EN)</h2>
+
+<p>Displays the highest motor RPM as reported by the ESCs</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ESCHRPM_X (OSD5_ESCHRPM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ESCHRPM_Y (OSD5_ESCHRPM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>GPSLAT_EN (OSD5_GPSLAT_EN)</h2>
+
+<p>Displays GPS latitude</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>GPSLAT_X (OSD5_GPSLAT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>GPSLAT_Y (OSD5_GPSLAT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>GPSLONG_EN (OSD5_GPSLONG_EN)</h2>
+
+<p>Displays GPS longitude</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>GPSLONG_X (OSD5_GPSLONG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>GPSLONG_Y (OSD5_GPSLONG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ROLL_EN (OSD5_ROLL_EN)</h2>
+
+<p>Displays degrees of roll from level</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ROLL_X (OSD5_ROLL_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ROLL_Y (OSD5_ROLL_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PITCH_EN (OSD5_PITCH_EN)</h2>
+
+<p>Displays degrees of pitch from level</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PITCH_X (OSD5_PITCH_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PITCH_Y (OSD5_PITCH_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TEMP_EN (OSD5_TEMP_EN)</h2>
+
+<p>Displays temperature reported by primary barometer</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TEMP_X (OSD5_TEMP_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TEMP_Y (OSD5_TEMP_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>HDOP_EN (OSD5_HDOP_EN)</h2>
+
+<p>Displays Horizontal Dilution Of Position</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>HDOP_X (OSD5_HDOP_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>HDOP_Y (OSD5_HDOP_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>WAYPOINT_EN (OSD5_WAYPOINT_EN)</h2>
+
+<p>Displays bearing and distance to next waypoint</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>WAYPOINT_X (OSD5_WAYPOINT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>WAYPOINT_Y (OSD5_WAYPOINT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>XTRACK_EN (OSD5_XTRACK_EN)</h2>
+
+<p>Displays crosstrack error</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>XTRACK_X (OSD5_XTRACK_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>XTRACK_Y (OSD5_XTRACK_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>DIST_EN (OSD5_DIST_EN)</h2>
+
+<p>Displays total distance flown</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DIST_X (OSD5_DIST_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DIST_Y (OSD5_DIST_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>STATS_EN (OSD5_STATS_EN)</h2>
+
+<p>Displays flight stats</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>STATS_X (OSD5_STATS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>STATS_Y (OSD5_STATS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>FLTIME_EN (OSD5_FLTIME_EN)</h2>
+
+<p>Displays total flight time</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>FLTIME_X (OSD5_FLTIME_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>FLTIME_Y (OSD5_FLTIME_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CLIMBEFF_EN (OSD5_CLIMBEFF_EN)</h2>
+
+<p>Displays climb efficiency (climb rate/current)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CLIMBEFF_X (OSD5_CLIMBEFF_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CLIMBEFF_Y (OSD5_CLIMBEFF_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>EFFG_EN (OSD5_EFFG_EN)</h2>
+
+<p>Displays ground flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>EFFG_X (OSD5_EFFG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>EFFG_Y (OSD5_EFFG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BTEMP_EN (OSD5_BTEMP_EN)</h2>
+
+<p>Displays temperature reported by secondary barometer</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BTEMP_X (OSD5_BTEMP_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BTEMP_Y (OSD5_BTEMP_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ATEMP_EN (OSD5_ATEMP_EN)</h2>
+
+<p>Displays temperature reported by primary airspeed sensor</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ATEMP_X (OSD5_ATEMP_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ATEMP_Y (OSD5_ATEMP_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT2VLT_EN (OSD5_BAT2_VLT_EN)</h2>
+
+<p>Displays battery2 voltage</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT2VLT_X (OSD5_BAT2_VLT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT2VLT_Y (OSD5_BAT2_VLT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT2USED_EN (OSD5_BAT2USED_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT2USED_X (OSD5_BAT2USED_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT2USED_Y (OSD5_BAT2USED_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ASPD2_EN (OSD5_ASPD2_EN)</h2>
+
+<p>Displays airspeed reported directly from secondary airspeed sensor</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ASPD2_X (OSD5_ASPD2_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ASPD2_Y (OSD5_ASPD2_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ASPD1_EN (OSD5_ASPD1_EN)</h2>
+
+<p>Displays airspeed reported directly from primary airspeed sensor</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ASPD1_X (OSD5_ASPD1_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ASPD1_Y (OSD5_ASPD1_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CLK_EN (OSD5_CLK_EN)</h2>
+
+<p>Displays a clock panel based on AP_RTC local time</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CLK_X (OSD5_CLK_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CLK_Y (OSD5_CLK_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>SIDEBARS_EN (OSD5_SIDEBARS_EN)</h2>
+
+<p>Displays artificial horizon side bars</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>SIDEBARS_X (OSD5_SIDEBARS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>SIDEBARS_Y (OSD5_SIDEBARS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSSHAIR_EN (OSD5_CRSSHAIR_EN)</h2>
+
+<p>Displays artificial horizon crosshair (MSP OSD only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSSHAIR_X (OSD5_CRSSHAIR_X)</h2>
+
+<p>Horizontal position on screen (MSP OSD only)</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSSHAIR_Y (OSD5_CRSSHAIR_Y)</h2>
+
+<p>Vertical position on screen (MSP OSD only)</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>HOMEDIST_EN (OSD5_HOMEDIST_EN)</h2>
+
+<p>Displays distance from HOME (MSP OSD only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>HOMEDIST_X (OSD5_HOMEDIST_X)</h2>
+
+<p>Horizontal position on screen (MSP OSD only)</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>HOMEDIST_Y (OSD5_HOMEDIST_Y)</h2>
+
+<p>Vertical position on screen (MSP OSD only)</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>HOMEDIR_EN (OSD5_HOMEDIR_EN)</h2>
+
+<p>Displays relative direction to HOME (MSP OSD only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>HOMEDIR_X (OSD5_HOMEDIR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>HOMEDIR_Y (OSD5_HOMEDIR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CELL_VOLT_EN (OSD5_CELLVOLT_EN)</h2>
+
+<p>Displays average cell voltage (MSP OSD only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CELL_VOLT_X (OSD5_CELLVOLT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CELL_VOLT_Y (OSD5_CELLVOLT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BATT_BAR_EN (OSD5_BATTBAR_EN)</h2>
+
+<p>Displays battery usage bar (MSP OSD only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BATT_BAR_X (OSD5_BATTBAR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BATT_BAR_Y (OSD5_BATTBAR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ARMING_EN (OSD5_ARMING_EN)</h2>
+
+<p>Displays arming status (MSP OSD only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ARMING_X (OSD5_ARMING_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ARMING_Y (OSD5_ARMING_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>POWER_EN (OSD5_POWER_EN)</h2>
+
+<p>Displays total power draw from all batteries</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>POWER_X (OSD5_POWER_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>POWER_Y (OSD5_POWER_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PLUSCODE_EN (OSD5_PLUSCODE_EN)</h2>
+
+<p>Displays pluscode (OLC) element</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PLUSCODE_X (OSD5_PLUSCODE_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PLUSCODE_Y (OSD5_PLUSCODE_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CALLSIGN_EN (OSD5_CALLSIGN_EN)</h2>
+
+<p>Displays callsign from callsign.txt on microSD card</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CALLSIGN_X (OSD5_CALLSIGN_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CALLSIGN_Y (OSD5_CALLSIGN_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CURRENT2_EN (OSD5_CURRENT2_EN)</h2>
+
+<p>Displays 2nd battery current</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CURRENT2_X (OSD5_CURRENT2_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CURRENT2_Y (OSD5_CURRENT2_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>VTX_PWR_EN (OSD5_VTX_PWR_EN)</h2>
+
+<p>Displays VTX Power</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>VTX_PWR_X (OSD5_VTX_PWR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>VTX_PWR_Y (OSD5_VTX_PWR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TER_HGT_EN (OSD5_TER_HGT_EN)</h2>
+
+<p>Displays Height above terrain</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TER_HGT_X (OSD5_TER_HGT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TER_HGT_Y (OSD5_TER_HGT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVGCELLV_EN (OSD5_AVGCELLV_EN)</h2>
+
+<p>Displays average cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVGCELLV_X (OSD5_AVGCELLV_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVGCELLV_Y (OSD5_AVGCELLV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RESTVOLT_EN (OSD5_RESTVOLT_EN)</h2>
+
+<p>Displays main battery resting voltage</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RESTVOLT_X (OSD5_RESTVOLT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RESTVOLT_Y (OSD5_RESTVOLT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>FENCE_EN (OSD5_FENCE_EN)</h2>
+
+<p>Displays indication of fence enable and breach</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>FENCE_X (OSD5_FENCE_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>FENCE_Y (OSD5_FENCE_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RNGF_EN (OSD5_RNGF_EN)</h2>
+
+<p>Displays a rangefinder&#x27;s distance in cm</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RNGF_X (OSD5_RNGF_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RNGF_Y (OSD5_RNGF_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>LINK_Q_EN (OSD5_LINK_Q_EN)</h2>
+
+<p>Displays Receiver link quality and also RF mode if bit 20 of OSD_OPTIONS is set</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>LINK_Q_X (OSD5_LINK_Q_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>LINK_Q_Y (OSD5_LINK_Q_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>NRG_CONS_EN (OSD5_NRG_CONS_EN)</h2>
+
+<p>Displays total energy consumed from primary battery</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>NRG_CONS_X (OSD5_NRG_CONS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>NRG_CONS_Y (OSD5_NRG_CONS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RC_THR_EN (OSD5_RC_THR_EN)</h2>
+
+<p>Displays input throttle value (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RC_THR_X (OSD5_RC_THR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RC_THR_Y (OSD5_RC_THR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ASPD_DEM_EN (OSD5_ASPD_DEM_EN)</h2>
+
+<p>Displays the demanded airspeed in auto throttle modes (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ASPD_DEM_X (OSD5_ASPD_DEM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ASPD_DEM_Y (OSD5_ASPD_DEM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ACC_LONG_EN (OSD5_ACC_LONG_EN)</h2>
+
+<p>Displays the aircraft&#x27;s longitudinal acceleration in g</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ACC_LONG_X (OSD5_ACC_LONG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ACC_LONG_Y (OSD5_ACC_LONG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ACC_LAT_EN (OSD5_ACC_LAT_EN)</h2>
+
+<p>Displays the aircraft&#x27;s lateral acceleration in g</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ACC_LAT_X (OSD5_ACC_LAT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ACC_LAT_Y (OSD5_ACC_LAT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>ACC_VERT_EN (OSD5_ACC_VERT_EN)</h2>
+
+<p>Displays the aircraft&#x27;s vertical acceleration in g</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>ACC_VERT_X (OSD5_ACC_VERT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>ACC_VERT_Y (OSD5_ACC_VERT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AUTO_FLAPS_EN (OSD5_AUTO_FLP_EN)</h2>
+
+<p>Displays the requested auto flaps position</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AUTO_FLAPS_X (OSD5_AUTO_FLP_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AUTO_FLAPS_Y (OSD5_AUTO_FLP_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AOA_EN (OSD5_AOA_EN)</h2>
+
+<p>Displays the estimated angle of attack</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AOA_X (OSD5_AOA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AOA_Y (OSD5_AOA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFPWR_EN (OSD5_CRSFPWR_EN)</h2>
+
+<p>Displays the TX power when using the CRSF RC protocol</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFPWR_X (OSD5_CRSFPWR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFPWR_Y (OSD5_CRSFPWR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFRSSI_EN (OSD5_CRSFRSSI_EN)</h2>
+
+<p>Displays RC signal strength in dBm for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFRSSI_X (OSD5_CRSFRSSI_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFRSSI_Y (OSD5_CRSFRSSI_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFSNR_EN (OSD5_CRSFSNR_EN)</h2>
+
+<p>Displays RC signal to noise ratio in dB for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFSNR_X (OSD5_CRSFSNR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFSNR_Y (OSD5_CRSFSNR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRSFANT_EN (OSD5_CRSFANT_EN)</h2>
+
+<p>Displays the current active antenna for CRSF</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRSFANT_X (OSD5_CRSFANT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRSFANT_Y (OSD5_CRSFANT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT_PCT_EN (OSD5_BAT_PCT_EN)</h2>
+
+<p>Displays the remaining battery capacity as a percentage</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT_PCT_X (OSD5_BAT_PCT_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT_PCT_Y (OSD5_BAT_PCT_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVGCELLV_EN (OSD5_R_AVG_CV_EN)</h2>
+
+<p>Displays average resting cell voltage. WARNING: this can be inaccurate if the cell count is not detected properly. If the cell count detection voltage is not right or the battery is far from fully charged the detected cell count might not be accurate. Use BATT_CELL_COUNT to force the number of cells.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>R_AVG_CV_X (OSD5_R_AVG_CV_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>R_AVG_CV_Y (OSD5_R_AVG_CV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>NRG_REM_EN (OSD5_NRG_REM_EN)</h2>
+
+<p>Displays energy remaining in primary battery</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>NRG_REM_X (OSD5_NRG_REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>NRG_REM_Y (OSD5_NRG_REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFG_EN (OSD5_AVG_EFFG_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFG_X (OSD5_AVG_EFFG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFG_Y (OSD5_AVG_EFFG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>AVG_EFFA_EN (OSD5_AVG_EFFA_EN)</h2>
+
+<p>Displays average flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>AVG_EFFA_X (OSD5_AVG_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>AVG_EFFA_Y (OSD5_AVG_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>EFFA_EN (OSD5_EFFA_EN)</h2>
+
+<p>Displays air flight efficiency (mAh or Wh / km or mi)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>EFFA_X (OSD5_EFFA_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>EFFA_Y (OSD5_EFFA_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BATREM_EN (OSD5_BATREM_EN)</h2>
+
+<p>Displays primary battery mAh remaining</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BATREM_X (OSD5_BATREM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BATREM_Y (OSD5_BATREM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>BAT2REM_EN (OSD5_BAT2REM_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>BAT2REM_X (OSD5_BAT2REM_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>BAT2REM_Y (OSD5_BAT2REM_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PN_EN (OSD5_TUNED_PN_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PN_X (OSD5_TUNED_PN_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PN_Y (OSD5_TUNED_PN_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>TUNED_PV_EN (OSD5_TUNED_PV_EN)</h2>
+
+<p>Displays secondary battery mAh consumed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>TUNED_PV_X (OSD5_TUNED_PV_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>TUNED_PV_Y (OSD5_TUNED_PV_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_RR_EN (OSD5_PEAK_RR_EN)</h2>
+
+<p>Displays the peak roll rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_RR_X (OSD5_PEAK_RR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_RR_Y (OSD5_PEAK_RR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>PEAK_PR_EN (OSD5_PEAK_PR_EN)</h2>
+
+<p>Displays the peak pitch rate in the last OSD_PEAKR_TMOUT seconds</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>PEAK_PR_X (OSD5_PEAK_PR_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>PEAK_PR_Y (OSD5_PEAK_PR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
 </ul>
 
 
@@ -24121,20 +26786,767 @@ DO NOT EDIT
 </ul>
 
 
-<h1>PTCH Parameters</h1>
+<h1>OSD7_ Parameters</h1>
 
 
-<h2>Pitch Time Constant (PTCH2SRV_TCONST)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Enable screen (OSD7_ENABLE)</h2>
 
-<p>Time constant in seconds from demanded to achieved pitch angle in all angle control modes (all but MANUAL and ACRO). Most models respond well to 0.5. May be reduced for faster responses, but setting lower than a model can achieve will not help.</p>
+<p>Enable this screen</p>
 <ul>
-<li>Range: 0.4 1.0</li>
-<li>Units: seconds</li>
-<li>Increment: 0.1</li>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
 </ul>
 
 
-<h2>Pitch up max rate (PTCH2SRV_RMAX_UP)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Transmitter switch screen minimum pwm (OSD7_CHAN_MIN)</h2>
+
+<p>This sets the PWM lower limit for this screen</p>
+<ul>
+<li>Range: 900 2100</li>
+</ul>
+
+
+<h2>Transmitter switch screen maximum pwm (OSD7_CHAN_MAX)</h2>
+
+<p>This sets the PWM upper limit for this screen</p>
+<ul>
+<li>Range: 900 2100</li>
+</ul>
+
+
+<h2>SAVE_X (OSD7_SAVE_X)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Horizontal position of Save button on screen</p>
+<ul>
+<li>Range: 0 25</li>
+</ul>
+
+
+<h2>SAVE_Y (OSD7_SAVE_Y)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Vertical position of Save button on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h1>OSD7_PARAM1 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM1_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM1_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM1_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM1_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM1_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM1_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM1_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM1_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM1_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM1_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM2 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM2_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM2_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM2_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM2_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM2_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM2_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM2_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM2_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM2_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM2_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM3 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM3_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM3_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM3_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM3_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM3_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM3_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM3_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM3_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM3_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM3_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM4 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM4_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM4_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM4_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM4_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM4_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM4_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM4_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM4_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM4_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM4_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM5 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM5_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM5_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM5_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM5_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM5_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM5_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM5_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM5_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM5_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM5_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM6 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM6_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM6_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM6_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM6_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM6_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM6_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM6_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM6_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM6_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM6_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM7 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM7_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM7_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM7_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM7_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM7_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM7_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM7_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM7_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM7_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM7_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM8 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM8_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM8_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM8_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM8_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM8_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM8_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM8_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM8_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM8_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM8_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>OSD7_PARAM9 Parameters</h1>
+
+
+<h2>Enable (OSD7_PARAM9_EN)</h2>
+
+<p>Enable setting</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>X position (OSD7_PARAM9_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>Y position (OSD7_PARAM9_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Parameter key (OSD7_PARAM9_KEY)</h2>
+
+<p>Key of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter index (OSD7_PARAM9_IDX)</h2>
+
+<p>Index of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter group (OSD7_PARAM9_GRP)</h2>
+
+<p>Group of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter minimum (OSD7_PARAM9_MIN)</h2>
+
+<p>Minimum value of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter maximum (OSD7_PARAM9_MAX)</h2>
+
+<p>Maximum of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter increment (OSD7_PARAM9_INCR)</h2>
+
+<p>Increment of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h2>Parameter type (OSD7_PARAM9_TYPE)</h2>
+
+<p>Type of the parameter to be displayed and modified</p>
+<ul>
+</ul>
+
+
+<h1>PTCH Parameters</h1>
+
+
+<h2>Pitch up max rate (PTCH_AGL_RMAX_UP)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This sets the maximum nose up pitch rate that the attitude controller will demand (degrees/sec) in angle stabilized modes (all but MANUAL and ACRO). Setting it to zero disables the limit.</p>
 <ul>
@@ -24144,7 +27556,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Pitch down max rate (PTCH2SRV_RMAX_DN)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Pitch down max rate (PTCH_AGL_RMAX_DN)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This sets the maximum nose down pitch rate that the attitude controller will demand (degrees/sec) in angle stabilized modes (all but MANUAL and ACRO). Setting it to zero disables the limit.</p>
 <ul>
@@ -24154,7 +27566,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Roll compensation (PTCH2SRV_RLL)</h2>
+<h2>Roll compensation (PTCH_AGL_RLLCOMP)</h2>
 
 <p>Gain added to pitch to keep aircraft from descending or ascending in turns. Increase in increments of 0.05 to reduce altitude loss. Decrease for altitude gain.</p>
 <ul>
@@ -24239,6 +27651,90 @@ DO NOT EDIT
 
 
 <h2>Pitch slew rate limit (PTCH_RATE_SMAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Sets an upper limit on the slew rate produced by the combined P and D gains. If the amplitude of the control action produced by the rate feedback exceeds this value, then the D+P gain is reduced to respect the limit. This limits the amplitude of high frequency oscillations caused by an excessive gain. The limit should be set to no more than 25% of the actuators maximum slew rate to allow for load effects. Note: The gain will not be reduced to less than 10% of the nominal value. A value of zero will disable this feature.</p>
+<ul>
+<li>Range: 0 200</li>
+<li>Increment: 0.5</li>
+</ul>
+
+
+<h2>Pitch axis angle controller P gain (PTCH_AGL_P)</h2>
+
+<p>Pitch axis angle controller P gain.  Converts the difference between desired roll rate and actual roll rate into a motor speed output</p>
+<ul>
+<li>Range: 0.08 0.35</li>
+<li>Increment: 0.005</li>
+</ul>
+
+
+<h2>Pitch axis angle controller I gain (PTCH_AGL_I)</h2>
+
+<p>Pitch axis angle controller I gain.  Corrects long-term difference in desired roll rate vs actual roll rate</p>
+<ul>
+<li>Range: 0.01 0.6</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Pitch axis angle controller I gain maximum (PTCH_AGL_IMAX)</h2>
+
+<p>Pitch axis angle controller I gain maximum.  Constrains the maximum motor output that the I gain will output</p>
+<ul>
+<li>Range: 0 1</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Pitch axis angle controller D gain (PTCH_AGL_D)</h2>
+
+<p>Pitch axis angle controller D gain.  Compensates for short-term change in desired roll rate vs actual roll rate</p>
+<ul>
+<li>Range: 0.001 0.03</li>
+<li>Increment: 0.001</li>
+</ul>
+
+
+<h2>Pitch axis angle controller feed forward (PTCH_AGL_FF)</h2>
+
+<p>Pitch axis angle controller feed forward</p>
+<ul>
+<li>Range: 0 3.0</li>
+<li>Increment: 0.001</li>
+</ul>
+
+
+<h2>Pitch axis angle controller target frequency in Hz (PTCH_AGL_FLTT)</h2>
+
+<p>Pitch axis angle controller target frequency in Hz</p>
+<ul>
+<li>Range: 2 50</li>
+<li>Increment: 1</li>
+<li>Units: hertz</li>
+</ul>
+
+
+<h2>Pitch axis angle controller error frequency in Hz (PTCH_AGL_FLTE)</h2>
+
+<p>Pitch axis angle controller error frequency in Hz</p>
+<ul>
+<li>Range: 2 50</li>
+<li>Increment: 1</li>
+<li>Units: hertz</li>
+</ul>
+
+
+<h2>Pitch axis angle controller derivative frequency in Hz (PTCH_AGL_FLTD)</h2>
+
+<p>Pitch axis angle controller derivative frequency in Hz</p>
+<ul>
+<li>Range: 0 50</li>
+<li>Increment: 1</li>
+<li>Units: hertz</li>
+</ul>
+
+
+<h2>Requested pitch rate slew rate limit (PTCH_AGL_SMAX)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Sets an upper limit on the slew rate produced by the combined P and D gains. If the amplitude of the control action produced by the rate feedback exceeds this value, then the D+P gain is reduced to respect the limit. This limits the amplitude of high frequency oscillations caused by an excessive gain. The limit should be set to no more than 25% of the actuators maximum slew rate to allow for load effects. Note: The gain will not be reduced to less than 10% of the nominal value. A value of zero will disable this feature.</p>
 <ul>
@@ -28642,17 +32138,7 @@ DO NOT EDIT
 <h1>RLL Parameters</h1>
 
 
-<h2>Roll Time Constant (RLL2SRV_TCONST)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Time constant in seconds from demanded to achieved roll angle in angle control modes (all but MANUAL and ACRO). Most models respond well to 0.5. May be reduced for faster responses, but setting lower than a model can achieve will not help.</p>
-<ul>
-<li>Range: 0.4 1.0</li>
-<li>Units: seconds</li>
-<li>Increment: 0.1</li>
-</ul>
-
-
-<h2>Maximum Roll Rate (RLL2SRV_RMAX)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Maximum Roll Rate (RLL_AGL_RMAX)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This sets the maximum roll rate that the attitude controller will demand (degrees/sec) in angle stabilized modes (all but MANUAL and ACRO). Setting it to zero disables this limit.</p>
 <ul>
@@ -28738,6 +32224,90 @@ DO NOT EDIT
 
 
 <h2>Roll slew rate limit (RLL_RATE_SMAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Sets an upper limit on the slew rate produced by the combined P and D gains. If the amplitude of the control action produced by the rate feedback exceeds this value, then the D+P gain is reduced to respect the limit. This limits the amplitude of high frequency oscillations caused by an excessive gain. The limit should be set to no more than 25% of the actuators maximum slew rate to allow for load effects. Note: The gain will not be reduced to less than 10% of the nominal value. A value of zero will disable this feature.</p>
+<ul>
+<li>Range: 0 200</li>
+<li>Increment: 0.5</li>
+</ul>
+
+
+<h2>Roll axis angle controller P gain (RLL_AGL_P)</h2>
+
+<p>Roll axis angle controller P gain.  Converts the difference between desired roll rate and actual roll rate into a motor speed output</p>
+<ul>
+<li>Range: 0.08 0.35</li>
+<li>Increment: 0.005</li>
+</ul>
+
+
+<h2>Roll axis angle controller I gain (RLL_AGL_I)</h2>
+
+<p>Roll axis angle controller I gain.  Corrects long-term difference in desired roll rate vs actual roll rate</p>
+<ul>
+<li>Range: 0.01 0.6</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Roll axis angle controller I gain maximum (RLL_AGL_IMAX)</h2>
+
+<p>Roll axis angle controller I gain maximum.  Constrains the maximum motor output that the I gain will output</p>
+<ul>
+<li>Range: 0 1</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Roll axis angle controller D gain (RLL_AGL_D)</h2>
+
+<p>Roll axis angle controller D gain.  Compensates for short-term change in desired roll rate vs actual roll rate</p>
+<ul>
+<li>Range: 0.001 0.03</li>
+<li>Increment: 0.001</li>
+</ul>
+
+
+<h2>Roll axis angle controller feed forward (RLL_AGL_FF)</h2>
+
+<p>Roll axis angle controller feed forward</p>
+<ul>
+<li>Range: 0 3.0</li>
+<li>Increment: 0.001</li>
+</ul>
+
+
+<h2>Roll axis angle controller target frequency in Hz (RLL_AGL_FLTT)</h2>
+
+<p>Roll axis angle controller target frequency in Hz</p>
+<ul>
+<li>Range: 2 50</li>
+<li>Increment: 1</li>
+<li>Units: hertz</li>
+</ul>
+
+
+<h2>Roll axis angle controller error frequency in Hz (RLL_AGL_FLTE)</h2>
+
+<p>Roll axis angle controller error frequency in Hz</p>
+<ul>
+<li>Range: 2 50</li>
+<li>Increment: 1</li>
+<li>Units: hertz</li>
+</ul>
+
+
+<h2>Roll axis angle controller derivative frequency in Hz (RLL_AGL_FLTD)</h2>
+
+<p>Roll axis angle controller derivative frequency in Hz</p>
+<ul>
+<li>Range: 0 50</li>
+<li>Increment: 1</li>
+<li>Units: hertz</li>
+</ul>
+
+
+<h2>Requested roll rate slew rate limit (RLL_AGL_SMAX)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Sets an upper limit on the slew rate produced by the combined P and D gains. If the amplitude of the control action produced by the rate feedback exceeds this value, then the D+P gain is reduced to respect the limit. This limits the amplitude of high frequency oscillations caused by an excessive gain. The limit should be set to no more than 25% of the actuators maximum slew rate to allow for load effects. Note: The gain will not be reduced to less than 10% of the nominal value. A value of zero will disable this feature.</p>
 <ul>
@@ -37158,6 +40728,34 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Auto throttle square response curve (TECS_THR_EXPO)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Amount of square response curve to apply to throttle in auto throttle modes</p>
+<ul>
+<li>Units: percent</li>
+<li>Range: 0 100</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Throttle FF component filter (TECS_THR_FF_FILT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Throttle FF component filter value which determines what proportion of the current state vs newly calculated throttle FF value are used. 1.0 means used 100% of the newly calculated value (no filtering)</p>
+<ul>
+<li>Range: 0.2 1.0</li>
+<li>Increment: 0.1</li>
+</ul>
+
+
+<h2>Throttle FF component dampening factor (TECS_THR_FF_DAMP)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Throttle FF component dampening factor. 0 means not use FF for throttle calculations. 1 means use 100% of the calculated throttle FF value.</p>
+<ul>
+<li>Range: 0.0 1.0</li>
+<li>Increment: 0.1</li>
+</ul>
+
+
 <h2>Speed demand rate acceleration (m/s^3) (TECS_SPDRATE_ACC)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Speed demand rate acceleration (m/s^3)</p>
@@ -37311,6 +40909,22 @@ DO NOT EDIT
 <tr><td>55</td><td>FixedWingPitchI</td></tr>
 <tr><td>56</td><td>FixedWingPitchD</td></tr>
 <tr><td>57</td><td>FixedWingPitchFF</td></tr>
+<tr><td>58</td><td>TRIM_THROTTLE</td></tr>
+<tr><td>59</td><td>TRIM_PITCH</td></tr>
+<tr><td>60</td><td>KFF_THRAT2PTCH</td></tr>
+<tr><td>61</td><td>FW STAB PITCH DOWN</td></tr>
+<tr><td>62</td><td>RLL2PTCH</td></tr>
+<tr><td>63</td><td>KFF_RDDRMIX</td></tr>
+<tr><td>64</td><td>TECSTFFDAMP</td></tr>
+<tr><td>65</td><td>TECSTFF_FILT</td></tr>
+<tr><td>66</td><td>FWAglRollP</td></tr>
+<tr><td>67</td><td>FWAglRollI</td></tr>
+<tr><td>68</td><td>AglRollD</td></tr>
+<tr><td>69</td><td>AglRollFLTT</td></tr>
+<tr><td>70</td><td>FWAglPitchP</td></tr>
+<tr><td>71</td><td>FWAglPitchI</td></tr>
+<tr><td>72</td><td>AglPitchD</td></tr>
+<tr><td>73</td><td>AglPitchFLTT</td></tr>
 <tr><td>101</td><td>Set_RateRollPitch</td></tr>
 <tr><td>102</td><td>Set_RateRoll</td></tr>
 <tr><td>103</td><td>Set_RatePitch</td></tr>
@@ -37318,6 +40932,12 @@ DO NOT EDIT
 <tr><td>105</td><td>Set_AngleRollPitch</td></tr>
 <tr><td>106</td><td>Set_VelXY</td></tr>
 <tr><td>107</td><td>Set_AccelZ</td></tr>
+<tr><td>108</td><td>Set_TRIM_THR_PTCH</td></tr>
+<tr><td>109</td><td>Set turn coordination</td></tr>
+<tr><td>110</td><td>TECSTHRFF</td></tr>
+<tr><td>111</td><td>Set_AglRollPitch</td></tr>
+<tr><td>112</td><td>Set_AglRoll</td></tr>
+<tr><td>113</td><td>Set_AglPitch</td></tr>
 </table>
 </ul>
 
