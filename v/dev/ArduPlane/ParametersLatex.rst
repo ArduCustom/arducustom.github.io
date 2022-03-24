@@ -2128,11 +2128,11 @@ MIXING\_DIFF: Mixing differential amount
 The amount of differential mixing\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
 
 
-+------------+---------+
-| Range      | Units   |
-+============+=========+
-| -100 - 100 | percent |
-+------------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| -90 - 90 | percent |
++----------+---------+
 
 
 
@@ -2672,6 +2672,192 @@ Mask of output channels to use oneshot on
 +-----+----------+
 | 14  | Servo 15 |
 +-----+----------+
+
+
+
+
+.. _VTAIL_SRV_MAX:
+
+VTAIL\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set a V\-tail servo max above of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute maximum servo auto trim won\'t set a V\-tail servo max above of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _VTAIL_SRV_MIN:
+
+VTAIL\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an V\-tail servo min bellow of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute minimum servo auto trim won\'t set an V\-tail servo min bellow of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _ELEVON_SRV_MAX:
+
+ELEVON\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set an elevon servo max above of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute maximum servo auto trim won\'t set an elevon servo max above of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _ELEVON_SRV_MIN:
+
+ELEVON\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an elevon servo min bellow of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute minimum servo auto trim won\'t set an elevon servo min bellow of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _AILERON_SRV_MAX:
+
+AILERON\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set an aileron servo max above of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute maximum servo auto trim won\'t set an aileron servo max above of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _AILERON_SRV_MIN:
+
+AILERON\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an aileron servo min bellow of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute minimum servo auto trim won\'t set an aileron servo min bellow of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _ELEVATOR_SRV_MAX:
+
+ELEVATOR\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set an elevator servo max above of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute maximum servo auto trim won\'t set an elevator servo max above of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _ELEVATOR_SRV_MIN:
+
+ELEVATOR\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an elevator servo min bellow of
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo absolute minimum servo auto trim won\'t set an elevator servo min bellow of
+
+
++------------+
+| Range      |
++============+
+| 500 - 2500 |
++------------+
+
+
+
+
+.. _AILERON_DIFF:
+
+AILERON\_DIFF: Amount of differential throws applied to the ailerons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Amount of differential throws applied to the ailerons\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _ELEVA_DIFF:
+
+ELEVA\_DIFF: Amount of differential throws applied to the elevator \(does not apply to elevons\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Amount of differential throws applied to the elevator \(does not apply to elevons\)\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
 
 
 
@@ -74869,16 +75055,18 @@ SERVO\_AUTO\_TRIM: Automatic servo trim
 
 | *Note: This parameter is for advanced users*
 
-This enables automatic servo trim in flight\. Servos will be trimed in stabilized flight modes when the aircraft is close to level\. Changes to servo trim will be saved every 10 seconds and will persist between flights\. The automatic trim won\'t go more than 20\% away from a centered trim\.
+This enables automatic servo trim in flight\. Servos will be trimed in stabilized flight modes when the aircraft is close to level\. Changes to servo trim will be saved every 10 seconds and will persist between flights\. The automatic trim won\'t go more than 25\% away from a centered trim\.
 
 
-+-------+---------+
-| Value | Meaning |
-+=======+=========+
-| 0     | Disable |
-+-------+---------+
-| 1     | Enable  |
-+-------+---------+
++-------+---------------------+
+| Value | Meaning             |
++=======+=====================+
+| 0     | Disable             |
++-------+---------------------+
+| 1     | Enable until disarm |
++-------+---------------------+
+| 2     | Enable permanently  |
++-------+---------------------+
 
 
 
@@ -83814,6 +84002,10 @@ This sets which parameter or set of parameters will be tuned\. Values greater th
 +-------+-----------------------+
 | 73    | AglPitchFLTT          |
 +-------+-----------------------+
+| 74    | MixingDiff            |
++-------+-----------------------+
+| 75    | MixingOffset          |
++-------+-----------------------+
 | 101   | Set_RateRollPitch     |
 +-------+-----------------------+
 | 102   | Set_RateRoll          |
@@ -83839,6 +84031,8 @@ This sets which parameter or set of parameters will be tuned\. Values greater th
 | 112   | Set_AglRoll           |
 +-------+-----------------------+
 | 113   | Set_AglPitch          |
++-------+-----------------------+
+| 114   | Set_Mixing            |
 +-------+-----------------------+
 
 

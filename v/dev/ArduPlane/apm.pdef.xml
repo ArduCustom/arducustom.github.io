@@ -655,7 +655,7 @@
       <param humanName="Mixing differential amount" name="ArduPlane:MIXING_DIFF" documentation="The amount of differential mixing. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel" user="Standard">
         <field name="Units">%</field>
         <field name="UnitText">percent</field>
-        <field name="Range">-100 100</field>
+        <field name="Range">-90 90</field>
       </param>
       <param humanName="Crash Detection" name="ArduPlane:CRASH_DETECT" documentation="Automatically detect a crash during AUTO flight and perform the bitmask selected action(s). Disarm will turn off motor for safety and to help against burning out ESC and motor. Set to 0 to disable crash detection." user="Advanced">
         <values>
@@ -777,6 +777,42 @@
       </param>
       <param humanName="Oneshot output mask" name="ArduPlane:ONESHOT_MASK" documentation="Mask of output channels to use oneshot on" user="Advanced">
         <field name="Bitmask">0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15</field>
+      </param>
+      <param humanName="Servo absolute maximum servo auto trim won't set a V-tail servo max above of" name="ArduPlane:VTAIL_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set a V-tail servo max above of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Servo absolute minimum servo auto trim won't set an V-tail servo min bellow of" name="ArduPlane:VTAIL_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an V-tail servo min bellow of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Servo absolute maximum servo auto trim won't set an elevon servo max above of" name="ArduPlane:ELEVON_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set an elevon servo max above of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Servo absolute minimum servo auto trim won't set an elevon servo min bellow of" name="ArduPlane:ELEVON_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an elevon servo min bellow of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Servo absolute maximum servo auto trim won't set an aileron servo max above of" name="ArduPlane:AILERON_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set an aileron servo max above of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Servo absolute minimum servo auto trim won't set an aileron servo min bellow of" name="ArduPlane:AILERON_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an aileron servo min bellow of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Servo absolute maximum servo auto trim won't set an elevator servo max above of" name="ArduPlane:ELEVATOR_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set an elevator servo max above of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Servo absolute minimum servo auto trim won't set an elevator servo min bellow of" name="ArduPlane:ELEVATOR_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an elevator servo min bellow of" user="Standard">
+        <field name="Range">500 2500</field>
+      </param>
+      <param humanName="Amount of differential throws applied to the ailerons" name="ArduPlane:AILERON_DIFF" documentation="Amount of differential throws applied to the ailerons. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="Amount of differential throws applied to the elevator (does not apply to elevons)" name="ArduPlane:ELEVA_DIFF" documentation="Amount of differential throws applied to the elevator (does not apply to elevons). A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
       </param>
       <param humanName="Enable extra modes" name="ArduPlane:FLTMODE_EXT" documentation="This enables 14 extra modes. Be careful when enabling this on PPM/analog, as each mode channel is only 45 usec wide (starting from 1050, then 1095, and so on)." user="Advanced">
         <values>
@@ -19853,10 +19889,11 @@
       </param>
     </parameters>
     <parameters name="SERVO">
-      <param humanName="Automatic servo trim" name="SERVO_AUTO_TRIM" documentation="This enables automatic servo trim in flight. Servos will be trimed in stabilized flight modes when the aircraft is close to level. Changes to servo trim will be saved every 10 seconds and will persist between flights. The automatic trim won't go more than 20% away from a centered trim." user="Advanced">
+      <param humanName="Automatic servo trim" name="SERVO_AUTO_TRIM" documentation="This enables automatic servo trim in flight. Servos will be trimed in stabilized flight modes when the aircraft is close to level. Changes to servo trim will be saved every 10 seconds and will persist between flights. The automatic trim won't go more than 25% away from a centered trim." user="Advanced">
         <values>
           <value code="0">Disable</value>
-          <value code="1">Enable</value>
+          <value code="1">Enable until disarm</value>
+          <value code="2">Enable permanently</value>
         </values>
       </param>
       <param humanName="Servo default output rate" name="SERVO_RATE" documentation="This sets the default output rate in Hz for all outputs." user="Advanced">
@@ -23163,6 +23200,8 @@
           <value code="71">FWAglPitchI</value>
           <value code="72">AglPitchD</value>
           <value code="73">AglPitchFLTT</value>
+          <value code="74">MixingDiff</value>
+          <value code="75">MixingOffset</value>
           <value code="101">Set_RateRollPitch</value>
           <value code="102">Set_RateRoll</value>
           <value code="103">Set_RatePitch</value>
@@ -23176,6 +23215,7 @@
           <value code="111">Set_AglRollPitch</value>
           <value code="112">Set_AglRoll</value>
           <value code="113">Set_AglPitch</value>
+          <value code="114">Set_Mixing</value>
         </values>
       </param>
       <param humanName="Transmitter tuning channel" name="TUNE_CHAN" documentation="This sets the channel for transmitter tuning. This should be connected to a knob or slider on your transmitter. It needs to be setup to use the PWM range given by TUNE_CHAN_MIN to TUNE_CHAN_MAX" user="Standard">

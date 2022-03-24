@@ -17901,6 +17901,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18009,6 +18011,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18117,6 +18121,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18225,6 +18231,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18333,6 +18341,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18441,6 +18451,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18549,6 +18561,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18657,6 +18671,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18765,6 +18781,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18873,6 +18891,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -18981,6 +19001,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -19089,6 +19111,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -19197,6 +19221,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -19305,6 +19331,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -19413,6 +19441,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -19521,6 +19551,8 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>

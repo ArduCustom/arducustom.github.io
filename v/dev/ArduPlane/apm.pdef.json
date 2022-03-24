@@ -24318,6 +24318,33 @@
       "Units": "deg/s",
       "User": "Standard"
     },
+    "AILERON_DIFF": {
+      "Description": "Amount of differential throws applied to the ailerons. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel",
+      "DisplayName": "Amount of differential throws applied to the ailerons",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "AILERON_SRV_MAX": {
+      "Description": "Servo absolute maximum servo auto trim won't set an aileron servo max above of",
+      "DisplayName": "Servo absolute maximum servo auto trim won't set an aileron servo max above of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "User": "Standard"
+    },
+    "AILERON_SRV_MIN": {
+      "Description": "Servo absolute minimum servo auto trim won't set an aileron servo min bellow of",
+      "DisplayName": "Servo absolute minimum servo auto trim won't set an aileron servo min bellow of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "User": "Standard"
+    },
     "ALT_HOLD_FBWCM": {
       "Description": "This is the minimum altitude in centimeters that FBWB and CRUISE modes will allow. If you attempt to descend below this altitude then the plane will level off. A value of zero means no limit.",
       "DisplayName": "Minimum altitude for FBWB mode",
@@ -24462,6 +24489,51 @@
         "low": "-100"
       },
       "Units": "%",
+      "User": "Standard"
+    },
+    "ELEVATOR_SRV_MAX": {
+      "Description": "Servo absolute maximum servo auto trim won't set an elevator servo max above of",
+      "DisplayName": "Servo absolute maximum servo auto trim won't set an elevator servo max above of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "User": "Standard"
+    },
+    "ELEVATOR_SRV_MIN": {
+      "Description": "Servo absolute minimum servo auto trim won't set an elevator servo min bellow of",
+      "DisplayName": "Servo absolute minimum servo auto trim won't set an elevator servo min bellow of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "User": "Standard"
+    },
+    "ELEVA_DIFF": {
+      "Description": "Amount of differential throws applied to the elevator (does not apply to elevons). A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel",
+      "DisplayName": "Amount of differential throws applied to the elevator (does not apply to elevons)",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "ELEVON_SRV_MAX": {
+      "Description": "Servo absolute maximum servo auto trim won't set an elevon servo max above of",
+      "DisplayName": "Servo absolute maximum servo auto trim won't set an elevon servo max above of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "User": "Standard"
+    },
+    "ELEVON_SRV_MIN": {
+      "Description": "Servo absolute minimum servo auto trim won't set an elevon servo min bellow of",
+      "DisplayName": "Servo absolute minimum servo auto trim won't set an elevon servo min bellow of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
       "User": "Standard"
     },
     "FBWB_CLIMB_RATE": {
@@ -25288,8 +25360,8 @@
       "Description": "The amount of differential mixing. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel",
       "DisplayName": "Mixing differential amount",
       "Range": {
-        "high": "100",
-        "low": "-100"
+        "high": "90",
+        "low": "-90"
       },
       "Units": "%",
       "User": "Standard"
@@ -25810,6 +25882,24 @@
         "1": "AutoAlways",
         "2": "AutoLanding"
       }
+    },
+    "VTAIL_SRV_MAX": {
+      "Description": "Servo absolute maximum servo auto trim won't set a V-tail servo max above of",
+      "DisplayName": "Servo absolute maximum servo auto trim won't set a V-tail servo max above of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "User": "Standard"
+    },
+    "VTAIL_SRV_MIN": {
+      "Description": "Servo absolute minimum servo auto trim won't set an V-tail servo min bellow of",
+      "DisplayName": "Servo absolute minimum servo auto trim won't set an V-tail servo min bellow of",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "User": "Standard"
     },
     "WP_LOITER_RAD": {
       "Description": "Defines the distance from the waypoint center, the plane will maintain during a loiter. If you set this value to a negative number then the default loiter direction will be counter-clockwise instead of clockwise.",
@@ -34632,12 +34722,13 @@
   },
   "SERVO": {
     "SERVO_AUTO_TRIM": {
-      "Description": "This enables automatic servo trim in flight. Servos will be trimed in stabilized flight modes when the aircraft is close to level. Changes to servo trim will be saved every 10 seconds and will persist between flights. The automatic trim won't go more than 20% away from a centered trim.",
+      "Description": "This enables automatic servo trim in flight. Servos will be trimed in stabilized flight modes when the aircraft is close to level. Changes to servo trim will be saved every 10 seconds and will persist between flights. The automatic trim won't go more than 25% away from a centered trim.",
       "DisplayName": "Automatic servo trim",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
-        "1": "Enable"
+        "1": "Enable until disarm",
+        "2": "Enable permanently"
       }
     },
     "SERVO_DSHOT_ESC": {
@@ -39293,6 +39384,7 @@
         "111": "Set_AglRollPitch",
         "112": "Set_AglRoll",
         "113": "Set_AglPitch",
+        "114": "Set_Mixing",
         "12": "RateYawD",
         "13": "AngleRollP",
         "14": "AnglePitchP",
@@ -39338,6 +39430,8 @@
         "71": "FWAglPitchI",
         "72": "AglPitchD",
         "73": "AglPitchFLTT",
+        "74": "MixingDiff",
+        "75": "MixingOffset",
         "8": "RatePitchD",
         "9": "RateYawPI"
       }

@@ -1059,7 +1059,7 @@ DO NOT EDIT
 <p>The amount of differential mixing. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel</p>
 <ul>
 <li>Units: percent</li>
-<li>Range: -100 100</li>
+<li>Range: -90 90</li>
 </ul>
 
 
@@ -1282,6 +1282,92 @@ DO NOT EDIT
 <p>Mask of output channels to use oneshot on</p>
 <ul>
 <li>Bitmask: 0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15</li>
+</ul>
+
+
+<h2>Servo absolute maximum servo auto trim won't set a V-tail servo max above of (ArduPlane:VTAIL_SRV_MAX)</h2>
+
+<p>Servo absolute maximum servo auto trim won&#x27;t set a V-tail servo max above of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Servo absolute minimum servo auto trim won't set an V-tail servo min bellow of (ArduPlane:VTAIL_SRV_MIN)</h2>
+
+<p>Servo absolute minimum servo auto trim won&#x27;t set an V-tail servo min bellow of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Servo absolute maximum servo auto trim won't set an elevon servo max above of (ArduPlane:ELEVON_SRV_MAX)</h2>
+
+<p>Servo absolute maximum servo auto trim won&#x27;t set an elevon servo max above of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Servo absolute minimum servo auto trim won't set an elevon servo min bellow of (ArduPlane:ELEVON_SRV_MIN)</h2>
+
+<p>Servo absolute minimum servo auto trim won&#x27;t set an elevon servo min bellow of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Servo absolute maximum servo auto trim won't set an aileron servo max above of (ArduPlane:AILERON_SRV_MAX)</h2>
+
+<p>Servo absolute maximum servo auto trim won&#x27;t set an aileron servo max above of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Servo absolute minimum servo auto trim won't set an aileron servo min bellow of (ArduPlane:AILERON_SRV_MIN)</h2>
+
+<p>Servo absolute minimum servo auto trim won&#x27;t set an aileron servo min bellow of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Servo absolute maximum servo auto trim won't set an elevator servo max above of (ArduPlane:ELEVATOR_SRV_MAX)</h2>
+
+<p>Servo absolute maximum servo auto trim won&#x27;t set an elevator servo max above of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Servo absolute minimum servo auto trim won't set an elevator servo min bellow of (ArduPlane:ELEVATOR_SRV_MIN)</h2>
+
+<p>Servo absolute minimum servo auto trim won&#x27;t set an elevator servo min bellow of</p>
+<ul>
+<li>Range: 500 2500</li>
+</ul>
+
+
+<h2>Amount of differential throws applied to the ailerons (ArduPlane:AILERON_DIFF)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Amount of differential throws applied to the ailerons. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>Amount of differential throws applied to the elevator (does not apply to elevons) (ArduPlane:ELEVA_DIFF)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Amount of differential throws applied to the elevator (does not apply to elevons). A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
 </ul>
 
 
@@ -36463,11 +36549,12 @@ DO NOT EDIT
 
 <h2>Automatic servo trim (SERVO_AUTO_TRIM)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>This enables automatic servo trim in flight. Servos will be trimed in stabilized flight modes when the aircraft is close to level. Changes to servo trim will be saved every 10 seconds and will persist between flights. The automatic trim won&#x27;t go more than 20% away from a centered trim.</p>
+<p>This enables automatic servo trim in flight. Servos will be trimed in stabilized flight modes when the aircraft is close to level. Changes to servo trim will be saved every 10 seconds and will persist between flights. The automatic trim won&#x27;t go more than 25% away from a centered trim.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disable</td></tr>
-<tr><td>1</td><td>Enable</td></tr>
+<tr><td>1</td><td>Enable until disarm</td></tr>
+<tr><td>2</td><td>Enable permanently</td></tr>
 </table>
 </ul>
 
@@ -40925,6 +41012,8 @@ DO NOT EDIT
 <tr><td>71</td><td>FWAglPitchI</td></tr>
 <tr><td>72</td><td>AglPitchD</td></tr>
 <tr><td>73</td><td>AglPitchFLTT</td></tr>
+<tr><td>74</td><td>MixingDiff</td></tr>
+<tr><td>75</td><td>MixingOffset</td></tr>
 <tr><td>101</td><td>Set_RateRollPitch</td></tr>
 <tr><td>102</td><td>Set_RateRoll</td></tr>
 <tr><td>103</td><td>Set_RatePitch</td></tr>
@@ -40938,6 +41027,7 @@ DO NOT EDIT
 <tr><td>111</td><td>Set_AglRollPitch</td></tr>
 <tr><td>112</td><td>Set_AglRoll</td></tr>
 <tr><td>113</td><td>Set_AglPitch</td></tr>
+<tr><td>114</td><td>Set_Mixing</td></tr>
 </table>
 </ul>
 

@@ -72870,6 +72870,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -73131,6 +73135,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -73394,6 +73402,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -73655,6 +73667,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -73918,6 +73934,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -74179,6 +74199,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -74442,6 +74466,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -74703,6 +74731,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -74966,6 +74998,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -75227,6 +75263,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -75490,6 +75530,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -75751,6 +75795,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -76014,6 +76062,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -76275,6 +76327,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
@@ -76538,6 +76594,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
 | +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
+| +-------+--------------------+ |
 |                                |
 +--------------------------------+
 
@@ -76799,6 +76859,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm              | |
 | +-------+--------------------+ |
 | | 139   | Alarm Inverted     | |
+| +-------+--------------------+ |
+| | 140   | Aileron left       | |
+| +-------+--------------------+ |
+| | 141   | Aileron right      | |
 | +-------+--------------------+ |
 |                                |
 +--------------------------------+
