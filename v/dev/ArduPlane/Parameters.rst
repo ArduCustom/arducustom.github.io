@@ -2791,150 +2791,6 @@ Mask of output channels to use oneshot on
 
 
 
-.. _VTAIL_SRV_MAX:
-
-VTAIL\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set a V\-tail servo max above of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute maximum servo auto trim won\'t set a V\-tail servo max above of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
-.. _VTAIL_SRV_MIN:
-
-VTAIL\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an V\-tail servo min bellow of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute minimum servo auto trim won\'t set an V\-tail servo min bellow of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
-.. _ELEVON_SRV_MAX:
-
-ELEVON\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set an elevon servo max above of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute maximum servo auto trim won\'t set an elevon servo max above of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
-.. _ELEVON_SRV_MIN:
-
-ELEVON\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an elevon servo min bellow of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute minimum servo auto trim won\'t set an elevon servo min bellow of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
-.. _AILERON_SRV_MAX:
-
-AILERON\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set an aileron servo max above of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute maximum servo auto trim won\'t set an aileron servo max above of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
-.. _AILERON_SRV_MIN:
-
-AILERON\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an aileron servo min bellow of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute minimum servo auto trim won\'t set an aileron servo min bellow of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
-.. _ELEVATOR_SRV_MAX:
-
-ELEVATOR\_SRV\_MAX: Servo absolute maximum servo auto trim won\'t set an elevator servo max above of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute maximum servo auto trim won\'t set an elevator servo max above of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
-.. _ELEVATOR_SRV_MIN:
-
-ELEVATOR\_SRV\_MIN: Servo absolute minimum servo auto trim won\'t set an elevator servo min bellow of
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Servo absolute minimum servo auto trim won\'t set an elevator servo min bellow of
-
-
-+------------+
-| Range      |
-+============+
-| 500 - 2500 |
-+------------+
-
-
-
-
 .. _AILERON_DIFF:
 
 AILERON\_DIFF: Amount of differential throws applied to the ailerons
@@ -14856,6 +14712,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -15020,6 +14878,8 @@ Auxiliary RC Options function executed on pin change
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -15186,6 +15046,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -15350,6 +15212,8 @@ Auxiliary RC Options function executed on pin change
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -65921,6 +65785,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -66194,6 +66060,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -66469,6 +66337,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -66742,6 +66612,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -67017,6 +66889,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -67290,6 +67164,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -67565,6 +67441,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -67838,6 +67716,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -68113,6 +67993,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -68386,6 +68268,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -68661,6 +68545,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -68934,6 +68820,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -69209,6 +69097,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -69482,6 +69372,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -69757,6 +69649,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
 | +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
+| +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
@@ -70030,6 +69924,8 @@ Function assigned to this RC channel
 | | 158   | Optflow Calibration                                 | |
 | +-------+-----------------------------------------------------+ |
 | | 160   | Weathervane Enable                                  | |
+| +-------+-----------------------------------------------------+ |
+| | 162   | Servos auto trim                                    | |
 | +-------+-----------------------------------------------------+ |
 | | 208   | Flap                                                | |
 | +-------+-----------------------------------------------------+ |
@@ -80238,10 +80134,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO10_MAX:
+.. _SERVO10_MAX__SRV_Channel:
 
-SERVO10\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO10\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -80541,6 +80437,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO10_ABS_MIN:
+
+SERVO10\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO10_MAX__SRV_Channel:
+
+SERVO10\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO11_:
 
@@ -80566,10 +80498,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO11_MAX:
+.. _SERVO11_MAX__SRV_Channel:
 
-SERVO11\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO11\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -80869,6 +80801,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO11_ABS_MIN:
+
+SERVO11\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO11_MAX__SRV_Channel:
+
+SERVO11\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO12_:
 
@@ -80894,10 +80862,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO12_MAX:
+.. _SERVO12_MAX__SRV_Channel:
 
-SERVO12\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO12\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -81197,6 +81165,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO12_ABS_MIN:
+
+SERVO12\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO12_MAX__SRV_Channel:
+
+SERVO12\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO13_:
 
@@ -81222,10 +81226,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO13_MAX:
+.. _SERVO13_MAX__SRV_Channel:
 
-SERVO13\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO13\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -81525,6 +81529,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO13_ABS_MIN:
+
+SERVO13\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO13_MAX__SRV_Channel:
+
+SERVO13\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO14_:
 
@@ -81550,10 +81590,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO14_MAX:
+.. _SERVO14_MAX__SRV_Channel:
 
-SERVO14\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO14\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -81853,6 +81893,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO14_ABS_MIN:
+
+SERVO14\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO14_MAX__SRV_Channel:
+
+SERVO14\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO15_:
 
@@ -81878,10 +81954,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO15_MAX:
+.. _SERVO15_MAX__SRV_Channel:
 
-SERVO15\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO15\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -82181,6 +82257,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO15_ABS_MIN:
+
+SERVO15\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO15_MAX__SRV_Channel:
+
+SERVO15\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO16_:
 
@@ -82206,10 +82318,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO16_MAX:
+.. _SERVO16_MAX__SRV_Channel:
 
-SERVO16\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO16\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -82509,6 +82621,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO16_ABS_MIN:
+
+SERVO16\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO16_MAX__SRV_Channel:
+
+SERVO16\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO1_:
 
@@ -82534,10 +82682,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO1_MAX:
+.. _SERVO1_MAX__SRV_Channel:
 
-SERVO1\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO1\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -82837,6 +82985,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO1_ABS_MIN:
+
+SERVO1\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO1_MAX__SRV_Channel:
+
+SERVO1\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO2_:
 
@@ -82862,10 +83046,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO2_MAX:
+.. _SERVO2_MAX__SRV_Channel:
 
-SERVO2\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO2\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -83165,6 +83349,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO2_ABS_MIN:
+
+SERVO2\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO2_MAX__SRV_Channel:
+
+SERVO2\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO3_:
 
@@ -83190,10 +83410,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO3_MAX:
+.. _SERVO3_MAX__SRV_Channel:
 
-SERVO3\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO3\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -83493,6 +83713,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO3_ABS_MIN:
+
+SERVO3\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO3_MAX__SRV_Channel:
+
+SERVO3\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO4_:
 
@@ -83518,10 +83774,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO4_MAX:
+.. _SERVO4_MAX__SRV_Channel:
 
-SERVO4\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO4\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -83821,6 +84077,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO4_ABS_MIN:
+
+SERVO4\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO4_MAX__SRV_Channel:
+
+SERVO4\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO5_:
 
@@ -83846,10 +84138,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO5_MAX:
+.. _SERVO5_MAX__SRV_Channel:
 
-SERVO5\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO5\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -84149,6 +84441,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO5_ABS_MIN:
+
+SERVO5\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO5_MAX__SRV_Channel:
+
+SERVO5\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO6_:
 
@@ -84174,10 +84502,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO6_MAX:
+.. _SERVO6_MAX__SRV_Channel:
 
-SERVO6\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO6\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -84477,6 +84805,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO6_ABS_MIN:
+
+SERVO6\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO6_MAX__SRV_Channel:
+
+SERVO6\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO7_:
 
@@ -84502,10 +84866,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO7_MAX:
+.. _SERVO7_MAX__SRV_Channel:
 
-SERVO7\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO7\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -84805,6 +85169,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO7_ABS_MIN:
+
+SERVO7\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO7_MAX__SRV_Channel:
+
+SERVO7\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO8_:
 
@@ -84830,10 +85230,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO8_MAX:
+.. _SERVO8_MAX__SRV_Channel:
 
-SERVO8\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO8\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -85133,6 +85533,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _SERVO8_ABS_MIN:
+
+SERVO8\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO8_MAX__SRV_Channel:
+
+SERVO8\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_SERVO9_:
 
@@ -85158,10 +85594,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO9_MAX:
+.. _SERVO9_MAX__SRV_Channel:
 
-SERVO9\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO9\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -85457,6 +85893,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
+
+
+
+
+.. _SERVO9_ABS_MIN:
+
+SERVO9\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO9_MAX__SRV_Channel:
+
+SERVO9\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
 
 
 

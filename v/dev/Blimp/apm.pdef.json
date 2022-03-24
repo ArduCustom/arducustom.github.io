@@ -12950,6 +12950,17 @@
     }
   },
   "SERVO10_": {
+    "SERVO10_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO10_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -13079,15 +13090,16 @@
       }
     },
     "SERVO10_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO10_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -13122,6 +13134,17 @@
     }
   },
   "SERVO11_": {
+    "SERVO11_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO11_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -13251,15 +13274,16 @@
       }
     },
     "SERVO11_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO11_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -13294,6 +13318,17 @@
     }
   },
   "SERVO12_": {
+    "SERVO12_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO12_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -13423,15 +13458,16 @@
       }
     },
     "SERVO12_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO12_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -13466,6 +13502,17 @@
     }
   },
   "SERVO13_": {
+    "SERVO13_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO13_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -13595,15 +13642,16 @@
       }
     },
     "SERVO13_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO13_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -13638,6 +13686,17 @@
     }
   },
   "SERVO14_": {
+    "SERVO14_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO14_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -13767,15 +13826,16 @@
       }
     },
     "SERVO14_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO14_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -13810,6 +13870,17 @@
     }
   },
   "SERVO15_": {
+    "SERVO15_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO15_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -13939,15 +14010,16 @@
       }
     },
     "SERVO15_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO15_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -13982,6 +14054,17 @@
     }
   },
   "SERVO16_": {
+    "SERVO16_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO16_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -14111,15 +14194,16 @@
       }
     },
     "SERVO16_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO16_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -14154,6 +14238,17 @@
     }
   },
   "SERVO1_": {
+    "SERVO1_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO1_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -14283,15 +14378,16 @@
       }
     },
     "SERVO1_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO1_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -14326,6 +14422,17 @@
     }
   },
   "SERVO2_": {
+    "SERVO2_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO2_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -14455,15 +14562,16 @@
       }
     },
     "SERVO2_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO2_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -14498,6 +14606,17 @@
     }
   },
   "SERVO3_": {
+    "SERVO3_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO3_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -14627,15 +14746,16 @@
       }
     },
     "SERVO3_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO3_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -14670,6 +14790,17 @@
     }
   },
   "SERVO4_": {
+    "SERVO4_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO4_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -14799,15 +14930,16 @@
       }
     },
     "SERVO4_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO4_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -14842,6 +14974,17 @@
     }
   },
   "SERVO5_": {
+    "SERVO5_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO5_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -14971,15 +15114,16 @@
       }
     },
     "SERVO5_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO5_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -15014,6 +15158,17 @@
     }
   },
   "SERVO6_": {
+    "SERVO6_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO6_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -15143,15 +15298,16 @@
       }
     },
     "SERVO6_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO6_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -15186,6 +15342,17 @@
     }
   },
   "SERVO7_": {
+    "SERVO7_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO7_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -15315,15 +15482,16 @@
       }
     },
     "SERVO7_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO7_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -15358,6 +15526,17 @@
     }
   },
   "SERVO8_": {
+    "SERVO8_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO8_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -15487,15 +15666,16 @@
       }
     },
     "SERVO8_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO8_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -15530,6 +15710,17 @@
     }
   },
   "SERVO9_": {
+    "SERVO9_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO9_FUNCTION": {
       "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
       "DisplayName": "Servo output function",
@@ -15659,15 +15850,16 @@
       }
     },
     "SERVO9_MAX": {
-      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
-      "DisplayName": "Maximum PWM",
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2200",
-        "low": "800"
+        "high": "2500",
+        "low": "500"
       },
       "Units": "PWM",
-      "User": "Standard"
+      "User": "Standard",
+      "path": "SRV_Channel"
     },
     "SERVO9_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",

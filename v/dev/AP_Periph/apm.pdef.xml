@@ -3620,6 +3620,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT10_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT10_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT11_">
       <param humanName="Minimum PWM" name="OUT11_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -3770,6 +3782,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT11_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT11_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT12_">
@@ -3922,6 +3946,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT12_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT12_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT13_">
       <param humanName="Minimum PWM" name="OUT13_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -4072,6 +4108,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT13_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT13_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT14_">
@@ -4224,6 +4272,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT14_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT14_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT15_">
       <param humanName="Minimum PWM" name="OUT15_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -4374,6 +4434,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT15_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT15_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT16_">
@@ -4526,6 +4598,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT16_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT16_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT1_">
       <param humanName="Minimum PWM" name="OUT1_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -4676,6 +4760,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT1_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT1_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT2_">
@@ -4828,6 +4924,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT2_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT2_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT3_">
       <param humanName="Minimum PWM" name="OUT3_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -4978,6 +5086,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT3_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT3_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT4_">
@@ -5130,6 +5250,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT4_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT4_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT5_">
       <param humanName="Minimum PWM" name="OUT5_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -5280,6 +5412,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT5_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT5_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT6_">
@@ -5432,6 +5576,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT6_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT6_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT7_">
       <param humanName="Minimum PWM" name="OUT7_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -5582,6 +5738,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT7_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT7_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT8_">
@@ -5734,6 +5902,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="OUT8_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT8_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="OUT9_">
       <param humanName="Minimum PWM" name="OUT9_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -5884,6 +6064,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="OUT9_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="OUT9_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="OUT_BLH_">

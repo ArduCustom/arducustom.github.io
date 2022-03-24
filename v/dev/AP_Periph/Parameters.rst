@@ -13618,10 +13618,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT10_MAX:
+.. _OUT10_MAX__SRV_Channel:
 
-OUT10\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~
+OUT10\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -13941,6 +13941,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT10_ABS_MIN:
+
+OUT10\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT10_MAX__SRV_Channel:
+
+OUT10\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT11_:
 
@@ -13966,10 +14002,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT11_MAX:
+.. _OUT11_MAX__SRV_Channel:
 
-OUT11\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~
+OUT11\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -14289,6 +14325,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT11_ABS_MIN:
+
+OUT11\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT11_MAX__SRV_Channel:
+
+OUT11\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT12_:
 
@@ -14314,10 +14386,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT12_MAX:
+.. _OUT12_MAX__SRV_Channel:
 
-OUT12\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~
+OUT12\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -14637,6 +14709,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT12_ABS_MIN:
+
+OUT12\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT12_MAX__SRV_Channel:
+
+OUT12\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT13_:
 
@@ -14662,10 +14770,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT13_MAX:
+.. _OUT13_MAX__SRV_Channel:
 
-OUT13\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~
+OUT13\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -14985,6 +15093,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT13_ABS_MIN:
+
+OUT13\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT13_MAX__SRV_Channel:
+
+OUT13\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT14_:
 
@@ -15010,10 +15154,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT14_MAX:
+.. _OUT14_MAX__SRV_Channel:
 
-OUT14\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~
+OUT14\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -15333,6 +15477,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT14_ABS_MIN:
+
+OUT14\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT14_MAX__SRV_Channel:
+
+OUT14\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT15_:
 
@@ -15358,10 +15538,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT15_MAX:
+.. _OUT15_MAX__SRV_Channel:
 
-OUT15\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~
+OUT15\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -15681,6 +15861,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT15_ABS_MIN:
+
+OUT15\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT15_MAX__SRV_Channel:
+
+OUT15\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT16_:
 
@@ -15706,10 +15922,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT16_MAX:
+.. _OUT16_MAX__SRV_Channel:
 
-OUT16\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~
+OUT16\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -16029,6 +16245,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT16_ABS_MIN:
+
+OUT16\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT16_MAX__SRV_Channel:
+
+OUT16\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT1_:
 
@@ -16054,10 +16306,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT1_MAX:
+.. _OUT1_MAX__SRV_Channel:
 
-OUT1\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT1\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -16377,6 +16629,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT1_ABS_MIN:
+
+OUT1\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT1_MAX__SRV_Channel:
+
+OUT1\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT2_:
 
@@ -16402,10 +16690,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT2_MAX:
+.. _OUT2_MAX__SRV_Channel:
 
-OUT2\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT2\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -16725,6 +17013,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT2_ABS_MIN:
+
+OUT2\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT2_MAX__SRV_Channel:
+
+OUT2\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT3_:
 
@@ -16750,10 +17074,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT3_MAX:
+.. _OUT3_MAX__SRV_Channel:
 
-OUT3\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT3\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -17073,6 +17397,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT3_ABS_MIN:
+
+OUT3\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT3_MAX__SRV_Channel:
+
+OUT3\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT4_:
 
@@ -17098,10 +17458,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT4_MAX:
+.. _OUT4_MAX__SRV_Channel:
 
-OUT4\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT4\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -17421,6 +17781,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT4_ABS_MIN:
+
+OUT4\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT4_MAX__SRV_Channel:
+
+OUT4\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT5_:
 
@@ -17446,10 +17842,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT5_MAX:
+.. _OUT5_MAX__SRV_Channel:
 
-OUT5\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT5\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -17769,6 +18165,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT5_ABS_MIN:
+
+OUT5\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT5_MAX__SRV_Channel:
+
+OUT5\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT6_:
 
@@ -17794,10 +18226,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT6_MAX:
+.. _OUT6_MAX__SRV_Channel:
 
-OUT6\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT6\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -18117,6 +18549,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT6_ABS_MIN:
+
+OUT6\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT6_MAX__SRV_Channel:
+
+OUT6\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT7_:
 
@@ -18142,10 +18610,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT7_MAX:
+.. _OUT7_MAX__SRV_Channel:
 
-OUT7\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT7\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -18465,6 +18933,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT7_ABS_MIN:
+
+OUT7\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT7_MAX__SRV_Channel:
+
+OUT7\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT8_:
 
@@ -18490,10 +18994,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT8_MAX:
+.. _OUT8_MAX__SRV_Channel:
 
-OUT8\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT8\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -18813,6 +19317,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 
 
 
+.. _OUT8_ABS_MIN:
+
+OUT8\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT8_MAX__SRV_Channel:
+
+OUT8\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
 
 .. _parameters_OUT9_:
 
@@ -18838,10 +19378,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _OUT9_MAX:
+.. _OUT9_MAX__SRV_Channel:
 
-OUT9\_MAX: Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~
+OUT9\_MAX \(SRV\_Channel\): Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -19157,6 +19697,42 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
+
+
+
+
+.. _OUT9_ABS_MIN:
+
+OUT9\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _OUT9_MAX__SRV_Channel:
+
+OUT9\_MAX \(SRV\_Channel\): Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
 
 
 

@@ -778,30 +778,6 @@
       <param humanName="Oneshot output mask" name="ArduPlane:ONESHOT_MASK" documentation="Mask of output channels to use oneshot on" user="Advanced">
         <field name="Bitmask">0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15</field>
       </param>
-      <param humanName="Servo absolute maximum servo auto trim won't set a V-tail servo max above of" name="ArduPlane:VTAIL_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set a V-tail servo max above of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
-      <param humanName="Servo absolute minimum servo auto trim won't set an V-tail servo min bellow of" name="ArduPlane:VTAIL_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an V-tail servo min bellow of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
-      <param humanName="Servo absolute maximum servo auto trim won't set an elevon servo max above of" name="ArduPlane:ELEVON_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set an elevon servo max above of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
-      <param humanName="Servo absolute minimum servo auto trim won't set an elevon servo min bellow of" name="ArduPlane:ELEVON_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an elevon servo min bellow of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
-      <param humanName="Servo absolute maximum servo auto trim won't set an aileron servo max above of" name="ArduPlane:AILERON_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set an aileron servo max above of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
-      <param humanName="Servo absolute minimum servo auto trim won't set an aileron servo min bellow of" name="ArduPlane:AILERON_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an aileron servo min bellow of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
-      <param humanName="Servo absolute maximum servo auto trim won't set an elevator servo max above of" name="ArduPlane:ELEVATOR_SRV_MAX" documentation="Servo absolute maximum servo auto trim won't set an elevator servo max above of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
-      <param humanName="Servo absolute minimum servo auto trim won't set an elevator servo min bellow of" name="ArduPlane:ELEVATOR_SRV_MIN" documentation="Servo absolute minimum servo auto trim won't set an elevator servo min bellow of" user="Standard">
-        <field name="Range">500 2500</field>
-      </param>
       <param humanName="Amount of differential throws applied to the ailerons" name="ArduPlane:AILERON_DIFF" documentation="Amount of differential throws applied to the ailerons. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel" user="Advanced">
         <values>
           <value code="0">Disabled</value>
@@ -3896,6 +3872,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -3972,6 +3949,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -4048,6 +4026,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -4124,6 +4103,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15317,6 +15297,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15424,6 +15405,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15531,6 +15513,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15638,6 +15621,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15745,6 +15729,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15852,6 +15837,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -15959,6 +15945,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16066,6 +16053,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16173,6 +16161,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16280,6 +16269,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16387,6 +16377,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16494,6 +16485,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16601,6 +16593,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16708,6 +16701,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16815,6 +16809,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -16922,6 +16917,7 @@
           <value code="157">Force FS Action to FBWA</value>
           <value code="158">Optflow Calibration</value>
           <value code="160">Weathervane Enable</value>
+          <value code="162">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
           <value code="300">Scripting1</value>
@@ -20061,6 +20057,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO10_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO10_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO11_">
       <param humanName="Minimum PWM" name="SERVO11_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -20201,6 +20209,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO11_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO11_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO12_">
@@ -20343,6 +20363,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO12_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO12_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO13_">
       <param humanName="Minimum PWM" name="SERVO13_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -20483,6 +20515,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO13_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO13_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO14_">
@@ -20625,6 +20669,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO14_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO14_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO15_">
       <param humanName="Minimum PWM" name="SERVO15_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -20765,6 +20821,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO15_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO15_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO16_">
@@ -20907,6 +20975,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO16_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO16_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO1_">
       <param humanName="Minimum PWM" name="SERVO1_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21047,6 +21127,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO1_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO1_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO2_">
@@ -21189,6 +21281,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO2_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO2_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO3_">
       <param humanName="Minimum PWM" name="SERVO3_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21329,6 +21433,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO3_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO3_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO4_">
@@ -21471,6 +21587,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO4_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO4_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO5_">
       <param humanName="Minimum PWM" name="SERVO5_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21611,6 +21739,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO5_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO5_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO6_">
@@ -21753,6 +21893,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO6_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO6_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO7_">
       <param humanName="Minimum PWM" name="SERVO7_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21893,6 +22045,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO7_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO7_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO8_">
@@ -22035,6 +22199,18 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="Absolute minimum PWM" name="SERVO8_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO8_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
     </parameters>
     <parameters name="SERVO9_">
       <param humanName="Minimum PWM" name="SERVO9_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -22175,6 +22351,18 @@
           <value code="139">Alarm Inverted</value>
         </values>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Absolute minimum PWM" name="SERVO9_ABS_MIN" documentation="Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Absolute maximum PWM" name="SERVO9_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
+        <field name="Range">500 2500</field>
+        <field name="Increment">1</field>
       </param>
     </parameters>
     <parameters name="SERVO_BLH_">
