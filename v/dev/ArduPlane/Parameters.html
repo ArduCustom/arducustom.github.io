@@ -96,6 +96,16 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Low throttle pitch down curve (ArduPlane:STAB_PITCH_DCRV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>-100=square pitch down curve, 0=linear pitch down curve, 100=square root pitch down curve</p>
+<ul>
+<li>Range: -100 100</li>
+<li>Increment: 1</li>
+<li>Units: percent</li>
+</ul>
+
+
 <h2>Glide slope minimum (ArduPlane:GLIDE_SLOPE_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This controls the minimum altitude change for a waypoint before a glide slope will be used instead of an immediate altitude change. The default value is 15 meters, which helps to smooth out waypoint missions where small altitude changes happen near waypoints. If you don&#x27;t want glide slopes to be used in missions then you can set this to zero, which will disable glide slope calculations. Otherwise you can set it to a minimum number of meters of altitude error to the destination waypoint before a glide slope will be used to change altitude.</p>
@@ -388,15 +398,6 @@ DO NOT EDIT
 <h2>Throttle deadzone (ArduPlane:THR_DZ)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>No command will be applied to the throttle ESC or servo unless the command is at least this value</p>
-<ul>
-<li>Units: percent</li>
-<li>Range: 0 100</li>
-</ul>
-
-
-<h2>Manual throttle square response curve (ArduPlane:THR_EXPO)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Amount of square response curve to apply to throttle in manual throttle modes</p>
 <ul>
 <li>Units: percent</li>
 <li>Range: 0 100</li>
@@ -1034,12 +1035,13 @@ DO NOT EDIT
 
 <h2>RTL auto land (ArduPlane:RTL_AUTOLAND)</h2>
 
-<p>Automatically begin landing sequence after arriving at RTL location. This requires the addition of a DO_LAND_START mission item, which acts as a marker for the start of a landing sequence. The closest landing sequence will be chosen to the current location.</p>
+<p>Automatically begin landing sequence after arriving at RTL location. This requires the addition of a DO_LAND_START mission item, which acts as a marker for the start of a landing sequence. The closest landing sequence will be chosen to the current location. If this is set to 0 and there is a DO_LAND_START mission item then you will get an arming check failure. You can set to a value of 3 to avoid the arming check failure and use the DO_LAND_START for go-around without it changing RTL behaviour. For a value of 1 a rally point will be used instead of HOME if in range (see rally point documentation).</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disable</td></tr>
-<tr><td>1</td><td>Enable - go HOME then land</td></tr>
-<tr><td>2</td><td>Enable - go directly to landing sequence</td></tr>
+<tr><td>1</td><td>Fly HOME then land</td></tr>
+<tr><td>2</td><td>Go directly to landing sequence</td></tr>
+<tr><td>3</td><td>OnlyForGoAround</td></tr>
 </table>
 </ul>
 
@@ -1131,7 +1133,7 @@ DO NOT EDIT
 
 <p>Flight mode specific options</p>
 <ul>
-<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to ALT_HOLD_RTL before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode</li>
+<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to ALT_HOLD_RTL before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 23: remove FBWB style loiter altitude control</li>
 </ul>
 
 
@@ -1296,7 +1298,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Amount of differential throws applied to the elevator (does not apply to elevons) (ArduPlane:ELEVA_DIFF)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Amount of differential throws applied to the elevator (does not apply to elevons) (ArduPlane:ELEVATOR_DIFF)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Amount of differential throws applied to the elevator (does not apply to elevons). A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel</p>
 <ul>
@@ -1304,6 +1306,24 @@ DO NOT EDIT
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>Enabled</td></tr>
 </table>
+</ul>
+
+
+<h2>Auto throttle square response curve (ArduPlane:THR_EXPO_AUTO)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Amount of square response curve to apply to throttle in auto throttle modes</p>
+<ul>
+<li>Units: percent</li>
+<li>Range: 0 100</li>
+</ul>
+
+
+<h2>Manual throttle square response curve (ArduPlane:THR_EXPO_MANUAL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Amount of square response curve to apply to throttle in manual throttle modes</p>
+<ul>
+<li>Units: percent</li>
+<li>Range: 0 100</li>
 </ul>
 
 
@@ -2958,7 +2978,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -3311,7 +3331,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -3664,7 +3684,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -4017,7 +4037,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -4370,7 +4390,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -4723,7 +4743,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -5076,7 +5096,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -5429,7 +5449,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -5782,7 +5802,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -7173,6 +7193,7 @@ DO NOT EDIT
 <tr><td>4</td><td>TEST_TOSHIBA_CAN</td></tr>
 <tr><td>5</td><td>TEST_KDE_CAN</td></tr>
 <tr><td>6</td><td>TEST_UAVCAN_ESC</td></tr>
+<tr><td>7</td><td>TEST_UAVCAN_FD_ESC</td></tr>
 </table>
 </ul>
 
@@ -7225,7 +7246,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
 </ul>
 
 
@@ -7324,6 +7345,7 @@ DO NOT EDIT
 <tr><td>4</td><td>TEST_TOSHIBA_CAN</td></tr>
 <tr><td>5</td><td>TEST_KDE_CAN</td></tr>
 <tr><td>6</td><td>TEST_UAVCAN_ESC</td></tr>
+<tr><td>7</td><td>TEST_UAVCAN_FD_ESC</td></tr>
 </table>
 </ul>
 
@@ -7376,7 +7398,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
 </ul>
 
 
@@ -7475,6 +7497,7 @@ DO NOT EDIT
 <tr><td>4</td><td>TEST_TOSHIBA_CAN</td></tr>
 <tr><td>5</td><td>TEST_KDE_CAN</td></tr>
 <tr><td>6</td><td>TEST_UAVCAN_ESC</td></tr>
+<tr><td>7</td><td>TEST_UAVCAN_FD_ESC</td></tr>
 </table>
 </ul>
 
@@ -7527,7 +7550,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
 </ul>
 
 
@@ -7565,6 +7588,20 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Bitrate of CANFD interface (CAN_P1_FDBITRATE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bit rate can be set up to from 1000000 to 8000000</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>1</td><td>1M</td></tr>
+<tr><td>2</td><td>2M</td></tr>
+<tr><td>4</td><td>4M</td></tr>
+<tr><td>5</td><td>5M</td></tr>
+<tr><td>8</td><td>8M</td></tr>
+</table>
+</ul>
+
+
 <h1>CAN_P2_ Parameters</h1>
 
 
@@ -7590,6 +7627,20 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Bitrate of CANFD interface (CAN_P2_FDBITRATE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bit rate can be set up to from 1000000 to 8000000</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>1</td><td>1M</td></tr>
+<tr><td>2</td><td>2M</td></tr>
+<tr><td>4</td><td>4M</td></tr>
+<tr><td>5</td><td>5M</td></tr>
+<tr><td>8</td><td>8M</td></tr>
+</table>
+</ul>
+
+
 <h1>CAN_P3_ Parameters</h1>
 
 
@@ -7612,6 +7663,20 @@ DO NOT EDIT
 <p>Bit rate can be set up to from 10000 to 1000000</p>
 <ul>
 <li>Range: 10000 1000000</li>
+</ul>
+
+
+<h2>Bitrate of CANFD interface (CAN_P3_FDBITRATE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bit rate can be set up to from 1000000 to 8000000</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>1</td><td>1M</td></tr>
+<tr><td>2</td><td>2M</td></tr>
+<tr><td>4</td><td>4M</td></tr>
+<tr><td>5</td><td>5M</td></tr>
+<tr><td>8</td><td>8M</td></tr>
+</table>
 </ul>
 
 
@@ -11154,7 +11219,7 @@ DO NOT EDIT
 
 <h2>GPS Node ID 1 (GPS_CAN_NODEID1)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for discovered first.</p>
+<p>GPS Node id for first-discovered GPS.</p>
 <ul>
 <li>ReadOnly: True</li>
 </ul>
@@ -11162,7 +11227,7 @@ DO NOT EDIT
 
 <h2>GPS Node ID 2 (GPS_CAN_NODEID2)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for discovered second.</p>
+<p>GPS Node id for second-discovered GPS.</p>
 <ul>
 <li>ReadOnly: True</li>
 </ul>
@@ -11170,14 +11235,14 @@ DO NOT EDIT
 
 <h2>First DroneCAN GPS NODE ID (GPS1_CAN_OVRIDE)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for first GPS. If 0 the gps will be automatically selected on first come basis.</p>
+<p>GPS Node id for first GPS. If 0 the gps will be automatically selected on a first-come-first-GPS basis.</p>
 <ul>
 </ul>
 
 
 <h2>Second DroneCAN GPS NODE ID (GPS2_CAN_OVRIDE)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for second GPS. If 0 the gps will be automatically selected on first come basis.</p>
+<p>GPS Node id for second GPS. If 0 the gps will be automatically selected on a second-come-second-GPS basis.</p>
 <ul>
 </ul>
 
@@ -12197,7 +12262,7 @@ DO NOT EDIT
 
 <h2>Harmonic Notch Filter harmonics (INS_HNTCH_HMNCS)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time.</p>
+<p>Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot.</p>
 <ul>
 <li>Bitmask: 0:1st harmonic,1:2nd harmonic,2:3rd harmonic,3:4th hamronic,4:5th harmonic,5:6th harmonic,6:7th harmonic,7:8th harmonic</li>
 <li>RebootRequired: True</li>
@@ -12326,7 +12391,7 @@ DO NOT EDIT
 
 <h2>Harmonic Notch Filter harmonics (INS_NOTCH_HMNCS)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time.</p>
+<p>Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot.</p>
 <ul>
 <li>Bitmask: 0:1st harmonic,1:2nd harmonic,2:3rd harmonic,3:4th hamronic,4:5th harmonic,5:6th harmonic,6:7th harmonic,7:8th harmonic</li>
 <li>RebootRequired: True</li>
@@ -14231,7 +14296,7 @@ DO NOT EDIT
 
 <p>This sets options that change the display</p>
 <ul>
-<li>Bitmask: 0:UseDecimalPack, 1:InvertedWindPointer, 2:InvertedAHRoll, 3:Convert feet to miles at 5280ft instead of 10000ft, 4:DisableCrosshair, 20:Prefix LQ with RF Mode, 21:One decimal attitude, 22:One decimal throttle, 23:Shorten Pluscode </li>
+<li>Bitmask: 0:UseDecimalPack, 1:InvertedWindPointer, 2:InvertedAHRoll, 3:Convert feet to miles at 5280ft instead of 10000ft, 4:DisableCrosshair, 19:Right justify TUNED_PN element, 20:Prefix LQ with RF Mode, 21:One decimal attitude, 22:One decimal throttle, 23:Shorten Pluscode </li>
 </ul>
 
 
@@ -27846,7 +27911,7 @@ DO NOT EDIT
 
 <h2>Quadplane assistance speed (Q_ASSIST_SPEED)</h2>
 
-<p>This is the speed below which the quad motors will provide stability and lift assistance in fixed wing modes. Zero means no assistance except during transition</p>
+<p>This is the speed below which the quad motors will provide stability and lift assistance in fixed wing modes. Zero means no assistance except during transition. Note that if this is set to zero then other Q_ASSIST features are also disabled. A higher value will lead to more false positives which can waste battery. A lower value will result in less false positive, but will result in assistance taking longer to trigger. If unsure then set to 3 m/s below the minimum airspeed you will fly at. If you don&#x27;t have an airspeed sensor then use 5 m/s below the minimum airspeed you fly at. If you want to disable the arming check Q_ASSIST_SPEED then set to -1.</p>
 <ul>
 <li>Units: meters per second</li>
 <li>Range: 0 100</li>
@@ -29773,7 +29838,7 @@ DO NOT EDIT
 
 <p>RC input options</p>
 <ul>
-<li>Bitmask: 0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:CRSF RSSI shows Link Quality</li>
+<li>Bitmask: 0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:CRSF RSSI shows Link Quality, 22:Disable throttle battery compensation in manual mode (plane only), 23:Disable throttle expo in manual mode (plane only)</li>
 </ul>
 
 
@@ -36509,7 +36574,7 @@ DO NOT EDIT
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disable</td></tr>
-<tr><td>1</td><td>Enable until disarm</td></tr>
+<tr><td>1</td><td>Once</td></tr>
 <tr><td>2</td><td>Enable permanently</td></tr>
 </table>
 </ul>
@@ -36732,7 +36797,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO10_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO10_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -36916,7 +36981,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO11_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO11_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -37100,7 +37165,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO12_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO12_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -37284,7 +37349,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO13_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO13_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -37468,7 +37533,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO14_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO14_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -37652,7 +37717,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO15_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO15_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -37836,7 +37901,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO16_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO16_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -38020,7 +38085,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO1_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO1_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -38204,7 +38269,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO2_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO2_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -38388,7 +38453,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO3_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO3_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -38572,7 +38637,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO4_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO4_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -38756,7 +38821,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO5_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO5_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -38940,7 +39005,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO6_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO6_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -39124,7 +39189,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO7_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO7_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -39308,7 +39373,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO8_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO8_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -39492,7 +39557,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (SERVO9_MAX)</h2>
+<h2>Absolute maximum PWM (SERVO9_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -39510,6 +39575,7 @@ DO NOT EDIT
 <p>Enable of BLHeli pass-thru servo protocol support to specific channels. This mask is in addition to motors enabled using SERVO_BLH_AUTO (if any)</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -39521,6 +39587,7 @@ DO NOT EDIT
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>Enabled</td></tr>
 </table>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -39585,6 +39652,7 @@ DO NOT EDIT
 <tr><td>6</td><td>DShot600</td></tr>
 <tr><td>7</td><td>DShot1200</td></tr>
 </table>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -39608,6 +39676,7 @@ DO NOT EDIT
 <p>This allows calculation of true RPM from ESC&#x27;s eRPM. The default is 14.</p>
 <ul>
 <li>Range: 1 127</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -39616,6 +39685,7 @@ DO NOT EDIT
 <p>Mask of channels which are dynamically reversible. This is used to configure ESCs in &#x27;3D&#x27; mode, allowing for the motor to spin in either direction</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -39624,6 +39694,7 @@ DO NOT EDIT
 <p>Mask of channels which support bi-directional dshot. This is used for ESCs which have firmware that supports bi-directional dshot allowing fast rpm telemetry values to be returned for the harmonic notch.</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -39632,6 +39703,7 @@ DO NOT EDIT
 <p>Mask of channels which are reversed. This is used to configure ESCs in reversed mode</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -41091,16 +41163,6 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Auto throttle square response curve (TECS_THR_EXPO)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Amount of square response curve to apply to throttle in auto throttle modes</p>
-<ul>
-<li>Units: percent</li>
-<li>Range: 0 100</li>
-<li>Increment: 1</li>
-</ul>
-
-
 <h2>Throttle FF component filter (TECS_THR_FF_FILT)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Throttle FF component filter value which determines what proportion of the current state vs newly calculated throttle FF value are used. 1.0 means used 100% of the newly calculated value (no filtering)</p>
@@ -41183,6 +41245,15 @@ DO NOT EDIT
 <ul>
 <li>Units: meters</li>
 <li>Range: 0.05 50000</li>
+</ul>
+
+
+<h2>Terrain reference offset maximum (TERRAIN_OFS_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The maximum adjustment of terrain altitude based on the assumption that the vehicle is on the ground when it is armed. When the vehicle is armed the location of the vehicle is recorded, and when terrain data is available for that location a height adjustment for terrain data is calculated that aligns the terrain height at that location with the altitude recorded at arming. This height adjustment is applied to all terrain data. This parameter clamps the amount of adjustment. A value of zero disables the use of terrain height adjustment.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 50</li>
 </ul>
 
 
@@ -41276,20 +41347,26 @@ DO NOT EDIT
 <tr><td>59</td><td>TRIM_PITCH</td></tr>
 <tr><td>60</td><td>KFF_THRAT2PTCH</td></tr>
 <tr><td>61</td><td>FW STAB PITCH DOWN</td></tr>
-<tr><td>62</td><td>RLL2PTCH</td></tr>
-<tr><td>63</td><td>KFF_RDDRMIX</td></tr>
-<tr><td>64</td><td>TECSTFFDAMP</td></tr>
-<tr><td>65</td><td>TECSTFF_FILT</td></tr>
-<tr><td>66</td><td>FWAglRollP</td></tr>
-<tr><td>67</td><td>FWAglRollI</td></tr>
-<tr><td>68</td><td>AglRollD</td></tr>
-<tr><td>69</td><td>AglRollFLTT</td></tr>
-<tr><td>70</td><td>FWAglPitchP</td></tr>
-<tr><td>71</td><td>FWAglPitchI</td></tr>
-<tr><td>72</td><td>AglPitchD</td></tr>
-<tr><td>73</td><td>AglPitchFLTT</td></tr>
-<tr><td>74</td><td>MixingDiff</td></tr>
-<tr><td>75</td><td>MixingOffset</td></tr>
+<tr><td>62</td><td>FW STAB PITCH DOWN curve</td></tr>
+<tr><td>63</td><td>RLL2PTCH</td></tr>
+<tr><td>64</td><td>KFF_RDDRMIX</td></tr>
+<tr><td>65</td><td>TECSTFFDAMP</td></tr>
+<tr><td>66</td><td>TECSTFF_FILT</td></tr>
+<tr><td>67</td><td>FWAglRollP</td></tr>
+<tr><td>68</td><td>FWAglRollI</td></tr>
+<tr><td>69</td><td>AglRollD</td></tr>
+<tr><td>70</td><td>AglRollFLTT</td></tr>
+<tr><td>71</td><td>FWAglPitchP</td></tr>
+<tr><td>72</td><td>FWAglPitchI</td></tr>
+<tr><td>73</td><td>AglPitchD</td></tr>
+<tr><td>74</td><td>AglPitchFLTT</td></tr>
+<tr><td>75</td><td>MixingDiff</td></tr>
+<tr><td>76</td><td>MixingOffset</td></tr>
+<tr><td>77</td><td>THR expo manual</td></tr>
+<tr><td>78</td><td>THR expo auto</td></tr>
+<tr><td>79</td><td>Flap retracted speed</td></tr>
+<tr><td>80</td><td>Flap extended speed</td></tr>
+<tr><td>81</td><td>Flap extended percent</td></tr>
 <tr><td>101</td><td>Set_RateRollPitch</td></tr>
 <tr><td>102</td><td>Set_RateRoll</td></tr>
 <tr><td>103</td><td>Set_RatePitch</td></tr>
@@ -41304,6 +41381,8 @@ DO NOT EDIT
 <tr><td>112</td><td>Set_AglRoll</td></tr>
 <tr><td>113</td><td>Set_AglPitch</td></tr>
 <tr><td>114</td><td>Set_Mixing</td></tr>
+<tr><td>115</td><td>Set_THRExpo</td></tr>
+<tr><td>116</td><td>Set_flap</td></tr>
 </table>
 </ul>
 

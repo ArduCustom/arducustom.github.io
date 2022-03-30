@@ -115,6 +115,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Enable CANFD mode (AP_Periph:CAN_FDMODE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Enabling this option sets the CAN bus to be in CANFD mode with BRS.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Set up bitrate for data section on CAN1 (AP_Periph:CAN_FDBAUDRATE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This sets the bitrate for the data section of CAN1.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>1</td><td>1M</td></tr>
+<tr><td>2</td><td>2M</td></tr>
+<tr><td>4</td><td>4M</td></tr>
+<tr><td>5</td><td>5M</td></tr>
+<tr><td>8</td><td>8M</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Set up bitrate for data section on CAN2 (AP_Periph:CAN2_FDBAUDRATE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This sets the bitrate for the data section of CAN2.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>1</td><td>1M</td></tr>
+<tr><td>2</td><td>2M</td></tr>
+<tr><td>4</td><td>4M</td></tr>
+<tr><td>5</td><td>5M</td></tr>
+<tr><td>8</td><td>8M</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
 <h2>Trigger bootloader update (AP_Periph:FLASH_BOOTLOADER)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>DANGER! When enabled, the App will perform a bootloader update by copying the embedded bootloader over the existing bootloader. This may take a few seconds to perform and should only be done if you know what you&#x27;re doing.</p>
@@ -127,10 +169,7 @@ DO NOT EDIT
 
 <p>Debug</p>
 <ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Show free stack space</td></tr>
-</table>
+<li>Bitmask: 0:Disabled, 1:Show free stack space, 2:Auto Reboot after 15sec</li>
 </ul>
 
 
@@ -1302,7 +1341,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -1615,7 +1654,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -1928,7 +1967,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -2241,7 +2280,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -2554,7 +2593,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -2867,7 +2906,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -3180,7 +3219,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -3493,7 +3532,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -3806,7 +3845,7 @@ DO NOT EDIT
 
 <p>This sets options to change the behaviour of the battery monitor</p>
 <ul>
-<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</li>
+<li>Bitmask: 0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</li>
 </ul>
 
 
@@ -5762,7 +5801,7 @@ DO NOT EDIT
 
 <h2>GPS Node ID 1 (GPS_CAN_NODEID1)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for discovered first.</p>
+<p>GPS Node id for first-discovered GPS.</p>
 <ul>
 <li>ReadOnly: True</li>
 </ul>
@@ -5770,7 +5809,7 @@ DO NOT EDIT
 
 <h2>GPS Node ID 2 (GPS_CAN_NODEID2)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for discovered second.</p>
+<p>GPS Node id for second-discovered GPS.</p>
 <ul>
 <li>ReadOnly: True</li>
 </ul>
@@ -5778,14 +5817,14 @@ DO NOT EDIT
 
 <h2>First DroneCAN GPS NODE ID (GPS1_CAN_OVRIDE)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for first GPS. If 0 the gps will be automatically selected on first come basis.</p>
+<p>GPS Node id for first GPS. If 0 the gps will be automatically selected on a first-come-first-GPS basis.</p>
 <ul>
 </ul>
 
 
 <h2>Second DroneCAN GPS NODE ID (GPS2_CAN_OVRIDE)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>GPS Node id for second GPS. If 0 the gps will be automatically selected on first come basis.</p>
+<p>GPS Node id for second GPS. If 0 the gps will be automatically selected on a second-come-second-GPS basis.</p>
 <ul>
 </ul>
 
@@ -6357,7 +6396,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT10_MAX)</h2>
+<h2>Absolute maximum PWM (OUT10_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -6551,7 +6590,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT11_MAX)</h2>
+<h2>Absolute maximum PWM (OUT11_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -6745,7 +6784,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT12_MAX)</h2>
+<h2>Absolute maximum PWM (OUT12_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -6939,7 +6978,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT13_MAX)</h2>
+<h2>Absolute maximum PWM (OUT13_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -7133,7 +7172,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT14_MAX)</h2>
+<h2>Absolute maximum PWM (OUT14_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -7327,7 +7366,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT15_MAX)</h2>
+<h2>Absolute maximum PWM (OUT15_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -7521,7 +7560,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT16_MAX)</h2>
+<h2>Absolute maximum PWM (OUT16_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -7715,7 +7754,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT1_MAX)</h2>
+<h2>Absolute maximum PWM (OUT1_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -7909,7 +7948,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT2_MAX)</h2>
+<h2>Absolute maximum PWM (OUT2_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -8103,7 +8142,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT3_MAX)</h2>
+<h2>Absolute maximum PWM (OUT3_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -8297,7 +8336,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT4_MAX)</h2>
+<h2>Absolute maximum PWM (OUT4_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -8491,7 +8530,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT5_MAX)</h2>
+<h2>Absolute maximum PWM (OUT5_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -8685,7 +8724,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT6_MAX)</h2>
+<h2>Absolute maximum PWM (OUT6_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -8879,7 +8918,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT7_MAX)</h2>
+<h2>Absolute maximum PWM (OUT7_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -9073,7 +9112,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT8_MAX)</h2>
+<h2>Absolute maximum PWM (OUT8_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -9267,7 +9306,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Absolute maximum PWM (OUT9_MAX)</h2>
+<h2>Absolute maximum PWM (OUT9_ABS_MAX)</h2>
 
 <p>Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim</p>
 <ul>
@@ -9285,6 +9324,7 @@ DO NOT EDIT
 <p>Enable of BLHeli pass-thru servo protocol support to specific channels. This mask is in addition to motors enabled using SERVO_BLH_AUTO (if any)</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -9296,6 +9336,7 @@ DO NOT EDIT
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>Enabled</td></tr>
 </table>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -9360,6 +9401,7 @@ DO NOT EDIT
 <tr><td>6</td><td>DShot600</td></tr>
 <tr><td>7</td><td>DShot1200</td></tr>
 </table>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -9383,6 +9425,7 @@ DO NOT EDIT
 <p>This allows calculation of true RPM from ESC&#x27;s eRPM. The default is 14.</p>
 <ul>
 <li>Range: 1 127</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -9391,6 +9434,7 @@ DO NOT EDIT
 <p>Mask of channels which are dynamically reversible. This is used to configure ESCs in &#x27;3D&#x27; mode, allowing for the motor to spin in either direction</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -9399,6 +9443,7 @@ DO NOT EDIT
 <p>Mask of channels which support bi-directional dshot. This is used for ESCs which have firmware that supports bi-directional dshot allowing fast rpm telemetry values to be returned for the harmonic notch.</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -9407,6 +9452,7 @@ DO NOT EDIT
 <p>Mask of channels which are reversed. This is used to configure ESCs in reversed mode</p>
 <ul>
 <li>Bitmask: 0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</li>
+<li>RebootRequired: True</li>
 </ul>
 
 

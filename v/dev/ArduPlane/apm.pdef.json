@@ -1420,11 +1420,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -1735,11 +1735,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -2050,11 +2050,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -2365,11 +2365,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -2680,11 +2680,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -2995,11 +2995,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -3310,11 +3310,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -3625,11 +3625,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -3940,11 +3940,11 @@
         "0": "Ignore DroneCAN SoC",
         "1": "MPPT reports input voltage and current",
         "2": "MPPT Powered off when disarmed",
-        "22": "Use Wh for remaining battery percentage calculation",
-        "23": "Include energy losses upstream of the flight controller when using analog battery monitor",
+        "23": "Use Wh for remaining battery percentage calculation",
         "3": "MPPT Powered on when armed",
         "4": "MPPT Powered off at boot",
-        "5": "MPPT Powered on at boot"
+        "5": "MPPT Powered on at boot",
+        "6": "Send resistance compensated voltage to GCS"
       },
       "Description": "This sets options to change the behaviour of the battery monitor",
       "DisplayName": "Battery monitor options",
@@ -5224,7 +5224,8 @@
         "3": "TEST_UAVCAN_DNA",
         "4": "TEST_TOSHIBA_CAN",
         "5": "TEST_KDE_CAN",
-        "6": "TEST_UAVCAN_ESC"
+        "6": "TEST_UAVCAN_ESC",
+        "7": "TEST_UAVCAN_FD_ESC"
       }
     },
     "CAN_D1_TST_LPR8": {
@@ -5280,7 +5281,8 @@
     "CAN_D1_UC_OPTION": {
       "Bitmask": {
         "0": "ClearDNADatabase",
-        "1": "IgnoreDNANodeConflicts"
+        "1": "IgnoreDNANodeConflicts",
+        "2": "EnableCanfd"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -5429,7 +5431,8 @@
         "3": "TEST_UAVCAN_DNA",
         "4": "TEST_TOSHIBA_CAN",
         "5": "TEST_KDE_CAN",
-        "6": "TEST_UAVCAN_ESC"
+        "6": "TEST_UAVCAN_ESC",
+        "7": "TEST_UAVCAN_FD_ESC"
       }
     },
     "CAN_D2_TST_LPR8": {
@@ -5485,7 +5488,8 @@
     "CAN_D2_UC_OPTION": {
       "Bitmask": {
         "0": "ClearDNADatabase",
-        "1": "IgnoreDNANodeConflicts"
+        "1": "IgnoreDNANodeConflicts",
+        "2": "EnableCanfd"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -5634,7 +5638,8 @@
         "3": "TEST_UAVCAN_DNA",
         "4": "TEST_TOSHIBA_CAN",
         "5": "TEST_KDE_CAN",
-        "6": "TEST_UAVCAN_ESC"
+        "6": "TEST_UAVCAN_ESC",
+        "7": "TEST_UAVCAN_FD_ESC"
       }
     },
     "CAN_D3_TST_LPR8": {
@@ -5690,7 +5695,8 @@
     "CAN_D3_UC_OPTION": {
       "Bitmask": {
         "0": "ClearDNADatabase",
-        "1": "IgnoreDNANodeConflicts"
+        "1": "IgnoreDNANodeConflicts",
+        "2": "EnableCanfd"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -5750,6 +5756,18 @@
         "2": "Second driver",
         "3": "Third driver"
       }
+    },
+    "CAN_P1_FDBITRATE": {
+      "Description": "Bit rate can be set up to from 1000000 to 8000000",
+      "DisplayName": "Bitrate of CANFD interface",
+      "User": "Advanced",
+      "Values": {
+        "1": "1M",
+        "2": "2M",
+        "4": "4M",
+        "5": "5M",
+        "8": "8M"
+      }
     }
   },
   "CAN_P2_": {
@@ -5773,6 +5791,18 @@
         "2": "Second driver",
         "3": "Third driver"
       }
+    },
+    "CAN_P2_FDBITRATE": {
+      "Description": "Bit rate can be set up to from 1000000 to 8000000",
+      "DisplayName": "Bitrate of CANFD interface",
+      "User": "Advanced",
+      "Values": {
+        "1": "1M",
+        "2": "2M",
+        "4": "4M",
+        "5": "5M",
+        "8": "8M"
+      }
     }
   },
   "CAN_P3_": {
@@ -5795,6 +5825,18 @@
         "1": "First driver",
         "2": "Second driver",
         "3": "Third driver"
+      }
+    },
+    "CAN_P3_FDBITRATE": {
+      "Description": "Bit rate can be set up to from 1000000 to 8000000",
+      "DisplayName": "Bitrate of CANFD interface",
+      "User": "Advanced",
+      "Values": {
+        "1": "1M",
+        "2": "2M",
+        "4": "4M",
+        "5": "5M",
+        "8": "8M"
       }
     }
   },
@@ -8969,12 +9011,12 @@
   },
   "GPS": {
     "GPS1_CAN_OVRIDE": {
-      "Description": "GPS Node id for first GPS. If 0 the gps will be automatically selected on first come basis.",
+      "Description": "GPS Node id for first GPS. If 0 the gps will be automatically selected on a first-come-first-GPS basis.",
       "DisplayName": "First DroneCAN GPS NODE ID",
       "User": "Advanced"
     },
     "GPS2_CAN_OVRIDE": {
-      "Description": "GPS Node id for second GPS. If 0 the gps will be automatically selected on first come basis.",
+      "Description": "GPS Node id for second GPS. If 0 the gps will be automatically selected on a second-come-second-GPS basis.",
       "DisplayName": "Second DroneCAN GPS NODE ID",
       "User": "Advanced"
     },
@@ -9020,13 +9062,13 @@
       "User": "Advanced"
     },
     "GPS_CAN_NODEID1": {
-      "Description": "GPS Node id for discovered first.",
+      "Description": "GPS Node id for first-discovered GPS.",
       "DisplayName": "GPS Node ID 1",
       "ReadOnly": "True",
       "User": "Advanced"
     },
     "GPS_CAN_NODEID2": {
-      "Description": "GPS Node id for discovered second.",
+      "Description": "GPS Node id for second-discovered GPS.",
       "DisplayName": "GPS Node ID 2",
       "ReadOnly": "True",
       "User": "Advanced"
@@ -10337,7 +10379,7 @@
         "6": "7th harmonic",
         "7": "8th harmonic"
       },
-      "Description": "Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time.",
+      "Description": "Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot.",
       "DisplayName": "Harmonic Notch Filter harmonics",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -10471,7 +10513,7 @@
         "6": "7th harmonic",
         "7": "8th harmonic"
       },
-      "Description": "Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time.",
+      "Description": "Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot.",
       "DisplayName": "Harmonic Notch Filter harmonics",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -12303,6 +12345,7 @@
       "Bitmask": {
         "0": "UseDecimalPack",
         "1": "InvertedWindPointer",
+        "19": "Right justify TUNED_PN element",
         "2": "InvertedAHRoll",
         "20": "Prefix LQ with RF Mode",
         "21": "One decimal attitude",
@@ -24477,7 +24520,7 @@
       "Units": "%",
       "User": "Standard"
     },
-    "ELEVA_DIFF": {
+    "ELEVATOR_DIFF": {
       "Description": "Amount of differential throws applied to the elevator (does not apply to elevons). A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel",
       "DisplayName": "Amount of differential throws applied to the elevator (does not apply to elevons)",
       "User": "Advanced",
@@ -24557,6 +24600,7 @@
         "10": "Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL",
         "11": "Disable suppression of fixed wing rate gains in ground mode",
         "2": "Disable attitude check for takeoff arming",
+        "23": "remove FBWB style loiter altitude control",
         "3": "Force target airspeed to trim airspeed in Cruise or FBWB",
         "4": "Climb to ALT_HOLD_RTL before turning for RTL",
         "5": "Enable yaw damper in acro mode",
@@ -25377,13 +25421,14 @@
       }
     },
     "RTL_AUTOLAND": {
-      "Description": "Automatically begin landing sequence after arriving at RTL location. This requires the addition of a DO_LAND_START mission item, which acts as a marker for the start of a landing sequence. The closest landing sequence will be chosen to the current location.",
+      "Description": "Automatically begin landing sequence after arriving at RTL location. This requires the addition of a DO_LAND_START mission item, which acts as a marker for the start of a landing sequence. The closest landing sequence will be chosen to the current location. If this is set to 0 and there is a DO_LAND_START mission item then you will get an arming check failure. You can set to a value of 3 to avoid the arming check failure and use the DO_LAND_START for go-around without it changing RTL behaviour. For a value of 1 a rally point will be used instead of HOME if in range (see rally point documentation).",
       "DisplayName": "RTL auto land",
       "User": "Standard",
       "Values": {
         "0": "Disable",
-        "1": "Enable - go HOME then land",
-        "2": "Enable - go directly to landing sequence"
+        "1": "Fly HOME then land",
+        "2": "Go directly to landing sequence",
+        "3": "OnlyForGoAround"
       }
     },
     "RTL_CLIMB_MIN": {
@@ -25437,6 +25482,17 @@
         "low": "0"
       },
       "Units": "m/s",
+      "User": "Advanced"
+    },
+    "STAB_PITCH_DCRV": {
+      "Description": "-100=square pitch down curve, 0=linear pitch down curve, 100=square root pitch down curve",
+      "DisplayName": "Low throttle pitch down curve",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "%",
       "User": "Advanced"
     },
     "STAB_PITCH_DOWN": {
@@ -25566,7 +25622,17 @@
       "Units": "%",
       "User": "Advanced"
     },
-    "THR_EXPO": {
+    "THR_EXPO_AUTO": {
+      "Description": "Amount of square response curve to apply to throttle in auto throttle modes",
+      "DisplayName": "Auto throttle square response curve",
+      "Range": {
+        "high": "100",
+        "low": "0"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
+    "THR_EXPO_MANUAL": {
       "Description": "Amount of square response curve to apply to throttle in manual throttle modes",
       "DisplayName": "Manual throttle square response curve",
       "Range": {
@@ -25957,7 +26023,7 @@
       "User": "Standard"
     },
     "Q_ASSIST_SPEED": {
-      "Description": "This is the speed below which the quad motors will provide stability and lift assistance in fixed wing modes. Zero means no assistance except during transition",
+      "Description": "This is the speed below which the quad motors will provide stability and lift assistance in fixed wing modes. Zero means no assistance except during transition. Note that if this is set to zero then other Q_ASSIST features are also disabled. A higher value will lead to more false positives which can waste battery. A lower value will result in less false positive, but will result in assistance taking longer to trigger. If unsure then set to 3 m/s below the minimum airspeed you will fly at. If you don't have an airspeed sensor then use 5 m/s below the minimum airspeed you fly at. If you want to disable the arming check Q_ASSIST_SPEED then set to -1.",
       "DisplayName": "Quadplane assistance speed",
       "Increment": "0.1",
       "Range": {
@@ -27965,6 +28031,8 @@
         "10": "Enable multiple receiver support",
         "11": "CRSF RSSI shows Link Quality",
         "2": "Ignore Receiver Failsafe bit but allow other RC failsafes if setup",
+        "22": "Disable throttle battery compensation in manual mode (plane only)",
+        "23": "Disable throttle expo in manual mode (plane only)",
         "3": "FPort Pad",
         "4": "Log RC input bytes",
         "5": "Arming check throttle for 0 input",
@@ -34675,7 +34743,7 @@
       "User": "Advanced",
       "Values": {
         "0": "Disable",
-        "1": "Enable until disarm",
+        "1": "Once",
         "2": "Enable permanently"
       }
     },
@@ -34736,6 +34804,17 @@
     }
   },
   "SERVO10_": {
+    "SERVO10_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO10_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -34866,16 +34945,15 @@
       }
     },
     "SERVO10_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO10_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -34910,6 +34988,17 @@
     }
   },
   "SERVO11_": {
+    "SERVO11_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO11_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -35040,16 +35129,15 @@
       }
     },
     "SERVO11_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO11_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -35084,6 +35172,17 @@
     }
   },
   "SERVO12_": {
+    "SERVO12_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO12_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -35214,16 +35313,15 @@
       }
     },
     "SERVO12_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO12_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -35258,6 +35356,17 @@
     }
   },
   "SERVO13_": {
+    "SERVO13_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO13_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -35388,16 +35497,15 @@
       }
     },
     "SERVO13_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO13_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -35432,6 +35540,17 @@
     }
   },
   "SERVO14_": {
+    "SERVO14_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO14_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -35562,16 +35681,15 @@
       }
     },
     "SERVO14_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO14_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -35606,6 +35724,17 @@
     }
   },
   "SERVO15_": {
+    "SERVO15_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO15_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -35736,16 +35865,15 @@
       }
     },
     "SERVO15_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO15_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -35780,6 +35908,17 @@
     }
   },
   "SERVO16_": {
+    "SERVO16_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO16_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -35910,16 +36049,15 @@
       }
     },
     "SERVO16_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO16_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -35954,6 +36092,17 @@
     }
   },
   "SERVO1_": {
+    "SERVO1_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO1_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -36084,16 +36233,15 @@
       }
     },
     "SERVO1_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO1_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -36128,6 +36276,17 @@
     }
   },
   "SERVO2_": {
+    "SERVO2_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO2_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -36258,16 +36417,15 @@
       }
     },
     "SERVO2_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO2_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -36302,6 +36460,17 @@
     }
   },
   "SERVO3_": {
+    "SERVO3_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO3_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -36432,16 +36601,15 @@
       }
     },
     "SERVO3_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO3_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -36476,6 +36644,17 @@
     }
   },
   "SERVO4_": {
+    "SERVO4_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO4_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -36606,16 +36785,15 @@
       }
     },
     "SERVO4_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO4_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -36650,6 +36828,17 @@
     }
   },
   "SERVO5_": {
+    "SERVO5_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO5_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -36780,16 +36969,15 @@
       }
     },
     "SERVO5_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO5_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -36824,6 +37012,17 @@
     }
   },
   "SERVO6_": {
+    "SERVO6_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO6_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -36954,16 +37153,15 @@
       }
     },
     "SERVO6_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO6_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -36998,6 +37196,17 @@
     }
   },
   "SERVO7_": {
+    "SERVO7_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO7_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -37128,16 +37337,15 @@
       }
     },
     "SERVO7_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO7_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -37172,6 +37380,17 @@
     }
   },
   "SERVO8_": {
+    "SERVO8_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO8_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -37302,16 +37521,15 @@
       }
     },
     "SERVO8_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO8_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -37346,6 +37564,17 @@
     }
   },
   "SERVO9_": {
+    "SERVO9_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
     "SERVO9_ABS_MIN": {
       "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
       "DisplayName": "Absolute minimum PWM",
@@ -37476,16 +37705,15 @@
       }
     },
     "SERVO9_MAX": {
-      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
-      "DisplayName": "Absolute maximum PWM",
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
       "Increment": "1",
       "Range": {
-        "high": "2500",
-        "low": "500"
+        "high": "2200",
+        "low": "800"
       },
       "Units": "PWM",
-      "User": "Standard",
-      "path": "SRV_Channel"
+      "User": "Standard"
     },
     "SERVO9_MIN": {
       "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
@@ -37541,11 +37769,13 @@
       },
       "Description": "Mask of channels which are dynamically reversible. This is used to configure ESCs in '3D' mode, allowing for the motor to spin in either direction",
       "DisplayName": "BLHeli bitmask of 3D channels",
+      "RebootRequired": "True",
       "User": "Advanced"
     },
     "SERVO_BLH_AUTO": {
       "Description": "If set to 1 this auto-enables BLHeli pass-thru support for all multicopter motors",
       "DisplayName": "BLHeli pass-thru auto-enable for multicopter motors",
+      "RebootRequired": "True",
       "User": "Standard",
       "Values": {
         "0": "Disabled",
@@ -37573,6 +37803,7 @@
       },
       "Description": "Mask of channels which support bi-directional dshot. This is used for ESCs which have firmware that supports bi-directional dshot allowing fast rpm telemetry values to be returned for the harmonic notch.",
       "DisplayName": "BLHeli bitmask of bi-directional dshot channels",
+      "RebootRequired": "True",
       "User": "Advanced"
     },
     "SERVO_BLH_DEBUG": {
@@ -37605,11 +37836,13 @@
       },
       "Description": "Enable of BLHeli pass-thru servo protocol support to specific channels. This mask is in addition to motors enabled using SERVO_BLH_AUTO (if any)",
       "DisplayName": "BLHeli Channel Bitmask",
+      "RebootRequired": "True",
       "User": "Advanced"
     },
     "SERVO_BLH_OTYPE": {
       "Description": "When set to a non-zero value this overrides the output type for the output channels given by SERVO_BLH_MASK. This can be used to enable DShot on outputs that are not part of the multicopter motors group.",
       "DisplayName": "BLHeli output type override",
+      "RebootRequired": "True",
       "User": "Advanced",
       "Values": {
         "0": "None",
@@ -37629,6 +37862,7 @@
         "high": "127",
         "low": "1"
       },
+      "RebootRequired": "True",
       "User": "Advanced"
     },
     "SERVO_BLH_PORT": {
@@ -37665,6 +37899,7 @@
       },
       "Description": "Mask of channels which are reversed. This is used to configure ESCs in reversed mode",
       "DisplayName": "BLHeli bitmask of reversed channels",
+      "RebootRequired": "True",
       "User": "Advanced"
     },
     "SERVO_BLH_TEST": {
@@ -39301,17 +39536,6 @@
       },
       "User": "Advanced"
     },
-    "TECS_THR_EXPO": {
-      "Description": "Amount of square response curve to apply to throttle in auto throttle modes",
-      "DisplayName": "Auto throttle square response curve",
-      "Increment": "1",
-      "Range": {
-        "high": "100",
-        "low": "0"
-      },
-      "Units": "%",
-      "User": "Advanced"
-    },
     "TECS_THR_FF_DAMP": {
       "Description": "Throttle FF component dampening factor. 0 means not use FF for throttle calculations. 1 means use 100% of the calculated throttle FF value.",
       "DisplayName": "Throttle FF component dampening factor",
@@ -39379,6 +39603,16 @@
       "Range": {
         "high": "50000",
         "low": "0.05"
+      },
+      "Units": "m",
+      "User": "Advanced"
+    },
+    "TERRAIN_OFS_MAX": {
+      "Description": "The maximum adjustment of terrain altitude based on the assumption that the vehicle is on the ground when it is armed. When the vehicle is armed the location of the vehicle is recorded, and when terrain data is available for that location a height adjustment for terrain data is calculated that aligns the terrain height at that location with the altitude recorded at arming. This height adjustment is applied to all terrain data. This parameter clamps the amount of adjustment. A value of zero disables the use of terrain height adjustment.",
+      "DisplayName": "Terrain reference offset maximum",
+      "Range": {
+        "high": "50",
+        "low": "0"
       },
       "Units": "m",
       "User": "Advanced"
@@ -39525,6 +39759,8 @@
         "112": "Set_AglRoll",
         "113": "Set_AglPitch",
         "114": "Set_Mixing",
+        "115": "Set_THRExpo",
+        "116": "Set_flap",
         "12": "RateYawD",
         "13": "AngleRollP",
         "14": "AnglePitchP",
@@ -39557,22 +39793,28 @@
         "6": "RatePitchP",
         "60": "KFF_THRAT2PTCH",
         "61": "FW STAB PITCH DOWN",
-        "62": "RLL2PTCH",
-        "63": "KFF_RDDRMIX",
-        "64": "TECSTFFDAMP",
-        "65": "TECSTFF_FILT",
-        "66": "FWAglRollP",
-        "67": "FWAglRollI",
-        "68": "AglRollD",
-        "69": "AglRollFLTT",
+        "62": "FW STAB PITCH DOWN curve",
+        "63": "RLL2PTCH",
+        "64": "KFF_RDDRMIX",
+        "65": "TECSTFFDAMP",
+        "66": "TECSTFF_FILT",
+        "67": "FWAglRollP",
+        "68": "FWAglRollI",
+        "69": "AglRollD",
         "7": "RatePitchI",
-        "70": "FWAglPitchP",
-        "71": "FWAglPitchI",
-        "72": "AglPitchD",
-        "73": "AglPitchFLTT",
-        "74": "MixingDiff",
-        "75": "MixingOffset",
+        "70": "AglRollFLTT",
+        "71": "FWAglPitchP",
+        "72": "FWAglPitchI",
+        "73": "AglPitchD",
+        "74": "AglPitchFLTT",
+        "75": "MixingDiff",
+        "76": "MixingOffset",
+        "77": "THR expo manual",
+        "78": "THR expo auto",
+        "79": "Flap retracted speed",
         "8": "RatePitchD",
+        "80": "Flap extended speed",
+        "81": "Flap extended percent",
         "9": "RateYawPI"
       }
     },

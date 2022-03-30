@@ -769,7 +769,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT2_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT2_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -955,7 +955,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT3_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT3_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1141,7 +1141,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT4_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT4_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1327,7 +1327,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT5_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT5_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1513,7 +1513,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT6_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT6_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1699,7 +1699,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT7_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT7_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1885,7 +1885,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT8_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT8_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -2071,7 +2071,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT9_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT9_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -2257,7 +2257,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -2701,6 +2701,7 @@
           <value code="4">TEST_TOSHIBA_CAN</value>
           <value code="5">TEST_KDE_CAN</value>
           <value code="6">TEST_UAVCAN_ESC</value>
+          <value code="7">TEST_UAVCAN_FD_ESC</value>
         </values>
       </param>
       <param humanName="CANTester LoopRate" name="CAN_D1_TST_LPR8" documentation="Selects the Looprate of Test methods" user="Advanced">
@@ -2724,7 +2725,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D1_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D1_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -2782,6 +2783,7 @@
           <value code="4">TEST_TOSHIBA_CAN</value>
           <value code="5">TEST_KDE_CAN</value>
           <value code="6">TEST_UAVCAN_ESC</value>
+          <value code="7">TEST_UAVCAN_FD_ESC</value>
         </values>
       </param>
       <param humanName="CANTester LoopRate" name="CAN_D2_TST_LPR8" documentation="Selects the Looprate of Test methods" user="Advanced">
@@ -2805,7 +2807,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D2_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D2_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -2863,6 +2865,7 @@
           <value code="4">TEST_TOSHIBA_CAN</value>
           <value code="5">TEST_KDE_CAN</value>
           <value code="6">TEST_UAVCAN_ESC</value>
+          <value code="7">TEST_UAVCAN_FD_ESC</value>
         </values>
       </param>
       <param humanName="CANTester LoopRate" name="CAN_D3_TST_LPR8" documentation="Selects the Looprate of Test methods" user="Advanced">
@@ -2886,7 +2889,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D3_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D3_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -2907,6 +2910,15 @@
       <param humanName="Bitrate of CAN interface" name="CAN_P1_BITRATE" documentation="Bit rate can be set up to from 10000 to 1000000" user="Advanced">
         <field name="Range">10000 1000000</field>
       </param>
+      <param humanName="Bitrate of CANFD interface" name="CAN_P1_FDBITRATE" documentation="Bit rate can be set up to from 1000000 to 8000000" user="Advanced">
+        <values>
+          <value code="1">1M</value>
+          <value code="2">2M</value>
+          <value code="4">4M</value>
+          <value code="5">5M</value>
+          <value code="8">8M</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="CAN_P2_">
       <param humanName="Index of virtual driver to be used with physical CAN interface" name="CAN_P2_DRIVER" documentation="Enabling this option enables use of CAN buses." user="Standard">
@@ -2921,6 +2933,15 @@
       <param humanName="Bitrate of CAN interface" name="CAN_P2_BITRATE" documentation="Bit rate can be set up to from 10000 to 1000000" user="Advanced">
         <field name="Range">10000 1000000</field>
       </param>
+      <param humanName="Bitrate of CANFD interface" name="CAN_P2_FDBITRATE" documentation="Bit rate can be set up to from 1000000 to 8000000" user="Advanced">
+        <values>
+          <value code="1">1M</value>
+          <value code="2">2M</value>
+          <value code="4">4M</value>
+          <value code="5">5M</value>
+          <value code="8">8M</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="CAN_P3_">
       <param humanName="Index of virtual driver to be used with physical CAN interface" name="CAN_P3_DRIVER" documentation="Enabling this option enables use of CAN buses." user="Standard">
@@ -2934,6 +2955,15 @@
       </param>
       <param humanName="Bitrate of CAN interface" name="CAN_P3_BITRATE" documentation="Bit rate can be set up to from 10000 to 1000000" user="Advanced">
         <field name="Range">10000 1000000</field>
+      </param>
+      <param humanName="Bitrate of CANFD interface" name="CAN_P3_FDBITRATE" documentation="Bit rate can be set up to from 1000000 to 8000000" user="Advanced">
+        <values>
+          <value code="1">1M</value>
+          <value code="2">2M</value>
+          <value code="4">4M</value>
+          <value code="5">5M</value>
+          <value code="8">8M</value>
+        </values>
       </param>
     </parameters>
     <parameters name="CAN_SLCAN_">
@@ -3973,15 +4003,15 @@
           <value code="1">SecondGPS</value>
         </values>
       </param>
-      <param humanName="GPS Node ID 1" name="GPS_CAN_NODEID1" documentation="GPS Node id for discovered first." user="Advanced">
+      <param humanName="GPS Node ID 1" name="GPS_CAN_NODEID1" documentation="GPS Node id for first-discovered GPS." user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="GPS Node ID 2" name="GPS_CAN_NODEID2" documentation="GPS Node id for discovered second." user="Advanced">
+      <param humanName="GPS Node ID 2" name="GPS_CAN_NODEID2" documentation="GPS Node id for second-discovered GPS." user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="First DroneCAN GPS NODE ID" name="GPS1_CAN_OVRIDE" documentation="GPS Node id for first GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
+      <param humanName="First DroneCAN GPS NODE ID" name="GPS1_CAN_OVRIDE" documentation="GPS Node id for first GPS. If 0 the gps will be automatically selected on a first-come-first-GPS basis." user="Advanced">
 </param>
-      <param humanName="Second DroneCAN GPS NODE ID" name="GPS2_CAN_OVRIDE" documentation="GPS Node id for second GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
+      <param humanName="Second DroneCAN GPS NODE ID" name="GPS2_CAN_OVRIDE" documentation="GPS Node id for second GPS. If 0 the gps will be automatically selected on a second-come-second-GPS basis." user="Advanced">
 </param>
     </parameters>
     <parameters name="GPS_MB1_">
@@ -4367,7 +4397,7 @@
         <field name="Units">dB</field>
         <field name="UnitText">decibel</field>
       </param>
-      <param humanName="Harmonic Notch Filter harmonics" name="INS_HNTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time." user="Advanced">
+      <param humanName="Harmonic Notch Filter harmonics" name="INS_HNTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot." user="Advanced">
         <field name="Bitmask">0:1st harmonic,1:2nd harmonic,2:3rd harmonic,3:4th hamronic,4:5th harmonic,5:6th harmonic,6:7th harmonic,7:8th harmonic</field>
         <field name="RebootRequired">True</field>
       </param>
@@ -4433,7 +4463,7 @@
         <field name="Units">dB</field>
         <field name="UnitText">decibel</field>
       </param>
-      <param humanName="Harmonic Notch Filter harmonics" name="INS_NOTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time." user="Advanced">
+      <param humanName="Harmonic Notch Filter harmonics" name="INS_NOTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot." user="Advanced">
         <field name="Bitmask">0:1st harmonic,1:2nd harmonic,2:3rd harmonic,3:4th hamronic,4:5th harmonic,5:6th harmonic,6:7th harmonic,7:8th harmonic</field>
         <field name="RebootRequired">True</field>
       </param>
@@ -4827,7 +4857,7 @@
         <field name="UnitText">seconds</field>
       </param>
       <param humanName="RC options" name="RC_OPTIONS" documentation="RC input options" user="Advanced">
-        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:CRSF RSSI shows Link Quality</field>
+        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:CRSF RSSI shows Link Quality, 22:Disable throttle battery compensation in manual mode (plane only), 23:Disable throttle expo in manual mode (plane only)</field>
       </param>
       <param humanName="RC protocols enabled" name="RC_PROTOCOLS" documentation="Bitmask of enabled RC protocols. Allows narrowing the protocol detection to only specific types of RC receivers which can avoid issues with incorrect detection. Set to 1 to enable all protocols." user="Advanced">
         <field name="Bitmask">0:All,1:PPM,2:IBUS,3:SBUS,4:SBUS_NI,5:DSM,6:SUMD,7:SRXL,8:SRXL2,9:CRSF,10:ST24,11:FPORT,12:FPORT2,13:FastSBUS</field>
@@ -6258,7 +6288,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO10_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO10_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -6421,7 +6451,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO11_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO11_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -6584,7 +6614,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO12_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO12_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -6747,7 +6777,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO13_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO13_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -6910,7 +6940,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO14_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO14_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -7073,7 +7103,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO15_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO15_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -7236,7 +7266,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO16_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO16_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -7399,7 +7429,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO1_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO1_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -7562,7 +7592,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO2_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO2_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -7725,7 +7755,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO3_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO3_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -7888,7 +7918,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO4_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO4_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8051,7 +8081,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO5_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO5_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8214,7 +8244,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO6_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO6_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8377,7 +8407,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO7_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO7_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8540,7 +8570,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO8_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO8_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8703,7 +8733,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO9_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO9_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8713,12 +8743,14 @@
     <parameters name="SERVO_BLH_">
       <param humanName="BLHeli Channel Bitmask" name="SERVO_BLH_MASK" documentation="Enable of BLHeli pass-thru servo protocol support to specific channels. This mask is in addition to motors enabled using SERVO_BLH_AUTO (if any)" user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli pass-thru auto-enable for multicopter motors" name="SERVO_BLH_AUTO" documentation="If set to 1 this auto-enables BLHeli pass-thru support for all multicopter motors" user="Standard">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli internal interface test" name="SERVO_BLH_TEST" documentation="Setting SERVO_BLH_TEST to a motor number enables an internal test of the BLHeli ESC protocol to the corresponding ESC. The debug output is displayed on the USB console." user="Advanced">
         <values>
@@ -8760,6 +8792,7 @@
           <value code="6">DShot600</value>
           <value code="7">DShot1200</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Control port" name="SERVO_BLH_PORT" documentation="This sets the mavlink channel to use for blheli pass-thru. The channel number is determined by the number of serial ports configured to use mavlink. So 0 is always the console, 1 is the next serial port using mavlink, 2 the next after that and so on." user="Advanced">
         <values>
@@ -8773,15 +8806,19 @@
       </param>
       <param humanName="BLHeli Motor Poles" name="SERVO_BLH_POLES" documentation="This allows calculation of true RPM from ESC's eRPM. The default is 14." user="Advanced">
         <field name="Range">1 127</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli bitmask of 3D channels" name="SERVO_BLH_3DMASK" documentation="Mask of channels which are dynamically reversible. This is used to configure ESCs in '3D' mode, allowing for the motor to spin in either direction" user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli bitmask of bi-directional dshot channels" name="SERVO_BLH_BDMASK" documentation="Mask of channels which support bi-directional dshot. This is used for ESCs which have firmware that supports bi-directional dshot allowing fast rpm telemetry values to be returned for the harmonic notch." user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli bitmask of reversed channels" name="SERVO_BLH_RVMASK" documentation="Mask of channels which are reversed. This is used to configure ESCs in reversed mode" user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO_FTW_">

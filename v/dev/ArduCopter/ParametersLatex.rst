@@ -7313,25 +7313,25 @@ BATT2\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -8040,25 +8040,25 @@ BATT3\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -8767,25 +8767,25 @@ BATT4\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -9494,25 +9494,25 @@ BATT5\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -10221,25 +10221,25 @@ BATT6\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -10948,25 +10948,25 @@ BATT7\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -11675,25 +11675,25 @@ BATT8\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -12402,25 +12402,25 @@ BATT9\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -13129,25 +13129,25 @@ BATT\_OPTIONS: Battery monitor options
 This sets options to change the behaviour of the battery monitor
 
 
-+-----+-------------------------------------------------------------------------------------------+
-| Bit | Meaning                                                                                   |
-+=====+===========================================================================================+
-| 0   | Ignore DroneCAN SoC                                                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 1   | MPPT reports input voltage and current                                                    |
-+-----+-------------------------------------------------------------------------------------------+
-| 2   | MPPT Powered off when disarmed                                                            |
-+-----+-------------------------------------------------------------------------------------------+
-| 3   | MPPT Powered on when armed                                                                |
-+-----+-------------------------------------------------------------------------------------------+
-| 4   | MPPT Powered off at boot                                                                  |
-+-----+-------------------------------------------------------------------------------------------+
-| 5   | MPPT Powered on at boot                                                                   |
-+-----+-------------------------------------------------------------------------------------------+
-| 22  | Use Wh for remaining battery percentage calculation                                       |
-+-----+-------------------------------------------------------------------------------------------+
-| 23  | Include energy losses upstream of the flight controller when using analog battery monitor |
-+-----+-------------------------------------------------------------------------------------------+
++-----+-----------------------------------------------------+
+| Bit | Meaning                                             |
++=====+=====================================================+
+| 0   | Ignore DroneCAN SoC                                 |
++-----+-----------------------------------------------------+
+| 1   | MPPT reports input voltage and current              |
++-----+-----------------------------------------------------+
+| 2   | MPPT Powered off when disarmed                      |
++-----+-----------------------------------------------------+
+| 3   | MPPT Powered on when armed                          |
++-----+-----------------------------------------------------+
+| 4   | MPPT Powered off at boot                            |
++-----+-----------------------------------------------------+
+| 5   | MPPT Powered on at boot                             |
++-----+-----------------------------------------------------+
+| 6   | Send resistance compensated voltage to GCS          |
++-----+-----------------------------------------------------+
+| 23  | Use Wh for remaining battery percentage calculation |
++-----+-----------------------------------------------------+
 
 
 
@@ -16361,6 +16361,8 @@ Selects the Index of Test that needs to be run recursively\, this value gets res
 +-------+----------------------+
 | 6     | TEST_UAVCAN_ESC      |
 +-------+----------------------+
+| 7     | TEST_UAVCAN_FD_ESC   |
++-------+----------------------+
 
 
 
@@ -16550,6 +16552,8 @@ Option flags
 | 0   | ClearDNADatabase       |
 +-----+------------------------+
 | 1   | IgnoreDNANodeConflicts |
++-----+------------------------+
+| 2   | EnableCanfd            |
 +-----+------------------------+
 
 
@@ -16812,6 +16816,8 @@ Selects the Index of Test that needs to be run recursively\, this value gets res
 +-------+----------------------+
 | 6     | TEST_UAVCAN_ESC      |
 +-------+----------------------+
+| 7     | TEST_UAVCAN_FD_ESC   |
++-------+----------------------+
 
 
 
@@ -17001,6 +17007,8 @@ Option flags
 | 0   | ClearDNADatabase       |
 +-----+------------------------+
 | 1   | IgnoreDNANodeConflicts |
++-----+------------------------+
+| 2   | EnableCanfd            |
 +-----+------------------------+
 
 
@@ -17263,6 +17271,8 @@ Selects the Index of Test that needs to be run recursively\, this value gets res
 +-------+----------------------+
 | 6     | TEST_UAVCAN_ESC      |
 +-------+----------------------+
+| 7     | TEST_UAVCAN_FD_ESC   |
++-------+----------------------+
 
 
 
@@ -17453,6 +17463,8 @@ Option flags
 +-----+------------------------+
 | 1   | IgnoreDNANodeConflicts |
 +-----+------------------------+
+| 2   | EnableCanfd            |
++-----+------------------------+
 
 
 
@@ -17527,6 +17539,33 @@ Bit rate can be set up to from 10000 to 1000000
 
 
 
+.. _CAN_P1_FDBITRATE:
+
+CAN\_P1\_FDBITRATE: Bitrate of CANFD interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bit rate can be set up to from 1000000 to 8000000
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 1     | 1M      |
++-------+---------+
+| 2     | 2M      |
++-------+---------+
+| 4     | 4M      |
++-------+---------+
+| 5     | 5M      |
++-------+---------+
+| 8     | 8M      |
++-------+---------+
+
+
+
+
 
 .. _parameters_CAN_P2_:
 
@@ -17578,6 +17617,33 @@ Bit rate can be set up to from 10000 to 1000000
 
 
 
+.. _CAN_P2_FDBITRATE:
+
+CAN\_P2\_FDBITRATE: Bitrate of CANFD interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bit rate can be set up to from 1000000 to 8000000
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 1     | 1M      |
++-------+---------+
+| 2     | 2M      |
++-------+---------+
+| 4     | 4M      |
++-------+---------+
+| 5     | 5M      |
++-------+---------+
+| 8     | 8M      |
++-------+---------+
+
+
+
+
 
 .. _parameters_CAN_P3_:
 
@@ -17625,6 +17691,33 @@ Bit rate can be set up to from 10000 to 1000000
 +=================+
 | 10000 - 1000000 |
 +-----------------+
+
+
+
+
+.. _CAN_P3_FDBITRATE:
+
+CAN\_P3\_FDBITRATE: Bitrate of CANFD interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bit rate can be set up to from 1000000 to 8000000
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 1     | 1M      |
++-------+---------+
+| 2     | 2M      |
++-------+---------+
+| 4     | 4M      |
++-------+---------+
+| 5     | 5M      |
++-------+---------+
+| 8     | 8M      |
++-------+---------+
 
 
 
@@ -24991,7 +25084,7 @@ GPS\_CAN\_NODEID1: GPS Node ID 1
 
 | *Note: This parameter is for advanced users*
 
-GPS Node id for discovered first\.
+GPS Node id for first\-discovered GPS\.
 
 
 +----------+
@@ -25010,7 +25103,7 @@ GPS\_CAN\_NODEID2: GPS Node ID 2
 
 | *Note: This parameter is for advanced users*
 
-GPS Node id for discovered second\.
+GPS Node id for second\-discovered GPS\.
 
 
 +----------+
@@ -25029,7 +25122,7 @@ GPS1\_CAN\_OVRIDE: First DroneCAN GPS NODE ID
 
 | *Note: This parameter is for advanced users*
 
-GPS Node id for first GPS\. If 0 the gps will be automatically selected on first come basis\.
+GPS Node id for first GPS\. If 0 the gps will be automatically selected on a first\-come\-first\-GPS basis\.
 
 
 .. _GPS2_CAN_OVRIDE:
@@ -25039,7 +25132,7 @@ GPS2\_CAN\_OVRIDE: Second DroneCAN GPS NODE ID
 
 | *Note: This parameter is for advanced users*
 
-GPS Node id for second GPS\. If 0 the gps will be automatically selected on first come basis\.
+GPS Node id for second GPS\. If 0 the gps will be automatically selected on a second\-come\-second\-GPS basis\.
 
 
 
@@ -28128,7 +28221,7 @@ INS\_HNTCH\_HMNCS: Harmonic Notch Filter harmonics
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\. A maximum of 3 harmonics can be used at any one time\.
+Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\.
 
 
 +-----+--------------+
@@ -28435,7 +28528,7 @@ INS\_NOTCH\_HMNCS: Harmonic Notch Filter harmonics
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\. A maximum of 3 harmonics can be used at any one time\.
+Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\.
 
 
 +-----+--------------+
@@ -32558,6 +32651,8 @@ This sets options that change the display
 | 3   | Convert feet to miles at 5280ft instead of 10000ft |
 +-----+----------------------------------------------------+
 | 4   | DisableCrosshair                                   |
++-----+----------------------------------------------------+
+| 19  | Right justify TUNED_PN element                     |
 +-----+----------------------------------------------------+
 | 20  | Prefix LQ with RF Mode                             |
 +-----+----------------------------------------------------+
@@ -61022,6 +61117,10 @@ RC input options
 +-----+--------------------------------------------------------------------+
 | 11  | CRSF RSSI shows Link Quality                                       |
 +-----+--------------------------------------------------------------------+
+| 22  | Disable throttle battery compensation in manual mode (plane only)  |
++-----+--------------------------------------------------------------------+
+| 23  | Disable throttle expo in manual mode (plane only)                  |
++-----+--------------------------------------------------------------------+
 
 
 
@@ -75079,10 +75178,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO10_MAX__SRV_Channel:
+.. _SERVO10_MAX:
 
-SERVO10\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO10\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -75354,10 +75453,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO10_MAX__SRV_Channel:
+.. _SERVO10_ABS_MAX:
 
-SERVO10\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO10\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -75397,10 +75496,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO11_MAX__SRV_Channel:
+.. _SERVO11_MAX:
 
-SERVO11\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO11\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -75672,10 +75771,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO11_MAX__SRV_Channel:
+.. _SERVO11_ABS_MAX:
 
-SERVO11\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO11\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -75715,10 +75814,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO12_MAX__SRV_Channel:
+.. _SERVO12_MAX:
 
-SERVO12\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO12\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -75990,10 +76089,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO12_MAX__SRV_Channel:
+.. _SERVO12_ABS_MAX:
 
-SERVO12\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO12\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -76033,10 +76132,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO13_MAX__SRV_Channel:
+.. _SERVO13_MAX:
 
-SERVO13\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO13\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -76308,10 +76407,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO13_MAX__SRV_Channel:
+.. _SERVO13_ABS_MAX:
 
-SERVO13\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO13\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -76351,10 +76450,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO14_MAX__SRV_Channel:
+.. _SERVO14_MAX:
 
-SERVO14\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO14\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -76626,10 +76725,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO14_MAX__SRV_Channel:
+.. _SERVO14_ABS_MAX:
 
-SERVO14\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO14\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -76669,10 +76768,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO15_MAX__SRV_Channel:
+.. _SERVO15_MAX:
 
-SERVO15\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO15\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -76944,10 +77043,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO15_MAX__SRV_Channel:
+.. _SERVO15_ABS_MAX:
 
-SERVO15\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO15\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -76987,10 +77086,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO16_MAX__SRV_Channel:
+.. _SERVO16_MAX:
 
-SERVO16\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO16\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -77262,10 +77361,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO16_MAX__SRV_Channel:
+.. _SERVO16_ABS_MAX:
 
-SERVO16\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO16\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -77305,10 +77404,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO1_MAX__SRV_Channel:
+.. _SERVO1_MAX:
 
-SERVO1\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO1\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -77580,10 +77679,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO1_MAX__SRV_Channel:
+.. _SERVO1_ABS_MAX:
 
-SERVO1\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO1\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -77623,10 +77722,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO2_MAX__SRV_Channel:
+.. _SERVO2_MAX:
 
-SERVO2\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO2\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -77898,10 +77997,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO2_MAX__SRV_Channel:
+.. _SERVO2_ABS_MAX:
 
-SERVO2\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO2\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -77941,10 +78040,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO3_MAX__SRV_Channel:
+.. _SERVO3_MAX:
 
-SERVO3\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO3\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -78216,10 +78315,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO3_MAX__SRV_Channel:
+.. _SERVO3_ABS_MAX:
 
-SERVO3\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO3\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -78259,10 +78358,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO4_MAX__SRV_Channel:
+.. _SERVO4_MAX:
 
-SERVO4\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO4\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -78534,10 +78633,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO4_MAX__SRV_Channel:
+.. _SERVO4_ABS_MAX:
 
-SERVO4\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO4\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -78577,10 +78676,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO5_MAX__SRV_Channel:
+.. _SERVO5_MAX:
 
-SERVO5\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO5\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -78852,10 +78951,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO5_MAX__SRV_Channel:
+.. _SERVO5_ABS_MAX:
 
-SERVO5\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO5\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -78895,10 +78994,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO6_MAX__SRV_Channel:
+.. _SERVO6_MAX:
 
-SERVO6\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO6\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -79170,10 +79269,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO6_MAX__SRV_Channel:
+.. _SERVO6_ABS_MAX:
 
-SERVO6\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO6\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -79213,10 +79312,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO7_MAX__SRV_Channel:
+.. _SERVO7_MAX:
 
-SERVO7\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO7\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -79488,10 +79587,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO7_MAX__SRV_Channel:
+.. _SERVO7_ABS_MAX:
 
-SERVO7\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO7\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -79531,10 +79630,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO8_MAX__SRV_Channel:
+.. _SERVO8_MAX:
 
-SERVO8\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO8\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -79806,10 +79905,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO8_MAX__SRV_Channel:
+.. _SERVO8_ABS_MAX:
 
-SERVO8\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO8\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -79849,10 +79948,10 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 
 
 
-.. _SERVO9_MAX__SRV_Channel:
+.. _SERVO9_MAX:
 
-SERVO9\_MAX \(SRV\_Channel\): Maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO9\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
@@ -80124,10 +80223,10 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
-.. _SERVO9_MAX__SRV_Channel:
+.. _SERVO9_ABS_MAX:
 
-SERVO9\_MAX \(SRV\_Channel\): Absolute maximum PWM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SERVO9\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -80155,6 +80254,7 @@ SERVO\_BLH\_MASK: BLHeli Channel Bitmask
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Enable of BLHeli pass\-thru servo protocol support to specific channels\. This mask is in addition to motors enabled using SERVO\_BLH\_AUTO \(if any\)
 
@@ -80203,6 +80303,7 @@ Enable of BLHeli pass\-thru servo protocol support to specific channels\. This m
 SERVO\_BLH\_AUTO: BLHeli pass\-thru auto\-enable for multicopter motors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| *Note: Reboot required after change*
 
 If set to 1 this auto\-enables BLHeli pass\-thru support for all multicopter motors
 
@@ -80315,6 +80416,7 @@ SERVO\_BLH\_OTYPE: BLHeli output type override
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 When set to a non\-zero value this overrides the output type for the output channels given by SERVO\_BLH\_MASK\. This can be used to enable DShot on outputs that are not part of the multicopter motors group\.
 
@@ -80377,6 +80479,7 @@ SERVO\_BLH\_POLES: BLHeli Motor Poles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 This allows calculation of true RPM from ESC\'s eRPM\. The default is 14\.
 
@@ -80396,6 +80499,7 @@ SERVO\_BLH\_3DMASK: BLHeli bitmask of 3D channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Mask of channels which are dynamically reversible\. This is used to configure ESCs in \'3D\' mode\, allowing for the motor to spin in either direction
 
@@ -80445,6 +80549,7 @@ SERVO\_BLH\_BDMASK: BLHeli bitmask of bi\-directional dshot channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Mask of channels which support bi\-directional dshot\. This is used for ESCs which have firmware that supports bi\-directional dshot allowing fast rpm telemetry values to be returned for the harmonic notch\.
 
@@ -80494,6 +80599,7 @@ SERVO\_BLH\_RVMASK: BLHeli bitmask of reversed channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
 
 Mask of channels which are reversed\. This is used to configure ESCs in reversed mode
 
@@ -81131,7 +81237,7 @@ SR0\_EXTRA1: Extra data type 1 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of ATTITUDE\, SIMSTATE \(SITL only\)\, AHRS2 and PID\_TUNING to ground station
+Stream rate of ATTITUDE\, SIMSTATE \(SIM only\)\, AHRS2 and PID\_TUNING to ground station
 
 
 +-----------+--------+-------+
@@ -81338,7 +81444,7 @@ SR1\_EXTRA1: Extra data type 1 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of ATTITUDE\, SIMSTATE \(SITL only\)\, AHRS2 and PID\_TUNING to ground station
+Stream rate of ATTITUDE\, SIMSTATE \(SIM only\)\, AHRS2 and PID\_TUNING to ground station
 
 
 +-----------+--------+-------+
@@ -81545,7 +81651,7 @@ SR2\_EXTRA1: Extra data type 1 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of ATTITUDE\, SIMSTATE \(SITL only\)\, AHRS2 and PID\_TUNING to ground station
+Stream rate of ATTITUDE\, SIMSTATE \(SIM only\)\, AHRS2 and PID\_TUNING to ground station
 
 
 +-----------+--------+-------+
@@ -81752,7 +81858,7 @@ SR3\_EXTRA1: Extra data type 1 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of ATTITUDE\, SIMSTATE \(SITL only\)\, AHRS2 and PID\_TUNING to ground station
+Stream rate of ATTITUDE\, SIMSTATE \(SIM only\)\, AHRS2 and PID\_TUNING to ground station
 
 
 +-----------+--------+-------+
@@ -81959,7 +82065,7 @@ SR4\_EXTRA1: Extra data type 1 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of ATTITUDE\, SIMSTATE \(SITL only\)\, AHRS2 and PID\_TUNING to ground station
+Stream rate of ATTITUDE\, SIMSTATE \(SIM only\)\, AHRS2 and PID\_TUNING to ground station
 
 
 +-----------+--------+-------+
@@ -82166,7 +82272,7 @@ SR5\_EXTRA1: Extra data type 1 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of ATTITUDE\, SIMSTATE \(SITL only\)\, AHRS2 and PID\_TUNING to ground station
+Stream rate of ATTITUDE\, SIMSTATE \(SIM only\)\, AHRS2 and PID\_TUNING to ground station
 
 
 +-----------+--------+-------+
@@ -82373,7 +82479,7 @@ SR6\_EXTRA1: Extra data type 1 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of ATTITUDE\, SIMSTATE \(SITL only\)\, AHRS2 and PID\_TUNING to ground station
+Stream rate of ATTITUDE\, SIMSTATE \(SIM only\)\, AHRS2 and PID\_TUNING to ground station
 
 
 +-----------+--------+-------+
@@ -82776,6 +82882,25 @@ Margin in centi\-meters to accept terrain data from the GCS\. This can be used t
 +==============+========+
 | 0.05 - 50000 | meters |
 +--------------+--------+
+
+
+
+
+.. _TERRAIN_OFS_MAX:
+
+TERRAIN\_OFS\_MAX: Terrain reference offset maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The maximum adjustment of terrain altitude based on the assumption that the vehicle is on the ground when it is armed\. When the vehicle is armed the location of the vehicle is recorded\, and when terrain data is available for that location a height adjustment for terrain data is calculated that aligns the terrain height at that location with the altitude recorded at arming\. This height adjustment is applied to all terrain data\. This parameter clamps the amount of adjustment\. A value of zero disables the use of terrain height adjustment\.
+
+
++--------+--------+
+| Range  | Units  |
++========+========+
+| 0 - 50 | meters |
++--------+--------+
 
 
 

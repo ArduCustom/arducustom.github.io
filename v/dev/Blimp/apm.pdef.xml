@@ -61,11 +61,7 @@
       <param humanName="Ground Station Failsafe Enable" name="Blimp:FS_GCS_ENABLE" documentation="Controls whether failsafe will be invoked (and what action to take) when connection with Ground station is lost for at least 5 seconds. See FS_OPTIONS param for additional actions, or for cases allowing Mission continuation, when GCS failsafe is enabled." user="Standard">
         <values>
           <value code="0">Disabled/NoAction</value>
-          <value code="1">RTL</value>
-          <value code="2">RTL or Continue with Mission in Auto Mode (Removed in 4.0+-see FS_OPTIONS)</value>
-          <value code="3">SmartRTL or RTL</value>
-          <value code="4">SmartRTL or Land</value>
-          <value code="5">Land (4.0+ Only)</value>
+          <value code="5">Land</value>
         </values>
       </param>
       <param humanName="GPS Hdop Good" name="Blimp:GPS_HDOP_GOOD" documentation="GPS Hdop value at or below this value represent a good position.  Used for pre-arm checks" user="Advanced">
@@ -74,11 +70,7 @@
       <param humanName="Throttle Failsafe Enable" name="Blimp:FS_THR_ENABLE" documentation="The throttle failsafe allows you to configure a software failsafe activated by a setting on the throttle input channel" user="Standard">
         <values>
           <value code="0">Disabled</value>
-          <value code="1">Enabled always RTL</value>
-          <value code="2">Enabled Continue with Mission in Auto Mode (Removed in 4.0+)</value>
           <value code="3">Enabled always Land</value>
-          <value code="4">Enabled always SmartRTL or RTL</value>
-          <value code="5">Enabled always SmartRTL or Land</value>
         </values>
       </param>
       <param humanName="Throttle Failsafe Value" name="Blimp:FS_THR_VALUE" documentation="The PWM level in microseconds on channel 3 below which throttle failsafe triggers" user="Standard">
@@ -95,170 +87,50 @@
       </param>
       <param humanName="Flight Mode 1" name="Blimp:FLTMODE1" documentation="Flight mode when Channel 5 pwm is &lt;= 1230" user="Standard">
         <values>
-          <value code="0">Stabilize</value>
-          <value code="1">Acro</value>
-          <value code="2">AltHold</value>
-          <value code="3">Auto</value>
-          <value code="4">Guided</value>
-          <value code="5">Loiter</value>
-          <value code="6">RTL</value>
-          <value code="7">Circle</value>
-          <value code="9">Land</value>
-          <value code="11">Drift</value>
-          <value code="13">Sport</value>
-          <value code="14">Flip</value>
-          <value code="15">AutoTune</value>
-          <value code="16">PosHold</value>
-          <value code="17">Brake</value>
-          <value code="18">Throw</value>
-          <value code="19">Avoid_ADSB</value>
-          <value code="20">Guided_NoGPS</value>
-          <value code="21">Smart_RTL</value>
-          <value code="22">FlowHold</value>
-          <value code="23">Follow</value>
-          <value code="24">ZigZag</value>
-          <value code="25">SystemID</value>
-          <value code="26">Heli_Autorotate</value>
+          <value code="0">LAND</value>
+          <value code="1">MANUAL</value>
+          <value code="2">VELOCITY</value>
+          <value code="3">LOITER</value>
         </values>
       </param>
       <param humanName="Flight Mode 2" name="Blimp:FLTMODE2" documentation="Flight mode when Channel 5 pwm is &gt;1230, &lt;= 1360" user="Standard">
         <values>
-          <value code="0">Stabilize</value>
-          <value code="1">Acro</value>
-          <value code="2">AltHold</value>
-          <value code="3">Auto</value>
-          <value code="4">Guided</value>
-          <value code="5">Loiter</value>
-          <value code="6">RTL</value>
-          <value code="7">Circle</value>
-          <value code="9">Land</value>
-          <value code="11">Drift</value>
-          <value code="13">Sport</value>
-          <value code="14">Flip</value>
-          <value code="15">AutoTune</value>
-          <value code="16">PosHold</value>
-          <value code="17">Brake</value>
-          <value code="18">Throw</value>
-          <value code="19">Avoid_ADSB</value>
-          <value code="20">Guided_NoGPS</value>
-          <value code="21">Smart_RTL</value>
-          <value code="22">FlowHold</value>
-          <value code="23">Follow</value>
-          <value code="24">ZigZag</value>
-          <value code="25">SystemID</value>
-          <value code="26">Heli_Autorotate</value>
+          <value code="0">LAND</value>
+          <value code="1">MANUAL</value>
+          <value code="2">VELOCITY</value>
+          <value code="3">LOITER</value>
         </values>
       </param>
       <param humanName="Flight Mode 3" name="Blimp:FLTMODE3" documentation="Flight mode when Channel 5 pwm is &gt;1360, &lt;= 1490" user="Standard">
         <values>
-          <value code="0">Stabilize</value>
-          <value code="1">Acro</value>
-          <value code="2">AltHold</value>
-          <value code="3">Auto</value>
-          <value code="4">Guided</value>
-          <value code="5">Loiter</value>
-          <value code="6">RTL</value>
-          <value code="7">Circle</value>
-          <value code="9">Land</value>
-          <value code="11">Drift</value>
-          <value code="13">Sport</value>
-          <value code="14">Flip</value>
-          <value code="15">AutoTune</value>
-          <value code="16">PosHold</value>
-          <value code="17">Brake</value>
-          <value code="18">Throw</value>
-          <value code="19">Avoid_ADSB</value>
-          <value code="20">Guided_NoGPS</value>
-          <value code="21">Smart_RTL</value>
-          <value code="22">FlowHold</value>
-          <value code="23">Follow</value>
-          <value code="24">ZigZag</value>
-          <value code="25">SystemID</value>
-          <value code="26">Heli_Autorotate</value>
+          <value code="0">LAND</value>
+          <value code="1">MANUAL</value>
+          <value code="2">VELOCITY</value>
+          <value code="3">LOITER</value>
         </values>
       </param>
       <param humanName="Flight Mode 4" name="Blimp:FLTMODE4" documentation="Flight mode when Channel 5 pwm is &gt;1490, &lt;= 1620" user="Standard">
         <values>
-          <value code="0">Stabilize</value>
-          <value code="1">Acro</value>
-          <value code="2">AltHold</value>
-          <value code="3">Auto</value>
-          <value code="4">Guided</value>
-          <value code="5">Loiter</value>
-          <value code="6">RTL</value>
-          <value code="7">Circle</value>
-          <value code="9">Land</value>
-          <value code="11">Drift</value>
-          <value code="13">Sport</value>
-          <value code="14">Flip</value>
-          <value code="15">AutoTune</value>
-          <value code="16">PosHold</value>
-          <value code="17">Brake</value>
-          <value code="18">Throw</value>
-          <value code="19">Avoid_ADSB</value>
-          <value code="20">Guided_NoGPS</value>
-          <value code="21">Smart_RTL</value>
-          <value code="22">FlowHold</value>
-          <value code="23">Follow</value>
-          <value code="24">ZigZag</value>
-          <value code="25">SystemID</value>
-          <value code="26">Heli_Autorotate</value>
+          <value code="0">LAND</value>
+          <value code="1">MANUAL</value>
+          <value code="2">VELOCITY</value>
+          <value code="3">LOITER</value>
         </values>
       </param>
       <param humanName="Flight Mode 5" name="Blimp:FLTMODE5" documentation="Flight mode when Channel 5 pwm is &gt;1620, &lt;= 1749" user="Standard">
         <values>
-          <value code="0">Stabilize</value>
-          <value code="1">Acro</value>
-          <value code="2">AltHold</value>
-          <value code="3">Auto</value>
-          <value code="4">Guided</value>
-          <value code="5">Loiter</value>
-          <value code="6">RTL</value>
-          <value code="7">Circle</value>
-          <value code="9">Land</value>
-          <value code="11">Drift</value>
-          <value code="13">Sport</value>
-          <value code="14">Flip</value>
-          <value code="15">AutoTune</value>
-          <value code="16">PosHold</value>
-          <value code="17">Brake</value>
-          <value code="18">Throw</value>
-          <value code="19">Avoid_ADSB</value>
-          <value code="20">Guided_NoGPS</value>
-          <value code="21">Smart_RTL</value>
-          <value code="22">FlowHold</value>
-          <value code="23">Follow</value>
-          <value code="24">ZigZag</value>
-          <value code="25">SystemID</value>
-          <value code="26">Heli_Autorotate</value>
+          <value code="0">LAND</value>
+          <value code="1">MANUAL</value>
+          <value code="2">VELOCITY</value>
+          <value code="3">LOITER</value>
         </values>
       </param>
       <param humanName="Flight Mode 6" name="Blimp:FLTMODE6" documentation="Flight mode when Channel 5 pwm is &gt;=1750" user="Standard">
         <values>
-          <value code="0">Stabilize</value>
-          <value code="1">Acro</value>
-          <value code="2">AltHold</value>
-          <value code="3">Auto</value>
-          <value code="4">Guided</value>
-          <value code="5">Loiter</value>
-          <value code="6">RTL</value>
-          <value code="7">Circle</value>
-          <value code="9">Land</value>
-          <value code="11">Drift</value>
-          <value code="13">Sport</value>
-          <value code="14">Flip</value>
-          <value code="15">AutoTune</value>
-          <value code="16">PosHold</value>
-          <value code="17">Brake</value>
-          <value code="18">Throw</value>
-          <value code="19">Avoid_ADSB</value>
-          <value code="20">Guided_NoGPS</value>
-          <value code="21">Smart_RTL</value>
-          <value code="22">FlowHold</value>
-          <value code="23">Follow</value>
-          <value code="24">ZigZag</value>
-          <value code="25">SystemID</value>
-          <value code="26">Heli_Autorotate</value>
+          <value code="0">LAND</value>
+          <value code="1">MANUAL</value>
+          <value code="2">VELOCITY</value>
+          <value code="3">LOITER</value>
         </values>
       </param>
       <param humanName="Flightmode channel" name="Blimp:FLTMODE_CH" documentation="RC Channel to use for flight mode control" user="Advanced">
@@ -270,94 +142,16 @@
           <value code="8">Channel8</value>
         </values>
       </param>
-      <param humanName="Initial flight mode" name="Blimp:INITIAL_MODE" documentation="This selects the mode to start in on boot. This is useful for when you want to start in AUTO mode on boot without a receiver." user="Advanced">
+      <param humanName="Initial flight mode" name="Blimp:INITIAL_MODE" documentation="This selects the mode to start in on boot." user="Advanced">
         <values>
-          <value code="0">Stabilize</value>
-          <value code="1">Acro</value>
-          <value code="2">AltHold</value>
-          <value code="3">Auto</value>
-          <value code="4">Guided</value>
-          <value code="5">Loiter</value>
-          <value code="6">RTL</value>
-          <value code="7">Circle</value>
-          <value code="9">Land</value>
-          <value code="11">Drift</value>
-          <value code="13">Sport</value>
-          <value code="14">Flip</value>
-          <value code="15">AutoTune</value>
-          <value code="16">PosHold</value>
-          <value code="17">Brake</value>
-          <value code="18">Throw</value>
-          <value code="19">Avoid_ADSB</value>
-          <value code="20">Guided_NoGPS</value>
-          <value code="21">Smart_RTL</value>
-          <value code="22">FlowHold</value>
-          <value code="23">Follow</value>
-          <value code="24">ZigZag</value>
-          <value code="25">SystemID</value>
-          <value code="26">Heli_Autorotate</value>
+          <value code="0">LAND</value>
+          <value code="1">MANUAL</value>
+          <value code="2">VELOCITY</value>
+          <value code="3">LOITER</value>
         </values>
       </param>
       <param humanName="Log bitmask" name="Blimp:LOG_BITMASK" documentation="4 byte bitmap of log types to enable" user="Standard">
         <field name="Bitmask">0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:CTUN,5:NTUN,6:RCIN,7:IMU,8:CMD,9:CURRENT,10:RCOUT,11:OPTFLOW,12:PID,13:COMPASS,14:INAV,15:CAMERA,17:MOTBATT,18:IMU_FAST,19:IMU_RAW</field>
-      </param>
-      <param humanName="Channel 6 Tuning" name="Blimp:TUNE" documentation="Controls which parameters (normally PID gains) are being tuned with transmitter's channel 6 knob" user="Standard">
-        <values>
-          <value code="0">None</value>
-          <value code="1">Stab Roll/Pitch kP</value>
-          <value code="4">Rate Roll/Pitch kP</value>
-          <value code="5">Rate Roll/Pitch kI</value>
-          <value code="21">Rate Roll/Pitch kD</value>
-          <value code="3">Stab Yaw kP</value>
-          <value code="6">Rate Yaw kP</value>
-          <value code="26">Rate Yaw kD</value>
-          <value code="56">Rate Yaw Filter</value>
-          <value code="55">Motor Yaw Headroom</value>
-          <value code="14">AltHold kP</value>
-          <value code="7">Throttle Rate kP</value>
-          <value code="34">Throttle Accel kP</value>
-          <value code="35">Throttle Accel kI</value>
-          <value code="36">Throttle Accel kD</value>
-          <value code="12">Loiter Pos kP</value>
-          <value code="22">Velocity XY kP</value>
-          <value code="28">Velocity XY kI</value>
-          <value code="10">WP Speed</value>
-          <value code="25">Acro RollPitch kP</value>
-          <value code="40">Acro Yaw kP</value>
-          <value code="45">RC Feel</value>
-          <value code="13">Heli Ext Gyro</value>
-          <value code="38">Declination</value>
-          <value code="39">Circle Rate</value>
-          <value code="41">RangeFinder Gain</value>
-          <value code="46">Rate Pitch kP</value>
-          <value code="47">Rate Pitch kI</value>
-          <value code="48">Rate Pitch kD</value>
-          <value code="49">Rate Roll kP</value>
-          <value code="50">Rate Roll kI</value>
-          <value code="51">Rate Roll kD</value>
-          <value code="52">Rate Pitch FF</value>
-          <value code="53">Rate Roll FF</value>
-          <value code="54">Rate Yaw FF</value>
-          <value code="58">SysID Magnitude</value>
-        </values>
-      </param>
-      <param humanName="Frame Type (+, X, V, etc)" name="Blimp:FRAME_TYPE" documentation="Controls motor mixing for multiblimps.  Not used for Tri or Traditional Heliblimps." user="Standard">
-        <values>
-          <value code="0">Plus</value>
-          <value code="1">X</value>
-          <value code="2">V</value>
-          <value code="3">H</value>
-          <value code="4">V-Tail</value>
-          <value code="5">A-Tail</value>
-          <value code="10">Y6B</value>
-          <value code="11">Y6F</value>
-          <value code="12">BetaFlightX</value>
-          <value code="13">DJIX</value>
-          <value code="14">ClockwiseX</value>
-          <value code="15">I</value>
-          <value code="18">BetaFlightXReversed</value>
-        </values>
-        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Disarm delay" name="Blimp:DISARM_DELAY" documentation="Delay before automatic disarm in seconds. A value of zero disables auto disarm." user="Advanced">
         <field name="Units">s</field>
@@ -367,8 +161,7 @@
       <param humanName="EKF Failsafe Action" name="Blimp:FS_EKF_ACTION" documentation="Controls the action that will be taken when an EKF failsafe is invoked" user="Advanced">
         <values>
           <value code="1">Land</value>
-          <value code="2">AltHold</value>
-          <value code="3">Land even in Stabilize</value>
+          <value code="3">Land even in MANUAL</value>
         </values>
       </param>
       <param humanName="EKF failsafe variance threshold" name="Blimp:FS_EKF_THRESH" documentation="Allows setting the maximum acceptable compass and velocity variance" user="Advanced">
@@ -513,11 +306,6 @@
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
       </param>
-      <param humanName="Velocity (yaw) input filter" name="Blimp:VELYAW_FLTE" documentation="Velocity (yaw) input filter.  This filter (in Hz) is applied to the input for D term" user="Advanced">
-        <field name="Range">0 100</field>
-        <field name="Units">Hz</field>
-        <field name="UnitText">hertz</field>
-      </param>
       <param humanName="Velocity (yaw) feed forward gain" name="Blimp:VELYAW_FF" documentation="Velocity (yaw) feed forward gain.  Converts the difference between desired velocity to a target acceleration" user="Advanced">
         <field name="Range">0 6</field>
         <field name="Increment">0.01</field>
@@ -651,10 +439,6 @@
         <field name="Range">50 500</field>
         <field name="Increment">10</field>
       </param>
-      <param humanName="Tuning minimum" name="Blimp:TUNE_MIN" documentation="Minimum value that the parameter currently being tuned with the transmitter's channel 6 knob will be set to" user="Standard">
-</param>
-      <param humanName="Tuning maximum" name="Blimp:TUNE_MAX" documentation="Maximum value that the parameter currently being tuned with the transmitter's channel 6 knob will be set to" user="Standard">
-</param>
       <param humanName="Vibration Failsafe enable" name="Blimp:FS_VIBE_ENABLE" documentation="This enables the vibration failsafe which will use modified altitude estimation and control during high vibrations" user="Standard">
         <values>
           <value code="0">Disabled</value>
@@ -664,15 +448,9 @@
       <param humanName="Failsafe options bitmask" name="Blimp:FS_OPTIONS" documentation="Bitmask of additional options for battery, radio, &amp; GCS failsafes. 0 (default) disables all options." user="Advanced">
         <values>
           <value code="0">Disabled</value>
-          <value code="1">Continue if in Auto on RC failsafe only</value>
-          <value code="2">Continue if in Auto on GCS failsafe only</value>
-          <value code="3">Continue if in Auto on RC and/or GCS failsafe</value>
-          <value code="4">Continue if in Guided on RC failsafe only</value>
-          <value code="8">Continue if landing on any failsafe</value>
           <value code="16">Continue if in pilot controlled modes on GCS failsafe</value>
-          <value code="19">Continue if in Auto on RC and/or GCS failsafe and continue if in pilot controlled modes on GCS failsafe</value>
         </values>
-        <field name="Bitmask">0:Continue if in Auto on RC failsafe, 1:Continue if in Auto on GCS failsafe, 2:Continue if in Guided on RC failsafe, 3:Continue if landing on any failsafe, 4:Continue if in pilot controlled modes on GCS failsafe, 5:Release Gripper</field>
+        <field name="Bitmask">4:Continue if in pilot controlled modes on GCS failsafe</field>
       </param>
       <param humanName="GCS failsafe timeout" name="Blimp:FS_GCS_TIMEOUT" documentation="Timeout before triggering the GCS failsafe" user="Standard">
         <field name="Units">s</field>
@@ -1209,7 +987,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT2_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT2_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1397,7 +1175,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT3_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT3_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1585,7 +1363,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT4_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT4_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1773,7 +1551,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT5_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT5_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -1961,7 +1739,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT6_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT6_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -2149,7 +1927,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT7_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT7_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -2337,7 +2115,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT8_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT8_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -2525,7 +2303,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT9_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT9_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -2713,7 +2491,7 @@
         <field name="Increment">50</field>
       </param>
       <param humanName="Battery monitor options" name="BATT_OPTIONS" documentation="This sets options to change the behaviour of the battery monitor" user="Advanced">
-        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 22:Use Wh for remaining battery percentage calculation, 23:Include energy losses upstream of the flight controller when using analog battery monitor</field>
+        <field name="Bitmask">0:Ignore DroneCAN SoC, 1:MPPT reports input voltage and current, 2:MPPT Powered off when disarmed, 3:MPPT Powered on when armed, 4:MPPT Powered off at boot, 5:MPPT Powered on at boot, 6:Send resistance compensated voltage to GCS, 23:Use Wh for remaining battery percentage calculation</field>
       </param>
       <param humanName="Minimum battery cell voltage to consider the battery full" name="BATT_LOW_CV" documentation="Minimum battery cell voltage to consider the battery full" user="Advanced">
         <field name="Units">V</field>
@@ -3157,6 +2935,7 @@
           <value code="4">TEST_TOSHIBA_CAN</value>
           <value code="5">TEST_KDE_CAN</value>
           <value code="6">TEST_UAVCAN_ESC</value>
+          <value code="7">TEST_UAVCAN_FD_ESC</value>
         </values>
       </param>
       <param humanName="CANTester LoopRate" name="CAN_D1_TST_LPR8" documentation="Selects the Looprate of Test methods" user="Advanced">
@@ -3180,7 +2959,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D1_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D1_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -3238,6 +3017,7 @@
           <value code="4">TEST_TOSHIBA_CAN</value>
           <value code="5">TEST_KDE_CAN</value>
           <value code="6">TEST_UAVCAN_ESC</value>
+          <value code="7">TEST_UAVCAN_FD_ESC</value>
         </values>
       </param>
       <param humanName="CANTester LoopRate" name="CAN_D2_TST_LPR8" documentation="Selects the Looprate of Test methods" user="Advanced">
@@ -3261,7 +3041,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D2_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D2_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -3319,6 +3099,7 @@
           <value code="4">TEST_TOSHIBA_CAN</value>
           <value code="5">TEST_KDE_CAN</value>
           <value code="6">TEST_UAVCAN_ESC</value>
+          <value code="7">TEST_UAVCAN_FD_ESC</value>
         </values>
       </param>
       <param humanName="CANTester LoopRate" name="CAN_D3_TST_LPR8" documentation="Selects the Looprate of Test methods" user="Advanced">
@@ -3342,7 +3123,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D3_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D3_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -3363,6 +3144,15 @@
       <param humanName="Bitrate of CAN interface" name="CAN_P1_BITRATE" documentation="Bit rate can be set up to from 10000 to 1000000" user="Advanced">
         <field name="Range">10000 1000000</field>
       </param>
+      <param humanName="Bitrate of CANFD interface" name="CAN_P1_FDBITRATE" documentation="Bit rate can be set up to from 1000000 to 8000000" user="Advanced">
+        <values>
+          <value code="1">1M</value>
+          <value code="2">2M</value>
+          <value code="4">4M</value>
+          <value code="5">5M</value>
+          <value code="8">8M</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="CAN_P2_">
       <param humanName="Index of virtual driver to be used with physical CAN interface" name="CAN_P2_DRIVER" documentation="Enabling this option enables use of CAN buses." user="Standard">
@@ -3377,6 +3167,15 @@
       <param humanName="Bitrate of CAN interface" name="CAN_P2_BITRATE" documentation="Bit rate can be set up to from 10000 to 1000000" user="Advanced">
         <field name="Range">10000 1000000</field>
       </param>
+      <param humanName="Bitrate of CANFD interface" name="CAN_P2_FDBITRATE" documentation="Bit rate can be set up to from 1000000 to 8000000" user="Advanced">
+        <values>
+          <value code="1">1M</value>
+          <value code="2">2M</value>
+          <value code="4">4M</value>
+          <value code="5">5M</value>
+          <value code="8">8M</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="CAN_P3_">
       <param humanName="Index of virtual driver to be used with physical CAN interface" name="CAN_P3_DRIVER" documentation="Enabling this option enables use of CAN buses." user="Standard">
@@ -3390,6 +3189,15 @@
       </param>
       <param humanName="Bitrate of CAN interface" name="CAN_P3_BITRATE" documentation="Bit rate can be set up to from 10000 to 1000000" user="Advanced">
         <field name="Range">10000 1000000</field>
+      </param>
+      <param humanName="Bitrate of CANFD interface" name="CAN_P3_FDBITRATE" documentation="Bit rate can be set up to from 1000000 to 8000000" user="Advanced">
+        <values>
+          <value code="1">1M</value>
+          <value code="2">2M</value>
+          <value code="4">4M</value>
+          <value code="5">5M</value>
+          <value code="8">8M</value>
+        </values>
       </param>
     </parameters>
     <parameters name="CAN_SLCAN_">
@@ -5209,15 +5017,15 @@
           <value code="1">SecondGPS</value>
         </values>
       </param>
-      <param humanName="GPS Node ID 1" name="GPS_CAN_NODEID1" documentation="GPS Node id for discovered first." user="Advanced">
+      <param humanName="GPS Node ID 1" name="GPS_CAN_NODEID1" documentation="GPS Node id for first-discovered GPS." user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="GPS Node ID 2" name="GPS_CAN_NODEID2" documentation="GPS Node id for discovered second." user="Advanced">
+      <param humanName="GPS Node ID 2" name="GPS_CAN_NODEID2" documentation="GPS Node id for second-discovered GPS." user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="First DroneCAN GPS NODE ID" name="GPS1_CAN_OVRIDE" documentation="GPS Node id for first GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
+      <param humanName="First DroneCAN GPS NODE ID" name="GPS1_CAN_OVRIDE" documentation="GPS Node id for first GPS. If 0 the gps will be automatically selected on a first-come-first-GPS basis." user="Advanced">
 </param>
-      <param humanName="Second DroneCAN GPS NODE ID" name="GPS2_CAN_OVRIDE" documentation="GPS Node id for second GPS. If 0 the gps will be automatically selected on first come basis." user="Advanced">
+      <param humanName="Second DroneCAN GPS NODE ID" name="GPS2_CAN_OVRIDE" documentation="GPS Node id for second GPS. If 0 the gps will be automatically selected on a second-come-second-GPS basis." user="Advanced">
 </param>
     </parameters>
     <parameters name="GPS_MB1_">
@@ -5603,7 +5411,7 @@
         <field name="Units">dB</field>
         <field name="UnitText">decibel</field>
       </param>
-      <param humanName="Harmonic Notch Filter harmonics" name="INS_HNTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time." user="Advanced">
+      <param humanName="Harmonic Notch Filter harmonics" name="INS_HNTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot." user="Advanced">
         <field name="Bitmask">0:1st harmonic,1:2nd harmonic,2:3rd harmonic,3:4th hamronic,4:5th harmonic,5:6th harmonic,6:7th harmonic,7:8th harmonic</field>
         <field name="RebootRequired">True</field>
       </param>
@@ -5669,7 +5477,7 @@
         <field name="Units">dB</field>
         <field name="UnitText">decibel</field>
       </param>
-      <param humanName="Harmonic Notch Filter harmonics" name="INS_NOTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot. A maximum of 3 harmonics can be used at any one time." user="Advanced">
+      <param humanName="Harmonic Notch Filter harmonics" name="INS_NOTCH_HMNCS" documentation="Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot." user="Advanced">
         <field name="Bitmask">0:1st harmonic,1:2nd harmonic,2:3rd harmonic,3:4th hamronic,4:5th harmonic,5:6th harmonic,6:7th harmonic,7:8th harmonic</field>
         <field name="RebootRequired">True</field>
       </param>
@@ -6063,7 +5871,7 @@
         <field name="UnitText">seconds</field>
       </param>
       <param humanName="RC options" name="RC_OPTIONS" documentation="RC input options" user="Advanced">
-        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:CRSF RSSI shows Link Quality</field>
+        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:CRSF RSSI shows Link Quality, 22:Disable throttle battery compensation in manual mode (plane only), 23:Disable throttle expo in manual mode (plane only)</field>
       </param>
       <param humanName="RC protocols enabled" name="RC_PROTOCOLS" documentation="Bitmask of enabled RC protocols. Allows narrowing the protocol detection to only specific types of RC receivers which can avoid issues with incorrect detection. Set to 1 to enable all protocols." user="Advanced">
         <field name="Bitmask">0:All,1:PPM,2:IBUS,3:SBUS,4:SBUS_NI,5:DSM,6:SUMD,7:SRXL,8:SRXL2,9:CRSF,10:ST24,11:FPORT,12:FPORT2,13:FastSBUS</field>
@@ -7777,7 +7585,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO10_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO10_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -7940,7 +7748,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO11_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO11_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8103,7 +7911,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO12_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO12_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8266,7 +8074,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO13_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO13_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8429,7 +8237,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO14_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO14_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8592,7 +8400,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO15_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO15_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8755,7 +8563,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO16_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO16_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -8918,7 +8726,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO1_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO1_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -9081,7 +8889,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO2_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO2_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -9244,7 +9052,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO3_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO3_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -9407,7 +9215,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO4_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO4_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -9570,7 +9378,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO5_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO5_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -9733,7 +9541,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO6_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO6_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -9896,7 +9704,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO7_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO7_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -10059,7 +9867,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO8_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO8_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -10222,7 +10030,7 @@
         <field name="Range">500 2500</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Absolute maximum PWM" name="SERVO9_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
+      <param humanName="Absolute maximum PWM" name="SERVO9_ABS_MAX" documentation="Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim" user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
         <field name="Range">500 2500</field>
@@ -10232,12 +10040,14 @@
     <parameters name="SERVO_BLH_">
       <param humanName="BLHeli Channel Bitmask" name="SERVO_BLH_MASK" documentation="Enable of BLHeli pass-thru servo protocol support to specific channels. This mask is in addition to motors enabled using SERVO_BLH_AUTO (if any)" user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli pass-thru auto-enable for multicopter motors" name="SERVO_BLH_AUTO" documentation="If set to 1 this auto-enables BLHeli pass-thru support for all multicopter motors" user="Standard">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli internal interface test" name="SERVO_BLH_TEST" documentation="Setting SERVO_BLH_TEST to a motor number enables an internal test of the BLHeli ESC protocol to the corresponding ESC. The debug output is displayed on the USB console." user="Advanced">
         <values>
@@ -10279,6 +10089,7 @@
           <value code="6">DShot600</value>
           <value code="7">DShot1200</value>
         </values>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Control port" name="SERVO_BLH_PORT" documentation="This sets the mavlink channel to use for blheli pass-thru. The channel number is determined by the number of serial ports configured to use mavlink. So 0 is always the console, 1 is the next serial port using mavlink, 2 the next after that and so on." user="Advanced">
         <values>
@@ -10292,15 +10103,19 @@
       </param>
       <param humanName="BLHeli Motor Poles" name="SERVO_BLH_POLES" documentation="This allows calculation of true RPM from ESC's eRPM. The default is 14." user="Advanced">
         <field name="Range">1 127</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli bitmask of 3D channels" name="SERVO_BLH_3DMASK" documentation="Mask of channels which are dynamically reversible. This is used to configure ESCs in '3D' mode, allowing for the motor to spin in either direction" user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli bitmask of bi-directional dshot channels" name="SERVO_BLH_BDMASK" documentation="Mask of channels which support bi-directional dshot. This is used for ESCs which have firmware that supports bi-directional dshot allowing fast rpm telemetry values to be returned for the harmonic notch." user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="BLHeli bitmask of reversed channels" name="SERVO_BLH_RVMASK" documentation="Mask of channels which are reversed. This is used to configure ESCs in reversed mode" user="Advanced">
         <field name="Bitmask">0:Channel1,1:Channel2,2:Channel3,3:Channel4,4:Channel5,5:Channel6,6:Channel7,7:Channel8,8:Channel9,9:Channel10,10:Channel11,11:Channel12,12:Channel13,13:Channel14,14:Channel15,15:Channel16</field>
+        <field name="RebootRequired">True</field>
       </param>
     </parameters>
     <parameters name="SERVO_FTW_">
