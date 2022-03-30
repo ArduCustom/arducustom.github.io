@@ -170,6 +170,44 @@ Pitch up to add in proportion to throttle above trim throttle\. TRIM\_THROTTLE t
 
 
 
+.. _KFF_THRAT2ELEV:
+
+KFF\_THRAT2ELEV: Throttle ratio above trim throttle to elevator PWM offset mix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The elevator and elevon servos will be offset by that much at 100\% throttle
+
+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| PWM       | -500 - 500 |
++-----------+------------+
+
+
+
+
+.. _KFF_FLAP2ELEV:
+
+KFF\_FLAP2ELEV: Flap position to elevator PWM offset mix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The elevator and elevon servos will be offset by that much at 100\% flaps
+
+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| PWM       | -500 - 500 |
++-----------+------------+
+
+
+
+
 .. _STAB_PITCH_DOWN:
 
 STAB\_PITCH\_DOWN: Low throttle pitch down trim
@@ -84637,6 +84675,10 @@ This sets which parameter or set of parameters will be tuned\. Values greater th
 | 80    | Flap extended speed      |
 +-------+--------------------------+
 | 81    | Flap extended percent    |
++-------+--------------------------+
+| 82    | KFF_THRAT2ELEV           |
++-------+--------------------------+
+| 83    | KFF_FLAP2ELEV            |
 +-------+--------------------------+
 | 101   | Set_RateRollPitch        |
 +-------+--------------------------+

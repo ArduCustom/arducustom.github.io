@@ -86,6 +86,24 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Throttle ratio above trim throttle to elevator PWM offset mix (ArduPlane:KFF_THRAT2ELEV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The elevator and elevon servos will be offset by that much at 100% throttle</p>
+<ul>
+<li>Range: -500 500</li>
+<li>Increment: PWM</li>
+</ul>
+
+
+<h2>Flap position to elevator PWM offset mix (ArduPlane:KFF_FLAP2ELEV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The elevator and elevon servos will be offset by that much at 100% flaps</p>
+<ul>
+<li>Range: -500 500</li>
+<li>Increment: PWM</li>
+</ul>
+
+
 <h2>Low throttle pitch down trim (ArduPlane:STAB_PITCH_DOWN)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Degrees of down pitch added when throttle is below TRIM_THROTTLE in FBWA and AUTOTUNE modes. Scales linearly so full value is added when THR_MIN is reached. Helps to keep airspeed higher in glides or landing approaches and prevents accidental stalls. 2 degrees recommended for most planes.</p>
@@ -41367,6 +41385,8 @@ DO NOT EDIT
 <tr><td>79</td><td>Flap retracted speed</td></tr>
 <tr><td>80</td><td>Flap extended speed</td></tr>
 <tr><td>81</td><td>Flap extended percent</td></tr>
+<tr><td>82</td><td>KFF_THRAT2ELEV</td></tr>
+<tr><td>83</td><td>KFF_FLAP2ELEV</td></tr>
 <tr><td>101</td><td>Set_RateRollPitch</td></tr>
 <tr><td>102</td><td>Set_RateRoll</td></tr>
 <tr><td>103</td><td>Set_RatePitch</td></tr>

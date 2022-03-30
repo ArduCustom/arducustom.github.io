@@ -25201,6 +25201,16 @@
         "8": "AUTOTUNE"
       }
     },
+    "KFF_FLAP2ELEV": {
+      "Description": "The elevator and elevon servos will be offset by that much at 100% flaps",
+      "DisplayName": "Flap position to elevator PWM offset mix",
+      "Increment": "PWM",
+      "Range": {
+        "high": "500",
+        "low": "-500"
+      },
+      "User": "Advanced"
+    },
     "KFF_RDDRMIX": {
       "Description": "Amount of rudder to add during aileron movement. Increase if nose initially yaws away from roll. Reduces adverse yaw.",
       "DisplayName": "Rudder Mix",
@@ -25210,6 +25220,16 @@
         "low": "0"
       },
       "User": "Standard"
+    },
+    "KFF_THRAT2ELEV": {
+      "Description": "The elevator and elevon servos will be offset by that much at 100% throttle",
+      "DisplayName": "Throttle ratio above trim throttle to elevator PWM offset mix",
+      "Increment": "PWM",
+      "Range": {
+        "high": "500",
+        "low": "-500"
+      },
+      "User": "Advanced"
     },
     "KFF_THRAT2PTCH": {
       "Description": "Pitch up to add in proportion to throttle above trim throttle. TRIM_THROTTLE throttle and under will add 0\u00b0 to the pitch target. 100% throttle will add this number of degrees to the pitch target.",
@@ -39815,6 +39835,8 @@
         "8": "RatePitchD",
         "80": "Flap extended speed",
         "81": "Flap extended percent",
+        "82": "KFF_THRAT2ELEV",
+        "83": "KFF_FLAP2ELEV",
         "9": "RateYawPI"
       }
     },
