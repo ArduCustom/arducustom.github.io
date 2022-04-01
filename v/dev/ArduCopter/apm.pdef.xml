@@ -22995,6 +22995,11 @@
         <field name="UnitText">seconds</field>
         <field name="ReadOnly">True</field>
       </param>
+      <param humanName="Total FlightDistance" name="STAT_FLTDIST" documentation="Total FlightDistance (meter)" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
     </parameters>
     <parameters name="TCAL">
       <param humanName="Temperature calibration enable" name="TCAL_ENABLED" documentation="Enable temperature calibration. Set to 0 to disable. Set to 1 to use learned values. Set to 2 to learn new values and use the values" user="Advanced">

@@ -2486,6 +2486,10 @@ Flight mode specific options
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 11  | Disable suppression of fixed wing rate gains in ground mode                                                  | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
+| | 21  | If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home                         | |
+| +-----+--------------------------------------------------------------------------------------------------------------+ |
+| | 22  | Glide in auto throttle modes if throttle bellow THR_DZ                                                       | |
+| +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 23  | remove FBWB style loiter altitude control                                                                    | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 |                                                                                                                        |
@@ -88741,6 +88745,24 @@ Seconds since January 1st 2016 \(Unix epoch\+1451606400\) since statistics reset
 
 
 
+.. _STAT_FLTDIST:
+
+STAT\_FLTDIST: Total FlightDistance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Total FlightDistance \(meter\)
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
+
+
 
 .. _parameters_STEER2SRV_:
 
@@ -89967,6 +89989,10 @@ This sets which parameter or set of parameters will be tuned\. Values greater th
 | | 82    | KFF_THRAT2ELEV           | |
 | +-------+--------------------------+ |
 | | 83    | KFF_FLAP2ELEV            | |
+| +-------+--------------------------+ |
+| | 84    | Ailerons diff            | |
+| +-------+--------------------------+ |
+| | 85    | Elevator diff            | |
 | +-------+--------------------------+ |
 | | 101   | Set_RateRollPitch        | |
 | +-------+--------------------------+ |

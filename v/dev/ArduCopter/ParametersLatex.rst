@@ -82714,6 +82714,24 @@ Seconds since January 1st 2016 \(Unix epoch\+1451606400\) since statistics reset
 
 
 
+.. _STAT_FLTDIST:
+
+STAT\_FLTDIST: Total FlightDistance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Total FlightDistance \(meter\)
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
+
+
 
 .. _parameters_TCAL:
 

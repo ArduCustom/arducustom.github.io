@@ -34827,6 +34827,13 @@
       "ReadOnly": "True",
       "User": "Standard"
     },
+    "STAT_FLTDIST": {
+      "Description": "Total FlightDistance (meter)",
+      "DisplayName": "Total FlightDistance",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
     "STAT_FLTTIME": {
       "Description": "Total FlightTime (seconds)",
       "DisplayName": "Total FlightTime",

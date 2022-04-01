@@ -10624,6 +10624,11 @@
         <field name="UnitText">seconds</field>
         <field name="ReadOnly">True</field>
       </param>
+      <param humanName="Total FlightDistance" name="STAT_FLTDIST" documentation="Total FlightDistance (meter)" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
     </parameters>
     <parameters name="VISO">
       <param humanName="Visual odometry camera connection type" name="VISO_TYPE" documentation="Visual odometry camera connection type" user="Advanced">
