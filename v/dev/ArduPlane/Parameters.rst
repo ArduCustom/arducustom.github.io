@@ -501,6 +501,24 @@ This controls the maximum bank angle in degrees during flight modes where level 
 
 
 
+.. _RTL_LVL_RLL_LMT:
+
+RTL\_LVL\_RLL\_LMT: RTL level flight roll limit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+This controls the maximum bank angle in degrees during RTL climb before turning
+
+
++-----------+--------+---------+
+| Increment | Range  | Units   |
++===========+========+=========+
+| 1         | 0 - 45 | degrees |
++-----------+--------+---------+
+
+
+
+
 .. _USE_REV_THRUST:
 
 USE\_REV\_THRUST: Bitmask for when to allow negative reverse thrust
@@ -2095,20 +2113,38 @@ Offset applied to AHRS pitch used for in\-flight pitch trimming\. Correct ground
 
 
 
-.. _ALT_HOLD_RTL:
+.. _RTL_ALT_MIN:
 
-ALT\_HOLD\_RTL: RTL altitude
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RTL\_ALT\_MIN: Minimum RTL altitude
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Target altitude above home for RTL mode\. Maintains current altitude if set to \-1\. Rally point altitudes are used if plane does not return to home\.
 
 
-+-------------+
-| Units       |
-+=============+
-| centimeters |
-+-------------+
++--------+
+| Units  |
++========+
+| meters |
++--------+
+
+
+
+
+.. _RTL_ALT_HOME:
+
+RTL\_ALT\_HOME: Altitude to go to after reaching home
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Altitude to go to after reaching home\. Set to \-1 to stay at RTL\_ALT\_MIN
+
+
++--------+
+| Units  |
++========+
+| meters |
++--------+
 
 
 
@@ -2470,7 +2506,7 @@ Flight mode specific options
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 3   | Force target airspeed to trim airspeed in Cruise or FBWB                                                     | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
-| | 4   | Climb to ALT_HOLD_RTL before turning for RTL                                                                 | |
+| | 4   | Climb to RTL_ALT_MIN before turning for RTL                                                                  | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 5   | Enable yaw damper in acro mode                                                                               | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
@@ -2485,6 +2521,10 @@ Flight mode specific options
 | | 10  | Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL                             | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 11  | Disable suppression of fixed wing rate gains in ground mode                                                  | |
+| +-----+--------------------------------------------------------------------------------------------------------------+ |
+| | 19  | Enable manual altitude control in RTL mode                                                                   | |
+| +-----+--------------------------------------------------------------------------------------------------------------+ |
+| | 20  | Climb first in RTL only during RC failsafe                                                                   | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 21  | If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home                         | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
@@ -2719,7 +2759,7 @@ RTL\_CLIMB\_MIN: RTL minimum climb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-The vehicle will climb this many m during the initial climb portion of the RTL\. During this time the roll will be limited to LEVEL\_ROLL\_LIMIT degrees\.
+The vehicle will climb this many m during the initial climb portion of the RTL\. During this time the roll will be limited to RTL\_LVL\_RLL\_LMT degrees\.
 
 
 +-----------+--------+--------+

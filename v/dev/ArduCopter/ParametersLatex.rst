@@ -223,11 +223,11 @@ RTL\_ALT: RTL Altitude
 The minimum alt above home the vehicle will climb to before returning\.  If the vehicle is flying higher than this value it will return at its current altitude\.
 
 
-+-----------+--------------+-------------+
-| Increment | Range        | Units       |
-+===========+==============+=============+
-| 1         | 200 - 300000 | centimeters |
-+-----------+--------------+-------------+
++-----------+--------------+--------+
+| Increment | Range        | Units  |
++===========+==============+========+
+| 1         | 200 - 300000 | meters |
++-----------+--------------+--------+
 
 
 
@@ -308,11 +308,11 @@ RTL\_CLIMB\_MIN: RTL minimum climb
 The vehicle will climb this many cm during the initial climb portion of the RTL
 
 
-+-----------+----------+-------------+
-| Increment | Range    | Units       |
-+===========+==========+=============+
-| 10        | 0 - 3000 | centimeters |
-+-----------+----------+-------------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 10        | 0 - 3000 | meters |
++-----------+----------+--------+
 
 
 

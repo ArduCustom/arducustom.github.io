@@ -257,6 +257,16 @@ DO NOT EDIT
 </ul>
 
 
+<h2>RTL level flight roll limit (ArduPlane:RTL_LVL_RLL_LMT)</h2>
+
+<p>This controls the maximum bank angle in degrees during RTL climb before turning</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 45</li>
+<li>Increment: 1</li>
+</ul>
+
+
 <h2>Bitmask for when to allow negative reverse thrust (ArduPlane:USE_REV_THRUST)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This controls when to use reverse thrust. If set to zero then reverse thrust is never used. If set to a non-zero value then the bits correspond to flight stages where reverse thrust may be used. The most commonly used value for USE_REV_THRUST is 2, which means AUTO_LAND only. That enables reverse thrust in the landing stage of AUTO mode. Another common choice is 1, which means to use reverse thrust in all auto flight stages. Reverse thrust is always used in MANUAL mode if enabled with THR_MIN &lt; 0. In non-autothrottle controlled modes, if reverse thrust is not used, then THR_MIN is effectively set to 0 for that mode.</p>
@@ -996,11 +1006,19 @@ DO NOT EDIT
 </ul>
 
 
-<h2>RTL altitude (ArduPlane:ALT_HOLD_RTL)</h2>
+<h2>Minimum RTL altitude (ArduPlane:RTL_ALT_MIN)</h2>
 
 <p>Target altitude above home for RTL mode. Maintains current altitude if set to -1. Rally point altitudes are used if plane does not return to home.</p>
 <ul>
-<li>Units: centimeters</li>
+<li>Units: meters</li>
+</ul>
+
+
+<h2>Altitude to go to after reaching home (ArduPlane:RTL_ALT_HOME)</h2>
+
+<p>Altitude to go to after reaching home. Set to -1 to stay at RTL_ALT_MIN</p>
+<ul>
+<li>Units: meters</li>
 </ul>
 
 
@@ -1151,7 +1169,7 @@ DO NOT EDIT
 
 <p>Flight mode specific options</p>
 <ul>
-<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to ALT_HOLD_RTL before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 21:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 22: Glide in auto throttle modes if throttle bellow THR_DZ, 23: remove FBWB style loiter altitude control</li>
+<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 19: Enable manual altitude control in RTL mode, 20: Climb first in RTL only during RC failsafe, 21:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 22: Glide in auto throttle modes if throttle bellow THR_DZ, 23: remove FBWB style loiter altitude control</li>
 </ul>
 
 
@@ -1262,7 +1280,7 @@ DO NOT EDIT
 
 <h2>RTL minimum climb (ArduPlane:RTL_CLIMB_MIN)</h2>
 
-<p>The vehicle will climb this many m during the initial climb portion of the RTL. During this time the roll will be limited to LEVEL_ROLL_LIMIT degrees.</p>
+<p>The vehicle will climb this many m during the initial climb portion of the RTL. During this time the roll will be limited to RTL_LVL_RLL_LMT degrees.</p>
 <ul>
 <li>Units: meters</li>
 <li>Range: 0 30</li>

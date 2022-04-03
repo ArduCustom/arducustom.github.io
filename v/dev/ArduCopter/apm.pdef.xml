@@ -50,8 +50,8 @@
         <field name="Bitmask">0:Roll,1:Pitch,2:Yaw,3:AccelZ</field>
       </param>
       <param humanName="RTL Altitude" name="ArduCopter:RTL_ALT" documentation="The minimum alt above home the vehicle will climb to before returning.  If the vehicle is flying higher than this value it will return at its current altitude." user="Standard">
-        <field name="Units">cm</field>
-        <field name="UnitText">centimeters</field>
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
         <field name="Range">200 300000</field>
         <field name="Increment">1</field>
       </param>
@@ -77,8 +77,8 @@
         <field name="Increment">1</field>
       </param>
       <param humanName="RTL minimum climb" name="ArduCopter:RTL_CLIMB_MIN" documentation="The vehicle will climb this many cm during the initial climb portion of the RTL" user="Standard">
-        <field name="Units">cm</field>
-        <field name="UnitText">centimeters</field>
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
         <field name="Range">0 3000</field>
         <field name="Increment">10</field>
       </param>

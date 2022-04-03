@@ -132,6 +132,12 @@
         <field name="Range">0 45</field>
         <field name="Increment">1</field>
       </param>
+      <param humanName="RTL level flight roll limit" name="ArduPlane:RTL_LVL_RLL_LMT" documentation="This controls the maximum bank angle in degrees during RTL climb before turning" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 45</field>
+        <field name="Increment">1</field>
+      </param>
       <param humanName="Bitmask for when to allow negative reverse thrust" name="ArduPlane:USE_REV_THRUST" documentation="This controls when to use reverse thrust. If set to zero then reverse thrust is never used. If set to a non-zero value then the bits correspond to flight stages where reverse thrust may be used. The most commonly used value for USE_REV_THRUST is 2, which means AUTO_LAND only. That enables reverse thrust in the landing stage of AUTO mode. Another common choice is 1, which means to use reverse thrust in all auto flight stages. Reverse thrust is always used in MANUAL mode if enabled with THR_MIN &lt; 0. In non-autothrottle controlled modes, if reverse thrust is not used, then THR_MIN is effectively set to 0 for that mode." user="Advanced">
         <values>
           <value code="0">MANUAL ONLY</value>
@@ -618,9 +624,13 @@
         <field name="Range">-45 45</field>
         <field name="Increment">0.1</field>
       </param>
-      <param humanName="RTL altitude" name="ArduPlane:ALT_HOLD_RTL" documentation="Target altitude above home for RTL mode. Maintains current altitude if set to -1. Rally point altitudes are used if plane does not return to home." user="Standard">
-        <field name="Units">cm</field>
-        <field name="UnitText">centimeters</field>
+      <param humanName="Minimum RTL altitude" name="ArduPlane:RTL_ALT_MIN" documentation="Target altitude above home for RTL mode. Maintains current altitude if set to -1. Rally point altitudes are used if plane does not return to home." user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+      </param>
+      <param humanName="Altitude to go to after reaching home" name="ArduPlane:RTL_ALT_HOME" documentation="Altitude to go to after reaching home. Set to -1 to stay at RTL_ALT_MIN" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
       </param>
       <param humanName="Minimum altitude for FBWB mode" name="ArduPlane:ALT_HOLD_FBWCM" documentation="This is the minimum altitude in centimeters that FBWB and CRUISE modes will allow. If you attempt to descend below this altitude then the plane will level off. A value of zero means no limit." user="Standard">
         <field name="Units">cm</field>
@@ -704,7 +714,7 @@
         <field name="UnitText">meters</field>
       </param>
       <param humanName="Flight mode options" name="ArduPlane:FLIGHT_OPTIONS" documentation="Flight mode specific options" user="Advanced">
-        <field name="Bitmask">0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to ALT_HOLD_RTL before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 21:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 22: Glide in auto throttle modes if throttle bellow THR_DZ, 23: remove FBWB style loiter altitude control</field>
+        <field name="Bitmask">0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 19: Enable manual altitude control in RTL mode, 20: Climb first in RTL only during RC failsafe, 21:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 22: Glide in auto throttle modes if throttle bellow THR_DZ, 23: remove FBWB style loiter altitude control</field>
       </param>
       <param humanName="Takeoff throttle acceleration count" name="ArduPlane:TKOFF_ACCEL_CNT" documentation="This is the number of acceleration events to require for arming with TKOFF_THR_MINACC. The default is 1, which means a single forward acceleration above TKOFF_THR_MINACC will arm. By setting this higher than 1 you can require more forward/backward movements to arm." user="Standard">
         <field name="Range">1 10</field>
@@ -767,7 +777,7 @@
           <value code="1.0">Relaxed</value>
         </values>
       </param>
-      <param humanName="RTL minimum climb" name="ArduPlane:RTL_CLIMB_MIN" documentation="The vehicle will climb this many m during the initial climb portion of the RTL. During this time the roll will be limited to LEVEL_ROLL_LIMIT degrees." user="Standard">
+      <param humanName="RTL minimum climb" name="ArduPlane:RTL_CLIMB_MIN" documentation="The vehicle will climb this many m during the initial climb portion of the RTL. During this time the roll will be limited to RTL_LVL_RLL_LMT degrees." user="Standard">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
         <field name="Range">0 30</field>

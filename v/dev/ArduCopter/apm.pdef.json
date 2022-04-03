@@ -8720,7 +8720,7 @@
         "high": "300000",
         "low": "200"
       },
-      "Units": "cm",
+      "Units": "m",
       "User": "Standard"
     },
     "RTL_ALT_FINAL": {
@@ -8751,7 +8751,7 @@
         "high": "3000",
         "low": "0"
       },
-      "Units": "cm",
+      "Units": "m",
       "User": "Standard"
     },
     "RTL_CONE_SLOPE": {
