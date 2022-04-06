@@ -265,7 +265,7 @@
   },
   "ARSPD": {
     "ARSPD2_AUTOCAL": {
-      "Description": "If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.",
+      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
       "DisplayName": "Automatic airspeed ratio calibration for 2nd airspeed sensor",
       "User": "Advanced"
     },
@@ -309,7 +309,7 @@
     },
     "ARSPD2_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup for 2nd sensor",
+      "DisplayName": "Skip airspeed offset calibration on startup for 2nd sensor",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -350,7 +350,7 @@
       }
     },
     "ARSPD2_USE": {
-      "Description": "use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller",
+      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
       "DisplayName": "Enable use of 2nd airspeed sensor",
       "User": "Standard",
       "Values": {
@@ -360,8 +360,7 @@
       }
     },
     "ARSPD_AUTOCAL": {
-      "Description": "Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is > 5%. Should not be left enabled.",
-      "DisplayName": "Automatic airspeed ratio calibration",
+      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
       "User": "Advanced"
     },
     "ARSPD_BUS": {
@@ -392,7 +391,7 @@
         "1": "AllowSpeedMismatchRecovery",
         "2": "DisableVoltageCorrection"
       },
-      "Description": "Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction",
+      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
       "DisplayName": "Airspeed options bitmask",
       "User": "Advanced"
     },
@@ -423,7 +422,7 @@
     },
     "ARSPD_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup",
+      "DisplayName": "Skip airspeed offset calibration on startup",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -464,7 +463,7 @@
       }
     },
     "ARSPD_USE": {
-      "Description": "Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).",
+      "Description": "This parameter is not used by this vehicle. Always set to 0.",
       "DisplayName": "Airspeed use",
       "User": "Standard",
       "Values": {
@@ -474,13 +473,13 @@
       }
     },
     "ARSPD_WIND_MAX": {
-      "Description": "If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor.",
+      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
       "DisplayName": "Maximum airspeed and ground speed difference",
       "Units": "m/s",
       "User": "Advanced"
     },
     "ARSPD_WIND_WARN": {
-      "Description": "If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used.",
+      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
       "DisplayName": "Airspeed and ground speed difference that gives a warning",
       "Units": "m/s",
       "User": "Advanced"
@@ -16933,38 +16932,140 @@
     }
   },
   "STAT": {
+    "STAT_ASPD_AVG": {
+      "Description": "Average air speed",
+      "DisplayName": "Average air speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_ASPD_MAX": {
+      "Description": "Maximum air speed",
+      "DisplayName": "Maximum air speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
     "STAT_BOOTCNT": {
       "Description": "Number of times board has been booted",
       "DisplayName": "Boot Count",
       "ReadOnly": "True",
       "User": "Standard"
     },
-    "STAT_FLTDIST": {
-      "Description": "Total FlightDistance (meter)",
-      "DisplayName": "Total FlightDistance",
+    "STAT_CURRENT_AVG": {
+      "Description": "Average current while flying",
+      "DisplayName": "Average current while flying",
+      "ReadOnly": "True",
+      "Units": "A",
+      "User": "Standard"
+    },
+    "STAT_CURRENT_MAX": {
+      "Description": "Maximum current while flying",
+      "DisplayName": "Maximum current while flying",
+      "ReadOnly": "True",
+      "Units": "A",
+      "User": "Standard"
+    },
+    "STAT_FLT_ENERGY": {
+      "Description": "Total consumed energy while flying",
+      "DisplayName": "Total consumed energy while flying",
+      "ReadOnly": "True",
+      "Units": "Wh",
+      "User": "Standard"
+    },
+    "STAT_FLT_TIME": {
+      "Description": "Total flight time",
+      "DisplayName": "Total flight time",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "STAT_GSPD_AVG": {
+      "Description": "Average ground speed",
+      "DisplayName": "Average ground speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_GSPD_MAX": {
+      "Description": "Maximum ground speed",
+      "DisplayName": "Maximum ground speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_HOMEALT_MAX": {
+      "Description": "Maximum home distance",
+      "DisplayName": "Maximum relative altitude",
       "ReadOnly": "True",
       "Units": "m",
       "User": "Standard"
     },
-    "STAT_FLTTIME": {
-      "Description": "Total FlightTime (seconds)",
-      "DisplayName": "Total FlightTime",
+    "STAT_HOMEDST_MAX": {
+      "Description": "Maximum home distance",
+      "DisplayName": "Maximum home distance",
       "ReadOnly": "True",
-      "Units": "s",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_LOAD": {
+      "Description": "Set to 1 then set stat values then reboot or set back to 0",
+      "DisplayName": "Set to 1 then set stat values then reboot or set back to 0",
+      "User": "Standard"
+    },
+    "STAT_POWER_AVG": {
+      "Description": "Average power while flying",
+      "DisplayName": "Average power while flying",
+      "ReadOnly": "True",
+      "Units": "W",
+      "User": "Standard"
+    },
+    "STAT_POWER_MAX": {
+      "Description": "Maximum power while flying",
+      "DisplayName": "Maximum power while flying",
+      "ReadOnly": "True",
+      "Units": "W",
       "User": "Standard"
     },
     "STAT_RESET": {
       "Description": "Seconds since January 1st 2016 (Unix epoch+1451606400) since statistics reset (set to 0 to reset statistics)",
-      "DisplayName": "Statistics Reset Time",
+      "DisplayName": "Statistics reset time",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "STAT_RUN_TIME": {
+      "Description": "Total time autopilot has run",
+      "DisplayName": "Total run_time",
       "ReadOnly": "True",
       "Units": "s",
       "User": "Standard"
     },
-    "STAT_RUNTIME": {
-      "Description": "Total time autopilot has run",
-      "DisplayName": "Total RunTime",
+    "STAT_TRAVEL_AIR": {
+      "Description": "Total air distance traveled",
+      "DisplayName": "Total air distance traveled",
       "ReadOnly": "True",
-      "Units": "s",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_TRAVEL_GND": {
+      "Description": "Total ground distance traveled",
+      "DisplayName": "Total ground distance traveled",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_WSPD_AVG": {
+      "Description": "Average wind speed",
+      "DisplayName": "Average wind speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_WSPD_MAX": {
+      "Description": "Maximum wind speed",
+      "DisplayName": "Maximum wind speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
       "User": "Standard"
     }
   },

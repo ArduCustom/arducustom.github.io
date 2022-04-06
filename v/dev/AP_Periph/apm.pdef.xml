@@ -245,7 +245,7 @@
       <param humanName="Airspeed ID" name="ARSP_DEVID" documentation="Airspeed sensor ID, taking into account its type, bus and instance" user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Airspeed use" name="ARSP_USE" documentation="Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers)." user="Standard">
+      <param humanName="Airspeed use" name="ARSP_USE" user="Standard">
         <values>
           <value code="0">DoNotUse</value>
           <value code="1">Use</value>
@@ -260,7 +260,7 @@
       </param>
       <param humanName="Airspeed pin" name="ARSP_PIN" documentation="The pin number that the airspeed sensor is connected to for analog sensors. Set to 15 on the Pixhawk for the analog airspeed port. " user="Advanced">
 </param>
-      <param humanName="Automatic airspeed ratio calibration" name="ARSP_AUTOCAL" documentation="Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled." user="Advanced">
+      <param name="ARSP_AUTOCAL" documentation="Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled." user="Advanced">
 </param>
       <param humanName="Control pitot tube order" name="ARSP_TUBE_ORDER" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
         <values>
@@ -269,7 +269,7 @@
           <value code="2">Auto Detect</value>
         </values>
       </param>
-      <param humanName="Skip airspeed calibration on startup" name="ARSP_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
+      <param humanName="Skip airspeed offset calibration on startup" name="ARSP_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
           <value code="1">Enable</value>
@@ -290,7 +290,7 @@
           <value code="1">2ndSensor</value>
         </values>
       </param>
-      <param humanName="Airspeed options bitmask" name="ARSP_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction" user="Advanced">
+      <param humanName="Airspeed options bitmask" name="ARSP_OPTIONS" user="Advanced">
         <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</field>
       </param>
       <param humanName="Maximum airspeed and ground speed difference" name="ARSP_WIND_MAX" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor." user="Advanced">
@@ -321,7 +321,7 @@
           <value code="15">ASP5033</value>
         </values>
       </param>
-      <param humanName="Enable use of 2nd airspeed sensor" name="ARSP2_USE" documentation="use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller" user="Standard">
+      <param humanName="Enable use of 2nd airspeed sensor" name="ARSP2_USE" user="Standard">
         <values>
           <value code="0">Don't Use</value>
           <value code="1">use</value>
@@ -336,7 +336,7 @@
       </param>
       <param humanName="Airspeed pin for 2nd airspeed sensor" name="ARSP2_PIN" documentation="Pin number indicating location of analog airspeed sensors. Pixhawk/Cube if set to 15. " user="Advanced">
 </param>
-      <param humanName="Automatic airspeed ratio calibration for 2nd airspeed sensor" name="ARSP2_AUTOCAL" documentation="If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended." user="Advanced">
+      <param humanName="Automatic airspeed ratio calibration for 2nd airspeed sensor" name="ARSP2_AUTOCAL" user="Advanced">
 </param>
       <param humanName="Control pitot tube order of 2nd airspeed sensor" name="ARSP2_TUBE_ORDR" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
         <values>
@@ -345,7 +345,7 @@
           <value code="2">Auto Detect</value>
         </values>
       </param>
-      <param humanName="Skip airspeed calibration on startup for 2nd sensor" name="ARSP2_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
+      <param humanName="Skip airspeed offset calibration on startup for 2nd sensor" name="ARSP2_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
           <value code="1">Enable</value>
@@ -388,7 +388,7 @@
       <param humanName="Airspeed ID" name="ARSPD_DEVID" documentation="Airspeed sensor ID, taking into account its type, bus and instance" user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Airspeed use" name="ARSPD_USE" documentation="Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers)." user="Standard">
+      <param humanName="Airspeed use" name="ARSPD_USE" user="Standard">
         <values>
           <value code="0">DoNotUse</value>
           <value code="1">Use</value>
@@ -403,7 +403,7 @@
       </param>
       <param humanName="Airspeed pin" name="ARSPD_PIN" documentation="The pin number that the airspeed sensor is connected to for analog sensors. Set to 15 on the Pixhawk for the analog airspeed port. " user="Advanced">
 </param>
-      <param humanName="Automatic airspeed ratio calibration" name="ARSPD_AUTOCAL" documentation="Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled." user="Advanced">
+      <param name="ARSPD_AUTOCAL" documentation="Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled." user="Advanced">
 </param>
       <param humanName="Control pitot tube order" name="ARSPD_TUBE_ORDER" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
         <values>
@@ -412,7 +412,7 @@
           <value code="2">Auto Detect</value>
         </values>
       </param>
-      <param humanName="Skip airspeed calibration on startup" name="ARSPD_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
+      <param humanName="Skip airspeed offset calibration on startup" name="ARSPD_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
           <value code="1">Enable</value>
@@ -433,7 +433,7 @@
           <value code="1">2ndSensor</value>
         </values>
       </param>
-      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction" user="Advanced">
+      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" user="Advanced">
         <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</field>
       </param>
       <param humanName="Maximum airspeed and ground speed difference" name="ARSPD_WIND_MAX" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor." user="Advanced">
@@ -464,7 +464,7 @@
           <value code="15">ASP5033</value>
         </values>
       </param>
-      <param humanName="Enable use of 2nd airspeed sensor" name="ARSPD2_USE" documentation="use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller" user="Standard">
+      <param humanName="Enable use of 2nd airspeed sensor" name="ARSPD2_USE" user="Standard">
         <values>
           <value code="0">Don't Use</value>
           <value code="1">use</value>
@@ -479,7 +479,7 @@
       </param>
       <param humanName="Airspeed pin for 2nd airspeed sensor" name="ARSPD2_PIN" documentation="Pin number indicating location of analog airspeed sensors. Pixhawk/Cube if set to 15. " user="Advanced">
 </param>
-      <param humanName="Automatic airspeed ratio calibration for 2nd airspeed sensor" name="ARSPD2_AUTOCAL" documentation="If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended." user="Advanced">
+      <param humanName="Automatic airspeed ratio calibration for 2nd airspeed sensor" name="ARSPD2_AUTOCAL" user="Advanced">
 </param>
       <param humanName="Control pitot tube order of 2nd airspeed sensor" name="ARSPD2_TUBE_ORDR" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
         <values>
@@ -488,7 +488,7 @@
           <value code="2">Auto Detect</value>
         </values>
       </param>
-      <param humanName="Skip airspeed calibration on startup for 2nd sensor" name="ARSPD2_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
+      <param humanName="Skip airspeed offset calibration on startup for 2nd sensor" name="ARSPD2_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
           <value code="1">Enable</value>

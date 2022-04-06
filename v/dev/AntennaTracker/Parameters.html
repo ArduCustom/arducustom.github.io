@@ -734,18 +734,6 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Airspeed use (ARSPD_USE)</h2>
-
-<p>Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>DoNotUse</td></tr>
-<tr><td>1</td><td>Use</td></tr>
-<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
-</table>
-</ul>
-
-
 <h2>Airspeed offset (ARSPD_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Airspeed calibration offset</p>
@@ -769,13 +757,6 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Automatic airspeed ratio calibration (ARSPD_AUTOCAL)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled.</p>
-<ul>
-</ul>
-
-
 <h2>Control pitot tube order (ARSPD_TUBE_ORDER)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.</p>
@@ -788,7 +769,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Skip airspeed calibration on startup (ARSPD_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Skip airspeed offset calibration on startup (ARSPD_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.</p>
 <ul>
@@ -826,14 +807,6 @@ DO NOT EDIT
 <tr><td>0</td><td>FirstSensor</td></tr>
 <tr><td>1</td><td>2ndSensor</td></tr>
 </table>
-</ul>
-
-
-<h2>Airspeed options bitmask (ARSPD_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction</p>
-<ul>
-<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</li>
 </ul>
 
 
@@ -878,18 +851,6 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Enable use of 2nd airspeed sensor (ARSPD2_USE)</h2>
-
-<p>use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won&#x27;t be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Don't Use</td></tr>
-<tr><td>1</td><td>use</td></tr>
-<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
-</table>
-</ul>
-
-
 <h2>Airspeed offset for 2nd airspeed sensor (ARSPD2_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Airspeed calibration offset</p>
@@ -913,13 +874,6 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Automatic airspeed ratio calibration for 2nd airspeed sensor (ARSPD2_AUTOCAL)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.</p>
-<ul>
-</ul>
-
-
 <h2>Control pitot tube order of 2nd airspeed sensor (ARSPD2_TUBE_ORDR)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed.</p>
@@ -932,7 +886,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Skip airspeed calibration on startup for 2nd sensor (ARSPD2_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Skip airspeed offset calibration on startup for 2nd sensor (ARSPD2_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.</p>
 <ul>
@@ -14771,16 +14725,16 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Total FlightTime (STAT_FLTTIME)</h2>
+<h2>Total flight time (STAT_FLT_TIME)</h2>
 
-<p>Total FlightTime (seconds)</p>
+<p>Total flight time</p>
 <ul>
 <li>Units: seconds</li>
 <li>ReadOnly: True</li>
 </ul>
 
 
-<h2>Total RunTime (STAT_RUNTIME)</h2>
+<h2>Total run_time (STAT_RUN_TIME)</h2>
 
 <p>Total time autopilot has run</p>
 <ul>
@@ -14789,21 +14743,153 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Statistics Reset Time (STAT_RESET)</h2>
+<h2>Statistics reset time (STAT_RESET)</h2>
 
 <p>Seconds since January 1st 2016 (Unix epoch+1451606400) since statistics reset (set to 0 to reset statistics)</p>
 <ul>
 <li>Units: seconds</li>
+</ul>
+
+
+<h2>Total ground distance traveled (STAT_TRAVEL_GND)</h2>
+
+<p>Total ground distance traveled</p>
+<ul>
+<li>Units: meters</li>
 <li>ReadOnly: True</li>
 </ul>
 
 
-<h2>Total FlightDistance (STAT_FLTDIST)</h2>
+<h2>Total consumed energy while flying (STAT_FLT_ENERGY)</h2>
 
-<p>Total FlightDistance (meter)</p>
+<p>Total consumed energy while flying</p>
+<ul>
+<li>Units: Watt hour</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Total air distance traveled (STAT_TRAVEL_AIR)</h2>
+
+<p>Total air distance traveled</p>
 <ul>
 <li>Units: meters</li>
 <li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average ground speed (STAT_GSPD_AVG)</h2>
+
+<p>Average ground speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum ground speed (STAT_GSPD_MAX)</h2>
+
+<p>Maximum ground speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average air speed (STAT_ASPD_AVG)</h2>
+
+<p>Average air speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum air speed (STAT_ASPD_MAX)</h2>
+
+<p>Maximum air speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average wind speed (STAT_WSPD_AVG)</h2>
+
+<p>Average wind speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum wind speed (STAT_WSPD_MAX)</h2>
+
+<p>Maximum wind speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum home distance (STAT_HOMEDST_MAX)</h2>
+
+<p>Maximum home distance</p>
+<ul>
+<li>Units: meters</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum relative altitude (STAT_HOMEALT_MAX)</h2>
+
+<p>Maximum home distance</p>
+<ul>
+<li>Units: meters</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average current while flying (STAT_CURRENT_AVG)</h2>
+
+<p>Average current while flying</p>
+<ul>
+<li>Units: ampere</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum current while flying (STAT_CURRENT_MAX)</h2>
+
+<p>Maximum current while flying</p>
+<ul>
+<li>Units: ampere</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average power while flying (STAT_POWER_AVG)</h2>
+
+<p>Average power while flying</p>
+<ul>
+<li>Units: watt</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum power while flying (STAT_POWER_MAX)</h2>
+
+<p>Maximum power while flying</p>
+<ul>
+<li>Units: watt</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Set to 1 then set stat values then reboot or set back to 0 (STAT_LOAD)</h2>
+
+<p>Set to 1 then set stat values then reboot or set back to 0</p>
+<ul>
 </ul>
 
 

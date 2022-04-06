@@ -1169,7 +1169,7 @@ DO NOT EDIT
 
 <p>Flight mode specific options</p>
 <ul>
-<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 19: Enable manual altitude control in RTL mode, 20: Climb first in RTL only during RC failsafe, 21:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 22: Glide in auto throttle modes if throttle bellow THR_DZ, 23: remove FBWB style loiter altitude control</li>
+<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 18: Cruise heading control with rudder channel, 19: Enable manual altitude control in RTL mode, 20: Climb first in RTL only during RC failsafe, 21:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 22: Glide in auto throttle modes if throttle bellow THR_DZ, 23: remove FBWB style loiter altitude control</li>
 </ul>
 
 
@@ -1320,6 +1320,56 @@ DO NOT EDIT
 <p>Mask of output channels to use oneshot on</p>
 <ul>
 <li>Bitmask: 0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15</li>
+</ul>
+
+
+<h2>Max sink rate in RTL mode (ArduPlane:RTL_SINK_MAX)</h2>
+
+<p>Max sink rate in RTL mode. Set to 0 to use TECS_SINK_MAX</p>
+<ul>
+<li>Units: meters per second</li>
+<li>Range: 1 20</li>
+<li>Increment: 0.5</li>
+</ul>
+
+
+<h2>Max climb rate in RTL mode (ArduPlane:RTL_CLIMB_MAX)</h2>
+
+<p>Max climb rate in RTL mode. Set to 0 to use TECS_CLMB_MAX</p>
+<ul>
+<li>Units: meters per second</li>
+<li>Range: 1 20</li>
+<li>Increment: 0.5</li>
+</ul>
+
+
+<h2>Max sink rate in auto mode (ArduPlane:AUTO_SINK_MAX)</h2>
+
+<p>Max sink rate in auto mode. Set to 0 to use TECS_SINK_MAX</p>
+<ul>
+<li>Units: meters per second</li>
+<li>Range: 1 20</li>
+<li>Increment: 0.5</li>
+</ul>
+
+
+<h2>Max climb rate in auto mode (ArduPlane:AUTO_CLIMB_MAX)</h2>
+
+<p>Max climb rate in auto mode. Set to 0 to use TECS_CLMB_MAX</p>
+<ul>
+<li>Units: meters per second</li>
+<li>Range: 1 20</li>
+<li>Increment: 0.5</li>
+</ul>
+
+
+<h2>Max cruise yaw rate commanded with rudder channel (ArduPlane:CRUISE_YAW_RATE)</h2>
+
+<p>Max cruise yaw rate commanded with rudder channel if the rudder channel heading control is enabled in FLIGHT_OPTIONS</p>
+<ul>
+<li>Units: degrees per second</li>
+<li>Range: 5 360</li>
+<li>Increment: 1</li>
 </ul>
 
 
@@ -2263,7 +2313,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Skip airspeed calibration on startup (ARSPD_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Skip airspeed offset calibration on startup (ARSPD_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.</p>
 <ul>
@@ -2407,7 +2457,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Skip airspeed calibration on startup for 2nd sensor (ARSPD2_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Skip airspeed offset calibration on startup for 2nd sensor (ARSPD2_SKIP_CAL)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.</p>
 <ul>
@@ -15398,9 +15448,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_EN (OSD1_DIST_EN)</h2>
+<h2>GNDTRVL_EN (OSD1_GNDTRVL_EN)</h2>
 
-<p>Displays total distance flown</p>
+<p>Displays ground distance traveled</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -15409,7 +15459,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_X (OSD1_DIST_X)</h2>
+<h2>GNDTRVL_X (OSD1_GNDTRVL_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -15417,7 +15467,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_Y (OSD1_DIST_Y)</h2>
+<h2>GNDTRVL_Y (OSD1_GNDTRVL_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -16856,6 +16906,87 @@ DO NOT EDIT
 </ul>
 
 
+<h2>CRS_HEAD_EN (OSD1_CRS_HEAD_EN)</h2>
+
+<p>Displays the locked heading when in cruise mode (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HEAD_X (OSD1_CRS_HEAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HEAD_Y (OSD1_CRS_HEAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRS_HADJ_EN (OSD1_CRS_HADJ_EN)</h2>
+
+<p>Displays the recent cruise mode heading adjustment (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HADJ_X (OSD1_CRS_HADJ_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HADJ_Y (OSD1_CRS_HADJ_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RC_FS_EN (OSD1_RC_FS_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RC_FS_X (OSD1_RC_FS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RC_FS_Y (OSD1_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD2_ Parameters</h1>
 
 
@@ -17723,9 +17854,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_EN (OSD2_DIST_EN)</h2>
+<h2>GNDTRVL_EN (OSD2_GNDTRVL_EN)</h2>
 
-<p>Displays total distance flown</p>
+<p>Displays ground distance traveled</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -17734,7 +17865,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_X (OSD2_DIST_X)</h2>
+<h2>GNDTRVL_X (OSD2_GNDTRVL_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -17742,7 +17873,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_Y (OSD2_DIST_Y)</h2>
+<h2>GNDTRVL_Y (OSD2_GNDTRVL_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -19181,6 +19312,87 @@ DO NOT EDIT
 </ul>
 
 
+<h2>CRS_HEAD_EN (OSD2_CRS_HEAD_EN)</h2>
+
+<p>Displays the locked heading when in cruise mode (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HEAD_X (OSD2_CRS_HEAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HEAD_Y (OSD2_CRS_HEAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRS_HADJ_EN (OSD2_CRS_HADJ_EN)</h2>
+
+<p>Displays the recent cruise mode heading adjustment (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HADJ_X (OSD2_CRS_HADJ_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HADJ_Y (OSD2_CRS_HADJ_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RC_FS_EN (OSD2_RC_FS_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RC_FS_X (OSD2_RC_FS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RC_FS_Y (OSD2_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD3_ Parameters</h1>
 
 
@@ -20048,9 +20260,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_EN (OSD3_DIST_EN)</h2>
+<h2>GNDTRVL_EN (OSD3_GNDTRVL_EN)</h2>
 
-<p>Displays total distance flown</p>
+<p>Displays ground distance traveled</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -20059,7 +20271,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_X (OSD3_DIST_X)</h2>
+<h2>GNDTRVL_X (OSD3_GNDTRVL_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -20067,7 +20279,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_Y (OSD3_DIST_Y)</h2>
+<h2>GNDTRVL_Y (OSD3_GNDTRVL_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -21506,6 +21718,87 @@ DO NOT EDIT
 </ul>
 
 
+<h2>CRS_HEAD_EN (OSD3_CRS_HEAD_EN)</h2>
+
+<p>Displays the locked heading when in cruise mode (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HEAD_X (OSD3_CRS_HEAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HEAD_Y (OSD3_CRS_HEAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRS_HADJ_EN (OSD3_CRS_HADJ_EN)</h2>
+
+<p>Displays the recent cruise mode heading adjustment (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HADJ_X (OSD3_CRS_HADJ_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HADJ_Y (OSD3_CRS_HADJ_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RC_FS_EN (OSD3_RC_FS_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RC_FS_X (OSD3_RC_FS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RC_FS_Y (OSD3_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD4_ Parameters</h1>
 
 
@@ -22373,9 +22666,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_EN (OSD4_DIST_EN)</h2>
+<h2>GNDTRVL_EN (OSD4_GNDTRVL_EN)</h2>
 
-<p>Displays total distance flown</p>
+<p>Displays ground distance traveled</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -22384,7 +22677,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_X (OSD4_DIST_X)</h2>
+<h2>GNDTRVL_X (OSD4_GNDTRVL_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22392,7 +22685,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_Y (OSD4_DIST_Y)</h2>
+<h2>GNDTRVL_Y (OSD4_GNDTRVL_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -23831,6 +24124,87 @@ DO NOT EDIT
 </ul>
 
 
+<h2>CRS_HEAD_EN (OSD4_CRS_HEAD_EN)</h2>
+
+<p>Displays the locked heading when in cruise mode (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HEAD_X (OSD4_CRS_HEAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HEAD_Y (OSD4_CRS_HEAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRS_HADJ_EN (OSD4_CRS_HADJ_EN)</h2>
+
+<p>Displays the recent cruise mode heading adjustment (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HADJ_X (OSD4_CRS_HADJ_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HADJ_Y (OSD4_CRS_HADJ_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RC_FS_EN (OSD4_RC_FS_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RC_FS_X (OSD4_RC_FS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RC_FS_Y (OSD4_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD5_ Parameters</h1>
 
 
@@ -24698,9 +25072,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_EN (OSD5_DIST_EN)</h2>
+<h2>GNDTRVL_EN (OSD5_GNDTRVL_EN)</h2>
 
-<p>Displays total distance flown</p>
+<p>Displays ground distance traveled</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -24709,7 +25083,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_X (OSD5_DIST_X)</h2>
+<h2>GNDTRVL_X (OSD5_GNDTRVL_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -24717,7 +25091,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>DIST_Y (OSD5_DIST_Y)</h2>
+<h2>GNDTRVL_Y (OSD5_GNDTRVL_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -26149,6 +26523,87 @@ DO NOT EDIT
 
 
 <h2>PEAK_PR_Y (OSD5_PEAK_PR_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRS_HEAD_EN (OSD5_CRS_HEAD_EN)</h2>
+
+<p>Displays the locked heading when in cruise mode (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HEAD_X (OSD5_CRS_HEAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HEAD_Y (OSD5_CRS_HEAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>CRS_HADJ_EN (OSD5_CRS_HADJ_EN)</h2>
+
+<p>Displays the recent cruise mode heading adjustment (plane only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>CRS_HADJ_X (OSD5_CRS_HADJ_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>CRS_HADJ_Y (OSD5_CRS_HADJ_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>RC_FS_EN (OSD5_RC_FS_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>RC_FS_X (OSD5_RC_FS_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>RC_FS_Y (OSD5_RC_FS_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -28155,7 +28610,7 @@ DO NOT EDIT
 
 <p>Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command&#x27;s reference frame rather than a delta above current location, Use FW Approach:Use a fixed wing approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND.</p>
 <ul>
-<li>Bitmask: 0:Level Transition,1:Allow FW Takeoff,2:Allow FW Land,3:Vtol Takeoff Frame,4:Use FW Approach,5:Use QRTL,6:Use Governor,7:Force Qassist,8:Mtrs_Only_Qassist,10:Disarmed Yaw Tilt,11:Delay Spoolup,12:disable Qassist based on synthetic airspeed,13:Disable Ground Effect Compensation,14:Ignore forward flight angle limits in Qmodes,15:ThrLandControl,16:DisableApproach,17:EnableLandResponsition,18:ARMVtol, 19: CompleteTransition if Q_TRANS_FAIL</li>
+<li>Bitmask: 0:Level Transition,1:Allow FW Takeoff,2:Allow FW Land,3:Vtol Takeoff Frame,4:Use FW Approach,5:Use QRTL,6:Use Governor,7:Force Qassist,8:Mtrs_Only_Qassist,10:Disarmed Yaw Tilt,11:Delay Spoolup,12:disable Qassist based on synthetic airspeed,13:Disable Ground Effect Compensation,14:Ignore forward flight angle limits in Qmodes,15:ThrLandControl,16:DisableApproach,17:EnableLandReposition,18:ARMVtol, 19: CompleteTransition if Q_TRANS_FAIL</li>
 </ul>
 
 
@@ -40790,16 +41245,16 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Total FlightTime (STAT_FLTTIME)</h2>
+<h2>Total flight time (STAT_FLT_TIME)</h2>
 
-<p>Total FlightTime (seconds)</p>
+<p>Total flight time</p>
 <ul>
 <li>Units: seconds</li>
 <li>ReadOnly: True</li>
 </ul>
 
 
-<h2>Total RunTime (STAT_RUNTIME)</h2>
+<h2>Total run_time (STAT_RUN_TIME)</h2>
 
 <p>Total time autopilot has run</p>
 <ul>
@@ -40808,21 +41263,153 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Statistics Reset Time (STAT_RESET)</h2>
+<h2>Statistics reset time (STAT_RESET)</h2>
 
 <p>Seconds since January 1st 2016 (Unix epoch+1451606400) since statistics reset (set to 0 to reset statistics)</p>
 <ul>
 <li>Units: seconds</li>
+</ul>
+
+
+<h2>Total ground distance traveled (STAT_TRAVEL_GND)</h2>
+
+<p>Total ground distance traveled</p>
+<ul>
+<li>Units: meters</li>
 <li>ReadOnly: True</li>
 </ul>
 
 
-<h2>Total FlightDistance (STAT_FLTDIST)</h2>
+<h2>Total consumed energy while flying (STAT_FLT_ENERGY)</h2>
 
-<p>Total FlightDistance (meter)</p>
+<p>Total consumed energy while flying</p>
+<ul>
+<li>Units: Watt hour</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Total air distance traveled (STAT_TRAVEL_AIR)</h2>
+
+<p>Total air distance traveled</p>
 <ul>
 <li>Units: meters</li>
 <li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average ground speed (STAT_GSPD_AVG)</h2>
+
+<p>Average ground speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum ground speed (STAT_GSPD_MAX)</h2>
+
+<p>Maximum ground speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average air speed (STAT_ASPD_AVG)</h2>
+
+<p>Average air speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum air speed (STAT_ASPD_MAX)</h2>
+
+<p>Maximum air speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average wind speed (STAT_WSPD_AVG)</h2>
+
+<p>Average wind speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum wind speed (STAT_WSPD_MAX)</h2>
+
+<p>Maximum wind speed</p>
+<ul>
+<li>Units: meters per second</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum home distance (STAT_HOMEDST_MAX)</h2>
+
+<p>Maximum home distance</p>
+<ul>
+<li>Units: meters</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum relative altitude (STAT_HOMEALT_MAX)</h2>
+
+<p>Maximum home distance</p>
+<ul>
+<li>Units: meters</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average current while flying (STAT_CURRENT_AVG)</h2>
+
+<p>Average current while flying</p>
+<ul>
+<li>Units: ampere</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum current while flying (STAT_CURRENT_MAX)</h2>
+
+<p>Maximum current while flying</p>
+<ul>
+<li>Units: ampere</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average power while flying (STAT_POWER_AVG)</h2>
+
+<p>Average power while flying</p>
+<ul>
+<li>Units: watt</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Maximum power while flying (STAT_POWER_MAX)</h2>
+
+<p>Maximum power while flying</p>
+<ul>
+<li>Units: watt</li>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Set to 1 then set stat values then reboot or set back to 0 (STAT_LOAD)</h2>
+
+<p>Set to 1 then set stat values then reboot or set back to 0</p>
+<ul>
 </ul>
 
 

@@ -268,11 +268,11 @@ RTL\_ALT\_FINAL: RTL Final Altitude
 This is the altitude the vehicle will move to as the final stage of Returning to Launch or after completing a mission\.  Set to zero to land\.
 
 
-+-----------+----------+-------------+
-| Increment | Range    | Units       |
-+===========+==========+=============+
-| 1         | 0 - 1000 | centimeters |
-+-----------+----------+-------------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 1         | 0 - 1000 | meters |
++-----------+----------+--------+
 
 
 
@@ -4045,7 +4045,7 @@ ARSPD\_USE: Airspeed use
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Enables airspeed use for automatic throttle modes and replaces control from THR\_TRIM\. Continues to display and log airspeed if set to 0\. Uses airspeed for control if set to 1\. Only uses airspeed when throttle \= 0 if set to 2 \(useful for gliders with airspeed sensors behind propellers\)\.
+This parameter is not used by this vehicle\. Always set to 0\.
 
 
 +---------------------------------+
@@ -4114,16 +4114,6 @@ ARSPD\_PIN: Airspeed pin
 The pin number that the airspeed sensor is connected to for analog sensors\. Set to 15 on the Pixhawk for the analog airspeed port\. 
 
 
-.. _ARSPD_AUTOCAL:
-
-ARSPD\_AUTOCAL: Automatic airspeed ratio calibration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Enables automatic adjustment of ARSPD\_RATIO during a calibration flight based on estimation of ground speed and true airspeed\. New ratio saved every 2 minutes if change is \> 5\%\. Should not be left enabled\.
-
-
 .. _ARSPD_TUBE_ORDER:
 
 ARSPD\_TUBE\_ORDER: Control pitot tube order
@@ -4154,8 +4144,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD_SKIP_CAL:
 
-ARSPD\_SKIP\_CAL: Skip airspeed calibration on startup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD\_SKIP\_CAL: Skip airspeed offset calibration on startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -4249,7 +4239,7 @@ ARSPD\_OPTIONS: Airspeed options bitmask
 
 | *Note: This parameter is for advanced users*
 
-Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +--------------------------------------+
@@ -4277,7 +4267,7 @@ ARSPD\_WIND\_MAX: Maximum airspeed and ground speed difference
 
 | *Note: This parameter is for advanced users*
 
-If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy\. Using ARSPD\_OPTION this health value can be used to disable the sensor\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-------------------+
@@ -4296,7 +4286,7 @@ ARSPD\_WIND\_WARN: Airspeed and ground speed difference that gives a warning
 
 | *Note: This parameter is for advanced users*
 
-If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning\. If 0 ARSPD\_WIND\_MAX is used\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-------------------+
@@ -4367,7 +4357,7 @@ ARSPD2\_USE: Enable use of 2nd airspeed sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-use airspeed for flight control\. When set to 0 airspeed sensor can be logged and displayed on a GCS but won\'t be used for flight\. When set to 1 it will be logged and used\. When set to 2 it will be only used when the throttle is zero\, which can be useful in gliders with airspeed sensors behind a propeller
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +---------------------------------+
@@ -4443,7 +4433,7 @@ ARSPD2\_AUTOCAL: Automatic airspeed ratio calibration for 2nd airspeed sensor
 
 | *Note: This parameter is for advanced users*
 
-If this is enabled then the autopilot will automatically adjust the ARSPD\_RATIO during flight\, based upon an estimation filter using ground speed and true airspeed\. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5\%\. This option should be enabled for a calibration flight then disabled again when calibration is complete\. Leaving it enabled all the time is not recommended\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 .. _ARSPD2_TUBE_ORDR:
@@ -4476,8 +4466,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD2_SKIP_CAL:
 
-ARSPD2\_SKIP\_CAL: Skip airspeed calibration on startup for 2nd sensor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD2\_SKIP\_CAL: Skip airspeed offset calibration on startup for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -37004,13 +36994,13 @@ Vertical position on screen
 
 
 
-.. _OSD1_DIST_EN:
+.. _OSD1_GNDTRVL_EN:
 
-OSD1\_DIST\_EN: DIST\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_GNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays total distance flown
+Displays ground distance traveled
 
 
 +----------------------+
@@ -37029,10 +37019,10 @@ Displays total distance flown
 
 
 
-.. _OSD1_DIST_X:
+.. _OSD1_GNDTRVL_X:
 
-OSD1\_DIST\_X: DIST\_X
-~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_GNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -37047,10 +37037,10 @@ Horizontal position on screen
 
 
 
-.. _OSD1_DIST_Y:
+.. _OSD1_GNDTRVL_Y:
 
-OSD1\_DIST\_Y: DIST\_Y
-~~~~~~~~~~~~~~~~~~~~~~
+OSD1\_GNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -40298,6 +40288,189 @@ Vertical position on screen
 
 
 
+.. _OSD1_CRS_HEAD_EN:
+
+OSD1\_CRS\_HEAD\_EN: CRS\_HEAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the locked heading when in cruise mode \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_CRS_HEAD_X:
+
+OSD1\_CRS\_HEAD\_X: CRS\_HEAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRS_HEAD_Y:
+
+OSD1\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_CRS_HADJ_EN:
+
+OSD1\_CRS\_HADJ\_EN: CRS\_HADJ\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the recent cruise mode heading adjustment \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_CRS_HADJ_X:
+
+OSD1\_CRS\_HADJ\_X: CRS\_HADJ\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_CRS_HADJ_Y:
+
+OSD1\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD1_RC_FS_EN:
+
+OSD1\_RC\_FS\_EN: RC\_FS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_RC_FS_X:
+
+OSD1\_RC\_FS\_X: RC\_FS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_RC_FS_Y:
+
+OSD1\_RC\_FS\_Y: RC\_FS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -42257,13 +42430,13 @@ Vertical position on screen
 
 
 
-.. _OSD2_DIST_EN:
+.. _OSD2_GNDTRVL_EN:
 
-OSD2\_DIST\_EN: DIST\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_GNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays total distance flown
+Displays ground distance traveled
 
 
 +----------------------+
@@ -42282,10 +42455,10 @@ Displays total distance flown
 
 
 
-.. _OSD2_DIST_X:
+.. _OSD2_GNDTRVL_X:
 
-OSD2\_DIST\_X: DIST\_X
-~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_GNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -42300,10 +42473,10 @@ Horizontal position on screen
 
 
 
-.. _OSD2_DIST_Y:
+.. _OSD2_GNDTRVL_Y:
 
-OSD2\_DIST\_Y: DIST\_Y
-~~~~~~~~~~~~~~~~~~~~~~
+OSD2\_GNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -45551,6 +45724,189 @@ Vertical position on screen
 
 
 
+.. _OSD2_CRS_HEAD_EN:
+
+OSD2\_CRS\_HEAD\_EN: CRS\_HEAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the locked heading when in cruise mode \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_CRS_HEAD_X:
+
+OSD2\_CRS\_HEAD\_X: CRS\_HEAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRS_HEAD_Y:
+
+OSD2\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_CRS_HADJ_EN:
+
+OSD2\_CRS\_HADJ\_EN: CRS\_HADJ\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the recent cruise mode heading adjustment \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_CRS_HADJ_X:
+
+OSD2\_CRS\_HADJ\_X: CRS\_HADJ\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_CRS_HADJ_Y:
+
+OSD2\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_RC_FS_EN:
+
+OSD2\_RC\_FS\_EN: RC\_FS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_RC_FS_X:
+
+OSD2\_RC\_FS\_X: RC\_FS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_RC_FS_Y:
+
+OSD2\_RC\_FS\_Y: RC\_FS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD3_:
 
@@ -47510,13 +47866,13 @@ Vertical position on screen
 
 
 
-.. _OSD3_DIST_EN:
+.. _OSD3_GNDTRVL_EN:
 
-OSD3\_DIST\_EN: DIST\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_GNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays total distance flown
+Displays ground distance traveled
 
 
 +----------------------+
@@ -47535,10 +47891,10 @@ Displays total distance flown
 
 
 
-.. _OSD3_DIST_X:
+.. _OSD3_GNDTRVL_X:
 
-OSD3\_DIST\_X: DIST\_X
-~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_GNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -47553,10 +47909,10 @@ Horizontal position on screen
 
 
 
-.. _OSD3_DIST_Y:
+.. _OSD3_GNDTRVL_Y:
 
-OSD3\_DIST\_Y: DIST\_Y
-~~~~~~~~~~~~~~~~~~~~~~
+OSD3\_GNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -50804,6 +51160,189 @@ Vertical position on screen
 
 
 
+.. _OSD3_CRS_HEAD_EN:
+
+OSD3\_CRS\_HEAD\_EN: CRS\_HEAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the locked heading when in cruise mode \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_CRS_HEAD_X:
+
+OSD3\_CRS\_HEAD\_X: CRS\_HEAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRS_HEAD_Y:
+
+OSD3\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_CRS_HADJ_EN:
+
+OSD3\_CRS\_HADJ\_EN: CRS\_HADJ\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the recent cruise mode heading adjustment \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_CRS_HADJ_X:
+
+OSD3\_CRS\_HADJ\_X: CRS\_HADJ\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_CRS_HADJ_Y:
+
+OSD3\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD3_RC_FS_EN:
+
+OSD3\_RC\_FS\_EN: RC\_FS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_RC_FS_X:
+
+OSD3\_RC\_FS\_X: RC\_FS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_RC_FS_Y:
+
+OSD3\_RC\_FS\_Y: RC\_FS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -52763,13 +53302,13 @@ Vertical position on screen
 
 
 
-.. _OSD4_DIST_EN:
+.. _OSD4_GNDTRVL_EN:
 
-OSD4\_DIST\_EN: DIST\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_GNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays total distance flown
+Displays ground distance traveled
 
 
 +----------------------+
@@ -52788,10 +53327,10 @@ Displays total distance flown
 
 
 
-.. _OSD4_DIST_X:
+.. _OSD4_GNDTRVL_X:
 
-OSD4\_DIST\_X: DIST\_X
-~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_GNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -52806,10 +53345,10 @@ Horizontal position on screen
 
 
 
-.. _OSD4_DIST_Y:
+.. _OSD4_GNDTRVL_Y:
 
-OSD4\_DIST\_Y: DIST\_Y
-~~~~~~~~~~~~~~~~~~~~~~
+OSD4\_GNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -56057,6 +56596,189 @@ Vertical position on screen
 
 
 
+.. _OSD4_CRS_HEAD_EN:
+
+OSD4\_CRS\_HEAD\_EN: CRS\_HEAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the locked heading when in cruise mode \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_CRS_HEAD_X:
+
+OSD4\_CRS\_HEAD\_X: CRS\_HEAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRS_HEAD_Y:
+
+OSD4\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_CRS_HADJ_EN:
+
+OSD4\_CRS\_HADJ\_EN: CRS\_HADJ\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the recent cruise mode heading adjustment \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_CRS_HADJ_X:
+
+OSD4\_CRS\_HADJ\_X: CRS\_HADJ\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_CRS_HADJ_Y:
+
+OSD4\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD4_RC_FS_EN:
+
+OSD4\_RC\_FS\_EN: RC\_FS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_RC_FS_X:
+
+OSD4\_RC\_FS\_X: RC\_FS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_RC_FS_Y:
+
+OSD4\_RC\_FS\_Y: RC\_FS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -58016,13 +58738,13 @@ Vertical position on screen
 
 
 
-.. _OSD5_DIST_EN:
+.. _OSD5_GNDTRVL_EN:
 
-OSD5\_DIST\_EN: DIST\_EN
-~~~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_GNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays total distance flown
+Displays ground distance traveled
 
 
 +----------------------+
@@ -58041,10 +58763,10 @@ Displays total distance flown
 
 
 
-.. _OSD5_DIST_X:
+.. _OSD5_GNDTRVL_X:
 
-OSD5\_DIST\_X: DIST\_X
-~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_GNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Horizontal position on screen
@@ -58059,10 +58781,10 @@ Horizontal position on screen
 
 
 
-.. _OSD5_DIST_Y:
+.. _OSD5_GNDTRVL_Y:
 
-OSD5\_DIST\_Y: DIST\_Y
-~~~~~~~~~~~~~~~~~~~~~~
+OSD5\_GNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -61296,6 +62018,189 @@ Horizontal position on screen
 
 OSD5\_PEAK\_PR\_Y: PEAK\_PR\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CRS_HEAD_EN:
+
+OSD5\_CRS\_HEAD\_EN: CRS\_HEAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the locked heading when in cruise mode \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD5_CRS_HEAD_X:
+
+OSD5\_CRS\_HEAD\_X: CRS\_HEAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CRS_HEAD_Y:
+
+OSD5\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_CRS_HADJ_EN:
+
+OSD5\_CRS\_HADJ\_EN: CRS\_HADJ\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the recent cruise mode heading adjustment \(plane only\)
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD5_CRS_HADJ_X:
+
+OSD5\_CRS\_HADJ\_X: CRS\_HADJ\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_CRS_HADJ_Y:
+
+OSD5\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_RC_FS_EN:
+
+OSD5\_RC\_FS\_EN: RC\_FS\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD5_RC_FS_X:
+
+OSD5\_RC\_FS\_X: RC\_FS\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_RC_FS_Y:
+
+OSD5\_RC\_FS\_Y: RC\_FS\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -87980,13 +88885,13 @@ Number of times board has been booted
 
 
 
-.. _STAT_FLTTIME:
+.. _STAT_FLT_TIME:
 
-STAT\_FLTTIME: Total FlightTime
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_FLT\_TIME: Total flight time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Total FlightTime \(seconds\)
+Total flight time
 
 
 +----------+---------+
@@ -87998,10 +88903,10 @@ Total FlightTime \(seconds\)
 
 
 
-.. _STAT_RUNTIME:
+.. _STAT_RUN_TIME:
 
-STAT\_RUNTIME: Total RunTime
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_RUN\_TIME: Total run\_time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Total time autopilot has run
@@ -88018,29 +88923,29 @@ Total time autopilot has run
 
 .. _STAT_RESET:
 
-STAT\_RESET: Statistics Reset Time
+STAT\_RESET: Statistics reset time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Seconds since January 1st 2016 \(Unix epoch\+1451606400\) since statistics reset \(set to 0 to reset statistics\)
 
 
-+----------+---------+
-| ReadOnly | Units   |
-+==========+=========+
-| True     | seconds |
-+----------+---------+
++---------+
+| Units   |
++=========+
+| seconds |
++---------+
 
 
 
 
-.. _STAT_FLTDIST:
+.. _STAT_TRAVEL_GND:
 
-STAT\_FLTDIST: Total FlightDistance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_TRAVEL\_GND: Total ground distance traveled
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Total FlightDistance \(meter\)
+Total ground distance traveled
 
 
 +----------+--------+
@@ -88050,6 +88955,267 @@ Total FlightDistance \(meter\)
 +----------+--------+
 
 
+
+
+.. _STAT_FLT_ENERGY:
+
+STAT\_FLT\_ENERGY: Total consumed energy while flying
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Total consumed energy while flying
+
+
++----------+-----------+
+| ReadOnly | Units     |
++==========+===========+
+| True     | Watt hour |
++----------+-----------+
+
+
+
+
+.. _STAT_TRAVEL_AIR:
+
+STAT\_TRAVEL\_AIR: Total air distance traveled
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Total air distance traveled
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
+
+
+.. _STAT_GSPD_AVG:
+
+STAT\_GSPD\_AVG: Average ground speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average ground speed
+
+
++----------+-------------------+
+| ReadOnly | Units             |
++==========+===================+
+| True     | meters per second |
++----------+-------------------+
+
+
+
+
+.. _STAT_GSPD_MAX:
+
+STAT\_GSPD\_MAX: Maximum ground speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum ground speed
+
+
++----------+-------------------+
+| ReadOnly | Units             |
++==========+===================+
+| True     | meters per second |
++----------+-------------------+
+
+
+
+
+.. _STAT_ASPD_AVG:
+
+STAT\_ASPD\_AVG: Average air speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average air speed
+
+
++----------+-------------------+
+| ReadOnly | Units             |
++==========+===================+
+| True     | meters per second |
++----------+-------------------+
+
+
+
+
+.. _STAT_ASPD_MAX:
+
+STAT\_ASPD\_MAX: Maximum air speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum air speed
+
+
++----------+-------------------+
+| ReadOnly | Units             |
++==========+===================+
+| True     | meters per second |
++----------+-------------------+
+
+
+
+
+.. _STAT_WSPD_AVG:
+
+STAT\_WSPD\_AVG: Average wind speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average wind speed
+
+
++----------+-------------------+
+| ReadOnly | Units             |
++==========+===================+
+| True     | meters per second |
++----------+-------------------+
+
+
+
+
+.. _STAT_WSPD_MAX:
+
+STAT\_WSPD\_MAX: Maximum wind speed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum wind speed
+
+
++----------+-------------------+
+| ReadOnly | Units             |
++==========+===================+
+| True     | meters per second |
++----------+-------------------+
+
+
+
+
+.. _STAT_HOMEDST_MAX:
+
+STAT\_HOMEDST\_MAX: Maximum home distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum home distance
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
+
+
+.. _STAT_HOMEALT_MAX:
+
+STAT\_HOMEALT\_MAX: Maximum relative altitude
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum home distance
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
+
+
+.. _STAT_CURRENT_AVG:
+
+STAT\_CURRENT\_AVG: Average current while flying
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average current while flying
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | ampere |
++----------+--------+
+
+
+
+
+.. _STAT_CURRENT_MAX:
+
+STAT\_CURRENT\_MAX: Maximum current while flying
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum current while flying
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | ampere |
++----------+--------+
+
+
+
+
+.. _STAT_POWER_AVG:
+
+STAT\_POWER\_AVG: Average power while flying
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average power while flying
+
+
++----------+-------+
+| ReadOnly | Units |
++==========+=======+
+| True     | watt  |
++----------+-------+
+
+
+
+
+.. _STAT_POWER_MAX:
+
+STAT\_POWER\_MAX: Maximum power while flying
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum power while flying
+
+
++----------+-------+
+| ReadOnly | Units |
++==========+=======+
+| True     | watt  |
++----------+-------+
+
+
+
+
+.. _STAT_LOAD:
+
+STAT\_LOAD: Set to 1 then set stat values then reboot or set back to 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Set to 1 then set stat values then reboot or set back to 0
 
 
 

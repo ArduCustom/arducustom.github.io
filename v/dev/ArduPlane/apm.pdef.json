@@ -628,7 +628,7 @@
     },
     "ARSPD2_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup for 2nd sensor",
+      "DisplayName": "Skip airspeed offset calibration on startup for 2nd sensor",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -742,7 +742,7 @@
     },
     "ARSPD_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup",
+      "DisplayName": "Skip airspeed offset calibration on startup",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -13346,6 +13346,54 @@
         "low": "0"
       }
     },
+    "OSD1_CRS_HADJ_EN": {
+      "Description": "Displays the recent cruise mode heading adjustment (plane only)",
+      "DisplayName": "CRS_HADJ_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_CRS_HADJ_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HADJ_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_CRS_HADJ_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HADJ_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_CRS_HEAD_EN": {
+      "Description": "Displays the locked heading when in cruise mode (plane only)",
+      "DisplayName": "CRS_HEAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_CRS_HEAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HEAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_CRS_HEAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HEAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_CURRENT2_EN": {
       "Description": "Displays 2nd battery current",
       "DisplayName": "CURRENT2_EN",
@@ -13389,30 +13437,6 @@
     "OSD1_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
-      }
-    },
-    "OSD1_DIST_EN": {
-      "Description": "Displays total distance flown",
-      "DisplayName": "DIST_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD1_DIST_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "DIST_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD1_DIST_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "DIST_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -13686,6 +13710,30 @@
     "OSD1_FLTMODE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "FLTMODE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_GNDTRVL_EN": {
+      "Description": "Displays ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_GNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_GNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -14118,6 +14166,30 @@
     "OSD1_POWER_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "POWER_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD1_RC_FS_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "RC_FS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_RC_FS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RC_FS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_RC_FS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RC_FS_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -15415,6 +15487,54 @@
         "low": "0"
       }
     },
+    "OSD2_CRS_HADJ_EN": {
+      "Description": "Displays the recent cruise mode heading adjustment (plane only)",
+      "DisplayName": "CRS_HADJ_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_CRS_HADJ_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HADJ_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_CRS_HADJ_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HADJ_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_CRS_HEAD_EN": {
+      "Description": "Displays the locked heading when in cruise mode (plane only)",
+      "DisplayName": "CRS_HEAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_CRS_HEAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HEAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_CRS_HEAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HEAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD2_CURRENT2_EN": {
       "Description": "Displays 2nd battery current",
       "DisplayName": "CURRENT2_EN",
@@ -15458,30 +15578,6 @@
     "OSD2_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
-      }
-    },
-    "OSD2_DIST_EN": {
-      "Description": "Displays total distance flown",
-      "DisplayName": "DIST_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD2_DIST_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "DIST_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD2_DIST_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "DIST_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -15755,6 +15851,30 @@
     "OSD2_FLTMODE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "FLTMODE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_GNDTRVL_EN": {
+      "Description": "Displays ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_GNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_GNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -16187,6 +16307,30 @@
     "OSD2_POWER_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "POWER_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_RC_FS_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "RC_FS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_RC_FS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RC_FS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_RC_FS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RC_FS_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -17484,6 +17628,54 @@
         "low": "0"
       }
     },
+    "OSD3_CRS_HADJ_EN": {
+      "Description": "Displays the recent cruise mode heading adjustment (plane only)",
+      "DisplayName": "CRS_HADJ_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_CRS_HADJ_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HADJ_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_CRS_HADJ_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HADJ_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_CRS_HEAD_EN": {
+      "Description": "Displays the locked heading when in cruise mode (plane only)",
+      "DisplayName": "CRS_HEAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_CRS_HEAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HEAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_CRS_HEAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HEAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_CURRENT2_EN": {
       "Description": "Displays 2nd battery current",
       "DisplayName": "CURRENT2_EN",
@@ -17527,30 +17719,6 @@
     "OSD3_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
-      }
-    },
-    "OSD3_DIST_EN": {
-      "Description": "Displays total distance flown",
-      "DisplayName": "DIST_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD3_DIST_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "DIST_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD3_DIST_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "DIST_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -17824,6 +17992,30 @@
     "OSD3_FLTMODE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "FLTMODE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_GNDTRVL_EN": {
+      "Description": "Displays ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_GNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_GNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -18256,6 +18448,30 @@
     "OSD3_POWER_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "POWER_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD3_RC_FS_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "RC_FS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_RC_FS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RC_FS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_RC_FS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RC_FS_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -19553,6 +19769,54 @@
         "low": "0"
       }
     },
+    "OSD4_CRS_HADJ_EN": {
+      "Description": "Displays the recent cruise mode heading adjustment (plane only)",
+      "DisplayName": "CRS_HADJ_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_CRS_HADJ_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HADJ_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_CRS_HADJ_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HADJ_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_CRS_HEAD_EN": {
+      "Description": "Displays the locked heading when in cruise mode (plane only)",
+      "DisplayName": "CRS_HEAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_CRS_HEAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HEAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_CRS_HEAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HEAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_CURRENT2_EN": {
       "Description": "Displays 2nd battery current",
       "DisplayName": "CURRENT2_EN",
@@ -19596,30 +19860,6 @@
     "OSD4_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
-      }
-    },
-    "OSD4_DIST_EN": {
-      "Description": "Displays total distance flown",
-      "DisplayName": "DIST_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD4_DIST_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "DIST_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD4_DIST_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "DIST_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -19893,6 +20133,30 @@
     "OSD4_FLTMODE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "FLTMODE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_GNDTRVL_EN": {
+      "Description": "Displays ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_GNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_GNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -20325,6 +20589,30 @@
     "OSD4_POWER_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "POWER_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD4_RC_FS_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "RC_FS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_RC_FS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RC_FS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_RC_FS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RC_FS_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -21622,6 +21910,54 @@
         "low": "0"
       }
     },
+    "OSD5_CRS_HADJ_EN": {
+      "Description": "Displays the recent cruise mode heading adjustment (plane only)",
+      "DisplayName": "CRS_HADJ_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CRS_HADJ_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HADJ_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CRS_HADJ_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HADJ_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_CRS_HEAD_EN": {
+      "Description": "Displays the locked heading when in cruise mode (plane only)",
+      "DisplayName": "CRS_HEAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_CRS_HEAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "CRS_HEAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_CRS_HEAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "CRS_HEAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD5_CURRENT2_EN": {
       "Description": "Displays 2nd battery current",
       "DisplayName": "CURRENT2_EN",
@@ -21665,30 +22001,6 @@
     "OSD5_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
-      "Range": {
-        "high": "15",
-        "low": "0"
-      }
-    },
-    "OSD5_DIST_EN": {
-      "Description": "Displays total distance flown",
-      "DisplayName": "DIST_EN",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "OSD5_DIST_X": {
-      "Description": "Horizontal position on screen",
-      "DisplayName": "DIST_X",
-      "Range": {
-        "high": "29",
-        "low": "0"
-      }
-    },
-    "OSD5_DIST_Y": {
-      "Description": "Vertical position on screen",
-      "DisplayName": "DIST_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -21962,6 +22274,30 @@
     "OSD5_FLTMODE_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "FLTMODE_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_GNDTRVL_EN": {
+      "Description": "Displays ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_GNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_GNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -22394,6 +22730,30 @@
     "OSD5_POWER_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "POWER_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_RC_FS_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "RC_FS_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_RC_FS_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "RC_FS_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_RC_FS_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "RC_FS_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -24433,6 +24793,28 @@
       },
       "User": "Standard"
     },
+    "AUTO_CLIMB_MAX": {
+      "Description": "Max climb rate in auto mode. Set to 0 to use TECS_CLMB_MAX",
+      "DisplayName": "Max climb rate in auto mode",
+      "Increment": "0.5",
+      "Range": {
+        "high": "20",
+        "low": "1"
+      },
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "AUTO_SINK_MAX": {
+      "Description": "Max sink rate in auto mode. Set to 0 to use TECS_SINK_MAX",
+      "DisplayName": "Max sink rate in auto mode",
+      "Increment": "0.5",
+      "Range": {
+        "high": "20",
+        "low": "1"
+      },
+      "Units": "m/s",
+      "User": "Standard"
+    },
     "CRASH_ACC_THRESH": {
       "Description": "X-Axis deceleration threshold to notify the crash detector that there was a possible impact which helps disarm the motor quickly after a crash. This value should be much higher than normal negative x-axis forces during normal flight, check flight log files to determine the average IMU.x values for your aircraft and motor type. Higher value means less sensative (triggers on higher impact). For electric planes that don't vibrate much during fight a value of 25 is good (that's about 2.5G). For petrol/nitro planes you'll want a higher value. Set to 0 to disable the collision detector.",
       "DisplayName": "Crash Deceleration Threshold",
@@ -24454,6 +24836,17 @@
       "Values": {
         "0": "Disabled"
       }
+    },
+    "CRUISE_YAW_RATE": {
+      "Description": "Max cruise yaw rate commanded with rudder channel if the rudder channel heading control is enabled in FLIGHT_OPTIONS",
+      "DisplayName": "Max cruise yaw rate commanded with rudder channel",
+      "Increment": "1",
+      "Range": {
+        "high": "360",
+        "low": "5"
+      },
+      "Units": "deg/s",
+      "User": "Standard"
     },
     "DSPOILER_AILMTCH": {
       "Description": "This scales down the inner flaps so less than full downwards range can be used for differential spoiler and full span ailerons, 100 is use full range, upwards travel is unaffected",
@@ -24593,6 +24986,7 @@
         "1": "Use centered throttle in Cruise or FBWB to indicate trim airspeed",
         "10": "Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL",
         "11": "Disable suppression of fixed wing rate gains in ground mode",
+        "18": "Cruise heading control with rudder channel",
         "19": "Enable manual altitude control in RTL mode",
         "2": "Disable attitude check for takeoff arming",
         "20": "Climb first in RTL only during RC failsafe",
@@ -25461,6 +25855,17 @@
         "3": "OnlyForGoAround"
       }
     },
+    "RTL_CLIMB_MAX": {
+      "Description": "Max climb rate in RTL mode. Set to 0 to use TECS_CLMB_MAX",
+      "DisplayName": "Max climb rate in RTL mode",
+      "Increment": "0.5",
+      "Range": {
+        "high": "20",
+        "low": "1"
+      },
+      "Units": "m/s",
+      "User": "Standard"
+    },
     "RTL_CLIMB_MIN": {
       "Description": "The vehicle will climb this many m during the initial climb portion of the RTL. During this time the roll will be limited to RTL_LVL_RLL_LMT degrees.",
       "DisplayName": "RTL minimum climb",
@@ -25492,6 +25897,17 @@
         "low": "-32767"
       },
       "Units": "m",
+      "User": "Standard"
+    },
+    "RTL_SINK_MAX": {
+      "Description": "Max sink rate in RTL mode. Set to 0 to use TECS_SINK_MAX",
+      "DisplayName": "Max sink rate in RTL mode",
+      "Increment": "0.5",
+      "Range": {
+        "high": "20",
+        "low": "1"
+      },
+      "Units": "m/s",
       "User": "Standard"
     },
     "RUDDER_ONLY": {
@@ -26248,7 +26664,7 @@
         "14": "Ignore forward flight angle limits in Qmodes",
         "15": "ThrLandControl",
         "16": "DisableApproach",
-        "17": "EnableLandResponsition",
+        "17": "EnableLandReposition",
         "18": "ARMVtol",
         "19": "CompleteTransition if Q_TRANS_FAIL",
         "2": "Allow FW Land",
@@ -39133,38 +39549,140 @@
     }
   },
   "STAT": {
+    "STAT_ASPD_AVG": {
+      "Description": "Average air speed",
+      "DisplayName": "Average air speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_ASPD_MAX": {
+      "Description": "Maximum air speed",
+      "DisplayName": "Maximum air speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
     "STAT_BOOTCNT": {
       "Description": "Number of times board has been booted",
       "DisplayName": "Boot Count",
       "ReadOnly": "True",
       "User": "Standard"
     },
-    "STAT_FLTDIST": {
-      "Description": "Total FlightDistance (meter)",
-      "DisplayName": "Total FlightDistance",
+    "STAT_CURRENT_AVG": {
+      "Description": "Average current while flying",
+      "DisplayName": "Average current while flying",
+      "ReadOnly": "True",
+      "Units": "A",
+      "User": "Standard"
+    },
+    "STAT_CURRENT_MAX": {
+      "Description": "Maximum current while flying",
+      "DisplayName": "Maximum current while flying",
+      "ReadOnly": "True",
+      "Units": "A",
+      "User": "Standard"
+    },
+    "STAT_FLT_ENERGY": {
+      "Description": "Total consumed energy while flying",
+      "DisplayName": "Total consumed energy while flying",
+      "ReadOnly": "True",
+      "Units": "Wh",
+      "User": "Standard"
+    },
+    "STAT_FLT_TIME": {
+      "Description": "Total flight time",
+      "DisplayName": "Total flight time",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "STAT_GSPD_AVG": {
+      "Description": "Average ground speed",
+      "DisplayName": "Average ground speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_GSPD_MAX": {
+      "Description": "Maximum ground speed",
+      "DisplayName": "Maximum ground speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_HOMEALT_MAX": {
+      "Description": "Maximum home distance",
+      "DisplayName": "Maximum relative altitude",
       "ReadOnly": "True",
       "Units": "m",
       "User": "Standard"
     },
-    "STAT_FLTTIME": {
-      "Description": "Total FlightTime (seconds)",
-      "DisplayName": "Total FlightTime",
+    "STAT_HOMEDST_MAX": {
+      "Description": "Maximum home distance",
+      "DisplayName": "Maximum home distance",
       "ReadOnly": "True",
-      "Units": "s",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_LOAD": {
+      "Description": "Set to 1 then set stat values then reboot or set back to 0",
+      "DisplayName": "Set to 1 then set stat values then reboot or set back to 0",
+      "User": "Standard"
+    },
+    "STAT_POWER_AVG": {
+      "Description": "Average power while flying",
+      "DisplayName": "Average power while flying",
+      "ReadOnly": "True",
+      "Units": "W",
+      "User": "Standard"
+    },
+    "STAT_POWER_MAX": {
+      "Description": "Maximum power while flying",
+      "DisplayName": "Maximum power while flying",
+      "ReadOnly": "True",
+      "Units": "W",
       "User": "Standard"
     },
     "STAT_RESET": {
       "Description": "Seconds since January 1st 2016 (Unix epoch+1451606400) since statistics reset (set to 0 to reset statistics)",
-      "DisplayName": "Statistics Reset Time",
+      "DisplayName": "Statistics reset time",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "STAT_RUN_TIME": {
+      "Description": "Total time autopilot has run",
+      "DisplayName": "Total run_time",
       "ReadOnly": "True",
       "Units": "s",
       "User": "Standard"
     },
-    "STAT_RUNTIME": {
-      "Description": "Total time autopilot has run",
-      "DisplayName": "Total RunTime",
+    "STAT_TRAVEL_AIR": {
+      "Description": "Total air distance traveled",
+      "DisplayName": "Total air distance traveled",
       "ReadOnly": "True",
-      "Units": "s",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_TRAVEL_GND": {
+      "Description": "Total ground distance traveled",
+      "DisplayName": "Total ground distance traveled",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_WSPD_AVG": {
+      "Description": "Average wind speed",
+      "DisplayName": "Average wind speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "STAT_WSPD_MAX": {
+      "Description": "Maximum wind speed",
+      "DisplayName": "Maximum wind speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
       "User": "Standard"
     }
   },

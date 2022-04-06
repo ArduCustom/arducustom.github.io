@@ -1592,7 +1592,7 @@ ARSPD\_USE: Airspeed use
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Enables airspeed use for automatic throttle modes and replaces control from THR\_TRIM\. Continues to display and log airspeed if set to 0\. Uses airspeed for control if set to 1\. Only uses airspeed when throttle \= 0 if set to 2 \(useful for gliders with airspeed sensors behind propellers\)\.
+This parameter is not used by this vehicle\. Always set to 0\.
 
 
 +---------------------------------+
@@ -1661,16 +1661,6 @@ ARSPD\_PIN: Airspeed pin
 The pin number that the airspeed sensor is connected to for analog sensors\. Set to 15 on the Pixhawk for the analog airspeed port\. 
 
 
-.. _ARSPD_AUTOCAL:
-
-ARSPD\_AUTOCAL: Automatic airspeed ratio calibration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Enables automatic adjustment of ARSPD\_RATIO during a calibration flight based on estimation of ground speed and true airspeed\. New ratio saved every 2 minutes if change is \> 5\%\. Should not be left enabled\.
-
-
 .. _ARSPD_TUBE_ORDER:
 
 ARSPD\_TUBE\_ORDER: Control pitot tube order
@@ -1701,8 +1691,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD_SKIP_CAL:
 
-ARSPD\_SKIP\_CAL: Skip airspeed calibration on startup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD\_SKIP\_CAL: Skip airspeed offset calibration on startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -1796,7 +1786,7 @@ ARSPD\_OPTIONS: Airspeed options bitmask
 
 | *Note: This parameter is for advanced users*
 
-Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +--------------------------------------+
@@ -1824,7 +1814,7 @@ ARSPD\_WIND\_MAX: Maximum airspeed and ground speed difference
 
 | *Note: This parameter is for advanced users*
 
-If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy\. Using ARSPD\_OPTION this health value can be used to disable the sensor\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-------------------+
@@ -1843,7 +1833,7 @@ ARSPD\_WIND\_WARN: Airspeed and ground speed difference that gives a warning
 
 | *Note: This parameter is for advanced users*
 
-If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning\. If 0 ARSPD\_WIND\_MAX is used\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-------------------+
@@ -1914,7 +1904,7 @@ ARSPD2\_USE: Enable use of 2nd airspeed sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-use airspeed for flight control\. When set to 0 airspeed sensor can be logged and displayed on a GCS but won\'t be used for flight\. When set to 1 it will be logged and used\. When set to 2 it will be only used when the throttle is zero\, which can be useful in gliders with airspeed sensors behind a propeller
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +---------------------------------+
@@ -1990,7 +1980,7 @@ ARSPD2\_AUTOCAL: Automatic airspeed ratio calibration for 2nd airspeed sensor
 
 | *Note: This parameter is for advanced users*
 
-If this is enabled then the autopilot will automatically adjust the ARSPD\_RATIO during flight\, based upon an estimation filter using ground speed and true airspeed\. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5\%\. This option should be enabled for a calibration flight then disabled again when calibration is complete\. Leaving it enabled all the time is not recommended\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 .. _ARSPD2_TUBE_ORDR:
@@ -2023,8 +2013,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD2_SKIP_CAL:
 
-ARSPD2\_SKIP\_CAL: Skip airspeed calibration on startup for 2nd sensor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD2\_SKIP\_CAL: Skip airspeed offset calibration on startup for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 

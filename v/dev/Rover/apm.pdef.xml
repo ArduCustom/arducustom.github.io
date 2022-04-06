@@ -46,8 +46,10 @@
           <value code="8">Left Wheel</value>
           <value code="16">Right Wheel</value>
           <value code="32">Sailboat Heel</value>
+          <value code="64">Velocity North</value>
+          <value code="128">Velocity East</value>
         </values>
-        <field name="Bitmask">0:Steering,1:Throttle,2:Pitch,3:Left Wheel,4:Right Wheel,5:Sailboat Heel</field>
+        <field name="Bitmask">0:Steering,1:Throttle,2:Pitch,3:Left Wheel,4:Right Wheel,5:Sailboat Heel,6:Velocity North,7:Velocity East</field>
       </param>
       <param humanName="Auto mode trigger pin" name="Rover:AUTO_TRIGGER_PIN" documentation="pin number to use to enable the throttle in auto mode. If set to -1 then don't use a trigger, otherwise this is a pin number which if held low in auto mode will enable the motor to run. If the switch is released while in AUTO then the motor will stop again. This can be used in combination with INITIAL_MODE to give a 'press button to start' rover with no receiver." user="Standard">
         <values>
@@ -344,12 +346,15 @@
         <field name="Range">0 5</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Rover Failsafe Options" name="Rover:FS_OPTIONS" documentation="Bitmask to enable Rover failsafe options" user="Advanced">
+      <param humanName="Failsafe Options" name="Rover:FS_OPTIONS" documentation="Bitmask to enable failsafe options" user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Failsafe enabled in Hold mode</value>
         </values>
         <field name="Bitmask">0:Failsafe enabled in Hold mode</field>
+      </param>
+      <param humanName="Guided mode options" name="Rover:GUID_OPTIONS" documentation="Options that can be applied to change guided mode behaviour" user="Advanced">
+        <field name="Bitmask">6:SCurves used for navigation</field>
       </param>
       <param humanName="Channel 7 option" name="Rover:CH7_OPTION" documentation="What to do use channel 7 for" user="Standard">
         <values>
@@ -661,7 +666,7 @@
       <param humanName="Airspeed ID" name="ARSPD_DEVID" documentation="Airspeed sensor ID, taking into account its type, bus and instance" user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Airspeed use" name="ARSPD_USE" documentation="Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers)." user="Standard">
+      <param humanName="Airspeed use" name="ARSPD_USE" documentation="This parameter is not used by this vehicle. Always set to 0." user="Standard">
         <values>
           <value code="0">DoNotUse</value>
           <value code="1">Use</value>
@@ -676,7 +681,7 @@
       </param>
       <param humanName="Airspeed pin" name="ARSPD_PIN" documentation="The pin number that the airspeed sensor is connected to for analog sensors. Set to 15 on the Pixhawk for the analog airspeed port. " user="Advanced">
 </param>
-      <param humanName="Automatic airspeed ratio calibration" name="ARSPD_AUTOCAL" documentation="Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is &gt; 5%. Should not be left enabled." user="Advanced">
+      <param name="ARSPD_AUTOCAL" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
 </param>
       <param humanName="Control pitot tube order" name="ARSPD_TUBE_ORDER" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
         <values>
@@ -685,7 +690,7 @@
           <value code="2">Auto Detect</value>
         </values>
       </param>
-      <param humanName="Skip airspeed calibration on startup" name="ARSPD_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
+      <param humanName="Skip airspeed offset calibration on startup" name="ARSPD_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
           <value code="1">Enable</value>
@@ -706,14 +711,14 @@
           <value code="1">2ndSensor</value>
         </values>
       </param>
-      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction" user="Advanced">
+      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
         <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</field>
       </param>
-      <param humanName="Maximum airspeed and ground speed difference" name="ARSPD_WIND_MAX" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor." user="Advanced">
+      <param humanName="Maximum airspeed and ground speed difference" name="ARSPD_WIND_MAX" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
       </param>
-      <param humanName="Airspeed and ground speed difference that gives a warning" name="ARSPD_WIND_WARN" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used." user="Advanced">
+      <param humanName="Airspeed and ground speed difference that gives a warning" name="ARSPD_WIND_WARN" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
       </param>
@@ -737,7 +742,7 @@
           <value code="15">ASP5033</value>
         </values>
       </param>
-      <param humanName="Enable use of 2nd airspeed sensor" name="ARSPD2_USE" documentation="use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller" user="Standard">
+      <param humanName="Enable use of 2nd airspeed sensor" name="ARSPD2_USE" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Standard">
         <values>
           <value code="0">Don't Use</value>
           <value code="1">use</value>
@@ -752,7 +757,7 @@
       </param>
       <param humanName="Airspeed pin for 2nd airspeed sensor" name="ARSPD2_PIN" documentation="Pin number indicating location of analog airspeed sensors. Pixhawk/Cube if set to 15. " user="Advanced">
 </param>
-      <param humanName="Automatic airspeed ratio calibration for 2nd airspeed sensor" name="ARSPD2_AUTOCAL" documentation="If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended." user="Advanced">
+      <param humanName="Automatic airspeed ratio calibration for 2nd airspeed sensor" name="ARSPD2_AUTOCAL" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
 </param>
       <param humanName="Control pitot tube order of 2nd airspeed sensor" name="ARSPD2_TUBE_ORDR" documentation="This parameter allows you to control whether the order in which the tubes are attached to your pitot tube matters. If you set this to 0 then the first (often the top) connector on the sensor needs to be the stagnation pressure (the pressure at the tip of the pitot tube). If set to 1 then the second (often the bottom) connector needs to be the stagnation pressure. If set to 2 (the default) then the airspeed driver will accept either order. The reason you may wish to specify the order is it will allow your airspeed sensor to detect if the aircraft is receiving excessive pressure on the static port compared to the stagnation port such as during a stall, which would otherwise be seen as a positive airspeed." user="Advanced">
         <values>
@@ -761,7 +766,7 @@
           <value code="2">Auto Detect</value>
         </values>
       </param>
-      <param humanName="Skip airspeed calibration on startup for 2nd sensor" name="ARSPD2_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
+      <param humanName="Skip airspeed offset calibration on startup for 2nd sensor" name="ARSPD2_SKIP_CAL" documentation="This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot." user="Advanced">
         <values>
           <value code="0">Disable</value>
           <value code="1">Enable</value>
@@ -1032,6 +1037,12 @@
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
         <field name="Range">1 10</field>
+      </param>
+      <param humanName="Avoidance behaviour" name="AVOID_BEHAVE" documentation="Avoidance behaviour (slide or stop)" user="Standard">
+        <values>
+          <value code="0">Slide</value>
+          <value code="1">Stop</value>
+        </values>
       </param>
       <param humanName="Avoidance maximum backup speed" name="AVOID_BACKUP_SPD" documentation="Maximum speed that will be used to back away from obstacles in GPS modes (m/s). Set zero to disable" user="Standard">
         <field name="Units">m/s</field>
@@ -7149,27 +7160,6 @@
         <field name="Bitmask">0:EnableTelemetryMode, 1: DisableDJIWorkarounds, 2:EnableBTFLFonts</field>
       </param>
     </parameters>
-    <parameters name="NAVL1_">
-      <param humanName="L1 control period" name="NAVL1_PERIOD" documentation="Period in seconds of L1 tracking loop. This parameter is the primary control for agressiveness of turns in auto mode. This needs to be larger for less responsive airframes. The default of 20 is quite conservative, but for most RC aircraft will lead to reasonable flight. For smaller more agile aircraft a value closer to 15 is appropriate, or even as low as 10 for some very agile aircraft. When tuning, change this value in small increments, as a value that is much too small (say 5 or 10 below the right value) can lead to very radical turns, and a risk of stalling." user="Standard">
-        <field name="Units">s</field>
-        <field name="UnitText">seconds</field>
-        <field name="Range">1 60</field>
-        <field name="Increment">1</field>
-      </param>
-      <param humanName="L1 control damping ratio" name="NAVL1_DAMPING" documentation="Damping ratio for L1 control. Increase this in increments of 0.05 if you are getting overshoot in path tracking. You should not need a value below 0.7 or above 0.85." user="Advanced">
-        <field name="Range">0.6 1.0</field>
-        <field name="Increment">0.05</field>
-      </param>
-      <param humanName="L1 control crosstrack integrator gain" name="NAVL1_XTRACK_I" documentation="Crosstrack error integrator gain. This gain is applied to the crosstrack error to ensure it converges to zero. Set to zero to disable. Smaller values converge slower, higher values will cause crosstrack error oscillation." user="Advanced">
-        <field name="Range">0 0.1</field>
-        <field name="Increment">0.01</field>
-      </param>
-      <param humanName="Loiter Radius Bank Angle Limit" name="NAVL1_LIM_BANK" documentation="The sealevel bank angle limit for a continous loiter. (Used to calculate airframe loading limits at higher altitudes). Setting to 0, will instead just scale the loiter radius directly" user="Advanced">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 89</field>
-      </param>
-    </parameters>
     <parameters name="NTF_">
       <param humanName="LED Brightness" name="NTF_LED_BRIGHT" documentation="Select the RGB LED brightness level. When USB is connected brightness will never be higher than low regardless of the setting." user="Advanced">
         <values>
@@ -7822,16 +7812,16 @@
       <param humanName="XTRACK_Y" name="OSD1_XTRACK_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="DIST_EN" name="OSD1_DIST_EN" documentation="Displays total distance flown">
+      <param humanName="GNDTRVL_EN" name="OSD1_GNDTRVL_EN" documentation="Displays ground distance traveled">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="DIST_X" name="OSD1_DIST_X" documentation="Horizontal position on screen">
+      <param humanName="GNDTRVL_X" name="OSD1_GNDTRVL_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="DIST_Y" name="OSD1_DIST_Y" documentation="Vertical position on screen">
+      <param humanName="GNDTRVL_Y" name="OSD1_GNDTRVL_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="STATS_EN" name="OSD1_STATS_EN" documentation="Displays flight stats">
@@ -8470,6 +8460,42 @@
       <param humanName="PEAK_PR_Y" name="OSD1_PEAK_PR_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="CRS_HEAD_EN" name="OSD1_CRS_HEAD_EN" documentation="Displays the locked heading when in cruise mode (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HEAD_X" name="OSD1_CRS_HEAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HEAD_Y" name="OSD1_CRS_HEAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRS_HADJ_EN" name="OSD1_CRS_HADJ_EN" documentation="Displays the recent cruise mode heading adjustment (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HADJ_X" name="OSD1_CRS_HADJ_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HADJ_Y" name="OSD1_CRS_HADJ_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_FS_EN" name="OSD1_RC_FS_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_FS_X" name="OSD1_RC_FS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_FS_Y" name="OSD1_RC_FS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -8856,16 +8882,16 @@
       <param humanName="XTRACK_Y" name="OSD2_XTRACK_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="DIST_EN" name="OSD2_DIST_EN" documentation="Displays total distance flown">
+      <param humanName="GNDTRVL_EN" name="OSD2_GNDTRVL_EN" documentation="Displays ground distance traveled">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="DIST_X" name="OSD2_DIST_X" documentation="Horizontal position on screen">
+      <param humanName="GNDTRVL_X" name="OSD2_GNDTRVL_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="DIST_Y" name="OSD2_DIST_Y" documentation="Vertical position on screen">
+      <param humanName="GNDTRVL_Y" name="OSD2_GNDTRVL_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="STATS_EN" name="OSD2_STATS_EN" documentation="Displays flight stats">
@@ -9504,6 +9530,42 @@
       <param humanName="PEAK_PR_Y" name="OSD2_PEAK_PR_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="CRS_HEAD_EN" name="OSD2_CRS_HEAD_EN" documentation="Displays the locked heading when in cruise mode (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HEAD_X" name="OSD2_CRS_HEAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HEAD_Y" name="OSD2_CRS_HEAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRS_HADJ_EN" name="OSD2_CRS_HADJ_EN" documentation="Displays the recent cruise mode heading adjustment (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HADJ_X" name="OSD2_CRS_HADJ_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HADJ_Y" name="OSD2_CRS_HADJ_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_FS_EN" name="OSD2_RC_FS_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_FS_X" name="OSD2_RC_FS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_FS_Y" name="OSD2_RC_FS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD3_">
       <param humanName="Enable screen" name="OSD3_ENABLE" documentation="Enable this screen" user="Standard">
@@ -9890,16 +9952,16 @@
       <param humanName="XTRACK_Y" name="OSD3_XTRACK_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="DIST_EN" name="OSD3_DIST_EN" documentation="Displays total distance flown">
+      <param humanName="GNDTRVL_EN" name="OSD3_GNDTRVL_EN" documentation="Displays ground distance traveled">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="DIST_X" name="OSD3_DIST_X" documentation="Horizontal position on screen">
+      <param humanName="GNDTRVL_X" name="OSD3_GNDTRVL_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="DIST_Y" name="OSD3_DIST_Y" documentation="Vertical position on screen">
+      <param humanName="GNDTRVL_Y" name="OSD3_GNDTRVL_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="STATS_EN" name="OSD3_STATS_EN" documentation="Displays flight stats">
@@ -10538,6 +10600,42 @@
       <param humanName="PEAK_PR_Y" name="OSD3_PEAK_PR_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="CRS_HEAD_EN" name="OSD3_CRS_HEAD_EN" documentation="Displays the locked heading when in cruise mode (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HEAD_X" name="OSD3_CRS_HEAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HEAD_Y" name="OSD3_CRS_HEAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRS_HADJ_EN" name="OSD3_CRS_HADJ_EN" documentation="Displays the recent cruise mode heading adjustment (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HADJ_X" name="OSD3_CRS_HADJ_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HADJ_Y" name="OSD3_CRS_HADJ_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_FS_EN" name="OSD3_RC_FS_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_FS_X" name="OSD3_RC_FS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_FS_Y" name="OSD3_RC_FS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10924,16 +11022,16 @@
       <param humanName="XTRACK_Y" name="OSD4_XTRACK_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="DIST_EN" name="OSD4_DIST_EN" documentation="Displays total distance flown">
+      <param humanName="GNDTRVL_EN" name="OSD4_GNDTRVL_EN" documentation="Displays ground distance traveled">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="DIST_X" name="OSD4_DIST_X" documentation="Horizontal position on screen">
+      <param humanName="GNDTRVL_X" name="OSD4_GNDTRVL_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="DIST_Y" name="OSD4_DIST_Y" documentation="Vertical position on screen">
+      <param humanName="GNDTRVL_Y" name="OSD4_GNDTRVL_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="STATS_EN" name="OSD4_STATS_EN" documentation="Displays flight stats">
@@ -11572,6 +11670,42 @@
       <param humanName="PEAK_PR_Y" name="OSD4_PEAK_PR_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="CRS_HEAD_EN" name="OSD4_CRS_HEAD_EN" documentation="Displays the locked heading when in cruise mode (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HEAD_X" name="OSD4_CRS_HEAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HEAD_Y" name="OSD4_CRS_HEAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRS_HADJ_EN" name="OSD4_CRS_HADJ_EN" documentation="Displays the recent cruise mode heading adjustment (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HADJ_X" name="OSD4_CRS_HADJ_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HADJ_Y" name="OSD4_CRS_HADJ_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_FS_EN" name="OSD4_RC_FS_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_FS_X" name="OSD4_RC_FS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_FS_Y" name="OSD4_RC_FS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD5_">
       <param humanName="Enable screen" name="OSD5_ENABLE" documentation="Enable this screen" user="Standard">
@@ -11958,16 +12092,16 @@
       <param humanName="XTRACK_Y" name="OSD5_XTRACK_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="DIST_EN" name="OSD5_DIST_EN" documentation="Displays total distance flown">
+      <param humanName="GNDTRVL_EN" name="OSD5_GNDTRVL_EN" documentation="Displays ground distance traveled">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="DIST_X" name="OSD5_DIST_X" documentation="Horizontal position on screen">
+      <param humanName="GNDTRVL_X" name="OSD5_GNDTRVL_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="DIST_Y" name="OSD5_DIST_Y" documentation="Vertical position on screen">
+      <param humanName="GNDTRVL_Y" name="OSD5_GNDTRVL_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="STATS_EN" name="OSD5_STATS_EN" documentation="Displays flight stats">
@@ -12604,6 +12738,42 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="PEAK_PR_Y" name="OSD5_PEAK_PR_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRS_HEAD_EN" name="OSD5_CRS_HEAD_EN" documentation="Displays the locked heading when in cruise mode (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HEAD_X" name="OSD5_CRS_HEAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HEAD_Y" name="OSD5_CRS_HEAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="CRS_HADJ_EN" name="OSD5_CRS_HADJ_EN" documentation="Displays the recent cruise mode heading adjustment (plane only)">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="CRS_HADJ_X" name="OSD5_CRS_HADJ_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="CRS_HADJ_Y" name="OSD5_CRS_HADJ_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="RC_FS_EN" name="OSD5_RC_FS_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="RC_FS_X" name="OSD5_RC_FS_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="RC_FS_Y" name="OSD5_RC_FS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -13259,6 +13429,43 @@
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
         <field name="Range">0 500</field>
+      </param>
+    </parameters>
+    <parameters name="PSC">
+      <param humanName="Position controller P gain" name="PSC_POS_P" documentation="Position controller P gain.  Converts the distance to the target location into a desired speed which is then passed to the loiter latitude rate controller" user="Standard">
+        <field name="Range">0.500 2.000</field>
+      </param>
+      <param humanName="Velocity (horizontal) P gain" name="PSC_VEL_P" documentation="Velocity (horizontal) P gain.  Converts the difference between desired and actual velocity to a target acceleration" user="Advanced">
+        <field name="Range">0.1 6.0</field>
+        <field name="Increment">0.1</field>
+      </param>
+      <param humanName="Velocity (horizontal) I gain" name="PSC_VEL_I" documentation="Velocity (horizontal) I gain.  Corrects long-term difference between desired and actual velocity to a target acceleration" user="Advanced">
+        <field name="Range">0.02 1.00</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="Velocity (horizontal) D gain" name="PSC_VEL_D" documentation="Velocity (horizontal) D gain.  Corrects short-term changes in velocity" user="Advanced">
+        <field name="Range">0.00 1.00</field>
+        <field name="Increment">0.001</field>
+      </param>
+      <param humanName="Velocity (horizontal) integrator maximum" name="PSC_VEL_IMAX" documentation="Velocity (horizontal) integrator maximum.  Constrains the target acceleration that the I gain will output" user="Advanced">
+        <field name="Range">0 4500</field>
+        <field name="Increment">10</field>
+        <field name="Units">cm/s/s</field>
+        <field name="UnitText">centimeters per square second</field>
+      </param>
+      <param humanName="Velocity (horizontal) input filter" name="PSC_VEL_FLTE" documentation="Velocity (horizontal) input filter.  This filter (in Hz) is applied to the input for P and I terms" user="Advanced">
+        <field name="Range">0 100</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+      </param>
+      <param humanName="Velocity (horizontal) input filter" name="PSC_VEL_FLTD" documentation="Velocity (horizontal) input filter.  This filter (in Hz) is applied to the input for D term" user="Advanced">
+        <field name="Range">0 100</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+      </param>
+      <param humanName="Velocity (horizontal) feed forward gain" name="PSC_VEL_FF" documentation="Velocity (horizontal) feed forward gain.  Converts the difference between desired velocity to a target acceleration" user="Advanced">
+        <field name="Range">0 6</field>
+        <field name="Increment">0.01</field>
       </param>
     </parameters>
     <parameters name="RALLY_">
@@ -20442,26 +20649,97 @@
       <param humanName="Boot Count" name="STAT_BOOTCNT" documentation="Number of times board has been booted" user="Standard">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Total FlightTime" name="STAT_FLTTIME" documentation="Total FlightTime (seconds)" user="Standard">
+      <param humanName="Total flight time" name="STAT_FLT_TIME" documentation="Total flight time" user="Standard">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Total RunTime" name="STAT_RUNTIME" documentation="Total time autopilot has run" user="Standard">
+      <param humanName="Total run_time" name="STAT_RUN_TIME" documentation="Total time autopilot has run" user="Standard">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Statistics Reset Time" name="STAT_RESET" documentation="Seconds since January 1st 2016 (Unix epoch+1451606400) since statistics reset (set to 0 to reset statistics)" user="Standard">
+      <param humanName="Statistics reset time" name="STAT_RESET" documentation="Seconds since January 1st 2016 (Unix epoch+1451606400) since statistics reset (set to 0 to reset statistics)" user="Standard">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
-        <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Total FlightDistance" name="STAT_FLTDIST" documentation="Total FlightDistance (meter)" user="Standard">
+      <param humanName="Total ground distance traveled" name="STAT_TRAVEL_GND" documentation="Total ground distance traveled" user="Standard">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
         <field name="ReadOnly">True</field>
       </param>
+      <param humanName="Total consumed energy while flying" name="STAT_FLT_ENERGY" documentation="Total consumed energy while flying" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Total air distance traveled" name="STAT_TRAVEL_AIR" documentation="Total air distance traveled" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Average ground speed" name="STAT_GSPD_AVG" documentation="Average ground speed" user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum ground speed" name="STAT_GSPD_MAX" documentation="Maximum ground speed" user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Average air speed" name="STAT_ASPD_AVG" documentation="Average air speed" user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum air speed" name="STAT_ASPD_MAX" documentation="Maximum air speed" user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Average wind speed" name="STAT_WSPD_AVG" documentation="Average wind speed" user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum wind speed" name="STAT_WSPD_MAX" documentation="Maximum wind speed" user="Standard">
+        <field name="Units">m/s</field>
+        <field name="UnitText">meters per second</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum home distance" name="STAT_HOMEDST_MAX" documentation="Maximum home distance" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum relative altitude" name="STAT_HOMEALT_MAX" documentation="Maximum home distance" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Average current while flying" name="STAT_CURRENT_AVG" documentation="Average current while flying" user="Standard">
+        <field name="Units">A</field>
+        <field name="UnitText">ampere</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum current while flying" name="STAT_CURRENT_MAX" documentation="Maximum current while flying" user="Standard">
+        <field name="Units">A</field>
+        <field name="UnitText">ampere</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Average power while flying" name="STAT_POWER_AVG" documentation="Average power while flying" user="Standard">
+        <field name="Units">W</field>
+        <field name="UnitText">watt</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum power while flying" name="STAT_POWER_MAX" documentation="Maximum power while flying" user="Standard">
+        <field name="Units">W</field>
+        <field name="UnitText">watt</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Set to 1 then set stat values then reboot or set back to 0" name="STAT_LOAD" documentation="Set to 1 then set stat values then reboot or set back to 0" user="Standard">
+</param>
     </parameters>
     <parameters name="TRQD_">
       <param humanName="Torqeedo connection type" name="TRQD_TYPE" documentation="Torqeedo connection type" user="Standard">
@@ -20864,31 +21142,33 @@
         <field name="Range">0 100</field>
         <field name="Increment">0.1</field>
       </param>
-      <param humanName="Waypoint overshoot maximum" name="WP_OVERSHOOT" documentation="Waypoint overshoot maximum in meters.  The vehicle will attempt to stay within this many meters of the track as it completes one waypoint and moves to the next." user="Standard">
-        <field name="Units">m</field>
-        <field name="UnitText">meters</field>
-        <field name="Range">0 10</field>
+      <param humanName="Waypoint acceleration" name="WP_ACCEL" documentation="Waypoint acceleration.  If zero then ATC_ACCEL_MAX is used" user="Standard">
+        <field name="Units">m/s/s</field>
+        <field name="UnitText">meters per square second</field>
+        <field name="Range">0 100</field>
         <field name="Increment">0.1</field>
       </param>
-      <param humanName="Waypoint Pivot Angle" name="WP_PIVOT_ANGLE" documentation="Pivot when the difference between the vehicle's heading and its target heading is more than this many degrees. Set to zero to disable pivot turns. Note: This parameter should be greater than 10 degrees for pivot turns to work." user="Standard">
+      <param humanName="Waypoint jerk" name="WP_JERK" documentation="Waypoint jerk (change in acceleration).  If zero then jerk is same as acceleration" user="Standard">
+        <field name="Units">m/s/s/s</field>
+        <field name="UnitText">meters per cubic second</field>
+        <field name="Range">0 100</field>
+        <field name="Increment">0.1</field>
+      </param>
+    </parameters>
+    <parameters name="WP_PIVOT_">
+      <param humanName="Pivot Angle" name="WP_PIVOT_ANGLE" documentation="Pivot when the difference between the vehicle's heading and its target heading is more than this many degrees. Set to zero to disable pivot turns.  This parameter should be greater than 5 degrees for pivot turns to work." user="Standard">
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
         <field name="Range">0 360</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Waypoint Pivot Turn Rate" name="WP_PIVOT_RATE" documentation="Turn rate during pivot turns" user="Standard">
+      <param humanName="Pivot Turn Rate" name="WP_PIVOT_RATE" documentation="Turn rate during pivot turns" user="Standard">
         <field name="Units">deg/s</field>
         <field name="UnitText">degrees per second</field>
         <field name="Range">0 360</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Waypoint speed minimum" name="WP_SPEED_MIN" documentation="Vehicle will not slow below this speed for corners.  Should be set to boat's plane speed.  Does not apply to pivot turns." user="Standard">
-        <field name="Units">m/s</field>
-        <field name="UnitText">meters per second</field>
-        <field name="Range">0 100</field>
-        <field name="Increment">0.1</field>
-      </param>
-      <param humanName="Delay after pivot turn" name="WP_PIVOT_DELAY" documentation="Waiting time after pivot turn" user="Standard">
+      <param humanName="Pivot Delay" name="WP_PIVOT_DELAY" documentation="Vehicle waits this many seconds after completing a pivot turn before proceeding" user="Standard">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
         <field name="Range">0 60</field>
