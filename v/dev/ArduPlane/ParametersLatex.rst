@@ -161,18 +161,37 @@ KFF\_THRAT2PTCH: Throttle ratio above trim throttle to pitch mix
 Pitch up to add in proportion to throttle above trim throttle\. TRIM\_THROTTLE throttle and under will add 0\° to the pitch target\. 100\% throttle will add this number of degrees to the pitch target\.
 
 
-+-----------+----------+
-| Increment | Range    |
-+===========+==========+
-| 0.1       | -20 - 20 |
-+-----------+----------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 0.1       | -20 - 20 | degrees |
++-----------+----------+---------+
 
 
 
 
-.. _KFF_THRAT2ELEV:
+.. _KFF_THRAT2PTCHCV:
 
-KFF\_THRAT2ELEV: Throttle ratio above trim throttle to elevator PWM offset mix
+KFF\_THRAT2PTCHCV: Throttle above trim throttle to pitch mix curve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Throttle above trim throttle to pitch mix curve
+
+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| 1         | -100 - 100 | percent |
++-----------+------------+---------+
+
+
+
+
+.. _MIX_THRAT2ELEV:
+
+MIX\_THRAT2ELEV: Throttle ratio above trim throttle to elevator PWM offset mix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
@@ -180,18 +199,37 @@ KFF\_THRAT2ELEV: Throttle ratio above trim throttle to elevator PWM offset mix
 The elevator and elevon servos will be offset by that much at 100\% throttle
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| PWM       | -500 - 500 |
-+-----------+------------+
++------------+---------------------+
+| Range      | Units               |
++============+=====================+
+| -500 - 500 | PWM in microseconds |
++------------+---------------------+
 
 
 
 
-.. _KFF_FLAP2ELEV:
+.. _MIX_THRAT2ELEVCV:
 
-KFF\_FLAP2ELEV: Flap position to elevator PWM offset mix
+MIX\_THRAT2ELEVCV: Throttle above trim throttle to elevon curve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Throttle above trim throttle to elevon curve
+
+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| 1         | -100 - 100 | percent |
++-----------+------------+---------+
+
+
+
+
+.. _MIX_FLAP2ELEV:
+
+MIX\_FLAP2ELEV: Flap position to elevator PWM offset mix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
@@ -199,23 +237,42 @@ KFF\_FLAP2ELEV: Flap position to elevator PWM offset mix
 The elevator and elevon servos will be offset by that much at 100\% flaps
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| PWM       | -500 - 500 |
-+-----------+------------+
++------------+---------------------+
+| Range      | Units               |
++============+=====================+
+| -500 - 500 | PWM in microseconds |
++------------+---------------------+
 
 
 
 
-.. _STAB_PITCH_DOWN:
+.. _MIX_FLAP2ELEVCV:
 
-STAB\_PITCH\_DOWN: Low throttle pitch down trim
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MIX\_FLAP2ELEVCV: Flap position to elevator curve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Degrees of down pitch added when throttle is below TRIM\_THROTTLE in FBWA and AUTOTUNE modes\. Scales linearly so full value is added when THR\_MIN is reached\. Helps to keep airspeed higher in glides or landing approaches and prevents accidental stalls\. 2 degrees recommended for most planes\.
+Flap position to elevator curve
+
+
++------------+---------+
+| Range      | Units   |
++============+=========+
+| -100 - 100 | percent |
++------------+---------+
+
+
+
+
+.. _FBWA_PITCH_DOWN:
+
+FBWA\_PITCH\_DOWN: Max pitch down in FBWA\/AUTOTUNE applied when throttle is bellow FBWA\_MPTCHDN\_THR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\. Max pitch down in FBWA\/AUTOTUNE applied when throttle is bellow FBWA\_MPTCHDN\_THR
 
 
 +-----------+--------+---------+
@@ -227,14 +284,33 @@ Degrees of down pitch added when throttle is below TRIM\_THROTTLE in FBWA and AU
 
 
 
-.. _STAB_PITCH_DCRV:
+.. _FBWA_MXPTCHD_THR:
 
-STAB\_PITCH\_DCRV: Low throttle pitch down curve
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FBWA\_MXPTCHD\_THR: Throttle bellow which the plane will pitch down at FBWA\_PITCH\_DOWN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-\-100\=square pitch down curve\, 0\=linear pitch down curve\, 100\=square root pitch down curve
+Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\. Throttle bellow which the plane will pitch down at FBWA\_PITCH\_DOWN
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 - 100 | percent |
++-----------+---------+---------+
+
+
+
+
+.. _FBWA_PTCHDN_CRV:
+
+FBWA\_PTCHDN\_CRV: Determines the shape of the pitch down curve applied by the FBWA throttle to pitch compensation system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+\-100\=square pitch down curve\, 0\=linear pitch curve\, 100\=square root pitch curve
 
 
 +-----------+------------+---------+
@@ -242,6 +318,120 @@ STAB\_PITCH\_DCRV: Low throttle pitch down curve
 +===========+============+=========+
 | 1         | -100 - 100 | percent |
 +-----------+------------+---------+
+
+
+
+
+.. _FBWA_PTCHDN_CRVR:
+
+FBWA\_PTCHDN\_CRVR: Pitch down curve reversal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Pitch down curve reversal
+
+
++-------+
+| Range |
++=======+
+| 0 - 1 |
++-------+
+
+
+
+
+.. _FBWA_PITCH_UP:
+
+FBWA\_PITCH\_UP: Max pitch up in FBWA\/AUTOTUNE applied when throttle is at FBWA\_MPTCHUP\_THR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\. Max pitch up in FBWA\/AUTOTUNE applied when throttle is at FBWA\_MPTCHUP\_THR
+
+
++-----------+--------+---------+
+| Increment | Range  | Units   |
++===========+========+=========+
+| 0.1       | 0 - 15 | degrees |
++-----------+--------+---------+
+
+
+
+
+.. _FBWA_MXPTCHU_THR:
+
+FBWA\_MXPTCHU\_THR: Throttle at which the maximum pitch up FBWA\_PITCH\_UP will be applied
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\.
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 - 100 | percent |
++-----------+---------+---------+
+
+
+
+
+.. _FBWA_MNPTCHU_THR:
+
+FBWA\_MNPTCHU\_THR: Throttle at bellow which to start pitching up
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\.
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 - 100 | percent |
++-----------+---------+---------+
+
+
+
+
+.. _FBWA_PTCHUP_CRV:
+
+FBWA\_PTCHUP\_CRV: Determines the shape of the pitch up curve applied by the FBWA throttle to pitch compensation system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+\-100\=square pitch curve\, 0\=linear pitch curve\, 100\=square root pitch curve
+
+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| 1         | -100 - 100 | percent |
++-----------+------------+---------+
+
+
+
+
+.. _FBWA_PTCHUP_CRVR:
+
+FBWA\_PTCHUP\_CRVR: Pitch up curve reversal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Pitch up curve reversal
+
+
++-------+
+| Range |
++=======+
+| 0 - 1 |
++-------+
 
 
 
@@ -417,10 +607,10 @@ This parameter sets the airspeed at which the aircraft will \"rotate\"\, setting
 
 
 
-.. _TKOFF_THR_SLEW:
+.. _TKOFF_THR_SRATE:
 
-TKOFF\_THR\_SLEW: Takeoff throttle slew rate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TKOFF\_THR\_SRATE: Takeoff throttle slew rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 This parameter sets the slew rate for the throttle during auto takeoff\. When this is zero the THR\_SLEWRATE parameter is used during takeoff\. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control\. The value is a percentage throttle change per second\, so a value of 20 means to advance the throttle over 5 seconds on takeoff\. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle\. A value of \-1 means no limit on slew rate in takeoff\.
@@ -899,10 +1089,10 @@ The maximum throttle setting during automatic takeoff\. If this is zero then THR
 
 
 
-.. _THR_SLEWRATE:
+.. _THR_AUTO_SRATE:
 
-THR\_SLEWRATE: Throttle slew rate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+THR\_AUTO\_SRATE: Throttle slew rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Maximum change in throttle percentage per second\. Lower limit  based on 1 microsend of servo increase per loop\. Divide SCHED\_LOOP\_RATE by approximately 10 to determine minimum achievable value\.
@@ -2764,6 +2954,66 @@ Mask of output channels to use oneshot on
 
 
 
+.. _ARMING_MODE_SW:
+
+ARMING\_MODE\_SW: Selects what mode to switch to after arming
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Selects what mode to switch to after arming
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Takeoff  |
++-------+----------+
+| 2     | Auto     |
++-------+----------+
+
+
+
+
+.. _TKOFF_IDL_SRATE:
+
+TKOFF\_IDL\_SRATE: Takeoff idle throttle slew rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+This parameter sets the slew rate for the takeoff idle throttle\. When this is zero the TKOFF\_THR\_SLEWRATE parameter is used
+
+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | -1 - 127 | percent per second |
++-----------+----------+--------------------+
+
+
+
+
+.. _TKOFF_THR_IDLE:
+
+TKOFF\_THR\_IDLE: Idle throttle for takeoff
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The throttle to use before launch when the throttle stick is raised
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 - 100 | percent |
++-----------+---------+---------+
+
+
+
+
 .. _RTL_SINK_MAX:
 
 RTL\_SINK\_MAX: Max sink rate in RTL mode
@@ -3329,29 +3579,6 @@ Flight mode for switch position 12 \(1876 to 2049\)\, enabled with FLTMODE\_EXT
 +-------+------------+
 | 24    | THERMAL    |
 +-------+------------+
-
-
-
-
-.. _ARMING_MODE_SW:
-
-ARMING\_MODE\_SW: Selects what mode to switch to after arming
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Selects what mode to switch to after arming
-
-
-+-------+----------+
-| Value | Meaning  |
-+=======+==========+
-| 0     | Disabled |
-+-------+----------+
-| 1     | Takeoff  |
-+-------+----------+
-| 2     | Auto     |
-+-------+----------+
 
 
 
@@ -31274,9 +31501,9 @@ Vertical position on screen
 
 
 
-.. _OSD1_THROTTLE_EN:
+.. _OSD1_THR_OUT_EN:
 
-OSD1\_THROTTLE\_EN: THROTTLE\_EN
+OSD1\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -31294,9 +31521,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD1_THROTTLE_X:
+.. _OSD1_THR_OUT_X:
 
-OSD1\_THROTTLE\_X: THROTTLE\_X
+OSD1\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -31312,9 +31539,9 @@ Horizontal position on screen
 
 
 
-.. _OSD1_THROTTLE_Y:
+.. _OSD1_THR_OUT_Y:
 
-OSD1\_THROTTLE\_Y: THROTTLE\_Y
+OSD1\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -36265,9 +36492,9 @@ Vertical position on screen
 
 
 
-.. _OSD2_THROTTLE_EN:
+.. _OSD2_THR_OUT_EN:
 
-OSD2\_THROTTLE\_EN: THROTTLE\_EN
+OSD2\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -36285,9 +36512,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD2_THROTTLE_X:
+.. _OSD2_THR_OUT_X:
 
-OSD2\_THROTTLE\_X: THROTTLE\_X
+OSD2\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -36303,9 +36530,9 @@ Horizontal position on screen
 
 
 
-.. _OSD2_THROTTLE_Y:
+.. _OSD2_THR_OUT_Y:
 
-OSD2\_THROTTLE\_Y: THROTTLE\_Y
+OSD2\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -41256,9 +41483,9 @@ Vertical position on screen
 
 
 
-.. _OSD3_THROTTLE_EN:
+.. _OSD3_THR_OUT_EN:
 
-OSD3\_THROTTLE\_EN: THROTTLE\_EN
+OSD3\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -41276,9 +41503,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD3_THROTTLE_X:
+.. _OSD3_THR_OUT_X:
 
-OSD3\_THROTTLE\_X: THROTTLE\_X
+OSD3\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -41294,9 +41521,9 @@ Horizontal position on screen
 
 
 
-.. _OSD3_THROTTLE_Y:
+.. _OSD3_THR_OUT_Y:
 
-OSD3\_THROTTLE\_Y: THROTTLE\_Y
+OSD3\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -46247,9 +46474,9 @@ Vertical position on screen
 
 
 
-.. _OSD4_THROTTLE_EN:
+.. _OSD4_THR_OUT_EN:
 
-OSD4\_THROTTLE\_EN: THROTTLE\_EN
+OSD4\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -46267,9 +46494,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD4_THROTTLE_X:
+.. _OSD4_THR_OUT_X:
 
-OSD4\_THROTTLE\_X: THROTTLE\_X
+OSD4\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -46285,9 +46512,9 @@ Horizontal position on screen
 
 
 
-.. _OSD4_THROTTLE_Y:
+.. _OSD4_THR_OUT_Y:
 
-OSD4\_THROTTLE\_Y: THROTTLE\_Y
+OSD4\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -51238,9 +51465,9 @@ Vertical position on screen
 
 
 
-.. _OSD5_THROTTLE_EN:
+.. _OSD5_THR_OUT_EN:
 
-OSD5\_THROTTLE\_EN: THROTTLE\_EN
+OSD5\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -51258,9 +51485,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD5_THROTTLE_X:
+.. _OSD5_THR_OUT_X:
 
-OSD5\_THROTTLE\_X: THROTTLE\_X
+OSD5\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -51276,9 +51503,9 @@ Horizontal position on screen
 
 
 
-.. _OSD5_THROTTLE_Y:
+.. _OSD5_THR_OUT_Y:
 
-OSD5\_THROTTLE\_Y: THROTTLE\_Y
+OSD5\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -85810,167 +86037,179 @@ TUNE\_PARAM: Transmitter tuning parameter or set of parameters
 This sets which parameter or set of parameters will be tuned\. Values greater than 100 indicate a set of parameters rather than a single parameter\. Parameters less than 50 are for QuadPlane vertical lift motors only\.
 
 
-+-------+--------------------------+
-| Value | Meaning                  |
-+=======+==========================+
-| 0     | None                     |
-+-------+--------------------------+
-| 1     | RateRollPI               |
-+-------+--------------------------+
-| 2     | RateRollP                |
-+-------+--------------------------+
-| 3     | RateRollI                |
-+-------+--------------------------+
-| 4     | RateRollD                |
-+-------+--------------------------+
-| 5     | RatePitchPI              |
-+-------+--------------------------+
-| 6     | RatePitchP               |
-+-------+--------------------------+
-| 7     | RatePitchI               |
-+-------+--------------------------+
-| 8     | RatePitchD               |
-+-------+--------------------------+
-| 9     | RateYawPI                |
-+-------+--------------------------+
-| 10    | RateYawP                 |
-+-------+--------------------------+
-| 11    | RateYawI                 |
-+-------+--------------------------+
-| 12    | RateYawD                 |
-+-------+--------------------------+
-| 13    | AngleRollP               |
-+-------+--------------------------+
-| 14    | AnglePitchP              |
-+-------+--------------------------+
-| 15    | AngleYawP                |
-+-------+--------------------------+
-| 16    | PosXYP                   |
-+-------+--------------------------+
-| 17    | PosZP                    |
-+-------+--------------------------+
-| 18    | VelXYP                   |
-+-------+--------------------------+
-| 19    | VelXYI                   |
-+-------+--------------------------+
-| 20    | VelZP                    |
-+-------+--------------------------+
-| 21    | AccelZP                  |
-+-------+--------------------------+
-| 22    | AccelZI                  |
-+-------+--------------------------+
-| 23    | AccelZD                  |
-+-------+--------------------------+
-| 24    | RatePitchFF              |
-+-------+--------------------------+
-| 25    | RateRollFF               |
-+-------+--------------------------+
-| 26    | RateYawFF                |
-+-------+--------------------------+
-| 50    | FixedWingRollP           |
-+-------+--------------------------+
-| 51    | FixedWingRollI           |
-+-------+--------------------------+
-| 52    | FixedWingRollD           |
-+-------+--------------------------+
-| 53    | FixedWingRollFF          |
-+-------+--------------------------+
-| 54    | FixedWingPitchP          |
-+-------+--------------------------+
-| 55    | FixedWingPitchI          |
-+-------+--------------------------+
-| 56    | FixedWingPitchD          |
-+-------+--------------------------+
-| 57    | FixedWingPitchFF         |
-+-------+--------------------------+
-| 58    | TRIM_THROTTLE            |
-+-------+--------------------------+
-| 59    | TRIM_PITCH               |
-+-------+--------------------------+
-| 60    | KFF_THRAT2PTCH           |
-+-------+--------------------------+
-| 61    | FW STAB PITCH DOWN       |
-+-------+--------------------------+
-| 62    | FW STAB PITCH DOWN curve |
-+-------+--------------------------+
-| 63    | RLL2PTCH                 |
-+-------+--------------------------+
-| 64    | KFF_RDDRMIX              |
-+-------+--------------------------+
-| 65    | TECSTFFDAMP              |
-+-------+--------------------------+
-| 66    | TECSTFF_FILT             |
-+-------+--------------------------+
-| 67    | FWAglRollP               |
-+-------+--------------------------+
-| 68    | FWAglRollI               |
-+-------+--------------------------+
-| 69    | AglRollD                 |
-+-------+--------------------------+
-| 70    | AglRollFLTT              |
-+-------+--------------------------+
-| 71    | FWAglPitchP              |
-+-------+--------------------------+
-| 72    | FWAglPitchI              |
-+-------+--------------------------+
-| 73    | AglPitchD                |
-+-------+--------------------------+
-| 74    | AglPitchFLTT             |
-+-------+--------------------------+
-| 75    | MixingDiff               |
-+-------+--------------------------+
-| 76    | MixingOffset             |
-+-------+--------------------------+
-| 77    | THR expo manual          |
-+-------+--------------------------+
-| 78    | THR expo auto            |
-+-------+--------------------------+
-| 79    | Flap retracted speed     |
-+-------+--------------------------+
-| 80    | Flap extended speed      |
-+-------+--------------------------+
-| 81    | Flap extended percent    |
-+-------+--------------------------+
-| 82    | KFF_THRAT2ELEV           |
-+-------+--------------------------+
-| 83    | KFF_FLAP2ELEV            |
-+-------+--------------------------+
-| 84    | Ailerons diff            |
-+-------+--------------------------+
-| 85    | Elevator diff            |
-+-------+--------------------------+
-| 101   | Set_RateRollPitch        |
-+-------+--------------------------+
-| 102   | Set_RateRoll             |
-+-------+--------------------------+
-| 103   | Set_RatePitch            |
-+-------+--------------------------+
-| 104   | Set_RateYaw              |
-+-------+--------------------------+
-| 105   | Set_AngleRollPitch       |
-+-------+--------------------------+
-| 106   | Set_VelXY                |
-+-------+--------------------------+
-| 107   | Set_AccelZ               |
-+-------+--------------------------+
-| 108   | Set_TRIM_THR_PTCH        |
-+-------+--------------------------+
-| 109   | Set turn coordination    |
-+-------+--------------------------+
-| 110   | TECSTHRFF                |
-+-------+--------------------------+
-| 111   | Set_AglRollPitch         |
-+-------+--------------------------+
-| 112   | Set_AglRoll              |
-+-------+--------------------------+
-| 113   | Set_AglPitch             |
-+-------+--------------------------+
-| 114   | Set_Mixing               |
-+-------+--------------------------+
-| 115   | Set_THRExpo              |
-+-------+--------------------------+
-| 116   | Set_flap                 |
-+-------+--------------------------+
++-------+------------------------------+
+| Value | Meaning                      |
++=======+==============================+
+| 0     | None                         |
++-------+------------------------------+
+| 1     | RateRollPI                   |
++-------+------------------------------+
+| 2     | RateRollP                    |
++-------+------------------------------+
+| 3     | RateRollI                    |
++-------+------------------------------+
+| 4     | RateRollD                    |
++-------+------------------------------+
+| 5     | RatePitchPI                  |
++-------+------------------------------+
+| 6     | RatePitchP                   |
++-------+------------------------------+
+| 7     | RatePitchI                   |
++-------+------------------------------+
+| 8     | RatePitchD                   |
++-------+------------------------------+
+| 9     | RateYawPI                    |
++-------+------------------------------+
+| 10    | RateYawP                     |
++-------+------------------------------+
+| 11    | RateYawI                     |
++-------+------------------------------+
+| 12    | RateYawD                     |
++-------+------------------------------+
+| 13    | AngleRollP                   |
++-------+------------------------------+
+| 14    | AnglePitchP                  |
++-------+------------------------------+
+| 15    | AngleYawP                    |
++-------+------------------------------+
+| 16    | PosXYP                       |
++-------+------------------------------+
+| 17    | PosZP                        |
++-------+------------------------------+
+| 18    | VelXYP                       |
++-------+------------------------------+
+| 19    | VelXYI                       |
++-------+------------------------------+
+| 20    | VelZP                        |
++-------+------------------------------+
+| 21    | AccelZP                      |
++-------+------------------------------+
+| 22    | AccelZI                      |
++-------+------------------------------+
+| 23    | AccelZD                      |
++-------+------------------------------+
+| 24    | RatePitchFF                  |
++-------+------------------------------+
+| 25    | RateRollFF                   |
++-------+------------------------------+
+| 26    | RateYawFF                    |
++-------+------------------------------+
+| 50    | FixedWingRollP               |
++-------+------------------------------+
+| 51    | FixedWingRollI               |
++-------+------------------------------+
+| 52    | FixedWingRollD               |
++-------+------------------------------+
+| 53    | FixedWingRollFF              |
++-------+------------------------------+
+| 54    | FixedWingPitchP              |
++-------+------------------------------+
+| 55    | FixedWingPitchI              |
++-------+------------------------------+
+| 56    | FixedWingPitchD              |
++-------+------------------------------+
+| 57    | FixedWingPitchFF             |
++-------+------------------------------+
+| 58    | TRIM_THROTTLE                |
++-------+------------------------------+
+| 59    | TRIM_PITCH                   |
++-------+------------------------------+
+| 60    | KFF_THRAT2PTCH               |
++-------+------------------------------+
+| 61    | FBWA max pitch down comp     |
++-------+------------------------------+
+| 62    | FBWA max pitch down comp thr |
++-------+------------------------------+
+| 63    | FWBA pitch down comp curve   |
++-------+------------------------------+
+| 64    | FBWA max pitch up comp       |
++-------+------------------------------+
+| 65    | FBWA max pitch up comp thr   |
++-------+------------------------------+
+| 66    | FWBA pitch up comp curve     |
++-------+------------------------------+
+| 67    | RLL2PTCH                     |
++-------+------------------------------+
+| 68    | KFF_RDDRMIX                  |
++-------+------------------------------+
+| 69    | TECSTFFDAMP                  |
++-------+------------------------------+
+| 70    | TECSTFF_FILT                 |
++-------+------------------------------+
+| 71    | FWAglRollP                   |
++-------+------------------------------+
+| 72    | FWAglRollI                   |
++-------+------------------------------+
+| 73    | AglRollD                     |
++-------+------------------------------+
+| 74    | AglRollFLTT                  |
++-------+------------------------------+
+| 75    | FWAglPitchP                  |
++-------+------------------------------+
+| 76    | FWAglPitchI                  |
++-------+------------------------------+
+| 77    | AglPitchD                    |
++-------+------------------------------+
+| 78    | AglPitchFLTT                 |
++-------+------------------------------+
+| 79    | MixingDiff                   |
++-------+------------------------------+
+| 80    | MixingOffset                 |
++-------+------------------------------+
+| 81    | THR expo manual              |
++-------+------------------------------+
+| 82    | THR expo auto                |
++-------+------------------------------+
+| 83    | Flap retracted speed         |
++-------+------------------------------+
+| 84    | Flap extended speed          |
++-------+------------------------------+
+| 85    | Flap extended percent        |
++-------+------------------------------+
+| 86    | MIX_THRAT2ELEV               |
++-------+------------------------------+
+| 87    | MIX_THRAT2ELEVCV             |
++-------+------------------------------+
+| 88    | MIX_FLAP2ELEV                |
++-------+------------------------------+
+| 89    | MIX_FLAP2ELEVCV              |
++-------+------------------------------+
+| 90    | Ailerons diff                |
++-------+------------------------------+
+| 91    | Elevator diff                |
++-------+------------------------------+
+| 101   | Set_RateRollPitch            |
++-------+------------------------------+
+| 102   | Set_RateRoll                 |
++-------+------------------------------+
+| 103   | Set_RatePitch                |
++-------+------------------------------+
+| 104   | Set_RateYaw                  |
++-------+------------------------------+
+| 105   | Set_AngleRollPitch           |
++-------+------------------------------+
+| 106   | Set_VelXY                    |
++-------+------------------------------+
+| 107   | Set_AccelZ                   |
++-------+------------------------------+
+| 108   | Set_TRIM_THR_PTCH            |
++-------+------------------------------+
+| 109   | Set turn coordination        |
++-------+------------------------------+
+| 110   | TECSTHRFF                    |
++-------+------------------------------+
+| 111   | Set_AglRollPitch             |
++-------+------------------------------+
+| 112   | Set_AglRoll                  |
++-------+------------------------------+
+| 113   | Set_AglPitch                 |
++-------+------------------------------+
+| 114   | Set_Mixing                   |
++-------+------------------------------+
+| 115   | Set_THRExpo                  |
++-------+------------------------------+
+| 116   | Set_flap                     |
++-------+------------------------------+
 
 
 

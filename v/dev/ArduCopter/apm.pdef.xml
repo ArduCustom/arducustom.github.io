@@ -9257,16 +9257,16 @@
       <param humanName="HEADING_Y" name="OSD1_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD1_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD1_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD1_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD1_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD1_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD1_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD1_COMPASS_EN" documentation="Enables display of compass rose">
@@ -10327,16 +10327,16 @@
       <param humanName="HEADING_Y" name="OSD2_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD2_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD2_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD2_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD2_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD2_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD2_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD2_COMPASS_EN" documentation="Enables display of compass rose">
@@ -11397,16 +11397,16 @@
       <param humanName="HEADING_Y" name="OSD3_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD3_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD3_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD3_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD3_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD3_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD3_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD3_COMPASS_EN" documentation="Enables display of compass rose">
@@ -12467,16 +12467,16 @@
       <param humanName="HEADING_Y" name="OSD4_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD4_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD4_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD4_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD4_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD4_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD4_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD4_COMPASS_EN" documentation="Enables display of compass rose">
@@ -13537,16 +13537,16 @@
       <param humanName="HEADING_Y" name="OSD5_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD5_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD5_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD5_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD5_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD5_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD5_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD5_COMPASS_EN" documentation="Enables display of compass rose">

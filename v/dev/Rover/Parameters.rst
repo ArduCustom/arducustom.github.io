@@ -29953,9 +29953,9 @@ Vertical position on screen
 
 
 
-.. _OSD1_THROTTLE_EN:
+.. _OSD1_THR_OUT_EN:
 
-OSD1\_THROTTLE\_EN: THROTTLE\_EN
+OSD1\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -29978,9 +29978,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD1_THROTTLE_X:
+.. _OSD1_THR_OUT_X:
 
-OSD1\_THROTTLE\_X: THROTTLE\_X
+OSD1\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -29996,9 +29996,9 @@ Horizontal position on screen
 
 
 
-.. _OSD1_THROTTLE_Y:
+.. _OSD1_THR_OUT_Y:
 
-OSD1\_THROTTLE\_Y: THROTTLE\_Y
+OSD1\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -35389,9 +35389,9 @@ Vertical position on screen
 
 
 
-.. _OSD2_THROTTLE_EN:
+.. _OSD2_THR_OUT_EN:
 
-OSD2\_THROTTLE\_EN: THROTTLE\_EN
+OSD2\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -35414,9 +35414,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD2_THROTTLE_X:
+.. _OSD2_THR_OUT_X:
 
-OSD2\_THROTTLE\_X: THROTTLE\_X
+OSD2\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -35432,9 +35432,9 @@ Horizontal position on screen
 
 
 
-.. _OSD2_THROTTLE_Y:
+.. _OSD2_THR_OUT_Y:
 
-OSD2\_THROTTLE\_Y: THROTTLE\_Y
+OSD2\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -40825,9 +40825,9 @@ Vertical position on screen
 
 
 
-.. _OSD3_THROTTLE_EN:
+.. _OSD3_THR_OUT_EN:
 
-OSD3\_THROTTLE\_EN: THROTTLE\_EN
+OSD3\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -40850,9 +40850,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD3_THROTTLE_X:
+.. _OSD3_THR_OUT_X:
 
-OSD3\_THROTTLE\_X: THROTTLE\_X
+OSD3\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -40868,9 +40868,9 @@ Horizontal position on screen
 
 
 
-.. _OSD3_THROTTLE_Y:
+.. _OSD3_THR_OUT_Y:
 
-OSD3\_THROTTLE\_Y: THROTTLE\_Y
+OSD3\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -46261,9 +46261,9 @@ Vertical position on screen
 
 
 
-.. _OSD4_THROTTLE_EN:
+.. _OSD4_THR_OUT_EN:
 
-OSD4\_THROTTLE\_EN: THROTTLE\_EN
+OSD4\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -46286,9 +46286,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD4_THROTTLE_X:
+.. _OSD4_THR_OUT_X:
 
-OSD4\_THROTTLE\_X: THROTTLE\_X
+OSD4\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -46304,9 +46304,9 @@ Horizontal position on screen
 
 
 
-.. _OSD4_THROTTLE_Y:
+.. _OSD4_THR_OUT_Y:
 
-OSD4\_THROTTLE\_Y: THROTTLE\_Y
+OSD4\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -51697,9 +51697,9 @@ Vertical position on screen
 
 
 
-.. _OSD5_THROTTLE_EN:
+.. _OSD5_THR_OUT_EN:
 
-OSD5\_THROTTLE\_EN: THROTTLE\_EN
+OSD5\_THR\_OUT\_EN: THR\_OUT\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -51722,9 +51722,9 @@ Displays actual throttle percentage being sent to motor\(s\)
 
 
 
-.. _OSD5_THROTTLE_X:
+.. _OSD5_THR_OUT_X:
 
-OSD5\_THROTTLE\_X: THROTTLE\_X
+OSD5\_THR\_OUT\_X: THR\_OUT\_X
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -51740,9 +51740,9 @@ Horizontal position on screen
 
 
 
-.. _OSD5_THROTTLE_Y:
+.. _OSD5_THR_OUT_Y:
 
-OSD5\_THROTTLE\_Y: THROTTLE\_Y
+OSD5\_THR\_OUT\_Y: THR\_OUT\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

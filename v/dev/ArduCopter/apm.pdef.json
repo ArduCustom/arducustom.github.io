@@ -17206,25 +17206,25 @@
         "low": "0"
       }
     },
-    "OSD1_THROTTLE_EN": {
+    "OSD1_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD1_THROTTLE_X": {
+    "OSD1_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD1_THROTTLE_Y": {
+    "OSD1_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -19347,25 +19347,25 @@
         "low": "0"
       }
     },
-    "OSD2_THROTTLE_EN": {
+    "OSD2_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD2_THROTTLE_X": {
+    "OSD2_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD2_THROTTLE_Y": {
+    "OSD2_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -21488,25 +21488,25 @@
         "low": "0"
       }
     },
-    "OSD3_THROTTLE_EN": {
+    "OSD3_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD3_THROTTLE_X": {
+    "OSD3_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD3_THROTTLE_Y": {
+    "OSD3_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -23629,25 +23629,25 @@
         "low": "0"
       }
     },
-    "OSD4_THROTTLE_EN": {
+    "OSD4_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD4_THROTTLE_X": {
+    "OSD4_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD4_THROTTLE_Y": {
+    "OSD4_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -25770,25 +25770,25 @@
         "low": "0"
       }
     },
-    "OSD5_THROTTLE_EN": {
+    "OSD5_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_THROTTLE_X": {
+    "OSD5_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD5_THROTTLE_Y": {
+    "OSD5_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"

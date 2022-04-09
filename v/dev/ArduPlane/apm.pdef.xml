@@ -31,26 +31,83 @@
       <param humanName="Throttle ratio above trim throttle to pitch mix" name="ArduPlane:KFF_THRAT2PTCH" documentation="Pitch up to add in proportion to throttle above trim throttle. TRIM_THROTTLE throttle and under will add 0° to the pitch target. 100% throttle will add this number of degrees to the pitch target." user="Advanced">
         <field name="Range">-20 20</field>
         <field name="Increment">0.1</field>
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
       </param>
-      <param humanName="Throttle ratio above trim throttle to elevator PWM offset mix" name="ArduPlane:KFF_THRAT2ELEV" documentation="The elevator and elevon servos will be offset by that much at 100% throttle" user="Advanced">
+      <param humanName="Throttle above trim throttle to pitch mix curve" name="ArduPlane:KFF_THRAT2PTCHCV" documentation="Throttle above trim throttle to pitch mix curve" user="Advanced">
+        <field name="Range">-100 100</field>
+        <field name="Increment">1</field>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Throttle ratio above trim throttle to elevator PWM offset mix" name="ArduPlane:MIX_THRAT2ELEV" documentation="The elevator and elevon servos will be offset by that much at 100% throttle" user="Advanced">
         <field name="Range">-500 500</field>
-        <field name="Increment">PWM</field>
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
       </param>
-      <param humanName="Flap position to elevator PWM offset mix" name="ArduPlane:KFF_FLAP2ELEV" documentation="The elevator and elevon servos will be offset by that much at 100% flaps" user="Advanced">
+      <param humanName="Throttle above trim throttle to elevon curve" name="ArduPlane:MIX_THRAT2ELEVCV" documentation="Throttle above trim throttle to elevon curve" user="Advanced">
+        <field name="Range">-100 100</field>
+        <field name="Increment">1</field>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Flap position to elevator PWM offset mix" name="ArduPlane:MIX_FLAP2ELEV" documentation="The elevator and elevon servos will be offset by that much at 100% flaps" user="Advanced">
         <field name="Range">-500 500</field>
-        <field name="Increment">PWM</field>
+        <field name="Units">PWM</field>
+        <field name="UnitText">PWM in microseconds</field>
       </param>
-      <param humanName="Low throttle pitch down trim" name="ArduPlane:STAB_PITCH_DOWN" documentation="Degrees of down pitch added when throttle is below TRIM_THROTTLE in FBWA and AUTOTUNE modes. Scales linearly so full value is added when THR_MIN is reached. Helps to keep airspeed higher in glides or landing approaches and prevents accidental stalls. 2 degrees recommended for most planes." user="Advanced">
+      <param humanName="Flap position to elevator curve" name="ArduPlane:MIX_FLAP2ELEVCV" documentation="Flap position to elevator curve" user="Advanced">
+        <field name="Range">-100 100</field>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Max pitch down in FBWA/AUTOTUNE applied when throttle is bellow FBWA_MPTCHDN_THR" name="ArduPlane:FBWA_PITCH_DOWN" documentation="Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Max pitch down in FBWA/AUTOTUNE applied when throttle is bellow FBWA_MPTCHDN_THR" user="Advanced">
         <field name="Range">0 15</field>
         <field name="Increment">0.1</field>
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
       </param>
-      <param humanName="Low throttle pitch down curve" name="ArduPlane:STAB_PITCH_DCRV" documentation="-100=square pitch down curve, 0=linear pitch down curve, 100=square root pitch down curve" user="Advanced">
+      <param humanName="Throttle bellow which the plane will pitch down at FBWA_PITCH_DOWN" name="ArduPlane:FBWA_MXPTCHD_THR" documentation="Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Throttle bellow which the plane will pitch down at FBWA_PITCH_DOWN" user="Advanced">
+        <field name="Range">0 100</field>
+        <field name="Increment">1</field>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Determines the shape of the pitch down curve applied by the FBWA throttle to pitch compensation system" name="ArduPlane:FBWA_PTCHDN_CRV" documentation="-100=square pitch down curve, 0=linear pitch curve, 100=square root pitch curve" user="Advanced">
         <field name="Range">-100 100</field>
         <field name="Increment">1</field>
         <field name="Units">%</field>
         <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Pitch down curve reversal" name="ArduPlane:FBWA_PTCHDN_CRVR" documentation="Pitch down curve reversal" user="Advanced">
+        <field name="Range">0 1</field>
+      </param>
+      <param humanName="Max pitch up in FBWA/AUTOTUNE applied when throttle is at FBWA_MPTCHUP_THR" name="ArduPlane:FBWA_PITCH_UP" documentation="Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Max pitch up in FBWA/AUTOTUNE applied when throttle is at FBWA_MPTCHUP_THR" user="Advanced">
+        <field name="Range">0 15</field>
+        <field name="Increment">0.1</field>
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+      </param>
+      <param humanName="Throttle at which the maximum pitch up FBWA_PITCH_UP will be applied" name="ArduPlane:FBWA_MXPTCHU_THR" documentation="Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information." user="Advanced">
+        <field name="Range">0 100</field>
+        <field name="Increment">1</field>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Throttle at bellow which to start pitching up" name="ArduPlane:FBWA_MNPTCHU_THR" documentation="Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information." user="Advanced">
+        <field name="Range">0 100</field>
+        <field name="Increment">1</field>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Determines the shape of the pitch up curve applied by the FBWA throttle to pitch compensation system" name="ArduPlane:FBWA_PTCHUP_CRV" documentation="-100=square pitch curve, 0=linear pitch curve, 100=square root pitch curve" user="Advanced">
+        <field name="Range">-100 100</field>
+        <field name="Increment">1</field>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+      </param>
+      <param humanName="Pitch up curve reversal" name="ArduPlane:FBWA_PTCHUP_CRVR" documentation="Pitch up curve reversal" user="Advanced">
+        <field name="Range">0 1</field>
       </param>
       <param humanName="Glide slope minimum" name="ArduPlane:GLIDE_SLOPE_MIN" documentation="This controls the minimum altitude change for a waypoint before a glide slope will be used instead of an immediate altitude change. The default value is 15 meters, which helps to smooth out waypoint missions where small altitude changes happen near waypoints. If you don't want glide slopes to be used in missions then you can set this to zero, which will disable glide slope calculations. Otherwise you can set it to a minimum number of meters of altitude error to the destination waypoint before a glide slope will be used to change altitude." user="Advanced">
         <field name="Range">0 1000</field>
@@ -108,7 +165,7 @@
         <field name="Range">0 30</field>
         <field name="Increment">0.1</field>
       </param>
-      <param humanName="Takeoff throttle slew rate" name="ArduPlane:TKOFF_THR_SLEW" documentation="This parameter sets the slew rate for the throttle during auto takeoff. When this is zero the THR_SLEWRATE parameter is used during takeoff. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control. The value is a percentage throttle change per second, so a value of 20 means to advance the throttle over 5 seconds on takeoff. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle. A value of -1 means no limit on slew rate in takeoff." user="Standard">
+      <param humanName="Takeoff throttle slew rate" name="ArduPlane:TKOFF_THR_SRATE" documentation="This parameter sets the slew rate for the throttle during auto takeoff. When this is zero the THR_SLEWRATE parameter is used during takeoff. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control. The value is a percentage throttle change per second, so a value of 20 means to advance the throttle over 5 seconds on takeoff. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle. A value of -1 means no limit on slew rate in takeoff." user="Standard">
         <field name="Units">%/s</field>
         <field name="UnitText">percent per second</field>
         <field name="Range">-1 127</field>
@@ -241,7 +298,7 @@
         <field name="Range">0 100</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Throttle slew rate" name="ArduPlane:THR_SLEWRATE" documentation="Maximum change in throttle percentage per second. Lower limit  based on 1 microsend of servo increase per loop. Divide SCHED_LOOP_RATE by approximately 10 to determine minimum achievable value." user="Standard">
+      <param humanName="Throttle slew rate" name="ArduPlane:THR_AUTO_SRATE" documentation="Maximum change in throttle percentage per second. Lower limit  based on 1 microsend of servo increase per loop. Divide SCHED_LOOP_RATE by approximately 10 to determine minimum achievable value." user="Standard">
         <field name="Units">%/s</field>
         <field name="UnitText">percent per second</field>
         <field name="Range">0 127</field>
@@ -798,6 +855,25 @@
       <param humanName="Oneshot output mask" name="ArduPlane:ONESHOT_MASK" documentation="Mask of output channels to use oneshot on" user="Advanced">
         <field name="Bitmask">0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15</field>
       </param>
+      <param humanName="Selects what mode to switch to after arming" name="ArduPlane:ARMING_MODE_SW" documentation="Selects what mode to switch to after arming" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Takeoff</value>
+          <value code="2">Auto</value>
+        </values>
+      </param>
+      <param humanName="Takeoff idle throttle slew rate" name="ArduPlane:TKOFF_IDL_SRATE" documentation="This parameter sets the slew rate for the takeoff idle throttle. When this is zero the TKOFF_THR_SLEWRATE parameter is used" user="Standard">
+        <field name="Units">%/s</field>
+        <field name="UnitText">percent per second</field>
+        <field name="Range">-1 127</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Idle throttle for takeoff" name="ArduPlane:TKOFF_THR_IDLE" documentation="The throttle to use before launch when the throttle stick is raised" user="Advanced">
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+        <field name="Range">0 100</field>
+        <field name="Increment">1</field>
+      </param>
       <param humanName="Max sink rate in RTL mode" name="ArduPlane:RTL_SINK_MAX" documentation="Max sink rate in RTL mode. Set to 0 to use TECS_SINK_MAX" user="Standard">
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
@@ -1016,13 +1092,6 @@
           <value code="22">QAUTOTUNE</value>
           <value code="23">QACRO</value>
           <value code="24">THERMAL</value>
-        </values>
-      </param>
-      <param humanName="Selects what mode to switch to after arming" name="ArduPlane:ARMING_MODE_SW" documentation="Selects what mode to switch to after arming" user="Advanced">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Takeoff</value>
-          <value code="2">Auto</value>
         </values>
       </param>
     </parameters>
@@ -8515,16 +8584,16 @@
       <param humanName="HEADING_Y" name="OSD1_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD1_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD1_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD1_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD1_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD1_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD1_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD1_COMPASS_EN" documentation="Enables display of compass rose">
@@ -9585,16 +9654,16 @@
       <param humanName="HEADING_Y" name="OSD2_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD2_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD2_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD2_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD2_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD2_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD2_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD2_COMPASS_EN" documentation="Enables display of compass rose">
@@ -10655,16 +10724,16 @@
       <param humanName="HEADING_Y" name="OSD3_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD3_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD3_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD3_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD3_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD3_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD3_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD3_COMPASS_EN" documentation="Enables display of compass rose">
@@ -11725,16 +11794,16 @@
       <param humanName="HEADING_Y" name="OSD4_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD4_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD4_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD4_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD4_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD4_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD4_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD4_COMPASS_EN" documentation="Enables display of compass rose">
@@ -12795,16 +12864,16 @@
       <param humanName="HEADING_Y" name="OSD5_HEADING_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="THROTTLE_EN" name="OSD5_THROTTLE_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
+      <param humanName="THR_OUT_EN" name="OSD5_THR_OUT_EN" documentation="Displays actual throttle percentage being sent to motor(s)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="THROTTLE_X" name="OSD5_THROTTLE_X" documentation="Horizontal position on screen">
+      <param humanName="THR_OUT_X" name="OSD5_THR_OUT_X" documentation="Horizontal position on screen">
         <field name="Range">0 29</field>
       </param>
-      <param humanName="THROTTLE_Y" name="OSD5_THROTTLE_Y" documentation="Vertical position on screen">
+      <param humanName="THR_OUT_Y" name="OSD5_THR_OUT_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
       <param humanName="COMPASS_EN" name="OSD5_COMPASS_EN" documentation="Enables display of compass rose">
@@ -23727,31 +23796,37 @@
           <value code="58">TRIM_THROTTLE</value>
           <value code="59">TRIM_PITCH</value>
           <value code="60">KFF_THRAT2PTCH</value>
-          <value code="61">FW STAB PITCH DOWN</value>
-          <value code="62">FW STAB PITCH DOWN curve</value>
-          <value code="63">RLL2PTCH</value>
-          <value code="64">KFF_RDDRMIX</value>
-          <value code="65">TECSTFFDAMP</value>
-          <value code="66">TECSTFF_FILT</value>
-          <value code="67">FWAglRollP</value>
-          <value code="68">FWAglRollI</value>
-          <value code="69">AglRollD</value>
-          <value code="70">AglRollFLTT</value>
-          <value code="71">FWAglPitchP</value>
-          <value code="72">FWAglPitchI</value>
-          <value code="73">AglPitchD</value>
-          <value code="74">AglPitchFLTT</value>
-          <value code="75">MixingDiff</value>
-          <value code="76">MixingOffset</value>
-          <value code="77">THR expo manual</value>
-          <value code="78">THR expo auto</value>
-          <value code="79">Flap retracted speed</value>
-          <value code="80">Flap extended speed</value>
-          <value code="81">Flap extended percent</value>
-          <value code="82">KFF_THRAT2ELEV</value>
-          <value code="83">KFF_FLAP2ELEV</value>
-          <value code="84">Ailerons diff</value>
-          <value code="85">Elevator diff</value>
+          <value code="61">FBWA max pitch down comp</value>
+          <value code="62">FBWA max pitch down comp thr</value>
+          <value code="63">FWBA pitch down comp curve</value>
+          <value code="64">FBWA max pitch up comp</value>
+          <value code="65">FBWA max pitch up comp thr</value>
+          <value code="66">FWBA pitch up comp curve</value>
+          <value code="67">RLL2PTCH</value>
+          <value code="68">KFF_RDDRMIX</value>
+          <value code="69">TECSTFFDAMP</value>
+          <value code="70">TECSTFF_FILT</value>
+          <value code="71">FWAglRollP</value>
+          <value code="72">FWAglRollI</value>
+          <value code="73">AglRollD</value>
+          <value code="74">AglRollFLTT</value>
+          <value code="75">FWAglPitchP</value>
+          <value code="76">FWAglPitchI</value>
+          <value code="77">AglPitchD</value>
+          <value code="78">AglPitchFLTT</value>
+          <value code="79">MixingDiff</value>
+          <value code="80">MixingOffset</value>
+          <value code="81">THR expo manual</value>
+          <value code="82">THR expo auto</value>
+          <value code="83">Flap retracted speed</value>
+          <value code="84">Flap extended speed</value>
+          <value code="85">Flap extended percent</value>
+          <value code="86">MIX_THRAT2ELEV</value>
+          <value code="87">MIX_THRAT2ELEVCV</value>
+          <value code="88">MIX_FLAP2ELEV</value>
+          <value code="89">MIX_FLAP2ELEVCV</value>
+          <value code="90">Ailerons diff</value>
+          <value code="91">Elevator diff</value>
           <value code="101">Set_RateRollPitch</value>
           <value code="102">Set_RateRoll</value>
           <value code="103">Set_RatePitch</value>

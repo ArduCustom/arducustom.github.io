@@ -14459,25 +14459,25 @@
         "low": "0"
       }
     },
-    "OSD1_THROTTLE_EN": {
+    "OSD1_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD1_THROTTLE_X": {
+    "OSD1_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD1_THROTTLE_Y": {
+    "OSD1_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -16600,25 +16600,25 @@
         "low": "0"
       }
     },
-    "OSD2_THROTTLE_EN": {
+    "OSD2_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD2_THROTTLE_X": {
+    "OSD2_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD2_THROTTLE_Y": {
+    "OSD2_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -18741,25 +18741,25 @@
         "low": "0"
       }
     },
-    "OSD3_THROTTLE_EN": {
+    "OSD3_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD3_THROTTLE_X": {
+    "OSD3_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD3_THROTTLE_Y": {
+    "OSD3_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -20882,25 +20882,25 @@
         "low": "0"
       }
     },
-    "OSD4_THROTTLE_EN": {
+    "OSD4_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD4_THROTTLE_X": {
+    "OSD4_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD4_THROTTLE_Y": {
+    "OSD4_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -23023,25 +23023,25 @@
         "low": "0"
       }
     },
-    "OSD5_THROTTLE_EN": {
+    "OSD5_THR_OUT_EN": {
       "Description": "Displays actual throttle percentage being sent to motor(s)",
-      "DisplayName": "THROTTLE_EN",
+      "DisplayName": "THR_OUT_EN",
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
       }
     },
-    "OSD5_THROTTLE_X": {
+    "OSD5_THR_OUT_X": {
       "Description": "Horizontal position on screen",
-      "DisplayName": "THROTTLE_X",
+      "DisplayName": "THR_OUT_X",
       "Range": {
         "high": "29",
         "low": "0"
       }
     },
-    "OSD5_THROTTLE_Y": {
+    "OSD5_THR_OUT_Y": {
       "Description": "Vertical position on screen",
-      "DisplayName": "THROTTLE_Y",
+      "DisplayName": "THR_OUT_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -24916,6 +24916,101 @@
         "1": "Enabled"
       }
     },
+    "FBWA_MNPTCHU_THR": {
+      "Description": "Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information.",
+      "DisplayName": "Throttle at bellow which to start pitching up",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "0"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
+    "FBWA_MXPTCHD_THR": {
+      "Description": "Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Throttle bellow which the plane will pitch down at FBWA_PITCH_DOWN",
+      "DisplayName": "Throttle bellow which the plane will pitch down at FBWA_PITCH_DOWN",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "0"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
+    "FBWA_MXPTCHU_THR": {
+      "Description": "Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information.",
+      "DisplayName": "Throttle at which the maximum pitch up FBWA_PITCH_UP will be applied",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "0"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
+    "FBWA_PITCH_DOWN": {
+      "Description": "Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Max pitch down in FBWA/AUTOTUNE applied when throttle is bellow FBWA_MPTCHDN_THR",
+      "DisplayName": "Max pitch down in FBWA/AUTOTUNE applied when throttle is bellow FBWA_MPTCHDN_THR",
+      "Increment": "0.1",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "Units": "deg",
+      "User": "Advanced"
+    },
+    "FBWA_PITCH_UP": {
+      "Description": "Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Max pitch up in FBWA/AUTOTUNE applied when throttle is at FBWA_MPTCHUP_THR",
+      "DisplayName": "Max pitch up in FBWA/AUTOTUNE applied when throttle is at FBWA_MPTCHUP_THR",
+      "Increment": "0.1",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "Units": "deg",
+      "User": "Advanced"
+    },
+    "FBWA_PTCHDN_CRV": {
+      "Description": "-100=square pitch down curve, 0=linear pitch curve, 100=square root pitch curve",
+      "DisplayName": "Determines the shape of the pitch down curve applied by the FBWA throttle to pitch compensation system",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
+    "FBWA_PTCHDN_CRVR": {
+      "Description": "Pitch down curve reversal",
+      "DisplayName": "Pitch down curve reversal",
+      "Range": {
+        "high": "1",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "FBWA_PTCHUP_CRV": {
+      "Description": "-100=square pitch curve, 0=linear pitch curve, 100=square root pitch curve",
+      "DisplayName": "Determines the shape of the pitch up curve applied by the FBWA throttle to pitch compensation system",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
+    "FBWA_PTCHUP_CRVR": {
+      "Description": "Pitch up curve reversal",
+      "DisplayName": "Pitch up curve reversal",
+      "Range": {
+        "high": "1",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
     "FBWB_CLIMB_RATE": {
       "Description": "This sets the rate in m/s at which FBWB and CRUISE modes will change its target altitude for full elevator deflection. Note that the actual climb rate of the aircraft can be lower than this, depending on your airspeed and throttle control settings. If you have this parameter set to the default value of 2.0, then holding the elevator at maximum deflection for 10 seconds would change the target altitude by 20 meters.",
       "DisplayName": "Fly By Wire B altitude change rate",
@@ -25593,16 +25688,6 @@
         "8": "AUTOTUNE"
       }
     },
-    "KFF_FLAP2ELEV": {
-      "Description": "The elevator and elevon servos will be offset by that much at 100% flaps",
-      "DisplayName": "Flap position to elevator PWM offset mix",
-      "Increment": "PWM",
-      "Range": {
-        "high": "500",
-        "low": "-500"
-      },
-      "User": "Advanced"
-    },
     "KFF_RDDRMIX": {
       "Description": "Amount of rudder to add during aileron movement. Increase if nose initially yaws away from roll. Reduces adverse yaw.",
       "DisplayName": "Rudder Mix",
@@ -25613,16 +25698,6 @@
       },
       "User": "Standard"
     },
-    "KFF_THRAT2ELEV": {
-      "Description": "The elevator and elevon servos will be offset by that much at 100% throttle",
-      "DisplayName": "Throttle ratio above trim throttle to elevator PWM offset mix",
-      "Increment": "PWM",
-      "Range": {
-        "high": "500",
-        "low": "-500"
-      },
-      "User": "Advanced"
-    },
     "KFF_THRAT2PTCH": {
       "Description": "Pitch up to add in proportion to throttle above trim throttle. TRIM_THROTTLE throttle and under will add 0\u00b0 to the pitch target. 100% throttle will add this number of degrees to the pitch target.",
       "DisplayName": "Throttle ratio above trim throttle to pitch mix",
@@ -25631,6 +25706,18 @@
         "high": "20",
         "low": "-20"
       },
+      "Units": "deg",
+      "User": "Advanced"
+    },
+    "KFF_THRAT2PTCHCV": {
+      "Description": "Throttle above trim throttle to pitch mix curve",
+      "DisplayName": "Throttle above trim throttle to pitch mix curve",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "%",
       "User": "Advanced"
     },
     "LEVEL_ROLL_LIMIT": {
@@ -25791,6 +25878,47 @@
       "Units": "%",
       "User": "Standard"
     },
+    "MIX_FLAP2ELEV": {
+      "Description": "The elevator and elevon servos will be offset by that much at 100% flaps",
+      "DisplayName": "Flap position to elevator PWM offset mix",
+      "Range": {
+        "high": "500",
+        "low": "-500"
+      },
+      "Units": "PWM",
+      "User": "Advanced"
+    },
+    "MIX_FLAP2ELEVCV": {
+      "Description": "Flap position to elevator curve",
+      "DisplayName": "Flap position to elevator curve",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
+    "MIX_THRAT2ELEV": {
+      "Description": "The elevator and elevon servos will be offset by that much at 100% throttle",
+      "DisplayName": "Throttle ratio above trim throttle to elevator PWM offset mix",
+      "Range": {
+        "high": "500",
+        "low": "-500"
+      },
+      "Units": "PWM",
+      "User": "Advanced"
+    },
+    "MIX_THRAT2ELEVCV": {
+      "Description": "Throttle above trim throttle to elevon curve",
+      "DisplayName": "Throttle above trim throttle to elevon curve",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "-100"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
     "ONESHOT_MASK": {
       "Bitmask": {
         "0": "Servo 1",
@@ -25941,28 +26069,6 @@
       "Units": "m/s",
       "User": "Advanced"
     },
-    "STAB_PITCH_DCRV": {
-      "Description": "-100=square pitch down curve, 0=linear pitch down curve, 100=square root pitch down curve",
-      "DisplayName": "Low throttle pitch down curve",
-      "Increment": "1",
-      "Range": {
-        "high": "100",
-        "low": "-100"
-      },
-      "Units": "%",
-      "User": "Advanced"
-    },
-    "STAB_PITCH_DOWN": {
-      "Description": "Degrees of down pitch added when throttle is below TRIM_THROTTLE in FBWA and AUTOTUNE modes. Scales linearly so full value is added when THR_MIN is reached. Helps to keep airspeed higher in glides or landing approaches and prevents accidental stalls. 2 degrees recommended for most planes.",
-      "DisplayName": "Low throttle pitch down trim",
-      "Increment": "0.1",
-      "Range": {
-        "high": "15",
-        "low": "0"
-      },
-      "Units": "deg",
-      "User": "Advanced"
-    },
     "STALL_PREVENTION": {
       "Description": "Enables roll limits at low airspeed in roll limiting flight modes. Roll limits based on aerodynamic load factor in turns and scale on ARSPD_FBW_MIN that must be set correctly. Without airspeed sensor, uses synthetic airspeed from wind speed estimate that may both be inaccurate.",
       "DisplayName": "Enable stall prevention",
@@ -26069,6 +26175,17 @@
         "1": "Enabled"
       }
     },
+    "THR_AUTO_SRATE": {
+      "Description": "Maximum change in throttle percentage per second. Lower limit  based on 1 microsend of servo increase per loop. Divide SCHED_LOOP_RATE by approximately 10 to determine minimum achievable value.",
+      "DisplayName": "Throttle slew rate",
+      "Increment": "1",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "Units": "%/s",
+      "User": "Standard"
+    },
     "THR_DZ": {
       "Description": "No command will be applied to the throttle ESC or servo unless the command is at least this value",
       "DisplayName": "Throttle deadzone",
@@ -26150,17 +26267,6 @@
         "1": "Enabled"
       }
     },
-    "THR_SLEWRATE": {
-      "Description": "Maximum change in throttle percentage per second. Lower limit  based on 1 microsend of servo increase per loop. Divide SCHED_LOOP_RATE by approximately 10 to determine minimum achievable value.",
-      "DisplayName": "Throttle slew rate",
-      "Increment": "1",
-      "Range": {
-        "high": "127",
-        "low": "0"
-      },
-      "Units": "%/s",
-      "User": "Standard"
-    },
     "THR_SUPP_MAN": {
       "Description": "When throttle is suppressed in auto mode it is normally forced to zero. If you enable this option, then while suppressed it will be manual throttle. This is useful on petrol engines to hold the idle throttle manually while waiting for takeoff",
       "DisplayName": "Throttle suppress manual passthru",
@@ -26189,6 +26295,17 @@
       },
       "Units": "%",
       "User": "Advanced"
+    },
+    "TKOFF_IDL_SRATE": {
+      "Description": "This parameter sets the slew rate for the takeoff idle throttle. When this is zero the TKOFF_THR_SLEWRATE parameter is used",
+      "DisplayName": "Takeoff idle throttle slew rate",
+      "Increment": "1",
+      "Range": {
+        "high": "127",
+        "low": "-1"
+      },
+      "Units": "%/s",
+      "User": "Standard"
     },
     "TKOFF_PLIM_SEC": {
       "Description": "This parameter reduces the pitch minimum limit of an auto-takeoff just a few seconds before it reaches the target altitude. This reduces overshoot by allowing the flight controller to start leveling off a few seconds before reaching the target height. When set to zero, the mission pitch min is enforced all the way to and through the target altitude, otherwise the pitch min slowly reduces to zero in the final segment. This is the pitch_min, not the demand. The flight controller should still be commanding to gain altitude to finish the takeoff but with this param it is not forcing it higher than it wants to be.",
@@ -26245,6 +26362,17 @@
       "Units": "ds",
       "User": "Standard"
     },
+    "TKOFF_THR_IDLE": {
+      "Description": "The throttle to use before launch when the throttle stick is raised",
+      "DisplayName": "Idle throttle for takeoff",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "0"
+      },
+      "Units": "%",
+      "User": "Advanced"
+    },
     "TKOFF_THR_MAX": {
       "Description": "The maximum throttle setting during automatic takeoff. If this is zero then THR_MAX is used for takeoff as well.",
       "DisplayName": "Maximum Throttle for takeoff",
@@ -26278,7 +26406,7 @@
       "Units": "m/s",
       "User": "Standard"
     },
-    "TKOFF_THR_SLEW": {
+    "TKOFF_THR_SRATE": {
       "Description": "This parameter sets the slew rate for the throttle during auto takeoff. When this is zero the THR_SLEWRATE parameter is used during takeoff. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control. The value is a percentage throttle change per second, so a value of 20 means to advance the throttle over 5 seconds on takeoff. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle. A value of -1 means no limit on slew rate in takeoff.",
       "DisplayName": "Takeoff throttle slew rate",
       "Increment": "1",
@@ -40358,34 +40486,40 @@
         "59": "TRIM_PITCH",
         "6": "RatePitchP",
         "60": "KFF_THRAT2PTCH",
-        "61": "FW STAB PITCH DOWN",
-        "62": "FW STAB PITCH DOWN curve",
-        "63": "RLL2PTCH",
-        "64": "KFF_RDDRMIX",
-        "65": "TECSTFFDAMP",
-        "66": "TECSTFF_FILT",
-        "67": "FWAglRollP",
-        "68": "FWAglRollI",
-        "69": "AglRollD",
+        "61": "FBWA max pitch down comp",
+        "62": "FBWA max pitch down comp thr",
+        "63": "FWBA pitch down comp curve",
+        "64": "FBWA max pitch up comp",
+        "65": "FBWA max pitch up comp thr",
+        "66": "FWBA pitch up comp curve",
+        "67": "RLL2PTCH",
+        "68": "KFF_RDDRMIX",
+        "69": "TECSTFFDAMP",
         "7": "RatePitchI",
-        "70": "AglRollFLTT",
-        "71": "FWAglPitchP",
-        "72": "FWAglPitchI",
-        "73": "AglPitchD",
-        "74": "AglPitchFLTT",
-        "75": "MixingDiff",
-        "76": "MixingOffset",
-        "77": "THR expo manual",
-        "78": "THR expo auto",
-        "79": "Flap retracted speed",
+        "70": "TECSTFF_FILT",
+        "71": "FWAglRollP",
+        "72": "FWAglRollI",
+        "73": "AglRollD",
+        "74": "AglRollFLTT",
+        "75": "FWAglPitchP",
+        "76": "FWAglPitchI",
+        "77": "AglPitchD",
+        "78": "AglPitchFLTT",
+        "79": "MixingDiff",
         "8": "RatePitchD",
-        "80": "Flap extended speed",
-        "81": "Flap extended percent",
-        "82": "KFF_THRAT2ELEV",
-        "83": "KFF_FLAP2ELEV",
-        "84": "Ailerons diff",
-        "85": "Elevator diff",
-        "9": "RateYawPI"
+        "80": "MixingOffset",
+        "81": "THR expo manual",
+        "82": "THR expo auto",
+        "83": "Flap retracted speed",
+        "84": "Flap extended speed",
+        "85": "Flap extended percent",
+        "86": "MIX_THRAT2ELEV",
+        "87": "MIX_THRAT2ELEVCV",
+        "88": "MIX_FLAP2ELEV",
+        "89": "MIX_FLAP2ELEVCV",
+        "9": "RateYawPI",
+        "90": "Ailerons diff",
+        "91": "Elevator diff"
       }
     },
     "TUNE_RANGE": {

@@ -83,30 +83,60 @@ DO NOT EDIT
 <ul>
 <li>Range: -20 20</li>
 <li>Increment: 0.1</li>
+<li>Units: degrees</li>
 </ul>
 
 
-<h2>Throttle ratio above trim throttle to elevator PWM offset mix (ArduPlane:KFF_THRAT2ELEV)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Throttle above trim throttle to pitch mix curve (ArduPlane:KFF_THRAT2PTCHCV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Throttle above trim throttle to pitch mix curve</p>
+<ul>
+<li>Range: -100 100</li>
+<li>Increment: 1</li>
+<li>Units: percent</li>
+</ul>
+
+
+<h2>Throttle ratio above trim throttle to elevator PWM offset mix (ArduPlane:MIX_THRAT2ELEV)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>The elevator and elevon servos will be offset by that much at 100% throttle</p>
 <ul>
 <li>Range: -500 500</li>
-<li>Increment: PWM</li>
+<li>Units: PWM in microseconds</li>
 </ul>
 
 
-<h2>Flap position to elevator PWM offset mix (ArduPlane:KFF_FLAP2ELEV)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Throttle above trim throttle to elevon curve (ArduPlane:MIX_THRAT2ELEVCV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Throttle above trim throttle to elevon curve</p>
+<ul>
+<li>Range: -100 100</li>
+<li>Increment: 1</li>
+<li>Units: percent</li>
+</ul>
+
+
+<h2>Flap position to elevator PWM offset mix (ArduPlane:MIX_FLAP2ELEV)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>The elevator and elevon servos will be offset by that much at 100% flaps</p>
 <ul>
 <li>Range: -500 500</li>
-<li>Increment: PWM</li>
+<li>Units: PWM in microseconds</li>
 </ul>
 
 
-<h2>Low throttle pitch down trim (ArduPlane:STAB_PITCH_DOWN)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Flap position to elevator curve (ArduPlane:MIX_FLAP2ELEVCV)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Degrees of down pitch added when throttle is below TRIM_THROTTLE in FBWA and AUTOTUNE modes. Scales linearly so full value is added when THR_MIN is reached. Helps to keep airspeed higher in glides or landing approaches and prevents accidental stalls. 2 degrees recommended for most planes.</p>
+<p>Flap position to elevator curve</p>
+<ul>
+<li>Range: -100 100</li>
+<li>Units: percent</li>
+</ul>
+
+
+<h2>Max pitch down in FBWA/AUTOTUNE applied when throttle is bellow FBWA_MPTCHDN_THR (ArduPlane:FBWA_PITCH_DOWN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Max pitch down in FBWA/AUTOTUNE applied when throttle is bellow FBWA_MPTCHDN_THR</p>
 <ul>
 <li>Range: 0 15</li>
 <li>Increment: 0.1</li>
@@ -114,13 +144,79 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Low throttle pitch down curve (ArduPlane:STAB_PITCH_DCRV)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Throttle bellow which the plane will pitch down at FBWA_PITCH_DOWN (ArduPlane:FBWA_MXPTCHD_THR)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>-100=square pitch down curve, 0=linear pitch down curve, 100=square root pitch down curve</p>
+<p>Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Throttle bellow which the plane will pitch down at FBWA_PITCH_DOWN</p>
+<ul>
+<li>Range: 0 100</li>
+<li>Increment: 1</li>
+<li>Units: percent</li>
+</ul>
+
+
+<h2>Determines the shape of the pitch down curve applied by the FBWA throttle to pitch compensation system (ArduPlane:FBWA_PTCHDN_CRV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>-100=square pitch down curve, 0=linear pitch curve, 100=square root pitch curve</p>
 <ul>
 <li>Range: -100 100</li>
 <li>Increment: 1</li>
 <li>Units: percent</li>
+</ul>
+
+
+<h2>Pitch down curve reversal (ArduPlane:FBWA_PTCHDN_CRVR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Pitch down curve reversal</p>
+<ul>
+<li>Range: 0 1</li>
+</ul>
+
+
+<h2>Max pitch up in FBWA/AUTOTUNE applied when throttle is at FBWA_MPTCHUP_THR (ArduPlane:FBWA_PITCH_UP)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information. Max pitch up in FBWA/AUTOTUNE applied when throttle is at FBWA_MPTCHUP_THR</p>
+<ul>
+<li>Range: 0 15</li>
+<li>Increment: 0.1</li>
+<li>Units: degrees</li>
+</ul>
+
+
+<h2>Throttle at which the maximum pitch up FBWA_PITCH_UP will be applied (ArduPlane:FBWA_MXPTCHU_THR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information.</p>
+<ul>
+<li>Range: 0 100</li>
+<li>Increment: 1</li>
+<li>Units: percent</li>
+</ul>
+
+
+<h2>Throttle at bellow which to start pitching up (ArduPlane:FBWA_MNPTCHU_THR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information.</p>
+<ul>
+<li>Range: 0 100</li>
+<li>Increment: 1</li>
+<li>Units: percent</li>
+</ul>
+
+
+<h2>Determines the shape of the pitch up curve applied by the FBWA throttle to pitch compensation system (ArduPlane:FBWA_PTCHUP_CRV)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>-100=square pitch curve, 0=linear pitch curve, 100=square root pitch curve</p>
+<ul>
+<li>Range: -100 100</li>
+<li>Increment: 1</li>
+<li>Units: percent</li>
+</ul>
+
+
+<h2>Pitch up curve reversal (ArduPlane:FBWA_PTCHUP_CRVR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Pitch up curve reversal</p>
+<ul>
+<li>Range: 0 1</li>
 </ul>
 
 
@@ -217,7 +313,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Takeoff throttle slew rate (ArduPlane:TKOFF_THR_SLEW)</h2>
+<h2>Takeoff throttle slew rate (ArduPlane:TKOFF_THR_SRATE)</h2>
 
 <p>This parameter sets the slew rate for the throttle during auto takeoff. When this is zero the THR_SLEWRATE parameter is used during takeoff. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control. The value is a percentage throttle change per second, so a value of 20 means to advance the throttle over 5 seconds on takeoff. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle. A value of -1 means no limit on slew rate in takeoff.</p>
 <ul>
@@ -442,7 +538,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Throttle slew rate (ArduPlane:THR_SLEWRATE)</h2>
+<h2>Throttle slew rate (ArduPlane:THR_AUTO_SRATE)</h2>
 
 <p>Maximum change in throttle percentage per second. Lower limit  based on 1 microsend of servo increase per loop. Divide SCHED_LOOP_RATE by approximately 10 to determine minimum achievable value.</p>
 <ul>
@@ -1323,6 +1419,38 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Selects what mode to switch to after arming (ArduPlane:ARMING_MODE_SW)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Selects what mode to switch to after arming</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Takeoff</td></tr>
+<tr><td>2</td><td>Auto</td></tr>
+</table>
+</ul>
+
+
+<h2>Takeoff idle throttle slew rate (ArduPlane:TKOFF_IDL_SRATE)</h2>
+
+<p>This parameter sets the slew rate for the takeoff idle throttle. When this is zero the TKOFF_THR_SLEWRATE parameter is used</p>
+<ul>
+<li>Units: percent per second</li>
+<li>Range: -1 127</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Idle throttle for takeoff (ArduPlane:TKOFF_THR_IDLE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The throttle to use before launch when the throttle stick is raised</p>
+<ul>
+<li>Units: percent</li>
+<li>Range: 0 100</li>
+<li>Increment: 1</li>
+</ul>
+
+
 <h2>Max sink rate in RTL mode (ArduPlane:RTL_SINK_MAX)</h2>
 
 <p>Max sink rate in RTL mode. Set to 0 to use TECS_SINK_MAX</p>
@@ -1612,18 +1740,6 @@ DO NOT EDIT
 <tr><td>22</td><td>QAUTOTUNE</td></tr>
 <tr><td>23</td><td>QACRO</td></tr>
 <tr><td>24</td><td>THERMAL</td></tr>
-</table>
-</ul>
-
-
-<h2>Selects what mode to switch to after arming (ArduPlane:ARMING_MODE_SW)</h2><em>Note: This parameter is for advanced users</em><br>
-
-<p>Selects what mode to switch to after arming</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Takeoff</td></tr>
-<tr><td>2</td><td>Auto</td></tr>
 </table>
 </ul>
 
@@ -14935,7 +15051,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_EN (OSD1_THROTTLE_EN)</h2>
+<h2>THR_OUT_EN (OSD1_THR_OUT_EN)</h2>
 
 <p>Displays actual throttle percentage being sent to motor(s)</p>
 <ul>
@@ -14946,7 +15062,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_X (OSD1_THROTTLE_X)</h2>
+<h2>THR_OUT_X (OSD1_THR_OUT_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -14954,7 +15070,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_Y (OSD1_THROTTLE_Y)</h2>
+<h2>THR_OUT_Y (OSD1_THR_OUT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -17341,7 +17457,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_EN (OSD2_THROTTLE_EN)</h2>
+<h2>THR_OUT_EN (OSD2_THR_OUT_EN)</h2>
 
 <p>Displays actual throttle percentage being sent to motor(s)</p>
 <ul>
@@ -17352,7 +17468,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_X (OSD2_THROTTLE_X)</h2>
+<h2>THR_OUT_X (OSD2_THR_OUT_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -17360,7 +17476,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_Y (OSD2_THROTTLE_Y)</h2>
+<h2>THR_OUT_Y (OSD2_THR_OUT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -19747,7 +19863,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_EN (OSD3_THROTTLE_EN)</h2>
+<h2>THR_OUT_EN (OSD3_THR_OUT_EN)</h2>
 
 <p>Displays actual throttle percentage being sent to motor(s)</p>
 <ul>
@@ -19758,7 +19874,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_X (OSD3_THROTTLE_X)</h2>
+<h2>THR_OUT_X (OSD3_THR_OUT_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -19766,7 +19882,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_Y (OSD3_THROTTLE_Y)</h2>
+<h2>THR_OUT_Y (OSD3_THR_OUT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22153,7 +22269,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_EN (OSD4_THROTTLE_EN)</h2>
+<h2>THR_OUT_EN (OSD4_THR_OUT_EN)</h2>
 
 <p>Displays actual throttle percentage being sent to motor(s)</p>
 <ul>
@@ -22164,7 +22280,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_X (OSD4_THROTTLE_X)</h2>
+<h2>THR_OUT_X (OSD4_THR_OUT_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -22172,7 +22288,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_Y (OSD4_THROTTLE_Y)</h2>
+<h2>THR_OUT_Y (OSD4_THR_OUT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -24559,7 +24675,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_EN (OSD5_THROTTLE_EN)</h2>
+<h2>THR_OUT_EN (OSD5_THR_OUT_EN)</h2>
 
 <p>Displays actual throttle percentage being sent to motor(s)</p>
 <ul>
@@ -24570,7 +24686,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_X (OSD5_THROTTLE_X)</h2>
+<h2>THR_OUT_X (OSD5_THR_OUT_X)</h2>
 
 <p>Horizontal position on screen</p>
 <ul>
@@ -24578,7 +24694,7 @@ DO NOT EDIT
 </ul>
 
 
-<h2>THROTTLE_Y (OSD5_THROTTLE_Y)</h2>
+<h2>THR_OUT_Y (OSD5_THR_OUT_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -41978,31 +42094,37 @@ DO NOT EDIT
 <tr><td>58</td><td>TRIM_THROTTLE</td></tr>
 <tr><td>59</td><td>TRIM_PITCH</td></tr>
 <tr><td>60</td><td>KFF_THRAT2PTCH</td></tr>
-<tr><td>61</td><td>FW STAB PITCH DOWN</td></tr>
-<tr><td>62</td><td>FW STAB PITCH DOWN curve</td></tr>
-<tr><td>63</td><td>RLL2PTCH</td></tr>
-<tr><td>64</td><td>KFF_RDDRMIX</td></tr>
-<tr><td>65</td><td>TECSTFFDAMP</td></tr>
-<tr><td>66</td><td>TECSTFF_FILT</td></tr>
-<tr><td>67</td><td>FWAglRollP</td></tr>
-<tr><td>68</td><td>FWAglRollI</td></tr>
-<tr><td>69</td><td>AglRollD</td></tr>
-<tr><td>70</td><td>AglRollFLTT</td></tr>
-<tr><td>71</td><td>FWAglPitchP</td></tr>
-<tr><td>72</td><td>FWAglPitchI</td></tr>
-<tr><td>73</td><td>AglPitchD</td></tr>
-<tr><td>74</td><td>AglPitchFLTT</td></tr>
-<tr><td>75</td><td>MixingDiff</td></tr>
-<tr><td>76</td><td>MixingOffset</td></tr>
-<tr><td>77</td><td>THR expo manual</td></tr>
-<tr><td>78</td><td>THR expo auto</td></tr>
-<tr><td>79</td><td>Flap retracted speed</td></tr>
-<tr><td>80</td><td>Flap extended speed</td></tr>
-<tr><td>81</td><td>Flap extended percent</td></tr>
-<tr><td>82</td><td>KFF_THRAT2ELEV</td></tr>
-<tr><td>83</td><td>KFF_FLAP2ELEV</td></tr>
-<tr><td>84</td><td>Ailerons diff</td></tr>
-<tr><td>85</td><td>Elevator diff</td></tr>
+<tr><td>61</td><td>FBWA max pitch down comp</td></tr>
+<tr><td>62</td><td>FBWA max pitch down comp thr</td></tr>
+<tr><td>63</td><td>FWBA pitch down comp curve</td></tr>
+<tr><td>64</td><td>FBWA max pitch up comp</td></tr>
+<tr><td>65</td><td>FBWA max pitch up comp thr</td></tr>
+<tr><td>66</td><td>FWBA pitch up comp curve</td></tr>
+<tr><td>67</td><td>RLL2PTCH</td></tr>
+<tr><td>68</td><td>KFF_RDDRMIX</td></tr>
+<tr><td>69</td><td>TECSTFFDAMP</td></tr>
+<tr><td>70</td><td>TECSTFF_FILT</td></tr>
+<tr><td>71</td><td>FWAglRollP</td></tr>
+<tr><td>72</td><td>FWAglRollI</td></tr>
+<tr><td>73</td><td>AglRollD</td></tr>
+<tr><td>74</td><td>AglRollFLTT</td></tr>
+<tr><td>75</td><td>FWAglPitchP</td></tr>
+<tr><td>76</td><td>FWAglPitchI</td></tr>
+<tr><td>77</td><td>AglPitchD</td></tr>
+<tr><td>78</td><td>AglPitchFLTT</td></tr>
+<tr><td>79</td><td>MixingDiff</td></tr>
+<tr><td>80</td><td>MixingOffset</td></tr>
+<tr><td>81</td><td>THR expo manual</td></tr>
+<tr><td>82</td><td>THR expo auto</td></tr>
+<tr><td>83</td><td>Flap retracted speed</td></tr>
+<tr><td>84</td><td>Flap extended speed</td></tr>
+<tr><td>85</td><td>Flap extended percent</td></tr>
+<tr><td>86</td><td>MIX_THRAT2ELEV</td></tr>
+<tr><td>87</td><td>MIX_THRAT2ELEVCV</td></tr>
+<tr><td>88</td><td>MIX_FLAP2ELEV</td></tr>
+<tr><td>89</td><td>MIX_FLAP2ELEVCV</td></tr>
+<tr><td>90</td><td>Ailerons diff</td></tr>
+<tr><td>91</td><td>Elevator diff</td></tr>
 <tr><td>101</td><td>Set_RateRollPitch</td></tr>
 <tr><td>102</td><td>Set_RateRoll</td></tr>
 <tr><td>103</td><td>Set_RatePitch</td></tr>
