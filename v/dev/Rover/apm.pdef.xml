@@ -390,6 +390,11 @@
     </parameters>
   </vehicles>
   <libraries>
+    <parameters name="">
+      <param humanName="Vehicle unique ID" name="VEHICLE_UID" documentation="Vehicle unique ID" user="Advanced">
+        <field name="Range">-1073741824 1073741824</field>
+      </param>
+    </parameters>
     <parameters name="AFS_">
       <param humanName="Enable Advanced Failsafe" name="AFS_ENABLE" documentation="This enables the advanced failsafe system. If this is set to zero (disable) then all the other AFS options have no effect" user="Advanced">
 </param>

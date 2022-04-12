@@ -1,4 +1,15 @@
 {
+  "": {
+    "VEHICLE_UID": {
+      "Description": "Vehicle unique ID",
+      "DisplayName": "Vehicle unique ID",
+      "Range": {
+        "high": "1073741824",
+        "low": "-1073741824"
+      },
+      "User": "Advanced"
+    }
+  },
   "ADSB_": {
     "ADSB_EMIT_TYPE": {
       "Description": "ADSB classification for the type of vehicle emitting the transponder signal. Default value is 14 (UAV).",

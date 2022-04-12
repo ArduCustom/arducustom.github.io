@@ -1,4 +1,15 @@
 {
+  "": {
+    "VEHICLE_UID": {
+      "Description": "Vehicle unique ID",
+      "DisplayName": "Vehicle unique ID",
+      "Range": {
+        "high": "1073741824",
+        "low": "-1073741824"
+      },
+      "User": "Advanced"
+    }
+  },
   "AHRS_": {
     "AHRS_COMP_BETA": {
       "Description": "This controls the time constant for the cross-over frequency used to fuse AHRS (airspeed and heading) and GPS data to estimate ground velocity. Time constant is 0.1/beta. A larger time constant will use GPS data less and a small time constant will use air data less.",

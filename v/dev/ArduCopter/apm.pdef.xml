@@ -725,6 +725,11 @@
     </parameters>
   </vehicles>
   <libraries>
+    <parameters name="">
+      <param humanName="Vehicle unique ID" name="VEHICLE_UID" documentation="Vehicle unique ID" user="Advanced">
+        <field name="Range">-1073741824 1073741824</field>
+      </param>
+    </parameters>
     <parameters name="ADSB_">
       <param humanName="ADSB Type" name="ADSB_TYPE" documentation="Type of ADS-B hardware for ADSB-in and ADSB-out configuration and operation. If any type is selected then MAVLink based ADSB-in messages will always be enabled" user="Standard">
         <values>

@@ -243,6 +243,11 @@
     </parameters>
   </vehicles>
   <libraries>
+    <parameters name="">
+      <param humanName="Vehicle unique ID" name="VEHICLE_UID" documentation="Vehicle unique ID" user="Advanced">
+        <field name="Range">-1073741824 1073741824</field>
+      </param>
+    </parameters>
     <parameters name="AHRS_">
       <param humanName="AHRS GPS gain" name="AHRS_GPS_GAIN" documentation="This controls how much to use the GPS to correct the attitude. This should never be set to zero for a plane as it would result in the plane losing control in turns. For a plane please use the default value of 1.0." user="Advanced">
         <field name="Range">0.0 1.0</field>

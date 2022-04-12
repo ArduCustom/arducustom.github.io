@@ -474,31 +474,6 @@ This controls the height above the glide slope the plane may be before rebuildin
 
 
 
-.. _STICK_MIXING:
-
-STICK\_MIXING: Stick Mixing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-When enabled\, this adds user stick input to the control surfaces in auto modes\, allowing the user to have some degree of flight control without changing modes\.  There are two types of stick mixing available\. If you set STICK\_MIXING to 1 then it will use \"fly by wire\" mixing\, which controls the roll and pitch in the same way that the FBWA mode does\. This is the safest option if you usually fly ArduPlane in FBWA or FBWB mode\. If you set STICK\_MIXING to 2 then it will enable direct mixing mode\, which is what the STABILIZE mode uses\. That will allow for much more extreme maneuvers while in AUTO mode\. If you set STICK\_MIXING to 3 then it will apply to the yaw while in quadplane modes only\, such as while doing an automatic VTOL takeoff or landing\.
-
-
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | FBWMixing     |
-+-------+---------------+
-| 2     | DirectMixing  |
-+-------+---------------+
-| 3     | VTOL Yaw only |
-+-------+---------------+
-
-
-
-
 .. _TKOFF_THR_MINSPD:
 
 TKOFF\_THR\_MINSPD: Takeoff throttle min speed
@@ -897,6 +872,24 @@ ARSPD\_FBW\_MAX: Maximum Airspeed
 
 
 Maximum airspeed demanded in automatic throttle modes\. Should be set slightly less than level flight speed at THR\_MAX and also at least 50\% above ARSPD\_FBW\_MIN to allow for accurate TECS altitude control\.
+
+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 1         | 5 - 100 | meters per second |
++-----------+---------+-------------------+
+
+
+
+
+.. _ARSPD_GLIDING:
+
+ARSPD\_GLIDING: Airspeed target when gliding in auto throttle modes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Airspeed target when gliding in auto throttle modes\. If set to 0 use ARSPD\_FBW\_MIN instead \(default\)
 
 
 +-----------+---------+-------------------+
@@ -2606,17 +2599,15 @@ Flight mode specific options
 +-----+--------------------------------------------------------------------------------------------------------------+
 | 11  | Disable suppression of fixed wing rate gains in ground mode                                                  |
 +-----+--------------------------------------------------------------------------------------------------------------+
-| 18  | Cruise heading control with rudder channel                                                                   |
+| 19  | Cruise heading control with rudder channel                                                                   |
 +-----+--------------------------------------------------------------------------------------------------------------+
-| 19  | Enable manual altitude control in RTL mode                                                                   |
+| 20  | Enable manual altitude control in RTL mode                                                                   |
 +-----+--------------------------------------------------------------------------------------------------------------+
-| 20  | Climb first in RTL only during RC failsafe                                                                   |
+| 21  | Climb first in RTL only during RC failsafe                                                                   |
 +-----+--------------------------------------------------------------------------------------------------------------+
-| 21  | If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home                         |
+| 22  | If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home                         |
 +-----+--------------------------------------------------------------------------------------------------------------+
-| 22  | Glide in auto throttle modes if throttle bellow THR_DZ                                                       |
-+-----+--------------------------------------------------------------------------------------------------------------+
-| 23  | remove FBWB style loiter altitude control                                                                    |
+| 23  | Glide in auto throttle modes if throttle below THR_DZ                                                        |
 +-----+--------------------------------------------------------------------------------------------------------------+
 
 
@@ -3579,6 +3570,32 @@ Flight mode for switch position 12 \(1876 to 2049\)\, enabled with FLTMODE\_EXT
 +-------+------------+
 | 24    | THERMAL    |
 +-------+------------+
+
+
+
+
+
+.. _parameters_:
+
+ Parameters
+-----------
+
+
+.. _VEHICLE_UID:
+
+VEHICLE\_UID: Vehicle unique ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Vehicle unique ID
+
+
++--------------------------+
+| Range                    |
++==========================+
+| -1073741824 - 1073741824 |
++--------------------------+
 
 
 

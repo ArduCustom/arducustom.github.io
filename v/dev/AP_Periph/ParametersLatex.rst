@@ -764,6 +764,32 @@ Allows setting an individual system id for this vehicle to distinguish it from o
 
 
 
+.. _parameters_:
+
+ Parameters
+-----------
+
+
+.. _VEHICLE_UID:
+
+VEHICLE\_UID: Vehicle unique ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Vehicle unique ID
+
+
++--------------------------+
+| Range                    |
++==========================+
+| -1073741824 - 1073741824 |
++--------------------------+
+
+
+
+
+
 .. _parameters_ARSP:
 
 ARSP Parameters

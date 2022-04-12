@@ -1,4 +1,15 @@
 {
+  "": {
+    "VEHICLE_UID": {
+      "Description": "Vehicle unique ID",
+      "DisplayName": "Vehicle unique ID",
+      "Range": {
+        "high": "1073741824",
+        "low": "-1073741824"
+      },
+      "User": "Advanced"
+    }
+  },
   "AP_Periph": {
     "ADSB_BAUDRATE": {
       "Description": "ADSB serial baudrate.",

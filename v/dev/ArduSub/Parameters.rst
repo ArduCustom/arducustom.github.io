@@ -956,6 +956,32 @@ Acro roll\/pitch Expo to allow faster rotation when stick at edges
 
 
 
+.. _parameters_:
+
+ Parameters
+-----------
+
+
+.. _VEHICLE_UID:
+
+VEHICLE\_UID: Vehicle unique ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Vehicle unique ID
+
+
++--------------------------+
+| Range                    |
++==========================+
+| -1073741824 - 1073741824 |
++--------------------------+
+
+
+
+
+
 .. _parameters_AHRS_:
 
 AHRS\_ Parameters

@@ -1,4 +1,15 @@
 {
+  "": {
+    "VEHICLE_UID": {
+      "Description": "Vehicle unique ID",
+      "DisplayName": "Vehicle unique ID",
+      "Range": {
+        "high": "1073741824",
+        "low": "-1073741824"
+      },
+      "User": "Advanced"
+    }
+  },
   "ADSB_": {
     "ADSB_EMIT_TYPE": {
       "Description": "ADSB classification for the type of vehicle emitting the transponder signal. Default value is 14 (UAV).",
@@ -24783,6 +24794,17 @@
       "Units": "m/s",
       "User": "Standard"
     },
+    "ARSPD_GLIDING": {
+      "Description": "Airspeed target when gliding in auto throttle modes. If set to 0 use ARSPD_FBW_MIN instead (default)",
+      "DisplayName": "Airspeed target when gliding in auto throttle modes",
+      "Increment": "1",
+      "Range": {
+        "high": "100",
+        "low": "5"
+      },
+      "Units": "m/s",
+      "User": "Standard"
+    },
     "AUTOTUNE_LEVEL": {
       "Description": "Level of aggressiveness of pitch and roll PID gains. Lower values result in a 'softer' tune. Level 6 recommended for most planes. A value of 0 means to keep the current values of RMAX and TCONST for the controllers, tuning only the PID values",
       "DisplayName": "Autotune level",
@@ -25081,13 +25103,12 @@
         "1": "Use centered throttle in Cruise or FBWB to indicate trim airspeed",
         "10": "Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL",
         "11": "Disable suppression of fixed wing rate gains in ground mode",
-        "18": "Cruise heading control with rudder channel",
-        "19": "Enable manual altitude control in RTL mode",
+        "19": "Cruise heading control with rudder channel",
         "2": "Disable attitude check for takeoff arming",
-        "20": "Climb first in RTL only during RC failsafe",
-        "21": "If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home",
-        "22": "Glide in auto throttle modes if throttle bellow THR_DZ",
-        "23": "remove FBWB style loiter altitude control",
+        "20": "Enable manual altitude control in RTL mode",
+        "21": "Climb first in RTL only during RC failsafe",
+        "22": "If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home",
+        "23": "Glide in auto throttle modes if throttle below THR_DZ",
         "3": "Force target airspeed to trim airspeed in Cruise or FBWB",
         "4": "Climb to RTL_ALT_MIN before turning for RTL",
         "5": "Enable yaw damper in acro mode",
@@ -26076,17 +26097,6 @@
       "Values": {
         "0": "Disabled",
         "1": "Enabled"
-      }
-    },
-    "STICK_MIXING": {
-      "Description": "When enabled, this adds user stick input to the control surfaces in auto modes, allowing the user to have some degree of flight control without changing modes.  There are two types of stick mixing available. If you set STICK_MIXING to 1 then it will use \"fly by wire\" mixing, which controls the roll and pitch in the same way that the FBWA mode does. This is the safest option if you usually fly ArduPlane in FBWA or FBWB mode. If you set STICK_MIXING to 2 then it will enable direct mixing mode, which is what the STABILIZE mode uses. That will allow for much more extreme maneuvers while in AUTO mode. If you set STICK_MIXING to 3 then it will apply to the yaw while in quadplane modes only, such as while doing an automatic VTOL takeoff or landing.",
-      "DisplayName": "Stick Mixing",
-      "User": "Advanced",
-      "Values": {
-        "0": "Disabled",
-        "1": "FBWMixing",
-        "2": "DirectMixing",
-        "3": "VTOL Yaw only"
       }
     },
     "SYSID_ENFORCE": {

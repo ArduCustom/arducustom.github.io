@@ -221,6 +221,11 @@
     </parameters>
   </vehicles>
   <libraries>
+    <parameters name="">
+      <param humanName="Vehicle unique ID" name="VEHICLE_UID" documentation="Vehicle unique ID" user="Advanced">
+        <field name="Range">-1073741824 1073741824</field>
+      </param>
+    </parameters>
     <parameters name="ARSP">
       <param humanName="Airspeed type" name="ARSP_TYPE" documentation="Type of airspeed sensor" user="Standard">
         <values>
