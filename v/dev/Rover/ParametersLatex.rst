@@ -32461,6 +32461,62 @@ Vertical position on screen
 
 
 
+.. _OSD1_DEBUG_EN:
+
+OSD1\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_DEBUG_X:
+
+OSD1\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_DEBUG_Y:
+
+OSD1\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -37438,6 +37494,62 @@ Horizontal position on screen
 
 OSD2\_RC\_FS\_Y: RC\_FS\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_DEBUG_EN:
+
+OSD2\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_DEBUG_X:
+
+OSD2\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_DEBUG_Y:
+
+OSD2\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -42443,6 +42555,62 @@ Vertical position on screen
 
 
 
+.. _OSD3_DEBUG_EN:
+
+OSD3\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_DEBUG_X:
+
+OSD3\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_DEBUG_Y:
+
+OSD3\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -47434,6 +47602,62 @@ Vertical position on screen
 
 
 
+.. _OSD4_DEBUG_EN:
+
+OSD4\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_DEBUG_X:
+
+OSD4\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_DEBUG_Y:
+
+OSD4\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -52411,6 +52635,62 @@ Horizontal position on screen
 
 OSD5\_RC\_FS\_Y: RC\_FS\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_DEBUG_EN:
+
+OSD5\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_DEBUG_X:
+
+OSD5\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_DEBUG_Y:
+
+OSD5\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -75857,10 +76137,10 @@ STAT Parameters
 ---------------
 
 
-.. _STAT_BOOTCNT:
+.. _STAT_BOOT_CNT:
 
-STAT\_BOOTCNT: Boot Count
-~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_BOOT\_CNT: Boot Count
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Number of times board has been booted
@@ -76206,6 +76486,42 @@ STAT\_LOAD: Set to 1 then set stat values then reboot or set back to 0
 
 
 Set to 1 then set stat values then reboot or set back to 0
+
+
+.. _STAT_FLT_CNT:
+
+STAT\_FLT\_CNT: Flight counter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Number of times the aircraft has been flying
+
+
++----------+
+| ReadOnly |
++==========+
+| True     |
++----------+
+
+
+
+
+.. _STAT_HOMEDST_AVG:
+
+STAT\_HOMEDST\_AVG: Average home distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average home distance
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
 
 
 

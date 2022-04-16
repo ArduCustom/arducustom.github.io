@@ -13453,6 +13453,30 @@
         "low": "0"
       }
     },
+    "OSD1_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_EFFA_EN": {
       "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "EFFA_EN",
@@ -15589,6 +15613,30 @@
     "OSD2_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -17735,6 +17783,30 @@
         "low": "0"
       }
     },
+    "OSD3_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_EFFA_EN": {
       "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "EFFA_EN",
@@ -19876,6 +19948,30 @@
         "low": "0"
       }
     },
+    "OSD4_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_EFFA_EN": {
       "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "EFFA_EN",
@@ -22012,6 +22108,30 @@
     "OSD5_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -25103,11 +25223,10 @@
         "1": "Use centered throttle in Cruise or FBWB to indicate trim airspeed",
         "10": "Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL",
         "11": "Disable suppression of fixed wing rate gains in ground mode",
-        "19": "Cruise heading control with rudder channel",
         "2": "Disable attitude check for takeoff arming",
-        "20": "Enable manual altitude control in RTL mode",
-        "21": "Climb first in RTL only during RC failsafe",
-        "22": "If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home",
+        "20": "Cruise heading control with rudder channel",
+        "21": "Enable manual altitude control in RTL mode",
+        "22": "Climb first in RTL only during RC failsafe",
         "23": "Glide in auto throttle modes if throttle below THR_DZ",
         "3": "Force target airspeed to trim airspeed in Cruise or FBWB",
         "4": "Climb to RTL_ALT_MIN before turning for RTL",
@@ -25520,6 +25639,28 @@
         "0.8": "Default",
         "1.0": "Relaxed"
       }
+    },
+    "FS_ELAND_DELAY": {
+      "Description": "The time in seconds that a failsafe condition has to persist after reaching home before an emergency landing is triggered. The FS long action needs to trigger RTL for this to work. Set to 0 to disable (default)",
+      "DisplayName": "Failsafe emergency landing delay",
+      "Increment": "1",
+      "Range": {
+        "high": "600",
+        "low": "0"
+      },
+      "Units": "s",
+      "User": "Standard"
+    },
+    "FS_ELAND_LVLALT": {
+      "Description": "Altitude below which the plane will level in FS RTL emergency landing. Set to -1 to disable and continue landing in spiral until touching the ground.",
+      "DisplayName": "Failsafe emergency landing leveling altitude",
+      "Increment": "0.1",
+      "Range": {
+        "high": "600",
+        "low": "0"
+      },
+      "Units": "m",
+      "User": "Standard"
     },
     "FS_GCS_ENABL": {
       "Description": "Enable ground control station telemetry failsafe. Failsafe will trigger after FS_LONG_TIMEOUT seconds of no MAVLink heartbeat messages. There are three possible enabled settings. Setting FS_GCS_ENABL to 1 means that GCS failsafe will be triggered when the aircraft has not received a MAVLink HEARTBEAT message. Setting FS_GCS_ENABL to 2 means that GCS failsafe will be triggered on either a loss of HEARTBEAT messages, or a RADIO_STATUS message from a MAVLink enabled 3DR radio indicating that the ground station is not receiving status updates from the aircraft, which is indicated by the RADIO_STATUS.remrssi field being zero (this may happen if you have a one way link due to asymmetric noise on the ground station and aircraft radios).Setting FS_GCS_ENABL to 3 means that GCS failsafe will be triggered by Heartbeat(like option one), but only in AUTO mode. WARNING: Enabling this option opens up the possibility of your plane going into failsafe mode and running the motor on the ground it it loses contact with your ground station. If this option is enabled on an electric plane then you should enable ARMING_REQUIRED.",
@@ -26277,15 +26418,6 @@
         "1": "Enabled"
       }
     },
-    "THR_SUPP_MAN": {
-      "Description": "When throttle is suppressed in auto mode it is normally forced to zero. If you enable this option, then while suppressed it will be manual throttle. This is useful on petrol engines to hold the idle throttle manually while waiting for takeoff",
-      "DisplayName": "Throttle suppress manual passthru",
-      "User": "Advanced",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
     "TKOFF_ACCEL_CNT": {
       "Description": "This is the number of acceleration events to require for arming with TKOFF_THR_MINACC. The default is 1, which means a single forward acceleration above TKOFF_THR_MINACC will arm. By setting this higher than 1 you can require more forward/backward movements to arm.",
       "DisplayName": "Takeoff throttle acceleration count",
@@ -26305,6 +26437,26 @@
       },
       "Units": "%",
       "User": "Advanced"
+    },
+    "TKOFF_IDL_DELAY": {
+      "Description": "This parameter sets the delay between raising the throttle and the throttle actually starting to increase towards the set idle throttle value",
+      "DisplayName": "Takeoff idle throttle delay",
+      "Increment": "1",
+      "Range": {
+        "high": "120",
+        "low": "0"
+      },
+      "Units": "s",
+      "User": "Standard"
+    },
+    "TKOFF_IDL_MAN": {
+      "Description": "If this is set to one when in auto takeoff state either in auto or takeoff modes then the user has manual control over the takeoff idle throttle",
+      "DisplayName": "Takeoff idle throttle manual or not",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
     },
     "TKOFF_IDL_SRATE": {
       "Description": "This parameter sets the slew rate for the takeoff idle throttle. When this is zero the TKOFF_THR_SLEWRATE parameter is used",
@@ -39701,7 +39853,7 @@
       "Units": "m/s",
       "User": "Standard"
     },
-    "STAT_BOOTCNT": {
+    "STAT_BOOT_CNT": {
       "Description": "Number of times board has been booted",
       "DisplayName": "Boot Count",
       "ReadOnly": "True",
@@ -39719,6 +39871,12 @@
       "DisplayName": "Maximum current while flying",
       "ReadOnly": "True",
       "Units": "A",
+      "User": "Standard"
+    },
+    "STAT_FLT_CNT": {
+      "Description": "Number of times the aircraft has been flying",
+      "DisplayName": "Flight counter",
+      "ReadOnly": "True",
       "User": "Standard"
     },
     "STAT_FLT_ENERGY": {
@@ -39752,6 +39910,13 @@
     "STAT_HOMEALT_MAX": {
       "Description": "Maximum home distance",
       "DisplayName": "Maximum relative altitude",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_HOMEDST_AVG": {
+      "Description": "Average home distance",
+      "DisplayName": "Average home distance",
       "ReadOnly": "True",
       "Units": "m",
       "User": "Standard"

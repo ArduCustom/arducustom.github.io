@@ -16957,7 +16957,7 @@
       "Units": "m/s",
       "User": "Standard"
     },
-    "STAT_BOOTCNT": {
+    "STAT_BOOT_CNT": {
       "Description": "Number of times board has been booted",
       "DisplayName": "Boot Count",
       "ReadOnly": "True",
@@ -16975,6 +16975,12 @@
       "DisplayName": "Maximum current while flying",
       "ReadOnly": "True",
       "Units": "A",
+      "User": "Standard"
+    },
+    "STAT_FLT_CNT": {
+      "Description": "Number of times the aircraft has been flying",
+      "DisplayName": "Flight counter",
+      "ReadOnly": "True",
       "User": "Standard"
     },
     "STAT_FLT_ENERGY": {
@@ -17008,6 +17014,13 @@
     "STAT_HOMEALT_MAX": {
       "Description": "Maximum home distance",
       "DisplayName": "Maximum relative altitude",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_HOMEDST_AVG": {
+      "Description": "Average home distance",
+      "DisplayName": "Average home distance",
       "ReadOnly": "True",
       "Units": "m",
       "User": "Standard"

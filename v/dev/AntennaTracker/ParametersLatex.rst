@@ -30757,10 +30757,10 @@ STAT Parameters
 ---------------
 
 
-.. _STAT_BOOTCNT:
+.. _STAT_BOOT_CNT:
 
-STAT\_BOOTCNT: Boot Count
-~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_BOOT\_CNT: Boot Count
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Number of times board has been booted
@@ -31106,6 +31106,42 @@ STAT\_LOAD: Set to 1 then set stat values then reboot or set back to 0
 
 
 Set to 1 then set stat values then reboot or set back to 0
+
+
+.. _STAT_FLT_CNT:
+
+STAT\_FLT\_CNT: Flight counter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Number of times the aircraft has been flying
+
+
++----------+
+| ReadOnly |
++==========+
+| True     |
++----------+
+
+
+
+
+.. _STAT_HOMEDST_AVG:
+
+STAT\_HOMEDST\_AVG: Average home distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average home distance
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
 
 
 

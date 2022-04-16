@@ -18271,6 +18271,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>DEBUG_EN (OSD1_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD1_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD1_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD2_ Parameters</h1>
 
 
@@ -20670,6 +20697,33 @@ DO NOT EDIT
 
 
 <h2>RC_FS_Y (OSD2_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>DEBUG_EN (OSD2_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD2_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD2_DEBUG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -23083,6 +23137,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>DEBUG_EN (OSD3_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD3_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD3_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD4_ Parameters</h1>
 
 
@@ -25489,6 +25570,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>DEBUG_EN (OSD4_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD4_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD4_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD5_ Parameters</h1>
 
 
@@ -27888,6 +27996,33 @@ DO NOT EDIT
 
 
 <h2>RC_FS_Y (OSD5_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>DEBUG_EN (OSD5_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD5_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD5_DEBUG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -40825,7 +40960,7 @@ DO NOT EDIT
 <h1>STAT Parameters</h1>
 
 
-<h2>Boot Count (STAT_BOOTCNT)</h2>
+<h2>Boot Count (STAT_BOOT_CNT)</h2>
 
 <p>Number of times board has been booted</p>
 <ul>
@@ -40998,6 +41133,23 @@ DO NOT EDIT
 
 <p>Set to 1 then set stat values then reboot or set back to 0</p>
 <ul>
+</ul>
+
+
+<h2>Flight counter (STAT_FLT_CNT)</h2>
+
+<p>Number of times the aircraft has been flying</p>
+<ul>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average home distance (STAT_HOMEDST_AVG)</h2>
+
+<p>Average home distance</p>
+<ul>
+<li>Units: meters</li>
+<li>ReadOnly: True</li>
 </ul>
 
 

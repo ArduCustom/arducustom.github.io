@@ -555,9 +555,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Throttle suppress manual passthru (ArduPlane:THR_SUPP_MAN)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Takeoff idle throttle manual or not (ArduPlane:TKOFF_IDL_MAN)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>When throttle is suppressed in auto mode it is normally forced to zero. If you enable this option, then while suppressed it will be manual throttle. This is useful on petrol engines to hold the idle throttle manually while waiting for takeoff</p>
+<p>If this is set to one when in auto takeoff state either in auto or takeoff modes then the user has manual control over the takeoff idle throttle</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -663,6 +663,26 @@ DO NOT EDIT
 <li>Units: seconds</li>
 <li>Range: 1 300</li>
 <li>Increment: 0.5</li>
+</ul>
+
+
+<h2>Failsafe emergency landing delay (ArduPlane:FS_ELAND_DELAY)</h2>
+
+<p>The time in seconds that a failsafe condition has to persist after reaching home before an emergency landing is triggered. The FS long action needs to trigger RTL for this to work. Set to 0 to disable (default)</p>
+<ul>
+<li>Units: seconds</li>
+<li>Range: 0 600</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Failsafe emergency landing leveling altitude (ArduPlane:FS_ELAND_LVLALT)</h2>
+
+<p>Altitude below which the plane will level in FS RTL emergency landing. Set to -1 to disable and continue landing in spiral until touching the ground.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 600</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -1262,7 +1282,7 @@ DO NOT EDIT
 
 <p>Flight mode specific options</p>
 <ul>
-<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 19: Cruise heading control with rudder channel, 20: Enable manual altitude control in RTL mode, 21: Climb first in RTL only during RC failsafe, 22:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 23: Glide in auto throttle modes if throttle below THR_DZ</li>
+<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 20: Cruise heading control with rudder channel, 21: Enable manual altitude control in RTL mode, 22: Climb first in RTL only during RC failsafe, 23: Glide in auto throttle modes if throttle below THR_DZ</li>
 </ul>
 
 
@@ -1425,6 +1445,16 @@ DO NOT EDIT
 <tr><td>1</td><td>Takeoff</td></tr>
 <tr><td>2</td><td>Auto</td></tr>
 </table>
+</ul>
+
+
+<h2>Takeoff idle throttle delay (ArduPlane:TKOFF_IDL_DELAY)</h2>
+
+<p>This parameter sets the delay between raising the throttle and the throttle actually starting to increase towards the set idle throttle value</p>
+<ul>
+<li>Units: seconds</li>
+<li>Range: 0 120</li>
+<li>Increment: 1</li>
 </ul>
 
 
@@ -17111,6 +17141,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>DEBUG_EN (OSD1_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD1_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD1_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD2_ Parameters</h1>
 
 
@@ -19510,6 +19567,33 @@ DO NOT EDIT
 
 
 <h2>RC_FS_Y (OSD2_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>DEBUG_EN (OSD2_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD2_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD2_DEBUG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -21923,6 +22007,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>DEBUG_EN (OSD3_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD3_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD3_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD4_ Parameters</h1>
 
 
@@ -24329,6 +24440,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>DEBUG_EN (OSD4_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD4_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD4_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD5_ Parameters</h1>
 
 
@@ -26728,6 +26866,33 @@ DO NOT EDIT
 
 
 <h2>RC_FS_Y (OSD5_RC_FS_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>DEBUG_EN (OSD5_DEBUG_EN)</h2>
+
+<p>Displays debug value</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>DEBUG_X (OSD5_DEBUG_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>DEBUG_Y (OSD5_DEBUG_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -41361,7 +41526,7 @@ DO NOT EDIT
 <h1>STAT Parameters</h1>
 
 
-<h2>Boot Count (STAT_BOOTCNT)</h2>
+<h2>Boot Count (STAT_BOOT_CNT)</h2>
 
 <p>Number of times board has been booted</p>
 <ul>
@@ -41534,6 +41699,23 @@ DO NOT EDIT
 
 <p>Set to 1 then set stat values then reboot or set back to 0</p>
 <ul>
+</ul>
+
+
+<h2>Flight counter (STAT_FLT_CNT)</h2>
+
+<p>Number of times the aircraft has been flying</p>
+<ul>
+<li>ReadOnly: True</li>
+</ul>
+
+
+<h2>Average home distance (STAT_HOMEDST_AVG)</h2>
+
+<p>Average home distance</p>
+<ul>
+<li>Units: meters</li>
+<li>ReadOnly: True</li>
 </ul>
 
 

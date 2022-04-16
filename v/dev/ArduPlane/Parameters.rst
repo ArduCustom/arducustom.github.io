@@ -1120,14 +1120,14 @@ maximum percentage change in flap output per second\. A setting of 25 means to n
 
 
 
-.. _THR_SUPP_MAN:
+.. _TKOFF_IDL_MAN:
 
-THR\_SUPP\_MAN: Throttle suppress manual passthru
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TKOFF\_IDL\_MAN: Takeoff idle throttle manual or not
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-When throttle is suppressed in auto mode it is normally forced to zero\. If you enable this option\, then while suppressed it will be manual throttle\. This is useful on petrol engines to hold the idle throttle manually while waiting for takeoff
+If this is set to one when in auto takeoff state either in auto or takeoff modes then the user has manual control over the takeoff idle throttle
 
 
 +----------------------+
@@ -1352,6 +1352,42 @@ The time in seconds that a failsafe condition has to persist before a long fails
 +===========+=========+=========+
 | 0.5       | 1 - 300 | seconds |
 +-----------+---------+---------+
+
+
+
+
+.. _FS_ELAND_DELAY:
+
+FS\_ELAND\_DELAY: Failsafe emergency landing delay
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+The time in seconds that a failsafe condition has to persist after reaching home before an emergency landing is triggered\. The FS long action needs to trigger RTL for this to work\. Set to 0 to disable \(default\)
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 - 600 | seconds |
++-----------+---------+---------+
+
+
+
+
+.. _FS_ELAND_LVLALT:
+
+FS\_ELAND\_LVLALT: Failsafe emergency landing leveling altitude
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Altitude below which the plane will level in FS RTL emergency landing\. Set to \-1 to disable and continue landing in spiral until touching the ground\.
+
+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.1       | 0 - 600 | meters |
++-----------+---------+--------+
 
 
 
@@ -2700,13 +2736,11 @@ Flight mode specific options
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 11  | Disable suppression of fixed wing rate gains in ground mode                                                  | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
-| | 19  | Cruise heading control with rudder channel                                                                   | |
+| | 20  | Cruise heading control with rudder channel                                                                   | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
-| | 20  | Enable manual altitude control in RTL mode                                                                   | |
+| | 21  | Enable manual altitude control in RTL mode                                                                   | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
-| | 21  | Climb first in RTL only during RC failsafe                                                                   | |
-| +-----+--------------------------------------------------------------------------------------------------------------+ |
-| | 22  | If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home                         | |
+| | 22  | Climb first in RTL only during RC failsafe                                                                   | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
 | | 23  | Glide in auto throttle modes if throttle below THR_DZ                                                        | |
 | +-----+--------------------------------------------------------------------------------------------------------------+ |
@@ -3079,6 +3113,24 @@ Selects what mode to switch to after arming
 | +-------+----------+ |
 |                      |
 +----------------------+
+
+
+
+
+.. _TKOFF_IDL_DELAY:
+
+TKOFF\_IDL\_DELAY: Takeoff idle throttle delay
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+This parameter sets the delay between raising the throttle and the throttle actually starting to increase towards the set idle throttle value
+
+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 - 120 | seconds |
++-----------+---------+---------+
 
 
 
@@ -38077,6 +38129,67 @@ Vertical position on screen
 
 
 
+.. _OSD1_DEBUG_EN:
+
+OSD1\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_DEBUG_X:
+
+OSD1\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_DEBUG_Y:
+
+OSD1\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -43499,6 +43612,67 @@ Horizontal position on screen
 
 OSD2\_RC\_FS\_Y: RC\_FS\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_DEBUG_EN:
+
+OSD2\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_DEBUG_X:
+
+OSD2\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_DEBUG_Y:
+
+OSD2\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -48949,6 +49123,67 @@ Vertical position on screen
 
 
 
+.. _OSD3_DEBUG_EN:
+
+OSD3\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_DEBUG_X:
+
+OSD3\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_DEBUG_Y:
+
+OSD3\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -54385,6 +54620,67 @@ Vertical position on screen
 
 
 
+.. _OSD4_DEBUG_EN:
+
+OSD4\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_DEBUG_X:
+
+OSD4\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_DEBUG_Y:
+
+OSD4\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -59807,6 +60103,67 @@ Horizontal position on screen
 
 OSD5\_RC\_FS\_Y: RC\_FS\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_DEBUG_EN:
+
+OSD5\_DEBUG\_EN: DEBUG\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays debug value
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD5_DEBUG_X:
+
+OSD5\_DEBUG\_X: DEBUG\_X
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_DEBUG_Y:
+
+OSD5\_DEBUG\_Y: DEBUG\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -89959,10 +90316,10 @@ STAT Parameters
 ---------------
 
 
-.. _STAT_BOOTCNT:
+.. _STAT_BOOT_CNT:
 
-STAT\_BOOTCNT: Boot Count
-~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_BOOT\_CNT: Boot Count
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Number of times board has been booted
@@ -90308,6 +90665,42 @@ STAT\_LOAD: Set to 1 then set stat values then reboot or set back to 0
 
 
 Set to 1 then set stat values then reboot or set back to 0
+
+
+.. _STAT_FLT_CNT:
+
+STAT\_FLT\_CNT: Flight counter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Number of times the aircraft has been flying
+
+
++----------+
+| ReadOnly |
++==========+
+| True     |
++----------+
+
+
+
+
+.. _STAT_HOMEDST_AVG:
+
+STAT\_HOMEDST\_AVG: Average home distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Average home distance
+
+
++----------+--------+
+| ReadOnly | Units  |
++==========+========+
+| True     | meters |
++----------+--------+
+
+
 
 
 

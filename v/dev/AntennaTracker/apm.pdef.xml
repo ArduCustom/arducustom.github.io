@@ -9314,7 +9314,7 @@
       </param>
     </parameters>
     <parameters name="STAT">
-      <param humanName="Boot Count" name="STAT_BOOTCNT" documentation="Number of times board has been booted" user="Standard">
+      <param humanName="Boot Count" name="STAT_BOOT_CNT" documentation="Number of times board has been booted" user="Standard">
         <field name="ReadOnly">True</field>
       </param>
       <param humanName="Total flight time" name="STAT_FLT_TIME" documentation="Total flight time" user="Standard">
@@ -9408,6 +9408,14 @@
       </param>
       <param humanName="Set to 1 then set stat values then reboot or set back to 0" name="STAT_LOAD" documentation="Set to 1 then set stat values then reboot or set back to 0" user="Standard">
 </param>
+      <param humanName="Flight counter" name="STAT_FLT_CNT" documentation="Number of times the aircraft has been flying" user="Standard">
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Average home distance" name="STAT_HOMEDST_AVG" documentation="Average home distance" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
     </parameters>
     <parameters name="VISO">
       <param humanName="Visual odometry camera connection type" name="VISO_TYPE" documentation="Visual odometry camera connection type" user="Advanced">

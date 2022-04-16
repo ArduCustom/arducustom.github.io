@@ -16200,6 +16200,30 @@
         "low": "0"
       }
     },
+    "OSD1_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_EFFA_EN": {
       "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "EFFA_EN",
@@ -18336,6 +18360,30 @@
     "OSD2_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -20482,6 +20530,30 @@
         "low": "0"
       }
     },
+    "OSD3_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_EFFA_EN": {
       "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "EFFA_EN",
@@ -22623,6 +22695,30 @@
         "low": "0"
       }
     },
+    "OSD4_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_EFFA_EN": {
       "Description": "Displays air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "EFFA_EN",
@@ -24759,6 +24855,30 @@
     "OSD5_CURRENT_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "CURRENT_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_DEBUG_EN": {
+      "Description": "Displays debug value",
+      "DisplayName": "DEBUG_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_DEBUG_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "DEBUG_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_DEBUG_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "DEBUG_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -38787,7 +38907,7 @@
       "Units": "m/s",
       "User": "Standard"
     },
-    "STAT_BOOTCNT": {
+    "STAT_BOOT_CNT": {
       "Description": "Number of times board has been booted",
       "DisplayName": "Boot Count",
       "ReadOnly": "True",
@@ -38805,6 +38925,12 @@
       "DisplayName": "Maximum current while flying",
       "ReadOnly": "True",
       "Units": "A",
+      "User": "Standard"
+    },
+    "STAT_FLT_CNT": {
+      "Description": "Number of times the aircraft has been flying",
+      "DisplayName": "Flight counter",
+      "ReadOnly": "True",
       "User": "Standard"
     },
     "STAT_FLT_ENERGY": {
@@ -38838,6 +38964,13 @@
     "STAT_HOMEALT_MAX": {
       "Description": "Maximum home distance",
       "DisplayName": "Maximum relative altitude",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "STAT_HOMEDST_AVG": {
+      "Description": "Average home distance",
+      "DisplayName": "Average home distance",
       "ReadOnly": "True",
       "Units": "m",
       "User": "Standard"

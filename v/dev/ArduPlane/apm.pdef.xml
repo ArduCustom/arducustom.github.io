@@ -308,7 +308,7 @@
         <field name="Range">0 100</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Throttle suppress manual passthru" name="ArduPlane:THR_SUPP_MAN" documentation="When throttle is suppressed in auto mode it is normally forced to zero. If you enable this option, then while suppressed it will be manual throttle. This is useful on petrol engines to hold the idle throttle manually while waiting for takeoff" user="Advanced">
+      <param humanName="Takeoff idle throttle manual or not" name="ArduPlane:TKOFF_IDL_MAN" documentation="If this is set to one when in auto takeoff state either in auto or takeoff modes then the user has manual control over the takeoff idle throttle" user="Advanced">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -371,6 +371,18 @@
         <field name="UnitText">seconds</field>
         <field name="Range">1 300</field>
         <field name="Increment">0.5</field>
+      </param>
+      <param humanName="Failsafe emergency landing delay" name="ArduPlane:FS_ELAND_DELAY" documentation="The time in seconds that a failsafe condition has to persist after reaching home before an emergency landing is triggered. The FS long action needs to trigger RTL for this to work. Set to 0 to disable (default)" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0 600</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Failsafe emergency landing leveling altitude" name="ArduPlane:FS_ELAND_LVLALT" documentation="Altitude below which the plane will level in FS RTL emergency landing. Set to -1 to disable and continue landing in spiral until touching the ground." user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 600</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="GCS failsafe enable" name="ArduPlane:FS_GCS_ENABL" documentation="Enable ground control station telemetry failsafe. Failsafe will trigger after FS_LONG_TIMEOUT seconds of no MAVLink heartbeat messages. There are three possible enabled settings. Setting FS_GCS_ENABL to 1 means that GCS failsafe will be triggered when the aircraft has not received a MAVLink HEARTBEAT message. Setting FS_GCS_ENABL to 2 means that GCS failsafe will be triggered on either a loss of HEARTBEAT messages, or a RADIO_STATUS message from a MAVLink enabled 3DR radio indicating that the ground station is not receiving status updates from the aircraft, which is indicated by the RADIO_STATUS.remrssi field being zero (this may happen if you have a one way link due to asymmetric noise on the ground station and aircraft radios).Setting FS_GCS_ENABL to 3 means that GCS failsafe will be triggered by Heartbeat(like option one), but only in AUTO mode. WARNING: Enabling this option opens up the possibility of your plane going into failsafe mode and running the motor on the ground it it loses contact with your ground station. If this option is enabled on an electric plane then you should enable ARMING_REQUIRED." user="Standard">
         <values>
@@ -769,7 +781,7 @@
         <field name="UnitText">meters</field>
       </param>
       <param humanName="Flight mode options" name="ArduPlane:FLIGHT_OPTIONS" documentation="Flight mode specific options" user="Advanced">
-        <field name="Bitmask">0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 19: Cruise heading control with rudder channel, 20: Enable manual altitude control in RTL mode, 21: Climb first in RTL only during RC failsafe, 22:If RTL in failsafe land with 0 throttle spiraling down 2 minutes after reaching home, 23: Glide in auto throttle modes if throttle below THR_DZ</field>
+        <field name="Bitmask">0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 20: Cruise heading control with rudder channel, 21: Enable manual altitude control in RTL mode, 22: Climb first in RTL only during RC failsafe, 23: Glide in auto throttle modes if throttle below THR_DZ</field>
       </param>
       <param humanName="Takeoff throttle acceleration count" name="ArduPlane:TKOFF_ACCEL_CNT" documentation="This is the number of acceleration events to require for arming with TKOFF_THR_MINACC. The default is 1, which means a single forward acceleration above TKOFF_THR_MINACC will arm. By setting this higher than 1 you can require more forward/backward movements to arm." user="Standard">
         <field name="Range">1 10</field>
@@ -859,6 +871,12 @@
           <value code="1">Takeoff</value>
           <value code="2">Auto</value>
         </values>
+      </param>
+      <param humanName="Takeoff idle throttle delay" name="ArduPlane:TKOFF_IDL_DELAY" documentation="This parameter sets the delay between raising the throttle and the throttle actually starting to increase towards the set idle throttle value" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0 120</field>
+        <field name="Increment">1</field>
       </param>
       <param humanName="Takeoff idle throttle slew rate" name="ArduPlane:TKOFF_IDL_SRATE" documentation="This parameter sets the slew rate for the takeoff idle throttle. When this is zero the TKOFF_THR_SLEWRATE parameter is used" user="Standard">
         <field name="Units">%/s</field>
@@ -9499,6 +9517,18 @@
       <param humanName="RC_FS_Y" name="OSD1_RC_FS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="DEBUG_EN" name="OSD1_DEBUG_EN" documentation="Displays debug value">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="DEBUG_X" name="OSD1_DEBUG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="DEBUG_Y" name="OSD1_DEBUG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10567,6 +10597,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="RC_FS_Y" name="OSD2_RC_FS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="DEBUG_EN" name="OSD2_DEBUG_EN" documentation="Displays debug value">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="DEBUG_X" name="OSD2_DEBUG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="DEBUG_Y" name="OSD2_DEBUG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -11639,6 +11681,18 @@
       <param humanName="RC_FS_Y" name="OSD3_RC_FS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="DEBUG_EN" name="OSD3_DEBUG_EN" documentation="Displays debug value">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="DEBUG_X" name="OSD3_DEBUG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="DEBUG_Y" name="OSD3_DEBUG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -12709,6 +12763,18 @@
       <param humanName="RC_FS_Y" name="OSD4_RC_FS_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="DEBUG_EN" name="OSD4_DEBUG_EN" documentation="Displays debug value">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="DEBUG_X" name="OSD4_DEBUG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="DEBUG_Y" name="OSD4_DEBUG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD5_">
       <param humanName="Enable screen" name="OSD5_ENABLE" documentation="Enable this screen" user="Standard">
@@ -13777,6 +13843,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="RC_FS_Y" name="OSD5_RC_FS_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="DEBUG_EN" name="OSD5_DEBUG_EN" documentation="Displays debug value">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="DEBUG_X" name="OSD5_DEBUG_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="DEBUG_Y" name="OSD5_DEBUG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -23408,7 +23486,7 @@
       </param>
     </parameters>
     <parameters name="STAT">
-      <param humanName="Boot Count" name="STAT_BOOTCNT" documentation="Number of times board has been booted" user="Standard">
+      <param humanName="Boot Count" name="STAT_BOOT_CNT" documentation="Number of times board has been booted" user="Standard">
         <field name="ReadOnly">True</field>
       </param>
       <param humanName="Total flight time" name="STAT_FLT_TIME" documentation="Total flight time" user="Standard">
@@ -23502,6 +23580,14 @@
       </param>
       <param humanName="Set to 1 then set stat values then reboot or set back to 0" name="STAT_LOAD" documentation="Set to 1 then set stat values then reboot or set back to 0" user="Standard">
 </param>
+      <param humanName="Flight counter" name="STAT_FLT_CNT" documentation="Number of times the aircraft has been flying" user="Standard">
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Average home distance" name="STAT_HOMEDST_AVG" documentation="Average home distance" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
     </parameters>
     <parameters name="STEER2SRV_">
       <param humanName="Steering Time Constant" name="STEER2SRV_TCONST" documentation="This controls the time constant in seconds from demanded to achieved steering angle. A value of 0.75 is a good default and will work with nearly all rovers. Ground steering in aircraft needs a bit smaller time constant, and a value of 0.5 is recommended for best ground handling in fixed wing aircraft. A value of 0.75 means that the controller will try to correct any deviation between the desired and actual steering angle in 0.75 seconds. Advanced users may want to reduce this time to obtain a faster response but there is no point setting a time less than the vehicle can achieve." user="Advanced">
