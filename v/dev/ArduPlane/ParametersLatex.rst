@@ -1464,6 +1464,8 @@ Flight mode for switch position 1 \(910 to 1230 and above 2049\)
 +-------+-----------------+
 | 25    | Loiter to QLand |
 +-------+-----------------+
+| 26    | Course hold     |
++-------+-----------------+
 
 
 
@@ -1527,6 +1529,8 @@ Flight mode for switch position 2 \(1231 to 1360\)
 | 24    | THERMAL         |
 +-------+-----------------+
 | 25    | Loiter to QLand |
++-------+-----------------+
+| 26    | Course hold     |
 +-------+-----------------+
 
 
@@ -1592,6 +1596,8 @@ Flight mode for switch position 3 \(1361 to 1490\)
 +-------+-----------------+
 | 25    | Loiter to QLand |
 +-------+-----------------+
+| 26    | Course hold     |
++-------+-----------------+
 
 
 
@@ -1655,6 +1661,8 @@ Flight mode for switch position 4 \(1491 to 1620\)
 | 24    | THERMAL         |
 +-------+-----------------+
 | 25    | Loiter to QLand |
++-------+-----------------+
+| 26    | Course hold     |
 +-------+-----------------+
 
 
@@ -1720,6 +1728,8 @@ Flight mode for switch position 5 \(1621 to 1749\)
 +-------+-----------------+
 | 25    | Loiter to QLand |
 +-------+-----------------+
+| 26    | Course hold     |
++-------+-----------------+
 
 
 
@@ -1783,6 +1793,8 @@ Flight mode for switch position 6 \(1750 to 2049\)
 | 24    | THERMAL         |
 +-------+-----------------+
 | 25    | Loiter to QLand |
++-------+-----------------+
+| 26    | Course hold     |
 +-------+-----------------+
 
 
@@ -1848,6 +1860,8 @@ This selects the mode to start in on boot\. This is useful for when you want to 
 | 24    | THERMAL         |
 +-------+-----------------+
 | 25    | Loiter to QLand |
++-------+-----------------+
+| 26    | Course hold     |
 +-------+-----------------+
 
 
