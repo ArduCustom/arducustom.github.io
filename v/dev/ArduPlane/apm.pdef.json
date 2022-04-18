@@ -25657,6 +25657,17 @@
       "Units": "s",
       "User": "Standard"
     },
+    "FS_ELAND_GLDALT": {
+      "Description": "Altitude below which the plane will start gliding in FS RTL emergency landing",
+      "DisplayName": "Failsafe emergency landing gliding altitude",
+      "Increment": "0.1",
+      "Range": {
+        "high": "600",
+        "low": "0"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
     "FS_ELAND_LVLALT": {
       "Description": "Altitude below which the plane will level in FS RTL emergency landing. Set to -1 to disable and continue landing in spiral until touching the ground.",
       "DisplayName": "Failsafe emergency landing leveling altitude",
@@ -25666,6 +25677,11 @@
         "low": "0"
       },
       "Units": "m",
+      "User": "Standard"
+    },
+    "FS_ELAND_UPWIND": {
+      "Description": "If set to 1 wait to go upwind to level roll",
+      "DisplayName": "Failsafe emergency landing land upwind",
       "User": "Standard"
     },
     "FS_GCS_ENABL": {

@@ -1343,6 +1343,33 @@ The time in seconds that a failsafe condition has to persist after reaching home
 
 
 
+.. _FS_ELAND_UPWIND:
+
+FS\_ELAND\_UPWIND: Failsafe emergency landing land upwind
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+If set to 1 wait to go upwind to level roll
+
+
+.. _FS_ELAND_GLDALT:
+
+FS\_ELAND\_GLDALT: Failsafe emergency landing gliding altitude
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Altitude below which the plane will start gliding in FS RTL emergency landing
+
+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.1       | 0 - 600 | meters |
++-----------+---------+--------+
+
+
+
+
 .. _FS_ELAND_LVLALT:
 
 FS\_ELAND\_LVLALT: Failsafe emergency landing leveling altitude

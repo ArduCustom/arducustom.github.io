@@ -378,6 +378,14 @@
         <field name="Range">0 600</field>
         <field name="Increment">1</field>
       </param>
+      <param humanName="Failsafe emergency landing land upwind" name="ArduPlane:FS_ELAND_UPWIND" documentation="If set to 1 wait to go upwind to level roll" user="Standard">
+</param>
+      <param humanName="Failsafe emergency landing gliding altitude" name="ArduPlane:FS_ELAND_GLDALT" documentation="Altitude below which the plane will start gliding in FS RTL emergency landing" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 600</field>
+        <field name="Increment">0.1</field>
+      </param>
       <param humanName="Failsafe emergency landing leveling altitude" name="ArduPlane:FS_ELAND_LVLALT" documentation="Altitude below which the plane will level in FS RTL emergency landing. Set to -1 to disable and continue landing in spiral until touching the ground." user="Standard">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
