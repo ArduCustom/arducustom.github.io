@@ -695,7 +695,17 @@ DO NOT EDIT
 
 <h2>Failsafe emergency landing leveling altitude (ArduPlane:FS_ELAND_LVLALT)</h2>
 
-<p>Altitude below which the plane will level in FS RTL emergency landing. Set to -1 to disable and continue landing in spiral until touching the ground.</p>
+<p>Altitude below which the plane will level in FS RTL emergency landing. Only used when FS_ELAND_UPDWIND is 0. Set to -1 to disable and continue landing in spiral until touching the ground.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 600</li>
+<li>Increment: 0.1</li>
+</ul>
+
+
+<h2>Failsafe emergency landing loiter radius (ArduPlane:FS_ELAND_LOTRAD)</h2>
+
+<p>Failsafe emergency landing loiter radius. Set to 0 to use RTL_RADIUS.</p>
 <ul>
 <li>Units: meters</li>
 <li>Range: 0 600</li>

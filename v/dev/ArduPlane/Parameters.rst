@@ -1407,7 +1407,25 @@ FS\_ELAND\_LVLALT: Failsafe emergency landing leveling altitude
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Altitude below which the plane will level in FS RTL emergency landing\. Set to \-1 to disable and continue landing in spiral until touching the ground\.
+Altitude below which the plane will level in FS RTL emergency landing\. Only used when FS\_ELAND\_UPDWIND is 0\. Set to \-1 to disable and continue landing in spiral until touching the ground\.
+
+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.1       | 0 - 600 | meters |
++-----------+---------+--------+
+
+
+
+
+.. _FS_ELAND_LOTRAD:
+
+FS\_ELAND\_LOTRAD: Failsafe emergency landing loiter radius
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Failsafe emergency landing loiter radius\. Set to 0 to use RTL\_RADIUS\.
 
 
 +-----------+---------+--------+

@@ -25668,8 +25668,19 @@
       "Units": "m",
       "User": "Standard"
     },
+    "FS_ELAND_LOTRAD": {
+      "Description": "Failsafe emergency landing loiter radius. Set to 0 to use RTL_RADIUS.",
+      "DisplayName": "Failsafe emergency landing loiter radius",
+      "Increment": "0.1",
+      "Range": {
+        "high": "600",
+        "low": "0"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
     "FS_ELAND_LVLALT": {
-      "Description": "Altitude below which the plane will level in FS RTL emergency landing. Set to -1 to disable and continue landing in spiral until touching the ground.",
+      "Description": "Altitude below which the plane will level in FS RTL emergency landing. Only used when FS_ELAND_UPDWIND is 0. Set to -1 to disable and continue landing in spiral until touching the ground.",
       "DisplayName": "Failsafe emergency landing leveling altitude",
       "Increment": "0.1",
       "Range": {
