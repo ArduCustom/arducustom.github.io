@@ -34636,6 +34636,8 @@ RC input options
 | +-----+--------------------------------------------------------------------+ |
 | | 11  | CRSF RSSI shows Link Quality                                       | |
 | +-----+--------------------------------------------------------------------+ |
+| | 21  | Switch to manual after disarming (plane only)                      | |
+| +-----+--------------------------------------------------------------------+ |
 | | 22  | Disable throttle battery compensation in manual mode (plane only)  | |
 | +-----+--------------------------------------------------------------------+ |
 | | 23  | Disable throttle expo in manual mode (plane only)                  | |

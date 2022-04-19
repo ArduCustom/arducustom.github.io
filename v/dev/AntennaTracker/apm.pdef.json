@@ -7894,6 +7894,7 @@
         "10": "Enable multiple receiver support",
         "11": "CRSF RSSI shows Link Quality",
         "2": "Ignore Receiver Failsafe bit but allow other RC failsafes if setup",
+        "21": "Switch to manual after disarming (plane only)",
         "22": "Disable throttle battery compensation in manual mode (plane only)",
         "23": "Disable throttle expo in manual mode (plane only)",
         "3": "FPort Pad",
