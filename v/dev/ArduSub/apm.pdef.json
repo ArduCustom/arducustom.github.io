@@ -276,7 +276,7 @@
   },
   "ARSPD": {
     "ARSPD2_AUTOCAL": {
-      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
+      "Description": "If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.",
       "DisplayName": "Automatic airspeed ratio calibration for 2nd airspeed sensor",
       "User": "Advanced"
     },
@@ -320,7 +320,7 @@
     },
     "ARSPD2_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed offset calibration on startup for 2nd sensor",
+      "DisplayName": "Skip airspeed calibration on startup for 2nd sensor",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -361,7 +361,7 @@
       }
     },
     "ARSPD2_USE": {
-      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
+      "Description": "use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller",
       "DisplayName": "Enable use of 2nd airspeed sensor",
       "User": "Standard",
       "Values": {
@@ -371,7 +371,8 @@
       }
     },
     "ARSPD_AUTOCAL": {
-      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
+      "Description": "Enables automatic adjustment of ARSPD_RATIO during a calibration flight based on estimation of ground speed and true airspeed. New ratio saved every 2 minutes if change is > 5%. Should not be left enabled.",
+      "DisplayName": "Automatic airspeed ratio calibration",
       "User": "Advanced"
     },
     "ARSPD_BUS": {
@@ -402,7 +403,7 @@
         "1": "AllowSpeedMismatchRecovery",
         "2": "DisableVoltageCorrection"
       },
-      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
+      "Description": "Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction",
       "DisplayName": "Airspeed options bitmask",
       "User": "Advanced"
     },
@@ -433,7 +434,7 @@
     },
     "ARSPD_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed offset calibration on startup",
+      "DisplayName": "Skip airspeed calibration on startup",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -474,7 +475,7 @@
       }
     },
     "ARSPD_USE": {
-      "Description": "This parameter is not used by this vehicle. Always set to 0.",
+      "Description": "Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).",
       "DisplayName": "Airspeed use",
       "User": "Standard",
       "Values": {
@@ -484,13 +485,13 @@
       }
     },
     "ARSPD_WIND_MAX": {
-      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
+      "Description": "If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor.",
       "DisplayName": "Maximum airspeed and ground speed difference",
       "Units": "m/s",
       "User": "Advanced"
     },
     "ARSPD_WIND_WARN": {
-      "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
+      "Description": "If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used.",
       "DisplayName": "Airspeed and ground speed difference that gives a warning",
       "Units": "m/s",
       "User": "Advanced"
@@ -1199,7 +1200,7 @@
   },
   "BARO1_WCF_": {
     "BARO1_WCF_BCK": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative X direction (backwards)",
       "Increment": "0.05",
       "Range": {
@@ -1218,7 +1219,7 @@
       }
     },
     "BARO1_WCF_FWD": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive X direction (forward)",
       "Increment": "0.05",
       "Range": {
@@ -1228,7 +1229,7 @@
       "User": "Advanced"
     },
     "BARO1_WCF_LFT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative Y direction (left)",
       "Increment": "0.05",
       "Range": {
@@ -1238,7 +1239,7 @@
       "User": "Advanced"
     },
     "BARO1_WCF_RGT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive Y direction (right)",
       "Increment": "0.05",
       "Range": {
@@ -1250,7 +1251,7 @@
   },
   "BARO2_WCF_": {
     "BARO2_WCF_BCK": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative X direction (backwards)",
       "Increment": "0.05",
       "Range": {
@@ -1269,7 +1270,7 @@
       }
     },
     "BARO2_WCF_FWD": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive X direction (forward)",
       "Increment": "0.05",
       "Range": {
@@ -1279,7 +1280,7 @@
       "User": "Advanced"
     },
     "BARO2_WCF_LFT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative Y direction (left)",
       "Increment": "0.05",
       "Range": {
@@ -1289,7 +1290,7 @@
       "User": "Advanced"
     },
     "BARO2_WCF_RGT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive Y direction (right)",
       "Increment": "0.05",
       "Range": {
@@ -1301,7 +1302,7 @@
   },
   "BARO3_WCF_": {
     "BARO3_WCF_BCK": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative X direction (backwards)",
       "Increment": "0.05",
       "Range": {
@@ -1320,7 +1321,7 @@
       }
     },
     "BARO3_WCF_FWD": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive X direction (forward)",
       "Increment": "0.05",
       "Range": {
@@ -1330,7 +1331,7 @@
       "User": "Advanced"
     },
     "BARO3_WCF_LFT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative Y direction (left)",
       "Increment": "0.05",
       "Range": {
@@ -1340,7 +1341,7 @@
       "User": "Advanced"
     },
     "BARO3_WCF_RGT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive Y direction (right)",
       "Increment": "0.05",
       "Range": {
@@ -10153,7 +10154,7 @@
       "User": "Advanced"
     },
     "EK3_DRAG_BCOEF_X": {
-      "Description": "Ratio of mass to drag coefficient measured along the X body axis. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction (eg multicopters). The drag produced by this effect scales with speed squared.  Set to a postive value > 1.0 to enable. A starting value is the mass in Kg divided by the frontal area. The predicted drag from the rotors is specified separately by the EK3_DRAG_MCOEF parameter.",
+      "Description": "Ratio of mass to drag coefficient measured along the X body axis. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction (eg multicopters). The drag produced by this effect scales with speed squared.  Set to a postive value > 1.0 to enable. A starting value is the mass in Kg divided by the frontal area. The predicted drag from the rotors is specified separately by the EK3_MCOEF parameter.",
       "DisplayName": "Ballistic coefficient for X axis drag",
       "Range": {
         "high": "1000.0",
@@ -10163,7 +10164,7 @@
       "User": "Advanced"
     },
     "EK3_DRAG_BCOEF_Y": {
-      "Description": "Ratio of mass to drag coefficient measured along the Y body axis. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction (eg multicopters). The drag produced by this effect scales with speed squared.  Set to a postive value > 1.0 to enable. A starting value is the mass in Kg divided by the side area. The predicted drag from the rotors is specified separately by the EK3_DRAG_MCOEF parameter.",
+      "Description": "Ratio of mass to drag coefficient measured along the Y body axis. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction (eg multicopters). The drag produced by this effect scales with speed squared.  Set to a postive value > 1.0 to enable. A starting value is the mass in Kg divided by the side area. The predicted drag from the rotors is specified separately by the EK3_MCOEF parameter.",
       "DisplayName": "Ballistic coefficient for Y axis drag",
       "Range": {
         "high": "1000.0",
@@ -10173,7 +10174,7 @@
       "User": "Advanced"
     },
     "EK3_DRAG_MCOEF": {
-      "Description": "This parameter is used to predict the drag produced by the rotors when flying a multi-copter, enabling estimation of wind drift. The drag produced by this effect scales with speed not speed squared and is produced because some of the air velocity normal to the rotors axis of rotation is lost when passing through the rotor disc which changes the momentum of the airflow causing drag. For unducted rotors the effect is roughly proportional to the area of the propeller blades when viewed side on and changes with different propellers. It is higher for ducted rotors. For example if flying at 15 m/s at sea level conditions produces a rotor induced drag acceleration of 1.5 m/s/s, then EK3_DRAG_MCOEF would be set to 0.1 = (1.5/15.0). Set EK3_MCOEF to a postive value to enable wind estimation using this drag effect. To account for the drag produced by the body which scales with speed squared, see documentation for the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters.",
+      "Description": "This parameter is used to predict the drag produced by the rotors when flying a multi-copter, enabling estimation of wind drift. The drag produced by this effect scales with speed not speed squared and is produced because some of the air velocity normal to the rotors axis of rotation is lost when passing through the rotor disc which changes the momentum of the airflow causing drag. For unducted rotors the effect is roughly proportional to the area of the propeller blades when viewed side on and changes with different propellers. It is higher for ducted rotors. For example if flying at 15 m/s at sea level conditions produces a rotor induced drag acceleration of 1.5 m/s/s, then EK3_MCOEF would be set to 0.1 = (1.5/15.0). Set EK3_MCOEF to a postive value to enable wind estimation using this drag effect. To account for the drag produced by the body which scales with speed squared, see documentation for the EK3_BCOEF_X and EK3_BCOEF_Y parameters.",
       "DisplayName": "Momentum coefficient for propeller drag",
       "Increment": "0.01",
       "Range": {
@@ -10184,7 +10185,7 @@
       "User": "Advanced"
     },
     "EK3_DRAG_M_NSE": {
-      "Description": "This sets the amount of noise used when fusing X and Y acceleration as an observation that enables esitmation of wind velocity for multi-rotor vehicles. This feature is enabled by the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters",
+      "Description": "This sets the amount of noise used when fusing X and Y acceleration as an observation that enables esitmation of wind velocity for multi-rotor vehicles. This feature is enabled by the EK3_BCOEF_X and EK3_BCOEF_Y parameters",
       "DisplayName": "Observation noise for drag acceleration",
       "Increment": "0.1",
       "Range": {
@@ -12494,100 +12495,6 @@
       }
     }
   },
-  "INS_HNTC2_": {
-    "INS_HNTC2_ATT": {
-      "Description": "Harmonic Notch Filter attenuation in dB. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise.",
-      "DisplayName": "Harmonic Notch Filter attenuation",
-      "Range": {
-        "high": "50",
-        "low": "5"
-      },
-      "Units": "dB",
-      "User": "Advanced"
-    },
-    "INS_HNTC2_BW": {
-      "Description": "Harmonic Notch Filter bandwidth in Hz. This is typically set to half the base frequency. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics.",
-      "DisplayName": "Harmonic Notch Filter bandwidth",
-      "Range": {
-        "high": "250",
-        "low": "5"
-      },
-      "Units": "Hz",
-      "User": "Advanced"
-    },
-    "INS_HNTC2_ENABLE": {
-      "Description": "Harmonic Notch Filter enable",
-      "DisplayName": "Harmonic Notch Filter enable",
-      "User": "Advanced",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
-    },
-    "INS_HNTC2_FREQ": {
-      "Description": "Harmonic Notch Filter base center frequency in Hz. This should be set at most half the backend gyro rate (which is typically 1Khz). For helicopters using RPM sensor to dynamically set the notch frequency, use this parameter to provide a lower limit to the dynamic notch filter.  Recommend setting it to half the operating rotor speed in Hz.",
-      "DisplayName": "Harmonic Notch Filter base frequency",
-      "Range": {
-        "high": "495",
-        "low": "10"
-      },
-      "Units": "Hz",
-      "User": "Advanced"
-    },
-    "INS_HNTC2_HMNCS": {
-      "Bitmask": {
-        "0": "1st harmonic",
-        "1": "2nd harmonic",
-        "2": "3rd harmonic",
-        "3": "4th hamronic",
-        "4": "5th harmonic",
-        "5": "6th harmonic",
-        "6": "7th harmonic",
-        "7": "8th harmonic"
-      },
-      "Description": "Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot.",
-      "DisplayName": "Harmonic Notch Filter harmonics",
-      "RebootRequired": "True",
-      "User": "Advanced"
-    },
-    "INS_HNTC2_MODE": {
-      "Description": "Harmonic Notch Filter dynamic frequency tracking mode. Dynamic updates can be throttle, RPM sensor, ESC telemetry or dynamic FFT based. Throttle-based updates should only be used with multicopters.",
-      "DisplayName": "Harmonic Notch Filter dynamic frequency tracking mode",
-      "Range": {
-        "high": "4",
-        "low": "0"
-      },
-      "User": "Advanced",
-      "Values": {
-        "0": "Disabled",
-        "1": "Throttle",
-        "2": "RPM Sensor",
-        "3": "ESC Telemetry",
-        "4": "Dynamic FFT"
-      }
-    },
-    "INS_HNTC2_OPTS": {
-      "Bitmask": {
-        "0": "Double notch",
-        "1": "Dynamic harmonic",
-        "2": "Update at loop rate"
-      },
-      "Description": "Harmonic Notch Filter options. Double-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz.",
-      "DisplayName": "Harmonic Notch Filter options",
-      "RebootRequired": "True",
-      "User": "Advanced"
-    },
-    "INS_HNTC2_REF": {
-      "Description": "A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter.  For throttle-based scaling, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter. For RPM and ESC telemetry based tracking, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter.  This reference value may also be used to scale the sensor data, if required.  For example, rpm sensor data is required to measure heli motor RPM. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM.",
-      "DisplayName": "Harmonic Notch Filter reference value",
-      "Range": {
-        "high": "1.0",
-        "low": "0.0"
-      },
-      "RebootRequired": "True",
-      "User": "Advanced"
-    }
-  },
   "INS_HNTCH_": {
     "INS_HNTCH_ATT": {
       "Description": "Harmonic Notch Filter attenuation in dB. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise.",
@@ -12719,6 +12626,100 @@
       },
       "Description": "Options for the BatchSampler. Post-filter and sensor-rate logging cannot be used at the same time.",
       "DisplayName": "Batch Logging Options Mask",
+      "User": "Advanced"
+    }
+  },
+  "INS_NOTCH_": {
+    "INS_NOTCH_ATT": {
+      "Description": "Harmonic Notch Filter attenuation in dB. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise.",
+      "DisplayName": "Harmonic Notch Filter attenuation",
+      "Range": {
+        "high": "50",
+        "low": "5"
+      },
+      "Units": "dB",
+      "User": "Advanced"
+    },
+    "INS_NOTCH_BW": {
+      "Description": "Harmonic Notch Filter bandwidth in Hz. This is typically set to half the base frequency. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics.",
+      "DisplayName": "Harmonic Notch Filter bandwidth",
+      "Range": {
+        "high": "250",
+        "low": "5"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "INS_NOTCH_ENABLE": {
+      "Description": "Harmonic Notch Filter enable",
+      "DisplayName": "Harmonic Notch Filter enable",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "INS_NOTCH_FREQ": {
+      "Description": "Harmonic Notch Filter base center frequency in Hz. This should be set at most half the backend gyro rate (which is typically 1Khz). For helicopters using RPM sensor to dynamically set the notch frequency, use this parameter to provide a lower limit to the dynamic notch filter.  Recommend setting it to half the operating rotor speed in Hz.",
+      "DisplayName": "Harmonic Notch Filter base frequency",
+      "Range": {
+        "high": "495",
+        "low": "10"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "INS_NOTCH_HMNCS": {
+      "Bitmask": {
+        "0": "1st harmonic",
+        "1": "2nd harmonic",
+        "2": "3rd harmonic",
+        "3": "4th hamronic",
+        "4": "5th harmonic",
+        "5": "6th harmonic",
+        "6": "7th harmonic",
+        "7": "8th harmonic"
+      },
+      "Description": "Bitmask of harmonic frequencies to apply Harmonic Notch Filter to. This option takes effect on the next reboot.",
+      "DisplayName": "Harmonic Notch Filter harmonics",
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "INS_NOTCH_MODE": {
+      "Description": "Harmonic Notch Filter dynamic frequency tracking mode. Dynamic updates can be throttle, RPM sensor, ESC telemetry or dynamic FFT based. Throttle-based updates should only be used with multicopters.",
+      "DisplayName": "Harmonic Notch Filter dynamic frequency tracking mode",
+      "Range": {
+        "high": "4",
+        "low": "0"
+      },
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "1": "Throttle",
+        "2": "RPM Sensor",
+        "3": "ESC Telemetry",
+        "4": "Dynamic FFT"
+      }
+    },
+    "INS_NOTCH_OPTS": {
+      "Bitmask": {
+        "0": "Double notch",
+        "1": "Dynamic harmonic",
+        "2": "Update at loop rate"
+      },
+      "Description": "Harmonic Notch Filter options. Double-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz.",
+      "DisplayName": "Harmonic Notch Filter options",
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "INS_NOTCH_REF": {
+      "Description": "A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter.  For throttle-based scaling, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter. For RPM and ESC telemetry based tracking, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter.  This reference value may also be used to scale the sensor data, if required.  For example, rpm sensor data is required to measure heli motor RPM. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM.",
+      "DisplayName": "Harmonic Notch Filter reference value",
+      "Range": {
+        "high": "1.0",
+        "low": "0.0"
+      },
+      "RebootRequired": "True",
       "User": "Advanced"
     }
   },

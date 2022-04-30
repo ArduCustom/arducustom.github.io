@@ -863,6 +863,28 @@ Airspeed sensor ID\, taking into account its type\, bus and instance
 
 
 
+.. _ARSP_USE:
+
+ARSP\_USE: Airspeed use
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enables airspeed use for automatic throttle modes and replaces control from THR\_TRIM\. Continues to display and log airspeed if set to 0\. Uses airspeed for control if set to 1\. Only uses airspeed when throttle \= 0 if set to 2 \(useful for gliders with airspeed sensors behind propellers\)\.
+
+
++-------+---------------------+
+| Value | Meaning             |
++=======+=====================+
+| 0     | DoNotUse            |
++-------+---------------------+
+| 1     | Use                 |
++-------+---------------------+
+| 2     | UseWhenZeroThrottle |
++-------+---------------------+
+
+
+
+
 .. _ARSP_OFFSET:
 
 ARSP\_OFFSET: Airspeed offset
@@ -911,6 +933,16 @@ ARSP\_PIN: Airspeed pin
 The pin number that the airspeed sensor is connected to for analog sensors\. Set to 15 on the Pixhawk for the analog airspeed port\. 
 
 
+.. _ARSP_AUTOCAL:
+
+ARSP\_AUTOCAL: Automatic airspeed ratio calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Enables automatic adjustment of ARSPD\_RATIO during a calibration flight based on estimation of ground speed and true airspeed\. New ratio saved every 2 minutes if change is \> 5\%\. Should not be left enabled\.
+
+
 .. _ARSP_TUBE_ORDER:
 
 ARSP\_TUBE\_ORDER: Control pitot tube order
@@ -936,8 +968,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSP_SKIP_CAL:
 
-ARSP\_SKIP\_CAL: Skip airspeed offset calibration on startup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSP\_SKIP\_CAL: Skip airspeed calibration on startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -1005,6 +1037,29 @@ This selects which airspeed sensor will be the primary if multiple sensors are f
 +-------+-------------+
 | 1     | 2ndSensor   |
 +-------+-------------+
+
+
+
+
+.. _ARSP_OPTIONS:
+
+ARSP\_OPTIONS: Airspeed options bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+
+
++-----+----------------------------+
+| Bit | Meaning                    |
++=====+============================+
+| 0   | SpeedMismatchDisable       |
++-----+----------------------------+
+| 1   | AllowSpeedMismatchRecovery |
++-----+----------------------------+
+| 2   | DisableVoltageCorrection   |
++-----+----------------------------+
 
 
 
@@ -1095,6 +1150,28 @@ Type of 2nd airspeed sensor
 
 
 
+.. _ARSP2_USE:
+
+ARSP2\_USE: Enable use of 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+use airspeed for flight control\. When set to 0 airspeed sensor can be logged and displayed on a GCS but won\'t be used for flight\. When set to 1 it will be logged and used\. When set to 2 it will be only used when the throttle is zero\, which can be useful in gliders with airspeed sensors behind a propeller
+
+
++-------+---------------------+
+| Value | Meaning             |
++=======+=====================+
+| 0     | Don't Use           |
++-------+---------------------+
+| 1     | use                 |
++-------+---------------------+
+| 2     | UseWhenZeroThrottle |
++-------+---------------------+
+
+
+
+
 .. _ARSP2_OFFSET:
 
 ARSP2\_OFFSET: Airspeed offset for 2nd airspeed sensor
@@ -1143,6 +1220,16 @@ ARSP2\_PIN: Airspeed pin for 2nd airspeed sensor
 Pin number indicating location of analog airspeed sensors\. Pixhawk\/Cube if set to 15\. 
 
 
+.. _ARSP2_AUTOCAL:
+
+ARSP2\_AUTOCAL: Automatic airspeed ratio calibration for 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+If this is enabled then the autopilot will automatically adjust the ARSPD\_RATIO during flight\, based upon an estimation filter using ground speed and true airspeed\. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5\%\. This option should be enabled for a calibration flight then disabled again when calibration is complete\. Leaving it enabled all the time is not recommended\.
+
+
 .. _ARSP2_TUBE_ORDR:
 
 ARSP2\_TUBE\_ORDR: Control pitot tube order of 2nd airspeed sensor
@@ -1168,8 +1255,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSP2_SKIP_CAL:
 
-ARSP2\_SKIP\_CAL: Skip airspeed offset calibration on startup for 2nd sensor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSP2\_SKIP\_CAL: Skip airspeed calibration on startup for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -1313,6 +1400,28 @@ Airspeed sensor ID\, taking into account its type\, bus and instance
 
 
 
+.. _ARSPD_USE:
+
+ARSPD\_USE: Airspeed use
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enables airspeed use for automatic throttle modes and replaces control from THR\_TRIM\. Continues to display and log airspeed if set to 0\. Uses airspeed for control if set to 1\. Only uses airspeed when throttle \= 0 if set to 2 \(useful for gliders with airspeed sensors behind propellers\)\.
+
+
++-------+---------------------+
+| Value | Meaning             |
++=======+=====================+
+| 0     | DoNotUse            |
++-------+---------------------+
+| 1     | Use                 |
++-------+---------------------+
+| 2     | UseWhenZeroThrottle |
++-------+---------------------+
+
+
+
+
 .. _ARSPD_OFFSET:
 
 ARSPD\_OFFSET: Airspeed offset
@@ -1361,6 +1470,16 @@ ARSPD\_PIN: Airspeed pin
 The pin number that the airspeed sensor is connected to for analog sensors\. Set to 15 on the Pixhawk for the analog airspeed port\. 
 
 
+.. _ARSPD_AUTOCAL:
+
+ARSPD\_AUTOCAL: Automatic airspeed ratio calibration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Enables automatic adjustment of ARSPD\_RATIO during a calibration flight based on estimation of ground speed and true airspeed\. New ratio saved every 2 minutes if change is \> 5\%\. Should not be left enabled\.
+
+
 .. _ARSPD_TUBE_ORDER:
 
 ARSPD\_TUBE\_ORDER: Control pitot tube order
@@ -1386,8 +1505,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD_SKIP_CAL:
 
-ARSPD\_SKIP\_CAL: Skip airspeed offset calibration on startup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD\_SKIP\_CAL: Skip airspeed calibration on startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -1455,6 +1574,29 @@ This selects which airspeed sensor will be the primary if multiple sensors are f
 +-------+-------------+
 | 1     | 2ndSensor   |
 +-------+-------------+
+
+
+
+
+.. _ARSPD_OPTIONS:
+
+ARSPD\_OPTIONS: Airspeed options bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+
+
++-----+----------------------------+
+| Bit | Meaning                    |
++=====+============================+
+| 0   | SpeedMismatchDisable       |
++-----+----------------------------+
+| 1   | AllowSpeedMismatchRecovery |
++-----+----------------------------+
+| 2   | DisableVoltageCorrection   |
++-----+----------------------------+
 
 
 
@@ -1545,6 +1687,28 @@ Type of 2nd airspeed sensor
 
 
 
+.. _ARSPD2_USE:
+
+ARSPD2\_USE: Enable use of 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+use airspeed for flight control\. When set to 0 airspeed sensor can be logged and displayed on a GCS but won\'t be used for flight\. When set to 1 it will be logged and used\. When set to 2 it will be only used when the throttle is zero\, which can be useful in gliders with airspeed sensors behind a propeller
+
+
++-------+---------------------+
+| Value | Meaning             |
++=======+=====================+
+| 0     | Don't Use           |
++-------+---------------------+
+| 1     | use                 |
++-------+---------------------+
+| 2     | UseWhenZeroThrottle |
++-------+---------------------+
+
+
+
+
 .. _ARSPD2_OFFSET:
 
 ARSPD2\_OFFSET: Airspeed offset for 2nd airspeed sensor
@@ -1593,6 +1757,16 @@ ARSPD2\_PIN: Airspeed pin for 2nd airspeed sensor
 Pin number indicating location of analog airspeed sensors\. Pixhawk\/Cube if set to 15\. 
 
 
+.. _ARSPD2_AUTOCAL:
+
+ARSPD2\_AUTOCAL: Automatic airspeed ratio calibration for 2nd airspeed sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+If this is enabled then the autopilot will automatically adjust the ARSPD\_RATIO during flight\, based upon an estimation filter using ground speed and true airspeed\. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5\%\. This option should be enabled for a calibration flight then disabled again when calibration is complete\. Leaving it enabled all the time is not recommended\.
+
+
 .. _ARSPD2_TUBE_ORDR:
 
 ARSPD2\_TUBE\_ORDR: Control pitot tube order of 2nd airspeed sensor
@@ -1618,8 +1792,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD2_SKIP_CAL:
 
-ARSPD2\_SKIP\_CAL: Skip airspeed offset calibration on startup for 2nd sensor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD2\_SKIP\_CAL: Skip airspeed calibration on startup for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -2010,7 +2184,7 @@ BARO1\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2029,7 +2203,7 @@ BARO1\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2048,7 +2222,7 @@ BARO1\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2067,7 +2241,7 @@ BARO1\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2114,7 +2288,7 @@ BARO2\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2133,7 +2307,7 @@ BARO2\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2152,7 +2326,7 @@ BARO2\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2171,7 +2345,7 @@ BARO2\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2218,7 +2392,7 @@ BARO3\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2237,7 +2411,7 @@ BARO3\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2256,7 +2430,7 @@ BARO3\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -2275,7 +2449,7 @@ BARO3\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
