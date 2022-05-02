@@ -38138,6 +38138,62 @@ Vertical position on screen
 
 
 
+.. _OSD1_LOIT_RAD_EN:
+
+OSD1\_LOIT\_RAD\_EN: LOIT\_RAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD1_LOIT_RAD_X:
+
+OSD1\_LOIT\_RAD\_X: LOIT\_RAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD1_LOIT_RAD_Y:
+
+OSD1\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -43171,6 +43227,62 @@ Horizontal position on screen
 
 OSD2\_DEBUG\_Y: DEBUG\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD2_LOIT_RAD_EN:
+
+OSD2\_LOIT\_RAD\_EN: LOIT\_RAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD2_LOIT_RAD_X:
+
+OSD2\_LOIT\_RAD\_X: LOIT\_RAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD2_LOIT_RAD_Y:
+
+OSD2\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -48232,6 +48344,62 @@ Vertical position on screen
 
 
 
+.. _OSD3_LOIT_RAD_EN:
+
+OSD3\_LOIT\_RAD\_EN: LOIT\_RAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD3_LOIT_RAD_X:
+
+OSD3\_LOIT\_RAD\_X: LOIT\_RAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD3_LOIT_RAD_Y:
+
+OSD3\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -53279,6 +53447,62 @@ Vertical position on screen
 
 
 
+.. _OSD4_LOIT_RAD_EN:
+
+OSD4\_LOIT\_RAD\_EN: LOIT\_RAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD4_LOIT_RAD_X:
+
+OSD4\_LOIT\_RAD\_X: LOIT\_RAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD4_LOIT_RAD_Y:
+
+OSD4\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -58312,6 +58536,62 @@ Horizontal position on screen
 
 OSD5\_DEBUG\_Y: DEBUG\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 15 |
++--------+
+
+
+
+
+.. _OSD5_LOIT_RAD_EN:
+
+OSD5\_LOIT\_RAD\_EN: LOIT\_RAD\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays the RC failsafe status
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _OSD5_LOIT_RAD_X:
+
+OSD5\_LOIT\_RAD\_X: LOIT\_RAD\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++--------+
+| Range  |
++========+
+| 0 - 29 |
++--------+
+
+
+
+
+.. _OSD5_LOIT_RAD_Y:
+
+OSD5\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen

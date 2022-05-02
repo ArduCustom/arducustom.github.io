@@ -16762,6 +16762,30 @@
         "low": "0"
       }
     },
+    "OSD1_LOIT_RAD_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "LOIT_RAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_LOIT_RAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "LOIT_RAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_LOIT_RAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "LOIT_RAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_MESSAGE_EN": {
       "Description": "Displays Mavlink messages",
       "DisplayName": "MESSAGE_EN",
@@ -18922,6 +18946,30 @@
     "OSD2_LINK_Q_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "LINK_Q_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_LOIT_RAD_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "LOIT_RAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_LOIT_RAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "LOIT_RAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_LOIT_RAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "LOIT_RAD_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -21092,6 +21140,30 @@
         "low": "0"
       }
     },
+    "OSD3_LOIT_RAD_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "LOIT_RAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_LOIT_RAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "LOIT_RAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_LOIT_RAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "LOIT_RAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_MESSAGE_EN": {
       "Description": "Displays Mavlink messages",
       "DisplayName": "MESSAGE_EN",
@@ -23257,6 +23329,30 @@
         "low": "0"
       }
     },
+    "OSD4_LOIT_RAD_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "LOIT_RAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_LOIT_RAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "LOIT_RAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_LOIT_RAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "LOIT_RAD_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_MESSAGE_EN": {
       "Description": "Displays Mavlink messages",
       "DisplayName": "MESSAGE_EN",
@@ -25417,6 +25513,30 @@
     "OSD5_LINK_Q_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "LINK_Q_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_LOIT_RAD_EN": {
+      "Description": "Displays the RC failsafe status",
+      "DisplayName": "LOIT_RAD_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_LOIT_RAD_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "LOIT_RAD_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_LOIT_RAD_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "LOIT_RAD_Y",
       "Range": {
         "high": "15",
         "low": "0"

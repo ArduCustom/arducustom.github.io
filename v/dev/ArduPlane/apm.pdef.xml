@@ -802,7 +802,7 @@
         <field name="UnitText">meters</field>
       </param>
       <param humanName="Flight mode options" name="ArduPlane:FLIGHT_OPTIONS" documentation="Flight mode specific options" user="Advanced">
-        <field name="Bitmask">0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 20: Cruise heading control with rudder channel, 21: Enable manual altitude control in RTL mode, 22: Climb first in RTL only during RC failsafe, 23: Glide in auto throttle modes if throttle below THR_DZ</field>
+        <field name="Bitmask">0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 19:Allow manual airspeed control in mode auto, 20: Cruise heading control with rudder channel, 21: Enable manual altitude control in RTL mode, 22: Climb first in RTL only during RC failsafe, 23: Glide in auto throttle modes if throttle below THR_DZ</field>
       </param>
       <param humanName="Takeoff throttle acceleration count" name="ArduPlane:TKOFF_ACCEL_CNT" documentation="This is the number of acceleration events to require for arming with TKOFF_THR_MINACC. The default is 1, which means a single forward acceleration above TKOFF_THR_MINACC will arm. By setting this higher than 1 you can require more forward/backward movements to arm." user="Standard">
         <field name="Range">1 10</field>
@@ -9550,6 +9550,18 @@
       <param humanName="DEBUG_Y" name="OSD1_DEBUG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="LOIT_RAD_EN" name="OSD1_LOIT_RAD_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="LOIT_RAD_X" name="OSD1_LOIT_RAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="LOIT_RAD_Y" name="OSD1_LOIT_RAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -10630,6 +10642,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="DEBUG_Y" name="OSD2_DEBUG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="LOIT_RAD_EN" name="OSD2_LOIT_RAD_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="LOIT_RAD_X" name="OSD2_LOIT_RAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="LOIT_RAD_Y" name="OSD2_LOIT_RAD_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -11714,6 +11738,18 @@
       <param humanName="DEBUG_Y" name="OSD3_DEBUG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="LOIT_RAD_EN" name="OSD3_LOIT_RAD_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="LOIT_RAD_X" name="OSD3_LOIT_RAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="LOIT_RAD_Y" name="OSD3_LOIT_RAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -12796,6 +12832,18 @@
       <param humanName="DEBUG_Y" name="OSD4_DEBUG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="LOIT_RAD_EN" name="OSD4_LOIT_RAD_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="LOIT_RAD_X" name="OSD4_LOIT_RAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="LOIT_RAD_Y" name="OSD4_LOIT_RAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD5_">
       <param humanName="Enable screen" name="OSD5_ENABLE" documentation="Enable this screen" user="Standard">
@@ -13876,6 +13924,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="DEBUG_Y" name="OSD5_DEBUG_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="LOIT_RAD_EN" name="OSD5_LOIT_RAD_EN" documentation="Displays the RC failsafe status">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="LOIT_RAD_X" name="OSD5_LOIT_RAD_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="LOIT_RAD_Y" name="OSD5_LOIT_RAD_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>

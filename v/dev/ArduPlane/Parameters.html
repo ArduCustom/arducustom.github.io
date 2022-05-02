@@ -1316,7 +1316,7 @@ DO NOT EDIT
 
 <p>Flight mode specific options</p>
 <ul>
-<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 20: Cruise heading control with rudder channel, 21: Enable manual altitude control in RTL mode, 22: Climb first in RTL only during RC failsafe, 23: Glide in auto throttle modes if throttle below THR_DZ</li>
+<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to RTL_ALT_MIN before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor., 7:EnableDefaultAirspeed for takeoff, 8: Remove the TRIM_PITCH_CD on the GCS horizon, 9: Remove the TRIM_PITCH_CD on the OSD horizon, 10: Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL, 11:Disable suppression of fixed wing rate gains in ground mode, 19:Allow manual airspeed control in mode auto, 20: Cruise heading control with rudder channel, 21: Enable manual altitude control in RTL mode, 22: Climb first in RTL only during RC failsafe, 23: Glide in auto throttle modes if throttle below THR_DZ</li>
 </ul>
 
 
@@ -17202,6 +17202,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>LOIT_RAD_EN (OSD1_LOIT_RAD_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>LOIT_RAD_X (OSD1_LOIT_RAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>LOIT_RAD_Y (OSD1_LOIT_RAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD2_ Parameters</h1>
 
 
@@ -19628,6 +19655,33 @@ DO NOT EDIT
 
 
 <h2>DEBUG_Y (OSD2_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>LOIT_RAD_EN (OSD2_LOIT_RAD_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>LOIT_RAD_X (OSD2_LOIT_RAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>LOIT_RAD_Y (OSD2_LOIT_RAD_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
@@ -22068,6 +22122,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>LOIT_RAD_EN (OSD3_LOIT_RAD_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>LOIT_RAD_X (OSD3_LOIT_RAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>LOIT_RAD_Y (OSD3_LOIT_RAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD4_ Parameters</h1>
 
 
@@ -24501,6 +24582,33 @@ DO NOT EDIT
 </ul>
 
 
+<h2>LOIT_RAD_EN (OSD4_LOIT_RAD_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>LOIT_RAD_X (OSD4_LOIT_RAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>LOIT_RAD_Y (OSD4_LOIT_RAD_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h1>OSD5_ Parameters</h1>
 
 
@@ -26927,6 +27035,33 @@ DO NOT EDIT
 
 
 <h2>DEBUG_Y (OSD5_DEBUG_Y)</h2>
+
+<p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>LOIT_RAD_EN (OSD5_LOIT_RAD_EN)</h2>
+
+<p>Displays the RC failsafe status</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>LOIT_RAD_X (OSD5_LOIT_RAD_X)</h2>
+
+<p>Horizontal position on screen</p>
+<ul>
+<li>Range: 0 29</li>
+</ul>
+
+
+<h2>LOIT_RAD_Y (OSD5_LOIT_RAD_Y)</h2>
 
 <p>Vertical position on screen</p>
 <ul>
