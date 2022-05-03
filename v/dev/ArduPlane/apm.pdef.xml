@@ -942,16 +942,14 @@
         <field name="Increment">1</field>
       </param>
       <param humanName="Amount of differential throws applied to the ailerons" name="ArduPlane:AILERON_DIFF" documentation="Amount of differential throws applied to the ailerons. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel" user="Advanced">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+        <field name="Range">-90 90</field>
       </param>
       <param humanName="Amount of differential throws applied to the elevator (does not apply to elevons)" name="ArduPlane:ELEVATOR_DIFF" documentation="Amount of differential throws applied to the elevator (does not apply to elevons). A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel" user="Advanced">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
+        <field name="Units">%</field>
+        <field name="UnitText">percent</field>
+        <field name="Range">-90 90</field>
       </param>
       <param humanName="Auto throttle square response curve" name="ArduPlane:THR_EXPO_AUTO" documentation="Amount of square response curve to apply to throttle in auto throttle modes" user="Advanced">
         <field name="Units">%</field>

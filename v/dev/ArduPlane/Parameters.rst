@@ -3333,18 +3333,11 @@ AILERON\_DIFF: Amount of differential throws applied to the ailerons
 Amount of differential throws applied to the ailerons\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
 
 
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| -90 - 90 | percent |
++----------+---------+
 
 
 
@@ -3359,18 +3352,11 @@ ELEVATOR\_DIFF: Amount of differential throws applied to the elevator \(does not
 Amount of differential throws applied to the elevator \(does not apply to elevons\)\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
 
 
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| -90 - 90 | percent |
++----------+---------+
 
 
 

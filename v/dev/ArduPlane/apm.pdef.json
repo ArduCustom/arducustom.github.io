@@ -24979,11 +24979,12 @@
     "AILERON_DIFF": {
       "Description": "Amount of differential throws applied to the ailerons. A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel",
       "DisplayName": "Amount of differential throws applied to the ailerons",
-      "User": "Advanced",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
+      "Range": {
+        "high": "90",
+        "low": "-90"
+      },
+      "Units": "%",
+      "User": "Advanced"
     },
     "ALT_HOLD_FBWCM": {
       "Description": "This is the minimum altitude in centimeters that FBWB and CRUISE modes will allow. If you attempt to descend below this altitude then the plane will level off. A value of zero means no limit.",
@@ -25172,11 +25173,12 @@
     "ELEVATOR_DIFF": {
       "Description": "Amount of differential throws applied to the elevator (does not apply to elevons). A positive number reduces the control surfaces down travel. A negative number reduces the control surfaces up travel",
       "DisplayName": "Amount of differential throws applied to the elevator (does not apply to elevons)",
-      "User": "Advanced",
-      "Values": {
-        "0": "Disabled",
-        "1": "Enabled"
-      }
+      "Range": {
+        "high": "90",
+        "low": "-90"
+      },
+      "Units": "%",
+      "User": "Advanced"
     },
     "FBWA_MNPTCHU_THR": {
       "Description": "Part of the FBWA throttle to pitch compensation system. See the documentation for this system for more information.",
