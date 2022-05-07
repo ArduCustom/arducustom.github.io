@@ -14498,19 +14498,19 @@
         <field name="Range">0.7 1.5</field>
         <field name="Increment">0.05</field>
       </param>
-      <param humanName="Pitch axis rate controller P gain" name="PTCH_RATE_P" documentation="Pitch axis rate controller P gain.  Converts the difference between desired roll rate and actual roll rate into a motor speed output" user="Standard">
+      <param humanName="Pitch axis rate controller P gain" name="PTCH_RATE_P" documentation="Pitch axis rate controller P gain. Converts the difference between desired pitch rate and actual pitch rate into a control surface angle" user="Standard">
         <field name="Range">0.08 0.35</field>
         <field name="Increment">0.005</field>
       </param>
-      <param humanName="Pitch axis rate controller I gain" name="PTCH_RATE_I" documentation="Pitch axis rate controller I gain.  Corrects long-term difference in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Pitch axis rate controller I gain" name="PTCH_RATE_I" documentation="Pitch axis rate controller I gain. Corrects long-term difference in desired pitch rate vs actual pitch rate" user="Standard">
         <field name="Range">0.01 0.6</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Pitch axis rate controller I gain maximum" name="PTCH_RATE_IMAX" documentation="Pitch axis rate controller I gain maximum.  Constrains the maximum motor output that the I gain will output" user="Standard">
+      <param humanName="Pitch axis rate controller I gain maximum" name="PTCH_RATE_IMAX" documentation="Pitch axis rate controller I gain maximum. Constrains the maximum control surface angle that the I gain will output" user="Standard">
         <field name="Range">0 1</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Pitch axis rate controller D gain" name="PTCH_RATE_D" documentation="Pitch axis rate controller D gain.  Compensates for short-term change in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Pitch axis rate controller D gain" name="PTCH_RATE_D" documentation="Pitch axis rate controller D gain. Compensates for short-term change in desired pitch rate vs actual pitch rate" user="Standard">
         <field name="Range">0.001 0.03</field>
         <field name="Increment">0.001</field>
       </param>
@@ -14540,19 +14540,19 @@
         <field name="Range">0 200</field>
         <field name="Increment">0.5</field>
       </param>
-      <param humanName="Pitch axis angle controller P gain" name="PTCH_AGL_P" documentation="Pitch axis angle controller P gain.  Converts the difference between desired roll rate and actual roll rate into a motor speed output" user="Standard">
+      <param humanName="Pitch axis angle controller P gain" name="PTCH_AGL_P" documentation="Pitch axis angle controller P gain. Converts the difference between desired pitch angle and actual pitch angle into a pitch rate" user="Standard">
         <field name="Range">0.08 0.35</field>
         <field name="Increment">0.005</field>
       </param>
-      <param humanName="Pitch axis angle controller I gain" name="PTCH_AGL_I" documentation="Pitch axis angle controller I gain.  Corrects long-term difference in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Pitch axis angle controller I gain" name="PTCH_AGL_I" documentation="Pitch axis angle controller I gain. Corrects long-term difference in desired pitch angle vs actual pitch angle" user="Standard">
         <field name="Range">0.01 0.6</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Pitch axis angle controller I gain maximum" name="PTCH_AGL_IMAX" documentation="Pitch axis angle controller I gain maximum.  Constrains the maximum motor output that the I gain will output" user="Standard">
+      <param humanName="Pitch axis angle controller I gain maximum" name="PTCH_AGL_IMAX" documentation="Pitch axis angle controller I gain maximum. Constrains the maximum pitch rate that the I gain will output" user="Standard">
         <field name="Range">0 1</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Pitch axis angle controller D gain" name="PTCH_AGL_D" documentation="Pitch axis angle controller D gain.  Compensates for short-term change in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Pitch axis angle controller D gain" name="PTCH_AGL_D" documentation="Pitch axis angle controller D gain. Compensates for short-term change in desired pitch rate vs actual pitch rate" user="Standard">
         <field name="Range">0.001 0.03</field>
         <field name="Increment">0.001</field>
       </param>
@@ -17612,19 +17612,19 @@
         <field name="UnitText">degrees per second</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Roll axis rate controller P gain" name="RLL_RATE_P" documentation="Roll axis rate controller P gain.  Converts the difference between desired roll rate and actual roll rate into a motor speed output" user="Standard">
+      <param humanName="Roll axis rate controller P gain" name="RLL_RATE_P" documentation="Roll axis rate controller P gain. Converts the difference between desired roll rate and actual roll rate into a control surface angle" user="Standard">
         <field name="Range">0.08 0.35</field>
         <field name="Increment">0.005</field>
       </param>
-      <param humanName="Roll axis rate controller I gain" name="RLL_RATE_I" documentation="Roll axis rate controller I gain.  Corrects long-term difference in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Roll axis rate controller I gain" name="RLL_RATE_I" documentation="Roll axis rate controller I gain. Corrects long-term difference in desired roll rate vs actual roll rate" user="Standard">
         <field name="Range">0.01 0.6</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Roll axis rate controller I gain maximum" name="RLL_RATE_IMAX" documentation="Roll axis rate controller I gain maximum.  Constrains the maximum motor output that the I gain will output" user="Standard">
+      <param humanName="Roll axis rate controller I gain maximum" name="RLL_RATE_IMAX" documentation="Roll axis rate controller I gain maximum. Constrains the maximum control surface angle that the I gain will output" user="Standard">
         <field name="Range">0 1</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Roll axis rate controller D gain" name="RLL_RATE_D" documentation="Roll axis rate controller D gain.  Compensates for short-term change in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Roll axis rate controller D gain" name="RLL_RATE_D" documentation="Roll axis rate controller D gain. Compensates for short-term change in desired roll rate vs actual roll rate" user="Standard">
         <field name="Range">0.001 0.03</field>
         <field name="Increment">0.001</field>
       </param>
@@ -17654,23 +17654,23 @@
         <field name="Range">0 200</field>
         <field name="Increment">0.5</field>
       </param>
-      <param humanName="Roll axis angle controller P gain" name="RLL_AGL_P" documentation="Roll axis angle controller P gain.  Converts the difference between desired roll rate and actual roll rate into a motor speed output" user="Standard">
+      <param humanName="Roll axis angle controller P gain" name="RLL_AGL_P" documentation="Roll axis angle controller P gain. Converts the difference between desired roll angle and actual roll angle into a roll rate" user="Standard">
         <field name="Range">0.08 0.35</field>
         <field name="Increment">0.005</field>
       </param>
-      <param humanName="Roll axis angle controller I gain" name="RLL_AGL_I" documentation="Roll axis angle controller I gain.  Corrects long-term difference in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Roll axis angle controller I gain" name="RLL_AGL_I" documentation="Roll axis angle controller I gain. Corrects long-term difference in desired roll angle vs actual roll angle" user="Standard">
         <field name="Range">0.01 0.6</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Roll axis angle controller I gain maximum" name="RLL_AGL_IMAX" documentation="Roll axis angle controller I gain maximum.  Constrains the maximum motor output that the I gain will output" user="Standard">
+      <param humanName="Roll axis angle controller I gain maximum" name="RLL_AGL_IMAX" documentation="Roll axis angle controller I gain maximum. Constrains the maximum roll rate that the I gain will output" user="Standard">
         <field name="Range">0 1</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Roll axis angle controller D gain" name="RLL_AGL_D" documentation="Roll axis angle controller D gain.  Compensates for short-term change in desired roll rate vs actual roll rate" user="Standard">
+      <param humanName="Roll axis angle controller D gain" name="RLL_AGL_D" documentation="Roll axis angle controller D gain. Compensates for short-term change in desired roll angle vs actual roll angle" user="Standard">
         <field name="Range">0.001 0.03</field>
         <field name="Increment">0.001</field>
       </param>
-      <param humanName="Roll axis angle controller feed forward" name="RLL_AGL_FF" documentation="Roll axis angle controller feed forward" user="Standard">
+      <param humanName="Roll axis angle controller feed forward (not used)" name="RLL_AGL_FF" documentation="Roll axis angle controller feed forward (not used)" user="Standard">
         <field name="Range">0 3.0</field>
         <field name="Increment">0.001</field>
       </param>

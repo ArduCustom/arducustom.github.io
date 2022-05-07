@@ -58946,7 +58946,7 @@ PTCH\_RATE\_P: Pitch axis rate controller P gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis rate controller P gain\.  Converts the difference between desired roll rate and actual roll rate into a motor speed output
+Pitch axis rate controller P gain\. Converts the difference between desired pitch rate and actual pitch rate into a control surface angle
 
 
 +-----------+-------------+
@@ -58964,7 +58964,7 @@ PTCH\_RATE\_I: Pitch axis rate controller I gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis rate controller I gain\.  Corrects long\-term difference in desired roll rate vs actual roll rate
+Pitch axis rate controller I gain\. Corrects long\-term difference in desired pitch rate vs actual pitch rate
 
 
 +-----------+------------+
@@ -58982,7 +58982,7 @@ PTCH\_RATE\_IMAX: Pitch axis rate controller I gain maximum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis rate controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
+Pitch axis rate controller I gain maximum\. Constrains the maximum control surface angle that the I gain will output
 
 
 +-----------+-------+
@@ -59000,7 +59000,7 @@ PTCH\_RATE\_D: Pitch axis rate controller D gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis rate controller D gain\.  Compensates for short\-term change in desired roll rate vs actual roll rate
+Pitch axis rate controller D gain\. Compensates for short\-term change in desired pitch rate vs actual pitch rate
 
 
 +-----------+--------------+
@@ -59109,7 +59109,7 @@ PTCH\_AGL\_P: Pitch axis angle controller P gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis angle controller P gain\.  Converts the difference between desired roll rate and actual roll rate into a motor speed output
+Pitch axis angle controller P gain\. Converts the difference between desired pitch angle and actual pitch angle into a pitch rate
 
 
 +-----------+-------------+
@@ -59127,7 +59127,7 @@ PTCH\_AGL\_I: Pitch axis angle controller I gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis angle controller I gain\.  Corrects long\-term difference in desired roll rate vs actual roll rate
+Pitch axis angle controller I gain\. Corrects long\-term difference in desired pitch angle vs actual pitch angle
 
 
 +-----------+------------+
@@ -59145,7 +59145,7 @@ PTCH\_AGL\_IMAX: Pitch axis angle controller I gain maximum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis angle controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
+Pitch axis angle controller I gain maximum\. Constrains the maximum pitch rate that the I gain will output
 
 
 +-----------+-------+
@@ -59163,7 +59163,7 @@ PTCH\_AGL\_D: Pitch axis angle controller D gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Pitch axis angle controller D gain\.  Compensates for short\-term change in desired roll rate vs actual roll rate
+Pitch axis angle controller D gain\. Compensates for short\-term change in desired pitch rate vs actual pitch rate
 
 
 +-----------+--------------+
@@ -68112,7 +68112,7 @@ RLL\_RATE\_P: Roll axis rate controller P gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis rate controller P gain\.  Converts the difference between desired roll rate and actual roll rate into a motor speed output
+Roll axis rate controller P gain\. Converts the difference between desired roll rate and actual roll rate into a control surface angle
 
 
 +-----------+-------------+
@@ -68130,7 +68130,7 @@ RLL\_RATE\_I: Roll axis rate controller I gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis rate controller I gain\.  Corrects long\-term difference in desired roll rate vs actual roll rate
+Roll axis rate controller I gain\. Corrects long\-term difference in desired roll rate vs actual roll rate
 
 
 +-----------+------------+
@@ -68148,7 +68148,7 @@ RLL\_RATE\_IMAX: Roll axis rate controller I gain maximum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis rate controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
+Roll axis rate controller I gain maximum\. Constrains the maximum control surface angle that the I gain will output
 
 
 +-----------+-------+
@@ -68166,7 +68166,7 @@ RLL\_RATE\_D: Roll axis rate controller D gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis rate controller D gain\.  Compensates for short\-term change in desired roll rate vs actual roll rate
+Roll axis rate controller D gain\. Compensates for short\-term change in desired roll rate vs actual roll rate
 
 
 +-----------+--------------+
@@ -68275,7 +68275,7 @@ RLL\_AGL\_P: Roll axis angle controller P gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis angle controller P gain\.  Converts the difference between desired roll rate and actual roll rate into a motor speed output
+Roll axis angle controller P gain\. Converts the difference between desired roll angle and actual roll angle into a roll rate
 
 
 +-----------+-------------+
@@ -68293,7 +68293,7 @@ RLL\_AGL\_I: Roll axis angle controller I gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis angle controller I gain\.  Corrects long\-term difference in desired roll rate vs actual roll rate
+Roll axis angle controller I gain\. Corrects long\-term difference in desired roll angle vs actual roll angle
 
 
 +-----------+------------+
@@ -68311,7 +68311,7 @@ RLL\_AGL\_IMAX: Roll axis angle controller I gain maximum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis angle controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
+Roll axis angle controller I gain maximum\. Constrains the maximum roll rate that the I gain will output
 
 
 +-----------+-------+
@@ -68329,7 +68329,7 @@ RLL\_AGL\_D: Roll axis angle controller D gain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis angle controller D gain\.  Compensates for short\-term change in desired roll rate vs actual roll rate
+Roll axis angle controller D gain\. Compensates for short\-term change in desired roll angle vs actual roll angle
 
 
 +-----------+--------------+
@@ -68343,11 +68343,11 @@ Roll axis angle controller D gain\.  Compensates for short\-term change in desir
 
 .. _RLL_AGL_FF:
 
-RLL\_AGL\_FF: Roll axis angle controller feed forward
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RLL\_AGL\_FF: Roll axis angle controller feed forward \(not used\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Roll axis angle controller feed forward
+Roll axis angle controller feed forward \(not used\)
 
 
 +-----------+---------+
