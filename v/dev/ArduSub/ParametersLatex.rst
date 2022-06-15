@@ -1523,6 +1523,8 @@ Type of airspeed sensor
 +-------+-------------------+
 | 15    | ASP5033           |
 +-------+-------------------+
+| 100   | SITL              |
++-------+-------------------+
 
 
 
@@ -1552,7 +1554,7 @@ ARSPD\_USE: Airspeed use
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Enables airspeed use for automatic throttle modes and replaces control from THR\_TRIM\. Continues to display and log airspeed if set to 0\. Uses airspeed for control if set to 1\. Only uses airspeed when throttle \= 0 if set to 2 \(useful for gliders with airspeed sensors behind propellers\)\.
+This parameter is not used by this vehicle\. Always set to 0\.
 
 
 +-------+---------------------+
@@ -1618,8 +1620,8 @@ The pin number that the airspeed sensor is connected to for analog sensors\. Set
 
 .. _ARSPD_AUTOCAL:
 
-ARSPD\_AUTOCAL: Automatic airspeed ratio calibration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD\_AUTOCAL: This parameter and function is not used by this vehicle\. Always set to 0\.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -1651,8 +1653,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD_SKIP_CAL:
 
-ARSPD\_SKIP\_CAL: Skip airspeed calibration on startup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD\_SKIP\_CAL: Skip airspeed offset calibration on startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -1677,7 +1679,7 @@ ARSPD\_PSI\_RANGE: The PSI range of the device
 
 | *Note: This parameter is for advanced users*
 
-This parameter allows you to to set the PSI \(pounds per square inch\) range for your sensor\. You should not change this unless you examine the datasheet for your device
+This parameter allows you to set the PSI \(pounds per square inch\) range for your sensor\. You should not change this unless you examine the datasheet for your device
 
 
 .. _ARSPD_BUS:
@@ -1697,7 +1699,7 @@ Bus number of the I2C bus where the airspeed sensor is connected
 +-------+-----------------+
 | 1     | Bus1(external)  |
 +-------+-----------------+
-| 2     | Bus2(auxillary) |
+| 2     | Bus2(auxiliary) |
 +-------+-----------------+
 
 
@@ -1731,7 +1733,7 @@ ARSPD\_OPTIONS: Airspeed options bitmask
 
 | *Note: This parameter is for advanced users*
 
-Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-----+----------------------------+
@@ -1754,7 +1756,7 @@ ARSPD\_WIND\_MAX: Maximum airspeed and ground speed difference
 
 | *Note: This parameter is for advanced users*
 
-If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy\. Using ARSPD\_OPTION this health value can be used to disable the sensor\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-------------------+
@@ -1773,7 +1775,7 @@ ARSPD\_WIND\_WARN: Airspeed and ground speed difference that gives a warning
 
 | *Note: This parameter is for advanced users*
 
-If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning\. If 0 ARSPD\_WIND\_MAX is used\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-------------------+
@@ -1839,7 +1841,7 @@ ARSPD2\_USE: Enable use of 2nd airspeed sensor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-use airspeed for flight control\. When set to 0 airspeed sensor can be logged and displayed on a GCS but won\'t be used for flight\. When set to 1 it will be logged and used\. When set to 2 it will be only used when the throttle is zero\, which can be useful in gliders with airspeed sensors behind a propeller
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 +-------+---------------------+
@@ -1910,7 +1912,7 @@ ARSPD2\_AUTOCAL: Automatic airspeed ratio calibration for 2nd airspeed sensor
 
 | *Note: This parameter is for advanced users*
 
-If this is enabled then the autopilot will automatically adjust the ARSPD\_RATIO during flight\, based upon an estimation filter using ground speed and true airspeed\. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5\%\. This option should be enabled for a calibration flight then disabled again when calibration is complete\. Leaving it enabled all the time is not recommended\.
+This parameter and function is not used by this vehicle\. Always set to 0\.
 
 
 .. _ARSPD2_TUBE_ORDR:
@@ -1938,8 +1940,8 @@ This parameter allows you to control whether the order in which the tubes are at
 
 .. _ARSPD2_SKIP_CAL:
 
-ARSPD2\_SKIP\_CAL: Skip airspeed calibration on startup for 2nd sensor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ARSPD2\_SKIP\_CAL: Skip airspeed offset calibration on startup for 2nd sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -1964,7 +1966,7 @@ ARSPD2\_PSI\_RANGE: The PSI range of the device for 2nd sensor
 
 | *Note: This parameter is for advanced users*
 
-This parameter allows you to to set the PSI \(pounds per square inch\) range for your sensor\. You should not change this unless you examine the datasheet for your device
+This parameter allows you to set the PSI \(pounds per square inch\) range for your sensor\. You should not change this unless you examine the datasheet for your device
 
 
 .. _ARSPD2_BUS:
@@ -1984,7 +1986,7 @@ The bus number of the I2C bus to look for the sensor on
 +-------+-----------------+
 | 1     | Bus1(external)  |
 +-------+-----------------+
-| 2     | Bus2(auxillary) |
+| 2     | Bus2(auxiliary) |
 +-------+-----------------+
 
 
@@ -3382,6 +3384,25 @@ Barometer3 sensor ID\, taking into account its type\, bus and instance
 
 
 
+.. _BARO_FIELD_ELV:
+
+BARO\_FIELD\_ELV: field elevation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+User provided field elevation in meters\. This is used to improve the calculation of the altitude the vehicle is at\. This parameter is not persistent and will be reset to 0 every time the vehicle is rebooted\. A value of 0 means no correction for takeoff height above sea level is performed\.
+
+
++-----------+--------+----------+
+| Increment | Units  | Volatile |
++===========+========+==========+
+| 0.1       | meters | True     |
++-----------+--------+----------+
+
+
+
+
 
 .. _parameters_BARO1_WCF_:
 
@@ -3417,7 +3438,7 @@ BARO1\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3436,7 +3457,7 @@ BARO1\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3455,7 +3476,7 @@ BARO1\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3474,7 +3495,7 @@ BARO1\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3521,7 +3542,7 @@ BARO2\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3540,7 +3561,7 @@ BARO2\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3559,7 +3580,7 @@ BARO2\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3578,7 +3599,7 @@ BARO2\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3625,7 +3646,7 @@ BARO3\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3644,7 +3665,7 @@ BARO3\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3663,7 +3684,7 @@ BARO3\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -3682,7 +3703,7 @@ BARO3\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 
 | *Note: This parameter is for advanced users*
 
-This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters have been tuned\.
+This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
 +-----------+------------+
@@ -10284,11 +10305,11 @@ BRD\_SERIAL\_NUM: User\-defined serial number
 User\-defined serial number of this vehicle\, it can be any arbitrary number you want and has no effect on the autopilot
 
 
-+----------------+
-| Range          |
-+================+
-| -32768 - 32767 |
-+----------------+
++--------------------+
+| Range              |
++====================+
+| -8388608 - 8388607 |
++--------------------+
 
 
 
@@ -17278,7 +17299,7 @@ CAM\_FEEDBACK\_PIN: Camera feedback pin
 
 | *Note: Reboot required after change*
 
-pin number to use for save accurate camera feedback messages\. If set to \-1 then don\'t use a pin flag for this\, otherwise this is a pin number which if held high after a picture trigger order\, will save camera messages when camera really takes a picture\. A universal camera hot shoe is needed\. The pin should be held high for at least 2 milliseconds for reliable trigger detection\. See also the CAM\_FEEDBACK\_POL option\.
+pin number to use for save accurate camera feedback messages\. If set to \-1 then don\'t use a pin flag for this\, otherwise this is a pin number which if held high after a picture trigger order\, will save camera messages when camera really takes a picture\. A universal camera hot shoe is needed\. The pin should be held high for at least 2 milliseconds for reliable trigger detection\.  Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\. See also the CAM\_FEEDBACK\_POL option\.
 
 
 +-------+----------+
@@ -17553,8 +17574,6 @@ Enabling this option starts selected protocol that will use this virtual driver
 +-------+------------+
 | 1     | DroneCAN   |
 +-------+------------+
-| 3     | ToshibaCAN |
-+-------+------------+
 | 4     | PiccoloCAN |
 +-------+------------+
 | 5     | CANTester  |
@@ -17640,6 +17659,38 @@ Bitmask defining which ESC \(motor\) channels are to be transmitted over Piccolo
 | 14  | ESC 15  |
 +-----+---------+
 | 15  | ESC 16  |
++-----+---------+
+| 16  | ESC 17  |
++-----+---------+
+| 17  | ESC 18  |
++-----+---------+
+| 18  | ESC 19  |
++-----+---------+
+| 19  | ESC 20  |
++-----+---------+
+| 20  | ESC 21  |
++-----+---------+
+| 21  | ESC 22  |
++-----+---------+
+| 22  | ESC 23  |
++-----+---------+
+| 23  | ESC 24  |
++-----+---------+
+| 24  | ESC 25  |
++-----+---------+
+| 25  | ESC 26  |
++-----+---------+
+| 26  | ESC 27  |
++-----+---------+
+| 27  | ESC 28  |
++-----+---------+
+| 28  | ESC 29  |
++-----+---------+
+| 29  | ESC 30  |
++-----+---------+
+| 30  | ESC 31  |
++-----+---------+
+| 31  | ESC 32  |
 +-----+---------+
 
 
@@ -17760,8 +17811,6 @@ Selects the Index of Test that needs to be run recursively\, this value gets res
 +-------+----------------------+
 | 3     | TEST_UAVCAN_DNA      |
 +-------+----------------------+
-| 4     | TEST_TOSHIBA_CAN     |
-+-------+----------------------+
 | 5     | TEST_KDE_CAN         |
 +-------+----------------------+
 | 6     | TEST_UAVCAN_ESC      |
@@ -17828,10 +17877,9 @@ UAVCAN node should be set implicitly
 
 .. _CAN_D1_UC_SRV_BM:
 
-CAN\_D1\_UC\_SRV\_BM: RC Out channels to be transmitted as servo over UAVCAN
+CAN\_D1\_UC\_SRV\_BM: Output channels to be transmitted as servo over UAVCAN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| *Note: This parameter is for advanced users*
 
 Bitmask with one set for channel to be transmitted as a servo command over UAVCAN
 
@@ -17869,13 +17917,47 @@ Bitmask with one set for channel to be transmitted as a servo command over UAVCA
 +-----+----------+
 | 14  | Servo 15 |
 +-----+----------+
+| 15  | Servo 16 |
++-----+----------+
+| 16  | Servo 17 |
++-----+----------+
+| 17  | Servo 18 |
++-----+----------+
+| 18  | Servo 19 |
++-----+----------+
+| 19  | Servo 20 |
++-----+----------+
+| 20  | Servo 21 |
++-----+----------+
+| 21  | Servo 22 |
++-----+----------+
+| 22  | Servo 23 |
++-----+----------+
+| 23  | Servo 24 |
++-----+----------+
+| 24  | Servo 25 |
++-----+----------+
+| 25  | Servo 26 |
++-----+----------+
+| 26  | Servo 27 |
++-----+----------+
+| 27  | Servo 28 |
++-----+----------+
+| 28  | Servo 29 |
++-----+----------+
+| 29  | Servo 30 |
++-----+----------+
+| 30  | Servo 31 |
++-----+----------+
+| 31  | Servo 32 |
++-----+----------+
 
 
 
 
 .. _CAN_D1_UC_ESC_BM:
 
-CAN\_D1\_UC\_ESC\_BM: RC Out channels to be transmitted as ESC over UAVCAN
+CAN\_D1\_UC\_ESC\_BM: Output channels to be transmitted as ESC over UAVCAN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
@@ -17917,6 +17999,38 @@ Bitmask with one set for channel to be transmitted as a ESC command over UAVCAN
 | 14  | ESC 15  |
 +-----+---------+
 | 15  | ESC 16  |
++-----+---------+
+| 16  | ESC 17  |
++-----+---------+
+| 17  | ESC 18  |
++-----+---------+
+| 18  | ESC 19  |
++-----+---------+
+| 19  | ESC 20  |
++-----+---------+
+| 20  | ESC 21  |
++-----+---------+
+| 21  | ESC 22  |
++-----+---------+
+| 22  | ESC 23  |
++-----+---------+
+| 23  | ESC 24  |
++-----+---------+
+| 24  | ESC 25  |
++-----+---------+
+| 25  | ESC 26  |
++-----+---------+
+| 26  | ESC 27  |
++-----+---------+
+| 27  | ESC 28  |
++-----+---------+
+| 28  | ESC 29  |
++-----+---------+
+| 29  | ESC 30  |
++-----+---------+
+| 30  | ESC 31  |
++-----+---------+
+| 31  | ESC 32  |
 +-----+---------+
 
 
@@ -17983,6 +18097,44 @@ Maximum transmit rate for Notify State Message
 
 
 
+.. _CAN_D1_UC_ESC_OF:
+
+CAN\_D1\_UC\_ESC\_OF: ESC Output channels offset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Offset for ESC numbering in DroneCAN ESC RawCommand messages\. This allows for more efficient packing of ESC command messages\. If your ESCs are on servo functions 5 to 8 and you set this parameter to 4 then the ESC RawCommand will be sent with the first 4 slots filled\. This can be used for more efficint usage of CAN bandwidth
+
+
++--------+
+| Range  |
++========+
+| 0 - 18 |
++--------+
+
+
+
+
+.. _CAN_D1_UC_POOL:
+
+CAN\_D1\_UC\_POOL: CAN pool size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Amount of memory in bytes to allocate for the DroneCAN memory pool\. More memory is needed for higher CAN bus loads
+
+
++--------------+
+| Range        |
++==============+
+| 1024 - 16384 |
++--------------+
+
+
+
+
 
 .. _parameters_CAN_D2_:
 
@@ -18007,8 +18159,6 @@ Enabling this option starts selected protocol that will use this virtual driver
 | 0     | Disabled   |
 +-------+------------+
 | 1     | DroneCAN   |
-+-------+------------+
-| 3     | ToshibaCAN |
 +-------+------------+
 | 4     | PiccoloCAN |
 +-------+------------+
@@ -18095,6 +18245,38 @@ Bitmask defining which ESC \(motor\) channels are to be transmitted over Piccolo
 | 14  | ESC 15  |
 +-----+---------+
 | 15  | ESC 16  |
++-----+---------+
+| 16  | ESC 17  |
++-----+---------+
+| 17  | ESC 18  |
++-----+---------+
+| 18  | ESC 19  |
++-----+---------+
+| 19  | ESC 20  |
++-----+---------+
+| 20  | ESC 21  |
++-----+---------+
+| 21  | ESC 22  |
++-----+---------+
+| 22  | ESC 23  |
++-----+---------+
+| 23  | ESC 24  |
++-----+---------+
+| 24  | ESC 25  |
++-----+---------+
+| 25  | ESC 26  |
++-----+---------+
+| 26  | ESC 27  |
++-----+---------+
+| 27  | ESC 28  |
++-----+---------+
+| 28  | ESC 29  |
++-----+---------+
+| 29  | ESC 30  |
++-----+---------+
+| 30  | ESC 31  |
++-----+---------+
+| 31  | ESC 32  |
 +-----+---------+
 
 
@@ -18215,8 +18397,6 @@ Selects the Index of Test that needs to be run recursively\, this value gets res
 +-------+----------------------+
 | 3     | TEST_UAVCAN_DNA      |
 +-------+----------------------+
-| 4     | TEST_TOSHIBA_CAN     |
-+-------+----------------------+
 | 5     | TEST_KDE_CAN         |
 +-------+----------------------+
 | 6     | TEST_UAVCAN_ESC      |
@@ -18283,10 +18463,9 @@ UAVCAN node should be set implicitly
 
 .. _CAN_D2_UC_SRV_BM:
 
-CAN\_D2\_UC\_SRV\_BM: RC Out channels to be transmitted as servo over UAVCAN
+CAN\_D2\_UC\_SRV\_BM: Output channels to be transmitted as servo over UAVCAN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| *Note: This parameter is for advanced users*
 
 Bitmask with one set for channel to be transmitted as a servo command over UAVCAN
 
@@ -18324,13 +18503,47 @@ Bitmask with one set for channel to be transmitted as a servo command over UAVCA
 +-----+----------+
 | 14  | Servo 15 |
 +-----+----------+
+| 15  | Servo 16 |
++-----+----------+
+| 16  | Servo 17 |
++-----+----------+
+| 17  | Servo 18 |
++-----+----------+
+| 18  | Servo 19 |
++-----+----------+
+| 19  | Servo 20 |
++-----+----------+
+| 20  | Servo 21 |
++-----+----------+
+| 21  | Servo 22 |
++-----+----------+
+| 22  | Servo 23 |
++-----+----------+
+| 23  | Servo 24 |
++-----+----------+
+| 24  | Servo 25 |
++-----+----------+
+| 25  | Servo 26 |
++-----+----------+
+| 26  | Servo 27 |
++-----+----------+
+| 27  | Servo 28 |
++-----+----------+
+| 28  | Servo 29 |
++-----+----------+
+| 29  | Servo 30 |
++-----+----------+
+| 30  | Servo 31 |
++-----+----------+
+| 31  | Servo 32 |
++-----+----------+
 
 
 
 
 .. _CAN_D2_UC_ESC_BM:
 
-CAN\_D2\_UC\_ESC\_BM: RC Out channels to be transmitted as ESC over UAVCAN
+CAN\_D2\_UC\_ESC\_BM: Output channels to be transmitted as ESC over UAVCAN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
@@ -18372,6 +18585,38 @@ Bitmask with one set for channel to be transmitted as a ESC command over UAVCAN
 | 14  | ESC 15  |
 +-----+---------+
 | 15  | ESC 16  |
++-----+---------+
+| 16  | ESC 17  |
++-----+---------+
+| 17  | ESC 18  |
++-----+---------+
+| 18  | ESC 19  |
++-----+---------+
+| 19  | ESC 20  |
++-----+---------+
+| 20  | ESC 21  |
++-----+---------+
+| 21  | ESC 22  |
++-----+---------+
+| 22  | ESC 23  |
++-----+---------+
+| 23  | ESC 24  |
++-----+---------+
+| 24  | ESC 25  |
++-----+---------+
+| 25  | ESC 26  |
++-----+---------+
+| 26  | ESC 27  |
++-----+---------+
+| 27  | ESC 28  |
++-----+---------+
+| 28  | ESC 29  |
++-----+---------+
+| 29  | ESC 30  |
++-----+---------+
+| 30  | ESC 31  |
++-----+---------+
+| 31  | ESC 32  |
 +-----+---------+
 
 
@@ -18438,6 +18683,44 @@ Maximum transmit rate for Notify State Message
 
 
 
+.. _CAN_D2_UC_ESC_OF:
+
+CAN\_D2\_UC\_ESC\_OF: ESC Output channels offset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Offset for ESC numbering in DroneCAN ESC RawCommand messages\. This allows for more efficient packing of ESC command messages\. If your ESCs are on servo functions 5 to 8 and you set this parameter to 4 then the ESC RawCommand will be sent with the first 4 slots filled\. This can be used for more efficint usage of CAN bandwidth
+
+
++--------+
+| Range  |
++========+
+| 0 - 18 |
++--------+
+
+
+
+
+.. _CAN_D2_UC_POOL:
+
+CAN\_D2\_UC\_POOL: CAN pool size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Amount of memory in bytes to allocate for the DroneCAN memory pool\. More memory is needed for higher CAN bus loads
+
+
++--------------+
+| Range        |
++==============+
+| 1024 - 16384 |
++--------------+
+
+
+
+
 
 .. _parameters_CAN_D3_:
 
@@ -18462,8 +18745,6 @@ Enabling this option starts selected protocol that will use this virtual driver
 | 0     | Disabled   |
 +-------+------------+
 | 1     | DroneCAN   |
-+-------+------------+
-| 3     | ToshibaCAN |
 +-------+------------+
 | 4     | PiccoloCAN |
 +-------+------------+
@@ -18550,6 +18831,38 @@ Bitmask defining which ESC \(motor\) channels are to be transmitted over Piccolo
 | 14  | ESC 15  |
 +-----+---------+
 | 15  | ESC 16  |
++-----+---------+
+| 16  | ESC 17  |
++-----+---------+
+| 17  | ESC 18  |
++-----+---------+
+| 18  | ESC 19  |
++-----+---------+
+| 19  | ESC 20  |
++-----+---------+
+| 20  | ESC 21  |
++-----+---------+
+| 21  | ESC 22  |
++-----+---------+
+| 22  | ESC 23  |
++-----+---------+
+| 23  | ESC 24  |
++-----+---------+
+| 24  | ESC 25  |
++-----+---------+
+| 25  | ESC 26  |
++-----+---------+
+| 26  | ESC 27  |
++-----+---------+
+| 27  | ESC 28  |
++-----+---------+
+| 28  | ESC 29  |
++-----+---------+
+| 29  | ESC 30  |
++-----+---------+
+| 30  | ESC 31  |
++-----+---------+
+| 31  | ESC 32  |
 +-----+---------+
 
 
@@ -18670,8 +18983,6 @@ Selects the Index of Test that needs to be run recursively\, this value gets res
 +-------+----------------------+
 | 3     | TEST_UAVCAN_DNA      |
 +-------+----------------------+
-| 4     | TEST_TOSHIBA_CAN     |
-+-------+----------------------+
 | 5     | TEST_KDE_CAN         |
 +-------+----------------------+
 | 6     | TEST_UAVCAN_ESC      |
@@ -18738,10 +19049,9 @@ UAVCAN node should be set implicitly
 
 .. _CAN_D3_UC_SRV_BM:
 
-CAN\_D3\_UC\_SRV\_BM: RC Out channels to be transmitted as servo over UAVCAN
+CAN\_D3\_UC\_SRV\_BM: Output channels to be transmitted as servo over UAVCAN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| *Note: This parameter is for advanced users*
 
 Bitmask with one set for channel to be transmitted as a servo command over UAVCAN
 
@@ -18779,13 +19089,47 @@ Bitmask with one set for channel to be transmitted as a servo command over UAVCA
 +-----+----------+
 | 14  | Servo 15 |
 +-----+----------+
+| 15  | Servo 16 |
++-----+----------+
+| 16  | Servo 17 |
++-----+----------+
+| 17  | Servo 18 |
++-----+----------+
+| 18  | Servo 19 |
++-----+----------+
+| 19  | Servo 20 |
++-----+----------+
+| 20  | Servo 21 |
++-----+----------+
+| 21  | Servo 22 |
++-----+----------+
+| 22  | Servo 23 |
++-----+----------+
+| 23  | Servo 24 |
++-----+----------+
+| 24  | Servo 25 |
++-----+----------+
+| 25  | Servo 26 |
++-----+----------+
+| 26  | Servo 27 |
++-----+----------+
+| 27  | Servo 28 |
++-----+----------+
+| 28  | Servo 29 |
++-----+----------+
+| 29  | Servo 30 |
++-----+----------+
+| 30  | Servo 31 |
++-----+----------+
+| 31  | Servo 32 |
++-----+----------+
 
 
 
 
 .. _CAN_D3_UC_ESC_BM:
 
-CAN\_D3\_UC\_ESC\_BM: RC Out channels to be transmitted as ESC over UAVCAN
+CAN\_D3\_UC\_ESC\_BM: Output channels to be transmitted as ESC over UAVCAN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
@@ -18827,6 +19171,38 @@ Bitmask with one set for channel to be transmitted as a ESC command over UAVCAN
 | 14  | ESC 15  |
 +-----+---------+
 | 15  | ESC 16  |
++-----+---------+
+| 16  | ESC 17  |
++-----+---------+
+| 17  | ESC 18  |
++-----+---------+
+| 18  | ESC 19  |
++-----+---------+
+| 19  | ESC 20  |
++-----+---------+
+| 20  | ESC 21  |
++-----+---------+
+| 21  | ESC 22  |
++-----+---------+
+| 22  | ESC 23  |
++-----+---------+
+| 23  | ESC 24  |
++-----+---------+
+| 24  | ESC 25  |
++-----+---------+
+| 25  | ESC 26  |
++-----+---------+
+| 26  | ESC 27  |
++-----+---------+
+| 27  | ESC 28  |
++-----+---------+
+| 28  | ESC 29  |
++-----+---------+
+| 29  | ESC 30  |
++-----+---------+
+| 30  | ESC 31  |
++-----+---------+
+| 31  | ESC 32  |
 +-----+---------+
 
 
@@ -18889,6 +19265,44 @@ Maximum transmit rate for Notify State Message
 +=========+=======+
 | 1 - 200 | hertz |
 +---------+-------+
+
+
+
+
+.. _CAN_D3_UC_ESC_OF:
+
+CAN\_D3\_UC\_ESC\_OF: ESC Output channels offset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Offset for ESC numbering in DroneCAN ESC RawCommand messages\. This allows for more efficient packing of ESC command messages\. If your ESCs are on servo functions 5 to 8 and you set this parameter to 4 then the ESC RawCommand will be sent with the first 4 slots filled\. This can be used for more efficint usage of CAN bandwidth
+
+
++--------+
+| Range  |
++========+
+| 0 - 18 |
++--------+
+
+
+
+
+.. _CAN_D3_UC_POOL:
+
+CAN\_D3\_UC\_POOL: CAN pool size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Amount of memory in bytes to allocate for the DroneCAN memory pool\. More memory is needed for higher CAN bus loads
+
+
++--------------+
+| Range        |
++==============+
+| 1024 - 16384 |
++--------------+
 
 
 
@@ -21366,6 +21780,8 @@ What method of communication is used for EFI \#1
 +-------+--------------+
 | 3     | Serial-Lutan |
 +-------+--------------+
+| 5     | DroneCAN     |
++-------+--------------+
 
 
 
@@ -21377,7 +21793,7 @@ EFI\_COEF1: EFI Calibration Coefficient 1
 
 | *Note: This parameter is for advanced users*
 
-Used to calibrate fuel flow for MS protocol \(Slope\)
+Used to calibrate fuel flow for MS protocol \(Slope\)\. This should be calculated from a log at constant fuel usage rate\. Plot \(ECYL\[0\]\.InjT\*EFI\.Rpm\)\/600\.0 to get the duty\_cycle\. Measure actual fuel usage in cm\^3\/min\, and set EFI\_COEF1 \= fuel\_usage\_cm3permin \/ duty\_cycle
 
 
 +-------+
@@ -21396,7 +21812,7 @@ EFI\_COEF2: EFI Calibration Coefficient 2
 
 | *Note: This parameter is for advanced users*
 
-Used to calibrate fuel flow for MS protocol \(Offset\)
+Used to calibrate fuel flow for MS protocol \(Offset\)\. This can be used to correct for a non\-zero offset in the fuel consumption calculation of EFI\_COEF1
 
 
 +--------+
@@ -23711,7 +24127,7 @@ EK3\_DRAG\_BCOEF\_X: Ballistic coefficient for X axis drag
 
 | *Note: This parameter is for advanced users*
 
-Ratio of mass to drag coefficient measured along the X body axis\. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction \(eg multicopters\)\. The drag produced by this effect scales with speed squared\.  Set to a postive value \> 1\.0 to enable\. A starting value is the mass in Kg divided by the frontal area\. The predicted drag from the rotors is specified separately by the EK3\_MCOEF parameter\.
+Ratio of mass to drag coefficient measured along the X body axis\. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction \(eg multicopters\)\. The drag produced by this effect scales with speed squared\.  Set to a postive value \> 1\.0 to enable\. A starting value is the mass in Kg divided by the frontal area\. The predicted drag from the rotors is specified separately by the EK3\_DRAG\_MCOEF parameter\.
 
 
 +--------------+----------------------------+
@@ -23730,7 +24146,7 @@ EK3\_DRAG\_BCOEF\_Y: Ballistic coefficient for Y axis drag
 
 | *Note: This parameter is for advanced users*
 
-Ratio of mass to drag coefficient measured along the Y body axis\. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction \(eg multicopters\)\. The drag produced by this effect scales with speed squared\.  Set to a postive value \> 1\.0 to enable\. A starting value is the mass in Kg divided by the side area\. The predicted drag from the rotors is specified separately by the EK3\_MCOEF parameter\.
+Ratio of mass to drag coefficient measured along the Y body axis\. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction \(eg multicopters\)\. The drag produced by this effect scales with speed squared\.  Set to a postive value \> 1\.0 to enable\. A starting value is the mass in Kg divided by the side area\. The predicted drag from the rotors is specified separately by the EK3\_DRAG\_MCOEF parameter\.
 
 
 +---------------+----------------------------+
@@ -23749,7 +24165,7 @@ EK3\_DRAG\_M\_NSE: Observation noise for drag acceleration
 
 | *Note: This parameter is for advanced users*
 
-This sets the amount of noise used when fusing X and Y acceleration as an observation that enables esitmation of wind velocity for multi\-rotor vehicles\. This feature is enabled by the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters
+This sets the amount of noise used when fusing X and Y acceleration as an observation that enables esitmation of wind velocity for multi\-rotor vehicles\. This feature is enabled by the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters
 
 
 +-----------+-----------+--------------------------+
@@ -23768,7 +24184,7 @@ EK3\_DRAG\_MCOEF: Momentum coefficient for propeller drag
 
 | *Note: This parameter is for advanced users*
 
-This parameter is used to predict the drag produced by the rotors when flying a multi\-copter\, enabling estimation of wind drift\. The drag produced by this effect scales with speed not speed squared and is produced because some of the air velocity normal to the rotors axis of rotation is lost when passing through the rotor disc which changes the momentum of the airflow causing drag\. For unducted rotors the effect is roughly proportional to the area of the propeller blades when viewed side on and changes with different propellers\. It is higher for ducted rotors\. For example if flying at 15 m\/s at sea level conditions produces a rotor induced drag acceleration of 1\.5 m\/s\/s\, then EK3\_MCOEF would be set to 0\.1 \= \(1\.5\/15\.0\)\. Set EK3\_MCOEF to a postive value to enable wind estimation using this drag effect\. To account for the drag produced by the body which scales with speed squared\, see documentation for the EK3\_BCOEF\_X and EK3\_BCOEF\_Y parameters\.
+This parameter is used to predict the drag produced by the rotors when flying a multi\-copter\, enabling estimation of wind drift\. The drag produced by this effect scales with speed not speed squared and is produced because some of the air velocity normal to the rotors axis of rotation is lost when passing through the rotor disc which changes the momentum of the airflow causing drag\. For unducted rotors the effect is roughly proportional to the area of the propeller blades when viewed side on and changes with different propellers\. It is higher for ducted rotors\. For example if flying at 15 m\/s at sea level conditions produces a rotor induced drag acceleration of 1\.5 m\/s\/s\, then EK3\_DRAG\_MCOEF would be set to 0\.1 \= \(1\.5\/15\.0\)\. Set EK3\_MCOEF to a postive value to enable wind estimation using this drag effect\. To account for the drag produced by the body which scales with speed squared\, see documentation for the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters\.
 
 
 +-----------+-----------+------------+
@@ -23806,7 +24222,7 @@ EK3\_GND\_EFF\_DZ: Baro height ground effect dead zone
 
 | *Note: This parameter is for advanced users*
 
-This parameter sets the size of the dead zone that is applied to negative baro height spikes that can occur when takeing off or landing when a vehicle with lift rotors is operating in ground effect ground effect\. Set to about 0\.5m less than the amount of negative offset in baro height that occurs just prior to takeoff when lift motors are spooling up\. Set to 0 if no ground effect is present\. 
+This parameter sets the size of the dead zone that is applied to negative baro height spikes that can occur when taking off or landing when a vehicle with lift rotors is operating in ground effect ground effect\. Set to about 0\.5m less than the amount of negative offset in baro height that occurs just prior to takeoff when lift motors are spooling up\. Set to 0 if no ground effect is present\.
 
 
 +-----------+------------+
@@ -24275,6 +24691,31 @@ EKF Source Options
 
 
 
+.. _parameters_ESC_TLM:
+
+ESC\_TLM Parameters
+-------------------
+
+
+.. _ESC_TLM_MAV_OFS:
+
+ESC\_TLM\_MAV\_OFS: ESC Telemetry mavlink offset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Offset to apply to ESC numbers when reporting as ESC\_TELEMETRY packets over MAVLink\. This allows high numbered motors to be displayed as low numbered ESCs for convenience on GCS displays\. A value of 4 would send ESC on output 5 as ESC number 1 in ESC\_TELEMETRY packets
+
+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 0 - 31 |
++-----------+--------+
+
+
+
+
+
 .. _parameters_FENCE_:
 
 FENCE\_ Parameters
@@ -24702,6 +25143,26 @@ The FFT harmonic peak target that should be returned by FTN1\.PkAvg\. The result
 +-------+--------------------------+
 | 5     | Pitch-Axis               |
 +-------+--------------------------+
+
+
+
+
+.. _FFT_NUM_FRAMES:
+
+FFT\_NUM\_FRAMES: FFT output frames to retain and average
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Number of output frequency frames to retain and average in order to calculate final frequencies\. Averaging output frames can drastically reduce noise and jitter at the cost of latency as long as the input is stable\. The default is to perform no averaging\. For rapidly changing frequencies \(e\.g\. smaller aircraft\) fewer frames should be averaged\.
+
+
++-------+
+| Range |
++=======+
+| 0 - 8 |
++-------+
 
 
 
@@ -25169,6 +25630,24 @@ Generator type
 +-------+------------------------+
 | 3     | Richenpower            |
 +-------+------------------------+
+
+
+
+
+.. _GEN_OPTIONS:
+
+GEN\_OPTIONS: Generator Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Bitmask of options for generators
+
+
++-----+---------------------------------------+
+| Bit | Meaning                               |
++=====+=======================================+
+| 0   | Supress Maintenance-Required Warnings |
++-----+---------------------------------------+
 
 
 
@@ -25874,17 +26353,19 @@ GPS\_DRV\_OPTIONS: driver options
 Additional backend specific options
 
 
-+-----+------------------------------------------------------+
-| Bit | Meaning                                              |
-+=====+======================================================+
-| 0   | Use UART2 for moving baseline on ublox               |
-+-----+------------------------------------------------------+
-| 1   | Use base station for GPS yaw on SBF                  |
-+-----+------------------------------------------------------+
-| 2   | Use baudrate 115200                                  |
-+-----+------------------------------------------------------+
-| 3   | Use dedicated CAN port b/w GPSes for moving baseline |
-+-----+------------------------------------------------------+
++-----+-------------------------------------------------------+
+| Bit | Meaning                                               |
++=====+=======================================================+
+| 0   | Use UART2 for moving baseline on ublox                |
++-----+-------------------------------------------------------+
+| 1   | Use base station for GPS yaw on SBF                   |
++-----+-------------------------------------------------------+
+| 2   | Use baudrate 115200                                   |
++-----+-------------------------------------------------------+
+| 3   | Use dedicated CAN port b/w GPSes for moving baseline  |
++-----+-------------------------------------------------------+
+| 4   | Use ellipsoid height instead of AMSL for uBlox driver |
++-----+-------------------------------------------------------+
 
 
 
@@ -27357,15 +27838,23 @@ INS\_ENABLE\_MASK: IMU enable mask
 Bitmask of IMUs to enable\. It can be used to prevent startup of specific detected IMUs
 
 
-+-----+-----------+
-| Bit | Meaning   |
-+=====+===========+
-| 0   | FirstIMU  |
-+-----+-----------+
-| 1   | SecondIMU |
-+-----+-----------+
-| 2   | ThirdIMU  |
-+-----+-----------+
++-----+------------+
+| Bit | Meaning    |
++=====+============+
+| 0   | FirstIMU   |
++-----+------------+
+| 1   | SecondIMU  |
++-----+------------+
+| 2   | ThirdIMU   |
++-----+------------+
+| 3   | FourthIMU  |
++-----+------------+
+| 4   | FifthIMU   |
++-----+------------+
+| 5   | SixthIMU   |
++-----+------------+
+| 6   | SeventhIMU |
++-----+------------+
 
 
 
@@ -27530,6 +28019,209 @@ This enables optional temperature calibration features\. Setting PersistParams w
 
 
 
+.. _parameters_INS_HNTC2_:
+
+INS\_HNTC2\_ Parameters
+-----------------------
+
+
+.. _INS_HNTC2_ENABLE:
+
+INS\_HNTC2\_ENABLE: Harmonic Notch Filter enable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter enable
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+.. _INS_HNTC2_FREQ:
+
+INS\_HNTC2\_FREQ: Harmonic Notch Filter base frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter base center frequency in Hz\. This should be set at most half the backend gyro rate \(which is typically 1Khz\)\. For helicopters using RPM sensor to dynamically set the notch frequency\, use this parameter to provide a lower limit to the dynamic notch filter\.  Recommend setting it to half the operating rotor speed in Hz\.
+
+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 10 - 495 | hertz |
++----------+-------+
+
+
+
+
+.. _INS_HNTC2_BW:
+
+INS\_HNTC2\_BW: Harmonic Notch Filter bandwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter bandwidth in Hz\. This is typically set to half the base frequency\. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| 5 - 250 | hertz |
++---------+-------+
+
+
+
+
+.. _INS_HNTC2_ATT:
+
+INS\_HNTC2\_ATT: Harmonic Notch Filter attenuation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter attenuation in dB\. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise\.
+
+
++--------+---------+
+| Range  | Units   |
++========+=========+
+| 5 - 50 | decibel |
++--------+---------+
+
+
+
+
+.. _INS_HNTC2_HMNCS:
+
+INS\_HNTC2\_HMNCS: Harmonic Notch Filter harmonics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\. A value of 0 disables this filter\. The first harmonic refers to the base frequency\.
+
+
++-----+--------------+
+| Bit | Meaning      |
++=====+==============+
+| 0   | 1st harmonic |
++-----+--------------+
+| 1   | 2nd harmonic |
++-----+--------------+
+| 2   | 3rd harmonic |
++-----+--------------+
+| 3   | 4th hamronic |
++-----+--------------+
+| 4   | 5th harmonic |
++-----+--------------+
+| 5   | 6th harmonic |
++-----+--------------+
+| 6   | 7th harmonic |
++-----+--------------+
+| 7   | 8th harmonic |
++-----+--------------+
+
+
+
+
+.. _INS_HNTC2_REF:
+
+INS\_HNTC2\_REF: Harmonic Notch Filter reference value
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter\.  For throttle\-based scaling\, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter\. For RPM and ESC telemetry based tracking\, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed\.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter\.  This reference value may also be used to scale the sensor data\, if required\.  For example\, rpm sensor data is required to measure heli motor RPM\. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM\.
+
+
++-----------+
+| Range     |
++===========+
+| 0.0 - 1.0 |
++-----------+
+
+
+
+
+.. _INS_HNTC2_MODE:
+
+INS\_HNTC2\_MODE: Harmonic Notch Filter dynamic frequency tracking mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Harmonic Notch Filter dynamic frequency tracking mode\. Dynamic updates can be throttle\, RPM sensor\, ESC telemetry or dynamic FFT based\. Throttle\-based updates should only be used with multicopters\.
+
+
++-------+-------------------+
+| Value | Meaning           |
++=======+===================+
+| 0     | Disabled          |
++-------+-------------------+
+| 1     | Throttle          |
++-------+-------------------+
+| 2     | RPM Sensor        |
++-------+-------------------+
+| 3     | ESC Telemetry     |
++-------+-------------------+
+| 4     | Dynamic FFT       |
++-------+-------------------+
+| 5     | Second RPM Sensor |
++-------+-------------------+
+
+
+
+
++-------+
+| Range |
++=======+
+| 0 - 4 |
++-------+
+
+
+
+
+.. _INS_HNTC2_OPTS:
+
+INS\_HNTC2\_OPTS: Harmonic Notch Filter options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
+
+
++-----+---------------------+
+| Bit | Meaning             |
++=====+=====================+
+| 0   | Double notch        |
++-----+---------------------+
+| 1   | Dynamic harmonic    |
++-----+---------------------+
+| 2   | Update at loop rate |
++-----+---------------------+
+| 3   | EnableOnAllIMUs     |
++-----+---------------------+
+
+
+
+
+
 .. _parameters_INS_HNTCH_:
 
 INS\_HNTCH\_ Parameters
@@ -27622,7 +28314,7 @@ INS\_HNTCH\_HMNCS: Harmonic Notch Filter harmonics
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\.
+Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\. A value of 0 disables this filter\. The first harmonic refers to the base frequency\.
 
 
 +-----+--------------+
@@ -27678,19 +28370,21 @@ INS\_HNTCH\_MODE: Harmonic Notch Filter dynamic frequency tracking mode
 Harmonic Notch Filter dynamic frequency tracking mode\. Dynamic updates can be throttle\, RPM sensor\, ESC telemetry or dynamic FFT based\. Throttle\-based updates should only be used with multicopters\.
 
 
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | Throttle      |
-+-------+---------------+
-| 2     | RPM Sensor    |
-+-------+---------------+
-| 3     | ESC Telemetry |
-+-------+---------------+
-| 4     | Dynamic FFT   |
-+-------+---------------+
++-------+-------------------+
+| Value | Meaning           |
++=======+===================+
+| 0     | Disabled          |
++-------+-------------------+
+| 1     | Throttle          |
++-------+-------------------+
+| 2     | RPM Sensor        |
++-------+-------------------+
+| 3     | ESC Telemetry     |
++-------+-------------------+
+| 4     | Dynamic FFT       |
++-------+-------------------+
+| 5     | Second RPM Sensor |
++-------+-------------------+
 
 
 
@@ -27723,6 +28417,8 @@ Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation a
 | 1   | Dynamic harmonic    |
 +-----+---------------------+
 | 2   | Update at loop rate |
++-----+---------------------+
+| 3   | EnableOnAllIMUs     |
 +-----+---------------------+
 
 
@@ -27832,205 +28528,6 @@ Number of samples to push to count every INS\_LOG\_BAT\_LGIN
 +===========+
 | 1         |
 +-----------+
-
-
-
-
-
-.. _parameters_INS_NOTCH_:
-
-INS\_NOTCH\_ Parameters
------------------------
-
-
-.. _INS_NOTCH_ENABLE:
-
-INS\_NOTCH\_ENABLE: Harmonic Notch Filter enable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Harmonic Notch Filter enable
-
-
-+-------+----------+
-| Value | Meaning  |
-+=======+==========+
-| 0     | Disabled |
-+-------+----------+
-| 1     | Enabled  |
-+-------+----------+
-
-
-
-
-.. _INS_NOTCH_FREQ:
-
-INS\_NOTCH\_FREQ: Harmonic Notch Filter base frequency
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Harmonic Notch Filter base center frequency in Hz\. This should be set at most half the backend gyro rate \(which is typically 1Khz\)\. For helicopters using RPM sensor to dynamically set the notch frequency\, use this parameter to provide a lower limit to the dynamic notch filter\.  Recommend setting it to half the operating rotor speed in Hz\.
-
-
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 10 - 495 | hertz |
-+----------+-------+
-
-
-
-
-.. _INS_NOTCH_BW:
-
-INS\_NOTCH\_BW: Harmonic Notch Filter bandwidth
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Harmonic Notch Filter bandwidth in Hz\. This is typically set to half the base frequency\. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics\.
-
-
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 5 - 250 | hertz |
-+---------+-------+
-
-
-
-
-.. _INS_NOTCH_ATT:
-
-INS\_NOTCH\_ATT: Harmonic Notch Filter attenuation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Harmonic Notch Filter attenuation in dB\. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise\.
-
-
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 50 | decibel |
-+--------+---------+
-
-
-
-
-.. _INS_NOTCH_HMNCS:
-
-INS\_NOTCH\_HMNCS: Harmonic Notch Filter harmonics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-| *Note: Reboot required after change*
-
-Bitmask of harmonic frequencies to apply Harmonic Notch Filter to\. This option takes effect on the next reboot\.
-
-
-+-----+--------------+
-| Bit | Meaning      |
-+=====+==============+
-| 0   | 1st harmonic |
-+-----+--------------+
-| 1   | 2nd harmonic |
-+-----+--------------+
-| 2   | 3rd harmonic |
-+-----+--------------+
-| 3   | 4th hamronic |
-+-----+--------------+
-| 4   | 5th harmonic |
-+-----+--------------+
-| 5   | 6th harmonic |
-+-----+--------------+
-| 6   | 7th harmonic |
-+-----+--------------+
-| 7   | 8th harmonic |
-+-----+--------------+
-
-
-
-
-.. _INS_NOTCH_REF:
-
-INS\_NOTCH\_REF: Harmonic Notch Filter reference value
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-| *Note: Reboot required after change*
-
-A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter\.  For throttle\-based scaling\, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter\. For RPM and ESC telemetry based tracking\, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed\.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter\.  This reference value may also be used to scale the sensor data\, if required\.  For example\, rpm sensor data is required to measure heli motor RPM\. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM\.
-
-
-+-----------+
-| Range     |
-+===========+
-| 0.0 - 1.0 |
-+-----------+
-
-
-
-
-.. _INS_NOTCH_MODE:
-
-INS\_NOTCH\_MODE: Harmonic Notch Filter dynamic frequency tracking mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-
-Harmonic Notch Filter dynamic frequency tracking mode\. Dynamic updates can be throttle\, RPM sensor\, ESC telemetry or dynamic FFT based\. Throttle\-based updates should only be used with multicopters\.
-
-
-+-------+---------------+
-| Value | Meaning       |
-+=======+===============+
-| 0     | Disabled      |
-+-------+---------------+
-| 1     | Throttle      |
-+-------+---------------+
-| 2     | RPM Sensor    |
-+-------+---------------+
-| 3     | ESC Telemetry |
-+-------+---------------+
-| 4     | Dynamic FFT   |
-+-------+---------------+
-
-
-
-
-+-------+
-| Range |
-+=======+
-| 0 - 4 |
-+-------+
-
-
-
-
-.. _INS_NOTCH_OPTS:
-
-INS\_NOTCH\_OPTS: Harmonic Notch Filter options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: This parameter is for advanced users*
-| *Note: Reboot required after change*
-
-Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
-
-
-+-----+---------------------+
-| Bit | Meaning             |
-+=====+=====================+
-| 0   | Double notch        |
-+-----+---------------------+
-| 1   | Dynamic harmonic    |
-+-----+---------------------+
-| 2   | Update at loop rate |
-+-----+---------------------+
 
 
 
@@ -29877,6 +30374,8 @@ Mount Type \(None\, Servo or MAVLink\)
 +-------+-----------------+
 | 5     | SToRM32 Serial  |
 +-------+-----------------+
+| 6     | Gremsy          |
++-------+-----------------+
 
 
 
@@ -30803,6 +31302,8 @@ Mount Type \(None\, Servo or MAVLink\)
 +-------+-----------------+
 | 5     | SToRM32 Serial  |
 +-------+-----------------+
+| 6     | Gremsy          |
++-------+-----------------+
 
 
 
@@ -31394,7 +31895,7 @@ MOT\_YAW\_SV\_ANGLE: Yaw Servo Max Lean Angle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Yaw servo\'s maximum lean angle
+Yaw servo\'s maximum lean angle \(Tricopter only\)
 
 
 +-----------+--------+---------+
@@ -31732,7 +32233,7 @@ NTF\_BUZZ\_PIN: Buzzer pin
 
 | *Note: This parameter is for advanced users*
 
-Enables to connect active buzzer to arbitrary pin\. Requires 3\-pin buzzer or additional MOSFET\!
+Enables to connect active buzzer to arbitrary pin\. Requires 3\-pin buzzer or additional MOSFET\! Some the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------+
@@ -34748,7 +35249,7 @@ RELAY\_PIN: First Relay Pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin number for first relay control\. This is the pin used for camera control\.
+Digital pin number for first relay control\. This is the pin used for camera shutter control\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+-------------------+
@@ -34804,7 +35305,7 @@ RELAY\_PIN2: Second Relay Pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin number for 2nd relay control\.
+Digital pin number for 2nd relay control\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+-------------------+
@@ -34860,7 +35361,7 @@ RELAY\_PIN3: Third Relay Pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin number for 3rd relay control\.
+Digital pin number for 3rd relay control\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+-------------------+
@@ -34916,7 +35417,7 @@ RELAY\_PIN4: Fourth Relay Pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin number for 4th relay control\.
+Digital pin number for 4th relay control\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+-------------------+
@@ -34994,7 +35495,7 @@ RELAY\_PIN5: Fifth Relay Pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin number for 5th relay control\.
+Digital pin number for 5th relay control\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+-------------------+
@@ -35050,7 +35551,7 @@ RELAY\_PIN6: Sixth Relay Pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin number for 6th relay control\.
+Digital pin number for 6th relay control\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+-------------------+
@@ -35199,7 +35700,7 @@ RNGFND1\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -35333,7 +35834,7 @@ RNGFND1\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -35790,7 +36291,7 @@ RNGFND2\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -35924,7 +36425,7 @@ RNGFND2\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -36381,7 +36882,7 @@ RNGFND3\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -36515,7 +37016,7 @@ RNGFND3\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -36972,7 +37473,7 @@ RNGFND4\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -37106,7 +37607,7 @@ RNGFND4\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -37563,7 +38064,7 @@ RNGFND5\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -37697,7 +38198,7 @@ RNGFND5\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -38154,7 +38655,7 @@ RNGFND6\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -38288,7 +38789,7 @@ RNGFND6\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -38745,7 +39246,7 @@ RNGFND7\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -38879,7 +39380,7 @@ RNGFND7\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -39336,7 +39837,7 @@ RNGFND8\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -39470,7 +39971,7 @@ RNGFND8\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -39927,7 +40428,7 @@ RNGFND9\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -40061,7 +40562,7 @@ RNGFND9\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -40518,7 +41019,7 @@ RNGFNDA\_PIN: Rangefinder pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+Analog or PWM input pin that rangefinder is connected to\. Airspeed ports can be used for Analog input\, AUXOUT can be used for PWM input\. When using analog pin 103\, the maximum value of the input in 3\.3V\. For PWM input\, the pin must be configured as a digital GPIO\, see the Wiki\'s \"GPIOs\" section for details\.
 
 
 +-------+---------------------------+
@@ -40652,7 +41153,7 @@ RNGFNDA\_STOP\_PIN: Rangefinder stop pin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\.
+Digital pin that enables\/disables rangefinder measurement for the pwm rangefinder\. A value of \-1 means no pin\. If this is set\, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it\. This is used to enable powersaving when out of range\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------------+
@@ -41033,7 +41534,7 @@ What type of RPM sensor is connected
 +-------+------------------------------+
 | 1     | Not Used                     |
 +-------+------------------------------+
-| 2     | AUXPIN                       |
+| 2     | GPIO                         |
 +-------+------------------------------+
 | 3     | EFI                          |
 +-------+------------------------------+
@@ -41069,7 +41570,7 @@ RPM1\_MAX: Maximum RPM
 ~~~~~~~~~~~~~~~~~~~~~~
 
 
-Maximum RPM to report\. Only used on type \= PWM\.
+Maximum RPM to report\. Only used on type \= GPIO\.
 
 
 +-----------+
@@ -41087,7 +41588,7 @@ RPM1\_MIN: Minimum RPM
 ~~~~~~~~~~~~~~~~~~~~~~
 
 
-Minimum RPM to report\. Only used on type \= PWM\.
+Minimum RPM to report\. Only used on type \= GPIO\.
 
 
 +-----------+
@@ -41124,7 +41625,7 @@ RPM1\_PIN: Input pin number
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Which pin to use\. Only used on type \= PWM\.
+Which digital GPIO pin to use\. Only used on type \= GPIO\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------+
@@ -41220,7 +41721,7 @@ What type of RPM sensor is connected
 +-------+------------------------------+
 | 1     | Not Used                     |
 +-------+------------------------------+
-| 2     | AUXPIN                       |
+| 2     | GPIO                         |
 +-------+------------------------------+
 | 3     | EFI                          |
 +-------+------------------------------+
@@ -41256,7 +41757,7 @@ RPM2\_MAX: Maximum RPM
 ~~~~~~~~~~~~~~~~~~~~~~
 
 
-Maximum RPM to report\. Only used on type \= PWM\.
+Maximum RPM to report\. Only used on type \= GPIO\.
 
 
 +-----------+
@@ -41274,7 +41775,7 @@ RPM2\_MIN: Minimum RPM
 ~~~~~~~~~~~~~~~~~~~~~~
 
 
-Minimum RPM to report\. Only used on type \= PWM\.
+Minimum RPM to report\. Only used on type \= GPIO\.
 
 
 +-----------+
@@ -41311,7 +41812,7 @@ RPM2\_PIN: Input pin number
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Which pin to use\. Only used on type \= PWM\.
+Which digital GPIO pin to use\. Only used on type \= GPIO\. Some common values are given\, but see the Wiki\'s \"GPIOs\" page for how to determine the pin number for a given autopilot\.
 
 
 +-------+----------+
@@ -43573,13 +44074,15 @@ SERVO\_DSHOT\_ESC: Servo DShot ESC type
 This sets the DShot ESC type for all outputs\. The ESC type affects the range of DShot commands available\. None means that no dshot commands will be executed\.
 
 
-+-------+------------------------+
-| Value | Meaning                |
-+=======+========================+
-| 0     | None                   |
-+-------+------------------------+
-| 1     | BLHeli32/BLHeli_S/Kiss |
-+-------+------------------------+
++-------+---------------+
+| Value | Meaning       |
++=======+===============+
+| 0     | None          |
++-------+---------------+
+| 1     | BLHeli32/Kiss |
++-------+---------------+
+| 2     | BLHeli_S      |
++-------+---------------+
 
 
 
@@ -43592,7 +44095,7 @@ SERVO\_GPIO\_MASK: Servo GPIO mask
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-This sets a bitmask of outputs which will be available as GPIOs\. Any auxillary output with either the function set to \-1 or with the corresponding bit set in this mask will be available for use as a GPIO pin
+This sets a bitmask of outputs which will be available as GPIOs\. Any auxiliary output with either the function set to \-1 or with the corresponding bit set in this mask will be available for use as a GPIO pin
 
 
 +-----+----------+
@@ -43630,6 +44133,59 @@ This sets a bitmask of outputs which will be available as GPIOs\. Any auxillary 
 +-----+----------+
 | 15  | Servo 16 |
 +-----+----------+
+| 16  | Servo 17 |
++-----+----------+
+| 17  | Servo 18 |
++-----+----------+
+| 18  | Servo 19 |
++-----+----------+
+| 19  | Servo 20 |
++-----+----------+
+| 20  | Servo 21 |
++-----+----------+
+| 21  | Servo 22 |
++-----+----------+
+| 22  | Servo 23 |
++-----+----------+
+| 23  | Servo 24 |
++-----+----------+
+| 24  | Servo 25 |
++-----+----------+
+| 25  | Servo 26 |
++-----+----------+
+| 26  | Servo 27 |
++-----+----------+
+| 27  | Servo 28 |
++-----+----------+
+| 28  | Servo 29 |
++-----+----------+
+| 29  | Servo 30 |
++-----+----------+
+| 30  | Servo 31 |
++-----+----------+
+| 31  | Servo 32 |
++-----+----------+
+
+
+
+
+.. _SERVO_32_ENABLE:
+
+SERVO\_32\_ENABLE: Enable outputs 17 to 31
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+This allows for up to 32 outputs\, enabling parameters for outputs above 16
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
 
 
 
@@ -46253,6 +46809,1128 @@ Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
+.. _parameters_SERVO17_:
+
+SERVO17\_ Parameters
+--------------------
+
+
+.. _SERVO17_MIN:
+
+SERVO17\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO17_MAX:
+
+SERVO17\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO17_TRIM:
+
+SERVO17\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO17_REVERSED:
+
+SERVO17\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO17_FUNCTION:
+
+SERVO17\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO17_ABS_MIN:
+
+SERVO17\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO17_ABS_MAX:
+
+SERVO17\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO18_:
+
+SERVO18\_ Parameters
+--------------------
+
+
+.. _SERVO18_MIN:
+
+SERVO18\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO18_MAX:
+
+SERVO18\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO18_TRIM:
+
+SERVO18\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO18_REVERSED:
+
+SERVO18\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO18_FUNCTION:
+
+SERVO18\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO18_ABS_MIN:
+
+SERVO18\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO18_ABS_MAX:
+
+SERVO18\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO19_:
+
+SERVO19\_ Parameters
+--------------------
+
+
+.. _SERVO19_MIN:
+
+SERVO19\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO19_MAX:
+
+SERVO19\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO19_TRIM:
+
+SERVO19\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO19_REVERSED:
+
+SERVO19\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO19_FUNCTION:
+
+SERVO19\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO19_ABS_MIN:
+
+SERVO19\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO19_ABS_MAX:
+
+SERVO19\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
 .. _parameters_SERVO1_:
 
 SERVO1\_ Parameters
@@ -46627,6 +48305,3746 @@ Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
 
+.. _parameters_SERVO20_:
+
+SERVO20\_ Parameters
+--------------------
+
+
+.. _SERVO20_MIN:
+
+SERVO20\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO20_MAX:
+
+SERVO20\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO20_TRIM:
+
+SERVO20\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO20_REVERSED:
+
+SERVO20\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO20_FUNCTION:
+
+SERVO20\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO20_ABS_MIN:
+
+SERVO20\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO20_ABS_MAX:
+
+SERVO20\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO21_:
+
+SERVO21\_ Parameters
+--------------------
+
+
+.. _SERVO21_MIN:
+
+SERVO21\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO21_MAX:
+
+SERVO21\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO21_TRIM:
+
+SERVO21\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO21_REVERSED:
+
+SERVO21\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO21_FUNCTION:
+
+SERVO21\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO21_ABS_MIN:
+
+SERVO21\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO21_ABS_MAX:
+
+SERVO21\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO22_:
+
+SERVO22\_ Parameters
+--------------------
+
+
+.. _SERVO22_MIN:
+
+SERVO22\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO22_MAX:
+
+SERVO22\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO22_TRIM:
+
+SERVO22\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO22_REVERSED:
+
+SERVO22\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO22_FUNCTION:
+
+SERVO22\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO22_ABS_MIN:
+
+SERVO22\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO22_ABS_MAX:
+
+SERVO22\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO23_:
+
+SERVO23\_ Parameters
+--------------------
+
+
+.. _SERVO23_MIN:
+
+SERVO23\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO23_MAX:
+
+SERVO23\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO23_TRIM:
+
+SERVO23\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO23_REVERSED:
+
+SERVO23\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO23_FUNCTION:
+
+SERVO23\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO23_ABS_MIN:
+
+SERVO23\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO23_ABS_MAX:
+
+SERVO23\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO24_:
+
+SERVO24\_ Parameters
+--------------------
+
+
+.. _SERVO24_MIN:
+
+SERVO24\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO24_MAX:
+
+SERVO24\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO24_TRIM:
+
+SERVO24\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO24_REVERSED:
+
+SERVO24\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO24_FUNCTION:
+
+SERVO24\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO24_ABS_MIN:
+
+SERVO24\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO24_ABS_MAX:
+
+SERVO24\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO25_:
+
+SERVO25\_ Parameters
+--------------------
+
+
+.. _SERVO25_MIN:
+
+SERVO25\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO25_MAX:
+
+SERVO25\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO25_TRIM:
+
+SERVO25\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO25_REVERSED:
+
+SERVO25\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO25_FUNCTION:
+
+SERVO25\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO25_ABS_MIN:
+
+SERVO25\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO25_ABS_MAX:
+
+SERVO25\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO26_:
+
+SERVO26\_ Parameters
+--------------------
+
+
+.. _SERVO26_MIN:
+
+SERVO26\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO26_MAX:
+
+SERVO26\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO26_TRIM:
+
+SERVO26\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO26_REVERSED:
+
+SERVO26\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO26_FUNCTION:
+
+SERVO26\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO26_ABS_MIN:
+
+SERVO26\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO26_ABS_MAX:
+
+SERVO26\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO27_:
+
+SERVO27\_ Parameters
+--------------------
+
+
+.. _SERVO27_MIN:
+
+SERVO27\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO27_MAX:
+
+SERVO27\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO27_TRIM:
+
+SERVO27\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO27_REVERSED:
+
+SERVO27\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO27_FUNCTION:
+
+SERVO27\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO27_ABS_MIN:
+
+SERVO27\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO27_ABS_MAX:
+
+SERVO27\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO28_:
+
+SERVO28\_ Parameters
+--------------------
+
+
+.. _SERVO28_MIN:
+
+SERVO28\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO28_MAX:
+
+SERVO28\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO28_TRIM:
+
+SERVO28\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO28_REVERSED:
+
+SERVO28\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO28_FUNCTION:
+
+SERVO28\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO28_ABS_MIN:
+
+SERVO28\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO28_ABS_MAX:
+
+SERVO28\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO29_:
+
+SERVO29\_ Parameters
+--------------------
+
+
+.. _SERVO29_MIN:
+
+SERVO29\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO29_MAX:
+
+SERVO29\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO29_TRIM:
+
+SERVO29\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO29_REVERSED:
+
+SERVO29\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO29_FUNCTION:
+
+SERVO29\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO29_ABS_MIN:
+
+SERVO29\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO29_ABS_MAX:
+
+SERVO29\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
 .. _parameters_SERVO2_:
 
 SERVO2\_ Parameters
@@ -46986,6 +52404,1128 @@ Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 SERVO2\_ABS\_MAX: Absolute maximum PWM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO30_:
+
+SERVO30\_ Parameters
+--------------------
+
+
+.. _SERVO30_MIN:
+
+SERVO30\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO30_MAX:
+
+SERVO30\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO30_TRIM:
+
+SERVO30\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO30_REVERSED:
+
+SERVO30\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO30_FUNCTION:
+
+SERVO30\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO30_ABS_MIN:
+
+SERVO30\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO30_ABS_MAX:
+
+SERVO30\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO31_:
+
+SERVO31\_ Parameters
+--------------------
+
+
+.. _SERVO31_MIN:
+
+SERVO31\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO31_MAX:
+
+SERVO31\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO31_TRIM:
+
+SERVO31\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO31_REVERSED:
+
+SERVO31\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO31_FUNCTION:
+
+SERVO31\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO31_ABS_MIN:
+
+SERVO31\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO31_ABS_MAX:
+
+SERVO31\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+
+.. _parameters_SERVO32_:
+
+SERVO32\_ Parameters
+--------------------
+
+
+.. _SERVO32_MIN:
+
+SERVO32\_MIN: Minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO32_MAX:
+
+SERVO32\_MAX: Maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO32_TRIM:
+
+SERVO32\_TRIM: Trim PWM
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 800 - 2200 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO32_REVERSED:
+
+SERVO32\_REVERSED: Servo reverse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Reverse servo operation\. Set to 0 for normal operation\. Set to 1 to reverse this output channel\.
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Normal   |
++-------+----------+
+| 1     | Reversed |
++-------+----------+
+
+
+
+
+.. _SERVO32_FUNCTION:
+
+SERVO32\_FUNCTION: Servo output function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Function assigned to this servo\. Setting this to Disabled\(0\) will setup this output for control by auto missions or MAVLink servo set commands\. any other value will enable the corresponding function
+
+
++-------+---------------------------+
+| Value | Meaning                   |
++=======+===========================+
+| -1    | GPIO                      |
++-------+---------------------------+
+| 0     | Disabled                  |
++-------+---------------------------+
+| 1     | RCPassThru                |
++-------+---------------------------+
+| 2     | Flap                      |
++-------+---------------------------+
+| 3     | FlapAuto                  |
++-------+---------------------------+
+| 4     | Aileron                   |
++-------+---------------------------+
+| 6     | MountPan                  |
++-------+---------------------------+
+| 7     | MountTilt                 |
++-------+---------------------------+
+| 8     | MountRoll                 |
++-------+---------------------------+
+| 9     | MountOpen                 |
++-------+---------------------------+
+| 10    | CameraTrigger             |
++-------+---------------------------+
+| 12    | Mount2Pan                 |
++-------+---------------------------+
+| 13    | Mount2Tilt                |
++-------+---------------------------+
+| 14    | Mount2Roll                |
++-------+---------------------------+
+| 15    | Mount2Open                |
++-------+---------------------------+
+| 16    | DifferentialSpoilerLeft1  |
++-------+---------------------------+
+| 17    | DifferentialSpoilerRight1 |
++-------+---------------------------+
+| 19    | Elevator                  |
++-------+---------------------------+
+| 21    | Rudder                    |
++-------+---------------------------+
+| 22    | SprayerPump               |
++-------+---------------------------+
+| 23    | SprayerSpinner            |
++-------+---------------------------+
+| 24    | FlaperonLeft              |
++-------+---------------------------+
+| 25    | FlaperonRight             |
++-------+---------------------------+
+| 26    | GroundSteering            |
++-------+---------------------------+
+| 27    | Parachute                 |
++-------+---------------------------+
+| 28    | Gripper                   |
++-------+---------------------------+
+| 29    | LandingGear               |
++-------+---------------------------+
+| 30    | EngineRunEnable           |
++-------+---------------------------+
+| 31    | HeliRSC                   |
++-------+---------------------------+
+| 32    | HeliTailRSC               |
++-------+---------------------------+
+| 33    | Motor1                    |
++-------+---------------------------+
+| 34    | Motor2                    |
++-------+---------------------------+
+| 35    | Motor3                    |
++-------+---------------------------+
+| 36    | Motor4                    |
++-------+---------------------------+
+| 37    | Motor5                    |
++-------+---------------------------+
+| 38    | Motor6                    |
++-------+---------------------------+
+| 39    | Motor7                    |
++-------+---------------------------+
+| 40    | Motor8                    |
++-------+---------------------------+
+| 41    | TiltMotorsFront           |
++-------+---------------------------+
+| 45    | TiltMotorsRear            |
++-------+---------------------------+
+| 46    | TiltMotorRearLeft         |
++-------+---------------------------+
+| 47    | TiltMotorRearRight        |
++-------+---------------------------+
+| 51    | RCIN1                     |
++-------+---------------------------+
+| 52    | RCIN2                     |
++-------+---------------------------+
+| 53    | RCIN3                     |
++-------+---------------------------+
+| 54    | RCIN4                     |
++-------+---------------------------+
+| 55    | RCIN5                     |
++-------+---------------------------+
+| 56    | RCIN6                     |
++-------+---------------------------+
+| 57    | RCIN7                     |
++-------+---------------------------+
+| 58    | RCIN8                     |
++-------+---------------------------+
+| 59    | RCIN9                     |
++-------+---------------------------+
+| 60    | RCIN10                    |
++-------+---------------------------+
+| 61    | RCIN11                    |
++-------+---------------------------+
+| 62    | RCIN12                    |
++-------+---------------------------+
+| 63    | RCIN13                    |
++-------+---------------------------+
+| 64    | RCIN14                    |
++-------+---------------------------+
+| 65    | RCIN15                    |
++-------+---------------------------+
+| 66    | RCIN16                    |
++-------+---------------------------+
+| 67    | Ignition                  |
++-------+---------------------------+
+| 69    | Starter                   |
++-------+---------------------------+
+| 70    | Throttle                  |
++-------+---------------------------+
+| 71    | TrackerYaw                |
++-------+---------------------------+
+| 72    | TrackerPitch              |
++-------+---------------------------+
+| 73    | ThrottleLeft              |
++-------+---------------------------+
+| 74    | ThrottleRight             |
++-------+---------------------------+
+| 75    | TiltMotorFrontLeft        |
++-------+---------------------------+
+| 76    | TiltMotorFrontRight       |
++-------+---------------------------+
+| 77    | ElevonLeft                |
++-------+---------------------------+
+| 78    | ElevonRight               |
++-------+---------------------------+
+| 79    | VTailLeft                 |
++-------+---------------------------+
+| 80    | VTailRight                |
++-------+---------------------------+
+| 81    | BoostThrottle             |
++-------+---------------------------+
+| 82    | Motor9                    |
++-------+---------------------------+
+| 83    | Motor10                   |
++-------+---------------------------+
+| 84    | Motor11                   |
++-------+---------------------------+
+| 85    | Motor12                   |
++-------+---------------------------+
+| 86    | DifferentialSpoilerLeft2  |
++-------+---------------------------+
+| 87    | DifferentialSpoilerRight2 |
++-------+---------------------------+
+| 88    | Winch                     |
++-------+---------------------------+
+| 89    | Main Sail                 |
++-------+---------------------------+
+| 90    | CameraISO                 |
++-------+---------------------------+
+| 91    | CameraAperture            |
++-------+---------------------------+
+| 92    | CameraFocus               |
++-------+---------------------------+
+| 93    | CameraShutterSpeed        |
++-------+---------------------------+
+| 94    | Script1                   |
++-------+---------------------------+
+| 95    | Script2                   |
++-------+---------------------------+
+| 96    | Script3                   |
++-------+---------------------------+
+| 97    | Script4                   |
++-------+---------------------------+
+| 98    | Script5                   |
++-------+---------------------------+
+| 99    | Script6                   |
++-------+---------------------------+
+| 100   | Script7                   |
++-------+---------------------------+
+| 101   | Script8                   |
++-------+---------------------------+
+| 102   | Script9                   |
++-------+---------------------------+
+| 103   | Script10                  |
++-------+---------------------------+
+| 104   | Script11                  |
++-------+---------------------------+
+| 105   | Script12                  |
++-------+---------------------------+
+| 106   | Script13                  |
++-------+---------------------------+
+| 107   | Script14                  |
++-------+---------------------------+
+| 108   | Script15                  |
++-------+---------------------------+
+| 109   | Script16                  |
++-------+---------------------------+
+| 120   | NeoPixel1                 |
++-------+---------------------------+
+| 121   | NeoPixel2                 |
++-------+---------------------------+
+| 122   | NeoPixel3                 |
++-------+---------------------------+
+| 123   | NeoPixel4                 |
++-------+---------------------------+
+| 124   | RateRoll                  |
++-------+---------------------------+
+| 125   | RatePitch                 |
++-------+---------------------------+
+| 126   | RateThrust                |
++-------+---------------------------+
+| 127   | RateYaw                   |
++-------+---------------------------+
+| 128   | WingSailElevator          |
++-------+---------------------------+
+| 129   | ProfiLED1                 |
++-------+---------------------------+
+| 130   | ProfiLED2                 |
++-------+---------------------------+
+| 131   | ProfiLED3                 |
++-------+---------------------------+
+| 132   | ProfiLEDClock             |
++-------+---------------------------+
+| 133   | Winch Clutch              |
++-------+---------------------------+
+| 134   | SERVOn_MIN                |
++-------+---------------------------+
+| 135   | SERVOn_TRIM               |
++-------+---------------------------+
+| 136   | SERVOn_MAX                |
++-------+---------------------------+
+| 137   | SailMastRotation          |
++-------+---------------------------+
+| 138   | Alarm                     |
++-------+---------------------------+
+| 139   | Alarm Inverted            |
++-------+---------------------------+
+
+
+
+
+.. _SERVO32_ABS_MIN:
+
+SERVO32\_ABS\_MIN: Absolute minimum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
+
+
++-----------+------------+---------------------+
+| Increment | Range      | Units               |
++===========+============+=====================+
+| 1         | 500 - 2500 | PWM in microseconds |
++-----------+------------+---------------------+
+
+
+
+
+.. _SERVO32_ABS_MAX:
+
+SERVO32\_ABS\_MAX: Absolute maximum PWM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
@@ -49636,41 +56176,73 @@ SERVO\_BLH\_MASK: BLHeli Channel Bitmask
 Enable of BLHeli pass\-thru servo protocol support to specific channels\. This mask is in addition to motors enabled using SERVO\_BLH\_AUTO \(if any\)
 
 
-+-----+-----------+
-| Bit | Meaning   |
-+=====+===========+
-| 0   | Channel1  |
-+-----+-----------+
-| 1   | Channel2  |
-+-----+-----------+
-| 2   | Channel3  |
-+-----+-----------+
-| 3   | Channel4  |
-+-----+-----------+
-| 4   | Channel5  |
-+-----+-----------+
-| 5   | Channel6  |
-+-----+-----------+
-| 6   | Channel7  |
-+-----+-----------+
-| 7   | Channel8  |
-+-----+-----------+
-| 8   | Channel9  |
-+-----+-----------+
-| 9   | Channel10 |
-+-----+-----------+
-| 10  | Channel11 |
-+-----+-----------+
-| 11  | Channel12 |
-+-----+-----------+
-| 12  | Channel13 |
-+-----+-----------+
-| 13  | Channel14 |
-+-----+-----------+
-| 14  | Channel15 |
-+-----+-----------+
-| 15  | Channel16 |
-+-----+-----------+
++-----+------------+
+| Bit | Meaning    |
++=====+============+
+| 0   | Channel1   |
++-----+------------+
+| 1   | Channel2   |
++-----+------------+
+| 2   | Channel3   |
++-----+------------+
+| 3   | Channel4   |
++-----+------------+
+| 4   | Channel5   |
++-----+------------+
+| 5   | Channel6   |
++-----+------------+
+| 6   | Channel7   |
++-----+------------+
+| 7   | Channel8   |
++-----+------------+
+| 8   | Channel9   |
++-----+------------+
+| 9   | Channel10  |
++-----+------------+
+| 10  | Channel11  |
++-----+------------+
+| 11  | Channel12  |
++-----+------------+
+| 12  | Channel13  |
++-----+------------+
+| 13  | Channel14  |
++-----+------------+
+| 14  | Channel15  |
++-----+------------+
+| 15  | Channel16  |
++-----+------------+
+| 16  | Channel 17 |
++-----+------------+
+| 17  | Channel 18 |
++-----+------------+
+| 18  | Channel 19 |
++-----+------------+
+| 19  | Channel 20 |
++-----+------------+
+| 20  | Channel 21 |
++-----+------------+
+| 21  | Channel 22 |
++-----+------------+
+| 22  | Channel 23 |
++-----+------------+
+| 23  | Channel 24 |
++-----+------------+
+| 24  | Channel 25 |
++-----+------------+
+| 25  | Channel 26 |
++-----+------------+
+| 26  | Channel 27 |
++-----+------------+
+| 27  | Channel 28 |
++-----+------------+
+| 28  | Channel 29 |
++-----+------------+
+| 29  | Channel 30 |
++-----+------------+
+| 30  | Channel 31 |
++-----+------------+
+| 31  | Channel 32 |
++-----+------------+
 
 
 
@@ -49881,41 +56453,73 @@ SERVO\_BLH\_3DMASK: BLHeli bitmask of 3D channels
 Mask of channels which are dynamically reversible\. This is used to configure ESCs in \'3D\' mode\, allowing for the motor to spin in either direction
 
 
-+-----+-----------+
-| Bit | Meaning   |
-+=====+===========+
-| 0   | Channel1  |
-+-----+-----------+
-| 1   | Channel2  |
-+-----+-----------+
-| 2   | Channel3  |
-+-----+-----------+
-| 3   | Channel4  |
-+-----+-----------+
-| 4   | Channel5  |
-+-----+-----------+
-| 5   | Channel6  |
-+-----+-----------+
-| 6   | Channel7  |
-+-----+-----------+
-| 7   | Channel8  |
-+-----+-----------+
-| 8   | Channel9  |
-+-----+-----------+
-| 9   | Channel10 |
-+-----+-----------+
-| 10  | Channel11 |
-+-----+-----------+
-| 11  | Channel12 |
-+-----+-----------+
-| 12  | Channel13 |
-+-----+-----------+
-| 13  | Channel14 |
-+-----+-----------+
-| 14  | Channel15 |
-+-----+-----------+
-| 15  | Channel16 |
-+-----+-----------+
++-----+------------+
+| Bit | Meaning    |
++=====+============+
+| 0   | Channel1   |
++-----+------------+
+| 1   | Channel2   |
++-----+------------+
+| 2   | Channel3   |
++-----+------------+
+| 3   | Channel4   |
++-----+------------+
+| 4   | Channel5   |
++-----+------------+
+| 5   | Channel6   |
++-----+------------+
+| 6   | Channel7   |
++-----+------------+
+| 7   | Channel8   |
++-----+------------+
+| 8   | Channel9   |
++-----+------------+
+| 9   | Channel10  |
++-----+------------+
+| 10  | Channel11  |
++-----+------------+
+| 11  | Channel12  |
++-----+------------+
+| 12  | Channel13  |
++-----+------------+
+| 13  | Channel14  |
++-----+------------+
+| 14  | Channel15  |
++-----+------------+
+| 15  | Channel16  |
++-----+------------+
+| 16  | Channel 17 |
++-----+------------+
+| 17  | Channel 18 |
++-----+------------+
+| 18  | Channel 19 |
++-----+------------+
+| 19  | Channel 20 |
++-----+------------+
+| 20  | Channel 21 |
++-----+------------+
+| 21  | Channel 22 |
++-----+------------+
+| 22  | Channel 23 |
++-----+------------+
+| 23  | Channel 24 |
++-----+------------+
+| 24  | Channel 25 |
++-----+------------+
+| 25  | Channel 26 |
++-----+------------+
+| 26  | Channel 27 |
++-----+------------+
+| 27  | Channel 28 |
++-----+------------+
+| 28  | Channel 29 |
++-----+------------+
+| 29  | Channel 30 |
++-----+------------+
+| 30  | Channel 31 |
++-----+------------+
+| 31  | Channel 32 |
++-----+------------+
 
 
 
@@ -49931,41 +56535,73 @@ SERVO\_BLH\_BDMASK: BLHeli bitmask of bi\-directional dshot channels
 Mask of channels which support bi\-directional dshot\. This is used for ESCs which have firmware that supports bi\-directional dshot allowing fast rpm telemetry values to be returned for the harmonic notch\.
 
 
-+-----+-----------+
-| Bit | Meaning   |
-+=====+===========+
-| 0   | Channel1  |
-+-----+-----------+
-| 1   | Channel2  |
-+-----+-----------+
-| 2   | Channel3  |
-+-----+-----------+
-| 3   | Channel4  |
-+-----+-----------+
-| 4   | Channel5  |
-+-----+-----------+
-| 5   | Channel6  |
-+-----+-----------+
-| 6   | Channel7  |
-+-----+-----------+
-| 7   | Channel8  |
-+-----+-----------+
-| 8   | Channel9  |
-+-----+-----------+
-| 9   | Channel10 |
-+-----+-----------+
-| 10  | Channel11 |
-+-----+-----------+
-| 11  | Channel12 |
-+-----+-----------+
-| 12  | Channel13 |
-+-----+-----------+
-| 13  | Channel14 |
-+-----+-----------+
-| 14  | Channel15 |
-+-----+-----------+
-| 15  | Channel16 |
-+-----+-----------+
++-----+------------+
+| Bit | Meaning    |
++=====+============+
+| 0   | Channel1   |
++-----+------------+
+| 1   | Channel2   |
++-----+------------+
+| 2   | Channel3   |
++-----+------------+
+| 3   | Channel4   |
++-----+------------+
+| 4   | Channel5   |
++-----+------------+
+| 5   | Channel6   |
++-----+------------+
+| 6   | Channel7   |
++-----+------------+
+| 7   | Channel8   |
++-----+------------+
+| 8   | Channel9   |
++-----+------------+
+| 9   | Channel10  |
++-----+------------+
+| 10  | Channel11  |
++-----+------------+
+| 11  | Channel12  |
++-----+------------+
+| 12  | Channel13  |
++-----+------------+
+| 13  | Channel14  |
++-----+------------+
+| 14  | Channel15  |
++-----+------------+
+| 15  | Channel16  |
++-----+------------+
+| 16  | Channel 17 |
++-----+------------+
+| 17  | Channel 18 |
++-----+------------+
+| 18  | Channel 19 |
++-----+------------+
+| 19  | Channel 20 |
++-----+------------+
+| 20  | Channel 21 |
++-----+------------+
+| 21  | Channel 22 |
++-----+------------+
+| 22  | Channel 23 |
++-----+------------+
+| 23  | Channel 24 |
++-----+------------+
+| 24  | Channel 25 |
++-----+------------+
+| 25  | Channel 26 |
++-----+------------+
+| 26  | Channel 27 |
++-----+------------+
+| 27  | Channel 28 |
++-----+------------+
+| 28  | Channel 29 |
++-----+------------+
+| 29  | Channel 30 |
++-----+------------+
+| 30  | Channel 31 |
++-----+------------+
+| 31  | Channel 32 |
++-----+------------+
 
 
 
@@ -49981,41 +56617,73 @@ SERVO\_BLH\_RVMASK: BLHeli bitmask of reversed channels
 Mask of channels which are reversed\. This is used to configure ESCs in reversed mode
 
 
-+-----+-----------+
-| Bit | Meaning   |
-+=====+===========+
-| 0   | Channel1  |
-+-----+-----------+
-| 1   | Channel2  |
-+-----+-----------+
-| 2   | Channel3  |
-+-----+-----------+
-| 3   | Channel4  |
-+-----+-----------+
-| 4   | Channel5  |
-+-----+-----------+
-| 5   | Channel6  |
-+-----+-----------+
-| 6   | Channel7  |
-+-----+-----------+
-| 7   | Channel8  |
-+-----+-----------+
-| 8   | Channel9  |
-+-----+-----------+
-| 9   | Channel10 |
-+-----+-----------+
-| 10  | Channel11 |
-+-----+-----------+
-| 11  | Channel12 |
-+-----+-----------+
-| 12  | Channel13 |
-+-----+-----------+
-| 13  | Channel14 |
-+-----+-----------+
-| 14  | Channel15 |
-+-----+-----------+
-| 15  | Channel16 |
-+-----+-----------+
++-----+------------+
+| Bit | Meaning    |
++=====+============+
+| 0   | Channel1   |
++-----+------------+
+| 1   | Channel2   |
++-----+------------+
+| 2   | Channel3   |
++-----+------------+
+| 3   | Channel4   |
++-----+------------+
+| 4   | Channel5   |
++-----+------------+
+| 5   | Channel6   |
++-----+------------+
+| 6   | Channel7   |
++-----+------------+
+| 7   | Channel8   |
++-----+------------+
+| 8   | Channel9   |
++-----+------------+
+| 9   | Channel10  |
++-----+------------+
+| 10  | Channel11  |
++-----+------------+
+| 11  | Channel12  |
++-----+------------+
+| 12  | Channel13  |
++-----+------------+
+| 13  | Channel14  |
++-----+------------+
+| 14  | Channel15  |
++-----+------------+
+| 15  | Channel16  |
++-----+------------+
+| 16  | Channel 17 |
++-----+------------+
+| 17  | Channel 18 |
++-----+------------+
+| 18  | Channel 19 |
++-----+------------+
+| 19  | Channel 20 |
++-----+------------+
+| 20  | Channel 21 |
++-----+------------+
+| 21  | Channel 22 |
++-----+------------+
+| 22  | Channel 23 |
++-----+------------+
+| 23  | Channel 24 |
++-----+------------+
+| 24  | Channel 25 |
++-----+------------+
+| 25  | Channel 26 |
++-----+------------+
+| 26  | Channel 27 |
++-----+------------+
+| 27  | Channel 28 |
++-----+------------+
+| 28  | Channel 29 |
++-----+------------+
+| 29  | Channel 30 |
++-----+------------+
+| 30  | Channel 31 |
++-----+------------+
+| 31  | Channel 32 |
++-----+------------+
 
 
 
@@ -50245,6 +56913,36 @@ Enable of volz servo protocol to specific channels
 | 14  | Channel15 |
 +-----+-----------+
 | 15  | Channel16 |
++-----+-----------+
+| 16  | Channel17 |
++-----+-----------+
+| 17  | Channel18 |
++-----+-----------+
+| 18  | Channel19 |
++-----+-----------+
+| 19  | Channel20 |
++-----+-----------+
+| 20  | Channel21 |
++-----+-----------+
+| 21  | Channel22 |
++-----+-----------+
+| 22  | Channel23 |
++-----+-----------+
+| 23  | Channel24 |
++-----+-----------+
+| 24  | Channel25 |
++-----+-----------+
+| 25  | Channel26 |
++-----+-----------+
+| 26  | Channel27 |
++-----+-----------+
+| 28  | Channel29 |
++-----+-----------+
+| 29  | Channel30 |
++-----+-----------+
+| 30  | Channel31 |
++-----+-----------+
+| 31  | Channel32 |
 +-----+-----------+
 
 

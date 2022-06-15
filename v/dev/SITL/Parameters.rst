@@ -151,6 +151,15 @@ SIM\_JSON\_MASTER: JSON master instance
 the instance number to  take servos from
 
 
+.. _SIM_OH_MASK:
+
+SIM\_OH\_MASK: SIM\-on\_hardware Output Enable Mask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+channels which are passed through to actual hardware when running on actual hardware
+
+
 
 .. _parameters_SIM_GRPE_:
 

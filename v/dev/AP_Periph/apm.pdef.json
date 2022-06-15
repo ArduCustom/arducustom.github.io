@@ -106,7 +106,6 @@
       "Values": {
         "0": "Disabled",
         "1": "UAVCAN",
-        "3": "ToshibaCAN",
         "4": "PiccoloCAN",
         "5": "CANTester",
         "6": "EFI_NWPMU",
@@ -132,7 +131,6 @@
       "Values": {
         "0": "Disabled",
         "1": "UAVCAN",
-        "3": "ToshibaCAN",
         "4": "PiccoloCAN",
         "5": "CANTester",
         "6": "EFI_NWPMU",
@@ -191,7 +189,6 @@
       "Values": {
         "0": "Disabled",
         "1": "UAVCAN",
-        "3": "ToshibaCAN",
         "4": "PiccoloCAN",
         "5": "CANTester",
         "6": "EFI_NWPMU",
@@ -207,6 +204,41 @@
       },
       "Description": "Debug",
       "DisplayName": "Debug",
+      "User": "Advanced"
+    },
+    "EFI_BAUDRATE": {
+      "Description": "EFI  serial baudrate.",
+      "DisplayName": "EFI serial baudrate",
+      "Increment": "1",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "1": "1200",
+        "111": "111100",
+        "115": "115200",
+        "1500": "1500000",
+        "19": "19200",
+        "2": "2400",
+        "230": "230400",
+        "256": "256000",
+        "38": "38400",
+        "4": "4800",
+        "460": "460800",
+        "500": "500000",
+        "57": "57600",
+        "9": "9600",
+        "921": "921600"
+      }
+    },
+    "EFI_PORT": {
+      "Description": "This is the serial port number where SERIALx_PROTOCOL will be set to EFI.",
+      "DisplayName": "EFI Serial Port",
+      "Increment": "1",
+      "Range": {
+        "high": "10",
+        "low": "0"
+      },
+      "RebootRequired": "True",
       "User": "Advanced"
     },
     "ESC_NUMBER": {
@@ -347,6 +379,17 @@
         "921": "921600"
       }
     },
+    "RNGFND_MAX_RATE": {
+      "Description": "This is the maximum rate we send rangefinder data in Hz. Zero means no limit",
+      "DisplayName": "Rangefinder max rate",
+      "Increment": "1",
+      "Range": {
+        "high": "200",
+        "low": "0"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
     "RNGFND_PORT": {
       "Description": "This is the serial port number where SERIALx_PROTOCOL will be set to Rangefinder.",
       "DisplayName": "Rangefinder Serial Port",
@@ -370,7 +413,6 @@
   },
   "ARSP": {
     "ARSP2_AUTOCAL": {
-      "Description": "If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.",
       "DisplayName": "Automatic airspeed ratio calibration for 2nd airspeed sensor",
       "User": "Advanced"
     },
@@ -381,7 +423,7 @@
       "Values": {
         "0": "Bus0(internal)",
         "1": "Bus1(external)",
-        "2": "Bus2(auxillary)"
+        "2": "Bus2(auxiliary)"
       }
     },
     "ARSP2_DEVID": {
@@ -402,7 +444,7 @@
       "User": "Advanced"
     },
     "ARSP2_PSI_RANGE": {
-      "Description": "This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
+      "Description": "This parameter allows you to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
       "DisplayName": "The PSI range of the device for 2nd sensor",
       "User": "Advanced"
     },
@@ -414,7 +456,7 @@
     },
     "ARSP2_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup for 2nd sensor",
+      "DisplayName": "Skip airspeed offset calibration on startup for 2nd sensor",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -455,7 +497,6 @@
       }
     },
     "ARSP2_USE": {
-      "Description": "use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller",
       "DisplayName": "Enable use of 2nd airspeed sensor",
       "User": "Standard",
       "Values": {
@@ -476,7 +517,7 @@
       "Values": {
         "0": "Bus0(internal)",
         "1": "Bus1(external)",
-        "2": "Bus2(auxillary)"
+        "2": "Bus2(auxiliary)"
       }
     },
     "ARSP_DEVID": {
@@ -497,7 +538,6 @@
         "1": "AllowSpeedMismatchRecovery",
         "2": "DisableVoltageCorrection"
       },
-      "Description": "Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction",
       "DisplayName": "Airspeed options bitmask",
       "User": "Advanced"
     },
@@ -516,7 +556,7 @@
       }
     },
     "ARSP_PSI_RANGE": {
-      "Description": "This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
+      "Description": "This parameter allows you to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
       "DisplayName": "The PSI range of the device",
       "User": "Advanced"
     },
@@ -528,7 +568,7 @@
     },
     "ARSP_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup",
+      "DisplayName": "Skip airspeed offset calibration on startup",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -553,6 +593,7 @@
         "0": "None",
         "1": "I2C-MS4525D0",
         "10": "I2C-DLVR-20in",
+        "100": "SITL",
         "11": "I2C-DLVR-30in",
         "12": "I2C-DLVR-60in",
         "13": "NMEA water speed",
@@ -569,7 +610,6 @@
       }
     },
     "ARSP_USE": {
-      "Description": "Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).",
       "DisplayName": "Airspeed use",
       "User": "Standard",
       "Values": {
@@ -593,7 +633,6 @@
   },
   "ARSPD": {
     "ARSPD2_AUTOCAL": {
-      "Description": "If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.",
       "DisplayName": "Automatic airspeed ratio calibration for 2nd airspeed sensor",
       "User": "Advanced"
     },
@@ -604,7 +643,7 @@
       "Values": {
         "0": "Bus0(internal)",
         "1": "Bus1(external)",
-        "2": "Bus2(auxillary)"
+        "2": "Bus2(auxiliary)"
       }
     },
     "ARSPD2_DEVID": {
@@ -625,7 +664,7 @@
       "User": "Advanced"
     },
     "ARSPD2_PSI_RANGE": {
-      "Description": "This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
+      "Description": "This parameter allows you to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
       "DisplayName": "The PSI range of the device for 2nd sensor",
       "User": "Advanced"
     },
@@ -637,7 +676,7 @@
     },
     "ARSPD2_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup for 2nd sensor",
+      "DisplayName": "Skip airspeed offset calibration on startup for 2nd sensor",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -678,7 +717,6 @@
       }
     },
     "ARSPD2_USE": {
-      "Description": "use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won't be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller",
       "DisplayName": "Enable use of 2nd airspeed sensor",
       "User": "Standard",
       "Values": {
@@ -699,7 +737,7 @@
       "Values": {
         "0": "Bus0(internal)",
         "1": "Bus1(external)",
-        "2": "Bus2(auxillary)"
+        "2": "Bus2(auxiliary)"
       }
     },
     "ARSPD_DEVID": {
@@ -720,7 +758,6 @@
         "1": "AllowSpeedMismatchRecovery",
         "2": "DisableVoltageCorrection"
       },
-      "Description": "Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction",
       "DisplayName": "Airspeed options bitmask",
       "User": "Advanced"
     },
@@ -739,7 +776,7 @@
       }
     },
     "ARSPD_PSI_RANGE": {
-      "Description": "This parameter allows you to to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
+      "Description": "This parameter allows you to set the PSI (pounds per square inch) range for your sensor. You should not change this unless you examine the datasheet for your device",
       "DisplayName": "The PSI range of the device",
       "User": "Advanced"
     },
@@ -751,7 +788,7 @@
     },
     "ARSPD_SKIP_CAL": {
       "Description": "This parameter allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.",
-      "DisplayName": "Skip airspeed calibration on startup",
+      "DisplayName": "Skip airspeed offset calibration on startup",
       "User": "Advanced",
       "Values": {
         "0": "Disable",
@@ -776,6 +813,7 @@
         "0": "None",
         "1": "I2C-MS4525D0",
         "10": "I2C-DLVR-20in",
+        "100": "SITL",
         "11": "I2C-DLVR-30in",
         "12": "I2C-DLVR-60in",
         "13": "NMEA water speed",
@@ -792,7 +830,6 @@
       }
     },
     "ARSPD_USE": {
-      "Description": "Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).",
       "DisplayName": "Airspeed use",
       "User": "Standard",
       "Values": {
@@ -877,6 +914,14 @@
         "1": "Bus1"
       }
     },
+    "BARO_FIELD_ELV": {
+      "Description": "User provided field elevation in meters. This is used to improve the calculation of the altitude the vehicle is at. This parameter is not persistent and will be reset to 0 every time the vehicle is rebooted. A value of 0 means no correction for takeoff height above sea level is performed.",
+      "DisplayName": "field elevation",
+      "Increment": "0.1",
+      "Units": "m",
+      "User": "Advanced",
+      "Volatile": "True"
+    },
     "BARO_FLTR_RNG": {
       "Description": "This sets the range around the average value that new samples must be within to be accepted. This can help reduce the impact of noise on sensors that are on long I2C cables. The value is a percentage from the average value. A value of zero disables this filter.",
       "DisplayName": "Range in which sample is accepted",
@@ -924,19 +969,11 @@
       "Description": "This sets which types of external i2c barometer to look for. It is a bitmask of barometer types. The I2C buses to probe is based on GND_EXT_BUS. If BARO_EXT_BUS is -1 then it will probe all external buses, otherwise it will probe just the bus number given in GND_EXT_BUS.",
       "DisplayName": "External barometers to probe",
       "User": "Advanced"
-    },
-    "BARO_SPEC_GRAV": {
-      "Description": "This sets the specific gravity of the fluid when flying an underwater ROV.",
-      "DisplayName": "Specific Gravity (For water depth measurement)",
-      "Values": {
-        "1.0": "Freshwater",
-        "1.024": "Saltwater"
-      }
     }
   },
   "BARO1_WCF_": {
     "BARO1_WCF_BCK": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative X direction (backwards)",
       "Increment": "0.05",
       "Range": {
@@ -955,7 +992,7 @@
       }
     },
     "BARO1_WCF_FWD": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive X direction (forward)",
       "Increment": "0.05",
       "Range": {
@@ -965,7 +1002,7 @@
       "User": "Advanced"
     },
     "BARO1_WCF_LFT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative Y direction (left)",
       "Increment": "0.05",
       "Range": {
@@ -975,7 +1012,7 @@
       "User": "Advanced"
     },
     "BARO1_WCF_RGT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive Y direction (right)",
       "Increment": "0.05",
       "Range": {
@@ -987,7 +1024,7 @@
   },
   "BARO2_WCF_": {
     "BARO2_WCF_BCK": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative X direction (backwards)",
       "Increment": "0.05",
       "Range": {
@@ -1006,7 +1043,7 @@
       }
     },
     "BARO2_WCF_FWD": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive X direction (forward)",
       "Increment": "0.05",
       "Range": {
@@ -1016,7 +1053,7 @@
       "User": "Advanced"
     },
     "BARO2_WCF_LFT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative Y direction (left)",
       "Increment": "0.05",
       "Range": {
@@ -1026,7 +1063,7 @@
       "User": "Advanced"
     },
     "BARO2_WCF_RGT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive Y direction (right)",
       "Increment": "0.05",
       "Range": {
@@ -1038,7 +1075,7 @@
   },
   "BARO3_WCF_": {
     "BARO3_WCF_BCK": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis. If the baro height estimate rises during backwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative X direction (backwards)",
       "Increment": "0.05",
       "Range": {
@@ -1057,7 +1094,7 @@
       }
     },
     "BARO3_WCF_FWD": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis. If the baro height estimate rises during forwards flight, then this will be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive X direction (forward)",
       "Increment": "0.05",
       "Range": {
@@ -1067,7 +1104,7 @@
       "User": "Advanced"
     },
     "BARO3_WCF_LFT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the left, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in negative Y direction (left)",
       "Increment": "0.05",
       "Range": {
@@ -1077,7 +1114,7 @@
       "User": "Advanced"
     },
     "BARO3_WCF_RGT": {
-      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_BCOEF_X and EK3_BCOEF_Y parameters have been tuned.",
+      "Description": "This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis. If the baro height estimate rises during sideways flight to the right, then this should be a negative number. Multirotors can use this feature only if using EKF3 and if the EK3_DRAG_BCOEF_X and EK3_DRAG_BCOEF_Y parameters have been tuned.",
       "DisplayName": "Pressure error coefficient in positive Y direction (right)",
       "Increment": "0.05",
       "Range": {
@@ -4613,7 +4650,7 @@
   },
   "EFI": {
     "EFI_COEF1": {
-      "Description": "Used to calibrate fuel flow for MS protocol (Slope)",
+      "Description": "Used to calibrate fuel flow for MS protocol (Slope). This should be calculated from a log at constant fuel usage rate. Plot (ECYL[0].InjT*EFI.Rpm)/600.0 to get the duty_cycle. Measure actual fuel usage in cm^3/min, and set EFI_COEF1 = fuel_usage_cm3permin / duty_cycle",
       "DisplayName": "EFI Calibration Coefficient 1",
       "Range": {
         "high": "1",
@@ -4622,7 +4659,7 @@
       "User": "Advanced"
     },
     "EFI_COEF2": {
-      "Description": "Used to calibrate fuel flow for MS protocol (Offset)",
+      "Description": "Used to calibrate fuel flow for MS protocol (Offset). This can be used to correct for a non-zero offset in the fuel consumption calculation of EFI_COEF1",
       "DisplayName": "EFI Calibration Coefficient 2",
       "Range": {
         "high": "10",
@@ -4639,8 +4676,21 @@
         "0": "None",
         "1": "Serial-MS",
         "2": "NWPMU",
-        "3": "Serial-Lutan"
+        "3": "Serial-Lutan",
+        "5": "DroneCAN"
       }
+    }
+  },
+  "ESC_TLM": {
+    "ESC_TLM_MAV_OFS": {
+      "Description": "Offset to apply to ESC numbers when reporting as ESC_TELEMETRY packets over MAVLink. This allows high numbered motors to be displayed as low numbered ESCs for convenience on GCS displays. A value of 4 would send ESC on output 5 as ESC number 1 in ESC_TELEMETRY packets",
+      "DisplayName": "ESC Telemetry mavlink offset",
+      "Increment": "1",
+      "Range": {
+        "high": "31",
+        "low": "0"
+      },
+      "User": "Standard"
     }
   },
   "FFT_": {
@@ -4722,6 +4772,16 @@
         "low": "20"
       },
       "Units": "Hz",
+      "User": "Advanced"
+    },
+    "FFT_NUM_FRAMES": {
+      "Description": "Number of output frequency frames to retain and average in order to calculate final frequencies. Averaging output frames can drastically reduce noise and jitter at the cost of latency as long as the input is stable. The default is to perform no averaging. For rapidly changing frequencies (e.g. smaller aircraft) fewer frames should be averaged.",
+      "DisplayName": "FFT output frames to retain and average",
+      "Range": {
+        "high": "8",
+        "low": "0"
+      },
+      "RebootRequired": "True",
       "User": "Advanced"
     },
     "FFT_SAMPLE_MODE": {
@@ -4897,6 +4957,14 @@
     }
   },
   "GEN_": {
+    "GEN_OPTIONS": {
+      "Bitmask": {
+        "0": "Supress Maintenance-Required Warnings"
+      },
+      "Description": "Bitmask of options for generators",
+      "DisplayName": "Generator Options",
+      "User": "Standard"
+    },
     "GEN_TYPE": {
       "Description": "Generator type",
       "DisplayName": "Generator type",
@@ -5023,7 +5091,8 @@
         "0": "Use UART2 for moving baseline on ublox",
         "1": "Use base station for GPS yaw on SBF",
         "2": "Use baudrate 115200",
-        "3": "Use dedicated CAN port b/w GPSes for moving baseline"
+        "3": "Use dedicated CAN port b/w GPSes for moving baseline",
+        "4": "Use ellipsoid height instead of AMSL for uBlox driver"
       },
       "Description": "Additional backend specific options",
       "DisplayName": "driver options",
@@ -5541,7 +5610,7 @@
       }
     },
     "NTF_BUZZ_PIN": {
-      "Description": "Enables to connect active buzzer to arbitrary pin. Requires 3-pin buzzer or additional MOSFET!",
+      "Description": "Enables to connect active buzzer to arbitrary pin. Requires 3-pin buzzer or additional MOSFET! Some the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Buzzer pin",
       "User": "Advanced",
       "Values": {
@@ -5641,14 +5710,175 @@
       }
     }
   },
+  "Node": {
+    "Node_ASPD_AVG": {
+      "Description": "Average air speed",
+      "DisplayName": "Average air speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "Node_ASPD_MAX": {
+      "Description": "Maximum air speed",
+      "DisplayName": "Maximum air speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "Node_BOOT_CNT": {
+      "Description": "Number of times board has been booted",
+      "DisplayName": "Boot Count",
+      "ReadOnly": "True",
+      "User": "Standard"
+    },
+    "Node_CURRENT_AVG": {
+      "Description": "Average current while flying",
+      "DisplayName": "Average current while flying",
+      "ReadOnly": "True",
+      "Units": "A",
+      "User": "Standard"
+    },
+    "Node_CURRENT_MAX": {
+      "Description": "Maximum current while flying",
+      "DisplayName": "Maximum current while flying",
+      "ReadOnly": "True",
+      "Units": "A",
+      "User": "Standard"
+    },
+    "Node_FLT_CNT": {
+      "Description": "Number of times the aircraft has been flying",
+      "DisplayName": "Flight counter",
+      "ReadOnly": "True",
+      "User": "Standard"
+    },
+    "Node_FLT_ENERGY": {
+      "Description": "Total consumed energy while flying",
+      "DisplayName": "Total consumed energy while flying",
+      "ReadOnly": "True",
+      "Units": "Wh",
+      "User": "Standard"
+    },
+    "Node_FLT_TIME": {
+      "Description": "Total flight time",
+      "DisplayName": "Total flight time",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "Node_GSPD_AVG": {
+      "Description": "Average ground speed",
+      "DisplayName": "Average ground speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "Node_GSPD_MAX": {
+      "Description": "Maximum ground speed",
+      "DisplayName": "Maximum ground speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "Node_HOMEALT_MAX": {
+      "Description": "Maximum home distance",
+      "DisplayName": "Maximum relative altitude",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "Node_HOMEDST_AVG": {
+      "Description": "Average home distance",
+      "DisplayName": "Average home distance",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "Node_HOMEDST_MAX": {
+      "Description": "Maximum home distance",
+      "DisplayName": "Maximum home distance",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "Node_LOAD": {
+      "Description": "Set to 1 then set stat values then reboot or set back to 0",
+      "DisplayName": "Set to 1 then set stat values then reboot or set back to 0",
+      "User": "Standard"
+    },
+    "Node_POWER_AVG": {
+      "Description": "Average power while flying",
+      "DisplayName": "Average power while flying",
+      "ReadOnly": "True",
+      "Units": "W",
+      "User": "Standard"
+    },
+    "Node_POWER_MAX": {
+      "Description": "Maximum power while flying",
+      "DisplayName": "Maximum power while flying",
+      "ReadOnly": "True",
+      "Units": "W",
+      "User": "Standard"
+    },
+    "Node_RESET": {
+      "Description": "Seconds since January 1st 2016 (Unix epoch+1451606400) since statistics reset (set to 0 to reset statistics)",
+      "DisplayName": "Statistics reset time",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "Node_RUN_TIME": {
+      "Description": "Total time autopilot has run",
+      "DisplayName": "Total run_time",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "Node_TRAVEL_AIR": {
+      "Description": "Total air distance traveled",
+      "DisplayName": "Total air distance traveled",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "Node_TRAVEL_GND": {
+      "Description": "Total ground distance traveled",
+      "DisplayName": "Total ground distance traveled",
+      "ReadOnly": "True",
+      "Units": "m",
+      "User": "Standard"
+    },
+    "Node_WSPD_AVG": {
+      "Description": "Average wind speed",
+      "DisplayName": "Average wind speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    },
+    "Node_WSPD_MAX": {
+      "Description": "Maximum wind speed",
+      "DisplayName": "Maximum wind speed",
+      "ReadOnly": "True",
+      "Units": "m/s",
+      "User": "Standard"
+    }
+  },
   "OUT": {
+    "OUT_32_ENABLE": {
+      "Description": "This allows for up to 32 outputs, enabling parameters for outputs above 16",
+      "DisplayName": "Enable outputs 17 to 31",
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
     "OUT_DSHOT_ESC": {
       "Description": "This sets the DShot ESC type for all outputs. The ESC type affects the range of DShot commands available. None means that no dshot commands will be executed.",
       "DisplayName": "Servo DShot ESC type",
       "User": "Advanced",
       "Values": {
         "0": "None",
-        "1": "BLHeli32/BLHeli_S/Kiss"
+        "1": "BLHeli32/Kiss",
+        "2": "BLHeli_S"
       }
     },
     "OUT_DSHOT_RATE": {
@@ -5673,8 +5903,24 @@
         "13": "Servo 14",
         "14": "Servo 15",
         "15": "Servo 16",
+        "16": "Servo 17",
+        "17": "Servo 18",
+        "18": "Servo 19",
+        "19": "Servo 20",
         "2": "Servo 3",
+        "20": "Servo 21",
+        "21": "Servo 22",
+        "22": "Servo 23",
+        "23": "Servo 24",
+        "24": "Servo 25",
+        "25": "Servo 26",
+        "26": "Servo 27",
+        "27": "Servo 28",
+        "28": "Servo 29",
+        "29": "Servo 30",
         "3": "Servo 4",
+        "30": "Servo 31",
+        "31": "Servo 32",
         "4": "Servo 5",
         "5": "Servo 6",
         "6": "Servo 7",
@@ -5682,7 +5928,7 @@
         "8": "Servo 9",
         "9": "Servo 10"
       },
-      "Description": "This sets a bitmask of outputs which will be available as GPIOs. Any auxillary output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin",
+      "Description": "This sets a bitmask of outputs which will be available as GPIOs. Any auxiliary output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin",
       "DisplayName": "Servo GPIO mask",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -7056,6 +7302,588 @@
       "User": "Standard"
     }
   },
+  "OUT17_": {
+    "OUT17_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT17_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT17_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT17_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT17_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT17_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT17_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT18_": {
+    "OUT18_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT18_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT18_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT18_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT18_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT18_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT18_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT19_": {
+    "OUT19_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT19_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT19_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT19_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT19_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT19_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT19_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
   "OUT1_": {
     "OUT1_ABS_MAX": {
       "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
@@ -7250,6 +8078,1946 @@
       "User": "Standard"
     }
   },
+  "OUT20_": {
+    "OUT20_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT20_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT20_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT20_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT20_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT20_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT20_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT21_": {
+    "OUT21_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT21_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT21_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT21_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT21_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT21_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT21_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT22_": {
+    "OUT22_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT22_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT22_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT22_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT22_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT22_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT22_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT23_": {
+    "OUT23_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT23_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT23_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT23_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT23_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT23_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT23_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT24_": {
+    "OUT24_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT24_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT24_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT24_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT24_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT24_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT24_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT25_": {
+    "OUT25_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT25_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT25_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT25_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT25_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT25_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT25_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT26_": {
+    "OUT26_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT26_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT26_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT26_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT26_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT26_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT26_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT27_": {
+    "OUT27_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT27_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT27_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT27_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT27_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT27_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT27_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT28_": {
+    "OUT28_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT28_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT28_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT28_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT28_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT28_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT28_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT29_": {
+    "OUT29_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT29_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT29_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT29_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT29_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT29_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT29_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
   "OUT2_": {
     "OUT2_ABS_MAX": {
       "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
@@ -7433,6 +10201,588 @@
       }
     },
     "OUT2_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT30_": {
+    "OUT30_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT30_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT30_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT30_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT30_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT30_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT30_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT31_": {
+    "OUT31_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT31_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT31_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT31_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT31_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT31_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT31_TRIM": {
+      "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Trim PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    }
+  },
+  "OUT32_": {
+    "OUT32_ABS_MAX": {
+      "Description": "Absolute maximum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT32_ABS_MIN": {
+      "Description": "Absolute minimum PWM pulse width in microseconds. Used as limit for auto trim",
+      "DisplayName": "Absolute minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2500",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT32_FUNCTION": {
+      "Description": "Function assigned to this servo. Setting this to Disabled(0) will setup this output for control by auto missions or MAVLink servo set commands. any other value will enable the corresponding function",
+      "DisplayName": "Servo output function",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "-1": "GPIO",
+        "0": "Disabled",
+        "1": "RCPassThru",
+        "10": "CameraTrigger",
+        "100": "Script7",
+        "101": "Script8",
+        "102": "Script9",
+        "103": "Script10",
+        "104": "Script11",
+        "105": "Script12",
+        "106": "Script13",
+        "107": "Script14",
+        "108": "Script15",
+        "109": "Script16",
+        "12": "Mount2Pan",
+        "120": "NeoPixel1",
+        "121": "NeoPixel2",
+        "122": "NeoPixel3",
+        "123": "NeoPixel4",
+        "124": "RateRoll",
+        "125": "RatePitch",
+        "126": "RateThrust",
+        "127": "RateYaw",
+        "128": "WingSailElevator",
+        "129": "ProfiLED1",
+        "13": "Mount2Tilt",
+        "130": "ProfiLED2",
+        "131": "ProfiLED3",
+        "132": "ProfiLEDClock",
+        "133": "Winch Clutch",
+        "134": "SERVOn_MIN",
+        "135": "SERVOn_TRIM",
+        "136": "SERVOn_MAX",
+        "137": "SailMastRotation",
+        "138": "Alarm",
+        "139": "Alarm Inverted",
+        "14": "Mount2Roll",
+        "15": "Mount2Open",
+        "16": "DifferentialSpoilerLeft1",
+        "17": "DifferentialSpoilerRight1",
+        "19": "Elevator",
+        "2": "Flap",
+        "21": "Rudder",
+        "22": "SprayerPump",
+        "23": "SprayerSpinner",
+        "24": "FlaperonLeft",
+        "25": "FlaperonRight",
+        "26": "GroundSteering",
+        "27": "Parachute",
+        "28": "Gripper",
+        "29": "LandingGear",
+        "3": "FlapAuto",
+        "30": "EngineRunEnable",
+        "31": "HeliRSC",
+        "32": "HeliTailRSC",
+        "33": "Motor1",
+        "34": "Motor2",
+        "35": "Motor3",
+        "36": "Motor4",
+        "37": "Motor5",
+        "38": "Motor6",
+        "39": "Motor7",
+        "4": "Aileron",
+        "40": "Motor8",
+        "41": "TiltMotorsFront",
+        "45": "TiltMotorsRear",
+        "46": "TiltMotorRearLeft",
+        "47": "TiltMotorRearRight",
+        "51": "RCIN1",
+        "52": "RCIN2",
+        "53": "RCIN3",
+        "54": "RCIN4",
+        "55": "RCIN5",
+        "56": "RCIN6",
+        "57": "RCIN7",
+        "58": "RCIN8",
+        "59": "RCIN9",
+        "6": "MountPan",
+        "60": "RCIN10",
+        "61": "RCIN11",
+        "62": "RCIN12",
+        "63": "RCIN13",
+        "64": "RCIN14",
+        "65": "RCIN15",
+        "66": "RCIN16",
+        "67": "Ignition",
+        "69": "Starter",
+        "7": "MountTilt",
+        "70": "Throttle",
+        "71": "TrackerYaw",
+        "72": "TrackerPitch",
+        "73": "ThrottleLeft",
+        "74": "ThrottleRight",
+        "75": "TiltMotorFrontLeft",
+        "76": "TiltMotorFrontRight",
+        "77": "ElevonLeft",
+        "78": "ElevonRight",
+        "79": "VTailLeft",
+        "8": "MountRoll",
+        "80": "VTailRight",
+        "81": "BoostThrottle",
+        "82": "Motor9",
+        "83": "Motor10",
+        "84": "Motor11",
+        "85": "Motor12",
+        "86": "DifferentialSpoilerLeft2",
+        "87": "DifferentialSpoilerRight2",
+        "88": "Winch",
+        "89": "Main Sail",
+        "9": "MountOpen",
+        "90": "CameraISO",
+        "91": "CameraAperture",
+        "92": "CameraFocus",
+        "93": "CameraShutterSpeed",
+        "94": "Script1",
+        "95": "Script2",
+        "96": "Script3",
+        "97": "Script4",
+        "98": "Script5",
+        "99": "Script6"
+      }
+    },
+    "OUT32_MAX": {
+      "Description": "maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Maximum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "800"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT32_MIN": {
+      "Description": "minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
+      "DisplayName": "Minimum PWM",
+      "Increment": "1",
+      "Range": {
+        "high": "2200",
+        "low": "500"
+      },
+      "Units": "PWM",
+      "User": "Standard"
+    },
+    "OUT32_REVERSED": {
+      "Description": "Reverse servo operation. Set to 0 for normal operation. Set to 1 to reverse this output channel.",
+      "DisplayName": "Servo reverse",
+      "User": "Standard",
+      "Values": {
+        "0": "Normal",
+        "1": "Reversed"
+      }
+    },
+    "OUT32_TRIM": {
       "Description": "Trim PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.",
       "DisplayName": "Trim PWM",
       "Increment": "1",
@@ -8813,8 +12163,24 @@
         "13": "Channel14",
         "14": "Channel15",
         "15": "Channel16",
+        "16": "Channel 17",
+        "17": "Channel 18",
+        "18": "Channel 19",
+        "19": "Channel 20",
         "2": "Channel3",
+        "20": "Channel 21",
+        "21": "Channel 22",
+        "22": "Channel 23",
+        "23": "Channel 24",
+        "24": "Channel 25",
+        "25": "Channel 26",
+        "26": "Channel 27",
+        "27": "Channel 28",
+        "28": "Channel 29",
+        "29": "Channel 30",
         "3": "Channel4",
+        "30": "Channel 31",
+        "31": "Channel 32",
         "4": "Channel5",
         "5": "Channel6",
         "6": "Channel7",
@@ -8847,8 +12213,24 @@
         "13": "Channel14",
         "14": "Channel15",
         "15": "Channel16",
+        "16": "Channel 17",
+        "17": "Channel 18",
+        "18": "Channel 19",
+        "19": "Channel 20",
         "2": "Channel3",
+        "20": "Channel 21",
+        "21": "Channel 22",
+        "22": "Channel 23",
+        "23": "Channel 24",
+        "24": "Channel 25",
+        "25": "Channel 26",
+        "26": "Channel 27",
+        "27": "Channel 28",
+        "28": "Channel 29",
+        "29": "Channel 30",
         "3": "Channel4",
+        "30": "Channel 31",
+        "31": "Channel 32",
         "4": "Channel5",
         "5": "Channel6",
         "6": "Channel7",
@@ -8880,8 +12262,24 @@
         "13": "Channel14",
         "14": "Channel15",
         "15": "Channel16",
+        "16": "Channel 17",
+        "17": "Channel 18",
+        "18": "Channel 19",
+        "19": "Channel 20",
         "2": "Channel3",
+        "20": "Channel 21",
+        "21": "Channel 22",
+        "22": "Channel 23",
+        "23": "Channel 24",
+        "24": "Channel 25",
+        "25": "Channel 26",
+        "26": "Channel 27",
+        "27": "Channel 28",
+        "28": "Channel 29",
+        "29": "Channel 30",
         "3": "Channel4",
+        "30": "Channel 31",
+        "31": "Channel 32",
         "4": "Channel5",
         "5": "Channel6",
         "6": "Channel7",
@@ -8943,8 +12341,24 @@
         "13": "Channel14",
         "14": "Channel15",
         "15": "Channel16",
+        "16": "Channel 17",
+        "17": "Channel 18",
+        "18": "Channel 19",
+        "19": "Channel 20",
         "2": "Channel3",
+        "20": "Channel 21",
+        "21": "Channel 22",
+        "22": "Channel 23",
+        "23": "Channel 24",
+        "24": "Channel 25",
+        "25": "Channel 26",
+        "26": "Channel 27",
+        "27": "Channel 28",
+        "28": "Channel 29",
+        "29": "Channel 30",
         "3": "Channel4",
+        "30": "Channel 31",
+        "31": "Channel 32",
         "4": "Channel5",
         "5": "Channel6",
         "6": "Channel7",
@@ -9087,8 +12501,23 @@
         "13": "Channel14",
         "14": "Channel15",
         "15": "Channel16",
+        "16": "Channel17",
+        "17": "Channel18",
+        "18": "Channel19",
+        "19": "Channel20",
         "2": "Channel3",
+        "20": "Channel21",
+        "21": "Channel22",
+        "22": "Channel23",
+        "23": "Channel24",
+        "24": "Channel25",
+        "25": "Channel26",
+        "26": "Channel27",
+        "28": "Channel29",
+        "29": "Channel30",
         "3": "Channel4",
+        "30": "Channel31",
+        "31": "Channel32",
         "4": "Channel5",
         "5": "Channel6",
         "6": "Channel7",
@@ -9172,7 +12601,7 @@
       }
     },
     "RNGFND1_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -9268,7 +12697,7 @@
       "User": "Advanced"
     },
     "RNGFND1_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -9455,7 +12884,7 @@
       }
     },
     "RNGFND2_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -9551,7 +12980,7 @@
       "User": "Advanced"
     },
     "RNGFND2_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -9738,7 +13167,7 @@
       }
     },
     "RNGFND3_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -9834,7 +13263,7 @@
       "User": "Advanced"
     },
     "RNGFND3_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -10021,7 +13450,7 @@
       }
     },
     "RNGFND4_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -10117,7 +13546,7 @@
       "User": "Advanced"
     },
     "RNGFND4_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -10304,7 +13733,7 @@
       }
     },
     "RNGFND5_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -10400,7 +13829,7 @@
       "User": "Advanced"
     },
     "RNGFND5_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -10587,7 +14016,7 @@
       }
     },
     "RNGFND6_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -10683,7 +14112,7 @@
       "User": "Advanced"
     },
     "RNGFND6_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -10870,7 +14299,7 @@
       }
     },
     "RNGFND7_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -10966,7 +14395,7 @@
       "User": "Advanced"
     },
     "RNGFND7_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -11153,7 +14582,7 @@
       }
     },
     "RNGFND8_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -11249,7 +14678,7 @@
       "User": "Advanced"
     },
     "RNGFND8_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -11436,7 +14865,7 @@
       }
     },
     "RNGFND9_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -11532,7 +14961,7 @@
       "User": "Advanced"
     },
     "RNGFND9_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
@@ -11719,7 +15148,7 @@
       }
     },
     "RNGFNDA_PIN": {
-      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "Description": "Analog or PWM input pin that rangefinder is connected to. Airspeed ports can be used for Analog input, AUXOUT can be used for PWM input. When using analog pin 103, the maximum value of the input in 3.3V. For PWM input, the pin must be configured as a digital GPIO, see the Wiki's \"GPIOs\" section for details.",
       "DisplayName": "Rangefinder pin",
       "User": "Standard",
       "Values": {
@@ -11815,7 +15244,7 @@
       "User": "Advanced"
     },
     "RNGFNDA_STOP_PIN": {
-      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range.",
+      "Description": "Digital pin that enables/disables rangefinder measurement for the pwm rangefinder. A value of -1 means no pin. If this is set, then the pin is set to 1 to enable the rangefinder and set to 0 to disable it. This is used to enable powersaving when out of range. Some common values are given, but see the Wiki's \"GPIOs\" page for how to determine the pin number for a given autopilot.",
       "DisplayName": "Rangefinder stop pin",
       "User": "Standard",
       "Values": {
