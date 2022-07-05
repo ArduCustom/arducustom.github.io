@@ -26512,6 +26512,9 @@
           <value code="117">Set_Mixing</value>
           <value code="118">Set_THRExpo</value>
           <value code="119">Set_flap</value>
+          <value code="120">Set_FW_Roll_Pitch</value>
+          <value code="121">Set_FW_Roll</value>
+          <value code="122">Set_FW_Pitch</value>
         </values>
       </param>
       <param humanName="Transmitter tuning channel" name="TUNE_CHAN" documentation="This sets the channel for transmitter tuning. This should be connected to a knob or slider on your transmitter. It needs to be setup to use the PWM range given by TUNE_CHAN_MIN to TUNE_CHAN_MAX" user="Standard">
