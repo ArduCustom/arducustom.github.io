@@ -3541,7 +3541,7 @@
         <field name="UnitText">meters</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Total consumed energy while flying" name="Node_FLT_ENERGY" documentation="Total consumed energy while flying" user="Standard">
+      <param humanName="Total consumed energy while flying (without losses)" name="Node_FLT_NRG_WOL" documentation="Total consumed energy while flying (without losses)" user="Standard">
         <field name="Units">Wh</field>
         <field name="UnitText">Watt hour</field>
         <field name="ReadOnly">True</field>
@@ -3601,12 +3601,12 @@
         <field name="UnitText">ampere</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Average power while flying" name="Node_POWER_AVG" documentation="Average power while flying" user="Standard">
+      <param humanName="Average power while flying (includes losses)" name="Node_POWER_AVG" documentation="Average power while flying (includes losses)" user="Standard">
         <field name="Units">W</field>
         <field name="UnitText">watt</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Maximum power while flying" name="Node_POWER_MAX" documentation="Maximum power while flying" user="Standard">
+      <param humanName="Maximum power while flying (includes losses)" name="Node_POWER_MAX" documentation="Maximum power while flying (includes losses)" user="Standard">
         <field name="Units">W</field>
         <field name="UnitText">watt</field>
         <field name="ReadOnly">True</field>
@@ -3619,6 +3619,21 @@
       <param humanName="Average home distance" name="Node_HOMEDST_AVG" documentation="Average home distance" user="Standard">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum flight time" name="Node_FLT_TIME_MX" documentation="Maximum flight time" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Total consumed energy while flying (with losses)" name="Node_FLT_NRG_WL" documentation="Total consumed energy while flying (with losses)" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum flight time with one battery" name="Node_FLT_BTME_MX" documentation="Maximum flight time with one battery" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
         <field name="ReadOnly">True</field>
       </param>
     </parameters>

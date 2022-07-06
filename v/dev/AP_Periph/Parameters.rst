@@ -13643,13 +13643,13 @@ Total ground distance traveled
 
 
 
-.. _Node_FLT_ENERGY:
+.. _Node_FLT_NRG_WOL:
 
-Node\_FLT\_ENERGY: Total consumed energy while flying
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Node\_FLT\_NRG\_WOL: Total consumed energy while flying \(without losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Total consumed energy while flying
+Total consumed energy while flying \(without losses\)
 
 
 +----------+-----------+
@@ -13861,11 +13861,11 @@ Maximum current while flying
 
 .. _Node_POWER_AVG:
 
-Node\_POWER\_AVG: Average power while flying
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Node\_POWER\_AVG: Average power while flying \(includes losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Average power while flying
+Average power while flying \(includes losses\)
 
 
 +----------+-------+
@@ -13879,11 +13879,11 @@ Average power while flying
 
 .. _Node_POWER_MAX:
 
-Node\_POWER\_MAX: Maximum power while flying
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Node\_POWER\_MAX: Maximum power while flying \(includes losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Maximum power while flying
+Maximum power while flying \(includes losses\)
 
 
 +----------+-------+
@@ -13936,6 +13936,60 @@ Average home distance
 +==========+========+
 | True     | meters |
 +----------+--------+
+
+
+
+
+.. _Node_FLT_TIME_MX:
+
+Node\_FLT\_TIME\_MX: Maximum flight time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum flight time
+
+
++----------+---------+
+| ReadOnly | Units   |
++==========+=========+
+| True     | seconds |
++----------+---------+
+
+
+
+
+.. _Node_FLT_NRG_WL:
+
+Node\_FLT\_NRG\_WL: Total consumed energy while flying \(with losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Total consumed energy while flying \(with losses\)
+
+
++----------+-----------+
+| ReadOnly | Units     |
++==========+===========+
+| True     | Watt hour |
++----------+-----------+
+
+
+
+
+.. _Node_FLT_BTME_MX:
+
+Node\_FLT\_BTME\_MX: Maximum flight time with one battery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum flight time with one battery
+
+
++----------+---------+
+| ReadOnly | Units   |
++==========+=========+
+| True     | seconds |
++----------+---------+
 
 
 

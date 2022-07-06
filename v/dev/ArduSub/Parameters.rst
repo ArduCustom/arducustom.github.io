@@ -18400,6 +18400,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 | +-------+------------+ |
 | | 11    | Benewake   | |
 | +-------+------------+ |
+| | 12    | Scripting2 | |
+| +-------+------------+ |
 |                        |
 +------------------------+
 
@@ -19012,6 +19014,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 | +-------+------------+ |
 | | 11    | Benewake   | |
 | +-------+------------+ |
+| | 12    | Scripting2 | |
+| +-------+------------+ |
 |                        |
 +------------------------+
 
@@ -19623,6 +19627,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 | | 10    | Scripting  | |
 | +-------+------------+ |
 | | 11    | Benewake   | |
+| +-------+------------+ |
+| | 12    | Scripting2 | |
 | +-------+------------+ |
 |                        |
 +------------------------+
@@ -29616,7 +29622,7 @@ INS\_HNTC2\_OPTS: Harmonic Notch Filter options
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
+Harmonic Notch Filter options\. Triple and double\-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\. If both double and triple notches are specified only double notches will take effect\.
 
 
 +-------------------------------+
@@ -29633,8 +29639,29 @@ Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation a
 | +-----+---------------------+ |
 | | 3   | EnableOnAllIMUs     | |
 | +-----+---------------------+ |
+| | 4   | Triple notch        | |
+| +-----+---------------------+ |
 |                               |
 +-------------------------------+
+
+
+
+
+.. _INS_HNTC2_FM_RAT:
+
+INS\_HNTC2\_FM\_RAT: Throttle notch min freqency ratio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle\. Note that lower frequency notch filters will have more phase lag\. If you want throttle based notch filtering to be effective at a throttle up to 30\% below the configured notch frequency then set this parameter to 0\.7\. The default of 1\.0 means the notch will not go below the frequency in the FREQ parameter\.
+
+
++-----------+
+| Range     |
++===========+
+| 0.1 - 1.0 |
++-----------+
 
 
 
@@ -29830,7 +29857,7 @@ INS\_HNTCH\_OPTS: Harmonic Notch Filter options
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
+Harmonic Notch Filter options\. Triple and double\-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\. If both double and triple notches are specified only double notches will take effect\.
 
 
 +-------------------------------+
@@ -29847,8 +29874,29 @@ Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation a
 | +-----+---------------------+ |
 | | 3   | EnableOnAllIMUs     | |
 | +-----+---------------------+ |
+| | 4   | Triple notch        | |
+| +-----+---------------------+ |
 |                               |
 +-------------------------------+
+
+
+
+
+.. _INS_HNTCH_FM_RAT:
+
+INS\_HNTCH\_FM\_RAT: Throttle notch min freqency ratio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle\. Note that lower frequency notch filters will have more phase lag\. If you want throttle based notch filtering to be effective at a throttle up to 30\% below the configured notch frequency then set this parameter to 0\.7\. The default of 1\.0 means the notch will not go below the frequency in the FREQ parameter\.
+
+
++-----------+
+| Range     |
++===========+
+| 0.1 - 1.0 |
++-----------+
 
 
 
@@ -29916,7 +29964,7 @@ INS\_LOG\_BAT\_OPT: Batch Logging Options Mask
 
 | *Note: This parameter is for advanced users*
 
-Options for the BatchSampler\. Post\-filter and sensor\-rate logging cannot be used at the same time\.
+Options for the BatchSampler\.
 
 
 +-----------------------------------------------------------------------+
@@ -29928,6 +29976,8 @@ Options for the BatchSampler\. Post\-filter and sensor\-rate logging cannot be u
 | | 0   | Sensor-Rate Logging (sample at full sensor rate seen by AP) | |
 | +-----+-------------------------------------------------------------+ |
 | | 1   | Sample post-filtering                                       | |
+| +-----+-------------------------------------------------------------+ |
+| | 2   | Sample pre- and post-filter                                 | |
 | +-----+-------------------------------------------------------------+ |
 |                                                                       |
 +-----------------------------------------------------------------------+
@@ -31924,6 +31974,8 @@ Mount default operating mode on startup and after control is returned from autop
 | +-------+-------------------+ |
 | | 4     | GPS Point         | |
 | +-------+-------------------+ |
+| | 6     | Home Location     | |
+| +-------+-------------------+ |
 |                               |
 +-------------------------------+
 
@@ -32338,24 +32390,6 @@ Maximum physical pan \(yaw\) angular position of the mount
 
 
 
-.. _MNT_JSTICK_SPD:
-
-MNT\_JSTICK\_SPD: mount joystick speed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-0 for position control\, small for low speeds\, 100 for max speed\. A good general value is 10 which gives a movement speed of 3 degrees per second\.
-
-
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 100 |
-+-----------+---------+
-
-
-
-
 .. _MNT_LEAD_RLL:
 
 MNT\_LEAD\_RLL: Roll stabilization lead time
@@ -32392,6 +32426,24 @@ Causes the servo angle output to lead the current angle of the vehicle by some a
 
 
 
+.. _MNT_RC_RATE:
+
+MNT\_RC\_RATE: Mount RC Rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pilot rate control\'s maximum rate\.  Set to zero to use angle control
+
+
++-----------+--------+--------------------+
+| Increment | Range  | Units              |
++===========+========+====================+
+| 1         | 0 - 90 | degrees per second |
++-----------+--------+--------------------+
+
+
+
+
 .. _MNT2_DEFLT_MODE:
 
 MNT2\_DEFLT\_MODE: Mount default operating mode
@@ -32416,6 +32468,8 @@ Mount default operating mode on startup and after control is returned from autop
 | | 3     | RC Targeting      | |
 | +-------+-------------------+ |
 | | 4     | GPS Point         | |
+| +-------+-------------------+ |
+| | 6     | Home Location     | |
 | +-------+-------------------+ |
 |                               |
 +-------------------------------+
@@ -36976,11 +37030,11 @@ RCMAP\_ROLL: Roll channel
 Roll channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Roll is normally on channel 1\, but you can move it to any channel with this parameter\.  Reboot is required for changes to take effect\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 1         | 1 - 8 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 1 - 16 |
++-----------+--------+
 
 
 
@@ -36996,11 +37050,11 @@ RCMAP\_PITCH: Pitch channel
 Pitch channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Pitch is normally on channel 2\, but you can move it to any channel with this parameter\.  Reboot is required for changes to take effect\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 1         | 1 - 8 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 1 - 16 |
++-----------+--------+
 
 
 
@@ -37013,14 +37067,14 @@ RCMAP\_THROTTLE: Throttle channel
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Throttle channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Throttle is normally on channel 3\, but you can move it to any channel with this parameter\. Warning APM 2\.X\: Changing the throttle channel could produce unexpected fail\-safe results if connection between receiver and on\-board PPM Encoder is lost\. Disabling on\-board PPM Encoder is recommended\.  Reboot is required for changes to take effect\.
+Throttle channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Throttle is normally on channel 3\, but you can move it to any channel with this parameter\. Reboot is required for changes to take effect\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 1         | 1 - 8 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 1 - 16 |
++-----------+--------+
 
 
 
@@ -37036,11 +37090,11 @@ RCMAP\_YAW: Yaw channel
 Yaw channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Yaw \(also known as rudder\) is normally on channel 4\, but you can move it to any channel with this parameter\.  Reboot is required for changes to take effect\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 1         | 1 - 8 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 1 - 16 |
++-----------+--------+
 
 
 
@@ -37056,11 +37110,11 @@ RCMAP\_FORWARD: Forward channel
 Forward channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Forward is normally on channel 5\, but you can move it to any channel with this parameter\. Reboot is required for changes to take effect\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 1         | 1 - 8 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 1 - 16 |
++-----------+--------+
 
 
 
@@ -37076,11 +37130,11 @@ RCMAP\_LATERAL: Lateral channel
 Lateral channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Lateral is normally on channel 6\, but you can move it to any channel with this parameter\. Reboot is required for changes to take effect\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 1         | 1 - 8 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 1 - 16 |
++-----------+--------+
 
 
 

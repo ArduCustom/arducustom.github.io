@@ -522,6 +522,34 @@ Precland device maximum lateral range
 
 
 
+.. _SIM_PLD_ORIENT:
+
+SIM\_PLD\_ORIENT: Precland device orientation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Precland device orientation vector
+
+
++---------------------+
+| Values              |
++=====================+
+| +-------+---------+ |
+| | Value | Meaning | |
+| +=======+=========+ |
+| | 0     | Front   | |
+| +-------+---------+ |
+| | 4     | Back    | |
+| +-------+---------+ |
+| | 24    | Up      | |
+| +-------+---------+ |
+|                     |
++---------------------+
+
+
+
+
 
 .. _parameters_SIM_SPR_:
 

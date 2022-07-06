@@ -9981,6 +9981,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 +-------+------------+
 | 11    | Benewake   |
 +-------+------------+
+| 12    | Scripting2 |
++-------+------------+
 
 
 
@@ -10567,6 +10569,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 +-------+------------+
 | 11    | Benewake   |
 +-------+------------+
+| 12    | Scripting2 |
++-------+------------+
 
 
 
@@ -11152,6 +11156,8 @@ Enabling this option starts selected protocol that will use this virtual driver
 | 10    | Scripting  |
 +-------+------------+
 | 11    | Benewake   |
++-------+------------+
+| 12    | Scripting2 |
 +-------+------------+
 
 
@@ -17189,7 +17195,7 @@ INS\_HNTC2\_OPTS: Harmonic Notch Filter options
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
+Harmonic Notch Filter options\. Triple and double\-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\. If both double and triple notches are specified only double notches will take effect\.
 
 
 +-----+---------------------+
@@ -17203,6 +17209,27 @@ Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation a
 +-----+---------------------+
 | 3   | EnableOnAllIMUs     |
 +-----+---------------------+
+| 4   | Triple notch        |
++-----+---------------------+
+
+
+
+
+.. _INS_HNTC2_FM_RAT:
+
+INS\_HNTC2\_FM\_RAT: Throttle notch min freqency ratio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle\. Note that lower frequency notch filters will have more phase lag\. If you want throttle based notch filtering to be effective at a throttle up to 30\% below the configured notch frequency then set this parameter to 0\.7\. The default of 1\.0 means the notch will not go below the frequency in the FREQ parameter\.
+
+
++-----------+
+| Range     |
++===========+
+| 0.1 - 1.0 |
++-----------+
 
 
 
@@ -17392,7 +17419,7 @@ INS\_HNTCH\_OPTS: Harmonic Notch Filter options
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\.
+Harmonic Notch Filter options\. Triple and double\-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft\. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency\, in the case of FFT it will attach notches to each of three detected noise peaks\, in the case of ESC it will attach notches to each of four motor RPM values\. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz\. If both double and triple notches are specified only double notches will take effect\.
 
 
 +-----+---------------------+
@@ -17406,6 +17433,27 @@ Harmonic Notch Filter options\. Double\-notches can provide deeper attenuation a
 +-----+---------------------+
 | 3   | EnableOnAllIMUs     |
 +-----+---------------------+
+| 4   | Triple notch        |
++-----+---------------------+
+
+
+
+
+.. _INS_HNTCH_FM_RAT:
+
+INS\_HNTCH\_FM\_RAT: Throttle notch min freqency ratio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle\. Note that lower frequency notch filters will have more phase lag\. If you want throttle based notch filtering to be effective at a throttle up to 30\% below the configured notch frequency then set this parameter to 0\.7\. The default of 1\.0 means the notch will not go below the frequency in the FREQ parameter\.
+
+
++-----------+
+| Range     |
++===========+
+| 0.1 - 1.0 |
++-----------+
 
 
 
@@ -17468,7 +17516,7 @@ INS\_LOG\_BAT\_OPT: Batch Logging Options Mask
 
 | *Note: This parameter is for advanced users*
 
-Options for the BatchSampler\. Post\-filter and sensor\-rate logging cannot be used at the same time\.
+Options for the BatchSampler\.
 
 
 +-----+-------------------------------------------------------------+
@@ -17477,6 +17525,8 @@ Options for the BatchSampler\. Post\-filter and sensor\-rate logging cannot be u
 | 0   | Sensor-Rate Logging (sample at full sensor rate seen by AP) |
 +-----+-------------------------------------------------------------+
 | 1   | Sample post-filtering                                       |
++-----+-------------------------------------------------------------+
+| 2   | Sample pre- and post-filter                                 |
 +-----+-------------------------------------------------------------+
 
 
@@ -37533,13 +37583,13 @@ Total ground distance traveled
 
 
 
-.. _STAT_FLT_ENERGY:
+.. _STAT_FLT_NRG_WOL:
 
-STAT\_FLT\_ENERGY: Total consumed energy while flying
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_FLT\_NRG\_WOL: Total consumed energy while flying \(without losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Total consumed energy while flying
+Total consumed energy while flying \(without losses\)
 
 
 +----------+-----------+
@@ -37751,11 +37801,11 @@ Maximum current while flying
 
 .. _STAT_POWER_AVG:
 
-STAT\_POWER\_AVG: Average power while flying
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_POWER\_AVG: Average power while flying \(includes losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Average power while flying
+Average power while flying \(includes losses\)
 
 
 +----------+-------+
@@ -37769,11 +37819,11 @@ Average power while flying
 
 .. _STAT_POWER_MAX:
 
-STAT\_POWER\_MAX: Maximum power while flying
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STAT\_POWER\_MAX: Maximum power while flying \(includes losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Maximum power while flying
+Maximum power while flying \(includes losses\)
 
 
 +----------+-------+
@@ -37826,6 +37876,60 @@ Average home distance
 +==========+========+
 | True     | meters |
 +----------+--------+
+
+
+
+
+.. _STAT_FLT_TIME_MX:
+
+STAT\_FLT\_TIME\_MX: Maximum flight time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum flight time
+
+
++----------+---------+
+| ReadOnly | Units   |
++==========+=========+
+| True     | seconds |
++----------+---------+
+
+
+
+
+.. _STAT_FLT_NRG_WL:
+
+STAT\_FLT\_NRG\_WL: Total consumed energy while flying \(with losses\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Total consumed energy while flying \(with losses\)
+
+
++----------+-----------+
+| ReadOnly | Units     |
++==========+===========+
+| True     | Watt hour |
++----------+-----------+
+
+
+
+
+.. _STAT_FLT_BTME_MX:
+
+STAT\_FLT\_BTME\_MX: Maximum flight time with one battery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Maximum flight time with one battery
+
+
++----------+---------+
+| ReadOnly | Units   |
++==========+=========+
+| True     | seconds |
++----------+---------+
 
 
 

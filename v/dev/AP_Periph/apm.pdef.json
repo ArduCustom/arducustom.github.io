@@ -5745,15 +5745,29 @@
       "Units": "A",
       "User": "Standard"
     },
+    "Node_FLT_BTME_MX": {
+      "Description": "Maximum flight time with one battery",
+      "DisplayName": "Maximum flight time with one battery",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
     "Node_FLT_CNT": {
       "Description": "Number of times the aircraft has been flying",
       "DisplayName": "Flight counter",
       "ReadOnly": "True",
       "User": "Standard"
     },
-    "Node_FLT_ENERGY": {
-      "Description": "Total consumed energy while flying",
-      "DisplayName": "Total consumed energy while flying",
+    "Node_FLT_NRG_WL": {
+      "Description": "Total consumed energy while flying (with losses)",
+      "DisplayName": "Total consumed energy while flying (with losses)",
+      "ReadOnly": "True",
+      "Units": "Wh",
+      "User": "Standard"
+    },
+    "Node_FLT_NRG_WOL": {
+      "Description": "Total consumed energy while flying (without losses)",
+      "DisplayName": "Total consumed energy while flying (without losses)",
       "ReadOnly": "True",
       "Units": "Wh",
       "User": "Standard"
@@ -5761,6 +5775,13 @@
     "Node_FLT_TIME": {
       "Description": "Total flight time",
       "DisplayName": "Total flight time",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "Node_FLT_TIME_MX": {
+      "Description": "Maximum flight time",
+      "DisplayName": "Maximum flight time",
       "ReadOnly": "True",
       "Units": "s",
       "User": "Standard"
@@ -5806,15 +5827,15 @@
       "User": "Standard"
     },
     "Node_POWER_AVG": {
-      "Description": "Average power while flying",
-      "DisplayName": "Average power while flying",
+      "Description": "Average power while flying (includes losses)",
+      "DisplayName": "Average power while flying (includes losses)",
       "ReadOnly": "True",
       "Units": "W",
       "User": "Standard"
     },
     "Node_POWER_MAX": {
-      "Description": "Maximum power while flying",
-      "DisplayName": "Maximum power while flying",
+      "Description": "Maximum power while flying (includes losses)",
+      "DisplayName": "Maximum power while flying (includes losses)",
       "ReadOnly": "True",
       "Units": "W",
       "User": "Standard"

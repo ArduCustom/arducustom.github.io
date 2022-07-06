@@ -511,12 +511,6 @@
         <field name="Range">50 490</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Acro Roll and Pitch P gain" name="ArduCopter:ACRO_RP_P" documentation="Converts pilot roll and pitch into a desired rate of rotation in ACRO and SPORT mode.  Higher values mean faster rate of rotation." user="Standard">
-        <field name="Range">1 10</field>
-      </param>
-      <param humanName="Acro Yaw P gain" name="ArduCopter:ACRO_YAW_P" documentation="Converts pilot yaw input into a desired rate of rotation.  Higher values mean faster rate of rotation." user="Standard">
-        <field name="Range">1 10</field>
-      </param>
       <param humanName="Acro Balance Roll" name="ArduCopter:ACRO_BAL_ROLL" documentation="rate at which roll angle returns to level in acro and sport mode.  A higher value causes the vehicle to return to level faster. For helicopter sets the decay rate of the virtual flybar in the roll axis. A higher value causes faster decay of desired to actual attitude." user="Advanced">
         <field name="Range">0 3</field>
         <field name="Increment">0.1</field>
@@ -531,17 +525,6 @@
           <value code="1">Leveling</value>
           <value code="2">Leveling and Limited</value>
         </values>
-      </param>
-      <param humanName="Acro Roll/Pitch Expo" name="ArduCopter:ACRO_RP_EXPO" documentation="Acro roll/pitch Expo to allow faster rotation when stick at edges" user="Advanced">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="0.1">Very Low</value>
-          <value code="0.2">Low</value>
-          <value code="0.3">Medium</value>
-          <value code="0.4">High</value>
-          <value code="0.5">Very High</value>
-        </values>
-        <field name="Range">-0.5 0.95</field>
       </param>
       <param humanName="Start motors before throwing is detected" name="ArduCopter:THROW_MOT_START" documentation="Used by Throw mode. Controls whether motors will run at the speed set by MOT_SPIN_MIN or will be stopped when armed and waiting for the throw." user="Standard">
         <values>
@@ -577,17 +560,6 @@
       </param>
       <param humanName="Development options" name="ArduCopter:DEV_OPTIONS" documentation="Bitmask of developer options. The meanings of the bit fields in this parameter may vary at any time. Developers should check the source code for current meaning" user="Advanced">
         <field name="Bitmask">0:ADSBMavlinkProcessing,1:DevOptionVFR_HUDRelativeAlt</field>
-      </param>
-      <param humanName="Acro Yaw Expo" name="ArduCopter:ACRO_Y_EXPO" documentation="Acro yaw expo to allow faster rotation when stick at edges" user="Advanced">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="0.1">Very Low</value>
-          <value code="0.2">Low</value>
-          <value code="0.3">Medium</value>
-          <value code="0.4">High</value>
-          <value code="0.5">Very High</value>
-        </values>
-        <field name="Range">-1.0 0.95</field>
       </param>
       <param humanName="Acro Thr Mid" name="ArduCopter:ACRO_THR_MID" documentation="Acro Throttle Mid" user="Advanced">
         <field name="Range">0 1</field>
@@ -689,32 +661,6 @@
         <field name="UnitText">seconds</field>
         <field name="Range">0.1 5</field>
       </param>
-      <param humanName="Acro Roll and Pitch Rate" name="ArduCopter:ACRO_RP_RATE" documentation="Acro mode maximum roll and pitch rate.  Higher values mean faster rate of rotation" user="Standard">
-        <field name="Units">deg/s</field>
-        <field name="UnitText">degrees per second</field>
-        <field name="Range">1 1080</field>
-      </param>
-      <param humanName="Acro Yaw Rate" name="ArduCopter:ACRO_Y_RATE" documentation="Acro mode maximum yaw rate.  Higher value means faster rate of rotation" user="Standard">
-        <field name="Units">deg/s</field>
-        <field name="UnitText">degrees per second</field>
-        <field name="Range">1 360</field>
-      </param>
-      <param humanName="Pilot controlled yaw rate" name="ArduCopter:PILOT_Y_RATE" documentation="Pilot controlled yaw rate max.  Used in all pilot controlled modes except Acro" user="Standard">
-        <field name="Units">deg/s</field>
-        <field name="UnitText">degrees per second</field>
-        <field name="Range">1 360</field>
-      </param>
-      <param humanName="Pilot controlled yaw expo" name="ArduCopter:PILOT_Y_EXPO" documentation="Pilot controlled yaw expo to allow faster rotation when stick at edges" user="Advanced">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="0.1">Very Low</value>
-          <value code="0.2">Low</value>
-          <value code="0.3">Medium</value>
-          <value code="0.4">High</value>
-          <value code="0.5">Very High</value>
-        </values>
-        <field name="Range">-0.5 1.0</field>
-      </param>
       <param humanName="Surface Tracking Mode" name="ArduCopter:SURFTRAK_MODE" documentation="set which surface to track in surface tracking" user="Advanced">
         <values>
           <value code="0">Do not track</value>
@@ -734,6 +680,93 @@
       </param>
       <param humanName="DeadReckon Failsafe Timeout" name="ArduCopter:FS_DR_TIMEOUT" documentation="DeadReckoning is available for this many seconds after losing position and/or velocity source.  After this timeout elapses the EKF failsafe will trigger in modes requiring a position estimate" user="Standard">
         <field name="Range">0 120</field>
+      </param>
+      <param humanName="Acro Roll and Pitch Rate" name="ArduCopter:ACRO_RP_RATE" documentation="Acro mode maximum roll and pitch rate.  Higher values mean faster rate of rotation" user="Standard">
+        <field name="Units">deg/s</field>
+        <field name="UnitText">degrees per second</field>
+        <field name="Range">1 1080</field>
+      </param>
+      <param humanName="Acro Roll/Pitch Expo" name="ArduCopter:ACRO_RP_EXPO" documentation="Acro roll/pitch Expo to allow faster rotation when stick at edges" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="0.1">Very Low</value>
+          <value code="0.2">Low</value>
+          <value code="0.3">Medium</value>
+          <value code="0.4">High</value>
+          <value code="0.5">Very High</value>
+        </values>
+        <field name="Range">-0.5 0.95</field>
+      </param>
+      <param humanName="Acro roll/pitch rate control input time constant" name="ArduCopter:ACRO_RP_RATE_TC" documentation="Acro roll and pitch rate control input time constant.  Low numbers lead to sharper response, higher numbers to softer response" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0 1</field>
+        <field name="Increment">0.01</field>
+        <values>
+          <value code="0.5">Very Soft</value>
+          <value code="0.2">Soft</value>
+          <value code="0.15">Medium</value>
+          <value code="0.1">Crisp</value>
+          <value code="0.05">Very Crisp</value>
+        </values>
+      </param>
+      <param humanName="Acro Yaw Rate" name="ArduCopter:ACRO_Y_RATE" documentation="Acro mode maximum yaw rate.  Higher value means faster rate of rotation" user="Standard">
+        <field name="Units">deg/s</field>
+        <field name="UnitText">degrees per second</field>
+        <field name="Range">1 360</field>
+      </param>
+      <param humanName="Acro Yaw Expo" name="ArduCopter:ACRO_Y_EXPO" documentation="Acro yaw expo to allow faster rotation when stick at edges" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="0.1">Very Low</value>
+          <value code="0.2">Low</value>
+          <value code="0.3">Medium</value>
+          <value code="0.4">High</value>
+          <value code="0.5">Very High</value>
+        </values>
+        <field name="Range">-1.0 0.95</field>
+      </param>
+      <param humanName="Acro yaw rate control input time constant" name="ArduCopter:ACRO_Y_RATE_TC" documentation="Acro yaw rate control input time constant.  Low numbers lead to sharper response, higher numbers to softer response" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0 1</field>
+        <field name="Increment">0.01</field>
+        <values>
+          <value code="0.5">Very Soft</value>
+          <value code="0.2">Soft</value>
+          <value code="0.15">Medium</value>
+          <value code="0.1">Crisp</value>
+          <value code="0.05">Very Crisp</value>
+        </values>
+      </param>
+      <param humanName="Pilot controlled yaw rate" name="ArduCopter:PILOT_Y_RATE" documentation="Pilot controlled yaw rate max.  Used in all pilot controlled modes except Acro" user="Standard">
+        <field name="Units">deg/s</field>
+        <field name="UnitText">degrees per second</field>
+        <field name="Range">1 360</field>
+      </param>
+      <param humanName="Pilot controlled yaw expo" name="ArduCopter:PILOT_Y_EXPO" documentation="Pilot controlled yaw expo to allow faster rotation when stick at edges" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="0.1">Very Low</value>
+          <value code="0.2">Low</value>
+          <value code="0.3">Medium</value>
+          <value code="0.4">High</value>
+          <value code="0.5">Very High</value>
+        </values>
+        <field name="Range">-0.5 1.0</field>
+      </param>
+      <param humanName="Pilot yaw rate control input time constant" name="ArduCopter:PILOT_Y_RATE_TC" documentation="Pilot yaw rate control input time constant.  Low numbers lead to sharper response, higher numbers to softer response" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0 1</field>
+        <field name="Increment">0.01</field>
+        <values>
+          <value code="0.5">Very Soft</value>
+          <value code="0.2">Soft</value>
+          <value code="0.15">Medium</value>
+          <value code="0.1">Crisp</value>
+          <value code="0.05">Very Crisp</value>
+        </values>
       </param>
     </parameters>
   </vehicles>
@@ -4626,6 +4659,7 @@
           <value code="8">KDECAN</value>
           <value code="10">Scripting</value>
           <value code="11">Benewake</value>
+          <value code="12">Scripting2</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -4712,6 +4746,7 @@
           <value code="8">KDECAN</value>
           <value code="10">Scripting</value>
           <value code="11">Benewake</value>
+          <value code="12">Scripting2</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -4798,6 +4833,7 @@
           <value code="8">KDECAN</value>
           <value code="10">Scripting</value>
           <value code="11">Benewake</value>
+          <value code="12">Scripting2</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -7921,9 +7957,12 @@
           <value code="5">Second RPM Sensor</value>
         </values>
       </param>
-      <param humanName="Harmonic Notch Filter options" name="INS_HNTC2_OPTS" documentation="Harmonic Notch Filter options. Double-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz." user="Advanced">
-        <field name="Bitmask">0:Double notch,1:Dynamic harmonic,2:Update at loop rate,3:EnableOnAllIMUs</field>
+      <param humanName="Harmonic Notch Filter options" name="INS_HNTC2_OPTS" documentation="Harmonic Notch Filter options. Triple and double-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz. If both double and triple notches are specified only double notches will take effect." user="Advanced">
+        <field name="Bitmask">0:Double notch,1:Dynamic harmonic,2:Update at loop rate,3:EnableOnAllIMUs,4:Triple notch</field>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Throttle notch min freqency ratio" name="INS_HNTC2_FM_RAT" documentation="The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle. Note that lower frequency notch filters will have more phase lag. If you want throttle based notch filtering to be effective at a throttle up to 30% below the configured notch frequency then set this parameter to 0.7. The default of 1.0 means the notch will not go below the frequency in the FREQ parameter." user="Advanced">
+        <field name="Range">0.1 1.0</field>
       </param>
     </parameters>
     <parameters name="INS_HNTCH_">
@@ -7967,9 +8006,12 @@
           <value code="5">Second RPM Sensor</value>
         </values>
       </param>
-      <param humanName="Harmonic Notch Filter options" name="INS_HNTCH_OPTS" documentation="Harmonic Notch Filter options. Double-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz." user="Advanced">
-        <field name="Bitmask">0:Double notch,1:Dynamic harmonic,2:Update at loop rate,3:EnableOnAllIMUs</field>
+      <param humanName="Harmonic Notch Filter options" name="INS_HNTCH_OPTS" documentation="Harmonic Notch Filter options. Triple and double-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz. If both double and triple notches are specified only double notches will take effect." user="Advanced">
+        <field name="Bitmask">0:Double notch,1:Dynamic harmonic,2:Update at loop rate,3:EnableOnAllIMUs,4:Triple notch</field>
         <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Throttle notch min freqency ratio" name="INS_HNTCH_FM_RAT" documentation="The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle. Note that lower frequency notch filters will have more phase lag. If you want throttle based notch filtering to be effective at a throttle up to 30% below the configured notch frequency then set this parameter to 0.7. The default of 1.0 means the notch will not go below the frequency in the FREQ parameter." user="Advanced">
+        <field name="Range">0.1 1.0</field>
       </param>
     </parameters>
     <parameters name="INS_LOG_">
@@ -7981,8 +8023,8 @@
         <field name="Bitmask">0:IMU1,1:IMU2,2:IMU3</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Batch Logging Options Mask" name="INS_LOG_BAT_OPT" documentation="Options for the BatchSampler. Post-filter and sensor-rate logging cannot be used at the same time." user="Advanced">
-        <field name="Bitmask">0:Sensor-Rate Logging (sample at full sensor rate seen by AP), 1: Sample post-filtering</field>
+      <param humanName="Batch Logging Options Mask" name="INS_LOG_BAT_OPT" documentation="Options for the BatchSampler." user="Advanced">
+        <field name="Bitmask">0:Sensor-Rate Logging (sample at full sensor rate seen by AP), 1: Sample post-filtering, 2: Sample pre- and post-filter</field>
       </param>
       <param humanName="logging interval" name="INS_LOG_BAT_LGIN" documentation="Interval between pushing samples to the AP_Logger log">
         <field name="Units">ms</field>
@@ -8414,6 +8456,7 @@
           <value code="2">MavLink Targeting</value>
           <value code="3">RC Targeting</value>
           <value code="4">GPS Point</value>
+          <value code="6">Home Location</value>
         </values>
       </param>
       <param humanName="Mount roll angle when in retracted position" name="MNT_RETRACT_X" documentation="Mount roll angle when in retracted position" user="Standard">
@@ -8545,10 +8588,6 @@
         <field name="Range">-18000 17999</field>
         <field name="Increment">10</field>
       </param>
-      <param humanName="mount joystick speed" name="MNT_JSTICK_SPD" documentation="0 for position control, small for low speeds, 100 for max speed. A good general value is 10 which gives a movement speed of 3 degrees per second." user="Standard">
-        <field name="Range">0 100</field>
-        <field name="Increment">1</field>
-      </param>
       <param humanName="Roll stabilization lead time" name="MNT_LEAD_RLL" documentation="Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate, compensating for servo delay. Increase until the servo is responsive but doesn't overshoot. Does nothing with pan stabilization enabled." user="Standard">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
@@ -8561,6 +8600,12 @@
         <field name="Range">0.0 0.2</field>
         <field name="Increment">.005</field>
       </param>
+      <param humanName="Mount RC Rate" name="MNT_RC_RATE" documentation="Pilot rate control's maximum rate.  Set to zero to use angle control" user="Standard">
+        <field name="Units">deg/s</field>
+        <field name="UnitText">degrees per second</field>
+        <field name="Range">0 90</field>
+        <field name="Increment">1</field>
+      </param>
       <param humanName="Mount default operating mode" name="MNT2_DEFLT_MODE" documentation="Mount default operating mode on startup and after control is returned from autopilot" user="Standard">
         <values>
           <value code="0">Retracted</value>
@@ -8568,6 +8613,7 @@
           <value code="2">MavLink Targeting</value>
           <value code="3">RC Targeting</value>
           <value code="4">GPS Point</value>
+          <value code="6">Home Location</value>
         </values>
       </param>
       <param humanName="Mount2 roll angle when in retracted position" name="MNT2_RETRACT_X" documentation="Mount2 roll angle when in retracted position" user="Standard">
@@ -17581,22 +17627,22 @@
     </parameters>
     <parameters name="RCMAP_">
       <param humanName="Roll channel" name="RCMAP_ROLL" documentation="Roll channel number. This is useful when you have a RC transmitter that can't change the channel order easily. Roll is normally on channel 1, but you can move it to any channel with this parameter.  Reboot is required for changes to take effect." user="Advanced">
-        <field name="Range">1 8</field>
+        <field name="Range">1 16</field>
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Pitch channel" name="RCMAP_PITCH" documentation="Pitch channel number. This is useful when you have a RC transmitter that can't change the channel order easily. Pitch is normally on channel 2, but you can move it to any channel with this parameter.  Reboot is required for changes to take effect." user="Advanced">
-        <field name="Range">1 8</field>
+        <field name="Range">1 16</field>
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Throttle channel" name="RCMAP_THROTTLE" documentation="Throttle channel number. This is useful when you have a RC transmitter that can't change the channel order easily. Throttle is normally on channel 3, but you can move it to any channel with this parameter. Warning APM 2.X: Changing the throttle channel could produce unexpected fail-safe results if connection between receiver and on-board PPM Encoder is lost. Disabling on-board PPM Encoder is recommended.  Reboot is required for changes to take effect." user="Advanced">
-        <field name="Range">1 8</field>
+      <param humanName="Throttle channel" name="RCMAP_THROTTLE" documentation="Throttle channel number. This is useful when you have a RC transmitter that can't change the channel order easily. Throttle is normally on channel 3, but you can move it to any channel with this parameter. Reboot is required for changes to take effect." user="Advanced">
+        <field name="Range">1 16</field>
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Yaw channel" name="RCMAP_YAW" documentation="Yaw channel number. This is useful when you have a RC transmitter that can't change the channel order easily. Yaw (also known as rudder) is normally on channel 4, but you can move it to any channel with this parameter.  Reboot is required for changes to take effect." user="Advanced">
-        <field name="Range">1 8</field>
+        <field name="Range">1 16</field>
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
@@ -25586,7 +25632,7 @@
         <field name="UnitText">meters</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Total consumed energy while flying" name="STAT_FLT_ENERGY" documentation="Total consumed energy while flying" user="Standard">
+      <param humanName="Total consumed energy while flying (without losses)" name="STAT_FLT_NRG_WOL" documentation="Total consumed energy while flying (without losses)" user="Standard">
         <field name="Units">Wh</field>
         <field name="UnitText">Watt hour</field>
         <field name="ReadOnly">True</field>
@@ -25646,12 +25692,12 @@
         <field name="UnitText">ampere</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Average power while flying" name="STAT_POWER_AVG" documentation="Average power while flying" user="Standard">
+      <param humanName="Average power while flying (includes losses)" name="STAT_POWER_AVG" documentation="Average power while flying (includes losses)" user="Standard">
         <field name="Units">W</field>
         <field name="UnitText">watt</field>
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Maximum power while flying" name="STAT_POWER_MAX" documentation="Maximum power while flying" user="Standard">
+      <param humanName="Maximum power while flying (includes losses)" name="STAT_POWER_MAX" documentation="Maximum power while flying (includes losses)" user="Standard">
         <field name="Units">W</field>
         <field name="UnitText">watt</field>
         <field name="ReadOnly">True</field>
@@ -25664,6 +25710,21 @@
       <param humanName="Average home distance" name="STAT_HOMEDST_AVG" documentation="Average home distance" user="Standard">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum flight time" name="STAT_FLT_TIME_MX" documentation="Maximum flight time" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Total consumed energy while flying (with losses)" name="STAT_FLT_NRG_WL" documentation="Total consumed energy while flying (with losses)" user="Standard">
+        <field name="Units">Wh</field>
+        <field name="UnitText">Watt hour</field>
+        <field name="ReadOnly">True</field>
+      </param>
+      <param humanName="Maximum flight time with one battery" name="STAT_FLT_BTME_MX" documentation="Maximum flight time with one battery" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
         <field name="ReadOnly">True</field>
       </param>
     </parameters>

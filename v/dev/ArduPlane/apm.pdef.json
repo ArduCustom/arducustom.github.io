@@ -5139,6 +5139,7 @@
         "1": "DroneCAN",
         "10": "Scripting",
         "11": "Benewake",
+        "12": "Scripting2",
         "4": "PiccoloCAN",
         "5": "CANTester",
         "6": "EFI_NWPMU",
@@ -5410,6 +5411,7 @@
         "1": "DroneCAN",
         "10": "Scripting",
         "11": "Benewake",
+        "12": "Scripting2",
         "4": "PiccoloCAN",
         "5": "CANTester",
         "6": "EFI_NWPMU",
@@ -5681,6 +5683,7 @@
         "1": "DroneCAN",
         "10": "Scripting",
         "11": "Benewake",
+        "12": "Scripting2",
         "4": "PiccoloCAN",
         "5": "CANTester",
         "6": "EFI_NWPMU",
@@ -10611,6 +10614,15 @@
         "1": "Enabled"
       }
     },
+    "INS_HNTC2_FM_RAT": {
+      "Description": "The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle. Note that lower frequency notch filters will have more phase lag. If you want throttle based notch filtering to be effective at a throttle up to 30% below the configured notch frequency then set this parameter to 0.7. The default of 1.0 means the notch will not go below the frequency in the FREQ parameter.",
+      "DisplayName": "Throttle notch min freqency ratio",
+      "Range": {
+        "high": "1.0",
+        "low": "0.1"
+      },
+      "User": "Advanced"
+    },
     "INS_HNTC2_FREQ": {
       "Description": "Harmonic Notch Filter base center frequency in Hz. This should be set at most half the backend gyro rate (which is typically 1Khz). For helicopters using RPM sensor to dynamically set the notch frequency, use this parameter to provide a lower limit to the dynamic notch filter.  Recommend setting it to half the operating rotor speed in Hz.",
       "DisplayName": "Harmonic Notch Filter base frequency",
@@ -10659,9 +10671,10 @@
         "0": "Double notch",
         "1": "Dynamic harmonic",
         "2": "Update at loop rate",
-        "3": "EnableOnAllIMUs"
+        "3": "EnableOnAllIMUs",
+        "4": "Triple notch"
       },
-      "Description": "Harmonic Notch Filter options. Double-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz.",
+      "Description": "Harmonic Notch Filter options. Triple and double-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz. If both double and triple notches are specified only double notches will take effect.",
       "DisplayName": "Harmonic Notch Filter options",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -10706,6 +10719,15 @@
         "0": "Disabled",
         "1": "Enabled"
       }
+    },
+    "INS_HNTCH_FM_RAT": {
+      "Description": "The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle. Note that lower frequency notch filters will have more phase lag. If you want throttle based notch filtering to be effective at a throttle up to 30% below the configured notch frequency then set this parameter to 0.7. The default of 1.0 means the notch will not go below the frequency in the FREQ parameter.",
+      "DisplayName": "Throttle notch min freqency ratio",
+      "Range": {
+        "high": "1.0",
+        "low": "0.1"
+      },
+      "User": "Advanced"
     },
     "INS_HNTCH_FREQ": {
       "Description": "Harmonic Notch Filter base center frequency in Hz. This should be set at most half the backend gyro rate (which is typically 1Khz). For helicopters using RPM sensor to dynamically set the notch frequency, use this parameter to provide a lower limit to the dynamic notch filter.  Recommend setting it to half the operating rotor speed in Hz.",
@@ -10755,9 +10777,10 @@
         "0": "Double notch",
         "1": "Dynamic harmonic",
         "2": "Update at loop rate",
-        "3": "EnableOnAllIMUs"
+        "3": "EnableOnAllIMUs",
+        "4": "Triple notch"
       },
-      "Description": "Harmonic Notch Filter options. Double-notches can provide deeper attenuation across a wider bandwidth than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz.",
+      "Description": "Harmonic Notch Filter options. Triple and double-notches can provide deeper attenuation across a wider bandwidth with reduced latency than single notches and are suitable for larger aircraft. Dynamic harmonics attaches a harmonic notch to each detected noise frequency instead of simply being multiples of the base frequency, in the case of FFT it will attach notches to each of three detected noise peaks, in the case of ESC it will attach notches to each of four motor RPM values. Loop rate update changes the notch center frequency at the scheduler loop rate rather than at the default of 200Hz. If both double and triple notches are specified only double notches will take effect.",
       "DisplayName": "Harmonic Notch Filter options",
       "RebootRequired": "True",
       "User": "Advanced"
@@ -10806,9 +10829,10 @@
     "INS_LOG_BAT_OPT": {
       "Bitmask": {
         "0": "Sensor-Rate Logging (sample at full sensor rate seen by AP)",
-        "1": "Sample post-filtering"
+        "1": "Sample post-filtering",
+        "2": "Sample pre- and post-filter"
       },
-      "Description": "Options for the BatchSampler. Post-filter and sensor-rate logging cannot be used at the same time.",
+      "Description": "Options for the BatchSampler.",
       "DisplayName": "Batch Logging Options Mask",
       "User": "Advanced"
     }
@@ -11865,7 +11889,8 @@
         "1": "Neutral",
         "2": "MavLink Targeting",
         "3": "RC Targeting",
-        "4": "GPS Point"
+        "4": "GPS Point",
+        "6": "Home Location"
       }
     },
     "MNT2_LEAD_PTCH": {
@@ -12120,18 +12145,9 @@
         "1": "Neutral",
         "2": "MavLink Targeting",
         "3": "RC Targeting",
-        "4": "GPS Point"
+        "4": "GPS Point",
+        "6": "Home Location"
       }
-    },
-    "MNT_JSTICK_SPD": {
-      "Description": "0 for position control, small for low speeds, 100 for max speed. A good general value is 10 which gives a movement speed of 3 degrees per second.",
-      "DisplayName": "mount joystick speed",
-      "Increment": "1",
-      "Range": {
-        "high": "100",
-        "low": "0"
-      },
-      "User": "Standard"
     },
     "MNT_LEAD_PTCH": {
       "Description": "Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate. Increase until the servo is responsive but doesn't overshoot. Does nothing with pan stabilization enabled.",
@@ -12235,6 +12251,17 @@
         "8": "RC8",
         "9": "RC9"
       }
+    },
+    "MNT_RC_RATE": {
+      "Description": "Pilot rate control's maximum rate.  Set to zero to use angle control",
+      "DisplayName": "Mount RC Rate",
+      "Increment": "1",
+      "Range": {
+        "high": "90",
+        "low": "0"
+      },
+      "Units": "deg/s",
+      "User": "Standard"
     },
     "MNT_RETRACT_X": {
       "Description": "Mount roll angle when in retracted position",
@@ -27406,7 +27433,7 @@
       "User": "Standard"
     },
     "Q_RTL_MODE": {
-      "Description": "If this is set to 1 then an RTL will change to QRTL when within RTL_RADIUS meters of the RTL destination, VTOL approach: vehicle will RTL at RTL alt and circle with a radius of Q_FW_LND_APR_RAD down to Q_RLT_ALT and then transission into the wind and QRTL, see 'AUTO VTOL Landing', QRTL Always: do a QRTL instead of RTL",
+      "Description": "If this is set to 1 then an RTL will change to QRTL when within RTL_RADIUS meters of the RTL destination, VTOL approach: vehicle will RTL at RTL alt and circle with a radius of Q_FW_LND_APR_RAD down to Q_RTL_ALT and then transition into the wind and QRTL, see 'AUTO VTOL Landing', QRTL Always: do a QRTL instead of RTL",
       "DisplayName": "VTOL RTL mode",
       "User": "Standard",
       "Values": {
@@ -28952,7 +28979,7 @@
       }
     },
     "Q_TILT_WING_FLAP": {
-      "Description": "For use on tilt wings, the wing will tilt up to this angle for flap, transistion will be complete when the wing reaches this angle from the forward fight position, 0 disables",
+      "Description": "For use on tilt wings, the wing will tilt up to this angle for flap, transition will be complete when the wing reaches this angle from the forward fight position, 0 disables",
       "DisplayName": "Tiltrotor tilt angle that will be used as flap",
       "Increment": "1",
       "Range": {
@@ -31398,7 +31425,7 @@
       "DisplayName": "Pitch channel",
       "Increment": "1",
       "Range": {
-        "high": "8",
+        "high": "16",
         "low": "1"
       },
       "RebootRequired": "True",
@@ -31409,18 +31436,18 @@
       "DisplayName": "Roll channel",
       "Increment": "1",
       "Range": {
-        "high": "8",
+        "high": "16",
         "low": "1"
       },
       "RebootRequired": "True",
       "User": "Advanced"
     },
     "RCMAP_THROTTLE": {
-      "Description": "Throttle channel number. This is useful when you have a RC transmitter that can't change the channel order easily. Throttle is normally on channel 3, but you can move it to any channel with this parameter. Warning APM 2.X: Changing the throttle channel could produce unexpected fail-safe results if connection between receiver and on-board PPM Encoder is lost. Disabling on-board PPM Encoder is recommended.  Reboot is required for changes to take effect.",
+      "Description": "Throttle channel number. This is useful when you have a RC transmitter that can't change the channel order easily. Throttle is normally on channel 3, but you can move it to any channel with this parameter. Reboot is required for changes to take effect.",
       "DisplayName": "Throttle channel",
       "Increment": "1",
       "Range": {
-        "high": "8",
+        "high": "16",
         "low": "1"
       },
       "RebootRequired": "True",
@@ -31431,7 +31458,7 @@
       "DisplayName": "Yaw channel",
       "Increment": "1",
       "Range": {
-        "high": "8",
+        "high": "16",
         "low": "1"
       },
       "RebootRequired": "True",
@@ -43346,15 +43373,29 @@
       "Units": "A",
       "User": "Standard"
     },
+    "STAT_FLT_BTME_MX": {
+      "Description": "Maximum flight time with one battery",
+      "DisplayName": "Maximum flight time with one battery",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
     "STAT_FLT_CNT": {
       "Description": "Number of times the aircraft has been flying",
       "DisplayName": "Flight counter",
       "ReadOnly": "True",
       "User": "Standard"
     },
-    "STAT_FLT_ENERGY": {
-      "Description": "Total consumed energy while flying",
-      "DisplayName": "Total consumed energy while flying",
+    "STAT_FLT_NRG_WL": {
+      "Description": "Total consumed energy while flying (with losses)",
+      "DisplayName": "Total consumed energy while flying (with losses)",
+      "ReadOnly": "True",
+      "Units": "Wh",
+      "User": "Standard"
+    },
+    "STAT_FLT_NRG_WOL": {
+      "Description": "Total consumed energy while flying (without losses)",
+      "DisplayName": "Total consumed energy while flying (without losses)",
       "ReadOnly": "True",
       "Units": "Wh",
       "User": "Standard"
@@ -43362,6 +43403,13 @@
     "STAT_FLT_TIME": {
       "Description": "Total flight time",
       "DisplayName": "Total flight time",
+      "ReadOnly": "True",
+      "Units": "s",
+      "User": "Standard"
+    },
+    "STAT_FLT_TIME_MX": {
+      "Description": "Maximum flight time",
+      "DisplayName": "Maximum flight time",
       "ReadOnly": "True",
       "Units": "s",
       "User": "Standard"
@@ -43407,15 +43455,15 @@
       "User": "Standard"
     },
     "STAT_POWER_AVG": {
-      "Description": "Average power while flying",
-      "DisplayName": "Average power while flying",
+      "Description": "Average power while flying (includes losses)",
+      "DisplayName": "Average power while flying (includes losses)",
       "ReadOnly": "True",
       "Units": "W",
       "User": "Standard"
     },
     "STAT_POWER_MAX": {
-      "Description": "Maximum power while flying",
-      "DisplayName": "Maximum power while flying",
+      "Description": "Maximum power while flying (includes losses)",
+      "DisplayName": "Maximum power while flying (includes losses)",
       "ReadOnly": "True",
       "Units": "W",
       "User": "Standard"
