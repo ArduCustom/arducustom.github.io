@@ -524,6 +524,47 @@
       "User": "Advanced"
     }
   },
+  "AIS_": {
+    "AIS_LIST_MAX": {
+      "Description": "AIS list size of nearest vessels. Longer lists take longer to refresh with lower SRx_ADSB values.",
+      "DisplayName": "AIS vessel list size",
+      "Range": {
+        "high": "100",
+        "low": "1"
+      },
+      "User": "Advanced"
+    },
+    "AIS_LOGGING": {
+      "Bitmask": {
+        "0": "Log all AIVDM messages",
+        "1": "Log only unsupported AIVDM messages",
+        "2": "Log decoded messages"
+      },
+      "Description": "Bitmask of AIS logging options",
+      "DisplayName": "AIS logging options",
+      "User": "Advanced"
+    },
+    "AIS_TIME_OUT": {
+      "Description": "if no updates are received in this time a vessel will be removed from the list",
+      "DisplayName": "AIS vessel time out",
+      "Range": {
+        "high": "2000",
+        "low": "1"
+      },
+      "Units": "s",
+      "User": "Advanced"
+    },
+    "AIS_TYPE": {
+      "Description": "AIS receiver type",
+      "DisplayName": "AIS receiver type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "NMEA AIVDM message"
+      }
+    }
+  },
   "ARMING_": {
     "ARMING_ACCTHRESH": {
       "Description": "Accelerometer error threshold used to determine inconsistent accelerometers. Compares this error range to other accelerometers to detect a hardware or calibration error. Lower value means tighter check and harder to pass arming check. Not all accelerometers are created equal.",
@@ -9892,9 +9933,9 @@
     "ICE_OPTIONS": {
       "Bitmask": {
         "0": "DisableIgnitionRCFailsafe",
-        "1": "DisableRedlineRPMGovernor"
+        "1": "DisableRedineGovernor"
       },
-      "Description": "Options for ICE control",
+      "Description": "Options for ICE control. The DisableIgnitionRCFailsafe option will cause the ignition to be set off on any R/C failsafe.",
       "DisplayName": "ICE options"
     },
     "ICE_PWM_IGN_OFF": {
@@ -27410,6 +27451,51 @@
       "Description": "Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command's reference frame rather than a delta above current location, Use FW Approach:Use a fixed wing approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND. Force RTL mode: forces RTL mode on rc failsafe in VTOL modes overriding bit 5(USE_QRTL).",
       "DisplayName": "quadplane options"
     },
+    "Q_PLT_Y_EXPO": {
+      "Description": "Pilot controlled yaw expo to allow faster rotation when stick at edges",
+      "DisplayName": "Pilot controlled yaw expo",
+      "Range": {
+        "high": "1.0",
+        "low": "-0.5"
+      },
+      "User": "Advanced",
+      "Values": {
+        "0": "Disabled",
+        "0.1": "Very Low",
+        "0.2": "Low",
+        "0.3": "Medium",
+        "0.4": "High",
+        "0.5": "Very High"
+      }
+    },
+    "Q_PLT_Y_RATE": {
+      "Description": "Pilot controlled yaw rate max. Used in all pilot controlled modes except QAcro",
+      "DisplayName": "Pilot controlled yaw rate",
+      "Range": {
+        "high": "360",
+        "low": "1"
+      },
+      "Units": "deg/s",
+      "User": "Standard"
+    },
+    "Q_PLT_Y_RATE_TC": {
+      "Description": "Pilot yaw rate control input time constant. Low numbers lead to sharper response, higher numbers to softer response.",
+      "DisplayName": "Pilot yaw rate control input time constant",
+      "Increment": "0.01",
+      "Range": {
+        "high": "1",
+        "low": "0"
+      },
+      "Units": "s",
+      "User": "Standard",
+      "Values": {
+        "0.05": "Very Crisp",
+        "0.1": "Crisp",
+        "0.15": "Medium",
+        "0.2": "Soft",
+        "0.5": "Very Soft"
+      }
+    },
     "Q_RC_SPEED": {
       "Description": "This is the PWM refresh rate in Hz for QuadPlane quad motors",
       "DisplayName": "RC output speed in Hz",
@@ -35143,6 +35229,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35236,6 +35323,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35329,6 +35417,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35422,6 +35511,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35515,6 +35605,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35608,6 +35699,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35701,6 +35793,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35794,6 +35887,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -35887,6 +35981,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",

@@ -1080,6 +1080,46 @@ DO NOT EDIT
 </ul>
 
 
+<h1>AIS_ Parameters</h1>
+
+
+<h2>AIS receiver type (AIS_TYPE)</h2>
+
+<p>AIS receiver type</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>NMEA AIVDM message</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>AIS vessel list size (AIS_LIST_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>AIS list size of nearest vessels. Longer lists take longer to refresh with lower SRx_ADSB values.</p>
+<ul>
+<li>Range: 1 100</li>
+</ul>
+
+
+<h2>AIS vessel time out (AIS_TIME_OUT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>if no updates are received in this time a vessel will be removed from the list</p>
+<ul>
+<li>Units: seconds</li>
+<li>Range: 1 2000</li>
+</ul>
+
+
+<h2>AIS logging options (AIS_LOGGING)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bitmask of AIS logging options</p>
+<ul>
+<li>Bitmask: 0:Log all AIVDM messages,1:Log only unsupported AIVDM messages,2:Log decoded messages</li>
+</ul>
+
+
 <h1>ARMING_ Parameters</h1>
 
 
@@ -12266,6 +12306,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12343,6 +12384,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -12419,6 +12461,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -12495,6 +12538,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -12571,6 +12615,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -12647,6 +12692,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -12820,6 +12866,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -12905,6 +12952,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -12990,6 +13038,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 

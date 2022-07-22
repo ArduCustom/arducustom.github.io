@@ -203,11 +203,11 @@ SIM\_GRPE\_PIN: Gripper emp pin
 The pin number that the gripper emp is connected to\. \(start at 1\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -255,11 +255,11 @@ SIM\_GRPS\_PIN: Gripper servo pin
 The pin number that the gripper servo is connected to\. \(start at 1\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -274,11 +274,11 @@ SIM\_GRPS\_GRAB: Gripper Grab PWM
 PWM value in microseconds sent to Gripper to initiate grabbing the cargo
 
 
-+-------------+---------------------+
-| Range       | Units               |
-+=============+=====================+
-| 1000 - 2000 | PWM in microseconds |
-+-------------+---------------------+
++--------------+---------------------+
+| Range        | Units               |
++==============+=====================+
+| 1000 to 2000 | PWM in microseconds |
++--------------+---------------------+
 
 
 
@@ -293,11 +293,11 @@ SIM\_GRPS\_RELEASE: Gripper Release PWM
 PWM value in microseconds sent to Gripper to release the cargo
 
 
-+-------------+---------------------+
-| Range       | Units               |
-+=============+=====================+
-| 1000 - 2000 | PWM in microseconds |
-+-------------+---------------------+
++--------------+---------------------+
+| Range        | Units               |
++==============+=====================+
+| 1000 to 2000 | PWM in microseconds |
++--------------+---------------------+
 
 
 
@@ -371,11 +371,11 @@ SIM\_PLD\_LAT: Precland device origin\'s latitude
 Precland device origin\'s latitude
 
 
-+-----------+----------+---------+
-| Increment | Range    | Units   |
-+===========+==========+=========+
-| 0.000001  | -90 - 90 | degrees |
-+-----------+----------+---------+
++-----------+-----------+---------+
+| Increment | Range     | Units   |
++===========+===========+=========+
+| 0.000001  | -90 to 90 | degrees |
++-----------+-----------+---------+
 
 
 
@@ -390,11 +390,11 @@ SIM\_PLD\_LON: Precland device origin\'s longitude
 Precland device origin\'s longitude
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 0.000001  | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 0.000001  | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -409,11 +409,11 @@ SIM\_PLD\_HEIGHT: Precland device origin\'s height above sealevel
 Precland device origin\'s height above sealevel assume a 2x2m square as station base
 
 
-+-----------+-----------+-------------+
-| Increment | Range     | Units       |
-+===========+===========+=============+
-| 1         | 0 - 10000 | centimeters |
-+-----------+-----------+-------------+
++-----------+------------+-------------+
+| Increment | Range      | Units       |
++===========+============+=============+
+| 1         | 0 to 10000 | centimeters |
++-----------+------------+-------------+
 
 
 
@@ -428,11 +428,11 @@ SIM\_PLD\_YAW: Precland device systems rotation from north
 Precland device systems rotation from north
 
 
-+-----------+-------------+---------+
-| Increment | Range       | Units   |
-+===========+=============+=========+
-| 1         | -180 - +180 | degrees |
-+-----------+-------------+---------+
++-----------+--------------+---------+
+| Increment | Range        | Units   |
++===========+==============+=========+
+| 1         | -180 to +180 | degrees |
++-----------+--------------+---------+
 
 
 
@@ -447,11 +447,11 @@ SIM\_PLD\_RATE: Precland device update rate
 Precland device rate\. e\.g led patter refresh rate\, RF message rate\, etc\.
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 200 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 200 | hertz |
++----------+-------+
 
 
 
@@ -494,11 +494,11 @@ SIM\_PLD\_ALT\_LIMIT: Precland device alt range
 Precland device maximum range altitude
 
 
-+---------+--------+
-| Range   | Units  |
-+=========+========+
-| 0 - 100 | meters |
-+---------+--------+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 100 | meters |
++----------+--------+
 
 
 
@@ -513,11 +513,11 @@ SIM\_PLD\_DIST\_LIMIT: Precland device lateral range
 Precland device maximum lateral range
 
 
-+---------+--------+
-| Range   | Units  |
-+=========+========+
-| 5 - 100 | meters |
-+---------+--------+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 5 to 100 | meters |
++----------+--------+
 
 
 
@@ -593,11 +593,11 @@ SIM\_SPR\_PUMP: Sprayer pump pin
 The pin number that the Sprayer pump is connected to\. \(start at 1\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -612,11 +612,11 @@ SIM\_SPR\_SPIN: Sprayer spinner servo pin
 The pin number that the Sprayer spinner servo is connected to\. \(start at 1\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 

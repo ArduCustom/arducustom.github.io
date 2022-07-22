@@ -356,6 +356,9 @@
       <param humanName="Guided mode options" name="Rover:GUID_OPTIONS" documentation="Options that can be applied to change guided mode behaviour" user="Advanced">
         <field name="Bitmask">6:SCurves used for navigation</field>
       </param>
+      <param humanName="Manual mode options" name="Rover:MANUAL_OPTIONS" documentation="Manual mode specific options" user="Advanced">
+        <field name="Bitmask">0:Enable steering speed scaling</field>
+      </param>
       <param humanName="Channel 7 option" name="Rover:CH7_OPTION" documentation="What to do use channel 7 for" user="Standard">
         <values>
           <value code="0">Nothing</value>
@@ -17551,6 +17554,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -17618,6 +17622,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Telemetry 2 Baud Rate" name="SERIAL2_BAUD" documentation="The baud rate of the Telem2 port. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17684,6 +17689,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 3 (GPS) Baud Rate" name="SERIAL3_BAUD" documentation="The baud rate used for the Serial 3 (GPS). Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17750,6 +17756,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 4 Baud Rate" name="SERIAL4_BAUD" documentation="The baud rate used for Serial4. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17816,6 +17823,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 5 Baud Rate" name="SERIAL5_BAUD" documentation="The baud rate used for Serial5. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -17882,6 +17890,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 6 Baud Rate" name="SERIAL6_BAUD" documentation="The baud rate used for Serial6. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -18001,6 +18010,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 7 Baud Rate" name="SERIAL7_BAUD" documentation="The baud rate used for Serial7. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -18071,6 +18081,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 8 Baud Rate" name="SERIAL8_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -18141,6 +18152,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 9 Baud Rate" name="SERIAL9_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">

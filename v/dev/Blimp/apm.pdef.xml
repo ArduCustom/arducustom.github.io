@@ -595,6 +595,26 @@
         <field name="Increment">1</field>
       </param>
     </parameters>
+    <parameters name="AIS_">
+      <param humanName="AIS receiver type" name="AIS_TYPE" documentation="AIS receiver type" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">NMEA AIVDM message</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="AIS vessel list size" name="AIS_LIST_MAX" documentation="AIS list size of nearest vessels. Longer lists take longer to refresh with lower SRx_ADSB values." user="Advanced">
+        <field name="Range">1 100</field>
+      </param>
+      <param humanName="AIS vessel time out" name="AIS_TIME_OUT" documentation="if no updates are received in this time a vessel will be removed from the list" user="Advanced">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">1 2000</field>
+      </param>
+      <param humanName="AIS logging options" name="AIS_LOGGING" documentation="Bitmask of AIS logging options" user="Advanced">
+        <field name="Bitmask">0:Log all AIVDM messages,1:Log only unsupported AIVDM messages,2:Log decoded messages</field>
+      </param>
+    </parameters>
     <parameters name="ARMING_">
       <param humanName="Accelerometer error threshold" name="ARMING_ACCTHRESH" documentation="Accelerometer error threshold used to determine inconsistent accelerometers. Compares this error range to other accelerometers to detect a hardware or calibration error. Lower value means tighter check and harder to pass arming check. Not all accelerometers are created equal." user="Advanced">
         <field name="Units">m/s/s</field>
@@ -6830,6 +6850,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -6897,6 +6918,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Telemetry 2 Baud Rate" name="SERIAL2_BAUD" documentation="The baud rate of the Telem2 port. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -6963,6 +6985,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 3 (GPS) Baud Rate" name="SERIAL3_BAUD" documentation="The baud rate used for the Serial 3 (GPS). Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -7029,6 +7052,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 4 Baud Rate" name="SERIAL4_BAUD" documentation="The baud rate used for Serial4. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -7095,6 +7119,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 5 Baud Rate" name="SERIAL5_BAUD" documentation="The baud rate used for Serial5. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -7161,6 +7186,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 6 Baud Rate" name="SERIAL6_BAUD" documentation="The baud rate used for Serial6. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -7280,6 +7306,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 7 Baud Rate" name="SERIAL7_BAUD" documentation="The baud rate used for Serial7. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -7350,6 +7377,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 8 Baud Rate" name="SERIAL8_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -7420,6 +7448,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 9 Baud Rate" name="SERIAL9_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">

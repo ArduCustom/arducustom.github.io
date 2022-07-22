@@ -1456,6 +1456,26 @@
         <field name="Increment">1</field>
       </param>
     </parameters>
+    <parameters name="AIS_">
+      <param humanName="AIS receiver type" name="AIS_TYPE" documentation="AIS receiver type" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">NMEA AIVDM message</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="AIS vessel list size" name="AIS_LIST_MAX" documentation="AIS list size of nearest vessels. Longer lists take longer to refresh with lower SRx_ADSB values." user="Advanced">
+        <field name="Range">1 100</field>
+      </param>
+      <param humanName="AIS vessel time out" name="AIS_TIME_OUT" documentation="if no updates are received in this time a vessel will be removed from the list" user="Advanced">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">1 2000</field>
+      </param>
+      <param humanName="AIS logging options" name="AIS_LOGGING" documentation="Bitmask of AIS logging options" user="Advanced">
+        <field name="Bitmask">0:Log all AIVDM messages,1:Log only unsupported AIVDM messages,2:Log decoded messages</field>
+      </param>
+    </parameters>
     <parameters name="ARMING_">
       <param humanName="Require Arming Motors " name="ARMING_REQUIRE" documentation="Arming disabled until some requirements are met. If 0, there are no requirements (arm immediately).  If 1, require rudder stick or GCS arming before arming motors and sends the minimum throttle PWM value to the throttle channel when disarmed.  If 2, require rudder stick or GCS arming and send 0 PWM to throttle channel when disarmed. See the ARMING_CHECK_* parameters to see what checks are done before arming. Note, if setting this parameter to 0 a reboot is required to arm the plane.  Also note, even with this parameter at 0, if ARMING_CHECK parameter is not also zero the plane may fail to arm throttle at boot due to a pre-arm check failure." user="Advanced">
         <values>
@@ -6981,8 +7001,8 @@
 </param>
       <param humanName="Slew Rate for idle control" name="ICE_IDLE_SLEW" documentation="This configures the slewrate used to adjust the idle setpoint in percentage points per second">
 </param>
-      <param humanName="ICE options" name="ICE_OPTIONS" documentation="Options for ICE control">
-        <field name="Bitmask">0:DisableIgnitionRCFailsafe,1:DisableRedlineRPMGovernor</field>
+      <param humanName="ICE options" name="ICE_OPTIONS" documentation="Options for ICE control. The DisableIgnitionRCFailsafe option will cause the ignition to be set off on any R/C failsafe.">
+        <field name="Bitmask">0:DisableIgnitionRCFailsafe,1:DisableRedineGovernor</field>
       </param>
       <param humanName="Input channel for engine start minimum PWM" name="ICE_STARTCHN_MIN" documentation="This is a minimum PWM value for engine start channel for an engine stop to be commanded. Setting this value will avoid RC input glitches with low PWM values from causing an unwanted engine stop. A value of zero means any PWM below 1300 triggers an engine stop." user="Standard">
         <field name="Range">0 1300</field>
@@ -14907,6 +14927,35 @@
       <param humanName="Minimum navigation altitude" name="Q_NAVALT_MIN" documentation="This is the altitude in meters above which navigation begins in auto takeoff. Below this altitude the target roll and pitch will be zero. A value of zero disables the feature" user="Advanced">
         <field name="Range">0 5</field>
       </param>
+      <param humanName="Pilot controlled yaw rate" name="Q_PLT_Y_RATE" documentation="Pilot controlled yaw rate max. Used in all pilot controlled modes except QAcro" user="Standard">
+        <field name="Units">deg/s</field>
+        <field name="UnitText">degrees per second</field>
+        <field name="Range">1 360</field>
+      </param>
+      <param humanName="Pilot controlled yaw expo" name="Q_PLT_Y_EXPO" documentation="Pilot controlled yaw expo to allow faster rotation when stick at edges" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="0.1">Very Low</value>
+          <value code="0.2">Low</value>
+          <value code="0.3">Medium</value>
+          <value code="0.4">High</value>
+          <value code="0.5">Very High</value>
+        </values>
+        <field name="Range">-0.5 1.0</field>
+      </param>
+      <param humanName="Pilot yaw rate control input time constant" name="Q_PLT_Y_RATE_TC" documentation="Pilot yaw rate control input time constant. Low numbers lead to sharper response, higher numbers to softer response." user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0 1</field>
+        <field name="Increment">0.01</field>
+        <values>
+          <value code="0.5">Very Soft</value>
+          <value code="0.2">Soft</value>
+          <value code="0.15">Medium</value>
+          <value code="0.1">Crisp</value>
+          <value code="0.05">Very Crisp</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="Q_AUTOTUNE_">
       <param humanName="Autotune axis bitmask" name="Q_AUTOTUNE_AXES" documentation="1-byte bitmap of axes to autotune" user="Standard">
@@ -19823,6 +19872,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -19890,6 +19940,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Telemetry 2 Baud Rate" name="SERIAL2_BAUD" documentation="The baud rate of the Telem2 port. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -19956,6 +20007,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 3 (GPS) Baud Rate" name="SERIAL3_BAUD" documentation="The baud rate used for the Serial 3 (GPS). Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -20022,6 +20074,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 4 Baud Rate" name="SERIAL4_BAUD" documentation="The baud rate used for Serial4. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -20088,6 +20141,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 5 Baud Rate" name="SERIAL5_BAUD" documentation="The baud rate used for Serial5. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -20154,6 +20208,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 6 Baud Rate" name="SERIAL6_BAUD" documentation="The baud rate used for Serial6. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -20273,6 +20328,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 7 Baud Rate" name="SERIAL7_BAUD" documentation="The baud rate used for Serial7. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -20343,6 +20399,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 8 Baud Rate" name="SERIAL8_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">
@@ -20413,6 +20470,7 @@
           <value code="41">CoDevESC</value>
           <value code="42">DisplayPort</value>
           <value code="43">MAVLink High Latency</value>
+          <value code="44">IRC Tramp</value>
         </values>
       </param>
       <param humanName="Serial 9 Baud Rate" name="SERIAL9_BAUD" documentation="The baud rate used for Serial8. Most stm32-based boards can support rates of up to 1500. If you setup a rate you cannot support and then can't connect to your board you should load a firmware from a different vehicle type. That will reset all your parameters to defaults." user="Standard">

@@ -213,6 +213,47 @@
       "User": "Advanced"
     }
   },
+  "AIS_": {
+    "AIS_LIST_MAX": {
+      "Description": "AIS list size of nearest vessels. Longer lists take longer to refresh with lower SRx_ADSB values.",
+      "DisplayName": "AIS vessel list size",
+      "Range": {
+        "high": "100",
+        "low": "1"
+      },
+      "User": "Advanced"
+    },
+    "AIS_LOGGING": {
+      "Bitmask": {
+        "0": "Log all AIVDM messages",
+        "1": "Log only unsupported AIVDM messages",
+        "2": "Log decoded messages"
+      },
+      "Description": "Bitmask of AIS logging options",
+      "DisplayName": "AIS logging options",
+      "User": "Advanced"
+    },
+    "AIS_TIME_OUT": {
+      "Description": "if no updates are received in this time a vessel will be removed from the list",
+      "DisplayName": "AIS vessel time out",
+      "Range": {
+        "high": "2000",
+        "low": "1"
+      },
+      "Units": "s",
+      "User": "Advanced"
+    },
+    "AIS_TYPE": {
+      "Description": "AIS receiver type",
+      "DisplayName": "AIS receiver type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "NMEA AIVDM message"
+      }
+    }
+  },
   "ARMING_": {
     "ARMING_ACCTHRESH": {
       "Description": "Accelerometer error threshold used to determine inconsistent accelerometers. Compares this error range to other accelerometers to detect a hardware or calibration error. Lower value means tighter check and harder to pass arming check. Not all accelerometers are created equal.",
@@ -12180,6 +12221,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12273,6 +12315,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12366,6 +12409,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12459,6 +12503,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12552,6 +12597,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12645,6 +12691,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12738,6 +12785,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12831,6 +12879,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -12924,6 +12973,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",

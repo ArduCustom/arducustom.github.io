@@ -30611,6 +30611,14 @@
         "2": "Always face stern towards target point"
       }
     },
+    "MANUAL_OPTIONS": {
+      "Bitmask": {
+        "0": "Enable steering speed scaling"
+      },
+      "Description": "Manual mode specific options",
+      "DisplayName": "Manual mode options",
+      "User": "Advanced"
+    },
     "MIS_DONE_BEHAVE": {
       "Description": "Behaviour after mission completes",
       "DisplayName": "Mission done behave",
@@ -31202,6 +31210,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31295,6 +31304,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31388,6 +31398,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31481,6 +31492,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31574,6 +31586,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31667,6 +31680,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31760,6 +31774,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31853,6 +31868,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",
@@ -31946,6 +31962,7 @@
         "41": "CoDevESC",
         "42": "DisplayPort",
         "43": "MAVLink High Latency",
+        "44": "IRC Tramp",
         "5": "GPS",
         "7": "Alexmos Gimbal Serial",
         "8": "SToRM32 Gimbal Serial",

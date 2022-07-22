@@ -43,11 +43,11 @@ CAN\_NODE: UAVCAN node that is used for this network
 UAVCAN node should be set implicitly or 0 for dynamic node allocation
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 250 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 250 |
++----------+
 
 
 
@@ -63,11 +63,11 @@ CAN\_BAUDRATE: Bitrate of CAN interface
 Bit rate can be set up to from 10000 to 1000000
 
 
-+-----------------+
-| Range           |
-+=================+
-| 10000 - 1000000 |
-+-----------------+
++------------------+
+| Range            |
++==================+
+| 10000 to 1000000 |
++------------------+
 
 
 
@@ -120,11 +120,11 @@ CAN2\_BAUDRATE: Bitrate of CAN2 interface
 Bit rate can be set up to from 10000 to 1000000
 
 
-+-----------------+
-| Range           |
-+=================+
-| 10000 - 1000000 |
-+-----------------+
++------------------+
+| Range            |
++==================+
+| 10000 to 1000000 |
++------------------+
 
 
 
@@ -177,11 +177,11 @@ CAN3\_BAUDRATE: Bitrate of CAN3 interface
 Bit rate can be set up to from 10000 to 1000000
 
 
-+-----------------+
-| Range           |
-+=================+
-| 10000 - 1000000 |
-+-----------------+
++------------------+
+| Range            |
++==================+
+| 10000 to 1000000 |
++------------------+
 
 
 
@@ -326,11 +326,11 @@ FLASH\_BOOTLOADER: Trigger bootloader update
 DANGER\! When enabled\, the App will perform a bootloader update by copying the embedded bootloader over the existing bootloader\. This may take a few seconds to perform and should only be done if you know what you\'re doing\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -373,11 +373,11 @@ BRD\_SERIAL\_NUM: Serial number of device
 Non\-zero positive values will be shown on the CAN App Name string
 
 
-+----------------+
-| Range          |
-+================+
-| 0 - 2147483648 |
-+----------------+
++-----------------+
+| Range           |
++=================+
+| 0 to 2147483648 |
++-----------------+
 
 
 
@@ -392,11 +392,11 @@ BUZZER\_VOLUME: Buzzer volume
 Control the volume of the buzzer
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -412,11 +412,11 @@ GPS\_PORT: GPS Serial Port
 This is the serial port number where SERIALx\_PROTOCOL will be set to GPS\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -482,11 +482,11 @@ LED\_BRIGHTNESS: LED Brightness
 Select the RGB LED brightness level\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -554,11 +554,11 @@ RNGFND\_PORT: Rangefinder Serial Port
 This is the serial port number where SERIALx\_PROTOCOL will be set to Rangefinder\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -573,11 +573,11 @@ RNGFND\_MAX\_RATE: Rangefinder max rate
 This is the maximum rate we send rangefinder data in Hz\. Zero means no limit
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 0 - 200 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 0 to 200 | hertz |
++-----------+----------+-------+
 
 
 
@@ -645,11 +645,11 @@ ADSB\_PORT: ADSB Serial Port
 This is the serial port number where SERIALx\_PROTOCOL will be set to ADSB\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -674,11 +674,11 @@ HARDPOINT\_RATE: Hardpoint PWM rate
 Hardpoint PWM rate
 
 
-+-----------+----------+-------+
-| Increment | Range    | Units |
-+===========+==========+=======+
-| 1         | 10 - 100 | hertz |
-+-----------+----------+-------+
++-----------+-----------+-------+
+| Increment | Range     | Units |
++===========+===========+=======+
+| 1         | 10 to 100 | hertz |
++-----------+-----------+-------+
 
 
 
@@ -752,11 +752,11 @@ ESC\_TELEM\_PORT: ESC Telemetry Serial Port
 This is the serial port number where SERIALx\_PROTOCOL will be set to ESC Telemetry
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -772,11 +772,11 @@ MSP\_PORT: MSP Serial Port
 This is the serial port number where SERIALx\_PROTOCOL will be set to MSP
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -814,11 +814,11 @@ SYSID\_THISMAV: MAVLink system ID of this vehicle
 Allows setting an individual system id for this vehicle to distinguish it from others on the same network
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 255 |
++----------+
 
 
 
@@ -886,11 +886,11 @@ EFI\_PORT: EFI Serial Port
 This is the serial port number where SERIALx\_PROTOCOL will be set to EFI\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -912,11 +912,110 @@ VEHICLE\_UID: Vehicle unique ID
 Vehicle unique ID
 
 
-+--------------------------+
-| Range                    |
-+==========================+
-| -1073741824 - 1073741824 |
-+--------------------------+
++---------------------------+
+| Range                     |
++===========================+
+| -1073741824 to 1073741824 |
++---------------------------+
+
+
+
+
+
+.. _parameters_AIS_:
+
+AIS\_ Parameters
+----------------
+
+
+.. _AIS_TYPE:
+
+AIS\_TYPE: AIS receiver type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+AIS receiver type
+
+
++--------------------------------+
+| Values                         |
++================================+
+| +-------+--------------------+ |
+| | Value | Meaning            | |
+| +=======+====================+ |
+| | 0     | None               | |
+| +-------+--------------------+ |
+| | 1     | NMEA AIVDM message | |
+| +-------+--------------------+ |
+|                                |
++--------------------------------+
+
+
+
+
+.. _AIS_LIST_MAX:
+
+AIS\_LIST\_MAX: AIS vessel list size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+AIS list size of nearest vessels\. Longer lists take longer to refresh with lower SRx\_ADSB values\.
+
+
++----------+
+| Range    |
++==========+
+| 1 to 100 |
++----------+
+
+
+
+
+.. _AIS_TIME_OUT:
+
+AIS\_TIME\_OUT: AIS vessel time out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+if no updates are received in this time a vessel will be removed from the list
+
+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| 1 to 2000 | seconds |
++-----------+---------+
+
+
+
+
+.. _AIS_LOGGING:
+
+AIS\_LOGGING: AIS logging options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bitmask of AIS logging options
+
+
++-----------------------------------------------+
+| Bitmask                                       |
++===============================================+
+| +-----+-------------------------------------+ |
+| | Bit | Meaning                             | |
+| +=====+=====================================+ |
+| | 0   | Log all AIVDM messages              | |
+| +-----+-------------------------------------+ |
+| | 1   | Log only unsupported AIVDM messages | |
+| +-----+-------------------------------------+ |
+| | 2   | Log decoded messages                | |
+| +-----+-------------------------------------+ |
+|                                               |
++-----------------------------------------------+
 
 
 
@@ -2102,11 +2201,11 @@ BARO\_FLTR\_RNG: Range in which sample is accepted
 This sets the range around the average value that new samples must be within to be accepted\. This can help reduce the impact of noise on sensors that are on long I2C cables\. The value is a percentage from the average value\. A value of zero disables this filter\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -2278,11 +2377,11 @@ BARO1\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2297,11 +2396,11 @@ BARO1\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2316,11 +2415,11 @@ BARO1\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2335,11 +2434,11 @@ BARO1\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2387,11 +2486,11 @@ BARO2\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2406,11 +2505,11 @@ BARO2\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2425,11 +2524,11 @@ BARO2\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2444,11 +2543,11 @@ BARO2\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2496,11 +2595,11 @@ BARO3\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2515,11 +2614,11 @@ BARO3\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2534,11 +2633,11 @@ BARO3\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2553,11 +2652,11 @@ BARO3\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -2673,11 +2772,11 @@ BATT2\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -3172,11 +3271,11 @@ BATT2\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -3192,11 +3291,11 @@ BATT2\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -3250,11 +3349,11 @@ BATT2\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -3370,11 +3469,11 @@ BATT3\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -3869,11 +3968,11 @@ BATT3\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -3889,11 +3988,11 @@ BATT3\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -3947,11 +4046,11 @@ BATT3\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -4067,11 +4166,11 @@ BATT4\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -4566,11 +4665,11 @@ BATT4\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -4586,11 +4685,11 @@ BATT4\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -4644,11 +4743,11 @@ BATT4\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -4764,11 +4863,11 @@ BATT5\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -5263,11 +5362,11 @@ BATT5\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -5283,11 +5382,11 @@ BATT5\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -5341,11 +5440,11 @@ BATT5\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -5461,11 +5560,11 @@ BATT6\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -5960,11 +6059,11 @@ BATT6\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -5980,11 +6079,11 @@ BATT6\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -6038,11 +6137,11 @@ BATT6\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -6158,11 +6257,11 @@ BATT7\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -6657,11 +6756,11 @@ BATT7\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -6677,11 +6776,11 @@ BATT7\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -6735,11 +6834,11 @@ BATT7\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -6855,11 +6954,11 @@ BATT8\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -7354,11 +7453,11 @@ BATT8\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -7374,11 +7473,11 @@ BATT8\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -7432,11 +7531,11 @@ BATT8\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -7552,11 +7651,11 @@ BATT9\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -8051,11 +8150,11 @@ BATT9\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -8071,11 +8170,11 @@ BATT9\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -8129,11 +8228,11 @@ BATT9\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -8249,11 +8348,11 @@ BATT\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -8748,11 +8847,11 @@ BATT\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -8768,11 +8867,11 @@ BATT\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -8826,11 +8925,11 @@ BATT\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -8990,11 +9089,11 @@ COMPASS\_OFS\_X: Compass offsets in milligauss on the X axis
 Offset to be added to the compass x\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -9009,11 +9108,11 @@ COMPASS\_OFS\_Y: Compass offsets in milligauss on the Y axis
 Offset to be added to the compass y\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -9028,11 +9127,11 @@ COMPASS\_OFS\_Z: Compass offsets in milligauss on the Z axis
 Offset to be added to the compass z\-axis values to compensate for metal in the frame
 
 
-+-----------+------------+------------+
-| Increment | Range      | Units      |
-+===========+============+============+
-| 1         | -400 - 400 | milligauss |
-+-----------+------------+------------+
++-----------+-------------+------------+
+| Increment | Range       | Units      |
++===========+=============+============+
+| 1         | -400 to 400 | milligauss |
++-----------+-------------+------------+
 
 
 
@@ -9046,11 +9145,11 @@ COMPASS\_DEC: Compass declination
 An angle to compensate between the true north and magnetic north
 
 
-+-----------+----------------+---------+
-| Increment | Range          | Units   |
-+===========+================+=========+
-| 0.01      | -3.142 - 3.142 | radians |
-+-----------+----------------+---------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 0.01      | -3.142 to 3.142 | radians |
++-----------+-----------------+---------+
 
 
 
@@ -9175,11 +9274,11 @@ COMPASS\_MOT\_X: Motor interference compensation for body frame X axis
 Multiplied by the current throttle and added to the compass\'s x\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -9194,11 +9293,11 @@ COMPASS\_MOT\_Y: Motor interference compensation for body frame Y axis
 Multiplied by the current throttle and added to the compass\'s y\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -9213,11 +9312,11 @@ COMPASS\_MOT\_Z: Motor interference compensation for body frame Z axis
 Multiplied by the current throttle and added to the compass\'s z\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-----------+--------------+-----------------------+
-| Increment | Range        | Units                 |
-+===========+==============+=======================+
-| 1         | -1000 - 1000 | milligauss per ampere |
-+-----------+--------------+-----------------------+
++-----------+---------------+-----------------------+
+| Increment | Range         | Units                 |
++===========+===============+=======================+
+| 1         | -1000 to 1000 | milligauss per ampere |
++-----------+---------------+-----------------------+
 
 
 
@@ -9374,11 +9473,11 @@ COMPASS\_OFS2\_X: Compass2 offsets in milligauss on the X axis
 Offset to be added to compass2\'s x\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -9393,11 +9492,11 @@ COMPASS\_OFS2\_Y: Compass2 offsets in milligauss on the Y axis
 Offset to be added to compass2\'s y\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -9412,11 +9511,11 @@ COMPASS\_OFS2\_Z: Compass2 offsets in milligauss on the Z axis
 Offset to be added to compass2\'s z\-axis values to compensate for metal in the frame
 
 
-+-----------+------------+------------+
-| Increment | Range      | Units      |
-+===========+============+============+
-| 1         | -400 - 400 | milligauss |
-+-----------+------------+------------+
++-----------+-------------+------------+
+| Increment | Range       | Units      |
++===========+=============+============+
+| 1         | -400 to 400 | milligauss |
++-----------+-------------+------------+
 
 
 
@@ -9431,11 +9530,11 @@ COMPASS\_MOT2\_X: Motor interference compensation to compass2 for body frame X a
 Multiplied by the current throttle and added to compass2\'s x\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -9450,11 +9549,11 @@ COMPASS\_MOT2\_Y: Motor interference compensation to compass2 for body frame Y a
 Multiplied by the current throttle and added to compass2\'s y\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -9469,11 +9568,11 @@ COMPASS\_MOT2\_Z: Motor interference compensation to compass2 for body frame Z a
 Multiplied by the current throttle and added to compass2\'s z\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-----------+--------------+-----------------------+
-| Increment | Range        | Units                 |
-+===========+==============+=======================+
-| 1         | -1000 - 1000 | milligauss per ampere |
-+-----------+--------------+-----------------------+
++-----------+---------------+-----------------------+
+| Increment | Range         | Units                 |
++===========+===============+=======================+
+| 1         | -1000 to 1000 | milligauss per ampere |
++-----------+---------------+-----------------------+
 
 
 
@@ -9488,11 +9587,11 @@ COMPASS\_OFS3\_X: Compass3 offsets in milligauss on the X axis
 Offset to be added to compass3\'s x\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -9507,11 +9606,11 @@ COMPASS\_OFS3\_Y: Compass3 offsets in milligauss on the Y axis
 Offset to be added to compass3\'s y\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -9526,11 +9625,11 @@ COMPASS\_OFS3\_Z: Compass3 offsets in milligauss on the Z axis
 Offset to be added to compass3\'s z\-axis values to compensate for metal in the frame
 
 
-+-----------+------------+------------+
-| Increment | Range      | Units      |
-+===========+============+============+
-| 1         | -400 - 400 | milligauss |
-+-----------+------------+------------+
++-----------+-------------+------------+
+| Increment | Range       | Units      |
++===========+=============+============+
+| 1         | -400 to 400 | milligauss |
++-----------+-------------+------------+
 
 
 
@@ -9545,11 +9644,11 @@ COMPASS\_MOT3\_X: Motor interference compensation to compass3 for body frame X a
 Multiplied by the current throttle and added to compass3\'s x\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -9564,11 +9663,11 @@ COMPASS\_MOT3\_Y: Motor interference compensation to compass3 for body frame Y a
 Multiplied by the current throttle and added to compass3\'s y\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -9583,11 +9682,11 @@ COMPASS\_MOT3\_Z: Motor interference compensation to compass3 for body frame Z a
 Multiplied by the current throttle and added to compass3\'s z\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-----------+--------------+-----------------------+
-| Increment | Range        | Units                 |
-+===========+==============+=======================+
-| 1         | -1000 - 1000 | milligauss per ampere |
-+-----------+--------------+-----------------------+
++-----------+---------------+-----------------------+
+| Increment | Range         | Units                 |
++===========+===============+=======================+
+| 1         | -1000 to 1000 | milligauss per ampere |
++-----------+---------------+-----------------------+
 
 
 
@@ -10283,22 +10382,22 @@ COMPASS\_CAL\_FIT: Compass calibration fitness
 This controls the fitness level required for a successful compass calibration\. A lower value makes for a stricter fit \(less likely to pass\)\. This is the value used for the primary magnetometer\. Other magnetometers get double the value\.
 
 
-+-----------+--------+-------------------------+
-| Increment | Range  | Values                  |
-+===========+========+=========================+
-| 0.1       | 4 - 32 | +-------+-------------+ |
-|           |        | | Value | Meaning     | |
-|           |        | +=======+=============+ |
-|           |        | | 4     | Very Strict | |
-|           |        | +-------+-------------+ |
-|           |        | | 8     | Strict      | |
-|           |        | +-------+-------------+ |
-|           |        | | 16    | Default     | |
-|           |        | +-------+-------------+ |
-|           |        | | 32    | Relaxed     | |
-|           |        | +-------+-------------+ |
-|           |        |                         |
-+-----------+--------+-------------------------+
++-----------+---------+-------------------------+
+| Increment | Range   | Values                  |
++===========+=========+=========================+
+| 0.1       | 4 to 32 | +-------+-------------+ |
+|           |         | | Value | Meaning     | |
+|           |         | +=======+=============+ |
+|           |         | | 4     | Very Strict | |
+|           |         | +-------+-------------+ |
+|           |         | | 8     | Strict      | |
+|           |         | +-------+-------------+ |
+|           |         | | 16    | Default     | |
+|           |         | +-------+-------------+ |
+|           |         | | 32    | Relaxed     | |
+|           |         | +-------+-------------+ |
+|           |         |                         |
++-----------+---------+-------------------------+
 
 
 
@@ -10313,11 +10412,11 @@ COMPASS\_OFFS\_MAX: Compass maximum offset
 This sets the maximum allowed compass offset in calibration and arming checks
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 1         | 500 - 3000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 1         | 500 to 3000 |
++-----------+-------------+
 
 
 
@@ -10387,11 +10486,11 @@ COMPASS\_FLTR\_RNG: Range in which sample is accepted
 This sets the range around the average value that new samples must be within to be accepted\. This can help reduce the impact of noise on sensors that are on long I2C cables\. The value is a percentage from the average value\. A value of zero disables this filter\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -10493,11 +10592,11 @@ COMPASS\_SCALE: Compass1 scale factor
 Scaling factor for first compass to compensate for sensor scaling errors\. If this is 0 then no scaling is done
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 1.3 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 1.3 |
++----------+
 
 
 
@@ -10511,11 +10610,11 @@ COMPASS\_SCALE2: Compass2 scale factor
 Scaling factor for 2nd compass to compensate for sensor scaling errors\. If this is 0 then no scaling is done
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 1.3 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 1.3 |
++----------+
 
 
 
@@ -10529,11 +10628,11 @@ COMPASS\_SCALE3: Compass3 scale factor
 Scaling factor for 3rd compass to compensate for sensor scaling errors\. If this is 0 then no scaling is done
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 1.3 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 1.3 |
++----------+
 
 
 
@@ -10668,11 +10767,11 @@ COMPASS\_CUS\_ROLL: Custom orientation roll offset
 Compass mounting position roll offset\. Positive values \= roll right\, negative values \= roll left\. This parameter is only used when COMPASS\_ORIENT\/2\/3 is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -10688,11 +10787,11 @@ COMPASS\_CUS\_PIT: Custom orientation pitch offset
 Compass mounting position pitch offset\. Positive values \= pitch up\, negative values \= pitch down\. This parameter is only used when COMPASS\_ORIENT\/2\/3 is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -10708,11 +10807,11 @@ COMPASS\_CUS\_YAW: Custom orientation yaw offset
 Compass mounting position yaw offset\. Positive values \= yaw right\, negative values \= yaw left\. This parameter is only used when COMPASS\_ORIENT\/2\/3 is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -10760,11 +10859,11 @@ COMPASS\_PMOT\_EXP: per\-motor exponential correction
 This is the exponential correction for the power output of the motor for per\-motor compass correction
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 2 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 2 |
++-----------+--------+
 
 
 
@@ -11152,11 +11251,11 @@ EFI\_COEF1: EFI Calibration Coefficient 1
 Used to calibrate fuel flow for MS protocol \(Slope\)\. This should be calculated from a log at constant fuel usage rate\. Plot \(ECYL\[0\]\.InjT\*EFI\.Rpm\)\/600\.0 to get the duty\_cycle\. Measure actual fuel usage in cm\^3\/min\, and set EFI\_COEF1 \= fuel\_usage\_cm3permin \/ duty\_cycle
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -11171,11 +11270,11 @@ EFI\_COEF2: EFI Calibration Coefficient 2
 Used to calibrate fuel flow for MS protocol \(Offset\)\. This can be used to correct for a non\-zero offset in the fuel consumption calculation of EFI\_COEF1
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 10 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 10 |
++---------+
 
 
 
@@ -11196,11 +11295,11 @@ ESC\_TLM\_MAV\_OFS: ESC Telemetry mavlink offset
 Offset to apply to ESC numbers when reporting as ESC\_TELEMETRY packets over MAVLink\. This allows high numbered motors to be displayed as low numbered ESCs for convenience on GCS displays\. A value of 4 would send ESC on output 5 as ESC number 1 in ESC\_TELEMETRY packets
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 31 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 31 |
++-----------+---------+
 
 
 
@@ -11249,11 +11348,11 @@ FFT\_MINHZ: Minimum Frequency
 Lower bound of FFT frequency detection in Hz\. On larger vehicles the minimum motor frequency is likely to be significantly lower than for smaller vehicles\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 20 - 400 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 20 to 400 | hertz |
++-----------+-------+
 
 
 
@@ -11268,11 +11367,11 @@ FFT\_MAXHZ: Maximum Frequency
 Upper bound of FFT frequency detection in Hz\. On smaller vehicles the maximum motor frequency is likely to be significantly higher than for larger vehicles\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 20 - 495 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 20 to 495 | hertz |
++-----------+-------+
 
 
 
@@ -11288,11 +11387,11 @@ FFT\_SAMPLE\_MODE: Sample Mode
 Sampling mode \(and therefore rate\)\. 0\: Gyro rate sampling\, 1\: Fast loop rate sampling\, 2\: Fast loop rate \/ 2 sampling\, 3\: Fast loop rate \/ 3 sampling\. Takes effect on reboot\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 4 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 4 |
++--------+
 
 
 
@@ -11308,11 +11407,11 @@ FFT\_WINDOW\_SIZE: FFT window size
 Size of window to be used in FFT calculations\. Takes effect on reboot\. Must be a power of 2 and between 32 and 512\. Larger windows give greater frequency resolution but poorer time resolution\, consume more CPU time and may not be appropriate for all vehicles\. Time and frequency resolution are given by the sample\-rate \/ window\-size\. Windows of 256 are only really recommended for F7 class boards\, windows of 512 or more H7 class\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 32 - 1024 |
-+-----------+
++------------+
+| Range      |
++============+
+| 32 to 1024 |
++------------+
 
 
 
@@ -11328,11 +11427,11 @@ FFT\_WINDOW\_OLAP: FFT window overlap
 Percentage of window to be overlapped before another frame is process\. Takes effect on reboot\. A good default is 50\% overlap\. Higher overlap results in more processed frames but not necessarily more temporal resolution\. Lower overlap results in lost information at the frame edges\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 0.9 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 0.9 |
++----------+
 
 
 
@@ -11347,11 +11446,11 @@ FFT\_FREQ\_HOVER: FFT learned hover frequency
 The learned hover noise frequency
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 250 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 250 |
++----------+
 
 
 
@@ -11366,11 +11465,11 @@ FFT\_THR\_REF: FFT learned thrust reference
 FFT learned thrust reference for the hover frequency and FFT minimum frequency\.
 
 
-+------------+
-| Range      |
-+============+
-| 0.01 - 0.9 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 0.01 to 0.9 |
++-------------+
 
 
 
@@ -11385,11 +11484,11 @@ FFT\_SNR\_REF: FFT SNR reference threshold
 FFT SNR reference threshold in dB at which a signal is determined to be present\.
 
 
-+-------------+
-| Range       |
-+=============+
-| 0.0 - 100.0 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 0.0 to 100.0 |
++--------------+
 
 
 
@@ -11404,11 +11503,11 @@ FFT\_ATT\_REF: FFT attenuation for bandwidth calculation
 FFT attenuation level in dB for bandwidth calculation and peak detection\. The bandwidth is calculated by comparing peak power output with the attenuated version\. The default of 15 has shown to be a good compromise in both simulations and real flight\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -11423,11 +11522,11 @@ FFT\_BW\_HOVER: FFT learned bandwidth at hover
 FFT learned bandwidth at hover for the attenuation frequencies\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 200 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 200 |
++----------+
 
 
 
@@ -11443,11 +11542,11 @@ FFT\_HMNC\_FIT: FFT harmonic fit frequency threshold
 FFT harmonic fit frequency threshold percentage at which a signal of the appropriate frequency is determined to be the harmonic of another\. Signals that have a harmonic relationship that varies at most by this percentage are considered harmonics of each other for the purpose of selecting the harmonic notch frequency\. If a match is found then the lower frequency harmonic is always used as the basis for the dynamic harmonic notch\. A value of zero completely disables harmonic matching\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -11497,11 +11596,11 @@ FFT\_NUM\_FRAMES: FFT output frames to retain and average
 Number of output frequency frames to retain and average in order to calculate final frequencies\. Averaging output frames can drastically reduce noise and jitter at the cost of latency as long as the input is stable\. The default is to perform no averaging\. For rapidly changing frequencies \(e\.g\. smaller aircraft\) fewer frames should be averaged\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 8 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 8 |
++--------+
 
 
 
@@ -12126,11 +12225,11 @@ GPS\_MIN\_ELEV: Minimum elevation
 This sets the minimum elevation of satellites above the horizon for them to be used for navigation\. Setting this to \-100 leaves the minimum elevation set to the GPS modules default\.
 
 
-+-----------+---------+
-| Range     | Units   |
-+===========+=========+
-| -100 - 90 | degrees |
-+-----------+---------+
++------------+---------+
+| Range      | Units   |
++============+=========+
+| -100 to 90 | degrees |
++------------+---------+
 
 
 
@@ -12360,20 +12459,20 @@ GPS\_RATE\_MS: GPS update rate in milliseconds
 Controls how often the GPS should provide a position update\. Lowering below 5Hz\(default\) is not allowed\. Raising the rate above 5Hz usually provides little benefit and for some GPS \(eg Ublox M9N\) can severely impact performance\.
 
 
-+----------+--------------+---------------------+
-| Range    | Units        | Values              |
-+==========+==============+=====================+
-| 50 - 200 | milliseconds | +-------+---------+ |
-|          |              | | Value | Meaning | |
-|          |              | +=======+=========+ |
-|          |              | | 100   | 10Hz    | |
-|          |              | +-------+---------+ |
-|          |              | | 125   | 8Hz     | |
-|          |              | +-------+---------+ |
-|          |              | | 200   | 5Hz     | |
-|          |              | +-------+---------+ |
-|          |              |                     |
-+----------+--------------+---------------------+
++-----------+--------------+---------------------+
+| Range     | Units        | Values              |
++===========+==============+=====================+
+| 50 to 200 | milliseconds | +-------+---------+ |
+|           |              | | Value | Meaning | |
+|           |              | +=======+=========+ |
+|           |              | | 100   | 10Hz    | |
+|           |              | +-------+---------+ |
+|           |              | | 125   | 8Hz     | |
+|           |              | +-------+---------+ |
+|           |              | | 200   | 5Hz     | |
+|           |              | +-------+---------+ |
+|           |              |                     |
++-----------+--------------+---------------------+
 
 
 
@@ -12388,20 +12487,20 @@ GPS\_RATE\_MS2: GPS 2 update rate in milliseconds
 Controls how often the GPS should provide a position update\. Lowering below 5Hz\(default\) is not allowed\. Raising the rate above 5Hz usually provides little benefit and for some GPS \(eg Ublox M9N\) can severely impact performance\.
 
 
-+----------+--------------+---------------------+
-| Range    | Units        | Values              |
-+==========+==============+=====================+
-| 50 - 200 | milliseconds | +-------+---------+ |
-|          |              | | Value | Meaning | |
-|          |              | +=======+=========+ |
-|          |              | | 100   | 10Hz    | |
-|          |              | +-------+---------+ |
-|          |              | | 125   | 8Hz     | |
-|          |              | +-------+---------+ |
-|          |              | | 200   | 5Hz     | |
-|          |              | +-------+---------+ |
-|          |              |                     |
-+----------+--------------+---------------------+
++-----------+--------------+---------------------+
+| Range     | Units        | Values              |
++===========+==============+=====================+
+| 50 to 200 | milliseconds | +-------+---------+ |
+|           |              | | Value | Meaning | |
+|           |              | +=======+=========+ |
+|           |              | | 100   | 10Hz    | |
+|           |              | +-------+---------+ |
+|           |              | | 125   | 8Hz     | |
+|           |              | +-------+---------+ |
+|           |              | | 200   | 5Hz     | |
+|           |              | +-------+---------+ |
+|           |              |                     |
++-----------+--------------+---------------------+
 
 
 
@@ -12416,11 +12515,11 @@ GPS\_POS1\_X: Antenna X position offset
 X position of the first GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12435,11 +12534,11 @@ GPS\_POS1\_Y: Antenna Y position offset
 Y position of the first GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12454,11 +12553,11 @@ GPS\_POS1\_Z: Antenna Z position offset
 Z position of the first GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12473,11 +12572,11 @@ GPS\_POS2\_X: Antenna X position offset
 X position of the second GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12492,11 +12591,11 @@ GPS\_POS2\_Y: Antenna Y position offset
 Y position of the second GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12511,11 +12610,11 @@ GPS\_POS2\_Z: Antenna Z position offset
 Z position of the second GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12531,11 +12630,11 @@ GPS\_DELAY\_MS: GPS delay in milliseconds
 Controls the amount of GPS  measurement delay that the autopilot compensates for\. Set to zero to use the default delay for the detected GPS type\.
 
 
-+---------+--------------+
-| Range   | Units        |
-+=========+==============+
-| 0 - 250 | milliseconds |
-+---------+--------------+
++----------+--------------+
+| Range    | Units        |
++==========+==============+
+| 0 to 250 | milliseconds |
++----------+--------------+
 
 
 
@@ -12551,11 +12650,11 @@ GPS\_DELAY\_MS2: GPS 2 delay in milliseconds
 Controls the amount of GPS  measurement delay that the autopilot compensates for\. Set to zero to use the default delay for the detected GPS type\.
 
 
-+---------+--------------+
-| Range   | Units        |
-+=========+==============+
-| 0 - 250 | milliseconds |
-+---------+--------------+
++----------+--------------+
+| Range    | Units        |
++==========+==============+
+| 0 to 250 | milliseconds |
++----------+--------------+
 
 
 
@@ -12598,11 +12697,11 @@ GPS\_BLEND\_TC: Blending time constant
 Controls the slowest time constant applied to the calculation of GPS position and height offsets used to adjust different GPS receivers for steady state position differences\.
 
 
-+------------+---------+
-| Range      | Units   |
-+============+=========+
-| 5.0 - 30.0 | seconds |
-+------------+---------+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| 5.0 to 30.0 | seconds |
++-------------+---------+
 
 
 
@@ -12650,11 +12749,11 @@ GPS\_COM\_PORT: GPS physical COM port
 The physical COM port on the connected device\, currently only applies to SBF GPS
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -12670,11 +12769,11 @@ GPS\_COM\_PORT2: GPS physical COM port
 The physical COM port on the connected device\, currently only applies to SBF GPS
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -12807,11 +12906,11 @@ GPS\_MB1\_OFS\_X: Base antenna X position offset
 X position of the base GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12826,11 +12925,11 @@ GPS\_MB1\_OFS\_Y: Base antenna Y position offset
 Y position of the base GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12845,11 +12944,11 @@ GPS\_MB1\_OFS\_Z: Base antenna Z position offset
 Z position of the base GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12898,11 +12997,11 @@ GPS\_MB2\_OFS\_X: Base antenna X position offset
 X position of the base GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12917,11 +13016,11 @@ GPS\_MB2\_OFS\_Y: Base antenna Y position offset
 Y position of the base GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -12936,11 +13035,11 @@ GPS\_MB2\_OFS\_Z: Base antenna Z position offset
 Z position of the base GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -13109,11 +13208,11 @@ LOG\_FILE\_MB\_FREE: Old logs on the SD card will be deleted to maintain this am
 Set this such that the free space is larger than your largest typical flight log
 
 
-+-----------+----------+
-| Range     | Units    |
-+===========+==========+
-| 10 - 1000 | megabyte |
-+-----------+----------+
++------------+----------+
+| Range      | Units    |
++============+==========+
+| 10 to 1000 | megabyte |
++------------+----------+
 
 
 
@@ -13127,11 +13226,11 @@ LOG\_FILE\_RATEMAX: Maximum logging rate for file backend
 This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means that rate limiting is disabled\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 0 - 1000 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 0 to 1000 | hertz |
++-----------+-------+
 
 
 
@@ -13145,11 +13244,11 @@ LOG\_MAV\_RATEMAX: Maximum logging rate for mavlink backend
 This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 0 - 1000 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 0 to 1000 | hertz |
++-----------+-------+
 
 
 
@@ -13163,11 +13262,11 @@ LOG\_BLK\_RATEMAX: Maximum logging rate for block backend
 This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 0 - 1000 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 0 to 1000 | hertz |
++-----------+-------+
 
 
 
@@ -13517,11 +13616,11 @@ NTF\_BUZZ\_VOLUME: Buzzer volume
 Control the volume of the buzzer
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 100 | percent |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 100 | percent |
++----------+---------+
 
 
 
@@ -13537,11 +13636,11 @@ NTF\_LED\_LEN: Serial LED String Length
 The number of Serial LED\'s to use for notifications \(NeoPixel\'s and ProfiLED\)
 
 
-+--------+
-| Range  |
-+========+
-| 1 - 32 |
-+--------+
++---------+
+| Range   |
++=========+
+| 1 to 32 |
++---------+
 
 
 
@@ -14011,11 +14110,11 @@ OUT\_RATE: Servo default output rate
 This sets the default output rate in Hz for all outputs\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 25 - 400 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 25 to 400 | hertz |
++-----------+-------+
 
 
 
@@ -14209,11 +14308,11 @@ OUT10\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14227,11 +14326,11 @@ OUT10\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14245,11 +14344,11 @@ OUT10\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14550,11 +14649,11 @@ OUT10\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14568,11 +14667,11 @@ OUT10\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14593,11 +14692,11 @@ OUT11\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14611,11 +14710,11 @@ OUT11\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14629,11 +14728,11 @@ OUT11\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14934,11 +15033,11 @@ OUT11\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14952,11 +15051,11 @@ OUT11\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14977,11 +15076,11 @@ OUT12\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -14995,11 +15094,11 @@ OUT12\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15013,11 +15112,11 @@ OUT12\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15318,11 +15417,11 @@ OUT12\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15336,11 +15435,11 @@ OUT12\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15361,11 +15460,11 @@ OUT13\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15379,11 +15478,11 @@ OUT13\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15397,11 +15496,11 @@ OUT13\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15702,11 +15801,11 @@ OUT13\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15720,11 +15819,11 @@ OUT13\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15745,11 +15844,11 @@ OUT14\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15763,11 +15862,11 @@ OUT14\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -15781,11 +15880,11 @@ OUT14\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16086,11 +16185,11 @@ OUT14\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16104,11 +16203,11 @@ OUT14\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16129,11 +16228,11 @@ OUT15\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16147,11 +16246,11 @@ OUT15\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16165,11 +16264,11 @@ OUT15\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16470,11 +16569,11 @@ OUT15\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16488,11 +16587,11 @@ OUT15\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16513,11 +16612,11 @@ OUT16\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16531,11 +16630,11 @@ OUT16\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16549,11 +16648,11 @@ OUT16\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16854,11 +16953,11 @@ OUT16\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16872,11 +16971,11 @@ OUT16\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16897,11 +16996,11 @@ OUT17\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16915,11 +17014,11 @@ OUT17\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -16933,11 +17032,11 @@ OUT17\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17238,11 +17337,11 @@ OUT17\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17256,11 +17355,11 @@ OUT17\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17281,11 +17380,11 @@ OUT18\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17299,11 +17398,11 @@ OUT18\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17317,11 +17416,11 @@ OUT18\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17622,11 +17721,11 @@ OUT18\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17640,11 +17739,11 @@ OUT18\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17665,11 +17764,11 @@ OUT19\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17683,11 +17782,11 @@ OUT19\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -17701,11 +17800,11 @@ OUT19\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18006,11 +18105,11 @@ OUT19\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18024,11 +18123,11 @@ OUT19\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18049,11 +18148,11 @@ OUT1\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18067,11 +18166,11 @@ OUT1\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18085,11 +18184,11 @@ OUT1\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18390,11 +18489,11 @@ OUT1\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18408,11 +18507,11 @@ OUT1\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18433,11 +18532,11 @@ OUT20\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18451,11 +18550,11 @@ OUT20\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18469,11 +18568,11 @@ OUT20\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18774,11 +18873,11 @@ OUT20\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18792,11 +18891,11 @@ OUT20\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18817,11 +18916,11 @@ OUT21\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18835,11 +18934,11 @@ OUT21\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -18853,11 +18952,11 @@ OUT21\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19158,11 +19257,11 @@ OUT21\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19176,11 +19275,11 @@ OUT21\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19201,11 +19300,11 @@ OUT22\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19219,11 +19318,11 @@ OUT22\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19237,11 +19336,11 @@ OUT22\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19542,11 +19641,11 @@ OUT22\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19560,11 +19659,11 @@ OUT22\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19585,11 +19684,11 @@ OUT23\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19603,11 +19702,11 @@ OUT23\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19621,11 +19720,11 @@ OUT23\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19926,11 +20025,11 @@ OUT23\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19944,11 +20043,11 @@ OUT23\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19969,11 +20068,11 @@ OUT24\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -19987,11 +20086,11 @@ OUT24\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20005,11 +20104,11 @@ OUT24\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20310,11 +20409,11 @@ OUT24\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20328,11 +20427,11 @@ OUT24\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20353,11 +20452,11 @@ OUT25\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20371,11 +20470,11 @@ OUT25\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20389,11 +20488,11 @@ OUT25\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20694,11 +20793,11 @@ OUT25\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20712,11 +20811,11 @@ OUT25\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20737,11 +20836,11 @@ OUT26\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20755,11 +20854,11 @@ OUT26\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -20773,11 +20872,11 @@ OUT26\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21078,11 +21177,11 @@ OUT26\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21096,11 +21195,11 @@ OUT26\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21121,11 +21220,11 @@ OUT27\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21139,11 +21238,11 @@ OUT27\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21157,11 +21256,11 @@ OUT27\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21462,11 +21561,11 @@ OUT27\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21480,11 +21579,11 @@ OUT27\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21505,11 +21604,11 @@ OUT28\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21523,11 +21622,11 @@ OUT28\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21541,11 +21640,11 @@ OUT28\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21846,11 +21945,11 @@ OUT28\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21864,11 +21963,11 @@ OUT28\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21889,11 +21988,11 @@ OUT29\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21907,11 +22006,11 @@ OUT29\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -21925,11 +22024,11 @@ OUT29\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22230,11 +22329,11 @@ OUT29\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22248,11 +22347,11 @@ OUT29\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22273,11 +22372,11 @@ OUT2\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22291,11 +22390,11 @@ OUT2\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22309,11 +22408,11 @@ OUT2\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22614,11 +22713,11 @@ OUT2\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22632,11 +22731,11 @@ OUT2\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22657,11 +22756,11 @@ OUT30\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22675,11 +22774,11 @@ OUT30\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22693,11 +22792,11 @@ OUT30\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -22998,11 +23097,11 @@ OUT30\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23016,11 +23115,11 @@ OUT30\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23041,11 +23140,11 @@ OUT31\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23059,11 +23158,11 @@ OUT31\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23077,11 +23176,11 @@ OUT31\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23382,11 +23481,11 @@ OUT31\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23400,11 +23499,11 @@ OUT31\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23425,11 +23524,11 @@ OUT32\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23443,11 +23542,11 @@ OUT32\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23461,11 +23560,11 @@ OUT32\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23766,11 +23865,11 @@ OUT32\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23784,11 +23883,11 @@ OUT32\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23809,11 +23908,11 @@ OUT3\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23827,11 +23926,11 @@ OUT3\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -23845,11 +23944,11 @@ OUT3\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24150,11 +24249,11 @@ OUT3\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24168,11 +24267,11 @@ OUT3\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24193,11 +24292,11 @@ OUT4\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24211,11 +24310,11 @@ OUT4\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24229,11 +24328,11 @@ OUT4\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24534,11 +24633,11 @@ OUT4\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24552,11 +24651,11 @@ OUT4\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24577,11 +24676,11 @@ OUT5\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24595,11 +24694,11 @@ OUT5\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24613,11 +24712,11 @@ OUT5\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24918,11 +25017,11 @@ OUT5\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24936,11 +25035,11 @@ OUT5\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24961,11 +25060,11 @@ OUT6\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24979,11 +25078,11 @@ OUT6\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -24997,11 +25096,11 @@ OUT6\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25302,11 +25401,11 @@ OUT6\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25320,11 +25419,11 @@ OUT6\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25345,11 +25444,11 @@ OUT7\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25363,11 +25462,11 @@ OUT7\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25381,11 +25480,11 @@ OUT7\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25686,11 +25785,11 @@ OUT7\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25704,11 +25803,11 @@ OUT7\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25729,11 +25828,11 @@ OUT8\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25747,11 +25846,11 @@ OUT8\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -25765,11 +25864,11 @@ OUT8\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26070,11 +26169,11 @@ OUT8\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26088,11 +26187,11 @@ OUT8\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26113,11 +26212,11 @@ OUT9\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26131,11 +26230,11 @@ OUT9\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26149,11 +26248,11 @@ OUT9\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26454,11 +26553,11 @@ OUT9\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26472,11 +26571,11 @@ OUT9\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -26650,11 +26749,11 @@ OUT\_BLH\_TMOUT: BLHeli protocol timeout
 This sets the inactivity timeout for the BLHeli protocol in seconds\. If no packets are received in this time normal MAVLink operations are resumed\. A value of 0 means no timeout
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 300 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 300 | seconds |
++----------+---------+
 
 
 
@@ -26668,11 +26767,11 @@ OUT\_BLH\_TRATE: BLHeli telemetry rate
 This sets the rate in Hz for requesting telemetry from ESCs\. It is the rate per ESC\. Setting to zero disables telemetry requests
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 500 | hertz |
++----------+-------+
 
 
 
@@ -26786,11 +26885,11 @@ OUT\_BLH\_POLES: BLHeli Motor Poles
 This allows calculation of true RPM from ESC\'s eRPM\. The default is 14\.
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 127 |
++----------+
 
 
 
@@ -27163,11 +27262,11 @@ OUT\_FTW\_POLES: Nr\. electrical poles
 Number of motor electrical poles
 
 
-+--------+
-| Range  |
-+========+
-| 2 - 50 |
-+--------+
++---------+
+| Range   |
++=========+
+| 2 to 50 |
++---------+
 
 
 
@@ -27188,11 +27287,11 @@ OUT\_ROB\_POSMIN: Robotis servo position min
 Position minimum at servo min value\. This should be within the position control range of the servos\, normally 0 to 4095
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 4095 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 4095 |
++-----------+
 
 
 
@@ -27206,11 +27305,11 @@ OUT\_ROB\_POSMAX: Robotis servo position max
 Position maximum at servo max value\. This should be within the position control range of the servos\, normally 0 to 4095
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 4095 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 4095 |
++-----------+
 
 
 
@@ -27232,11 +27331,11 @@ OUT\_SBUS\_RATE: SBUS default output rate
 This sets the SBUS output frame rate in Hz\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 25 - 250 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 25 to 250 | hertz |
++-----------+-------+
 
 
 
@@ -27654,11 +27753,11 @@ RNGFND1\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -27672,11 +27771,11 @@ RNGFND1\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -27690,11 +27789,11 @@ RNGFND1\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -27709,11 +27808,11 @@ RNGFND1\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27728,11 +27827,11 @@ RNGFND1\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27747,11 +27846,11 @@ RNGFND1\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27808,11 +27907,11 @@ RNGFND1\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -27827,11 +27926,11 @@ RNGFND1\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -27846,11 +27945,11 @@ RNGFND1\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -27865,11 +27964,11 @@ RNGFND1\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -27884,11 +27983,11 @@ RNGFND1\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -27929,11 +28028,11 @@ RNGFND1\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -27948,11 +28047,11 @@ RNGFND1\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -28280,11 +28379,11 @@ RNGFND2\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -28298,11 +28397,11 @@ RNGFND2\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -28316,11 +28415,11 @@ RNGFND2\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -28335,11 +28434,11 @@ RNGFND2\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -28354,11 +28453,11 @@ RNGFND2\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -28373,11 +28472,11 @@ RNGFND2\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -28434,11 +28533,11 @@ RNGFND2\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -28453,11 +28552,11 @@ RNGFND2\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -28472,11 +28571,11 @@ RNGFND2\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -28491,11 +28590,11 @@ RNGFND2\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -28510,11 +28609,11 @@ RNGFND2\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -28555,11 +28654,11 @@ RNGFND2\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -28574,11 +28673,11 @@ RNGFND2\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -28906,11 +29005,11 @@ RNGFND3\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -28924,11 +29023,11 @@ RNGFND3\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -28942,11 +29041,11 @@ RNGFND3\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -28961,11 +29060,11 @@ RNGFND3\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -28980,11 +29079,11 @@ RNGFND3\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -28999,11 +29098,11 @@ RNGFND3\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -29060,11 +29159,11 @@ RNGFND3\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -29079,11 +29178,11 @@ RNGFND3\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -29098,11 +29197,11 @@ RNGFND3\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -29117,11 +29216,11 @@ RNGFND3\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -29136,11 +29235,11 @@ RNGFND3\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -29181,11 +29280,11 @@ RNGFND3\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -29200,11 +29299,11 @@ RNGFND3\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -29532,11 +29631,11 @@ RNGFND4\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -29550,11 +29649,11 @@ RNGFND4\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -29568,11 +29667,11 @@ RNGFND4\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -29587,11 +29686,11 @@ RNGFND4\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -29606,11 +29705,11 @@ RNGFND4\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -29625,11 +29724,11 @@ RNGFND4\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -29686,11 +29785,11 @@ RNGFND4\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -29705,11 +29804,11 @@ RNGFND4\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -29724,11 +29823,11 @@ RNGFND4\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -29743,11 +29842,11 @@ RNGFND4\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -29762,11 +29861,11 @@ RNGFND4\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -29807,11 +29906,11 @@ RNGFND4\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -29826,11 +29925,11 @@ RNGFND4\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -30158,11 +30257,11 @@ RNGFND5\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -30176,11 +30275,11 @@ RNGFND5\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -30194,11 +30293,11 @@ RNGFND5\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -30213,11 +30312,11 @@ RNGFND5\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -30232,11 +30331,11 @@ RNGFND5\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -30251,11 +30350,11 @@ RNGFND5\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -30312,11 +30411,11 @@ RNGFND5\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -30331,11 +30430,11 @@ RNGFND5\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -30350,11 +30449,11 @@ RNGFND5\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -30369,11 +30468,11 @@ RNGFND5\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -30388,11 +30487,11 @@ RNGFND5\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -30433,11 +30532,11 @@ RNGFND5\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -30452,11 +30551,11 @@ RNGFND5\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -30784,11 +30883,11 @@ RNGFND6\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -30802,11 +30901,11 @@ RNGFND6\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -30820,11 +30919,11 @@ RNGFND6\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -30839,11 +30938,11 @@ RNGFND6\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -30858,11 +30957,11 @@ RNGFND6\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -30877,11 +30976,11 @@ RNGFND6\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -30938,11 +31037,11 @@ RNGFND6\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -30957,11 +31056,11 @@ RNGFND6\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -30976,11 +31075,11 @@ RNGFND6\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -30995,11 +31094,11 @@ RNGFND6\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -31014,11 +31113,11 @@ RNGFND6\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -31059,11 +31158,11 @@ RNGFND6\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -31078,11 +31177,11 @@ RNGFND6\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -31410,11 +31509,11 @@ RNGFND7\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -31428,11 +31527,11 @@ RNGFND7\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -31446,11 +31545,11 @@ RNGFND7\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -31465,11 +31564,11 @@ RNGFND7\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -31484,11 +31583,11 @@ RNGFND7\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -31503,11 +31602,11 @@ RNGFND7\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -31564,11 +31663,11 @@ RNGFND7\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -31583,11 +31682,11 @@ RNGFND7\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -31602,11 +31701,11 @@ RNGFND7\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -31621,11 +31720,11 @@ RNGFND7\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -31640,11 +31739,11 @@ RNGFND7\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -31685,11 +31784,11 @@ RNGFND7\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -31704,11 +31803,11 @@ RNGFND7\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -32036,11 +32135,11 @@ RNGFND8\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -32054,11 +32153,11 @@ RNGFND8\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -32072,11 +32171,11 @@ RNGFND8\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -32091,11 +32190,11 @@ RNGFND8\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -32110,11 +32209,11 @@ RNGFND8\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -32129,11 +32228,11 @@ RNGFND8\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -32190,11 +32289,11 @@ RNGFND8\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -32209,11 +32308,11 @@ RNGFND8\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -32228,11 +32327,11 @@ RNGFND8\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -32247,11 +32346,11 @@ RNGFND8\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -32266,11 +32365,11 @@ RNGFND8\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -32311,11 +32410,11 @@ RNGFND8\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -32330,11 +32429,11 @@ RNGFND8\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -32662,11 +32761,11 @@ RNGFND9\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -32680,11 +32779,11 @@ RNGFND9\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -32698,11 +32797,11 @@ RNGFND9\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -32717,11 +32816,11 @@ RNGFND9\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -32736,11 +32835,11 @@ RNGFND9\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -32755,11 +32854,11 @@ RNGFND9\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -32816,11 +32915,11 @@ RNGFND9\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -32835,11 +32934,11 @@ RNGFND9\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -32854,11 +32953,11 @@ RNGFND9\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -32873,11 +32972,11 @@ RNGFND9\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -32892,11 +32991,11 @@ RNGFND9\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -32937,11 +33036,11 @@ RNGFND9\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -32956,11 +33055,11 @@ RNGFND9\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -33288,11 +33387,11 @@ RNGFNDA\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -33306,11 +33405,11 @@ RNGFNDA\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -33324,11 +33423,11 @@ RNGFNDA\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -33343,11 +33442,11 @@ RNGFNDA\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -33362,11 +33461,11 @@ RNGFNDA\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -33381,11 +33480,11 @@ RNGFNDA\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -33442,11 +33541,11 @@ RNGFNDA\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -33461,11 +33560,11 @@ RNGFNDA\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -33480,11 +33579,11 @@ RNGFNDA\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -33499,11 +33598,11 @@ RNGFNDA\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -33518,11 +33617,11 @@ RNGFNDA\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -33563,11 +33662,11 @@ RNGFNDA\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -33582,11 +33681,11 @@ RNGFNDA\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -33635,11 +33734,11 @@ SCR\_VM\_I\_COUNT: Scripting Virtual Machine Instruction Count
 The number virtual machine instructions that can be run before considering a script to have taken an excessive amount of time
 
 
-+-----------+----------------+
-| Increment | Range          |
-+===========+================+
-| 10000     | 1000 - 1000000 |
-+-----------+----------------+
++-----------+-----------------+
+| Increment | Range           |
++===========+=================+
+| 10000     | 1000 to 1000000 |
++-----------+-----------------+
 
 
 
@@ -33655,11 +33754,11 @@ SCR\_HEAP\_SIZE: Scripting Heap Size
 Amount of memory available for scripting
 
 
-+-----------+----------------+
-| Increment | Range          |
-+===========+================+
-| 1024      | 1024 - 1048576 |
-+-----------+----------------+
++-----------+-----------------+
+| Increment | Range           |
++===========+=================+
+| 1024      | 1024 to 1048576 |
++-----------+-----------------+
 
 
 
@@ -33959,6 +34058,8 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -34115,6 +34216,8 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -34273,6 +34376,8 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -34429,6 +34534,8 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -34587,6 +34694,8 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -34743,6 +34852,8 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -35181,11 +35292,11 @@ SERIAL\_PASSTIMO: Serial passthru timeout
 This sets a timeout for serial pass\-through in seconds\. When the pass\-through is enabled by setting the SERIAL\_PASS1 and SERIAL\_PASS2 parameters then it remains in effect until no data comes from the first port for SERIAL\_PASSTIMO seconds\. This allows the port to revent to its normal usage \(such as MAVLink connection to a GCS\) when it is no longer needed\. A value of 0 means no timeout\.
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 120 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 120 | seconds |
++----------+---------+
 
 
 
@@ -35289,6 +35400,8 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -35496,6 +35609,8 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -35702,6 +35817,8 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -35856,11 +35973,11 @@ VISO\_POS\_X: Visual odometry camera X position offset
 X position of the camera in body frame\. Positive X is forward of the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -35875,11 +35992,11 @@ VISO\_POS\_Y: Visual odometry camera Y position offset
 Y position of the camera in body frame\. Positive Y is to the right of the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -35894,11 +36011,11 @@ VISO\_POS\_Z: Visual odometry camera Z position offset
 Z position of the camera in body frame\. Positive Z is down from the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -35957,11 +36074,11 @@ VISO\_DELAY\_MS: Visual odometry sensor delay
 Visual odometry sensor delay relative to inertial measurements
 
 
-+---------+--------------+
-| Range   | Units        |
-+=========+==============+
-| 0 - 250 | milliseconds |
-+---------+--------------+
++----------+--------------+
+| Range    | Units        |
++==========+==============+
+| 0 to 250 | milliseconds |
++----------+--------------+
 
 
 
@@ -35976,11 +36093,11 @@ VISO\_VEL\_M\_NSE: Visual odometry velocity measurement noise
 Visual odometry velocity measurement noise in m\/s
 
 
-+------------+-------------------+
-| Range      | Units             |
-+============+===================+
-| 0.05 - 5.0 | meters per second |
-+------------+-------------------+
++-------------+-------------------+
+| Range       | Units             |
++=============+===================+
+| 0.05 to 5.0 | meters per second |
++-------------+-------------------+
 
 
 
@@ -35995,11 +36112,11 @@ VISO\_POS\_M\_NSE: Visual odometry position measurement noise
 Visual odometry position measurement noise minimum \(meters\)\. This value will be used if the sensor provides a lower noise value \(or no noise value\)
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0.1 - 10.0 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0.1 to 10.0 | meters |
++-------------+--------+
 
 
 
@@ -36014,11 +36131,11 @@ VISO\_YAW\_M\_NSE: Visual odometry yaw measurement noise
 Visual odometry yaw measurement noise minimum \(radians\)\, This value will be used if the sensor provides a lower noise value \(or no noise value\)
 
 
-+------------+---------+
-| Range      | Units   |
-+============+=========+
-| 0.05 - 1.0 | radians |
-+------------+---------+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| 0.05 to 1.0 | radians |
++-------------+---------+
 
 
 
@@ -36064,11 +36181,11 @@ VTX\_POWER: Video Transmitter Power Level
 Video Transmitter Power Level\. Different VTXs support different power levels\, the power level chosen will be rounded down to the nearest supported power level
 
 
-+----------+
-| Range    |
-+==========+
-| 1 - 1000 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 1 to 1000 |
++-----------+
 
 
 
@@ -36082,11 +36199,11 @@ VTX\_CHANNEL: Video Transmitter Channel
 Video Transmitter Channel
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 7 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 7 |
++--------+
 
 
 
@@ -36133,11 +36250,11 @@ VTX\_FREQ: Video Transmitter Frequency
 Video Transmitter Frequency\. The frequency is derived from the setting of BAND and CHANNEL
 
 
-+-------------+----------+
-| Range       | ReadOnly |
-+=============+==========+
-| 5000 - 6000 | True     |
-+-------------+----------+
++--------------+----------+
+| Range        | ReadOnly |
++==============+==========+
+| 5000 to 6000 | True     |
++--------------+----------+
 
 
 
@@ -36183,11 +36300,11 @@ VTX\_MAX\_POWER: Video Transmitter Max Power Level
 Video Transmitter Maximum Power Level\. Different VTXs support different power levels\, this prevents the power aux switch from requesting too high a power level\. The switch supports 6 power levels and the selected power will be a subdivision between 0 and this setting\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 25 - 1000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 25 to 1000 |
++------------+
 
 
 

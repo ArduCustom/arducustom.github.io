@@ -42,11 +42,11 @@ SYSID\_THISMAV: MAVLink system ID of this vehicle
 Allows setting an individual MAVLink system id for this vehicle to distinguish it from others on the same network
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 255 |
++----------+
 
 
 
@@ -61,11 +61,11 @@ SYSID\_MYGCS: Ground station MAVLink system ID
 The identifier of the ground station in the MAVLink protocol\. Don\'t change this unless you also modify the ground station to match\.
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 255 |
++----------+
 
 
 
@@ -79,11 +79,11 @@ AUTOTUNE\_LEVEL: Autotune level
 Level of aggressiveness of pitch and roll PID gains\. Lower values result in a \'softer\' tune\. Level 6 recommended for most planes\. A value of 0 means to keep the current values of RMAX and TCONST for the controllers\, tuning only the PID values
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -97,11 +97,11 @@ TELEM\_DELAY: Telemetry startup delay
 The amount of time \(in seconds\) to delay radio telemetry to prevent an Xbee bricking on power up
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 30 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 30 | seconds |
++-----------+---------+---------+
 
 
 
@@ -147,11 +147,11 @@ KFF\_RDDRMIX: Rudder Mix
 Amount of rudder to add during aileron movement\. Increase if nose initially yaws away from roll\. Reduces adverse yaw\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -166,11 +166,11 @@ KFF\_THRAT2PTCH: Throttle ratio above trim throttle to pitch mix
 Pitch up to add in proportion to throttle above trim throttle\. TRIM\_THROTTLE throttle and under will add 0\° to the pitch target\. 100\% throttle will add this number of degrees to the pitch target\.
 
 
-+-----------+----------+---------+
-| Increment | Range    | Units   |
-+===========+==========+=========+
-| 0.1       | -20 - 20 | degrees |
-+-----------+----------+---------+
++-----------+-----------+---------+
+| Increment | Range     | Units   |
++===========+===========+=========+
+| 0.1       | -20 to 20 | degrees |
++-----------+-----------+---------+
 
 
 
@@ -185,11 +185,11 @@ KFF\_THRAT2PTCHCV: Throttle above trim throttle to pitch mix curve
 Throttle above trim throttle to pitch mix curve
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -100 - 100 | percent |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -100 to 100 | percent |
++-----------+-------------+---------+
 
 
 
@@ -204,11 +204,11 @@ MIX\_THRAT2ELEV: Throttle ratio above trim throttle to elevator PWM offset mix
 The elevator and elevon servos will be offset by that much at 100\% throttle
 
 
-+------------+---------------------+
-| Range      | Units               |
-+============+=====================+
-| -500 - 500 | PWM in microseconds |
-+------------+---------------------+
++-------------+---------------------+
+| Range       | Units               |
++=============+=====================+
+| -500 to 500 | PWM in microseconds |
++-------------+---------------------+
 
 
 
@@ -223,11 +223,11 @@ MIX\_THRAT2ELEVCV: Throttle above trim throttle to elevon curve
 Throttle above trim throttle to elevon curve
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -100 - 100 | percent |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -100 to 100 | percent |
++-----------+-------------+---------+
 
 
 
@@ -242,11 +242,11 @@ MIX\_FLAP2ELEV: Flap position to elevator PWM offset mix
 The elevator and elevon servos will be offset by that much at 100\% flaps
 
 
-+------------+---------------------+
-| Range      | Units               |
-+============+=====================+
-| -500 - 500 | PWM in microseconds |
-+------------+---------------------+
++-------------+---------------------+
+| Range       | Units               |
++=============+=====================+
+| -500 to 500 | PWM in microseconds |
++-------------+---------------------+
 
 
 
@@ -261,11 +261,11 @@ MIX\_FLAP2ELEVCV: Flap position to elevator curve
 Flap position to elevator curve
 
 
-+------------+---------+
-| Range      | Units   |
-+============+=========+
-| -100 - 100 | percent |
-+------------+---------+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| -100 to 100 | percent |
++-------------+---------+
 
 
 
@@ -280,11 +280,11 @@ FBWA\_PITCH\_DOWN: Max pitch down in FBWA\/AUTOTUNE applied when throttle is bel
 Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\. Max pitch down in FBWA\/AUTOTUNE applied when throttle is bellow FBWA\_MPTCHDN\_THR
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.1       | 0 - 15 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.1       | 0 to 15 | degrees |
++-----------+---------+---------+
 
 
 
@@ -299,11 +299,11 @@ FBWA\_MXPTCHD\_THR: Throttle bellow which the plane will pitch down at FBWA\_PIT
 Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\. Throttle bellow which the plane will pitch down at FBWA\_PITCH\_DOWN
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -318,11 +318,11 @@ FBWA\_PTCHDN\_CRV: Determines the shape of the pitch down curve applied by the F
 \-100\=square pitch down curve\, 0\=linear pitch curve\, 100\=square root pitch curve
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -100 - 100 | percent |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -100 to 100 | percent |
++-----------+-------------+---------+
 
 
 
@@ -337,11 +337,11 @@ FBWA\_PTCHDN\_CRVR: Pitch down curve reversal
 Pitch down curve reversal
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -356,11 +356,11 @@ FBWA\_PITCH\_UP: Max pitch up in FBWA\/AUTOTUNE applied when throttle is at FBWA
 Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\. Max pitch up in FBWA\/AUTOTUNE applied when throttle is at FBWA\_MPTCHUP\_THR
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.1       | 0 - 15 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.1       | 0 to 15 | degrees |
++-----------+---------+---------+
 
 
 
@@ -375,11 +375,11 @@ FBWA\_MXPTCHU\_THR: Throttle at which the maximum pitch up FBWA\_PITCH\_UP will 
 Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -394,11 +394,11 @@ FBWA\_MNPTCHU\_THR: Throttle at bellow which to start pitching up
 Part of the FBWA throttle to pitch compensation system\. See the documentation for this system for more information\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -413,11 +413,11 @@ FBWA\_PTCHUP\_CRV: Determines the shape of the pitch up curve applied by the FBW
 \-100\=square pitch curve\, 0\=linear pitch curve\, 100\=square root pitch curve
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -100 - 100 | percent |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -100 to 100 | percent |
++-----------+-------------+---------+
 
 
 
@@ -432,11 +432,11 @@ FBWA\_PTCHUP\_CRVR: Pitch up curve reversal
 Pitch up curve reversal
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -451,11 +451,11 @@ GLIDE\_SLOPE\_MIN: Glide slope minimum
 This controls the minimum altitude change for a waypoint before a glide slope will be used instead of an immediate altitude change\. The default value is 15 meters\, which helps to smooth out waypoint missions where small altitude changes happen near waypoints\. If you don\'t want glide slopes to be used in missions then you can set this to zero\, which will disable glide slope calculations\. Otherwise you can set it to a minimum number of meters of altitude error to the destination waypoint before a glide slope will be used to change altitude\.
 
 
-+-----------+----------+--------+
-| Increment | Range    | Units  |
-+===========+==========+========+
-| 1         | 0 - 1000 | meters |
-+-----------+----------+--------+
++-----------+-----------+--------+
+| Increment | Range     | Units  |
++===========+===========+========+
+| 1         | 0 to 1000 | meters |
++-----------+-----------+--------+
 
 
 
@@ -470,11 +470,11 @@ GLIDE\_SLOPE\_THR: Glide slope threshold
 This controls the height above the glide slope the plane may be before rebuilding a glide slope\. This is useful for smoothing out an autotakeoff
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 1         | 0 - 100 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 1         | 0 to 100 | meters |
++-----------+----------+--------+
 
 
 
@@ -488,11 +488,11 @@ TKOFF\_THR\_MINSPD: Takeoff throttle min speed
 Minimum GPS ground speed in m\/s used by the speed check that un\-suppresses throttle in auto\-takeoff\. This can be be used for catapult launches where you want the motor to engage only after the plane leaves the catapult\, but it is preferable to use the TKOFF\_THR\_MINACC and TKOFF\_THR\_DELAY parameters for catapult launches due to the errors associated with GPS measurements\. For hand launches with a pusher prop it is strongly advised that this parameter be set to a value no less than 4 m\/s to provide additional protection against premature motor start\. Note that the GPS velocity will lag the real velocity by about 0\.5 seconds\. The ground speed check is delayed by the TKOFF\_THR\_DELAY parameter\.
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.1       | 0 - 30 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.1       | 0 to 30 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -506,11 +506,11 @@ TKOFF\_THR\_MINACC: Takeoff throttle min acceleration
 Minimum forward acceleration in m\/s\/s before arming the ground speed check in auto\-takeoff\. This is meant to be used for hand launches\. Setting this value to 0 disables the acceleration test which means the ground speed check will always be armed which could allow GPS velocity jumps to start the engine\. For hand launches and bungee launches this should be set to around 15\. Also see TKOFF\_ACCEL\_CNT paramter for control of full \"shake to arm\"\.
 
 
-+-----------+--------+--------------------------+
-| Increment | Range  | Units                    |
-+===========+========+==========================+
-| 0.1       | 0 - 30 | meters per square second |
-+-----------+--------+--------------------------+
++-----------+---------+--------------------------+
+| Increment | Range   | Units                    |
++===========+=========+==========================+
+| 0.1       | 0 to 30 | meters per square second |
++-----------+---------+--------------------------+
 
 
 
@@ -524,11 +524,11 @@ TKOFF\_THR\_DELAY: Takeoff throttle delay
 This parameter sets the time delay \(in 1\/10ths of a second\) that the ground speed check is delayed after the forward acceleration check controlled by TKOFF\_THR\_MINACC has passed\. For hand launches with pusher propellers it is essential that this is set to a value of no less than 2 \(0\.2 seconds\) to ensure that the aircraft is safely clear of the throwers arm before the motor can start\. For bungee launches a larger value can be used \(such as 30\) to give time for the bungee to release from the aircraft before the motor is started\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 0 - 127 | deciseconds |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 0 to 127 | deciseconds |
++-----------+----------+-------------+
 
 
 
@@ -542,11 +542,11 @@ TKOFF\_TDRAG\_ELEV: Takeoff tail dragger elevator
 This parameter sets the amount of elevator to apply during the initial stage of a takeoff\. It is used to hold the tail wheel of a taildragger on the ground during the initial takeoff stage to give maximum steering\. This option should be combined with the TKOFF\_TDRAG\_SPD1 option and the GROUND\_STEER\_ALT option along with tuning of the ground steering controller\. A value of zero means to bypass the initial \"tail hold\" stage of takeoff\. Set to zero for hand and catapult launch\. For tail\-draggers you should normally set this to 100\, meaning full up elevator during the initial stage of takeoff\. For most tricycle undercarriage aircraft a value of zero will work well\, but for some tricycle aircraft a small negative value \(say around \-20 to \-30\) will apply down elevator which will hold the nose wheel firmly on the ground during initial acceleration\. Only use a negative value if you find that the nosewheel doesn\'t grip well during takeoff\. Too much down elevator on a tricycle undercarriage may cause instability in steering as the plane pivots around the nosewheel\. Add down elevator 10 percent at a time\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -100 - 100 | percent |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -100 to 100 | percent |
++-----------+-------------+---------+
 
 
 
@@ -560,11 +560,11 @@ TKOFF\_TDRAG\_SPD1: Takeoff tail dragger speed1
 This parameter sets the airspeed at which to stop holding the tail down and transition to rudder control of steering on the ground\. When TKOFF\_TDRAG\_SPD1 is reached the pitch of the aircraft will be held level until TKOFF\_ROTATE\_SPD is reached\, at which point the takeoff pitch specified in the mission will be used to \"rotate\" the pitch for takeoff climb\. Set TKOFF\_TDRAG\_SPD1 to zero to go straight to rotation\. This should be set to zero for hand launch and catapult launch\. It should also be set to zero for tricycle undercarriages unless you are using the method above to genetly hold the nose wheel down\. For tail dragger aircraft it should be set just below the stall speed\.
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.1       | 0 - 30 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.1       | 0 to 30 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -578,11 +578,11 @@ TKOFF\_ROTATE\_SPD: Takeoff rotate speed
 This parameter sets the airspeed at which the aircraft will \"rotate\"\, setting climb pitch specified in the mission\. If TKOFF\_ROTATE\_SPD is zero then the climb pitch will be used as soon as takeoff is started\. For hand launch and catapult launches a TKOFF\_ROTATE\_SPD of zero should be set\. For all ground launches TKOFF\_ROTATE\_SPD should be set above the stall speed\, usually by about 10 to 30 percent
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.1       | 0 - 30 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.1       | 0 to 30 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -596,11 +596,11 @@ TKOFF\_THR\_SRATE: Takeoff throttle slew rate
 This parameter sets the slew rate for the throttle during auto takeoff\. When this is zero the THR\_SLEWRATE parameter is used during takeoff\. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control\. The value is a percentage throttle change per second\, so a value of 20 means to advance the throttle over 5 seconds on takeoff\. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle\. A value of \-1 means no limit on slew rate in takeoff\.
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | -1 - 127 | percent per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | -1 to 127 | percent per second |
++-----------+-----------+--------------------+
 
 
 
@@ -615,11 +615,11 @@ TKOFF\_PLIM\_SEC: Takeoff pitch limit reduction
 This parameter reduces the pitch minimum limit of an auto\-takeoff just a few seconds before it reaches the target altitude\. This reduces overshoot by allowing the flight controller to start leveling off a few seconds before reaching the target height\. When set to zero\, the mission pitch min is enforced all the way to and through the target altitude\, otherwise the pitch min slowly reduces to zero in the final segment\. This is the pitch\_min\, not the demand\. The flight controller should still be commanding to gain altitude to finish the takeoff but with this param it is not forcing it higher than it wants to be\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.5       | 0 - 10 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.5       | 0 to 10 | seconds |
++-----------+---------+---------+
 
 
 
@@ -634,11 +634,11 @@ TKOFF\_FLAP\_PCNT: Takeoff flap percentage
 The amount of flaps \(as a percentage\) to apply in automatic takeoff
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -652,11 +652,11 @@ LEVEL\_ROLL\_LIMIT: Level flight roll limit
 This controls the maximum bank angle in degrees during flight modes where level flight is desired\, such as in the final stages of landing\, and during auto takeoff\. This should be a small angle \(such as 5 degrees\) to prevent a wing hitting the runway during takeoff or landing\. Setting this to zero will completely disable heading hold on auto takeoff and final landing approach\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 45 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 45 | degrees |
++-----------+---------+---------+
 
 
 
@@ -670,11 +670,11 @@ RTL\_LVL\_RLL\_LMT: RTL level flight roll limit
 This controls the maximum bank angle in degrees during RTL climb before turning
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 45 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 45 | degrees |
++-----------+---------+---------+
 
 
 
@@ -743,11 +743,11 @@ ALT\_OFFSET: Altitude offset
 This is added to the target altitude in automatic flight\. It can be used to add a global altitude offset to a mission
 
 
-+-----------+----------------+--------+
-| Increment | Range          | Units  |
-+===========+================+========+
-| 1         | -32767 - 32767 | meters |
-+-----------+----------------+--------+
++-----------+-----------------+--------+
+| Increment | Range           | Units  |
++===========+=================+========+
+| 1         | -32767 to 32767 | meters |
++-----------+-----------------+--------+
 
 
 
@@ -761,11 +761,11 @@ WP\_RADIUS: Waypoint Radius
 Defines the maximum distance from a waypoint that when crossed indicates the waypoint may be complete\. To avoid the aircraft looping around the waypoint in case it misses by more than the WP\_RADIUS an additional check is made to see if the aircraft has crossed a \"finish line\" passing through the waypoint and perpendicular to the flight path from the previous waypoint\. If that finish line is crossed then the waypoint is considered complete\. Note that the navigation controller may decide to turn later than WP\_RADIUS before a waypoint\, based on how sharp the turn is and the speed of the aircraft\. It is safe to set WP\_RADIUS much larger than the usual turn radius of your aircraft and the navigation controller will work out when to turn\. If you set WP\_RADIUS too small then you will tend to overshoot the turns\.
 
 
-+-----------+-----------+--------+
-| Increment | Range     | Units  |
-+===========+===========+========+
-| 1         | 1 - 32767 | meters |
-+-----------+-----------+--------+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | 1 to 32767 | meters |
++-----------+------------+--------+
 
 
 
@@ -779,11 +779,11 @@ WP\_MAX\_RADIUS: Waypoint Maximum Radius
 Sets the maximum distance to a waypoint for the waypoint to be considered complete\. This overrides the \"cross the finish line\" logic that is normally used to consider a waypoint complete\. For normal AUTO behaviour this parameter should be set to zero\. Using a non\-zero value is only recommended when it is critical that the aircraft does approach within the given radius\, and should loop around until it has done so\. This can cause the aircraft to loop forever if its turn radius is greater than the maximum radius set\.
 
 
-+-----------+-----------+--------+
-| Increment | Range     | Units  |
-+===========+===========+========+
-| 1         | 0 - 32767 | meters |
-+-----------+-----------+--------+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | 0 to 32767 | meters |
++-----------+------------+--------+
 
 
 
@@ -797,11 +797,11 @@ WP\_LOITER\_RAD: Waypoint Loiter Radius
 Defines the distance from the waypoint center\, the plane will maintain during a loiter\. If you set this value to a negative number then the default loiter direction will be counter\-clockwise instead of clockwise\.
 
 
-+-----------+----------------+--------+
-| Increment | Range          | Units  |
-+===========+================+========+
-| 1         | -32767 - 32767 | meters |
-+-----------+----------------+--------+
++-----------+-----------------+--------+
+| Increment | Range           | Units  |
++===========+=================+========+
+| 1         | -32767 to 32767 | meters |
++-----------+-----------------+--------+
 
 
 
@@ -815,11 +815,11 @@ RTL\_RADIUS: RTL loiter radius
 Defines the radius of the loiter circle when in RTL mode\. If this is zero then WP\_LOITER\_RAD is used\. If the radius is negative then a counter\-clockwise is used\. If positive then a clockwise loiter is used\.
 
 
-+-----------+----------------+--------+
-| Increment | Range          | Units  |
-+===========+================+========+
-| 1         | -32767 - 32767 | meters |
-+-----------+----------------+--------+
++-----------+-----------------+--------+
+| Increment | Range           | Units  |
++===========+=================+========+
+| 1         | -32767 to 32767 | meters |
++-----------+-----------------+--------+
 
 
 
@@ -858,11 +858,11 @@ ARSPD\_FBW\_MIN: Minimum Airspeed
 Minimum airspeed demanded in automatic throttle modes\. Should be set to 20\% higher than level flight stall speed\.
 
 
-+-----------+---------+-------------------+
-| Increment | Range   | Units             |
-+===========+=========+===================+
-| 1         | 5 - 100 | meters per second |
-+-----------+---------+-------------------+
++-----------+----------+-------------------+
+| Increment | Range    | Units             |
++===========+==========+===================+
+| 1         | 5 to 100 | meters per second |
++-----------+----------+-------------------+
 
 
 
@@ -876,11 +876,11 @@ ARSPD\_FBW\_MAX: Maximum Airspeed
 Maximum airspeed demanded in automatic throttle modes\. Should be set slightly less than level flight speed at THR\_MAX and also at least 50\% above ARSPD\_FBW\_MIN to allow for accurate TECS altitude control\.
 
 
-+-----------+---------+-------------------+
-| Increment | Range   | Units             |
-+===========+=========+===================+
-| 1         | 5 - 100 | meters per second |
-+-----------+---------+-------------------+
++-----------+----------+-------------------+
+| Increment | Range    | Units             |
++===========+==========+===================+
+| 1         | 5 to 100 | meters per second |
++-----------+----------+-------------------+
 
 
 
@@ -894,11 +894,11 @@ ARSPD\_GLIDING: Airspeed target when gliding in auto throttle modes
 Airspeed target when gliding in auto throttle modes\. If set to 0 use ARSPD\_FBW\_MIN instead \(default\)
 
 
-+-----------+---------+-------------------+
-| Increment | Range   | Units             |
-+===========+=========+===================+
-| 1         | 5 - 100 | meters per second |
-+-----------+---------+-------------------+
++-----------+----------+-------------------+
+| Increment | Range    | Units             |
++===========+==========+===================+
+| 1         | 5 to 100 | meters per second |
++-----------+----------+-------------------+
 
 
 
@@ -982,11 +982,11 @@ TERRAIN\_LOOKAHD: Terrain lookahead
 This controls how far ahead the terrain following code looks to ensure it stays above upcoming terrain\. A value of zero means no lookahead\, so the controller will track only the terrain directly below the aircraft\. The lookahead will never extend beyond the next waypoint when in AUTO mode\.
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 10000 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 10000 | meters |
++------------+--------+
 
 
 
@@ -1000,11 +1000,11 @@ FBWB\_CLIMB\_RATE: Fly By Wire B altitude change rate
 This sets the rate in m\/s at which FBWB and CRUISE modes will change its target altitude for full elevator deflection\. Note that the actual climb rate of the aircraft can be lower than this\, depending on your airspeed and throttle control settings\. If you have this parameter set to the default value of 2\.0\, then holding the elevator at maximum deflection for 10 seconds would change the target altitude by 20 meters\.
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.1       | 1 - 10 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.1       | 1 to 10 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -1018,11 +1018,11 @@ THR\_MIN: Minimum Throttle
 Minimum throttle percentage used in all modes except manual\, provided THR\_PASS\_STAB is not set\. Negative values allow reverse thrust if hardware supports it\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -100 - 100 | percent |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -100 to 100 | percent |
++-----------+-------------+---------+
 
 
 
@@ -1036,11 +1036,11 @@ THR\_MAX: Maximum Throttle
 Maximum throttle percentage used in all modes except manual\, provided THR\_PASS\_STAB is not set\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -1055,11 +1055,11 @@ THR\_DZ: Throttle deadzone
 No command will be applied to the throttle ESC or servo unless the command is at least this value
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 100 | percent |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 100 | percent |
++----------+---------+
 
 
 
@@ -1074,11 +1074,11 @@ TKOFF\_THR\_MAX: Maximum Throttle for takeoff
 The maximum throttle setting during automatic takeoff\. If this is zero then THR\_MAX is used for takeoff as well\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -1092,11 +1092,11 @@ THR\_AUTO\_SRATE: Throttle slew rate
 Maximum change in throttle percentage per second\. Lower limit  based on 1 microsend of servo increase per loop\. Divide SCHED\_LOOP\_RATE by approximately 10 to determine minimum achievable value\.
 
 
-+-----------+---------+--------------------+
-| Increment | Range   | Units              |
-+===========+=========+====================+
-| 1         | 0 - 127 | percent per second |
-+-----------+---------+--------------------+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | 0 to 127 | percent per second |
++-----------+----------+--------------------+
 
 
 
@@ -1111,11 +1111,11 @@ FLAP\_SLEWRATE: Flap slew rate
 maximum percentage change in flap output per second\. A setting of 25 means to not change the flap by more than 25\% of the full flap range in one second\. A value of 0 means no rate limiting\.
 
 
-+-----------+---------+--------------------+
-| Increment | Range   | Units              |
-+===========+=========+====================+
-| 1         | 0 - 100 | percent per second |
-+-----------+---------+--------------------+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | 0 to 100 | percent per second |
++-----------+----------+--------------------+
 
 
 
@@ -1208,11 +1208,11 @@ THR\_FS\_VALUE: Throttle Failsafe Value
 The PWM level on the throttle input channel below which throttle failsafe triggers\. Note that this should be well below the normal minimum for your throttle channel\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 1         | 925 - 2200 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 1         | 925 to 2200 |
++-----------+-------------+
 
 
 
@@ -1226,11 +1226,11 @@ TRIM\_THROTTLE: Throttle cruise percentage
 Target percentage of throttle to apply for flight in automatic throttle modes and throttle percentage that maintains TRIM\_ARSPD\_CM\. Caution\: low battery voltages at the end of flights may require higher throttle to maintain airspeed\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 0.1       | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 0.1       | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -1300,11 +1300,11 @@ FS\_SHORT\_TIMEOUT: Short failsafe timeout
 The time in seconds that a failsafe condition has to persist before a short failsafe event will occur\. This defaults to 1\.5 seconds
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 0.5       | 1 - 100 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 0.5       | 1 to 100 | seconds |
++-----------+----------+---------+
 
 
 
@@ -1347,11 +1347,11 @@ FS\_LONG\_TIMEOUT: Long failsafe timeout
 The time in seconds that a failsafe condition has to persist before a long failsafe event will occur\. This defaults to 5 seconds\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 0.5       | 1 - 300 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 0.5       | 1 to 300 | seconds |
++-----------+----------+---------+
 
 
 
@@ -1365,11 +1365,11 @@ FS\_ELAND\_DELAY: Failsafe emergency landing delay
 The time in seconds that a failsafe condition has to persist after reaching home before an emergency landing is triggered\. The FS long action needs to trigger RTL for this to work\. Set to 0 to disable \(default\)
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 600 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 600 | seconds |
++-----------+----------+---------+
 
 
 
@@ -1392,11 +1392,11 @@ FS\_ELAND\_GLDALT: Failsafe emergency landing gliding altitude
 Altitude below which the plane will start gliding in FS RTL emergency landing
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 0.1       | 0 - 600 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 0.1       | 0 to 600 | meters |
++-----------+----------+--------+
 
 
 
@@ -1410,11 +1410,11 @@ FS\_ELAND\_LVLALT: Failsafe emergency landing leveling altitude
 Altitude below which the plane will level in FS RTL emergency landing\. Only used when FS\_ELAND\_UPDWIND is 0\. Set to \-1 to disable and continue landing in spiral until touching the ground\.
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 0.1       | 0 - 600 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 0.1       | 0 to 600 | meters |
++-----------+----------+--------+
 
 
 
@@ -1428,11 +1428,11 @@ FS\_ELAND\_LOTRAD: Failsafe emergency landing loiter radius
 Failsafe emergency landing loiter radius\. Set to 0 to use RTL\_RADIUS\.
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 0.1       | 0 - 600 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 0.1       | 0 to 600 | meters |
++-----------+----------+--------+
 
 
 
@@ -1476,11 +1476,11 @@ FLTMODE\_CH: Flightmode channel
 RC Channel to use for flight mode control
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 1 - 16 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 1 to 16 |
++-----------+---------+
 
 
 
@@ -1992,11 +1992,11 @@ LIM\_ROLL\_CD: Maximum Bank Angle
 Maximum bank angle commanded in modes with stabilized limits\. Increase this value for sharper turns\, but decrease to prevent accelerated stalls\.
 
 
-+-----------+----------+--------------+
-| Increment | Range    | Units        |
-+===========+==========+==============+
-| 10        | 0 - 9000 | centidegrees |
-+-----------+----------+--------------+
++-----------+-----------+--------------+
+| Increment | Range     | Units        |
++===========+===========+==============+
+| 10        | 0 to 9000 | centidegrees |
++-----------+-----------+--------------+
 
 
 
@@ -2010,11 +2010,11 @@ LIM\_PITCH\_MAX: Maximum Pitch Angle
 Maximum pitch up angle commanded in modes with stabilized limits\.
 
 
-+-----------+----------+--------------+
-| Increment | Range    | Units        |
-+===========+==========+==============+
-| 10        | 0 - 9000 | centidegrees |
-+-----------+----------+--------------+
++-----------+-----------+--------------+
+| Increment | Range     | Units        |
++===========+===========+==============+
+| 10        | 0 to 9000 | centidegrees |
++-----------+-----------+--------------+
 
 
 
@@ -2028,11 +2028,11 @@ LIM\_PITCH\_MIN: Minimum Pitch Angle
 Maximum pitch down angle commanded in modes with stabilized limits
 
 
-+-----------+-----------+--------------+
-| Increment | Range     | Units        |
-+===========+===========+==============+
-| 10        | -9000 - 0 | centidegrees |
-+-----------+-----------+--------------+
++-----------+------------+--------------+
+| Increment | Range      | Units        |
++===========+============+==============+
+| 10        | -9000 to 0 | centidegrees |
++-----------+------------+--------------+
 
 
 
@@ -2046,11 +2046,11 @@ ACRO\_ROLL\_RATE: ACRO mode roll rate
 The maximum roll rate at full stick deflection in ACRO mode
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 500 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 500 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -2064,11 +2064,11 @@ ACRO\_PITCH\_RATE: ACRO mode pitch rate
 The maximum pitch rate at full stick deflection in ACRO mode
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 500 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 500 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -2082,11 +2082,11 @@ ACRO\_YAW\_RATE: ACRO mode yaw rate
 The maximum yaw rate at full stick deflection in ACRO mode\. If this is zero then rudder is directly controlled by rudder stick input\. This option is only available if you also set YAW\_RATE\_ENABLE to 1\.
 
 
-+-----------+---------+--------------------+
-| Increment | Range   | Units              |
-+===========+=========+====================+
-| 1         | 0 - 500 | degrees per second |
-+-----------+---------+--------------------+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | 0 to 500 | degrees per second |
++-----------+----------+--------------------+
 
 
 
@@ -2125,11 +2125,11 @@ GROUND\_STEER\_ALT: Ground steer altitude
 Altitude at which to use the ground steering controller on the rudder\. If non\-zero then the STEER2SRV controller will be used to control the rudder for altitudes within this limit of the home altitude\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | -100 - 100 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | -100 to 100 | meters |
++-----------+-------------+--------+
 
 
 
@@ -2144,11 +2144,11 @@ GROUND\_STEER\_DPS: Ground steer rate
 Ground steering rate in degrees per second for full rudder stick deflection
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 360 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 360 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -2162,11 +2162,11 @@ MIXING\_GAIN: Mixing Gain
 The gain for the Vtail and elevon output mixers\. The default is 0\.5\, which ensures that the mixer doesn\'t saturate\, allowing both input channels to go to extremes while retaining control over the output\. Hardware mixers often have a 1\.0 gain\, which gives more servo throw\, but can saturate\. If you don\'t have enough throw on your servos with VTAIL\_OUTPUT or ELEVON\_OUTPUT enabled then you can raise the gain using MIXING\_GAIN\. The mixer allows outputs in the range 900 to 2100 microseconds\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.5 - 1.2 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.5 to 1.2 |
++------------+
 
 
 
@@ -2205,11 +2205,11 @@ MIXING\_OFFSET: Mixing Offset
 The offset for the Vtail and elevon output mixers\, as a percentage\. This can be used in combination with MIXING\_GAIN to configure how the control surfaces respond to input\. The response to aileron or elevator input can be increased by setting this parameter to a positive or negative value\. A common usage is to enter a positive value to increase the aileron response of the elevons of a flying wing\. The default value of zero will leave the aileron\-input response equal to the elevator\-input response\.
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| -50 - 50 | percent |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| -50 to 50 | percent |
++-----------+---------+
 
 
 
@@ -2223,11 +2223,11 @@ DSPOILR\_RUD\_RATE: Differential spoilers rudder rate
 Sets the amount of deflection that the rudder output will apply to the differential spoilers\, as a percentage\. The default value of 100 results in full rudder applying full deflection\. A value of 0 will result in the differential spoilers exactly following the elevons \(no rudder effect\)\.
 
 
-+------------+---------+
-| Range      | Units   |
-+============+=========+
-| -100 - 100 | percent |
-+------------+---------+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| -100 to 100 | percent |
++-------------+---------+
 
 
 
@@ -2339,11 +2339,11 @@ SCALING\_SPEED: speed used for speed scaling calculations
 Airspeed in m\/s to use when calculating surface speed scaling\. Note that changing this value will affect all PID values
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.1       | 0 - 50 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.1       | 0 to 50 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -2377,11 +2377,11 @@ TRIM\_PITCH: Pitch angle offset
 Offset applied to AHRS pitch used for in\-flight pitch trimming\. Correct ground leveling is better than changing this parameter\.
 
 
-+-----------+----------+---------+
-| Increment | Range    | Units   |
-+===========+==========+=========+
-| 0.1       | -45 - 45 | degrees |
-+-----------+----------+---------+
++-----------+-----------+---------+
+| Increment | Range     | Units   |
++===========+===========+=========+
+| 0.1       | -45 to 45 | degrees |
++-----------+-----------+---------+
 
 
 
@@ -2450,11 +2450,11 @@ FLAP\_EXTED\_PCT: Auto flaps extended position percentage of max deployment
 The maximum percentage of flap deployment in automatic throttle modes\. It is the flaps position used when target airspeed is lower or equal to FLAP\_EXTED\_SPEED\. Use zero to disable auto flaps
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -2469,11 +2469,11 @@ FLAP\_RETED\_SPD: Auto flaps retracted speed
 The speed in meters per second at which the flaps will start to be automatically extended in automatic throttle modes\.
 
 
-+-----------+---------+-------------------+
-| Increment | Range   | Units             |
-+===========+=========+===================+
-| 0.1       | 0 - 100 | meters per second |
-+-----------+---------+-------------------+
++-----------+----------+-------------------+
+| Increment | Range    | Units             |
++===========+==========+===================+
+| 0.1       | 0 to 100 | meters per second |
++-----------+----------+-------------------+
 
 
 
@@ -2488,11 +2488,11 @@ FLAP\_EXTED\_SPD: Auto flaps deployed speed
 The speed in meters per second at which the flaps will be extended to FLAP\_EXTED\_PCT of the maximum deployment in automatic throttle modes\.
 
 
-+-----------+---------+-------------------+
-| Increment | Range   | Units             |
-+===========+=========+===================+
-| 0.1       | 0 - 100 | meters per second |
-+-----------+---------+-------------------+
++-----------+----------+-------------------+
+| Increment | Range    | Units             |
++===========+==========+===================+
+| 0.1       | 0 to 100 | meters per second |
++-----------+----------+-------------------+
 
 
 
@@ -2507,11 +2507,11 @@ OVERRIDE\_CHAN: IO override channel
 If set to a non\-zero value then this is an RC input channel number to use for giving IO manual control in case the main FMU microcontroller on a board with a IO co\-processor fails\. When this RC input channel goes above 1750 the FMU microcontroller will no longer be involved in controlling the servos and instead the IO microcontroller will directly control the servos\. Note that IO manual control will be automatically activated if the FMU crashes for any reason\. This parameter allows you to test for correct manual behaviour without actually crashing the FMU\. This parameter is can be set to a non\-zero value either for ground testing purposes or for giving the effect of an external override control board\. Note that you may set OVERRIDE\_CHAN to the same channel as FLTMODE\_CH to get IO based override when in flight mode 6\. Note that when override is triggered due to a FMU crash the 6 auxiliary output channels on the FMU will no longer be updated\, so all the flight controls you need must be assigned to the first 8 channels on boards with an IOMCU\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 16 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 16 |
++-----------+---------+
 
 
 
@@ -2555,11 +2555,11 @@ CRASH\_ACC\_THRESH: Crash Deceleration Threshold
 X\-Axis deceleration threshold to notify the crash detector that there was a possible impact which helps disarm the motor quickly after a crash\. This value should be much higher than normal negative x\-axis forces during normal flight\, check flight log files to determine the average IMU\.x values for your aircraft and motor type\. Higher value means less sensative \(triggers on higher impact\)\. For electric planes that don\'t vibrate much during fight a value of 25 is good \(that\'s about 2\.5G\)\. For petrol\/nitro planes you\'ll want a higher value\. Set to 0 to disable the collision detector\.
 
 
-+-----------+----------+--------------------------+
-| Increment | Range    | Units                    |
-+===========+==========+==========================+
-| 1         | 10 - 127 | meters per square second |
-+-----------+----------+--------------------------+
++-----------+-----------+--------------------------+
+| Increment | Range     | Units                    |
++===========+===========+==========================+
+| 1         | 10 to 127 | meters per square second |
++-----------+-----------+--------------------------+
 
 
 
@@ -2573,11 +2573,11 @@ MIXING\_DIFF: Mixing differential amount
 The amount of differential mixing\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| -90 - 90 | percent |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| -90 to 90 | percent |
++-----------+---------+
 
 
 
@@ -2666,11 +2666,11 @@ RUDD\_DT\_GAIN: rudder differential thrust gain
 gain control from rudder to differential thrust
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -2739,18 +2739,18 @@ HOME\_RESET\_ALT: Home reset altitude threshold
 When the aircraft is within this altitude of the home waypoint\, while disarmed it will automatically update the home position\. Set to 0 to continously reset it\.
 
 
-+----------+--------+--------------------------+
-| Range    | Units  | Values                   |
-+==========+========+==========================+
-| -1 - 127 | meters | +-------+--------------+ |
-|          |        | | Value | Meaning      | |
-|          |        | +=======+==============+ |
-|          |        | | -1    | Never reset  | |
-|          |        | +-------+--------------+ |
-|          |        | | 0     | Always reset | |
-|          |        | +-------+--------------+ |
-|          |        |                          |
-+----------+--------+--------------------------+
++-----------+--------+--------------------------+
+| Range     | Units  | Values                   |
++===========+========+==========================+
+| -1 to 127 | meters | +-------+--------------+ |
+|           |        | | Value | Meaning      | |
+|           |        | +=======+==============+ |
+|           |        | | -1    | Never reset  | |
+|           |        | +-------+--------------+ |
+|           |        | | 0     | Always reset | |
+|           |        | +-------+--------------+ |
+|           |        |                          |
++-----------+--------+--------------------------+
 
 
 
@@ -2820,11 +2820,11 @@ TKOFF\_ACCEL\_CNT: Takeoff throttle acceleration count
 This is the number of acceleration events to require for arming with TKOFF\_THR\_MINACC\. The default is 1\, which means a single forward acceleration above TKOFF\_THR\_MINACC will arm\. By setting this higher than 1 you can require more forward\/backward movements to arm\.
 
 
-+--------+
-| Range  |
-+========+
-| 1 - 10 |
-+--------+
++---------+
+| Range   |
++=========+
+| 1 to 10 |
++---------+
 
 
 
@@ -2839,11 +2839,11 @@ DSPOILER\_CROW\_W1: Differential spoiler crow flaps outer weight
 This is amount of deflection applied to the two outer surfaces for differential spoilers for flaps to give crow flaps\. It is a number from 0 to 100\. At zero no crow flaps are applied\. A recommended starting value is 25\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -2858,11 +2858,11 @@ DSPOILER\_CROW\_W2: Differential spoiler crow flaps inner weight
 This is amount of deflection applied to the two inner surfaces for differential spoilers for flaps to give crow flaps\. It is a number from 0 to 100\. At zero no crow flaps are applied\. A recommended starting value is 45\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -2876,11 +2876,11 @@ TKOFF\_TIMEOUT: Takeoff timeout
 This is the timeout for an automatic takeoff\. If this is non\-zero and the aircraft does not reach a ground speed of at least 4 m\/s within this number of seconds then the takeoff is aborted and the vehicle disarmed\. If the value is zero then no timeout applies\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -2925,11 +2925,11 @@ DSPOILER\_AILMTCH: Differential spoiler aileron matching
 This scales down the inner flaps so less than full downwards range can be used for differential spoiler and full span ailerons\, 100 is use full range\, upwards travel is unaffected
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -2944,11 +2944,11 @@ FWD\_BAT\_VOLT\_MAX: Forward throttle battery voltage compensation maximum volta
 Forward throttle battery voltage compensation maximum voltage \(voltage above this will have no additional scaling effect on thrust\)\. Recommend 4\.2 \* cell count\, 0 \= Disabled\. Recommend THR\_MAX is set to no more than 100 x FWD\_BAT\_VOLT\_MIN \/ FWD\_BAT\_VOLT\_MAX\, THR\_MIN is set to no less than \-100 x FWD\_BAT\_VOLT\_MIN \/ FWD\_BAT\_VOLT\_MAX and climb descent rate limits are set accordingly\.
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 0.1       | 6 - 35 | volt  |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 0.1       | 6 to 35 | volt  |
++-----------+---------+-------+
 
 
 
@@ -2963,11 +2963,11 @@ FWD\_BAT\_VOLT\_MIN: Forward throttle battery voltage compensation minimum volta
 Forward throttle battery voltage compensation minimum voltage \(voltage below this will have no additional scaling effect on thrust\)\.  Recommend 3\.5 \* cell count\, 0 \= Disabled\. Recommend THR\_MAX is set to no more than 100 x FWD\_BAT\_VOLT\_MIN \/ FWD\_BAT\_VOLT\_MAX\, THR\_MIN is set to no less than \-100 x FWD\_BAT\_VOLT\_MIN \/ FWD\_BAT\_VOLT\_MAX and climb descent rate limits are set accordingly\.
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 0.1       | 6 - 35 | volt  |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 0.1       | 6 to 35 | volt  |
++-----------+---------+-------+
 
 
 
@@ -3035,11 +3035,11 @@ RTL\_CLIMB\_MIN: RTL minimum climb
 The vehicle will climb this many m during the initial climb portion of the RTL\. During this time the roll will be limited to RTL\_LVL\_RLL\_LMT degrees\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 1         | 0 - 30 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 1         | 0 to 30 | meters |
++-----------+---------+--------+
 
 
 
@@ -3053,11 +3053,11 @@ MAN\_EXPO\_ROLL: Manual control expo for roll
 Percentage exponential for roll input in MANUAL\, ACRO and TRAINING modes
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 100 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 100 |
++-----------+----------+
 
 
 
@@ -3071,11 +3071,11 @@ MAN\_EXPO\_PITCH: Manual input expo for pitch
 Percentage exponential for pitch input in MANUAL\, ACRO and TRAINING modes
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 100 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 100 |
++-----------+----------+
 
 
 
@@ -3089,11 +3089,11 @@ MAN\_EXPO\_RUDDER: Manual input expo for rudder
 Percentage exponential for rudder input in MANUAL\, ACRO and TRAINING modes
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 100 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 100 |
++-----------+----------+
 
 
 
@@ -3187,11 +3187,11 @@ TKOFF\_IDL\_DELAY: Takeoff idle throttle delay
 This parameter sets the delay between raising the throttle and the throttle actually starting to increase towards the set idle throttle value
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -3205,11 +3205,11 @@ TKOFF\_IDL\_SRATE: Takeoff idle throttle slew rate
 This parameter sets the slew rate for the takeoff idle throttle\. When this is zero the TKOFF\_THR\_SLEWRATE parameter is used
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | -1 - 127 | percent per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | -1 to 127 | percent per second |
++-----------+-----------+--------------------+
 
 
 
@@ -3224,11 +3224,11 @@ TKOFF\_THR\_IDLE: Idle throttle for takeoff
 The throttle to use before launch when the throttle stick is raised
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -3242,11 +3242,11 @@ RTL\_SINK\_MAX: Max sink rate in RTL mode
 Max sink rate in RTL mode\. Set to 0 to use TECS\_SINK\_MAX
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.5       | 1 - 20 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.5       | 1 to 20 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -3260,11 +3260,11 @@ RTL\_CLIMB\_MAX: Max climb rate in RTL mode
 Max climb rate in RTL mode\. Set to 0 to use TECS\_CLMB\_MAX
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.5       | 1 - 20 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.5       | 1 to 20 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -3278,11 +3278,11 @@ AUTO\_SINK\_MAX: Max sink rate in auto mode
 Max sink rate in auto mode\. Set to 0 to use TECS\_SINK\_MAX
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.5       | 1 - 20 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.5       | 1 to 20 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -3296,11 +3296,11 @@ AUTO\_CLIMB\_MAX: Max climb rate in auto mode
 Max climb rate in auto mode\. Set to 0 to use TECS\_CLMB\_MAX
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.5       | 1 - 20 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.5       | 1 to 20 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -3314,11 +3314,11 @@ CRUISE\_YAW\_RATE: Max cruise yaw rate commanded with rudder channel
 Max cruise yaw rate commanded with rudder channel if the rudder channel heading control is enabled in FLIGHT\_OPTIONS
 
 
-+-----------+---------+--------------------+
-| Increment | Range   | Units              |
-+===========+=========+====================+
-| 1         | 5 - 360 | degrees per second |
-+-----------+---------+--------------------+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | 5 to 360 | degrees per second |
++-----------+----------+--------------------+
 
 
 
@@ -3333,11 +3333,11 @@ AILERON\_DIFF: Amount of differential throws applied to the ailerons
 Amount of differential throws applied to the ailerons\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| -90 - 90 | percent |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| -90 to 90 | percent |
++-----------+---------+
 
 
 
@@ -3352,11 +3352,11 @@ ELEVATOR\_DIFF: Amount of differential throws applied to the elevator \(does not
 Amount of differential throws applied to the elevator \(does not apply to elevons\)\. A positive number reduces the control surfaces down travel\. A negative number reduces the control surfaces up travel
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| -90 - 90 | percent |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| -90 to 90 | percent |
++-----------+---------+
 
 
 
@@ -3371,11 +3371,11 @@ THR\_EXPO\_AUTO: Auto throttle square response curve
 Amount of square response curve to apply to throttle in auto throttle modes
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 100 | percent |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 100 | percent |
++----------+---------+
 
 
 
@@ -3390,11 +3390,11 @@ THR\_EXPO\_MANUAL: Manual throttle square response curve
 Amount of square response curve to apply to throttle in manual throttle modes
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 100 | percent |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 100 | percent |
++----------+---------+
 
 
 
@@ -3850,11 +3850,11 @@ VEHICLE\_UID: Vehicle unique ID
 Vehicle unique ID
 
 
-+--------------------------+
-| Range                    |
-+==========================+
-| -1073741824 - 1073741824 |
-+--------------------------+
++---------------------------+
+| Range                     |
++===========================+
+| -1073741824 to 1073741824 |
++---------------------------+
 
 
 
@@ -3909,11 +3909,11 @@ ADSB\_LIST\_MAX: ADSB vehicle list size
 ADSB list size of nearest vehicles\. Longer lists take longer to refresh with lower SRx\_ADSB values\.
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 100 |
++----------+
 
 
 
@@ -3928,11 +3928,11 @@ ADSB\_LIST\_RADIUS: ADSB vehicle list radius filter
 ADSB vehicle list radius filter\. Vehicles detected outside this radius will be completely ignored\. They will not show up in the SRx\_ADSB stream to the GCS and will not be considered in any avoidance calculations\. A value of 0 will disable this filter\.
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0 - 100000 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0 to 100000 | meters |
++-------------+--------+
 
 
 
@@ -3947,11 +3947,11 @@ ADSB\_ICAO\_ID: ICAO\_ID vehicle identification number
 ICAO\_ID unique vehicle identification number of this aircraft\. This is an integer limited to 24bits\. If set to 0 then one will be randomly generated\. If set to \-1 then static information is not sent\, transceiver is assumed pre\-programmed\.
 
 
-+---------------+
-| Range         |
-+===============+
-| -1 - 16777215 |
-+---------------+
++----------------+
+| Range          |
++================+
+| -1 to 16777215 |
++----------------+
 
 
 
@@ -4172,11 +4172,11 @@ ADSB\_SQUAWK: Squawk code
 VFR squawk \(Mode 3\/A\) code is a pre\-programmed default code when the pilot is flying VFR and not in contact with ATC\. In the USA\, the VFR squawk code is octal 1200 \(hex 0x280\, decimal 640\) and in most parts of Europe the VFR squawk code is octal 7000\. If an invalid octal number is set then it will be reset to 1200\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 0 - 7777 | octal |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 0 to 7777 | octal |
++-----------+-------+
 
 
 
@@ -4221,11 +4221,11 @@ ADSB\_LIST\_ALT: ADSB vehicle list altitude filter
 ADSB vehicle list altitude filter\. Vehicles detected above this altitude will be completely ignored\. They will not show up in the SRx\_ADSB stream to the GCS and will not be considered in any avoidance calculations\. A value of 0 will disable this filter\.
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -4595,11 +4595,11 @@ AHRS\_GPS\_GAIN: AHRS GPS gain
 This controls how much to use the GPS to correct the attitude\. This should never be set to zero for a plane as it would result in the plane losing control in turns\. For a plane please use the default value of 1\.0\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| .01       | 0.0 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| .01       | 0.0 to 1.0 |
++-----------+------------+
 
 
 
@@ -4642,11 +4642,11 @@ AHRS\_YAW\_P: Yaw P
 This controls the weight the compass or GPS has on the heading\. A higher value means the heading will track the yaw source \(GPS or compass\) more rapidly\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| .01       | 0.1 - 0.4 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| .01       | 0.1 to 0.4 |
++-----------+------------+
 
 
 
@@ -4661,11 +4661,11 @@ AHRS\_RP\_P: AHRS RP\_P
 This controls how fast the accelerometers correct the attitude
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| .01       | 0.1 - 0.4 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| .01       | 0.1 to 0.4 |
++-----------+------------+
 
 
 
@@ -4680,11 +4680,11 @@ AHRS\_WIND\_MAX: Maximum wind
 This sets the maximum allowable difference between ground speed and airspeed\. This allows the plane to cope with a failing airspeed sensor\. A value of zero means to use the airspeed as is\. See ARSPD\_OPTIONS and ARSPD\_MAX\_WIND to disable airspeed sensors\.
 
 
-+-----------+---------+-------------------+
-| Increment | Range   | Units             |
-+===========+=========+===================+
-| 1         | 0 - 127 | meters per second |
-+-----------+---------+-------------------+
++-----------+----------+-------------------+
+| Increment | Range    | Units             |
++===========+==========+===================+
+| 1         | 0 to 127 | meters per second |
++-----------+----------+-------------------+
 
 
 
@@ -4698,11 +4698,11 @@ AHRS\_TRIM\_X: AHRS Trim Roll
 Compensates for the roll angle difference between the control board and the frame\. Positive values make the vehicle roll right\.
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 0.01      | -0.1745 - +0.1745 | radians |
-+-----------+-------------------+---------+
++-----------+--------------------+---------+
+| Increment | Range              | Units   |
++===========+====================+=========+
+| 0.01      | -0.1745 to +0.1745 | radians |
++-----------+--------------------+---------+
 
 
 
@@ -4716,11 +4716,11 @@ AHRS\_TRIM\_Y: AHRS Trim Pitch
 Compensates for the pitch angle difference between the control board and the frame\. Positive values make the vehicle pitch up\/back\.
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 0.01      | -0.1745 - +0.1745 | radians |
-+-----------+-------------------+---------+
++-----------+--------------------+---------+
+| Increment | Range              | Units   |
++===========+====================+=========+
+| 0.01      | -0.1745 to +0.1745 | radians |
++-----------+--------------------+---------+
 
 
 
@@ -4735,11 +4735,11 @@ AHRS\_TRIM\_Z: AHRS Trim Yaw
 Not Used
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 0.01      | -0.1745 - +0.1745 | radians |
-+-----------+-------------------+---------+
++-----------+--------------------+---------+
+| Increment | Range              | Units   |
++===========+====================+=========+
+| 0.01      | -0.1745 to +0.1745 | radians |
++-----------+--------------------+---------+
 
 
 
@@ -4868,11 +4868,11 @@ AHRS\_COMP\_BETA: AHRS Velocity Complementary Filter Beta Coefficient
 This controls the time constant for the cross\-over frequency used to fuse AHRS \(airspeed and heading\) and GPS data to estimate ground velocity\. Time constant is 0\.1\/beta\. A larger time constant will use GPS data less and a small time constant will use air data less\.
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| .01       | 0.001 - 0.5 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| .01       | 0.001 to 0.5 |
++-----------+--------------+
 
 
 
@@ -4887,11 +4887,11 @@ AHRS\_GPS\_MINSATS: AHRS GPS Minimum satellites
 Minimum number of satellites visible to use GPS for velocity based corrections attitude correction\. This defaults to 6\, which is about the point at which the velocity numbers from a GPS become too unreliable for accurate correction of the accelerometers\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -4936,11 +4936,11 @@ AHRS\_CUSTOM\_ROLL: Board orientation roll offset
 Autopilot mounting position roll offset\. Positive values \= roll right\, negative values \= roll left\. This parameter is only used when AHRS\_ORIENTATION is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -4955,11 +4955,11 @@ AHRS\_CUSTOM\_PIT: Board orientation pitch offset
 Autopilot mounting position pitch offset\. Positive values \= pitch up\, negative values \= pitch down\. This parameter is only used when AHRS\_ORIENTATION is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -4974,11 +4974,110 @@ AHRS\_CUSTOM\_YAW: Board orientation yaw offset
 Autopilot mounting position yaw offset\. Positive values \= yaw right\, negative values \= yaw left\. This parameter is only used when AHRS\_ORIENTATION is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+
+.. _parameters_AIS_:
+
+AIS\_ Parameters
+----------------
+
+
+.. _AIS_TYPE:
+
+AIS\_TYPE: AIS receiver type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+AIS receiver type
+
+
++--------------------------------+
+| Values                         |
++================================+
+| +-------+--------------------+ |
+| | Value | Meaning            | |
+| +=======+====================+ |
+| | 0     | None               | |
+| +-------+--------------------+ |
+| | 1     | NMEA AIVDM message | |
+| +-------+--------------------+ |
+|                                |
++--------------------------------+
+
+
+
+
+.. _AIS_LIST_MAX:
+
+AIS\_LIST\_MAX: AIS vessel list size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+AIS list size of nearest vessels\. Longer lists take longer to refresh with lower SRx\_ADSB values\.
+
+
++----------+
+| Range    |
++==========+
+| 1 to 100 |
++----------+
+
+
+
+
+.. _AIS_TIME_OUT:
+
+AIS\_TIME\_OUT: AIS vessel time out
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+if no updates are received in this time a vessel will be removed from the list
+
+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| 1 to 2000 | seconds |
++-----------+---------+
+
+
+
+
+.. _AIS_LOGGING:
+
+AIS\_LOGGING: AIS logging options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Bitmask of AIS logging options
+
+
++-----------------------------------------------+
+| Bitmask                                       |
++===============================================+
+| +-----+-------------------------------------+ |
+| | Bit | Meaning                             | |
+| +=====+=====================================+ |
+| | 0   | Log all AIVDM messages              | |
+| +-----+-------------------------------------+ |
+| | 1   | Log only unsupported AIVDM messages | |
+| +-----+-------------------------------------+ |
+| | 2   | Log decoded messages                | |
+| +-----+-------------------------------------+ |
+|                                               |
++-----------------------------------------------+
 
 
 
@@ -5028,11 +5127,11 @@ ARMING\_ACCTHRESH: Accelerometer error threshold
 Accelerometer error threshold used to determine inconsistent accelerometers\. Compares this error range to other accelerometers to detect a hardware or calibration error\. Lower value means tighter check and harder to pass arming check\. Not all accelerometers are created equal\.
 
 
-+------------+--------------------------+
-| Range      | Units                    |
-+============+==========================+
-| 0.25 - 3.0 | meters per square second |
-+------------+--------------------------+
++-------------+--------------------------+
+| Range       | Units                    |
++=============+==========================+
+| 0.25 to 3.0 | meters per square second |
++-------------+--------------------------+
 
 
 
@@ -6192,11 +6291,11 @@ BARO\_FLTR\_RNG: Range in which sample is accepted
 This sets the range around the average value that new samples must be within to be accepted\. This can help reduce the impact of noise on sensors that are on long I2C cables\. The value is a percentage from the average value\. A value of zero disables this filter\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -6368,11 +6467,11 @@ BARO1\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6387,11 +6486,11 @@ BARO1\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6406,11 +6505,11 @@ BARO1\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6425,11 +6524,11 @@ BARO1\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6477,11 +6576,11 @@ BARO2\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6496,11 +6595,11 @@ BARO2\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6515,11 +6614,11 @@ BARO2\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6534,11 +6633,11 @@ BARO2\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6586,11 +6685,11 @@ BARO3\_WCF\_FWD: Pressure error coefficient in positive X direction \(forward\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the X body axis\. If the baro height estimate rises during forwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6605,11 +6704,11 @@ BARO3\_WCF\_BCK: Pressure error coefficient in negative X direction \(backwards\
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the X body axis\. If the baro height estimate rises during backwards flight\, then this will be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6624,11 +6723,11 @@ BARO3\_WCF\_RGT: Pressure error coefficient in positive Y direction \(right\)
 This is the ratio of static pressure error to dynamic pressure generated by a positive wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the right\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6643,11 +6742,11 @@ BARO3\_WCF\_LFT: Pressure error coefficient in negative Y direction \(left\)
 This is the ratio of static pressure error to dynamic pressure generated by a negative wind relative velocity along the Y body axis\. If the baro height estimate rises during sideways flight to the left\, then this should be a negative number\. Multirotors can use this feature only if using EKF3 and if the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters have been tuned\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.05      | -1.0 - 1.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.05      | -1.0 to 1.0 |
++-----------+-------------+
 
 
 
@@ -6782,11 +6881,11 @@ BATT2\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -7349,11 +7448,11 @@ BATT2\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -7369,11 +7468,11 @@ BATT2\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -7427,11 +7526,11 @@ BATT2\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -7566,11 +7665,11 @@ BATT3\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -8133,11 +8232,11 @@ BATT3\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -8153,11 +8252,11 @@ BATT3\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -8211,11 +8310,11 @@ BATT3\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -8350,11 +8449,11 @@ BATT4\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -8917,11 +9016,11 @@ BATT4\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -8937,11 +9036,11 @@ BATT4\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -8995,11 +9094,11 @@ BATT4\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -9134,11 +9233,11 @@ BATT5\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -9701,11 +9800,11 @@ BATT5\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -9721,11 +9820,11 @@ BATT5\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -9779,11 +9878,11 @@ BATT5\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -9918,11 +10017,11 @@ BATT6\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -10485,11 +10584,11 @@ BATT6\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -10505,11 +10604,11 @@ BATT6\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -10563,11 +10662,11 @@ BATT6\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -10702,11 +10801,11 @@ BATT7\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -11269,11 +11368,11 @@ BATT7\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -11289,11 +11388,11 @@ BATT7\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -11347,11 +11446,11 @@ BATT7\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -11486,11 +11585,11 @@ BATT8\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -12053,11 +12152,11 @@ BATT8\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -12073,11 +12172,11 @@ BATT8\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -12131,11 +12230,11 @@ BATT8\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -12270,11 +12369,11 @@ BATT9\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -12837,11 +12936,11 @@ BATT9\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -12857,11 +12956,11 @@ BATT9\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -12915,11 +13014,11 @@ BATT9\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -13054,11 +13153,11 @@ BATT\_LOW\_TIMER: Low voltage timeout
 This is the timeout in seconds before a low voltage event will be triggered\. For aircraft with low C batteries it may be necessary to raise this in order to cope with low voltage on long takeoffs\. A value of zero disables low voltage errors\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 120 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 120 | seconds |
++-----------+----------+---------+
 
 
 
@@ -13621,11 +13720,11 @@ BATT\_I2C\_BUS: Battery monitor I2C bus number
 Battery monitor I2C bus number
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 3 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
 
 
 
@@ -13641,11 +13740,11 @@ BATT\_I2C\_ADDR: Battery monitor I2C address
 Battery monitor I2C address
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -13699,11 +13798,11 @@ BATT\_CURR\_MULT: Scales reported power monitor current
 Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications
 
 
-+---------+
-| Range   |
-+=========+
-| .1 - 10 |
-+---------+
++----------+
+| Range    |
++==========+
+| .1 to 10 |
++----------+
 
 
 
@@ -13934,11 +14033,11 @@ BRD\_SERIAL\_NUM: User\-defined serial number
 User\-defined serial number of this vehicle\, it can be any arbitrary number you want and has no effect on the autopilot
 
 
-+--------------------+
-| Range              |
-+====================+
-| -8388608 - 8388607 |
-+--------------------+
++---------------------+
+| Range               |
++=====================+
+| -8388608 to 8388607 |
++---------------------+
 
 
 
@@ -14004,11 +14103,11 @@ BRD\_HEAT\_TARG: Board heater temperature target
 Board heater target temperature for boards with controllable heating units\. DO NOT SET to \-1 on the Cube\. Set to \-1 to disable the heater\, please reboot after setting to \-1\.
 
 
-+---------+-----------------+
-| Range   | Units           |
-+=========+=================+
-| -1 - 80 | degrees Celsius |
-+---------+-----------------+
++----------+-----------------+
+| Range    | Units           |
++==========+=================+
+| -1 to 80 | degrees Celsius |
++----------+-----------------+
 
 
 
@@ -14148,11 +14247,11 @@ BRD\_VBUS\_MIN: Autopilot board voltage requirement
 Minimum voltage on the autopilot power rail to allow the aircraft to arm\. 0 to disable the check\.
 
 
-+-----------+-----------+-------+
-| Increment | Range     | Units |
-+===========+===========+=======+
-| 0.1       | 4.0 - 5.5 | volt  |
-+-----------+-----------+-------+
++-----------+------------+-------+
+| Increment | Range      | Units |
++===========+============+=======+
+| 0.1       | 4.0 to 5.5 | volt  |
++-----------+------------+-------+
 
 
 
@@ -14167,11 +14266,11 @@ BRD\_VSERVO\_MIN: Servo voltage requirement
 Minimum voltage on the servo rail to allow the aircraft to arm\. 0 to disable the check\.
 
 
-+-----------+------------+-------+
-| Increment | Range      | Units |
-+===========+============+=======+
-| 0.1       | 3.3 - 12.0 | volt  |
-+-----------+------------+-------+
++-----------+-------------+-------+
+| Increment | Range       | Units |
++===========+=============+=======+
+| 0.1       | 3.3 to 12.0 | volt  |
++-----------+-------------+-------+
 
 
 
@@ -14186,11 +14285,11 @@ BRD\_SD\_SLOWDOWN: microSD slowdown
 This is a scaling factor to slow down microSD operation\. It can be used on flight board and microSD card combinations where full speed is not reliable\. For normal full speed operation a value of 0 should be used\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 32 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 32 |
++-----------+---------+
 
 
 
@@ -14267,11 +14366,11 @@ BRD\_BOOT\_DELAY: Boot delay
 This adds a delay in milliseconds to boot to ensure peripherals initialise fully
 
 
-+-----------+--------------+
-| Range     | Units        |
-+===========+==============+
-| 0 - 10000 | milliseconds |
-+-----------+--------------+
++------------+--------------+
+| Range      | Units        |
++============+==============+
+| 0 to 10000 | milliseconds |
++------------+--------------+
 
 
 
@@ -14286,11 +14385,11 @@ BRD\_HEAT\_P: Board Heater P gain
 Board Heater P gain
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 1 - 500 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 1 to 500 |
++-----------+----------+
 
 
 
@@ -14305,11 +14404,11 @@ BRD\_HEAT\_I: Board Heater I gain
 Board Heater integrator gain
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.1       | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.1       | 0 to 1 |
++-----------+--------+
 
 
 
@@ -14324,11 +14423,11 @@ BRD\_HEAT\_IMAX: Board Heater IMAX
 Board Heater integrator maximum
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 100 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 100 |
++-----------+----------+
 
 
 
@@ -14344,11 +14443,11 @@ BRD\_ALT\_CONFIG: Alternative HW config
 Select an alternative hardware configuration\. A value of zero selects the default configuration for this board\. Other values are board specific\. Please see the documentation for your board for details on any alternative configuration values that may be available\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -14363,11 +14462,11 @@ BRD\_HEAT\_LOWMGN: Board heater temp lower margin
 Arming check will fail if temp is lower than this margin below BRD\_HEAT\_TARG\. 0 disables the low temperature check
 
 
-+--------+-----------------+
-| Range  | Units           |
-+========+=================+
-| 0 - 20 | degrees Celsius |
-+--------+-----------------+
++---------+-----------------+
+| Range   | Units           |
++=========+=================+
+| 0 to 20 | degrees Celsius |
++---------+-----------------+
 
 
 
@@ -14446,11 +14545,11 @@ BRD\_RADIO\_DEBUG: debug level
 radio debug level
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 4 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 4 |
++--------+
 
 
 
@@ -14491,11 +14590,11 @@ BRD\_RADIO\_SIGCH: RSSI signal strength
 Channel to show receive RSSI signal strength\, or zero for disabled
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 16 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 16 |
++---------+
 
 
 
@@ -14510,11 +14609,11 @@ BRD\_RADIO\_PPSCH: Packet rate channel
 Channel to show received packet\-per\-second rate\, or zero for disabled
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 16 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 16 |
++---------+
 
 
 
@@ -14555,11 +14654,11 @@ BRD\_RADIO\_TXPOW: Telemetry Transmit power
 Set telemetry transmit power\. This is the power level \(from 1 to 8\) for telemetry packets sent from the RX to the TX
 
 
-+-------+
-| Range |
-+=======+
-| 1 - 8 |
-+-------+
++--------+
+| Range  |
++========+
+| 1 to 8 |
++--------+
 
 
 
@@ -14676,11 +14775,11 @@ BRD\_RADIO\_TSIGCH: RSSI value channel for telemetry data on transmitter
 Channel to show telemetry RSSI value as received by TX
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 16 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 16 |
++---------+
 
 
 
@@ -14695,11 +14794,11 @@ BRD\_RADIO\_TPPSCH: Telemetry PPS channel
 Channel to show telemetry packets\-per\-second value\, as received at TX
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 16 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 16 |
++---------+
 
 
 
@@ -14714,11 +14813,11 @@ BRD\_RADIO\_TXMAX: Transmitter transmit power
 Set transmitter maximum transmit power \(from 1 to 8\)
 
 
-+-------+
-| Range |
-+=======+
-| 1 - 8 |
-+-------+
++--------+
+| Range  |
++========+
+| 1 to 8 |
++--------+
 
 
 
@@ -14733,11 +14832,11 @@ BRD\_RADIO\_BZOFS: Transmitter buzzer adjustment
 Set transmitter buzzer note adjustment \(adjust frequency up\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 40 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 40 |
++---------+
 
 
 
@@ -14752,11 +14851,11 @@ BRD\_RADIO\_ABTIME: Auto\-bind time
 When non\-zero this sets the time with no transmitter packets before we start looking for auto\-bind packets\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 120 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 120 |
++----------+
 
 
 
@@ -14771,11 +14870,11 @@ BRD\_RADIO\_ABLVL: Auto\-bind level
 This sets the minimum RSSI of an auto\-bind packet for it to be accepted\. This should be set so that auto\-bind will only happen at short range to minimise the change of an auto\-bind happening accidentially
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 31 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 31 |
++---------+
 
 
 
@@ -14825,11 +14924,11 @@ BRD\_RTC\_TZ\_MIN: Timezone offset from UTC
 Adds offset in \+\- minutes from UTC to calculate local time
 
 
-+-------------+
-| Range       |
-+=============+
-| -720 - +840 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| -720 to +840 |
++--------------+
 
 
 
@@ -15016,11 +15115,11 @@ BTN\_REPORT\_SEND: Report send time
 The duration in seconds that a BUTTON\_CHANGE report is repeatedly sent to the GCS regarding a button changing state\. Note that the BUTTON\_CHANGE message is MAVLink2 only\.
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 3600 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 3600 |
++-----------+
 
 
 
@@ -15836,11 +15935,11 @@ CAM\_DURATION: Duration that shutter is held open
 How long the shutter will be held open in 10ths of a second \(i\.e\. enter 10 for 1second\, 50 for 5seconds\)
 
 
-+--------+-------------+
-| Range  | Units       |
-+========+=============+
-| 0 - 50 | deciseconds |
-+--------+-------------+
++---------+-------------+
+| Range   | Units       |
++=========+=============+
+| 0 to 50 | deciseconds |
++---------+-------------+
 
 
 
@@ -15854,11 +15953,11 @@ CAM\_SERVO\_ON: Servo ON PWM value
 PWM value in microseconds to move servo to when shutter is activated
 
 
-+-------------+---------------------+
-| Range       | Units               |
-+=============+=====================+
-| 1000 - 2000 | PWM in microseconds |
-+-------------+---------------------+
++--------------+---------------------+
+| Range        | Units               |
++==============+=====================+
+| 1000 to 2000 | PWM in microseconds |
++--------------+---------------------+
 
 
 
@@ -15872,11 +15971,11 @@ CAM\_SERVO\_OFF: Servo OFF PWM value
 PWM value in microseconds to move servo to when shutter is deactivated
 
 
-+-------------+---------------------+
-| Range       | Units               |
-+=============+=====================+
-| 1000 - 2000 | PWM in microseconds |
-+-------------+---------------------+
++--------------+---------------------+
+| Range        | Units               |
++==============+=====================+
+| 1000 to 2000 | PWM in microseconds |
++--------------+---------------------+
 
 
 
@@ -15890,11 +15989,11 @@ CAM\_TRIGG\_DIST: Camera trigger distance
 Distance in meters between camera triggers\. If this value is non\-zero then the camera will trigger whenever the position changes by this number of meters regardless of what mode the APM is in\. Note that this parameter can also be set in an auto mission using the DO\_SET\_CAM\_TRIGG\_DIST command\, allowing you to enable\/disable the triggering of the camera during the flight\.
 
 
-+----------+--------+
-| Range    | Units  |
-+==========+========+
-| 0 - 1000 | meters |
-+----------+--------+
++-----------+--------+
+| Range     | Units  |
++===========+========+
+| 0 to 1000 | meters |
++-----------+--------+
 
 
 
@@ -15933,11 +16032,11 @@ CAM\_MIN\_INTERVAL: Minimum time between photos
 Postpone shooting if previous picture was taken less than preset time\(ms\) ago\.
 
 
-+-----------+--------------+
-| Range     | Units        |
-+===========+==============+
-| 0 - 10000 | milliseconds |
-+-----------+--------------+
++------------+--------------+
+| Range      | Units        |
++============+==============+
+| 0 to 10000 | milliseconds |
++------------+--------------+
 
 
 
@@ -15951,11 +16050,11 @@ CAM\_MAX\_ROLL: Maximum photo roll angle\.
 Postpone shooting if roll is greater than limit\. \(0\=Disable\, will shoot regardless of roll\)\.
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 180 | degrees |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 180 | degrees |
++----------+---------+
 
 
 
@@ -16226,24 +16325,24 @@ CAN\_LOGLEVEL: Loglevel
 Loglevel for recording initialisation and debug information from CAN Interface
 
 
-+-------+-----------------------------------+
-| Range | Values                            |
-+=======+===================================+
-| 0 - 4 | +-------+-----------------------+ |
-|       | | Value | Meaning               | |
-|       | +=======+=======================+ |
-|       | | 0     | Log None              | |
-|       | +-------+-----------------------+ |
-|       | | 1     | Log Error             | |
-|       | +-------+-----------------------+ |
-|       | | 2     | Log Warning and below | |
-|       | +-------+-----------------------+ |
-|       | | 3     | Log Info and below    | |
-|       | +-------+-----------------------+ |
-|       | | 4     | Log Everything        | |
-|       | +-------+-----------------------+ |
-|       |                                   |
-+-------+-----------------------------------+
++--------+-----------------------------------+
+| Range  | Values                            |
++========+===================================+
+| 0 to 4 | +-------+-----------------------+ |
+|        | | Value | Meaning               | |
+|        | +=======+=======================+ |
+|        | | 0     | Log None              | |
+|        | +-------+-----------------------+ |
+|        | | 1     | Log Error             | |
+|        | +-------+-----------------------+ |
+|        | | 2     | Log Warning and below | |
+|        | +-------+-----------------------+ |
+|        | | 3     | Log Info and below    | |
+|        | +-------+-----------------------+ |
+|        | | 4     | Log Everything        | |
+|        | +-------+-----------------------+ |
+|        |                                   |
++--------+-----------------------------------+
 
 
 
@@ -16417,11 +16516,11 @@ CAN\_D1\_PC\_ESC\_RT: ESC output rate
 Output rate of ESC command messages
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
 
 
 
@@ -16490,11 +16589,11 @@ CAN\_D1\_PC\_SRV\_RT: Servo command output rate
 Output rate of servo command messages
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
 
 
 
@@ -16516,28 +16615,28 @@ CAN\_D1\_TST\_ID: CAN Test Index
 Selects the Index of Test that needs to be run recursively\, this value gets reset to 0 at boot\.
 
 
-+-------+----------------------------------+
-| Range | Values                           |
-+=======+==================================+
-| 0 - 4 | +-------+----------------------+ |
-|       | | Value | Meaning              | |
-|       | +=======+======================+ |
-|       | | 0     | TEST_NONE            | |
-|       | +-------+----------------------+ |
-|       | | 1     | TEST_LOOPBACK        | |
-|       | +-------+----------------------+ |
-|       | | 2     | TEST_BUSOFF_RECOVERY | |
-|       | +-------+----------------------+ |
-|       | | 3     | TEST_UAVCAN_DNA      | |
-|       | +-------+----------------------+ |
-|       | | 5     | TEST_KDE_CAN         | |
-|       | +-------+----------------------+ |
-|       | | 6     | TEST_UAVCAN_ESC      | |
-|       | +-------+----------------------+ |
-|       | | 7     | TEST_UAVCAN_FD_ESC   | |
-|       | +-------+----------------------+ |
-|       |                                  |
-+-------+----------------------------------+
++--------+----------------------------------+
+| Range  | Values                           |
++========+==================================+
+| 0 to 4 | +-------+----------------------+ |
+|        | | Value | Meaning              | |
+|        | +=======+======================+ |
+|        | | 0     | TEST_NONE            | |
+|        | +-------+----------------------+ |
+|        | | 1     | TEST_LOOPBACK        | |
+|        | +-------+----------------------+ |
+|        | | 2     | TEST_BUSOFF_RECOVERY | |
+|        | +-------+----------------------+ |
+|        | | 3     | TEST_UAVCAN_DNA      | |
+|        | +-------+----------------------+ |
+|        | | 5     | TEST_KDE_CAN         | |
+|        | +-------+----------------------+ |
+|        | | 6     | TEST_UAVCAN_ESC      | |
+|        | +-------+----------------------+ |
+|        | | 7     | TEST_UAVCAN_FD_ESC   | |
+|        | +-------+----------------------+ |
+|        |                                  |
++--------+----------------------------------+
 
 
 
@@ -16578,11 +16677,11 @@ CAN\_D1\_UC\_NODE: UAVCAN node that is used for this network
 UAVCAN node should be set implicitly
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 250 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 250 |
++----------+
 
 
 
@@ -16768,11 +16867,11 @@ CAN\_D1\_UC\_SRV\_RT: Servo output rate
 Maximum transmit rate for servo outputs
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 200 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 200 | hertz |
++----------+-------+
 
 
 
@@ -16815,11 +16914,11 @@ CAN\_D1\_UC\_NTF\_RT: Notify State rate
 Maximum transmit rate for Notify State Message
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 200 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 200 | hertz |
++----------+-------+
 
 
 
@@ -16834,11 +16933,11 @@ CAN\_D1\_UC\_ESC\_OF: ESC Output channels offset
 Offset for ESC numbering in DroneCAN ESC RawCommand messages\. This allows for more efficient packing of ESC command messages\. If your ESCs are on servo functions 5 to 8 and you set this parameter to 4 then the ESC RawCommand will be sent with the first 4 slots filled\. This can be used for more efficint usage of CAN bandwidth
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 18 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 18 |
++---------+
 
 
 
@@ -16853,11 +16952,11 @@ CAN\_D1\_UC\_POOL: CAN pool size
 Amount of memory in bytes to allocate for the DroneCAN memory pool\. More memory is needed for higher CAN bus loads
 
 
-+--------------+
-| Range        |
-+==============+
-| 1024 - 16384 |
-+--------------+
++---------------+
+| Range         |
++===============+
+| 1024 to 16384 |
++---------------+
 
 
 
@@ -17031,11 +17130,11 @@ CAN\_D2\_PC\_ESC\_RT: ESC output rate
 Output rate of ESC command messages
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
 
 
 
@@ -17104,11 +17203,11 @@ CAN\_D2\_PC\_SRV\_RT: Servo command output rate
 Output rate of servo command messages
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
 
 
 
@@ -17130,28 +17229,28 @@ CAN\_D2\_TST\_ID: CAN Test Index
 Selects the Index of Test that needs to be run recursively\, this value gets reset to 0 at boot\.
 
 
-+-------+----------------------------------+
-| Range | Values                           |
-+=======+==================================+
-| 0 - 4 | +-------+----------------------+ |
-|       | | Value | Meaning              | |
-|       | +=======+======================+ |
-|       | | 0     | TEST_NONE            | |
-|       | +-------+----------------------+ |
-|       | | 1     | TEST_LOOPBACK        | |
-|       | +-------+----------------------+ |
-|       | | 2     | TEST_BUSOFF_RECOVERY | |
-|       | +-------+----------------------+ |
-|       | | 3     | TEST_UAVCAN_DNA      | |
-|       | +-------+----------------------+ |
-|       | | 5     | TEST_KDE_CAN         | |
-|       | +-------+----------------------+ |
-|       | | 6     | TEST_UAVCAN_ESC      | |
-|       | +-------+----------------------+ |
-|       | | 7     | TEST_UAVCAN_FD_ESC   | |
-|       | +-------+----------------------+ |
-|       |                                  |
-+-------+----------------------------------+
++--------+----------------------------------+
+| Range  | Values                           |
++========+==================================+
+| 0 to 4 | +-------+----------------------+ |
+|        | | Value | Meaning              | |
+|        | +=======+======================+ |
+|        | | 0     | TEST_NONE            | |
+|        | +-------+----------------------+ |
+|        | | 1     | TEST_LOOPBACK        | |
+|        | +-------+----------------------+ |
+|        | | 2     | TEST_BUSOFF_RECOVERY | |
+|        | +-------+----------------------+ |
+|        | | 3     | TEST_UAVCAN_DNA      | |
+|        | +-------+----------------------+ |
+|        | | 5     | TEST_KDE_CAN         | |
+|        | +-------+----------------------+ |
+|        | | 6     | TEST_UAVCAN_ESC      | |
+|        | +-------+----------------------+ |
+|        | | 7     | TEST_UAVCAN_FD_ESC   | |
+|        | +-------+----------------------+ |
+|        |                                  |
++--------+----------------------------------+
 
 
 
@@ -17192,11 +17291,11 @@ CAN\_D2\_UC\_NODE: UAVCAN node that is used for this network
 UAVCAN node should be set implicitly
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 250 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 250 |
++----------+
 
 
 
@@ -17382,11 +17481,11 @@ CAN\_D2\_UC\_SRV\_RT: Servo output rate
 Maximum transmit rate for servo outputs
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 200 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 200 | hertz |
++----------+-------+
 
 
 
@@ -17429,11 +17528,11 @@ CAN\_D2\_UC\_NTF\_RT: Notify State rate
 Maximum transmit rate for Notify State Message
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 200 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 200 | hertz |
++----------+-------+
 
 
 
@@ -17448,11 +17547,11 @@ CAN\_D2\_UC\_ESC\_OF: ESC Output channels offset
 Offset for ESC numbering in DroneCAN ESC RawCommand messages\. This allows for more efficient packing of ESC command messages\. If your ESCs are on servo functions 5 to 8 and you set this parameter to 4 then the ESC RawCommand will be sent with the first 4 slots filled\. This can be used for more efficint usage of CAN bandwidth
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 18 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 18 |
++---------+
 
 
 
@@ -17467,11 +17566,11 @@ CAN\_D2\_UC\_POOL: CAN pool size
 Amount of memory in bytes to allocate for the DroneCAN memory pool\. More memory is needed for higher CAN bus loads
 
 
-+--------------+
-| Range        |
-+==============+
-| 1024 - 16384 |
-+--------------+
++---------------+
+| Range         |
++===============+
+| 1024 to 16384 |
++---------------+
 
 
 
@@ -17645,11 +17744,11 @@ CAN\_D3\_PC\_ESC\_RT: ESC output rate
 Output rate of ESC command messages
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
 
 
 
@@ -17718,11 +17817,11 @@ CAN\_D3\_PC\_SRV\_RT: Servo command output rate
 Output rate of servo command messages
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
 
 
 
@@ -17744,28 +17843,28 @@ CAN\_D3\_TST\_ID: CAN Test Index
 Selects the Index of Test that needs to be run recursively\, this value gets reset to 0 at boot\.
 
 
-+-------+----------------------------------+
-| Range | Values                           |
-+=======+==================================+
-| 0 - 4 | +-------+----------------------+ |
-|       | | Value | Meaning              | |
-|       | +=======+======================+ |
-|       | | 0     | TEST_NONE            | |
-|       | +-------+----------------------+ |
-|       | | 1     | TEST_LOOPBACK        | |
-|       | +-------+----------------------+ |
-|       | | 2     | TEST_BUSOFF_RECOVERY | |
-|       | +-------+----------------------+ |
-|       | | 3     | TEST_UAVCAN_DNA      | |
-|       | +-------+----------------------+ |
-|       | | 5     | TEST_KDE_CAN         | |
-|       | +-------+----------------------+ |
-|       | | 6     | TEST_UAVCAN_ESC      | |
-|       | +-------+----------------------+ |
-|       | | 7     | TEST_UAVCAN_FD_ESC   | |
-|       | +-------+----------------------+ |
-|       |                                  |
-+-------+----------------------------------+
++--------+----------------------------------+
+| Range  | Values                           |
++========+==================================+
+| 0 to 4 | +-------+----------------------+ |
+|        | | Value | Meaning              | |
+|        | +=======+======================+ |
+|        | | 0     | TEST_NONE            | |
+|        | +-------+----------------------+ |
+|        | | 1     | TEST_LOOPBACK        | |
+|        | +-------+----------------------+ |
+|        | | 2     | TEST_BUSOFF_RECOVERY | |
+|        | +-------+----------------------+ |
+|        | | 3     | TEST_UAVCAN_DNA      | |
+|        | +-------+----------------------+ |
+|        | | 5     | TEST_KDE_CAN         | |
+|        | +-------+----------------------+ |
+|        | | 6     | TEST_UAVCAN_ESC      | |
+|        | +-------+----------------------+ |
+|        | | 7     | TEST_UAVCAN_FD_ESC   | |
+|        | +-------+----------------------+ |
+|        |                                  |
++--------+----------------------------------+
 
 
 
@@ -17806,11 +17905,11 @@ CAN\_D3\_UC\_NODE: UAVCAN node that is used for this network
 UAVCAN node should be set implicitly
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 250 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 250 |
++----------+
 
 
 
@@ -17996,11 +18095,11 @@ CAN\_D3\_UC\_SRV\_RT: Servo output rate
 Maximum transmit rate for servo outputs
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 200 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 200 | hertz |
++----------+-------+
 
 
 
@@ -18043,11 +18142,11 @@ CAN\_D3\_UC\_NTF\_RT: Notify State rate
 Maximum transmit rate for Notify State Message
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 1 - 200 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 200 | hertz |
++----------+-------+
 
 
 
@@ -18062,11 +18161,11 @@ CAN\_D3\_UC\_ESC\_OF: ESC Output channels offset
 Offset for ESC numbering in DroneCAN ESC RawCommand messages\. This allows for more efficient packing of ESC command messages\. If your ESCs are on servo functions 5 to 8 and you set this parameter to 4 then the ESC RawCommand will be sent with the first 4 slots filled\. This can be used for more efficint usage of CAN bandwidth
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 18 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 18 |
++---------+
 
 
 
@@ -18081,11 +18180,11 @@ CAN\_D3\_UC\_POOL: CAN pool size
 Amount of memory in bytes to allocate for the DroneCAN memory pool\. More memory is needed for higher CAN bus loads
 
 
-+--------------+
-| Range        |
-+==============+
-| 1024 - 16384 |
-+--------------+
++---------------+
+| Range         |
++===============+
+| 1024 to 16384 |
++---------------+
 
 
 
@@ -18137,11 +18236,11 @@ CAN\_P1\_BITRATE: Bitrate of CAN interface
 Bit rate can be set up to from 10000 to 1000000
 
 
-+-----------------+
-| Range           |
-+=================+
-| 10000 - 1000000 |
-+-----------------+
++------------------+
+| Range            |
++==================+
+| 10000 to 1000000 |
++------------------+
 
 
 
@@ -18225,11 +18324,11 @@ CAN\_P2\_BITRATE: Bitrate of CAN interface
 Bit rate can be set up to from 10000 to 1000000
 
 
-+-----------------+
-| Range           |
-+=================+
-| 10000 - 1000000 |
-+-----------------+
++------------------+
+| Range            |
++==================+
+| 10000 to 1000000 |
++------------------+
 
 
 
@@ -18313,11 +18412,11 @@ CAN\_P3\_BITRATE: Bitrate of CAN interface
 Bit rate can be set up to from 10000 to 1000000
 
 
-+-----------------+
-| Range           |
-+=================+
-| 10000 - 1000000 |
-+-----------------+
++------------------+
+| Range            |
++==================+
+| 10000 to 1000000 |
++------------------+
 
 
 
@@ -18435,11 +18534,11 @@ CAN\_SLCAN\_TIMOUT: SLCAN Timeout
 Duration of inactivity after which SLCAN is switched back to original driver in seconds\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -18453,11 +18552,11 @@ CAN\_SLCAN\_SDELAY: SLCAN Start Delay
 Duration after which slcan starts after setting SERNUM in seconds\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -18534,11 +18633,11 @@ CHUTE\_SERVO\_ON: Parachute Servo ON PWM value
 Parachute Servo PWM value in microseconds when parachute is released
 
 
-+-----------+-------------+---------------------+
-| Increment | Range       | Units               |
-+===========+=============+=====================+
-| 1         | 1000 - 2000 | PWM in microseconds |
-+-----------+-------------+---------------------+
++-----------+--------------+---------------------+
+| Increment | Range        | Units               |
++===========+==============+=====================+
+| 1         | 1000 to 2000 | PWM in microseconds |
++-----------+--------------+---------------------+
 
 
 
@@ -18552,11 +18651,11 @@ CHUTE\_SERVO\_OFF: Servo OFF PWM value
 Parachute Servo PWM value in microseconds when parachute is not released
 
 
-+-----------+-------------+---------------------+
-| Increment | Range       | Units               |
-+===========+=============+=====================+
-| 1         | 1000 - 2000 | PWM in microseconds |
-+-----------+-------------+---------------------+
++-----------+--------------+---------------------+
+| Increment | Range        | Units               |
++===========+==============+=====================+
+| 1         | 1000 to 2000 | PWM in microseconds |
++-----------+--------------+---------------------+
 
 
 
@@ -18570,11 +18669,11 @@ CHUTE\_ALT\_MIN: Parachute min altitude in meters above home
 Parachute min altitude above home\.  Parachute will not be released below this altitude\.  0 to disable alt check\.
 
 
-+-----------+-----------+--------+
-| Increment | Range     | Units  |
-+===========+===========+========+
-| 1         | 0 - 32000 | meters |
-+-----------+-----------+--------+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | 0 to 32000 | meters |
++-----------+------------+--------+
 
 
 
@@ -18588,11 +18687,11 @@ CHUTE\_DELAY\_MS: Parachute release delay
 Delay in millseconds between motor stop and chute release
 
 
-+-----------+----------+--------------+
-| Increment | Range    | Units        |
-+===========+==========+==============+
-| 1         | 0 - 5000 | milliseconds |
-+-----------+----------+--------------+
++-----------+-----------+--------------+
+| Increment | Range     | Units        |
++===========+===========+==============+
+| 1         | 0 to 5000 | milliseconds |
++-----------+-----------+--------------+
 
 
 
@@ -18606,11 +18705,11 @@ CHUTE\_CRT\_SINK: Critical sink speed rate in m\/s to trigger emergency parachut
 Release parachute when critical sink rate is reached
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 1         | 0 - 15 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 1         | 0 to 15 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -18655,11 +18754,11 @@ COMPASS\_OFS\_X: Compass offsets in milligauss on the X axis
 Offset to be added to the compass x\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -18674,11 +18773,11 @@ COMPASS\_OFS\_Y: Compass offsets in milligauss on the Y axis
 Offset to be added to the compass y\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -18693,11 +18792,11 @@ COMPASS\_OFS\_Z: Compass offsets in milligauss on the Z axis
 Offset to be added to the compass z\-axis values to compensate for metal in the frame
 
 
-+-----------+------------+------------+
-| Increment | Range      | Units      |
-+===========+============+============+
-| 1         | -400 - 400 | milligauss |
-+-----------+------------+------------+
++-----------+-------------+------------+
+| Increment | Range       | Units      |
++===========+=============+============+
+| 1         | -400 to 400 | milligauss |
++-----------+-------------+------------+
 
 
 
@@ -18711,11 +18810,11 @@ COMPASS\_DEC: Compass declination
 An angle to compensate between the true north and magnetic north
 
 
-+-----------+----------------+---------+
-| Increment | Range          | Units   |
-+===========+================+=========+
-| 0.01      | -3.142 - 3.142 | radians |
-+-----------+----------------+---------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 0.01      | -3.142 to 3.142 | radians |
++-----------+-----------------+---------+
 
 
 
@@ -18840,11 +18939,11 @@ COMPASS\_MOT\_X: Motor interference compensation for body frame X axis
 Multiplied by the current throttle and added to the compass\'s x\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -18859,11 +18958,11 @@ COMPASS\_MOT\_Y: Motor interference compensation for body frame Y axis
 Multiplied by the current throttle and added to the compass\'s y\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -18878,11 +18977,11 @@ COMPASS\_MOT\_Z: Motor interference compensation for body frame Z axis
 Multiplied by the current throttle and added to the compass\'s z\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-----------+--------------+-----------------------+
-| Increment | Range        | Units                 |
-+===========+==============+=======================+
-| 1         | -1000 - 1000 | milligauss per ampere |
-+-----------+--------------+-----------------------+
++-----------+---------------+-----------------------+
+| Increment | Range         | Units                 |
++===========+===============+=======================+
+| 1         | -1000 to 1000 | milligauss per ampere |
++-----------+---------------+-----------------------+
 
 
 
@@ -19039,11 +19138,11 @@ COMPASS\_OFS2\_X: Compass2 offsets in milligauss on the X axis
 Offset to be added to compass2\'s x\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -19058,11 +19157,11 @@ COMPASS\_OFS2\_Y: Compass2 offsets in milligauss on the Y axis
 Offset to be added to compass2\'s y\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -19077,11 +19176,11 @@ COMPASS\_OFS2\_Z: Compass2 offsets in milligauss on the Z axis
 Offset to be added to compass2\'s z\-axis values to compensate for metal in the frame
 
 
-+-----------+------------+------------+
-| Increment | Range      | Units      |
-+===========+============+============+
-| 1         | -400 - 400 | milligauss |
-+-----------+------------+------------+
++-----------+-------------+------------+
+| Increment | Range       | Units      |
++===========+=============+============+
+| 1         | -400 to 400 | milligauss |
++-----------+-------------+------------+
 
 
 
@@ -19096,11 +19195,11 @@ COMPASS\_MOT2\_X: Motor interference compensation to compass2 for body frame X a
 Multiplied by the current throttle and added to compass2\'s x\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -19115,11 +19214,11 @@ COMPASS\_MOT2\_Y: Motor interference compensation to compass2 for body frame Y a
 Multiplied by the current throttle and added to compass2\'s y\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -19134,11 +19233,11 @@ COMPASS\_MOT2\_Z: Motor interference compensation to compass2 for body frame Z a
 Multiplied by the current throttle and added to compass2\'s z\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-----------+--------------+-----------------------+
-| Increment | Range        | Units                 |
-+===========+==============+=======================+
-| 1         | -1000 - 1000 | milligauss per ampere |
-+-----------+--------------+-----------------------+
++-----------+---------------+-----------------------+
+| Increment | Range         | Units                 |
++===========+===============+=======================+
+| 1         | -1000 to 1000 | milligauss per ampere |
++-----------+---------------+-----------------------+
 
 
 
@@ -19153,11 +19252,11 @@ COMPASS\_OFS3\_X: Compass3 offsets in milligauss on the X axis
 Offset to be added to compass3\'s x\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -19172,11 +19271,11 @@ COMPASS\_OFS3\_Y: Compass3 offsets in milligauss on the Y axis
 Offset to be added to compass3\'s y\-axis values to compensate for metal in the frame
 
 
-+-------------+-----------+------------+------------+
-| Calibration | Increment | Range      | Units      |
-+=============+===========+============+============+
-| 1           | 1         | -400 - 400 | milligauss |
-+-------------+-----------+------------+------------+
++-------------+-----------+-------------+------------+
+| Calibration | Increment | Range       | Units      |
++=============+===========+=============+============+
+| 1           | 1         | -400 to 400 | milligauss |
++-------------+-----------+-------------+------------+
 
 
 
@@ -19191,11 +19290,11 @@ COMPASS\_OFS3\_Z: Compass3 offsets in milligauss on the Z axis
 Offset to be added to compass3\'s z\-axis values to compensate for metal in the frame
 
 
-+-----------+------------+------------+
-| Increment | Range      | Units      |
-+===========+============+============+
-| 1         | -400 - 400 | milligauss |
-+-----------+------------+------------+
++-----------+-------------+------------+
+| Increment | Range       | Units      |
++===========+=============+============+
+| 1         | -400 to 400 | milligauss |
++-----------+-------------+------------+
 
 
 
@@ -19210,11 +19309,11 @@ COMPASS\_MOT3\_X: Motor interference compensation to compass3 for body frame X a
 Multiplied by the current throttle and added to compass3\'s x\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -19229,11 +19328,11 @@ COMPASS\_MOT3\_Y: Motor interference compensation to compass3 for body frame Y a
 Multiplied by the current throttle and added to compass3\'s y\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-------------+-----------+--------------+-----------------------+
-| Calibration | Increment | Range        | Units                 |
-+=============+===========+==============+=======================+
-| 1           | 1         | -1000 - 1000 | milligauss per ampere |
-+-------------+-----------+--------------+-----------------------+
++-------------+-----------+---------------+-----------------------+
+| Calibration | Increment | Range         | Units                 |
++=============+===========+===============+=======================+
+| 1           | 1         | -1000 to 1000 | milligauss per ampere |
++-------------+-----------+---------------+-----------------------+
 
 
 
@@ -19248,11 +19347,11 @@ COMPASS\_MOT3\_Z: Motor interference compensation to compass3 for body frame Z a
 Multiplied by the current throttle and added to compass3\'s z\-axis values to compensate for motor interference \(Offset per Amp or at Full Throttle\)
 
 
-+-----------+--------------+-----------------------+
-| Increment | Range        | Units                 |
-+===========+==============+=======================+
-| 1         | -1000 - 1000 | milligauss per ampere |
-+-----------+--------------+-----------------------+
++-----------+---------------+-----------------------+
+| Increment | Range         | Units                 |
++===========+===============+=======================+
+| 1         | -1000 to 1000 | milligauss per ampere |
++-----------+---------------+-----------------------+
 
 
 
@@ -19948,22 +20047,22 @@ COMPASS\_CAL\_FIT: Compass calibration fitness
 This controls the fitness level required for a successful compass calibration\. A lower value makes for a stricter fit \(less likely to pass\)\. This is the value used for the primary magnetometer\. Other magnetometers get double the value\.
 
 
-+-----------+--------+-------------------------+
-| Increment | Range  | Values                  |
-+===========+========+=========================+
-| 0.1       | 4 - 32 | +-------+-------------+ |
-|           |        | | Value | Meaning     | |
-|           |        | +=======+=============+ |
-|           |        | | 4     | Very Strict | |
-|           |        | +-------+-------------+ |
-|           |        | | 8     | Strict      | |
-|           |        | +-------+-------------+ |
-|           |        | | 16    | Default     | |
-|           |        | +-------+-------------+ |
-|           |        | | 32    | Relaxed     | |
-|           |        | +-------+-------------+ |
-|           |        |                         |
-+-----------+--------+-------------------------+
++-----------+---------+-------------------------+
+| Increment | Range   | Values                  |
++===========+=========+=========================+
+| 0.1       | 4 to 32 | +-------+-------------+ |
+|           |         | | Value | Meaning     | |
+|           |         | +=======+=============+ |
+|           |         | | 4     | Very Strict | |
+|           |         | +-------+-------------+ |
+|           |         | | 8     | Strict      | |
+|           |         | +-------+-------------+ |
+|           |         | | 16    | Default     | |
+|           |         | +-------+-------------+ |
+|           |         | | 32    | Relaxed     | |
+|           |         | +-------+-------------+ |
+|           |         |                         |
++-----------+---------+-------------------------+
 
 
 
@@ -19978,11 +20077,11 @@ COMPASS\_OFFS\_MAX: Compass maximum offset
 This sets the maximum allowed compass offset in calibration and arming checks
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 1         | 500 - 3000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 1         | 500 to 3000 |
++-----------+-------------+
 
 
 
@@ -20052,11 +20151,11 @@ COMPASS\_FLTR\_RNG: Range in which sample is accepted
 This sets the range around the average value that new samples must be within to be accepted\. This can help reduce the impact of noise on sensors that are on long I2C cables\. The value is a percentage from the average value\. A value of zero disables this filter\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -20158,11 +20257,11 @@ COMPASS\_SCALE: Compass1 scale factor
 Scaling factor for first compass to compensate for sensor scaling errors\. If this is 0 then no scaling is done
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 1.3 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 1.3 |
++----------+
 
 
 
@@ -20176,11 +20275,11 @@ COMPASS\_SCALE2: Compass2 scale factor
 Scaling factor for 2nd compass to compensate for sensor scaling errors\. If this is 0 then no scaling is done
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 1.3 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 1.3 |
++----------+
 
 
 
@@ -20194,11 +20293,11 @@ COMPASS\_SCALE3: Compass3 scale factor
 Scaling factor for 3rd compass to compensate for sensor scaling errors\. If this is 0 then no scaling is done
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 1.3 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 1.3 |
++----------+
 
 
 
@@ -20333,11 +20432,11 @@ COMPASS\_CUS\_ROLL: Custom orientation roll offset
 Compass mounting position roll offset\. Positive values \= roll right\, negative values \= roll left\. This parameter is only used when COMPASS\_ORIENT\/2\/3 is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -20353,11 +20452,11 @@ COMPASS\_CUS\_PIT: Custom orientation pitch offset
 Compass mounting position pitch offset\. Positive values \= pitch up\, negative values \= pitch down\. This parameter is only used when COMPASS\_ORIENT\/2\/3 is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -20373,11 +20472,11 @@ COMPASS\_CUS\_YAW: Custom orientation yaw offset
 Compass mounting position yaw offset\. Positive values \= yaw right\, negative values \= yaw left\. This parameter is only used when COMPASS\_ORIENT\/2\/3 is set to CUSTOM\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 1         | -180 - 180 | degrees |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
 
 
 
@@ -20425,11 +20524,11 @@ COMPASS\_PMOT\_EXP: per\-motor exponential correction
 This is the exponential correction for the power output of the motor for per\-motor compass correction
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 2 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 2 |
++-----------+--------+
 
 
 
@@ -20817,11 +20916,11 @@ EFI\_COEF1: EFI Calibration Coefficient 1
 Used to calibrate fuel flow for MS protocol \(Slope\)\. This should be calculated from a log at constant fuel usage rate\. Plot \(ECYL\[0\]\.InjT\*EFI\.Rpm\)\/600\.0 to get the duty\_cycle\. Measure actual fuel usage in cm\^3\/min\, and set EFI\_COEF1 \= fuel\_usage\_cm3permin \/ duty\_cycle
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -20836,11 +20935,11 @@ EFI\_COEF2: EFI Calibration Coefficient 2
 Used to calibrate fuel flow for MS protocol \(Offset\)\. This can be used to correct for a non\-zero offset in the fuel consumption calculation of EFI\_COEF1
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 10 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 10 |
++---------+
 
 
 
@@ -20919,11 +21018,11 @@ EK2\_VELNE\_M\_NSE: GPS horizontal velocity measurement noise \(m\/s\)
 This sets a lower limit on the speed accuracy reported by the GPS receiver that is used to set horizontal velocity observation noise\. If the model of receiver used does not provide a speed accurcy estimate\, then the parameter value will be used\. Increasing it reduces the weighting of the GPS horizontal velocity measurements\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.05      | 0.05 - 5.0 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.05      | 0.05 to 5.0 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -20938,11 +21037,11 @@ EK2\_VELD\_M\_NSE: GPS vertical velocity measurement noise \(m\/s\)
 This sets a lower limit on the speed accuracy reported by the GPS receiver that is used to set vertical velocity observation noise\. If the model of receiver used does not provide a speed accurcy estimate\, then the parameter value will be used\. Increasing it reduces the weighting of the GPS vertical velocity measurements\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.05      | 0.05 - 5.0 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.05      | 0.05 to 5.0 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -20957,11 +21056,11 @@ EK2\_VEL\_I\_GATE: GPS velocity innovation gate size
 This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -20976,11 +21075,11 @@ EK2\_POSNE\_M\_NSE: GPS horizontal position measurement noise \(m\)
 This sets the GPS horizontal position observation noise\. Increasing it reduces the weighting of GPS horizontal position measurements\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -20995,11 +21094,11 @@ EK2\_POS\_I\_GATE: GPS position measurement gate size
 This sets the percentage number of standard deviations applied to the GPS position measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21014,11 +21113,11 @@ EK2\_GLITCH\_RAD: GPS glitch radius gate size \(m\)
 This controls the maximum radial uncertainty in position between the value predicted by the filter and the value measured by the GPS before the filter position and velocity states are reset to the GPS\. Making this value larger allows the filter to ignore larger GPS glitches but also means that non\-GPS errors such as IMU and compass can create a larger error in position before the filter is forced back to the GPS position\.
 
 
-+-----------+----------+--------+
-| Increment | Range    | Units  |
-+===========+==========+========+
-| 5         | 10 - 100 | meters |
-+-----------+----------+--------+
++-----------+-----------+--------+
+| Increment | Range     | Units  |
++===========+===========+========+
+| 5         | 10 to 100 | meters |
++-----------+-----------+--------+
 
 
 
@@ -21064,11 +21163,11 @@ EK2\_ALT\_M\_NSE: Altitude measurement noise \(m\)
 This is the RMS value of noise in the altitude measurement\. Increasing it reduces the weighting of the baro measurement and will make the filter respond more slowly to baro measurement errors\, but will make it more sensitive to GPS and accelerometer errors\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -21083,11 +21182,11 @@ EK2\_HGT\_I\_GATE: Height measurement gate size
 This sets the percentage number of standard deviations applied to the height measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21103,11 +21202,11 @@ EK2\_HGT\_DELAY: Height measurement delay \(msec\)
 This is the number of msec that the Height measurements lag behind the inertial measurements\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 10        | 0 - 250 | milliseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 10        | 0 to 250 | milliseconds |
++-----------+----------+--------------+
 
 
 
@@ -21122,11 +21221,11 @@ EK2\_MAG\_M\_NSE: Magnetometer measurement noise \(Gauss\)
 This is the RMS value of noise in magnetometer measurements\. Increasing it reduces the weighting on these measurements\.
 
 
-+-----------+------------+-------+
-| Increment | Range      | Units |
-+===========+============+=======+
-| 0.01      | 0.01 - 0.5 | gauss |
-+-----------+------------+-------+
++-----------+-------------+-------+
+| Increment | Range       | Units |
++===========+=============+=======+
+| 0.01      | 0.01 to 0.5 | gauss |
++-----------+-------------+-------+
 
 
 
@@ -21173,11 +21272,11 @@ EK2\_MAG\_I\_GATE: Magnetometer measurement gate size
 This sets the percentage number of standard deviations applied to the magnetometer measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21192,11 +21291,11 @@ EK2\_EAS\_M\_NSE: Equivalent airspeed measurement noise \(m\/s\)
 This is the RMS value of noise in equivalent airspeed measurements used by planes\. Increasing it reduces the weighting of airspeed measurements and will make wind speed estimates less noisy and slower to converge\. Increasing also increases navigation errors when dead\-reckoning without GPS measurements\.
 
 
-+-----------+-----------+-------------------+
-| Increment | Range     | Units             |
-+===========+===========+===================+
-| 0.1       | 0.5 - 5.0 | meters per second |
-+-----------+-----------+-------------------+
++-----------+------------+-------------------+
+| Increment | Range      | Units             |
++===========+============+===================+
+| 0.1       | 0.5 to 5.0 | meters per second |
++-----------+------------+-------------------+
 
 
 
@@ -21211,11 +21310,11 @@ EK2\_EAS\_I\_GATE: Airspeed measurement gate size
 This sets the percentage number of standard deviations applied to the airspeed measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21230,11 +21329,11 @@ EK2\_RNG\_M\_NSE: Range finder measurement noise \(m\)
 This is the RMS value of noise in the range finder measurement\. Increasing it reduces the weighting on this measurement\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -21249,11 +21348,11 @@ EK2\_RNG\_I\_GATE: Range finder measurement gate size
 This sets the percentage number of standard deviations applied to the range finder innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21268,11 +21367,11 @@ EK2\_MAX\_FLOW: Maximum valid optical flow rate
 This sets the magnitude maximum optical flow rate in rad\/sec that will be accepted by the filter
 
 
-+-----------+-----------+--------------------+
-| Increment | Range     | Units              |
-+===========+===========+====================+
-| 0.1       | 1.0 - 4.0 | radians per second |
-+-----------+-----------+--------------------+
++-----------+------------+--------------------+
+| Increment | Range      | Units              |
++===========+============+====================+
+| 0.1       | 1.0 to 4.0 | radians per second |
++-----------+------------+--------------------+
 
 
 
@@ -21287,11 +21386,11 @@ EK2\_FLOW\_M\_NSE: Optical flow measurement noise \(rad\/s\)
 This is the RMS value of noise and errors in optical flow measurements\. Increasing it reduces the weighting on these measurements\.
 
 
-+-----------+------------+--------------------+
-| Increment | Range      | Units              |
-+===========+============+====================+
-| 0.05      | 0.05 - 1.0 | radians per second |
-+-----------+------------+--------------------+
++-----------+-------------+--------------------+
+| Increment | Range       | Units              |
++===========+=============+====================+
+| 0.05      | 0.05 to 1.0 | radians per second |
++-----------+-------------+--------------------+
 
 
 
@@ -21306,11 +21405,11 @@ EK2\_FLOW\_I\_GATE: Optical Flow measurement gate size
 This sets the percentage number of standard deviations applied to the optical flow innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21326,11 +21425,11 @@ EK2\_FLOW\_DELAY: Optical Flow measurement delay \(msec\)
 This is the number of msec that the optical flow measurements lag behind the inertial measurements\. It is the time from the end of the optical flow averaging period and does not include the time delay due to the 100msec of averaging within the flow sensor\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 10        | 0 - 127 | milliseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 10        | 0 to 127 | milliseconds |
++-----------+----------+--------------+
 
 
 
@@ -21345,11 +21444,11 @@ EK2\_GYRO\_P\_NSE: Rate gyro noise \(rad\/s\)
 This control disturbance noise controls the growth of estimated error due to gyro measurement errors excluding bias\. Increasing it makes the flter trust the gyro measurements less and other measurements more\.
 
 
-+-----------+--------------+--------------------+
-| Increment | Range        | Units              |
-+===========+==============+====================+
-| 0.0001    | 0.0001 - 0.1 | radians per second |
-+-----------+--------------+--------------------+
++-----------+---------------+--------------------+
+| Increment | Range         | Units              |
++===========+===============+====================+
+| 0.0001    | 0.0001 to 0.1 | radians per second |
++-----------+---------------+--------------------+
 
 
 
@@ -21364,11 +21463,11 @@ EK2\_ACC\_P\_NSE: Accelerometer noise \(m\/s\^2\)
 This control disturbance noise controls the growth of estimated error due to accelerometer measurement errors excluding bias\. Increasing it makes the flter trust the accelerometer measurements less and other measurements more\.
 
 
-+-----------+------------+--------------------------+
-| Increment | Range      | Units                    |
-+===========+============+==========================+
-| 0.01      | 0.01 - 1.0 | meters per square second |
-+-----------+------------+--------------------------+
++-----------+-------------+--------------------------+
+| Increment | Range       | Units                    |
++===========+=============+==========================+
+| 0.01      | 0.01 to 1.0 | meters per square second |
++-----------+-------------+--------------------------+
 
 
 
@@ -21383,11 +21482,11 @@ EK2\_GBIAS\_P\_NSE: Rate gyro bias stability \(rad\/s\/s\)
 This state  process noise controls growth of the gyro delta angle bias state error estimate\. Increasing it makes rate gyro bias estimation faster and noisier\.
 
 
-+-----------------+---------------------------+
-| Range           | Units                     |
-+=================+===========================+
-| 0.00001 - 0.001 | radians per square second |
-+-----------------+---------------------------+
++------------------+---------------------------+
+| Range            | Units                     |
++==================+===========================+
+| 0.00001 to 0.001 | radians per square second |
++------------------+---------------------------+
 
 
 
@@ -21402,11 +21501,11 @@ EK2\_GSCL\_P\_NSE: Rate gyro scale factor stability \(1\/s\)
 This noise controls the rate of gyro scale factor learning\. Increasing it makes rate gyro scale factor estimation faster and noisier\.
 
 
-+------------------+-------+
-| Range            | Units |
-+==================+=======+
-| 0.000001 - 0.001 | hertz |
-+------------------+-------+
++-------------------+-------+
+| Range             | Units |
++===================+=======+
+| 0.000001 to 0.001 | hertz |
++-------------------+-------+
 
 
 
@@ -21421,11 +21520,11 @@ EK2\_ABIAS\_P\_NSE: Accelerometer bias stability \(m\/s\^3\)
 This noise controls the growth of the vertical accelerometer delta velocity bias state error estimate\. Increasing it makes accelerometer bias estimation faster and noisier\.
 
 
-+-----------------+-------------------------+
-| Range           | Units                   |
-+=================+=========================+
-| 0.00001 - 0.005 | meters per cubic second |
-+-----------------+-------------------------+
++------------------+-------------------------+
+| Range            | Units                   |
++==================+=========================+
+| 0.00001 to 0.005 | meters per cubic second |
++------------------+-------------------------+
 
 
 
@@ -21440,11 +21539,11 @@ EK2\_WIND\_P\_NSE: Wind velocity process noise \(m\/s\^2\)
 This state process noise controls the growth of wind state error estimates\. Increasing it makes wind estimation faster and noisier\.
 
 
-+-----------+------------+--------------------------+
-| Increment | Range      | Units                    |
-+===========+============+==========================+
-| 0.1       | 0.01 - 1.0 | meters per square second |
-+-----------+------------+--------------------------+
++-----------+-------------+--------------------------+
+| Increment | Range       | Units                    |
++===========+=============+==========================+
+| 0.1       | 0.01 to 1.0 | meters per square second |
++-----------+-------------+--------------------------+
 
 
 
@@ -21459,11 +21558,11 @@ EK2\_WIND\_PSCALE: Height rate to wind process noise scaler
 This controls how much the process noise on the wind states is increased when gaining or losing altitude to take into account changes in wind speed and direction with altitude\. Increasing this parameter increases how rapidly the wind states adapt when changing altitude\, but does make wind velocity estimation noiser\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.0 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.0 to 1.0 |
++-----------+------------+
 
 
 
@@ -21551,11 +21650,11 @@ EK2\_CHECK\_SCALE: GPS accuracy check scaler \(\%\)
 This scales the thresholds that are used to check GPS accuracy before it is used by the EKF\. A value of 100 is the default\. Values greater than 100 increase and values less than 100 reduce the maximum GPS error the EKF will accept\. A value of 200 will double the allowable GPS error\.
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 50 - 200 | percent |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| 50 to 200 | percent |
++-----------+---------+
 
 
 
@@ -21570,11 +21669,11 @@ EK2\_NOAID\_M\_NSE: Non\-GPS operation position uncertainty \(m\)
 This sets the amount of position variation that the EKF allows for when operating without external measurements \(eg GPS or optical flow\)\. Increasing this parameter makes the EKF attitude estimate less sensitive to vehicle manoeuvres but more sensitive to IMU errors\.
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0.5 - 50.0 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0.5 to 50.0 | meters |
++-------------+--------+
 
 
 
@@ -21589,11 +21688,11 @@ EK2\_YAW\_M\_NSE: Yaw measurement noise \(rad\)
 This is the RMS value of noise in yaw measurements from the magnetometer\. Increasing it reduces the weighting on these measurements\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 0.05      | 0.05 - 1.0 | radians |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 0.05      | 0.05 to 1.0 | radians |
++-----------+-------------+---------+
 
 
 
@@ -21608,11 +21707,11 @@ EK2\_YAW\_I\_GATE: Yaw measurement gate size
 This sets the percentage number of standard deviations applied to the magnetometer yaw measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21627,11 +21726,11 @@ EK2\_TAU\_OUTPUT: Output complementary filter time constant \(centi\-sec\)
 Sets the time constant of the output complementary filter\/predictor in centi\-seconds\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 5         | 10 - 50 | centiseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 5         | 10 to 50 | centiseconds |
++-----------+----------+--------------+
 
 
 
@@ -21646,11 +21745,11 @@ EK2\_MAGE\_P\_NSE: Earth magnetic field process noise \(gauss\/s\)
 This state process noise controls the growth of earth magnetic field state error estimates\. Increasing it makes earth magnetic field estimation faster and noisier\.
 
 
-+----------------+------------------+
-| Range          | Units            |
-+================+==================+
-| 0.00001 - 0.01 | gauss per second |
-+----------------+------------------+
++-----------------+------------------+
+| Range           | Units            |
++=================+==================+
+| 0.00001 to 0.01 | gauss per second |
++-----------------+------------------+
 
 
 
@@ -21665,11 +21764,11 @@ EK2\_MAGB\_P\_NSE: Body magnetic field process noise \(gauss\/s\)
 This state process noise controls the growth of body magnetic field state error estimates\. Increasing it makes magnetometer bias error estimation faster and noisier\.
 
 
-+----------------+------------------+
-| Range          | Units            |
-+================+==================+
-| 0.00001 - 0.01 | gauss per second |
-+----------------+------------------+
++-----------------+------------------+
+| Range           | Units            |
++=================+==================+
+| 0.00001 to 0.01 | gauss per second |
++-----------------+------------------+
 
 
 
@@ -21684,11 +21783,11 @@ EK2\_RNG\_USE\_HGT: Range finder switch height percentage
 Range finder can be used as the primary height source when below this percentage of its maximum range \(see RNGFND\_MAX\_CM\)\. This will not work unless Baro or GPS height is selected as the primary height source vis EK2\_ALT\_SOURCE \= 0 or 2 respectively\.  This feature should not be used for terrain following as it is designed  for vertical takeoff and landing with climb above  the range finder use height before commencing the mission\, and with horizontal position changes below that height being limited to a flat region around the takeoff and landing point\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | -1 - 70 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | -1 to 70 | percent |
++-----------+----------+---------+
 
 
 
@@ -21703,11 +21802,11 @@ EK2\_TERR\_GRAD: Maximum terrain gradient
 Specifies the maximum gradient of the terrain below the vehicle assumed when it is fusing range finder or optical flow to estimate terrain height\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.01      | 0 - 0.2 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.01      | 0 to 0.2 |
++-----------+----------+
 
 
 
@@ -21722,11 +21821,11 @@ EK2\_BCN\_M\_NSE: Range beacon measurement noise \(m\)
 This is the RMS value of noise in the range beacon measurement\. Increasing it reduces the weighting on this measurement\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -21741,11 +21840,11 @@ EK2\_BCN\_I\_GTE: Range beacon measurement gate size
 This sets the percentage number of standard deviations applied to the range beacon measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -21761,11 +21860,11 @@ EK2\_BCN\_DELAY: Range beacon measurement delay \(msec\)
 This is the number of msec that the range beacon measurements lag behind the inertial measurements\. It is the time from the end of the optical flow averaging period and does not include the time delay due to the 100msec of averaging within the flow sensor\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 10        | 0 - 127 | milliseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 10        | 0 to 127 | milliseconds |
++-----------+----------+--------------+
 
 
 
@@ -21780,11 +21879,11 @@ EK2\_RNG\_USE\_SPD: Range finder max ground speed
 The range finder will not be used as the primary height source when the horizontal ground speed is greater than this value\.
 
 
-+-----------+-----------+-------------------+
-| Increment | Range     | Units             |
-+===========+===========+===================+
-| 0.5       | 2.0 - 6.0 | meters per second |
-+-----------+-----------+-------------------+
++-----------+------------+-------------------+
+| Increment | Range      | Units             |
++===========+============+===================+
+| 0.5       | 2.0 to 6.0 | meters per second |
++-----------+------------+-------------------+
 
 
 
@@ -21892,11 +21991,11 @@ EK2\_MAG\_EF\_LIM: EarthField error limit
 This limits the difference between the learned earth magnetic field and the earth field from the world magnetic model tables\. A value of zero means to disable the use of the WMM tables\.
 
 
-+---------+------------+
-| Range   | Units      |
-+=========+============+
-| 0 - 500 | milligauss |
-+---------+------------+
++----------+------------+
+| Range    | Units      |
++==========+============+
+| 0 to 500 | milligauss |
++----------+------------+
 
 
 
@@ -21910,11 +22009,11 @@ EK2\_HRT\_FILT: Height rate filter crossover frequency
 Specifies the crossover frequency of the complementary filter used to calculate the output predictor height rate derivative\.
 
 
-+------------+-------+
-| Range      | Units |
-+============+=======+
-| 0.1 - 30.0 | hertz |
-+------------+-------+
++-------------+-------+
+| Range       | Units |
++=============+=======+
+| 0.1 to 30.0 | hertz |
++-------------+-------+
 
 
 
@@ -22000,11 +22099,11 @@ EK2\_GSF\_RST\_MAX: Maximum number of resets to the EKF\-GSF yaw estimate allowe
 Sets the maximum number of times the EKF2 will be allowed to reset its yaw to the estimate from the EKF\-GSF yaw estimator\. No resets will be allowed unless the use of the EKF\-GSF yaw estimate is enabled via the EK2\_GSF\_USE\_MASK parameter\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 1 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 1 to 10 |
++-----------+---------+
 
 
 
@@ -22053,11 +22152,11 @@ EK3\_VELNE\_M\_NSE: GPS horizontal velocity measurement noise \(m\/s\)
 This sets a lower limit on the speed accuracy reported by the GPS receiver that is used to set horizontal velocity observation noise\. If the model of receiver used does not provide a speed accurcy estimate\, then the parameter value will be used\. Increasing it reduces the weighting of the GPS horizontal velocity measurements\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.05      | 0.05 - 5.0 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.05      | 0.05 to 5.0 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -22072,11 +22171,11 @@ EK3\_VELD\_M\_NSE: GPS vertical velocity measurement noise \(m\/s\)
 This sets a lower limit on the speed accuracy reported by the GPS receiver that is used to set vertical velocity observation noise\. If the model of receiver used does not provide a speed accurcy estimate\, then the parameter value will be used\. Increasing it reduces the weighting of the GPS vertical velocity measurements\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.05      | 0.05 - 5.0 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.05      | 0.05 to 5.0 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -22091,11 +22190,11 @@ EK3\_VEL\_I\_GATE: GPS velocity innovation gate size
 This sets the percentage number of standard deviations applied to the GPS velocity measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22110,11 +22209,11 @@ EK3\_POSNE\_M\_NSE: GPS horizontal position measurement noise \(m\)
 This sets the GPS horizontal position observation noise\. Increasing it reduces the weighting of GPS horizontal position measurements\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -22129,11 +22228,11 @@ EK3\_POS\_I\_GATE: GPS position measurement gate size
 This sets the percentage number of standard deviations applied to the GPS position measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22148,11 +22247,11 @@ EK3\_GLITCH\_RAD: GPS glitch radius gate size \(m\)
 This controls the maximum radial uncertainty in position between the value predicted by the filter and the value measured by the GPS before the filter position and velocity states are reset to the GPS\. Making this value larger allows the filter to ignore larger GPS glitches but also means that non\-GPS errors such as IMU and compass can create a larger error in position before the filter is forced back to the GPS position\.
 
 
-+-----------+----------+--------+
-| Increment | Range    | Units  |
-+===========+==========+========+
-| 5         | 10 - 100 | meters |
-+-----------+----------+--------+
++-----------+-----------+--------+
+| Increment | Range     | Units  |
++===========+===========+========+
+| 5         | 10 to 100 | meters |
++-----------+-----------+--------+
 
 
 
@@ -22167,11 +22266,11 @@ EK3\_ALT\_M\_NSE: Altitude measurement noise \(m\)
 This is the RMS value of noise in the altitude measurement\. Increasing it reduces the weighting of the baro measurement and will make the filter respond more slowly to baro measurement errors\, but will make it more sensitive to GPS and accelerometer errors\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -22186,11 +22285,11 @@ EK3\_HGT\_I\_GATE: Height measurement gate size
 This sets the percentage number of standard deviations applied to the height measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22206,11 +22305,11 @@ EK3\_HGT\_DELAY: Height measurement delay \(msec\)
 This is the number of msec that the Height measurements lag behind the inertial measurements\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 10        | 0 - 250 | milliseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 10        | 0 to 250 | milliseconds |
++-----------+----------+--------------+
 
 
 
@@ -22225,11 +22324,11 @@ EK3\_MAG\_M\_NSE: Magnetometer measurement noise \(Gauss\)
 This is the RMS value of noise in magnetometer measurements\. Increasing it reduces the weighting on these measurements\.
 
 
-+-----------+------------+-------+
-| Increment | Range      | Units |
-+===========+============+=======+
-| 0.01      | 0.01 - 0.5 | gauss |
-+-----------+------------+-------+
++-----------+-------------+-------+
+| Increment | Range       | Units |
++===========+=============+=======+
+| 0.01      | 0.01 to 0.5 | gauss |
++-----------+-------------+-------+
 
 
 
@@ -22281,11 +22380,11 @@ EK3\_MAG\_I\_GATE: Magnetometer measurement gate size
 This sets the percentage number of standard deviations applied to the magnetometer measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22300,11 +22399,11 @@ EK3\_EAS\_M\_NSE: Equivalent airspeed measurement noise \(m\/s\)
 This is the RMS value of noise in equivalent airspeed measurements used by planes\. Increasing it reduces the weighting of airspeed measurements and will make wind speed estimates less noisy and slower to converge\. Increasing also increases navigation errors when dead\-reckoning without GPS measurements\.
 
 
-+-----------+-----------+-------------------+
-| Increment | Range     | Units             |
-+===========+===========+===================+
-| 0.1       | 0.5 - 5.0 | meters per second |
-+-----------+-----------+-------------------+
++-----------+------------+-------------------+
+| Increment | Range      | Units             |
++===========+============+===================+
+| 0.1       | 0.5 to 5.0 | meters per second |
++-----------+------------+-------------------+
 
 
 
@@ -22319,11 +22418,11 @@ EK3\_EAS\_I\_GATE: Airspeed measurement gate size
 This sets the percentage number of standard deviations applied to the airspeed measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22338,11 +22437,11 @@ EK3\_RNG\_M\_NSE: Range finder measurement noise \(m\)
 This is the RMS value of noise in the range finder measurement\. Increasing it reduces the weighting on this measurement\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -22357,11 +22456,11 @@ EK3\_RNG\_I\_GATE: Range finder measurement gate size
 This sets the percentage number of standard deviations applied to the range finder innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22376,11 +22475,11 @@ EK3\_MAX\_FLOW: Maximum valid optical flow rate
 This sets the magnitude maximum optical flow rate in rad\/sec that will be accepted by the filter
 
 
-+-----------+-----------+--------------------+
-| Increment | Range     | Units              |
-+===========+===========+====================+
-| 0.1       | 1.0 - 4.0 | radians per second |
-+-----------+-----------+--------------------+
++-----------+------------+--------------------+
+| Increment | Range      | Units              |
++===========+============+====================+
+| 0.1       | 1.0 to 4.0 | radians per second |
++-----------+------------+--------------------+
 
 
 
@@ -22395,11 +22494,11 @@ EK3\_FLOW\_M\_NSE: Optical flow measurement noise \(rad\/s\)
 This is the RMS value of noise and errors in optical flow measurements\. Increasing it reduces the weighting on these measurements\.
 
 
-+-----------+------------+--------------------+
-| Increment | Range      | Units              |
-+===========+============+====================+
-| 0.05      | 0.05 - 1.0 | radians per second |
-+-----------+------------+--------------------+
++-----------+-------------+--------------------+
+| Increment | Range       | Units              |
++===========+=============+====================+
+| 0.05      | 0.05 to 1.0 | radians per second |
++-----------+-------------+--------------------+
 
 
 
@@ -22414,11 +22513,11 @@ EK3\_FLOW\_I\_GATE: Optical Flow measurement gate size
 This sets the percentage number of standard deviations applied to the optical flow innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22434,11 +22533,11 @@ EK3\_FLOW\_DELAY: Optical Flow measurement delay \(msec\)
 This is the number of msec that the optical flow measurements lag behind the inertial measurements\. It is the time from the end of the optical flow averaging period and does not include the time delay due to the 100msec of averaging within the flow sensor\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 10        | 0 - 250 | milliseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 10        | 0 to 250 | milliseconds |
++-----------+----------+--------------+
 
 
 
@@ -22453,11 +22552,11 @@ EK3\_GYRO\_P\_NSE: Rate gyro noise \(rad\/s\)
 This control disturbance noise controls the growth of estimated error due to gyro measurement errors excluding bias\. Increasing it makes the flter trust the gyro measurements less and other measurements more\.
 
 
-+-----------+--------------+--------------------+
-| Increment | Range        | Units              |
-+===========+==============+====================+
-| 0.0001    | 0.0001 - 0.1 | radians per second |
-+-----------+--------------+--------------------+
++-----------+---------------+--------------------+
+| Increment | Range         | Units              |
++===========+===============+====================+
+| 0.0001    | 0.0001 to 0.1 | radians per second |
++-----------+---------------+--------------------+
 
 
 
@@ -22472,11 +22571,11 @@ EK3\_ACC\_P\_NSE: Accelerometer noise \(m\/s\^2\)
 This control disturbance noise controls the growth of estimated error due to accelerometer measurement errors excluding bias\. Increasing it makes the flter trust the accelerometer measurements less and other measurements more\.
 
 
-+-----------+------------+--------------------------+
-| Increment | Range      | Units                    |
-+===========+============+==========================+
-| 0.01      | 0.01 - 1.0 | meters per square second |
-+-----------+------------+--------------------------+
++-----------+-------------+--------------------------+
+| Increment | Range       | Units                    |
++===========+=============+==========================+
+| 0.01      | 0.01 to 1.0 | meters per square second |
++-----------+-------------+--------------------------+
 
 
 
@@ -22491,11 +22590,11 @@ EK3\_GBIAS\_P\_NSE: Rate gyro bias stability \(rad\/s\/s\)
 This state  process noise controls growth of the gyro delta angle bias state error estimate\. Increasing it makes rate gyro bias estimation faster and noisier\.
 
 
-+-----------------+---------------------------+
-| Range           | Units                     |
-+=================+===========================+
-| 0.00001 - 0.001 | radians per square second |
-+-----------------+---------------------------+
++------------------+---------------------------+
+| Range            | Units                     |
++==================+===========================+
+| 0.00001 to 0.001 | radians per square second |
++------------------+---------------------------+
 
 
 
@@ -22510,11 +22609,11 @@ EK3\_ABIAS\_P\_NSE: Accelerometer bias stability \(m\/s\^3\)
 This noise controls the growth of the vertical accelerometer delta velocity bias state error estimate\. Increasing it makes accelerometer bias estimation faster and noisier\.
 
 
-+-----------------+-------------------------+
-| Range           | Units                   |
-+=================+=========================+
-| 0.00001 - 0.005 | meters per cubic second |
-+-----------------+-------------------------+
++------------------+-------------------------+
+| Range            | Units                   |
++==================+=========================+
+| 0.00001 to 0.005 | meters per cubic second |
++------------------+-------------------------+
 
 
 
@@ -22529,11 +22628,11 @@ EK3\_WIND\_P\_NSE: Wind velocity process noise \(m\/s\^2\)
 This state process noise controls the growth of wind state error estimates\. Increasing it makes wind estimation faster and noisier\.
 
 
-+-----------+------------+--------------------------+
-| Increment | Range      | Units                    |
-+===========+============+==========================+
-| 0.1       | 0.01 - 2.0 | meters per square second |
-+-----------+------------+--------------------------+
++-----------+-------------+--------------------------+
+| Increment | Range       | Units                    |
++===========+=============+==========================+
+| 0.1       | 0.01 to 2.0 | meters per square second |
++-----------+-------------+--------------------------+
 
 
 
@@ -22548,11 +22647,11 @@ EK3\_WIND\_PSCALE: Height rate to wind process noise scaler
 This controls how much the process noise on the wind states is increased when gaining or losing altitude to take into account changes in wind speed and direction with altitude\. Increasing this parameter increases how rapidly the wind states adapt when changing altitude\, but does make wind velocity estimation noiser\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.0 - 2.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.0 to 2.0 |
++-----------+------------+
 
 
 
@@ -22640,11 +22739,11 @@ EK3\_CHECK\_SCALE: GPS accuracy check scaler \(\%\)
 This scales the thresholds that are used to check GPS accuracy before it is used by the EKF\. A value of 100 is the default\. Values greater than 100 increase and values less than 100 reduce the maximum GPS error the EKF will accept\. A value of 200 will double the allowable GPS error\.
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 50 - 200 | percent |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| 50 to 200 | percent |
++-----------+---------+
 
 
 
@@ -22659,11 +22758,11 @@ EK3\_NOAID\_M\_NSE: Non\-GPS operation position uncertainty \(m\)
 This sets the amount of position variation that the EKF allows for when operating without external measurements \(eg GPS or optical flow\)\. Increasing this parameter makes the EKF attitude estimate less sensitive to vehicle manoeuvres but more sensitive to IMU errors\.
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0.5 - 50.0 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0.5 to 50.0 | meters |
++-------------+--------+
 
 
 
@@ -22705,11 +22804,11 @@ EK3\_YAW\_M\_NSE: Yaw measurement noise \(rad\)
 This is the RMS value of noise in yaw measurements from the magnetometer\. Increasing it reduces the weighting on these measurements\.
 
 
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| 0.05      | 0.05 - 1.0 | radians |
-+-----------+------------+---------+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 0.05      | 0.05 to 1.0 | radians |
++-----------+-------------+---------+
 
 
 
@@ -22724,11 +22823,11 @@ EK3\_YAW\_I\_GATE: Yaw measurement gate size
 This sets the percentage number of standard deviations applied to the magnetometer yaw measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22743,11 +22842,11 @@ EK3\_TAU\_OUTPUT: Output complementary filter time constant \(centi\-sec\)
 Sets the time constant of the output complementary filter\/predictor in centi\-seconds\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 5         | 10 - 50 | centiseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 5         | 10 to 50 | centiseconds |
++-----------+----------+--------------+
 
 
 
@@ -22762,11 +22861,11 @@ EK3\_MAGE\_P\_NSE: Earth magnetic field process noise \(gauss\/s\)
 This state process noise controls the growth of earth magnetic field state error estimates\. Increasing it makes earth magnetic field estimation faster and noisier\.
 
 
-+----------------+------------------+
-| Range          | Units            |
-+================+==================+
-| 0.00001 - 0.01 | gauss per second |
-+----------------+------------------+
++-----------------+------------------+
+| Range           | Units            |
++=================+==================+
+| 0.00001 to 0.01 | gauss per second |
++-----------------+------------------+
 
 
 
@@ -22781,11 +22880,11 @@ EK3\_MAGB\_P\_NSE: Body magnetic field process noise \(gauss\/s\)
 This state process noise controls the growth of body magnetic field state error estimates\. Increasing it makes magnetometer bias error estimation faster and noisier\.
 
 
-+----------------+------------------+
-| Range          | Units            |
-+================+==================+
-| 0.00001 - 0.01 | gauss per second |
-+----------------+------------------+
++-----------------+------------------+
+| Range           | Units            |
++=================+==================+
+| 0.00001 to 0.01 | gauss per second |
++-----------------+------------------+
 
 
 
@@ -22800,11 +22899,11 @@ EK3\_RNG\_USE\_HGT: Range finder switch height percentage
 Range finder can be used as the primary height source when below this percentage of its maximum range \(see RNGFNDx\_MAX\_CM\) and the primary height source is Baro or GPS \(see EK3\_SRCx\_POSZ\)\.  This feature should not be used for terrain following as it is designed for vertical takeoff and landing with climb above the range finder use height before commencing the mission\, and with horizontal position changes below that height being limited to a flat region around the takeoff and landing point\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | -1 - 70 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | -1 to 70 | percent |
++-----------+----------+---------+
 
 
 
@@ -22819,11 +22918,11 @@ EK3\_TERR\_GRAD: Maximum terrain gradient
 Specifies the maximum gradient of the terrain below the vehicle when it is using range finder as a height reference
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.01      | 0 - 0.2 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.01      | 0 to 0.2 |
++-----------+----------+
 
 
 
@@ -22838,11 +22937,11 @@ EK3\_BCN\_M\_NSE: Range beacon measurement noise \(m\)
 This is the RMS value of noise in the range beacon measurement\. Increasing it reduces the weighting on this measurement\.
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 0.1       | 0.1 - 10.0 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.1 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -22857,11 +22956,11 @@ EK3\_BCN\_I\_GTE: Range beacon measurement gate size
 This sets the percentage number of standard deviations applied to the range beacon measurement innovation consistency check\. Decreasing it makes it more likely that good measurements will be rejected\. Increasing it makes it more likely that bad measurements will be accepted\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 25        | 100 - 1000 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 25        | 100 to 1000 |
++-----------+-------------+
 
 
 
@@ -22877,11 +22976,11 @@ EK3\_BCN\_DELAY: Range beacon measurement delay \(msec\)
 This is the number of msec that the range beacon measurements lag behind the inertial measurements\.
 
 
-+-----------+---------+--------------+
-| Increment | Range   | Units        |
-+===========+=========+==============+
-| 10        | 0 - 250 | milliseconds |
-+-----------+---------+--------------+
++-----------+----------+--------------+
+| Increment | Range    | Units        |
++===========+==========+==============+
+| 10        | 0 to 250 | milliseconds |
++-----------+----------+--------------+
 
 
 
@@ -22896,11 +22995,11 @@ EK3\_RNG\_USE\_SPD: Range finder max ground speed
 The range finder will not be used as the primary height source when the horizontal ground speed is greater than this value\.
 
 
-+-----------+-----------+-------------------+
-| Increment | Range     | Units             |
-+===========+===========+===================+
-| 0.5       | 2.0 - 6.0 | meters per second |
-+-----------+-----------+-------------------+
++-----------+------------+-------------------+
+| Increment | Range      | Units             |
++===========+============+===================+
+| 0.5       | 2.0 to 6.0 | meters per second |
++-----------+------------+-------------------+
 
 
 
@@ -22915,11 +23014,11 @@ EK3\_ACC\_BIAS\_LIM: Accelerometer bias limit
 The accelerometer bias state will be limited to \+\- this value
 
 
-+-----------+-----------+--------------------------+
-| Increment | Range     | Units                    |
-+===========+===========+==========================+
-| 0.1       | 0.5 - 2.5 | meters per square second |
-+-----------+-----------+--------------------------+
++-----------+------------+--------------------------+
+| Increment | Range      | Units                    |
++===========+============+==========================+
+| 0.1       | 0.5 to 2.5 | meters per square second |
++-----------+------------+--------------------------+
 
 
 
@@ -22998,11 +23097,11 @@ EK3\_VIS\_VERR\_MIN: Visual odometry minimum velocity error
 This is the 1\-STD odometry velocity observation error that will be assumed when maximum quality is reported by the sensor\. When quality is between max and min\, the error will be calculated using linear interpolation between VIS\_VERR\_MIN and VIS\_VERR\_MAX\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.05      | 0.05 - 0.5 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.05      | 0.05 to 0.5 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -23017,11 +23116,11 @@ EK3\_VIS\_VERR\_MAX: Visual odometry maximum velocity error
 This is the 1\-STD odometry velocity observation error that will be assumed when minimum quality is reported by the sensor\. When quality is between max and min\, the error will be calculated using linear interpolation between VIS\_VERR\_MIN and VIS\_VERR\_MAX\.
 
 
-+-----------+-----------+-------------------+
-| Increment | Range     | Units             |
-+===========+===========+===================+
-| 0.1       | 0.5 - 5.0 | meters per second |
-+-----------+-----------+-------------------+
++-----------+------------+-------------------+
+| Increment | Range      | Units             |
++===========+============+===================+
+| 0.1       | 0.5 to 5.0 | meters per second |
++-----------+------------+-------------------+
 
 
 
@@ -23036,11 +23135,11 @@ EK3\_WENC\_VERR: Wheel odometry velocity error
 This is the 1\-STD odometry velocity observation error that will be assumed when wheel encoder data is being fused\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.1       | 0.01 - 1.0 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.1       | 0.01 to 1.0 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -23083,11 +23182,11 @@ EK3\_HRT\_FILT: Height rate filter crossover frequency
 Specifies the crossover frequency of the complementary filter used to calculate the output predictor height rate derivative\.
 
 
-+------------+-------+
-| Range      | Units |
-+============+=======+
-| 0.1 - 30.0 | hertz |
-+------------+-------+
++-------------+-------+
+| Range       | Units |
++=============+=======+
+| 0.1 to 30.0 | hertz |
++-------------+-------+
 
 
 
@@ -23102,11 +23201,11 @@ EK3\_MAG\_EF\_LIM: EarthField error limit
 This limits the difference between the learned earth magnetic field and the earth field from the world magnetic model tables\. A value of zero means to disable the use of the WMM tables\.
 
 
-+---------+------------+
-| Range   | Units      |
-+=========+============+
-| 0 - 500 | milligauss |
-+---------+------------+
++----------+------------+
+| Range    | Units      |
++==========+============+
+| 0 to 500 | milligauss |
++----------+------------+
 
 
 
@@ -23192,11 +23291,11 @@ EK3\_GSF\_RST\_MAX: Maximum number of resets to the EKF\-GSF yaw estimate allowe
 Sets the maximum number of times the EKF3 will be allowed to reset its yaw to the estimate from the EKF\-GSF yaw estimator\. No resets will be allowed unless the use of the EKF\-GSF yaw estimate is enabled via the EK3\_GSF\_USE\_MASK parameter\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 1 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 1 to 10 |
++-----------+---------+
 
 
 
@@ -23211,11 +23310,11 @@ EK3\_ERR\_THRESH: EKF3 Lane Relative Error Sensitivity Threshold
 lanes have to be consistently better than the primary by at least this threshold to reduce their overall relativeCoreError\, lowering this makes lane switching more sensitive to smaller error differences
 
 
-+-----------+----------+
-| Increment | Range    |
-+===========+==========+
-| 0.05      | 0.05 - 1 |
-+-----------+----------+
++-----------+-----------+
+| Increment | Range     |
++===========+===========+
+| 0.05      | 0.05 to 1 |
++-----------+-----------+
 
 
 
@@ -23261,11 +23360,11 @@ EK3\_DRAG\_BCOEF\_X: Ballistic coefficient for X axis drag
 Ratio of mass to drag coefficient measured along the X body axis\. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction \(eg multicopters\)\. The drag produced by this effect scales with speed squared\.  Set to a postive value \> 1\.0 to enable\. A starting value is the mass in Kg divided by the frontal area\. The predicted drag from the rotors is specified separately by the EK3\_DRAG\_MCOEF parameter\.
 
 
-+--------------+----------------------------+
-| Range        | Units                      |
-+==============+============================+
-| 0.0 - 1000.0 | kilograms per square meter |
-+--------------+----------------------------+
++---------------+----------------------------+
+| Range         | Units                      |
++===============+============================+
+| 0.0 to 1000.0 | kilograms per square meter |
++---------------+----------------------------+
 
 
 
@@ -23280,11 +23379,11 @@ EK3\_DRAG\_BCOEF\_Y: Ballistic coefficient for Y axis drag
 Ratio of mass to drag coefficient measured along the Y body axis\. This parameter enables estimation of wind drift for vehicles with bluff bodies and without propulsion forces in the X and Y direction \(eg multicopters\)\. The drag produced by this effect scales with speed squared\.  Set to a postive value \> 1\.0 to enable\. A starting value is the mass in Kg divided by the side area\. The predicted drag from the rotors is specified separately by the EK3\_DRAG\_MCOEF parameter\.
 
 
-+---------------+----------------------------+
-| Range         | Units                      |
-+===============+============================+
-| 50.0 - 1000.0 | kilograms per square meter |
-+---------------+----------------------------+
++----------------+----------------------------+
+| Range          | Units                      |
++================+============================+
+| 50.0 to 1000.0 | kilograms per square meter |
++----------------+----------------------------+
 
 
 
@@ -23299,11 +23398,11 @@ EK3\_DRAG\_M\_NSE: Observation noise for drag acceleration
 This sets the amount of noise used when fusing X and Y acceleration as an observation that enables esitmation of wind velocity for multi\-rotor vehicles\. This feature is enabled by the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters
 
 
-+-----------+-----------+--------------------------+
-| Increment | Range     | Units                    |
-+===========+===========+==========================+
-| 0.1       | 0.1 - 2.0 | meters per square second |
-+-----------+-----------+--------------------------+
++-----------+------------+--------------------------+
+| Increment | Range      | Units                    |
++===========+============+==========================+
+| 0.1       | 0.1 to 2.0 | meters per square second |
++-----------+------------+--------------------------+
 
 
 
@@ -23318,11 +23417,11 @@ EK3\_DRAG\_MCOEF: Momentum coefficient for propeller drag
 This parameter is used to predict the drag produced by the rotors when flying a multi\-copter\, enabling estimation of wind drift\. The drag produced by this effect scales with speed not speed squared and is produced because some of the air velocity normal to the rotors axis of rotation is lost when passing through the rotor disc which changes the momentum of the airflow causing drag\. For unducted rotors the effect is roughly proportional to the area of the propeller blades when viewed side on and changes with different propellers\. It is higher for ducted rotors\. For example if flying at 15 m\/s at sea level conditions produces a rotor induced drag acceleration of 1\.5 m\/s\/s\, then EK3\_DRAG\_MCOEF would be set to 0\.1 \= \(1\.5\/15\.0\)\. Set EK3\_MCOEF to a postive value to enable wind estimation using this drag effect\. To account for the drag produced by the body which scales with speed squared\, see documentation for the EK3\_DRAG\_BCOEF\_X and EK3\_DRAG\_BCOEF\_Y parameters\.
 
 
-+-----------+-----------+------------+
-| Increment | Range     | Units      |
-+===========+===========+============+
-| 0.01      | 0.0 - 1.0 | per second |
-+-----------+-----------+------------+
++-----------+------------+------------+
+| Increment | Range      | Units      |
++===========+============+============+
+| 0.01      | 0.0 to 1.0 | per second |
++-----------+------------+------------+
 
 
 
@@ -23337,11 +23436,11 @@ EK3\_OGNM\_TEST\_SF: On ground not moving test scale factor
 This parameter is adjust the sensitivity of the on ground not moving test which is used to assist with learning the yaw gyro bias and stopping yaw drift before flight when operating without a yaw sensor\. Bigger values allow the detection of a not moving condition with noiser IMU data\. Check the XKFM data logged when the vehicle is on ground not moving and adjust the value of OGNM\_TEST\_SF to be slightly higher than the maximum value of the XKFM\.ADR\, XKFM\.ALR\, XKFM\.GDR and XKFM\.GLR test levels\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.5       | 1.0 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.5       | 1.0 to 10.0 |
++-----------+-------------+
 
 
 
@@ -23356,11 +23455,11 @@ EK3\_GND\_EFF\_DZ: Baro height ground effect dead zone
 This parameter sets the size of the dead zone that is applied to negative baro height spikes that can occur when taking off or landing when a vehicle with lift rotors is operating in ground effect ground effect\. Set to about 0\.5m less than the amount of negative offset in baro height that occurs just prior to takeoff when lift motors are spooling up\. Set to 0 if no ground effect is present\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.5       | 0.0 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.5       | 0.0 to 10.0 |
++-----------+-------------+
 
 
 
@@ -23375,11 +23474,11 @@ EK3\_PRIMARY: Primary core number
 The core number \(index in IMU mask\) that will be used as the primary EKF core on startup\. While disarmed the EKF will force the use of this core\. A value of 0 corresponds to the first IMU in EK3\_IMU\_MASK\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 1         | 0 - 2 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 0 to 2 |
++-----------+--------+
 
 
 
@@ -23917,11 +24016,11 @@ ESC\_TLM\_MAV\_OFS: ESC Telemetry mavlink offset
 Offset to apply to ESC numbers when reporting as ESC\_TELEMETRY packets over MAVLink\. This allows high numbered motors to be displayed as low numbered ESCs for convenience on GCS displays\. A value of 4 would send ESC on output 5 as ESC number 1 in ESC\_TELEMETRY packets
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 31 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 31 |
++-----------+---------+
 
 
 
@@ -24025,11 +24124,11 @@ FENCE\_ALT\_MAX: Fence Maximum Altitude
 Maximum altitude allowed before geofence triggers
 
 
-+-----------+-----------+--------+
-| Increment | Range     | Units  |
-+===========+===========+========+
-| 1         | 10 - 1000 | meters |
-+-----------+-----------+--------+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | 10 to 1000 | meters |
++-----------+------------+--------+
 
 
 
@@ -24043,11 +24142,11 @@ FENCE\_RADIUS: Circular Fence Radius
 Circle fence radius which when breached will cause an RTL
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 30 - 10000 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 30 to 10000 | meters |
++-------------+--------+
 
 
 
@@ -24061,11 +24160,11 @@ FENCE\_MARGIN: Fence Margin
 Distance that autopilot\'s should maintain from the fence to avoid a breach
 
 
-+--------+--------+
-| Range  | Units  |
-+========+========+
-| 1 - 10 | meters |
-+--------+--------+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 1 to 10 | meters |
++---------+--------+
 
 
 
@@ -24079,11 +24178,11 @@ FENCE\_TOTAL: Fence polygon point total
 Number of polygon points saved in eeprom \(do not update manually\)
 
 
-+--------+
-| Range  |
-+========+
-| 1 - 20 |
-+--------+
++---------+
+| Range   |
++=========+
+| 1 to 20 |
++---------+
 
 
 
@@ -24097,11 +24196,11 @@ FENCE\_ALT\_MIN: Fence Minimum Altitude
 Minimum altitude allowed before geofence triggers
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 1         | -100 - 100 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 1         | -100 to 100 | meters |
++-----------+-------------+--------+
 
 
 
@@ -24115,18 +24214,18 @@ FENCE\_RET\_RALLY: Fence Return to Rally
 Should the vehicle return to fence return point or rally point
 
 
-+-----------+-------+---------------------------------+
-| Increment | Range | Values                          |
-+===========+=======+=================================+
-| 1         | 0 - 1 | +-------+---------------------+ |
-|           |       | | Value | Meaning             | |
-|           |       | +=======+=====================+ |
-|           |       | | 0     | Fence Return Point  | |
-|           |       | +-------+---------------------+ |
-|           |       | | 1     | Nearest Rally Point | |
-|           |       | +-------+---------------------+ |
-|           |       |                                 |
-+-----------+-------+---------------------------------+
++-----------+--------+---------------------------------+
+| Increment | Range  | Values                          |
++===========+========+=================================+
+| 1         | 0 to 1 | +-------+---------------------+ |
+|           |        | | Value | Meaning             | |
+|           |        | +=======+=====================+ |
+|           |        | | 0     | Fence Return Point  | |
+|           |        | +-------+---------------------+ |
+|           |        | | 1     | Nearest Rally Point | |
+|           |        | +-------+---------------------+ |
+|           |        |                                 |
++-----------+--------+---------------------------------+
 
 
 
@@ -24140,11 +24239,11 @@ FENCE\_RET\_ALT: Fence Return Altitude
 Altitude the vehicle will transit to when a fence breach occurs
 
 
-+-----------+-----------+--------+
-| Increment | Range     | Units  |
-+===========+===========+========+
-| 1         | 0 - 32767 | meters |
-+-----------+-----------+--------+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 1         | 0 to 32767 | meters |
++-----------+------------+--------+
 
 
 
@@ -24158,22 +24257,22 @@ FENCE\_AUTOENABLE: Fence Auto\-Enable
 Auto\-enable of fence
 
 
-+-----------+-------+---------------------------------------------+
-| Increment | Range | Values                                      |
-+===========+=======+=============================================+
-| 1         | 0 - 3 | +-------+---------------------------------+ |
-|           |       | | Value | Meaning                         | |
-|           |       | +=======+=================================+ |
-|           |       | | 0     | AutoEnableOff                   | |
-|           |       | +-------+---------------------------------+ |
-|           |       | | 1     | AutoEnableOnTakeoff             | |
-|           |       | +-------+---------------------------------+ |
-|           |       | | 2     | AutoEnableDisableFloorOnLanding | |
-|           |       | +-------+---------------------------------+ |
-|           |       | | 3     | AutoEnableOnlyWhenArmed         | |
-|           |       | +-------+---------------------------------+ |
-|           |       |                                             |
-+-----------+-------+---------------------------------------------+
++-----------+--------+---------------------------------------------+
+| Increment | Range  | Values                                      |
++===========+========+=============================================+
+| 1         | 0 to 3 | +-------+---------------------------------+ |
+|           |        | | Value | Meaning                         | |
+|           |        | +=======+=================================+ |
+|           |        | | 0     | AutoEnableOff                   | |
+|           |        | +-------+---------------------------------+ |
+|           |        | | 1     | AutoEnableOnTakeoff             | |
+|           |        | +-------+---------------------------------+ |
+|           |        | | 2     | AutoEnableDisableFloorOnLanding | |
+|           |        | +-------+---------------------------------+ |
+|           |        | | 3     | AutoEnableOnlyWhenArmed         | |
+|           |        | +-------+---------------------------------+ |
+|           |        |                                             |
++-----------+--------+---------------------------------------------+
 
 
 
@@ -24222,11 +24321,11 @@ FFT\_MINHZ: Minimum Frequency
 Lower bound of FFT frequency detection in Hz\. On larger vehicles the minimum motor frequency is likely to be significantly lower than for smaller vehicles\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 20 - 400 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 20 to 400 | hertz |
++-----------+-------+
 
 
 
@@ -24241,11 +24340,11 @@ FFT\_MAXHZ: Maximum Frequency
 Upper bound of FFT frequency detection in Hz\. On smaller vehicles the maximum motor frequency is likely to be significantly higher than for larger vehicles\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 20 - 495 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 20 to 495 | hertz |
++-----------+-------+
 
 
 
@@ -24261,11 +24360,11 @@ FFT\_SAMPLE\_MODE: Sample Mode
 Sampling mode \(and therefore rate\)\. 0\: Gyro rate sampling\, 1\: Fast loop rate sampling\, 2\: Fast loop rate \/ 2 sampling\, 3\: Fast loop rate \/ 3 sampling\. Takes effect on reboot\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 4 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 4 |
++--------+
 
 
 
@@ -24281,11 +24380,11 @@ FFT\_WINDOW\_SIZE: FFT window size
 Size of window to be used in FFT calculations\. Takes effect on reboot\. Must be a power of 2 and between 32 and 512\. Larger windows give greater frequency resolution but poorer time resolution\, consume more CPU time and may not be appropriate for all vehicles\. Time and frequency resolution are given by the sample\-rate \/ window\-size\. Windows of 256 are only really recommended for F7 class boards\, windows of 512 or more H7 class\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 32 - 1024 |
-+-----------+
++------------+
+| Range      |
++============+
+| 32 to 1024 |
++------------+
 
 
 
@@ -24301,11 +24400,11 @@ FFT\_WINDOW\_OLAP: FFT window overlap
 Percentage of window to be overlapped before another frame is process\. Takes effect on reboot\. A good default is 50\% overlap\. Higher overlap results in more processed frames but not necessarily more temporal resolution\. Lower overlap results in lost information at the frame edges\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 0.9 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 0.9 |
++----------+
 
 
 
@@ -24320,11 +24419,11 @@ FFT\_FREQ\_HOVER: FFT learned hover frequency
 The learned hover noise frequency
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 250 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 250 |
++----------+
 
 
 
@@ -24339,11 +24438,11 @@ FFT\_THR\_REF: FFT learned thrust reference
 FFT learned thrust reference for the hover frequency and FFT minimum frequency\.
 
 
-+------------+
-| Range      |
-+============+
-| 0.01 - 0.9 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 0.01 to 0.9 |
++-------------+
 
 
 
@@ -24358,11 +24457,11 @@ FFT\_SNR\_REF: FFT SNR reference threshold
 FFT SNR reference threshold in dB at which a signal is determined to be present\.
 
 
-+-------------+
-| Range       |
-+=============+
-| 0.0 - 100.0 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 0.0 to 100.0 |
++--------------+
 
 
 
@@ -24377,11 +24476,11 @@ FFT\_ATT\_REF: FFT attenuation for bandwidth calculation
 FFT attenuation level in dB for bandwidth calculation and peak detection\. The bandwidth is calculated by comparing peak power output with the attenuated version\. The default of 15 has shown to be a good compromise in both simulations and real flight\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -24396,11 +24495,11 @@ FFT\_BW\_HOVER: FFT learned bandwidth at hover
 FFT learned bandwidth at hover for the attenuation frequencies\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 200 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 200 |
++----------+
 
 
 
@@ -24416,11 +24515,11 @@ FFT\_HMNC\_FIT: FFT harmonic fit frequency threshold
 FFT harmonic fit frequency threshold percentage at which a signal of the appropriate frequency is determined to be the harmonic of another\. Signals that have a harmonic relationship that varies at most by this percentage are considered harmonics of each other for the purpose of selecting the harmonic notch frequency\. If a match is found then the lower frequency harmonic is always used as the basis for the dynamic harmonic notch\. A value of zero completely disables harmonic matching\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -24470,11 +24569,11 @@ FFT\_NUM\_FRAMES: FFT output frames to retain and average
 Number of output frequency frames to retain and average in order to calculate final frequencies\. Averaging output frames can drastically reduce noise and jitter at the cost of latency as long as the input is stable\. The default is to perform no averaging\. For rapidly changing frequencies \(e\.g\. smaller aircraft\) fewer frames should be averaged\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 8 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 8 |
++--------+
 
 
 
@@ -24535,11 +24634,11 @@ FLOW\_FXSCALER: X axis optical flow scale factor correction
 This sets the parts per thousand scale factor correction applied to the flow sensor X axis optical rate\. It can be used to correct for variations in effective focal length\. Each positive increment of 1 increases the scale factor applied to the X axis optical flow reading by 0\.1\%\. Negative values reduce the scale factor\.
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 1         | -200 - +200 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 1         | -200 to +200 |
++-----------+--------------+
 
 
 
@@ -24553,11 +24652,11 @@ FLOW\_FYSCALER: Y axis optical flow scale factor correction
 This sets the parts per thousand scale factor correction applied to the flow sensor Y axis optical rate\. It can be used to correct for variations in effective focal length\. Each positive increment of 1 increases the scale factor applied to the Y axis optical flow reading by 0\.1\%\. Negative values reduce the scale factor\.
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 1         | -200 - +200 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 1         | -200 to +200 |
++-----------+--------------+
 
 
 
@@ -24571,11 +24670,11 @@ FLOW\_ORIENT\_YAW: Flow sensor yaw alignment
 Specifies the number of centi\-degrees that the flow sensor is yawed relative to the vehicle\. A sensor with its X\-axis pointing to the right of the vehicle X axis has a positive yaw angle\.
 
 
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -17999 - +18000 | centidegrees |
-+-----------+-----------------+--------------+
++-----------+------------------+--------------+
+| Increment | Range            | Units        |
++===========+==================+==============+
+| 10        | -17999 to +18000 | centidegrees |
++-----------+------------------+--------------+
 
 
 
@@ -24590,11 +24689,11 @@ FLOW\_POS\_X:  X position offset
 X position of the optical flow sensor focal point in body frame\. Positive X is forward of the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -24609,11 +24708,11 @@ FLOW\_POS\_Y: Y position offset
 Y position of the optical flow sensor focal point in body frame\. Positive Y is to the right of the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -24628,11 +24727,11 @@ FLOW\_POS\_Z: Z position offset
 Z position of the optical flow sensor focal point in body frame\. Positive Z is down from the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -24647,11 +24746,11 @@ FLOW\_ADDR: Address on the bus
 This is used to select between multiple possible I2C addresses for some sensor types\. For PX4Flow you can choose 0 to 7 for the 8 possible addresses on the I2C bus\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
 
 
 
@@ -24697,11 +24796,11 @@ FOLL\_SYSID: Follow target\'s mavlink system id
 Follow target\'s mavlink system id
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -24715,11 +24814,11 @@ FOLL\_DIST\_MAX: Follow distance maximum
 Follow distance maximum\.  targets further than this will be ignored
 
 
-+----------+--------+
-| Range    | Units  |
-+==========+========+
-| 1 - 1000 | meters |
-+----------+--------+
++-----------+--------+
+| Range     | Units  |
++===========+========+
+| 1 to 1000 | meters |
++-----------+--------+
 
 
 
@@ -24758,11 +24857,11 @@ FOLL\_OFS\_X: Follow offsets in meters north\/forward
 Follow offsets in meters north\/forward\.  If positive\, this vehicle fly ahead or north of lead vehicle\.  Depends on FOLL\_OFS\_TYPE
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 1         | -100 - 100 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 1         | -100 to 100 | meters |
++-----------+-------------+--------+
 
 
 
@@ -24776,11 +24875,11 @@ FOLL\_OFS\_Y: Follow offsets in meters east\/right
 Follow offsets in meters east\/right\.  If positive\, this vehicle will fly to the right or east of lead vehicle\.  Depends on FOLL\_OFS\_TYPE
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 1         | -100 - 100 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 1         | -100 to 100 | meters |
++-----------+-------------+--------+
 
 
 
@@ -24794,11 +24893,11 @@ FOLL\_OFS\_Z: Follow offsets in meters down
 Follow offsets in meters down\.  If positive\, this vehicle will fly below the lead vehicle
 
 
-+-----------+------------+--------+
-| Increment | Range      | Units  |
-+===========+============+========+
-| 1         | -100 - 100 | meters |
-+-----------+------------+--------+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 1         | -100 to 100 | meters |
++-----------+-------------+--------+
 
 
 
@@ -24841,11 +24940,11 @@ FOLL\_POS\_P: Follow position error P gain
 Follow position error P gain\.  Converts the difference between desired vertical speed and actual speed into a desired acceleration that is passed to the throttle acceleration controller
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.01      | 0.01 - 1.00 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.01      | 0.01 to 1.00 |
++-----------+--------------+
 
 
 
@@ -25495,11 +25594,11 @@ GPS\_MIN\_ELEV: Minimum elevation
 This sets the minimum elevation of satellites above the horizon for them to be used for navigation\. Setting this to \-100 leaves the minimum elevation set to the GPS modules default\.
 
 
-+-----------+---------+
-| Range     | Units   |
-+===========+=========+
-| -100 - 90 | degrees |
-+-----------+---------+
++------------+---------+
+| Range      | Units   |
++============+=========+
+| -100 to 90 | degrees |
++------------+---------+
 
 
 
@@ -25729,20 +25828,20 @@ GPS\_RATE\_MS: GPS update rate in milliseconds
 Controls how often the GPS should provide a position update\. Lowering below 5Hz\(default\) is not allowed\. Raising the rate above 5Hz usually provides little benefit and for some GPS \(eg Ublox M9N\) can severely impact performance\.
 
 
-+----------+--------------+---------------------+
-| Range    | Units        | Values              |
-+==========+==============+=====================+
-| 50 - 200 | milliseconds | +-------+---------+ |
-|          |              | | Value | Meaning | |
-|          |              | +=======+=========+ |
-|          |              | | 100   | 10Hz    | |
-|          |              | +-------+---------+ |
-|          |              | | 125   | 8Hz     | |
-|          |              | +-------+---------+ |
-|          |              | | 200   | 5Hz     | |
-|          |              | +-------+---------+ |
-|          |              |                     |
-+----------+--------------+---------------------+
++-----------+--------------+---------------------+
+| Range     | Units        | Values              |
++===========+==============+=====================+
+| 50 to 200 | milliseconds | +-------+---------+ |
+|           |              | | Value | Meaning | |
+|           |              | +=======+=========+ |
+|           |              | | 100   | 10Hz    | |
+|           |              | +-------+---------+ |
+|           |              | | 125   | 8Hz     | |
+|           |              | +-------+---------+ |
+|           |              | | 200   | 5Hz     | |
+|           |              | +-------+---------+ |
+|           |              |                     |
++-----------+--------------+---------------------+
 
 
 
@@ -25757,20 +25856,20 @@ GPS\_RATE\_MS2: GPS 2 update rate in milliseconds
 Controls how often the GPS should provide a position update\. Lowering below 5Hz\(default\) is not allowed\. Raising the rate above 5Hz usually provides little benefit and for some GPS \(eg Ublox M9N\) can severely impact performance\.
 
 
-+----------+--------------+---------------------+
-| Range    | Units        | Values              |
-+==========+==============+=====================+
-| 50 - 200 | milliseconds | +-------+---------+ |
-|          |              | | Value | Meaning | |
-|          |              | +=======+=========+ |
-|          |              | | 100   | 10Hz    | |
-|          |              | +-------+---------+ |
-|          |              | | 125   | 8Hz     | |
-|          |              | +-------+---------+ |
-|          |              | | 200   | 5Hz     | |
-|          |              | +-------+---------+ |
-|          |              |                     |
-+----------+--------------+---------------------+
++-----------+--------------+---------------------+
+| Range     | Units        | Values              |
++===========+==============+=====================+
+| 50 to 200 | milliseconds | +-------+---------+ |
+|           |              | | Value | Meaning | |
+|           |              | +=======+=========+ |
+|           |              | | 100   | 10Hz    | |
+|           |              | +-------+---------+ |
+|           |              | | 125   | 8Hz     | |
+|           |              | +-------+---------+ |
+|           |              | | 200   | 5Hz     | |
+|           |              | +-------+---------+ |
+|           |              |                     |
++-----------+--------------+---------------------+
 
 
 
@@ -25785,11 +25884,11 @@ GPS\_POS1\_X: Antenna X position offset
 X position of the first GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -25804,11 +25903,11 @@ GPS\_POS1\_Y: Antenna Y position offset
 Y position of the first GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -25823,11 +25922,11 @@ GPS\_POS1\_Z: Antenna Z position offset
 Z position of the first GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -25842,11 +25941,11 @@ GPS\_POS2\_X: Antenna X position offset
 X position of the second GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -25861,11 +25960,11 @@ GPS\_POS2\_Y: Antenna Y position offset
 Y position of the second GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -25880,11 +25979,11 @@ GPS\_POS2\_Z: Antenna Z position offset
 Z position of the second GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -25900,11 +25999,11 @@ GPS\_DELAY\_MS: GPS delay in milliseconds
 Controls the amount of GPS  measurement delay that the autopilot compensates for\. Set to zero to use the default delay for the detected GPS type\.
 
 
-+---------+--------------+
-| Range   | Units        |
-+=========+==============+
-| 0 - 250 | milliseconds |
-+---------+--------------+
++----------+--------------+
+| Range    | Units        |
++==========+==============+
+| 0 to 250 | milliseconds |
++----------+--------------+
 
 
 
@@ -25920,11 +26019,11 @@ GPS\_DELAY\_MS2: GPS 2 delay in milliseconds
 Controls the amount of GPS  measurement delay that the autopilot compensates for\. Set to zero to use the default delay for the detected GPS type\.
 
 
-+---------+--------------+
-| Range   | Units        |
-+=========+==============+
-| 0 - 250 | milliseconds |
-+---------+--------------+
++----------+--------------+
+| Range    | Units        |
++==========+==============+
+| 0 to 250 | milliseconds |
++----------+--------------+
 
 
 
@@ -25967,11 +26066,11 @@ GPS\_BLEND\_TC: Blending time constant
 Controls the slowest time constant applied to the calculation of GPS position and height offsets used to adjust different GPS receivers for steady state position differences\.
 
 
-+------------+---------+
-| Range      | Units   |
-+============+=========+
-| 5.0 - 30.0 | seconds |
-+------------+---------+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| 5.0 to 30.0 | seconds |
++-------------+---------+
 
 
 
@@ -26019,11 +26118,11 @@ GPS\_COM\_PORT: GPS physical COM port
 The physical COM port on the connected device\, currently only applies to SBF GPS
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -26039,11 +26138,11 @@ GPS\_COM\_PORT2: GPS physical COM port
 The physical COM port on the connected device\, currently only applies to SBF GPS
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 10 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 10 |
++-----------+---------+
 
 
 
@@ -26176,11 +26275,11 @@ GPS\_MB1\_OFS\_X: Base antenna X position offset
 X position of the base GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -26195,11 +26294,11 @@ GPS\_MB1\_OFS\_Y: Base antenna Y position offset
 Y position of the base GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -26214,11 +26313,11 @@ GPS\_MB1\_OFS\_Z: Base antenna Z position offset
 Z position of the base GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -26267,11 +26366,11 @@ GPS\_MB2\_OFS\_X: Base antenna X position offset
 X position of the base GPS antenna in body frame\. Positive X is forward of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -26286,11 +26385,11 @@ GPS\_MB2\_OFS\_Y: Base antenna Y position offset
 Y position of the base GPS antenna in body frame\. Positive Y is to the right of the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -26305,11 +26404,11 @@ GPS\_MB2\_OFS\_Z: Base antenna Z position offset
 Z position of the base GPS antenna in body frame\. Positive Z is down from the origin\. Use antenna phase centroid location if provided by the manufacturer\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -26383,11 +26482,11 @@ GRIP\_GRAB: Gripper Grab PWM
 PWM value in microseconds sent to Gripper to initiate grabbing the cargo
 
 
-+-------------+---------------------+
-| Range       | Units               |
-+=============+=====================+
-| 1000 - 2000 | PWM in microseconds |
-+-------------+---------------------+
++--------------+---------------------+
+| Range        | Units               |
++==============+=====================+
+| 1000 to 2000 | PWM in microseconds |
++--------------+---------------------+
 
 
 
@@ -26402,11 +26501,11 @@ GRIP\_RELEASE: Gripper Release PWM
 PWM value in microseconds sent to Gripper to release the cargo
 
 
-+-------------+---------------------+
-| Range       | Units               |
-+=============+=====================+
-| 1000 - 2000 | PWM in microseconds |
-+-------------+---------------------+
++--------------+---------------------+
+| Range        | Units               |
++==============+=====================+
+| 1000 to 2000 | PWM in microseconds |
++--------------+---------------------+
 
 
 
@@ -26421,11 +26520,11 @@ GRIP\_NEUTRAL: Neutral PWM
 PWM value in microseconds sent to grabber when not grabbing or releasing
 
 
-+-------------+---------------------+
-| Range       | Units               |
-+=============+=====================+
-| 1000 - 2000 | PWM in microseconds |
-+-------------+---------------------+
++--------------+---------------------+
+| Range        | Units               |
++==============+=====================+
+| 1000 to 2000 | PWM in microseconds |
++--------------+---------------------+
 
 
 
@@ -26440,11 +26539,11 @@ GRIP\_REGRAB: Gripper Regrab interval
 Time in seconds that gripper will regrab the cargo to ensure grip has not weakened\; 0 to disable
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 255 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 255 | seconds |
++----------+---------+
 
 
 
@@ -26458,11 +26557,11 @@ GRIP\_CAN\_ID: EPM UAVCAN Hardpoint ID
 Refer to https\:\/\/docs\.zubax\.com\/opengrab\_epm\_v3\#UAVCAN\_interface
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -26583,11 +26682,11 @@ GUIDED\_SMAX: Slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -26689,11 +26788,11 @@ ICE\_STARTER\_TIME: Time to run starter
 This is the number of seconds to run the starter when trying to start the engine
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0.1 - 5 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0.1 to 5 | seconds |
++----------+---------+
 
 
 
@@ -26707,11 +26806,11 @@ ICE\_START\_DELAY: Time to wait between starts
 Delay between start attempts
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 1 - 10 | seconds |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 1 to 10 | seconds |
++---------+---------+
 
 
 
@@ -26725,11 +26824,11 @@ ICE\_RPM\_THRESH: RPM threshold
 This is the measured RPM above which the engine is considered to be running
 
 
-+--------------+
-| Range        |
-+==============+
-| 100 - 100000 |
-+--------------+
++---------------+
+| Range         |
++===============+
+| 100 to 100000 |
++---------------+
 
 
 
@@ -26743,11 +26842,11 @@ ICE\_PWM\_IGN\_ON: PWM value for ignition on
 This is the value sent to the ignition channel when on
 
 
-+-------------+
-| Range       |
-+=============+
-| 1000 - 2000 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 1000 to 2000 |
++--------------+
 
 
 
@@ -26761,11 +26860,11 @@ ICE\_PWM\_IGN\_OFF: PWM value for ignition off
 This is the value sent to the ignition channel when off
 
 
-+-------------+
-| Range       |
-+=============+
-| 1000 - 2000 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 1000 to 2000 |
++--------------+
 
 
 
@@ -26779,11 +26878,11 @@ ICE\_PWM\_STRT\_ON: PWM value for starter on
 This is the value sent to the starter channel when on
 
 
-+-------------+
-| Range       |
-+=============+
-| 1000 - 2000 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 1000 to 2000 |
++--------------+
 
 
 
@@ -26797,11 +26896,11 @@ ICE\_PWM\_STRT\_OFF: PWM value for starter off
 This is the value sent to the starter channel when off
 
 
-+-------------+
-| Range       |
-+=============+
-| 1000 - 2000 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 1000 to 2000 |
++--------------+
 
 
 
@@ -26842,11 +26941,11 @@ ICE\_START\_PCT: Throttle percentage for engine start
 This is the percentage throttle output for engine start
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -26860,11 +26959,11 @@ ICE\_IDLE\_PCT: Throttle percentage for engine idle
 This is the minimum percentage throttle output while running\, this includes being disarmed\, but not safe
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -26903,7 +27002,7 @@ ICE\_OPTIONS: ICE options
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Options for ICE control
+Options for ICE control\. The DisableIgnitionRCFailsafe option will cause the ignition to be set off on any R\/C failsafe\.
 
 
 +-------------------------------------+
@@ -26914,7 +27013,7 @@ Options for ICE control
 | +=====+===========================+ |
 | | 0   | DisableIgnitionRCFailsafe | |
 | +-----+---------------------------+ |
-| | 1   | DisableRedlineRPMGovernor | |
+| | 1   | DisableRedineGovernor     | |
 | +-----+---------------------------+ |
 |                                     |
 +-------------------------------------+
@@ -26931,11 +27030,11 @@ ICE\_STARTCHN\_MIN: Input channel for engine start minimum PWM
 This is a minimum PWM value for engine start channel for an engine stop to be commanded\. Setting this value will avoid RC input glitches with low PWM values from causing an unwanted engine stop\. A value of zero means any PWM below 1300 triggers an engine stop\.
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 1300 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 1300 |
++-----------+
 
 
 
@@ -26950,11 +27049,11 @@ ICE\_REDLINE\_RPM: RPM of the redline limit for the engine
 Maximum RPM for the engine provided by the manufacturer\. A value of 0 disables this feature\. See ICE\_OPTIONS to enable or disable the governor\.
 
 
-+-------------+------------------------+
-| Range       | Units                  |
-+=============+========================+
-| 0 - 2000000 | Revolutions Per Minute |
-+-------------+------------------------+
++--------------+------------------------+
+| Range        | Units                  |
++==============+========================+
+| 0 to 2000000 | Revolutions Per Minute |
++--------------+------------------------+
 
 
 
@@ -27147,11 +27246,11 @@ INS\_ACCSCAL\_X: Accelerometer scaling of X axis
 Accelerometer scaling of X axis\.  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27166,11 +27265,11 @@ INS\_ACCSCAL\_Y: Accelerometer scaling of Y axis
 Accelerometer scaling of Y axis  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27185,11 +27284,11 @@ INS\_ACCSCAL\_Z: Accelerometer scaling of Z axis
 Accelerometer scaling of Z axis  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27204,11 +27303,11 @@ INS\_ACCOFFS\_X: Accelerometer offsets of X axis
 Accelerometer offsets of X axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27223,11 +27322,11 @@ INS\_ACCOFFS\_Y: Accelerometer offsets of Y axis
 Accelerometer offsets of Y axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27242,11 +27341,11 @@ INS\_ACCOFFS\_Z: Accelerometer offsets of Z axis
 Accelerometer offsets of Z axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27261,11 +27360,11 @@ INS\_ACC2SCAL\_X: Accelerometer2 scaling of X axis
 Accelerometer2 scaling of X axis\.  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27280,11 +27379,11 @@ INS\_ACC2SCAL\_Y: Accelerometer2 scaling of Y axis
 Accelerometer2 scaling of Y axis  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27299,11 +27398,11 @@ INS\_ACC2SCAL\_Z: Accelerometer2 scaling of Z axis
 Accelerometer2 scaling of Z axis  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27318,11 +27417,11 @@ INS\_ACC2OFFS\_X: Accelerometer2 offsets of X axis
 Accelerometer2 offsets of X axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27337,11 +27436,11 @@ INS\_ACC2OFFS\_Y: Accelerometer2 offsets of Y axis
 Accelerometer2 offsets of Y axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27356,11 +27455,11 @@ INS\_ACC2OFFS\_Z: Accelerometer2 offsets of Z axis
 Accelerometer2 offsets of Z axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27375,11 +27474,11 @@ INS\_ACC3SCAL\_X: Accelerometer3 scaling of X axis
 Accelerometer3 scaling of X axis\.  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27394,11 +27493,11 @@ INS\_ACC3SCAL\_Y: Accelerometer3 scaling of Y axis
 Accelerometer3 scaling of Y axis  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27413,11 +27512,11 @@ INS\_ACC3SCAL\_Z: Accelerometer3 scaling of Z axis
 Accelerometer3 scaling of Z axis  Calculated during acceleration calibration routine
 
 
-+-------------+-----------+
-| Calibration | Range     |
-+=============+===========+
-| 1           | 0.8 - 1.2 |
-+-------------+-----------+
++-------------+------------+
+| Calibration | Range      |
++=============+============+
+| 1           | 0.8 to 1.2 |
++-------------+------------+
 
 
 
@@ -27432,11 +27531,11 @@ INS\_ACC3OFFS\_X: Accelerometer3 offsets of X axis
 Accelerometer3 offsets of X axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27451,11 +27550,11 @@ INS\_ACC3OFFS\_Y: Accelerometer3 offsets of Y axis
 Accelerometer3 offsets of Y axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27470,11 +27569,11 @@ INS\_ACC3OFFS\_Z: Accelerometer3 offsets of Z axis
 Accelerometer3 offsets of Z axis\. This is setup using the acceleration calibration or level operations
 
 
-+-------------+------------+--------------------------+
-| Calibration | Range      | Units                    |
-+=============+============+==========================+
-| 1           | -3.5 - 3.5 | meters per square second |
-+-------------+------------+--------------------------+
++-------------+-------------+--------------------------+
+| Calibration | Range       | Units                    |
++=============+=============+==========================+
+| 1           | -3.5 to 3.5 | meters per square second |
++-------------+-------------+--------------------------+
 
 
 
@@ -27489,11 +27588,11 @@ INS\_GYRO\_FILTER: Gyro filter cutoff frequency
 Filter cutoff frequency for gyroscopes\. This can be set to a lower value to try to cope with very high vibration levels in aircraft\. A value of zero means no filtering \(not recommended\!\)
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 256 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 256 | hertz |
++----------+-------+
 
 
 
@@ -27508,11 +27607,11 @@ INS\_ACCEL\_FILTER: Accel filter cutoff frequency
 Filter cutoff frequency for accelerometers\. This can be set to a lower value to try to cope with very high vibration levels in aircraft\. A value of zero means no filtering \(not recommended\!\)
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 256 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 256 | hertz |
++----------+-------+
 
 
 
@@ -27605,11 +27704,11 @@ INS\_STILL\_THRESH: Stillness threshold for detecting if we are moving
 Threshold to tolerate vibration to determine if vehicle is motionless\. This depends on the frame type and if there is a constant vibration due to motors before launch or after landing\. Total motionless is about 0\.05\. Suggested values\: Planes\/rover use 0\.1\, multirotors use 1\, tradHeli uses 5
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.05 - 50 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.05 to 50 |
++------------+
 
 
 
@@ -27706,11 +27805,11 @@ INS\_POS1\_X: IMU accelerometer X position
 X position of the first IMU Accelerometer in body frame\. Positive X is forward of the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27725,11 +27824,11 @@ INS\_POS1\_Y: IMU accelerometer Y position
 Y position of the first IMU accelerometer in body frame\. Positive Y is to the right of the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27744,11 +27843,11 @@ INS\_POS1\_Z: IMU accelerometer Z position
 Z position of the first IMU accelerometer in body frame\. Positive Z is down from the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27763,11 +27862,11 @@ INS\_POS2\_X: IMU accelerometer X position
 X position of the second IMU accelerometer in body frame\. Positive X is forward of the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27782,11 +27881,11 @@ INS\_POS2\_Y: IMU accelerometer Y position
 Y position of the second IMU accelerometer in body frame\. Positive Y is to the right of the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27801,11 +27900,11 @@ INS\_POS2\_Z: IMU accelerometer Z position
 Z position of the second IMU accelerometer in body frame\. Positive Z is down from the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27820,11 +27919,11 @@ INS\_POS3\_X: IMU accelerometer X position
 X position of the third IMU accelerometer in body frame\. Positive X is forward of the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+----------+--------+
-| Range    | Units  |
-+==========+========+
-| -10 - 10 | meters |
-+----------+--------+
++-----------+--------+
+| Range     | Units  |
++===========+========+
+| -10 to 10 | meters |
++-----------+--------+
 
 
 
@@ -27839,11 +27938,11 @@ INS\_POS3\_Y: IMU accelerometer Y position
 Y position of the third IMU accelerometer in body frame\. Positive Y is to the right of the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -27858,11 +27957,11 @@ INS\_POS3\_Z: IMU accelerometer Z position
 Z position of the third IMU accelerometer in body frame\. Positive Z is down from the origin\. Attention\: The IMU should be located as close to the vehicle c\.g\. as practical so that the value of this parameter is minimised\. Failure to do so can result in noisy navigation velocity measurements due to vibration and IMU gyro noise\. If the IMU cannot be moved and velocity noise is a problem\, a location closer to the IMU can be used as the body frame origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -28257,11 +28356,11 @@ INS\_HNTC2\_FREQ: Harmonic Notch Filter base frequency
 Harmonic Notch Filter base center frequency in Hz\. This should be set at most half the backend gyro rate \(which is typically 1Khz\)\. For helicopters using RPM sensor to dynamically set the notch frequency\, use this parameter to provide a lower limit to the dynamic notch filter\.  Recommend setting it to half the operating rotor speed in Hz\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 10 - 495 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 10 to 495 | hertz |
++-----------+-------+
 
 
 
@@ -28276,11 +28375,11 @@ INS\_HNTC2\_BW: Harmonic Notch Filter bandwidth
 Harmonic Notch Filter bandwidth in Hz\. This is typically set to half the base frequency\. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics\.
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 5 - 250 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 5 to 250 | hertz |
++----------+-------+
 
 
 
@@ -28295,11 +28394,11 @@ INS\_HNTC2\_ATT: Harmonic Notch Filter attenuation
 Harmonic Notch Filter attenuation in dB\. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise\.
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 50 | decibel |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 5 to 50 | decibel |
++---------+---------+
 
 
 
@@ -28354,11 +28453,11 @@ INS\_HNTC2\_REF: Harmonic Notch Filter reference value
 A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter\.  For throttle\-based scaling\, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter\. For RPM and ESC telemetry based tracking\, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed\.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter\.  This reference value may also be used to scale the sensor data\, if required\.  For example\, rpm sensor data is required to measure heli motor RPM\. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.0 - 1.0 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.0 to 1.0 |
++------------+
 
 
 
@@ -28373,26 +28472,26 @@ INS\_HNTC2\_MODE: Harmonic Notch Filter dynamic frequency tracking mode
 Harmonic Notch Filter dynamic frequency tracking mode\. Dynamic updates can be throttle\, RPM sensor\, ESC telemetry or dynamic FFT based\. Throttle\-based updates should only be used with multicopters\.
 
 
-+-------+-------------------------------+
-| Range | Values                        |
-+=======+===============================+
-| 0 - 4 | +-------+-------------------+ |
-|       | | Value | Meaning           | |
-|       | +=======+===================+ |
-|       | | 0     | Disabled          | |
-|       | +-------+-------------------+ |
-|       | | 1     | Throttle          | |
-|       | +-------+-------------------+ |
-|       | | 2     | RPM Sensor        | |
-|       | +-------+-------------------+ |
-|       | | 3     | ESC Telemetry     | |
-|       | +-------+-------------------+ |
-|       | | 4     | Dynamic FFT       | |
-|       | +-------+-------------------+ |
-|       | | 5     | Second RPM Sensor | |
-|       | +-------+-------------------+ |
-|       |                               |
-+-------+-------------------------------+
++--------+-------------------------------+
+| Range  | Values                        |
++========+===============================+
+| 0 to 4 | +-------+-------------------+ |
+|        | | Value | Meaning           | |
+|        | +=======+===================+ |
+|        | | 0     | Disabled          | |
+|        | +-------+-------------------+ |
+|        | | 1     | Throttle          | |
+|        | +-------+-------------------+ |
+|        | | 2     | RPM Sensor        | |
+|        | +-------+-------------------+ |
+|        | | 3     | ESC Telemetry     | |
+|        | +-------+-------------------+ |
+|        | | 4     | Dynamic FFT       | |
+|        | +-------+-------------------+ |
+|        | | 5     | Second RPM Sensor | |
+|        | +-------+-------------------+ |
+|        |                               |
++--------+-------------------------------+
 
 
 
@@ -28440,11 +28539,11 @@ INS\_HNTC2\_FM\_RAT: Throttle notch min freqency ratio
 The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle\. Note that lower frequency notch filters will have more phase lag\. If you want throttle based notch filtering to be effective at a throttle up to 30\% below the configured notch frequency then set this parameter to 0\.7\. The default of 1\.0 means the notch will not go below the frequency in the FREQ parameter\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.1 - 1.0 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.1 to 1.0 |
++------------+
 
 
 
@@ -28492,11 +28591,11 @@ INS\_HNTCH\_FREQ: Harmonic Notch Filter base frequency
 Harmonic Notch Filter base center frequency in Hz\. This should be set at most half the backend gyro rate \(which is typically 1Khz\)\. For helicopters using RPM sensor to dynamically set the notch frequency\, use this parameter to provide a lower limit to the dynamic notch filter\.  Recommend setting it to half the operating rotor speed in Hz\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 10 - 495 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 10 to 495 | hertz |
++-----------+-------+
 
 
 
@@ -28511,11 +28610,11 @@ INS\_HNTCH\_BW: Harmonic Notch Filter bandwidth
 Harmonic Notch Filter bandwidth in Hz\. This is typically set to half the base frequency\. The ratio of base frequency to bandwidth determines the notch quality factor and is fixed across harmonics\.
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 5 - 250 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 5 to 250 | hertz |
++----------+-------+
 
 
 
@@ -28530,11 +28629,11 @@ INS\_HNTCH\_ATT: Harmonic Notch Filter attenuation
 Harmonic Notch Filter attenuation in dB\. Values greater than 40dB will typically produce a hard notch rather than a modest attenuation of motor noise\.
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 50 | decibel |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 5 to 50 | decibel |
++---------+---------+
 
 
 
@@ -28589,11 +28688,11 @@ INS\_HNTCH\_REF: Harmonic Notch Filter reference value
 A reference value of zero disables dynamic updates on the Harmonic Notch Filter and a positive value enables dynamic updates on the Harmonic Notch Filter\.  For throttle\-based scaling\, this parameter is the reference value associated with the specified frequency to facilitate frequency scaling of the Harmonic Notch Filter\. For RPM and ESC telemetry based tracking\, this parameter is set to 1 to enable the Harmonic Notch Filter using the RPM sensor or ESC telemetry set to measure rotor speed\.  The sensor data is converted to Hz automatically for use in the Harmonic Notch Filter\.  This reference value may also be used to scale the sensor data\, if required\.  For example\, rpm sensor data is required to measure heli motor RPM\. Therefore the reference value can be used to scale the RPM sensor to the rotor RPM\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.0 - 1.0 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.0 to 1.0 |
++------------+
 
 
 
@@ -28608,26 +28707,26 @@ INS\_HNTCH\_MODE: Harmonic Notch Filter dynamic frequency tracking mode
 Harmonic Notch Filter dynamic frequency tracking mode\. Dynamic updates can be throttle\, RPM sensor\, ESC telemetry or dynamic FFT based\. Throttle\-based updates should only be used with multicopters\.
 
 
-+-------+-------------------------------+
-| Range | Values                        |
-+=======+===============================+
-| 0 - 4 | +-------+-------------------+ |
-|       | | Value | Meaning           | |
-|       | +=======+===================+ |
-|       | | 0     | Disabled          | |
-|       | +-------+-------------------+ |
-|       | | 1     | Throttle          | |
-|       | +-------+-------------------+ |
-|       | | 2     | RPM Sensor        | |
-|       | +-------+-------------------+ |
-|       | | 3     | ESC Telemetry     | |
-|       | +-------+-------------------+ |
-|       | | 4     | Dynamic FFT       | |
-|       | +-------+-------------------+ |
-|       | | 5     | Second RPM Sensor | |
-|       | +-------+-------------------+ |
-|       |                               |
-+-------+-------------------------------+
++--------+-------------------------------+
+| Range  | Values                        |
++========+===============================+
+| 0 to 4 | +-------+-------------------+ |
+|        | | Value | Meaning           | |
+|        | +=======+===================+ |
+|        | | 0     | Disabled          | |
+|        | +-------+-------------------+ |
+|        | | 1     | Throttle          | |
+|        | +-------+-------------------+ |
+|        | | 2     | RPM Sensor        | |
+|        | +-------+-------------------+ |
+|        | | 3     | ESC Telemetry     | |
+|        | +-------+-------------------+ |
+|        | | 4     | Dynamic FFT       | |
+|        | +-------+-------------------+ |
+|        | | 5     | Second RPM Sensor | |
+|        | +-------+-------------------+ |
+|        |                               |
++--------+-------------------------------+
 
 
 
@@ -28675,11 +28774,11 @@ INS\_HNTCH\_FM\_RAT: Throttle notch min freqency ratio
 The minimum ratio below the configured frequency to take throttle based notch filters when flying at a throttle level below the reference throttle\. Note that lower frequency notch filters will have more phase lag\. If you want throttle based notch filtering to be effective at a throttle up to 30\% below the configured notch frequency then set this parameter to 0\.7\. The default of 1\.0 means the notch will not go below the frequency in the FREQ parameter\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.1 - 1.0 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.1 to 1.0 |
++------------+
 
 
 
@@ -28850,11 +28949,11 @@ INS\_TCAL1\_TMIN: Temperature calibration min
 The minimum temperature that the calibration is valid for
 
 
-+-------------+----------+-----------------+
-| Calibration | Range    | Units           |
-+=============+==========+=================+
-| 1           | -70 - 80 | degrees Celsius |
-+-------------+----------+-----------------+
++-------------+-----------+-----------------+
+| Calibration | Range     | Units           |
++=============+===========+=================+
+| 1           | -70 to 80 | degrees Celsius |
++-------------+-----------+-----------------+
 
 
 
@@ -28869,11 +28968,11 @@ INS\_TCAL1\_TMAX: Temperature calibration max
 The maximum temperature that the calibration is valid for\. This must be at least 10 degrees above TMIN for calibration
 
 
-+-------------+----------+-----------------+
-| Calibration | Range    | Units           |
-+=============+==========+=================+
-| 1           | -70 - 80 | degrees Celsius |
-+-------------+----------+-----------------+
++-------------+-----------+-----------------+
+| Calibration | Range     | Units           |
++=============+===========+=================+
+| 1           | -70 to 80 | degrees Celsius |
++-------------+-----------+-----------------+
 
 
 
@@ -29266,11 +29365,11 @@ INS\_TCAL2\_TMIN: Temperature calibration min
 The minimum temperature that the calibration is valid for
 
 
-+-------------+----------+-----------------+
-| Calibration | Range    | Units           |
-+=============+==========+=================+
-| 1           | -70 - 80 | degrees Celsius |
-+-------------+----------+-----------------+
++-------------+-----------+-----------------+
+| Calibration | Range     | Units           |
++=============+===========+=================+
+| 1           | -70 to 80 | degrees Celsius |
++-------------+-----------+-----------------+
 
 
 
@@ -29285,11 +29384,11 @@ INS\_TCAL2\_TMAX: Temperature calibration max
 The maximum temperature that the calibration is valid for\. This must be at least 10 degrees above TMIN for calibration
 
 
-+-------------+----------+-----------------+
-| Calibration | Range    | Units           |
-+=============+==========+=================+
-| 1           | -70 - 80 | degrees Celsius |
-+-------------+----------+-----------------+
++-------------+-----------+-----------------+
+| Calibration | Range     | Units           |
++=============+===========+=================+
+| 1           | -70 to 80 | degrees Celsius |
++-------------+-----------+-----------------+
 
 
 
@@ -29682,11 +29781,11 @@ INS\_TCAL3\_TMIN: Temperature calibration min
 The minimum temperature that the calibration is valid for
 
 
-+-------------+----------+-----------------+
-| Calibration | Range    | Units           |
-+=============+==========+=================+
-| 1           | -70 - 80 | degrees Celsius |
-+-------------+----------+-----------------+
++-------------+-----------+-----------------+
+| Calibration | Range     | Units           |
++=============+===========+=================+
+| 1           | -70 to 80 | degrees Celsius |
++-------------+-----------+-----------------+
 
 
 
@@ -29701,11 +29800,11 @@ INS\_TCAL3\_TMAX: Temperature calibration max
 The maximum temperature that the calibration is valid for\. This must be at least 10 degrees above TMIN for calibration
 
 
-+-------------+----------+-----------------+
-| Calibration | Range    | Units           |
-+=============+==========+=================+
-| 1           | -70 - 80 | degrees Celsius |
-+-------------+----------+-----------------+
++-------------+-----------+-----------------+
+| Calibration | Range     | Units           |
++=============+===========+=================+
+| 1           | -70 to 80 | degrees Celsius |
++-------------+-----------+-----------------+
 
 
 
@@ -30069,11 +30168,11 @@ LAND\_SLOPE\_RCALC: Landing slope re\-calc threshold
 This parameter is used when using a rangefinder during landing for altitude correction from baro drift \(RNGFND\_LANDING\=1\) and the altitude correction indicates your altitude is lower than the intended slope path\. This value is the threshold of the correction to re\-calculate the landing approach slope\. Set to zero to keep the original slope all the way down and any detected baro drift will be corrected by pitching\/throttling up to snap back to resume the original slope path\. Otherwise\, when a rangefinder altitude correction exceeds this threshold it will trigger a slope re\-calculate to give a shallower slope\. This also smoothes out the approach when flying over objects such as trees\. Recommend a value of 2m\.
 
 
-+-----------+-------+--------+
-| Increment | Range | Units  |
-+===========+=======+========+
-| 0.5       | 0 - 5 | meters |
-+-----------+-------+--------+
++-----------+--------+--------+
+| Increment | Range  | Units  |
++===========+========+========+
+| 0.5       | 0 to 5 | meters |
++-----------+--------+--------+
 
 
 
@@ -30088,11 +30187,11 @@ LAND\_ABORT\_DEG: Landing auto\-abort slope threshold
 This parameter is used when using a rangefinder during landing for altitude correction from baro drift \(RNGFND\_LANDING\=1\) and the altitude correction indicates your actual altitude is higher than the intended slope path\. Normally it would pitch down steeply but that can result in a crash with high airspeed so this allows remembering the baro offset and self\-abort the landing and come around for another landing with the correct baro offset applied for a perfect slope\. An auto\-abort go\-around will only happen once\, next attempt will not auto\-abort again\. This operation happens entirely automatically in AUTO mode\. This value is the delta degrees threshold to trigger the go\-around compared to the original slope\. Example\: if set to 5 deg and the mission planned slope is 15 deg then if the new slope is 21 then it will go\-around\. Set to 0 to disable\. Requires LAND\_SLOPE\_RCALC \> 0\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.1       | 0 - 90 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.1       | 0 to 90 | degrees |
++-----------+---------+---------+
 
 
 
@@ -30107,11 +30206,11 @@ LAND\_PITCH\_CD: Landing Pitch
 Used in autoland to give the minimum pitch in the final stage of landing \(after the flare\)\. This parameter can be used to ensure that the final landing attitude is appropriate for the type of undercarriage on the aircraft\. Note that it is a minimum pitch only \- the landing code will control pitch above this value to try to achieve the configured landing sink rate\.
 
 
-+-----------+--------------+--------------+
-| Increment | Range        | Units        |
-+===========+==============+==============+
-| 10        | -2000 - 2000 | centidegrees |
-+-----------+--------------+--------------+
++-----------+---------------+--------------+
+| Increment | Range         | Units        |
++===========+===============+==============+
+| 10        | -2000 to 2000 | centidegrees |
++-----------+---------------+--------------+
 
 
 
@@ -30126,11 +30225,11 @@ LAND\_FLARE\_ALT: Landing flare altitude
 Altitude in autoland at which to lock heading and flare to the LAND\_PITCH\_CD pitch\. Note that this option is secondary to LAND\_FLARE\_SEC\. For a good landing it preferable that the flare is triggered by LAND\_FLARE\_SEC\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.1       | 0 - 30 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.1       | 0 to 30 | meters |
++-----------+---------+--------+
 
 
 
@@ -30145,11 +30244,11 @@ LAND\_FLARE\_SEC: Landing flare time
 Vertical time before landing point at which to lock heading and flare with the motor stopped\. This is vertical time\, and is calculated based solely on the current height above the ground and the current descent rate\.  Set to 0 if you only wish to flare based on altitude \(see LAND\_FLARE\_ALT\)\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.1       | 0 - 10 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.1       | 0 to 10 | seconds |
++-----------+---------+---------+
 
 
 
@@ -30164,11 +30263,11 @@ LAND\_PF\_ALT: Landing pre\-flare altitude
 Altitude to trigger pre\-flare flight stage where LAND\_PF\_ARSPD controls airspeed\. The pre\-flare flight stage trigger works just like LAND\_FLARE\_ALT but higher\. Disabled when LAND\_PF\_ARSPD is 0\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.1       | 0 - 30 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.1       | 0 to 30 | meters |
++-----------+---------+--------+
 
 
 
@@ -30183,11 +30282,11 @@ LAND\_PF\_SEC: Landing pre\-flare time
 Vertical time to ground to trigger pre\-flare flight stage where LAND\_PF\_ARSPD controls airspeed\. This pre\-flare flight stage trigger works just like LAND\_FLARE\_SEC but earlier\. Disabled when LAND\_PF\_ARSPD is 0\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.1       | 0 - 10 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.1       | 0 to 10 | seconds |
++-----------+---------+---------+
 
 
 
@@ -30202,11 +30301,11 @@ LAND\_PF\_ARSPD: Landing pre\-flare airspeed
 Desired airspeed during pre\-flare flight stage\. This is useful to reduce airspeed just before the flare\. Use 0 to disable\.
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.1       | 0 - 30 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.1       | 0 to 30 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -30220,11 +30319,11 @@ LAND\_THR\_SLEW: Landing throttle slew rate
 This parameter sets the slew rate for the throttle during auto landing\. When this is zero the THR\_SLEWRATE parameter is used during landing\. The value is a percentage throttle change per second\, so a value of 20 means to advance the throttle over 5 seconds on landing\. Values below 50 are not recommended as it may cause a stall when airspeed is low and you can not throttle up fast enough\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 127 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 127 | percent |
++-----------+----------+---------+
 
 
 
@@ -30239,11 +30338,11 @@ LAND\_DISARMDELAY: Landing disarm delay
 After a landing has completed using a LAND waypoint\, automatically disarm after this many seconds have passed\. Use 0 to not disarm\.
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 127 | seconds |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 127 | seconds |
++-----------+----------+---------+
 
 
 
@@ -30312,11 +30411,11 @@ LAND\_FLAP\_PERCNT: Landing flap percentage
 The amount of flaps \(as a percentage\) to apply in the landing approach and flare of an automatic landing
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 0 - 100 | percent |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 0 to 100 | percent |
++-----------+----------+---------+
 
 
 
@@ -30387,11 +30486,11 @@ LAND\_DS\_V\_FWD: Deepstall forward velocity
 The forward velocity of the aircraft while stalled
 
 
-+--------+-------------------+
-| Range  | Units             |
-+========+===================+
-| 0 - 20 | meters per second |
-+--------+-------------------+
++---------+-------------------+
+| Range   | Units             |
++=========+===================+
+| 0 to 20 | meters per second |
++---------+-------------------+
 
 
 
@@ -30426,11 +30525,11 @@ LAND\_DS\_APP\_EXT: Deepstall approach extension
 The horizontal distance from which the aircraft will approach before the stall
 
 
-+----------+--------+
-| Range    | Units  |
-+==========+========+
-| 10 - 200 | meters |
-+----------+--------+
++-----------+--------+
+| Range     | Units  |
++===========+========+
+| 10 to 200 | meters |
++-----------+--------+
 
 
 
@@ -30445,11 +30544,11 @@ LAND\_DS\_V\_DWN: Deepstall velocity down
 The downward velocity of the aircraft while stalled
 
 
-+--------+-------------------+
-| Range  | Units             |
-+========+===================+
-| 0 - 20 | meters per second |
-+--------+-------------------+
++---------+-------------------+
+| Range   | Units             |
++=========+===================+
+| 0 to 20 | meters per second |
++---------+-------------------+
 
 
 
@@ -30464,11 +30563,11 @@ LAND\_DS\_SLEW\_SPD: Deepstall slew speed
 The speed at which the elevator slews to deepstall
 
 
-+-------+---------+
-| Range | Units   |
-+=======+=========+
-| 0 - 2 | seconds |
-+-------+---------+
++--------+---------+
+| Range  | Units   |
++========+=========+
+| 0 to 2 | seconds |
++--------+---------+
 
 
 
@@ -30483,11 +30582,11 @@ LAND\_DS\_ELEV\_PWM: Deepstall elevator PWM
 The PWM value in microseconds for the elevator at full deflection in deepstall
 
 
-+------------+---------------------+
-| Range      | Units               |
-+============+=====================+
-| 900 - 2100 | PWM in microseconds |
-+------------+---------------------+
++-------------+---------------------+
+| Range       | Units               |
++=============+=====================+
+| 900 to 2100 | PWM in microseconds |
++-------------+---------------------+
 
 
 
@@ -30502,11 +30601,11 @@ LAND\_DS\_ARSP\_MAX: Deepstall enabled airspeed
 The maximum aispeed where the deepstall steering controller is allowed to have control
 
 
-+--------+-------------------+
-| Range  | Units             |
-+========+===================+
-| 5 - 20 | meters per second |
-+--------+-------------------+
++---------+-------------------+
+| Range   | Units             |
++=========+===================+
+| 5 to 20 | meters per second |
++---------+-------------------+
 
 
 
@@ -30521,11 +30620,11 @@ LAND\_DS\_ARSP\_MIN: Deepstall minimum derating airspeed
 Deepstall lowest airspeed where the deepstall controller isn\'t allowed full control
 
 
-+--------+-------------------+
-| Range  | Units             |
-+========+===================+
-| 5 - 20 | meters per second |
-+--------+-------------------+
++---------+-------------------+
+| Range   | Units             |
++=========+===================+
+| 5 to 20 | meters per second |
++---------+-------------------+
 
 
 
@@ -30540,11 +30639,11 @@ LAND\_DS\_L1: Deepstall L1 period
 Deepstall L1 navigational controller period
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 50 | seconds |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 5 to 50 | seconds |
++---------+---------+
 
 
 
@@ -30559,11 +30658,11 @@ LAND\_DS\_L1\_I: Deepstall L1 I gain
 Deepstall L1 integratior gain
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -30578,11 +30677,11 @@ LAND\_DS\_YAW\_LIM: Deepstall yaw rate limit
 The yaw rate limit while navigating in deepstall
 
 
-+--------+--------------------+
-| Range  | Units              |
-+========+====================+
-| 0 - 90 | degrees per second |
-+--------+--------------------+
++---------+--------------------+
+| Range   | Units              |
++=========+====================+
+| 0 to 90 | degrees per second |
++---------+--------------------+
 
 
 
@@ -30597,11 +30696,11 @@ LAND\_DS\_L1\_TCON: Deepstall L1 time constant
 Time constant for deepstall L1 control
 
 
-+-------+---------+
-| Range | Units   |
-+=======+=========+
-| 0 - 1 | seconds |
-+-------+---------+
++--------+---------+
+| Range  | Units   |
++========+=========+
+| 0 to 1 | seconds |
++--------+---------+
 
 
 
@@ -30652,11 +30751,11 @@ LAND\_DS\_ABORTALT: Deepstall minimum abort altitude
 The minimum altitude which the aircraft must be above to abort a deepstall landing
 
 
-+--------+--------+
-| Range  | Units  |
-+========+========+
-| 0 - 50 | meters |
-+--------+--------+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 to 50 | meters |
++---------+--------+
 
 
 
@@ -30671,11 +30770,11 @@ LAND\_DS\_AIL\_SCL: Aileron landing gain scalaing
 A scalar to reduce or increase the aileron control
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 2.0 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 2.0 |
++----------+
 
 
 
@@ -30870,11 +30969,11 @@ LGR\_DEPLOY\_ALT: Landing gear deployment altitude
 Altitude where the landing gear will be deployed\. This should be lower than the RETRACT\_ALT\. If zero then altitude is not used for deploying landing gear\. Only applies when vehicle is armed\.
 
 
-+-----------+----------+--------+
-| Increment | Range    | Units  |
-+===========+==========+========+
-| 1         | 0 - 1000 | meters |
-+-----------+----------+--------+
++-----------+-----------+--------+
+| Increment | Range     | Units  |
++===========+===========+========+
+| 1         | 0 to 1000 | meters |
++-----------+-----------+--------+
 
 
 
@@ -30888,11 +30987,11 @@ LGR\_RETRACT\_ALT: Landing gear retract altitude
 Altitude where the landing gear will be retracted\. This should be higher than the DEPLOY\_ALT\. If zero then altitude is not used for retracting landing gear\. Only applies when vehicle is armed\.
 
 
-+-----------+----------+--------+
-| Increment | Range    | Units  |
-+===========+==========+========+
-| 1         | 0 - 1000 | meters |
-+-----------+----------+--------+
++-----------+-----------+--------+
+| Increment | Range     | Units  |
++===========+===========+========+
+| 1         | 0 to 1000 | meters |
++-----------+-----------+--------+
 
 
 
@@ -31086,11 +31185,11 @@ LOG\_FILE\_MB\_FREE: Old logs on the SD card will be deleted to maintain this am
 Set this such that the free space is larger than your largest typical flight log
 
 
-+-----------+----------+
-| Range     | Units    |
-+===========+==========+
-| 10 - 1000 | megabyte |
-+-----------+----------+
++------------+----------+
+| Range      | Units    |
++============+==========+
+| 10 to 1000 | megabyte |
++------------+----------+
 
 
 
@@ -31104,11 +31203,11 @@ LOG\_FILE\_RATEMAX: Maximum logging rate for file backend
 This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means that rate limiting is disabled\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 0 - 1000 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 0 to 1000 | hertz |
++-----------+-------+
 
 
 
@@ -31122,11 +31221,11 @@ LOG\_MAV\_RATEMAX: Maximum logging rate for mavlink backend
 This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 0 - 1000 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 0 to 1000 | hertz |
++-----------+-------+
 
 
 
@@ -31140,11 +31239,11 @@ LOG\_BLK\_RATEMAX: Maximum logging rate for block backend
 This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 0 - 1000 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 0 to 1000 | hertz |
++-----------+-------+
 
 
 
@@ -31166,11 +31265,11 @@ MIS\_TOTAL: Total mission commands
 The number of mission mission items that has been loaded by the ground station\. Do not change this manually\.
 
 
-+-----------+-----------+----------+
-| Increment | Range     | ReadOnly |
-+===========+===========+==========+
-| 1         | 0 - 32766 | True     |
-+-----------+-----------+----------+
++-----------+------------+----------+
+| Increment | Range      | ReadOnly |
++===========+============+==========+
+| 1         | 0 to 32766 | True     |
++-----------+------------+----------+
 
 
 
@@ -31314,11 +31413,11 @@ MNT\_RETRACT\_X: Mount roll angle when in retracted position
 Mount roll angle when in retracted position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31332,11 +31431,11 @@ MNT\_RETRACT\_Y: Mount tilt\/pitch angle when in retracted position
 Mount tilt\/pitch angle when in retracted position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31350,11 +31449,11 @@ MNT\_RETRACT\_Z: Mount yaw\/pan angle when in retracted position
 Mount yaw\/pan angle when in retracted position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31368,11 +31467,11 @@ MNT\_NEUTRAL\_X: Mount roll angle when in neutral position
 Mount roll angle when in neutral position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31386,11 +31485,11 @@ MNT\_NEUTRAL\_Y: Mount tilt\/pitch angle when in neutral position
 Mount tilt\/pitch angle when in neutral position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31404,11 +31503,11 @@ MNT\_NEUTRAL\_Z: Mount pan\/yaw angle when in neutral position
 Mount pan\/yaw angle when in neutral position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31536,11 +31635,11 @@ MNT\_ANGMIN\_ROL: Minimum roll angle
 Minimum physical roll angular position of mount\.
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -31554,11 +31653,11 @@ MNT\_ANGMAX\_ROL: Maximum roll angle
 Maximum physical roll angular position of the mount
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -31611,11 +31710,11 @@ MNT\_ANGMIN\_TIL: Minimum tilt angle
 Minimum physical tilt \(pitch\) angular position of mount\.
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -31629,11 +31728,11 @@ MNT\_ANGMAX\_TIL: Maximum tilt angle
 Maximum physical tilt \(pitch\) angular position of the mount
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -31686,11 +31785,11 @@ MNT\_ANGMIN\_PAN: Minimum pan angle
 Minimum physical pan \(yaw\) angular position of mount\.
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -31704,11 +31803,11 @@ MNT\_ANGMAX\_PAN: Maximum pan angle
 Maximum physical pan \(yaw\) angular position of the mount
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -31722,11 +31821,11 @@ MNT\_LEAD\_RLL: Roll stabilization lead time
 Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\, compensating for servo delay\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
 
 
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| .005      | 0.0 - 0.2 | seconds |
-+-----------+-----------+---------+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| .005      | 0.0 to 0.2 | seconds |
++-----------+------------+---------+
 
 
 
@@ -31740,11 +31839,11 @@ MNT\_LEAD\_PTCH: Pitch stabilization lead time
 Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
 
 
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| .005      | 0.0 - 0.2 | seconds |
-+-----------+-----------+---------+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| .005      | 0.0 to 0.2 | seconds |
++-----------+------------+---------+
 
 
 
@@ -31758,11 +31857,11 @@ MNT\_RC\_RATE: Mount RC Rate
 Pilot rate control\'s maximum rate\.  Set to zero to use angle control
 
 
-+-----------+--------+--------------------+
-| Increment | Range  | Units              |
-+===========+========+====================+
-| 1         | 0 - 90 | degrees per second |
-+-----------+--------+--------------------+
++-----------+---------+--------------------+
+| Increment | Range   | Units              |
++===========+=========+====================+
+| 1         | 0 to 90 | degrees per second |
++-----------+---------+--------------------+
 
 
 
@@ -31809,11 +31908,11 @@ MNT2\_RETRACT\_X: Mount2 roll angle when in retracted position
 Mount2 roll angle when in retracted position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31827,11 +31926,11 @@ MNT2\_RETRACT\_Y: Mount2 tilt\/pitch angle when in retracted position
 Mount2 tilt\/pitch angle when in retracted position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31845,11 +31944,11 @@ MNT2\_RETRACT\_Z: Mount2 yaw\/pan angle when in retracted position
 Mount2 yaw\/pan angle when in retracted position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31863,11 +31962,11 @@ MNT2\_NEUTRAL\_X: Mount2 roll angle when in neutral position
 Mount2 roll angle when in neutral position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31881,11 +31980,11 @@ MNT2\_NEUTRAL\_Y: Mount2 tilt\/pitch angle when in neutral position
 Mount2 tilt\/pitch angle when in neutral position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -31899,11 +31998,11 @@ MNT2\_NEUTRAL\_Z: Mount2 pan\/yaw angle when in neutral position
 Mount2 pan\/yaw angle when in neutral position
 
 
-+-----------+------------------+---------+
-| Increment | Range            | Units   |
-+===========+==================+=========+
-| 1         | -180.00 - 179.99 | degrees |
-+-----------+------------------+---------+
++-----------+-------------------+---------+
+| Increment | Range             | Units   |
++===========+===================+=========+
+| 1         | -180.00 to 179.99 | degrees |
++-----------+-------------------+---------+
 
 
 
@@ -32031,11 +32130,11 @@ MNT2\_ANGMIN\_ROL: Mount2\'s minimum roll angle
 Mount2\'s minimum physical roll angular position
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -32049,11 +32148,11 @@ MNT2\_ANGMAX\_ROL: Mount2\'s maximum roll angle
 Mount2\'s maximum physical roll angular position
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -32106,11 +32205,11 @@ MNT2\_ANGMIN\_TIL: Mount2\'s minimum tilt angle
 Mount2\'s minimum physical tilt \(pitch\) angular position
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -32124,11 +32223,11 @@ MNT2\_ANGMAX\_TIL: Mount2\'s maximum tilt angle
 Mount2\'s maximum physical tilt \(pitch\) angular position
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -32181,11 +32280,11 @@ MNT2\_ANGMIN\_PAN: Mount2\'s minimum pan angle
 Mount2\'s minimum physical pan \(yaw\) angular position
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -32199,11 +32298,11 @@ MNT2\_ANGMAX\_PAN: Mount2\'s maximum pan angle
 MOunt2\'s maximum physical pan \(yaw\) angular position
 
 
-+-----------+----------------+--------------+
-| Increment | Range          | Units        |
-+===========+================+==============+
-| 10        | -18000 - 17999 | centidegrees |
-+-----------+----------------+--------------+
++-----------+-----------------+--------------+
+| Increment | Range           | Units        |
++===========+=================+==============+
+| 10        | -18000 to 17999 | centidegrees |
++-----------+-----------------+--------------+
 
 
 
@@ -32217,11 +32316,11 @@ MNT2\_LEAD\_RLL: Mount2\'s Roll stabilization lead time
 Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\, compensating for servo delay\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
 
 
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| .005      | 0.0 - 0.2 | seconds |
-+-----------+-----------+---------+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| .005      | 0.0 to 0.2 | seconds |
++-----------+------------+---------+
 
 
 
@@ -32235,11 +32334,11 @@ MNT2\_LEAD\_PTCH: Mount2\'s Pitch stabilization lead time
 Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
 
 
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| .005      | 0.0 - 0.2 | seconds |
-+-----------+-----------+---------+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| .005      | 0.0 to 0.2 | seconds |
++-----------+------------+---------+
 
 
 
@@ -32380,11 +32479,11 @@ NAVL1\_PERIOD: L1 control period
 Period in seconds of L1 tracking loop\. This parameter is the primary control for agressiveness of turns in auto mode\. This needs to be larger for less responsive airframes\. The default of 20 is quite conservative\, but for most RC aircraft will lead to reasonable flight\. For smaller more agile aircraft a value closer to 15 is appropriate\, or even as low as 10 for some very agile aircraft\. When tuning\, change this value in small increments\, as a value that is much too small \(say 5 or 10 below the right value\) can lead to very radical turns\, and a risk of stalling\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 1 - 60 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 1 to 60 | seconds |
++-----------+---------+---------+
 
 
 
@@ -32399,11 +32498,11 @@ NAVL1\_DAMPING: L1 control damping ratio
 Damping ratio for L1 control\. Increase this in increments of 0\.05 if you are getting overshoot in path tracking\. You should not need a value below 0\.7 or above 0\.85\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.05      | 0.6 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.05      | 0.6 to 1.0 |
++-----------+------------+
 
 
 
@@ -32418,11 +32517,11 @@ NAVL1\_XTRACK\_I: L1 control crosstrack integrator gain
 Crosstrack error integrator gain\. This gain is applied to the crosstrack error to ensure it converges to zero\. Set to zero to disable\. Smaller values converge slower\, higher values will cause crosstrack error oscillation\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.01      | 0 - 0.1 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.01      | 0 to 0.1 |
++-----------+----------+
 
 
 
@@ -32437,11 +32536,11 @@ NAVL1\_LIM\_BANK: Loiter Radius Bank Angle Limit
 The sealevel bank angle limit for a continous loiter\. \(Used to calculate airframe loading limits at higher altitudes\)\. Setting to 0\, will instead just scale the loiter radius directly
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 0 - 89 | degrees |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 0 to 89 | degrees |
++---------+---------+
 
 
 
@@ -32706,11 +32805,11 @@ NTF\_BUZZ\_VOLUME: Buzzer volume
 Control the volume of the buzzer
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 100 | percent |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 100 | percent |
++----------+---------+
 
 
 
@@ -32726,11 +32825,11 @@ NTF\_LED\_LEN: Serial LED String Length
 The number of Serial LED\'s to use for notifications \(NeoPixel\'s and ProfiLED\)
 
 
-+--------+
-| Range  |
-+========+
-| 1 - 32 |
-+--------+
++---------+
+| Range   |
++=========+
+| 1 to 32 |
++---------+
 
 
 
@@ -32909,11 +33008,11 @@ OSD\_V\_OFFSET: OSD vertical offset
 Sets vertical offset of the osd inside image
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 31 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 31 |
++---------+
 
 
 
@@ -32928,11 +33027,11 @@ OSD\_H\_OFFSET: OSD horizontal offset
 Sets horizontal offset of the osd inside image
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 63 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 63 |
++---------+
 
 
 
@@ -32946,11 +33045,11 @@ OSD\_W\_RSSI: RSSI warn level
 Set level at which RSSI item will flash \(\% for the percentage element or \-dBm for the dBm element\)
 
 
-+------------+
-| Range      |
-+============+
-| -128 - 100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| -128 to 100 |
++-------------+
 
 
 
@@ -32964,11 +33063,11 @@ OSD\_W\_NSAT: NSAT warn level
 Set level at which NSAT item will flash
 
 
-+--------+
-| Range  |
-+========+
-| 1 - 30 |
-+--------+
++---------+
+| Range   |
++=========+
+| 1 to 30 |
++---------+
 
 
 
@@ -33011,11 +33110,11 @@ OSD\_MSG\_TIME: Message display duration in seconds
 Sets message duration seconds
 
 
-+--------+
-| Range  |
-+========+
-| 1 - 20 |
-+--------+
++---------+
+| Range   |
++=========+
+| 1 to 20 |
++---------+
 
 
 
@@ -33029,11 +33128,11 @@ OSD\_ARM\_SCR: Arm screen
 Screen to be shown on Arm event\. Zero to disable the feature\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 4 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 4 |
++--------+
 
 
 
@@ -33047,11 +33146,11 @@ OSD\_DSARM\_SCR: Disarm screen
 Screen to be shown on disarm event\. Zero to disable the feature\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 4 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 4 |
++--------+
 
 
 
@@ -33065,11 +33164,11 @@ OSD\_FS\_SCR: Failsafe screen
 Screen to be shown on failsafe event\. Zero to disable the feature\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 4 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 4 |
++--------+
 
 
 
@@ -33084,11 +33183,11 @@ OSD\_BTN\_DELAY: Button delay
 Debounce time in ms for stick commanded parameter navigation\.
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 3000 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 3000 |
++-----------+
 
 
 
@@ -33102,11 +33201,11 @@ OSD\_W\_TERR: Terrain warn level
 Set level below which TER\_HGT item will flash\. \-1 disables\.
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| -1 - 3000 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| -1 to 3000 | meters |
++------------+--------+
 
 
 
@@ -33120,11 +33219,11 @@ OSD\_PEAKR\_TMOUT: Time the peak rate will be displayed for PEAK\_RR and PEAK\_P
 Time the peak rate will be displayed for PEAK\_RR and PEAK\_PR elements
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0.5 - 60 | seconds |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| 0.5 to 60 | seconds |
++-----------+---------+
 
 
 
@@ -33138,11 +33237,11 @@ OSD\_TUNE\_DTMOUT: Time the tuning name\/value stay displayed after being change
 Time the tuning name\/value stay displayed after being changed
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0.5 - 60 | seconds |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| 0.5 to 60 | seconds |
++-----------+---------+
 
 
 
@@ -33156,11 +33255,11 @@ OSD\_AH\_PITCH\_MAX: Maximum pitch the artificial horizon can display
 Maximum pitch the artificial horizon can display
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 90 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 90 |
++---------+
 
 
 
@@ -33174,11 +33273,11 @@ OSD\_W\_VERT\_ACC: Underspeed warn speed
 Set speed under which ASPDx items will flash
 
 
-+----------+--------------------------------------+
-| Range    | Units                                |
-+==========+======================================+
-| 0 - 1000 | standard acceleration due to gravity |
-+----------+--------------------------------------+
++-----------+--------------------------------------+
+| Range     | Units                                |
++===========+======================================+
+| 0 to 1000 | standard acceleration due to gravity |
++-----------+--------------------------------------+
 
 
 
@@ -33192,11 +33291,11 @@ OSD\_W\_ASPD\_LOW: Underspeed warn speed
 Set speed under which ASPDx items will flash
 
 
-+----------+-------------------+
-| Range    | Units             |
-+==========+===================+
-| 0 - 1000 | meters per second |
-+----------+-------------------+
++-----------+-------------------+
+| Range     | Units             |
++===========+===================+
+| 0 to 1000 | meters per second |
++-----------+-------------------+
 
 
 
@@ -33210,11 +33309,11 @@ OSD\_W\_ASPD\_HIGH: Overspeed warn speed
 Set speed above which ASPDx items will flash
 
 
-+----------+-------------------+
-| Range    | Units             |
-+==========+===================+
-| 0 - 1000 | meters per second |
-+----------+-------------------+
++-----------+-------------------+
+| Range     | Units             |
++===========+===================+
+| 0 to 1000 | meters per second |
++-----------+-------------------+
 
 
 
@@ -33253,11 +33352,11 @@ OSD\_W\_BLHRPM: BLHRPM warn level
 Set level above which BLHRPM item will flash
 
 
-+---------+-------------------------------------+
-| Range   | Units                               |
-+=========+=====================================+
-| 0 - 500 | Thousands of revolutions Per Minute |
-+---------+-------------------------------------+
++----------+-------------------------------------+
+| Range    | Units                               |
++==========+=====================================+
+| 0 to 500 | Thousands of revolutions Per Minute |
++----------+-------------------------------------+
 
 
 
@@ -33271,11 +33370,11 @@ OSD\_W\_BLHLRPM: BLHRPM warn level
 Set level under which BLHRPM item will flash with throttle \> 5\% and armed
 
 
-+-----------+------------------------+
-| Range     | Units                  |
-+===========+========================+
-| 0 - 10000 | Revolutions Per Minute |
-+-----------+------------------------+
++------------+------------------------+
+| Range      | Units                  |
++============+========================+
+| 0 to 10000 | Revolutions Per Minute |
++------------+------------------------+
 
 
 
@@ -33289,11 +33388,11 @@ OSD\_W\_BLHTEMP: BLHTEMP warn level
 Set level at which BLHTEMP item will flash
 
 
-+---------+-----------------+
-| Range   | Units           |
-+=========+=================+
-| 0 - 200 | degrees Celsius |
-+---------+-----------------+
++----------+-----------------+
+| Range    | Units           |
++==========+=================+
+| 0 to 200 | degrees Celsius |
++----------+-----------------+
 
 
 
@@ -33339,11 +33438,11 @@ OSD1\_CHAN\_MIN: Transmitter switch screen minimum pwm
 This sets the PWM lower limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -33357,11 +33456,11 @@ OSD1\_CHAN\_MAX: Transmitter switch screen maximum pwm
 This sets the PWM upper limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -33400,11 +33499,11 @@ OSD1\_ALTITUDE\_X: ALTITUDE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33418,11 +33517,11 @@ OSD1\_ALTITUDE\_Y: ALTITUDE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33461,11 +33560,11 @@ OSD1\_BAT\_VOLT\_X: BATVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33479,11 +33578,11 @@ OSD1\_BAT\_VOLT\_Y: BATVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33522,11 +33621,11 @@ OSD1\_RSSI\_X: RSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33540,11 +33639,11 @@ OSD1\_RSSI\_Y: RSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33583,11 +33682,11 @@ OSD1\_CURRENT\_X: CURRENT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33601,11 +33700,11 @@ OSD1\_CURRENT\_Y: CURRENT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33644,11 +33743,11 @@ OSD1\_BATUSED\_X: BATUSED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33662,11 +33761,11 @@ OSD1\_BATUSED\_Y: BATUSED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33705,11 +33804,11 @@ OSD1\_SATS\_X: SATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33723,11 +33822,11 @@ OSD1\_SATS\_Y: SATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33766,11 +33865,11 @@ OSD1\_FLTMODE\_X: FLTMODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33784,11 +33883,11 @@ OSD1\_FLTMODE\_Y: FLTMODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33827,11 +33926,11 @@ OSD1\_MESSAGE\_X: MESSAGE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33845,11 +33944,11 @@ OSD1\_MESSAGE\_Y: MESSAGE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33888,11 +33987,11 @@ OSD1\_GSPEED\_X: GSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33906,11 +34005,11 @@ OSD1\_GSPEED\_Y: GSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -33949,11 +34048,11 @@ OSD1\_HORIZON\_X: HORIZON\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -33967,11 +34066,11 @@ OSD1\_HORIZON\_Y: HORIZON\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34010,11 +34109,11 @@ OSD1\_HOME\_X: HOME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34028,11 +34127,11 @@ OSD1\_HOME\_Y: HOME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34071,11 +34170,11 @@ OSD1\_HEADING\_X: HEADING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34089,11 +34188,11 @@ OSD1\_HEADING\_Y: HEADING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34132,11 +34231,11 @@ OSD1\_THR\_OUT\_X: THR\_OUT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34150,11 +34249,11 @@ OSD1\_THR\_OUT\_Y: THR\_OUT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34193,11 +34292,11 @@ OSD1\_COMPASS\_X: COMPASS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34211,11 +34310,11 @@ OSD1\_COMPASS\_Y: COMPASS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34254,11 +34353,11 @@ OSD1\_WIND\_X: WIND\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34272,11 +34371,11 @@ OSD1\_WIND\_Y: WIND\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34315,11 +34414,11 @@ OSD1\_ASPEED\_X: ASPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34333,11 +34432,11 @@ OSD1\_ASPEED\_Y: ASPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34376,11 +34475,11 @@ OSD1\_VSPEED\_X: VSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34394,11 +34493,11 @@ OSD1\_VSPEED\_Y: VSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34437,11 +34536,11 @@ OSD1\_ESCTEMP\_X: ESCTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34455,11 +34554,11 @@ OSD1\_ESCTEMP\_Y: ESCTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34498,11 +34597,11 @@ OSD1\_ESCARPM\_X: ESCARPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34516,11 +34615,11 @@ OSD1\_ESCARPM\_Y: ESCARPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34559,11 +34658,11 @@ OSD1\_ESCHAMPS\_X: ESCHAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34577,11 +34676,11 @@ OSD1\_ESCHAMPS\_Y: ESCHAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34620,11 +34719,11 @@ OSD1\_ESCAAMPS\_X: ESCAAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34638,11 +34737,11 @@ OSD1\_ESCAAMPS\_Y: ESCAAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34681,11 +34780,11 @@ OSD1\_ESCTAMPS\_X: ESCTAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34699,11 +34798,11 @@ OSD1\_ESCTAMPS\_Y: ESCTAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34742,11 +34841,11 @@ OSD1\_ESCHRPM\_X: ESCHRPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34760,11 +34859,11 @@ OSD1\_ESCHRPM\_Y: ESCHRPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34803,11 +34902,11 @@ OSD1\_GPSLAT\_X: GPSLAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34821,11 +34920,11 @@ OSD1\_GPSLAT\_Y: GPSLAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34864,11 +34963,11 @@ OSD1\_GPSLONG\_X: GPSLONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34882,11 +34981,11 @@ OSD1\_GPSLONG\_Y: GPSLONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34925,11 +35024,11 @@ OSD1\_ROLL\_X: ROLL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -34943,11 +35042,11 @@ OSD1\_ROLL\_Y: ROLL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -34986,11 +35085,11 @@ OSD1\_PITCH\_X: PITCH\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35004,11 +35103,11 @@ OSD1\_PITCH\_Y: PITCH\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35047,11 +35146,11 @@ OSD1\_TEMP\_X: TEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35065,11 +35164,11 @@ OSD1\_TEMP\_Y: TEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35108,11 +35207,11 @@ OSD1\_HDOP\_X: HDOP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35126,11 +35225,11 @@ OSD1\_HDOP\_Y: HDOP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35169,11 +35268,11 @@ OSD1\_WAYPOINT\_X: WAYPOINT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35187,11 +35286,11 @@ OSD1\_WAYPOINT\_Y: WAYPOINT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35230,11 +35329,11 @@ OSD1\_XTRACK\_X: XTRACK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35248,11 +35347,11 @@ OSD1\_XTRACK\_Y: XTRACK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35291,11 +35390,11 @@ OSD1\_GNDTRVL\_X: GNDTRVL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35309,11 +35408,11 @@ OSD1\_GNDTRVL\_Y: GNDTRVL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35352,11 +35451,11 @@ OSD1\_STATS\_X: STATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35370,11 +35469,11 @@ OSD1\_STATS\_Y: STATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35413,11 +35512,11 @@ OSD1\_FLTIME\_X: FLTIME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35431,11 +35530,11 @@ OSD1\_FLTIME\_Y: FLTIME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35474,11 +35573,11 @@ OSD1\_CLIMBEFF\_X: CLIMBEFF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35492,11 +35591,11 @@ OSD1\_CLIMBEFF\_Y: CLIMBEFF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35535,11 +35634,11 @@ OSD1\_EFFG\_X: EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35553,11 +35652,11 @@ OSD1\_EFFG\_Y: EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35596,11 +35695,11 @@ OSD1\_BTEMP\_X: BTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35614,11 +35713,11 @@ OSD1\_BTEMP\_Y: BTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35657,11 +35756,11 @@ OSD1\_ATEMP\_X: ATEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35675,11 +35774,11 @@ OSD1\_ATEMP\_Y: ATEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35718,11 +35817,11 @@ OSD1\_BAT2\_VLT\_X: BAT2VLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35736,11 +35835,11 @@ OSD1\_BAT2\_VLT\_Y: BAT2VLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35779,11 +35878,11 @@ OSD1\_BAT2USED\_X: BAT2USED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35797,11 +35896,11 @@ OSD1\_BAT2USED\_Y: BAT2USED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35840,11 +35939,11 @@ OSD1\_ASPD2\_X: ASPD2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35858,11 +35957,11 @@ OSD1\_ASPD2\_Y: ASPD2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35901,11 +36000,11 @@ OSD1\_ASPD1\_X: ASPD1\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35919,11 +36018,11 @@ OSD1\_ASPD1\_Y: ASPD1\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -35962,11 +36061,11 @@ OSD1\_CLK\_X: CLK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -35980,11 +36079,11 @@ OSD1\_CLK\_Y: CLK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36023,11 +36122,11 @@ OSD1\_SIDEBARS\_X: SIDEBARS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36041,11 +36140,11 @@ OSD1\_SIDEBARS\_Y: SIDEBARS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36084,11 +36183,11 @@ OSD1\_CRSSHAIR\_X: CRSSHAIR\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36102,11 +36201,11 @@ OSD1\_CRSSHAIR\_Y: CRSSHAIR\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36145,11 +36244,11 @@ OSD1\_HOMEDIST\_X: HOMEDIST\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36163,11 +36262,11 @@ OSD1\_HOMEDIST\_Y: HOMEDIST\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36206,11 +36305,11 @@ OSD1\_HOMEDIR\_X: HOMEDIR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36224,11 +36323,11 @@ OSD1\_HOMEDIR\_Y: HOMEDIR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36267,11 +36366,11 @@ OSD1\_CELLVOLT\_X: CELL\_VOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36285,11 +36384,11 @@ OSD1\_CELLVOLT\_Y: CELL\_VOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36328,11 +36427,11 @@ OSD1\_BATTBAR\_X: BATT\_BAR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36346,11 +36445,11 @@ OSD1\_BATTBAR\_Y: BATT\_BAR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36389,11 +36488,11 @@ OSD1\_ARMING\_X: ARMING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36407,11 +36506,11 @@ OSD1\_ARMING\_Y: ARMING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36450,11 +36549,11 @@ OSD1\_POWER\_X: POWER\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36468,11 +36567,11 @@ OSD1\_POWER\_Y: POWER\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36511,11 +36610,11 @@ OSD1\_PLUSCODE\_X: PLUSCODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36529,11 +36628,11 @@ OSD1\_PLUSCODE\_Y: PLUSCODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36572,11 +36671,11 @@ OSD1\_CALLSIGN\_X: CALLSIGN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36590,11 +36689,11 @@ OSD1\_CALLSIGN\_Y: CALLSIGN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36633,11 +36732,11 @@ OSD1\_CURRENT2\_X: CURRENT2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36651,11 +36750,11 @@ OSD1\_CURRENT2\_Y: CURRENT2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36694,11 +36793,11 @@ OSD1\_VTX\_PWR\_X: VTX\_PWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36712,11 +36811,11 @@ OSD1\_VTX\_PWR\_Y: VTX\_PWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36755,11 +36854,11 @@ OSD1\_TER\_HGT\_X: TER\_HGT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36773,11 +36872,11 @@ OSD1\_TER\_HGT\_Y: TER\_HGT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36816,11 +36915,11 @@ OSD1\_AVGCELLV\_X: AVGCELLV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36834,11 +36933,11 @@ OSD1\_AVGCELLV\_Y: AVGCELLV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36877,11 +36976,11 @@ OSD1\_RESTVOLT\_X: RESTVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36895,11 +36994,11 @@ OSD1\_RESTVOLT\_Y: RESTVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36938,11 +37037,11 @@ OSD1\_FENCE\_X: FENCE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -36956,11 +37055,11 @@ OSD1\_FENCE\_Y: FENCE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -36999,11 +37098,11 @@ OSD1\_RNGF\_X: RNGF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37017,11 +37116,11 @@ OSD1\_RNGF\_Y: RNGF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37060,11 +37159,11 @@ OSD1\_LINK\_Q\_X: LINK\_Q\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37078,11 +37177,11 @@ OSD1\_LINK\_Q\_Y: LINK\_Q\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37121,11 +37220,11 @@ OSD1\_NRG\_CONS\_X: NRG\_CONS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37139,11 +37238,11 @@ OSD1\_NRG\_CONS\_Y: NRG\_CONS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37182,11 +37281,11 @@ OSD1\_RC\_THR\_X: RC\_THR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37200,11 +37299,11 @@ OSD1\_RC\_THR\_Y: RC\_THR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37243,11 +37342,11 @@ OSD1\_ASPD\_DEM\_X: ASPD\_DEM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37261,11 +37360,11 @@ OSD1\_ASPD\_DEM\_Y: ASPD\_DEM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37304,11 +37403,11 @@ OSD1\_ACC\_LONG\_X: ACC\_LONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37322,11 +37421,11 @@ OSD1\_ACC\_LONG\_Y: ACC\_LONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37365,11 +37464,11 @@ OSD1\_ACC\_LAT\_X: ACC\_LAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37383,11 +37482,11 @@ OSD1\_ACC\_LAT\_Y: ACC\_LAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37426,11 +37525,11 @@ OSD1\_ACC\_VERT\_X: ACC\_VERT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37444,11 +37543,11 @@ OSD1\_ACC\_VERT\_Y: ACC\_VERT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37487,11 +37586,11 @@ OSD1\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37505,11 +37604,11 @@ OSD1\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37548,11 +37647,11 @@ OSD1\_AOA\_X: AOA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37566,11 +37665,11 @@ OSD1\_AOA\_Y: AOA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37609,11 +37708,11 @@ OSD1\_CRSFPWR\_X: CRSFPWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37627,11 +37726,11 @@ OSD1\_CRSFPWR\_Y: CRSFPWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37670,11 +37769,11 @@ OSD1\_CRSFRSSI\_X: CRSFRSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37688,11 +37787,11 @@ OSD1\_CRSFRSSI\_Y: CRSFRSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37731,11 +37830,11 @@ OSD1\_CRSFSNR\_X: CRSFSNR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37749,11 +37848,11 @@ OSD1\_CRSFSNR\_Y: CRSFSNR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37792,11 +37891,11 @@ OSD1\_CRSFANT\_X: CRSFANT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37810,11 +37909,11 @@ OSD1\_CRSFANT\_Y: CRSFANT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37853,11 +37952,11 @@ OSD1\_BAT\_PCT\_X: BAT\_PCT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37871,11 +37970,11 @@ OSD1\_BAT\_PCT\_Y: BAT\_PCT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37914,11 +38013,11 @@ OSD1\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37932,11 +38031,11 @@ OSD1\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -37975,11 +38074,11 @@ OSD1\_NRG\_REM\_X: NRG\_REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -37993,11 +38092,11 @@ OSD1\_NRG\_REM\_Y: NRG\_REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38036,11 +38135,11 @@ OSD1\_AVG\_EFFG\_X: AVG\_EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38054,11 +38153,11 @@ OSD1\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38097,11 +38196,11 @@ OSD1\_AVG\_EFFA\_X: AVG\_EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38115,11 +38214,11 @@ OSD1\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38158,11 +38257,11 @@ OSD1\_EFFA\_X: EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38176,11 +38275,11 @@ OSD1\_EFFA\_Y: EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38219,11 +38318,11 @@ OSD1\_BATREM\_X: BATREM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38237,11 +38336,11 @@ OSD1\_BATREM\_Y: BATREM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38280,11 +38379,11 @@ OSD1\_BAT2REM\_X: BAT2REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38298,11 +38397,11 @@ OSD1\_BAT2REM\_Y: BAT2REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38341,11 +38440,11 @@ OSD1\_TUNED\_PN\_X: TUNED\_PN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38359,11 +38458,11 @@ OSD1\_TUNED\_PN\_Y: TUNED\_PN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38402,11 +38501,11 @@ OSD1\_TUNED\_PV\_X: TUNED\_PV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38420,11 +38519,11 @@ OSD1\_TUNED\_PV\_Y: TUNED\_PV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38463,11 +38562,11 @@ OSD1\_PEAK\_RR\_X: PEAK\_RR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38481,11 +38580,11 @@ OSD1\_PEAK\_RR\_Y: PEAK\_RR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38524,11 +38623,11 @@ OSD1\_PEAK\_PR\_X: PEAK\_PR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38542,11 +38641,11 @@ OSD1\_PEAK\_PR\_Y: PEAK\_PR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38585,11 +38684,11 @@ OSD1\_CRS\_HEAD\_X: CRS\_HEAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38603,11 +38702,11 @@ OSD1\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38646,11 +38745,11 @@ OSD1\_CRS\_HADJ\_X: CRS\_HADJ\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38664,11 +38763,11 @@ OSD1\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38707,11 +38806,11 @@ OSD1\_RC\_FS\_X: RC\_FS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38725,11 +38824,11 @@ OSD1\_RC\_FS\_Y: RC\_FS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38768,11 +38867,11 @@ OSD1\_DEBUG\_X: DEBUG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38786,11 +38885,11 @@ OSD1\_DEBUG\_Y: DEBUG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38829,11 +38928,11 @@ OSD1\_LOIT\_RAD\_X: LOIT\_RAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38847,11 +38946,11 @@ OSD1\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -38897,11 +38996,11 @@ OSD2\_CHAN\_MIN: Transmitter switch screen minimum pwm
 This sets the PWM lower limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -38915,11 +39014,11 @@ OSD2\_CHAN\_MAX: Transmitter switch screen maximum pwm
 This sets the PWM upper limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -38958,11 +39057,11 @@ OSD2\_ALTITUDE\_X: ALTITUDE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -38976,11 +39075,11 @@ OSD2\_ALTITUDE\_Y: ALTITUDE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39019,11 +39118,11 @@ OSD2\_BAT\_VOLT\_X: BATVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39037,11 +39136,11 @@ OSD2\_BAT\_VOLT\_Y: BATVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39080,11 +39179,11 @@ OSD2\_RSSI\_X: RSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39098,11 +39197,11 @@ OSD2\_RSSI\_Y: RSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39141,11 +39240,11 @@ OSD2\_CURRENT\_X: CURRENT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39159,11 +39258,11 @@ OSD2\_CURRENT\_Y: CURRENT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39202,11 +39301,11 @@ OSD2\_BATUSED\_X: BATUSED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39220,11 +39319,11 @@ OSD2\_BATUSED\_Y: BATUSED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39263,11 +39362,11 @@ OSD2\_SATS\_X: SATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39281,11 +39380,11 @@ OSD2\_SATS\_Y: SATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39324,11 +39423,11 @@ OSD2\_FLTMODE\_X: FLTMODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39342,11 +39441,11 @@ OSD2\_FLTMODE\_Y: FLTMODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39385,11 +39484,11 @@ OSD2\_MESSAGE\_X: MESSAGE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39403,11 +39502,11 @@ OSD2\_MESSAGE\_Y: MESSAGE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39446,11 +39545,11 @@ OSD2\_GSPEED\_X: GSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39464,11 +39563,11 @@ OSD2\_GSPEED\_Y: GSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39507,11 +39606,11 @@ OSD2\_HORIZON\_X: HORIZON\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39525,11 +39624,11 @@ OSD2\_HORIZON\_Y: HORIZON\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39568,11 +39667,11 @@ OSD2\_HOME\_X: HOME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39586,11 +39685,11 @@ OSD2\_HOME\_Y: HOME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39629,11 +39728,11 @@ OSD2\_HEADING\_X: HEADING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39647,11 +39746,11 @@ OSD2\_HEADING\_Y: HEADING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39690,11 +39789,11 @@ OSD2\_THR\_OUT\_X: THR\_OUT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39708,11 +39807,11 @@ OSD2\_THR\_OUT\_Y: THR\_OUT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39751,11 +39850,11 @@ OSD2\_COMPASS\_X: COMPASS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39769,11 +39868,11 @@ OSD2\_COMPASS\_Y: COMPASS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39812,11 +39911,11 @@ OSD2\_WIND\_X: WIND\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39830,11 +39929,11 @@ OSD2\_WIND\_Y: WIND\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39873,11 +39972,11 @@ OSD2\_ASPEED\_X: ASPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39891,11 +39990,11 @@ OSD2\_ASPEED\_Y: ASPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39934,11 +40033,11 @@ OSD2\_VSPEED\_X: VSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -39952,11 +40051,11 @@ OSD2\_VSPEED\_Y: VSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -39995,11 +40094,11 @@ OSD2\_ESCTEMP\_X: ESCTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40013,11 +40112,11 @@ OSD2\_ESCTEMP\_Y: ESCTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40056,11 +40155,11 @@ OSD2\_ESCARPM\_X: ESCARPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40074,11 +40173,11 @@ OSD2\_ESCARPM\_Y: ESCARPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40117,11 +40216,11 @@ OSD2\_ESCHAMPS\_X: ESCHAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40135,11 +40234,11 @@ OSD2\_ESCHAMPS\_Y: ESCHAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40178,11 +40277,11 @@ OSD2\_ESCAAMPS\_X: ESCAAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40196,11 +40295,11 @@ OSD2\_ESCAAMPS\_Y: ESCAAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40239,11 +40338,11 @@ OSD2\_ESCTAMPS\_X: ESCTAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40257,11 +40356,11 @@ OSD2\_ESCTAMPS\_Y: ESCTAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40300,11 +40399,11 @@ OSD2\_ESCHRPM\_X: ESCHRPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40318,11 +40417,11 @@ OSD2\_ESCHRPM\_Y: ESCHRPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40361,11 +40460,11 @@ OSD2\_GPSLAT\_X: GPSLAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40379,11 +40478,11 @@ OSD2\_GPSLAT\_Y: GPSLAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40422,11 +40521,11 @@ OSD2\_GPSLONG\_X: GPSLONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40440,11 +40539,11 @@ OSD2\_GPSLONG\_Y: GPSLONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40483,11 +40582,11 @@ OSD2\_ROLL\_X: ROLL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40501,11 +40600,11 @@ OSD2\_ROLL\_Y: ROLL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40544,11 +40643,11 @@ OSD2\_PITCH\_X: PITCH\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40562,11 +40661,11 @@ OSD2\_PITCH\_Y: PITCH\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40605,11 +40704,11 @@ OSD2\_TEMP\_X: TEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40623,11 +40722,11 @@ OSD2\_TEMP\_Y: TEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40666,11 +40765,11 @@ OSD2\_HDOP\_X: HDOP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40684,11 +40783,11 @@ OSD2\_HDOP\_Y: HDOP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40727,11 +40826,11 @@ OSD2\_WAYPOINT\_X: WAYPOINT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40745,11 +40844,11 @@ OSD2\_WAYPOINT\_Y: WAYPOINT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40788,11 +40887,11 @@ OSD2\_XTRACK\_X: XTRACK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40806,11 +40905,11 @@ OSD2\_XTRACK\_Y: XTRACK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40849,11 +40948,11 @@ OSD2\_GNDTRVL\_X: GNDTRVL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40867,11 +40966,11 @@ OSD2\_GNDTRVL\_Y: GNDTRVL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40910,11 +41009,11 @@ OSD2\_STATS\_X: STATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40928,11 +41027,11 @@ OSD2\_STATS\_Y: STATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -40971,11 +41070,11 @@ OSD2\_FLTIME\_X: FLTIME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -40989,11 +41088,11 @@ OSD2\_FLTIME\_Y: FLTIME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41032,11 +41131,11 @@ OSD2\_CLIMBEFF\_X: CLIMBEFF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41050,11 +41149,11 @@ OSD2\_CLIMBEFF\_Y: CLIMBEFF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41093,11 +41192,11 @@ OSD2\_EFFG\_X: EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41111,11 +41210,11 @@ OSD2\_EFFG\_Y: EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41154,11 +41253,11 @@ OSD2\_BTEMP\_X: BTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41172,11 +41271,11 @@ OSD2\_BTEMP\_Y: BTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41215,11 +41314,11 @@ OSD2\_ATEMP\_X: ATEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41233,11 +41332,11 @@ OSD2\_ATEMP\_Y: ATEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41276,11 +41375,11 @@ OSD2\_BAT2\_VLT\_X: BAT2VLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41294,11 +41393,11 @@ OSD2\_BAT2\_VLT\_Y: BAT2VLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41337,11 +41436,11 @@ OSD2\_BAT2USED\_X: BAT2USED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41355,11 +41454,11 @@ OSD2\_BAT2USED\_Y: BAT2USED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41398,11 +41497,11 @@ OSD2\_ASPD2\_X: ASPD2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41416,11 +41515,11 @@ OSD2\_ASPD2\_Y: ASPD2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41459,11 +41558,11 @@ OSD2\_ASPD1\_X: ASPD1\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41477,11 +41576,11 @@ OSD2\_ASPD1\_Y: ASPD1\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41520,11 +41619,11 @@ OSD2\_CLK\_X: CLK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41538,11 +41637,11 @@ OSD2\_CLK\_Y: CLK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41581,11 +41680,11 @@ OSD2\_SIDEBARS\_X: SIDEBARS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41599,11 +41698,11 @@ OSD2\_SIDEBARS\_Y: SIDEBARS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41642,11 +41741,11 @@ OSD2\_CRSSHAIR\_X: CRSSHAIR\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41660,11 +41759,11 @@ OSD2\_CRSSHAIR\_Y: CRSSHAIR\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41703,11 +41802,11 @@ OSD2\_HOMEDIST\_X: HOMEDIST\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41721,11 +41820,11 @@ OSD2\_HOMEDIST\_Y: HOMEDIST\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41764,11 +41863,11 @@ OSD2\_HOMEDIR\_X: HOMEDIR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41782,11 +41881,11 @@ OSD2\_HOMEDIR\_Y: HOMEDIR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41825,11 +41924,11 @@ OSD2\_CELLVOLT\_X: CELL\_VOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41843,11 +41942,11 @@ OSD2\_CELLVOLT\_Y: CELL\_VOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41886,11 +41985,11 @@ OSD2\_BATTBAR\_X: BATT\_BAR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41904,11 +42003,11 @@ OSD2\_BATTBAR\_Y: BATT\_BAR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -41947,11 +42046,11 @@ OSD2\_ARMING\_X: ARMING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -41965,11 +42064,11 @@ OSD2\_ARMING\_Y: ARMING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42008,11 +42107,11 @@ OSD2\_POWER\_X: POWER\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42026,11 +42125,11 @@ OSD2\_POWER\_Y: POWER\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42069,11 +42168,11 @@ OSD2\_PLUSCODE\_X: PLUSCODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42087,11 +42186,11 @@ OSD2\_PLUSCODE\_Y: PLUSCODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42130,11 +42229,11 @@ OSD2\_CALLSIGN\_X: CALLSIGN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42148,11 +42247,11 @@ OSD2\_CALLSIGN\_Y: CALLSIGN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42191,11 +42290,11 @@ OSD2\_CURRENT2\_X: CURRENT2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42209,11 +42308,11 @@ OSD2\_CURRENT2\_Y: CURRENT2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42252,11 +42351,11 @@ OSD2\_VTX\_PWR\_X: VTX\_PWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42270,11 +42369,11 @@ OSD2\_VTX\_PWR\_Y: VTX\_PWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42313,11 +42412,11 @@ OSD2\_TER\_HGT\_X: TER\_HGT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42331,11 +42430,11 @@ OSD2\_TER\_HGT\_Y: TER\_HGT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42374,11 +42473,11 @@ OSD2\_AVGCELLV\_X: AVGCELLV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42392,11 +42491,11 @@ OSD2\_AVGCELLV\_Y: AVGCELLV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42435,11 +42534,11 @@ OSD2\_RESTVOLT\_X: RESTVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42453,11 +42552,11 @@ OSD2\_RESTVOLT\_Y: RESTVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42496,11 +42595,11 @@ OSD2\_FENCE\_X: FENCE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42514,11 +42613,11 @@ OSD2\_FENCE\_Y: FENCE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42557,11 +42656,11 @@ OSD2\_RNGF\_X: RNGF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42575,11 +42674,11 @@ OSD2\_RNGF\_Y: RNGF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42618,11 +42717,11 @@ OSD2\_LINK\_Q\_X: LINK\_Q\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42636,11 +42735,11 @@ OSD2\_LINK\_Q\_Y: LINK\_Q\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42679,11 +42778,11 @@ OSD2\_NRG\_CONS\_X: NRG\_CONS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42697,11 +42796,11 @@ OSD2\_NRG\_CONS\_Y: NRG\_CONS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42740,11 +42839,11 @@ OSD2\_RC\_THR\_X: RC\_THR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42758,11 +42857,11 @@ OSD2\_RC\_THR\_Y: RC\_THR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42801,11 +42900,11 @@ OSD2\_ASPD\_DEM\_X: ASPD\_DEM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42819,11 +42918,11 @@ OSD2\_ASPD\_DEM\_Y: ASPD\_DEM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42862,11 +42961,11 @@ OSD2\_ACC\_LONG\_X: ACC\_LONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42880,11 +42979,11 @@ OSD2\_ACC\_LONG\_Y: ACC\_LONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42923,11 +43022,11 @@ OSD2\_ACC\_LAT\_X: ACC\_LAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -42941,11 +43040,11 @@ OSD2\_ACC\_LAT\_Y: ACC\_LAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -42984,11 +43083,11 @@ OSD2\_ACC\_VERT\_X: ACC\_VERT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43002,11 +43101,11 @@ OSD2\_ACC\_VERT\_Y: ACC\_VERT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43045,11 +43144,11 @@ OSD2\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43063,11 +43162,11 @@ OSD2\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43106,11 +43205,11 @@ OSD2\_AOA\_X: AOA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43124,11 +43223,11 @@ OSD2\_AOA\_Y: AOA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43167,11 +43266,11 @@ OSD2\_CRSFPWR\_X: CRSFPWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43185,11 +43284,11 @@ OSD2\_CRSFPWR\_Y: CRSFPWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43228,11 +43327,11 @@ OSD2\_CRSFRSSI\_X: CRSFRSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43246,11 +43345,11 @@ OSD2\_CRSFRSSI\_Y: CRSFRSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43289,11 +43388,11 @@ OSD2\_CRSFSNR\_X: CRSFSNR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43307,11 +43406,11 @@ OSD2\_CRSFSNR\_Y: CRSFSNR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43350,11 +43449,11 @@ OSD2\_CRSFANT\_X: CRSFANT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43368,11 +43467,11 @@ OSD2\_CRSFANT\_Y: CRSFANT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43411,11 +43510,11 @@ OSD2\_BAT\_PCT\_X: BAT\_PCT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43429,11 +43528,11 @@ OSD2\_BAT\_PCT\_Y: BAT\_PCT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43472,11 +43571,11 @@ OSD2\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43490,11 +43589,11 @@ OSD2\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43533,11 +43632,11 @@ OSD2\_NRG\_REM\_X: NRG\_REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43551,11 +43650,11 @@ OSD2\_NRG\_REM\_Y: NRG\_REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43594,11 +43693,11 @@ OSD2\_AVG\_EFFG\_X: AVG\_EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43612,11 +43711,11 @@ OSD2\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43655,11 +43754,11 @@ OSD2\_AVG\_EFFA\_X: AVG\_EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43673,11 +43772,11 @@ OSD2\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43716,11 +43815,11 @@ OSD2\_EFFA\_X: EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43734,11 +43833,11 @@ OSD2\_EFFA\_Y: EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43777,11 +43876,11 @@ OSD2\_BATREM\_X: BATREM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43795,11 +43894,11 @@ OSD2\_BATREM\_Y: BATREM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43838,11 +43937,11 @@ OSD2\_BAT2REM\_X: BAT2REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43856,11 +43955,11 @@ OSD2\_BAT2REM\_Y: BAT2REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43899,11 +43998,11 @@ OSD2\_TUNED\_PN\_X: TUNED\_PN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43917,11 +44016,11 @@ OSD2\_TUNED\_PN\_Y: TUNED\_PN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -43960,11 +44059,11 @@ OSD2\_TUNED\_PV\_X: TUNED\_PV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -43978,11 +44077,11 @@ OSD2\_TUNED\_PV\_Y: TUNED\_PV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44021,11 +44120,11 @@ OSD2\_PEAK\_RR\_X: PEAK\_RR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44039,11 +44138,11 @@ OSD2\_PEAK\_RR\_Y: PEAK\_RR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44082,11 +44181,11 @@ OSD2\_PEAK\_PR\_X: PEAK\_PR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44100,11 +44199,11 @@ OSD2\_PEAK\_PR\_Y: PEAK\_PR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44143,11 +44242,11 @@ OSD2\_CRS\_HEAD\_X: CRS\_HEAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44161,11 +44260,11 @@ OSD2\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44204,11 +44303,11 @@ OSD2\_CRS\_HADJ\_X: CRS\_HADJ\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44222,11 +44321,11 @@ OSD2\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44265,11 +44364,11 @@ OSD2\_RC\_FS\_X: RC\_FS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44283,11 +44382,11 @@ OSD2\_RC\_FS\_Y: RC\_FS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44326,11 +44425,11 @@ OSD2\_DEBUG\_X: DEBUG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44344,11 +44443,11 @@ OSD2\_DEBUG\_Y: DEBUG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44387,11 +44486,11 @@ OSD2\_LOIT\_RAD\_X: LOIT\_RAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44405,11 +44504,11 @@ OSD2\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44455,11 +44554,11 @@ OSD3\_CHAN\_MIN: Transmitter switch screen minimum pwm
 This sets the PWM lower limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -44473,11 +44572,11 @@ OSD3\_CHAN\_MAX: Transmitter switch screen maximum pwm
 This sets the PWM upper limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -44516,11 +44615,11 @@ OSD3\_ALTITUDE\_X: ALTITUDE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44534,11 +44633,11 @@ OSD3\_ALTITUDE\_Y: ALTITUDE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44577,11 +44676,11 @@ OSD3\_BAT\_VOLT\_X: BATVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44595,11 +44694,11 @@ OSD3\_BAT\_VOLT\_Y: BATVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44638,11 +44737,11 @@ OSD3\_RSSI\_X: RSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44656,11 +44755,11 @@ OSD3\_RSSI\_Y: RSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44699,11 +44798,11 @@ OSD3\_CURRENT\_X: CURRENT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44717,11 +44816,11 @@ OSD3\_CURRENT\_Y: CURRENT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44760,11 +44859,11 @@ OSD3\_BATUSED\_X: BATUSED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44778,11 +44877,11 @@ OSD3\_BATUSED\_Y: BATUSED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44821,11 +44920,11 @@ OSD3\_SATS\_X: SATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44839,11 +44938,11 @@ OSD3\_SATS\_Y: SATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44882,11 +44981,11 @@ OSD3\_FLTMODE\_X: FLTMODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44900,11 +44999,11 @@ OSD3\_FLTMODE\_Y: FLTMODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -44943,11 +45042,11 @@ OSD3\_MESSAGE\_X: MESSAGE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -44961,11 +45060,11 @@ OSD3\_MESSAGE\_Y: MESSAGE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45004,11 +45103,11 @@ OSD3\_GSPEED\_X: GSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45022,11 +45121,11 @@ OSD3\_GSPEED\_Y: GSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45065,11 +45164,11 @@ OSD3\_HORIZON\_X: HORIZON\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45083,11 +45182,11 @@ OSD3\_HORIZON\_Y: HORIZON\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45126,11 +45225,11 @@ OSD3\_HOME\_X: HOME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45144,11 +45243,11 @@ OSD3\_HOME\_Y: HOME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45187,11 +45286,11 @@ OSD3\_HEADING\_X: HEADING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45205,11 +45304,11 @@ OSD3\_HEADING\_Y: HEADING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45248,11 +45347,11 @@ OSD3\_THR\_OUT\_X: THR\_OUT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45266,11 +45365,11 @@ OSD3\_THR\_OUT\_Y: THR\_OUT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45309,11 +45408,11 @@ OSD3\_COMPASS\_X: COMPASS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45327,11 +45426,11 @@ OSD3\_COMPASS\_Y: COMPASS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45370,11 +45469,11 @@ OSD3\_WIND\_X: WIND\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45388,11 +45487,11 @@ OSD3\_WIND\_Y: WIND\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45431,11 +45530,11 @@ OSD3\_ASPEED\_X: ASPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45449,11 +45548,11 @@ OSD3\_ASPEED\_Y: ASPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45492,11 +45591,11 @@ OSD3\_VSPEED\_X: VSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45510,11 +45609,11 @@ OSD3\_VSPEED\_Y: VSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45553,11 +45652,11 @@ OSD3\_ESCTEMP\_X: ESCTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45571,11 +45670,11 @@ OSD3\_ESCTEMP\_Y: ESCTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45614,11 +45713,11 @@ OSD3\_ESCARPM\_X: ESCARPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45632,11 +45731,11 @@ OSD3\_ESCARPM\_Y: ESCARPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45675,11 +45774,11 @@ OSD3\_ESCHAMPS\_X: ESCHAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45693,11 +45792,11 @@ OSD3\_ESCHAMPS\_Y: ESCHAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45736,11 +45835,11 @@ OSD3\_ESCAAMPS\_X: ESCAAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45754,11 +45853,11 @@ OSD3\_ESCAAMPS\_Y: ESCAAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45797,11 +45896,11 @@ OSD3\_ESCTAMPS\_X: ESCTAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45815,11 +45914,11 @@ OSD3\_ESCTAMPS\_Y: ESCTAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45858,11 +45957,11 @@ OSD3\_ESCHRPM\_X: ESCHRPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45876,11 +45975,11 @@ OSD3\_ESCHRPM\_Y: ESCHRPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45919,11 +46018,11 @@ OSD3\_GPSLAT\_X: GPSLAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45937,11 +46036,11 @@ OSD3\_GPSLAT\_Y: GPSLAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -45980,11 +46079,11 @@ OSD3\_GPSLONG\_X: GPSLONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -45998,11 +46097,11 @@ OSD3\_GPSLONG\_Y: GPSLONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46041,11 +46140,11 @@ OSD3\_ROLL\_X: ROLL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46059,11 +46158,11 @@ OSD3\_ROLL\_Y: ROLL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46102,11 +46201,11 @@ OSD3\_PITCH\_X: PITCH\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46120,11 +46219,11 @@ OSD3\_PITCH\_Y: PITCH\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46163,11 +46262,11 @@ OSD3\_TEMP\_X: TEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46181,11 +46280,11 @@ OSD3\_TEMP\_Y: TEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46224,11 +46323,11 @@ OSD3\_HDOP\_X: HDOP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46242,11 +46341,11 @@ OSD3\_HDOP\_Y: HDOP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46285,11 +46384,11 @@ OSD3\_WAYPOINT\_X: WAYPOINT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46303,11 +46402,11 @@ OSD3\_WAYPOINT\_Y: WAYPOINT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46346,11 +46445,11 @@ OSD3\_XTRACK\_X: XTRACK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46364,11 +46463,11 @@ OSD3\_XTRACK\_Y: XTRACK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46407,11 +46506,11 @@ OSD3\_GNDTRVL\_X: GNDTRVL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46425,11 +46524,11 @@ OSD3\_GNDTRVL\_Y: GNDTRVL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46468,11 +46567,11 @@ OSD3\_STATS\_X: STATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46486,11 +46585,11 @@ OSD3\_STATS\_Y: STATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46529,11 +46628,11 @@ OSD3\_FLTIME\_X: FLTIME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46547,11 +46646,11 @@ OSD3\_FLTIME\_Y: FLTIME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46590,11 +46689,11 @@ OSD3\_CLIMBEFF\_X: CLIMBEFF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46608,11 +46707,11 @@ OSD3\_CLIMBEFF\_Y: CLIMBEFF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46651,11 +46750,11 @@ OSD3\_EFFG\_X: EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46669,11 +46768,11 @@ OSD3\_EFFG\_Y: EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46712,11 +46811,11 @@ OSD3\_BTEMP\_X: BTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46730,11 +46829,11 @@ OSD3\_BTEMP\_Y: BTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46773,11 +46872,11 @@ OSD3\_ATEMP\_X: ATEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46791,11 +46890,11 @@ OSD3\_ATEMP\_Y: ATEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46834,11 +46933,11 @@ OSD3\_BAT2\_VLT\_X: BAT2VLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46852,11 +46951,11 @@ OSD3\_BAT2\_VLT\_Y: BAT2VLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46895,11 +46994,11 @@ OSD3\_BAT2USED\_X: BAT2USED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46913,11 +47012,11 @@ OSD3\_BAT2USED\_Y: BAT2USED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -46956,11 +47055,11 @@ OSD3\_ASPD2\_X: ASPD2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -46974,11 +47073,11 @@ OSD3\_ASPD2\_Y: ASPD2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47017,11 +47116,11 @@ OSD3\_ASPD1\_X: ASPD1\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47035,11 +47134,11 @@ OSD3\_ASPD1\_Y: ASPD1\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47078,11 +47177,11 @@ OSD3\_CLK\_X: CLK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47096,11 +47195,11 @@ OSD3\_CLK\_Y: CLK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47139,11 +47238,11 @@ OSD3\_SIDEBARS\_X: SIDEBARS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47157,11 +47256,11 @@ OSD3\_SIDEBARS\_Y: SIDEBARS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47200,11 +47299,11 @@ OSD3\_CRSSHAIR\_X: CRSSHAIR\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47218,11 +47317,11 @@ OSD3\_CRSSHAIR\_Y: CRSSHAIR\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47261,11 +47360,11 @@ OSD3\_HOMEDIST\_X: HOMEDIST\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47279,11 +47378,11 @@ OSD3\_HOMEDIST\_Y: HOMEDIST\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47322,11 +47421,11 @@ OSD3\_HOMEDIR\_X: HOMEDIR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47340,11 +47439,11 @@ OSD3\_HOMEDIR\_Y: HOMEDIR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47383,11 +47482,11 @@ OSD3\_CELLVOLT\_X: CELL\_VOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47401,11 +47500,11 @@ OSD3\_CELLVOLT\_Y: CELL\_VOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47444,11 +47543,11 @@ OSD3\_BATTBAR\_X: BATT\_BAR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47462,11 +47561,11 @@ OSD3\_BATTBAR\_Y: BATT\_BAR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47505,11 +47604,11 @@ OSD3\_ARMING\_X: ARMING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47523,11 +47622,11 @@ OSD3\_ARMING\_Y: ARMING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47566,11 +47665,11 @@ OSD3\_POWER\_X: POWER\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47584,11 +47683,11 @@ OSD3\_POWER\_Y: POWER\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47627,11 +47726,11 @@ OSD3\_PLUSCODE\_X: PLUSCODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47645,11 +47744,11 @@ OSD3\_PLUSCODE\_Y: PLUSCODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47688,11 +47787,11 @@ OSD3\_CALLSIGN\_X: CALLSIGN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47706,11 +47805,11 @@ OSD3\_CALLSIGN\_Y: CALLSIGN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47749,11 +47848,11 @@ OSD3\_CURRENT2\_X: CURRENT2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47767,11 +47866,11 @@ OSD3\_CURRENT2\_Y: CURRENT2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47810,11 +47909,11 @@ OSD3\_VTX\_PWR\_X: VTX\_PWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47828,11 +47927,11 @@ OSD3\_VTX\_PWR\_Y: VTX\_PWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47871,11 +47970,11 @@ OSD3\_TER\_HGT\_X: TER\_HGT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47889,11 +47988,11 @@ OSD3\_TER\_HGT\_Y: TER\_HGT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47932,11 +48031,11 @@ OSD3\_AVGCELLV\_X: AVGCELLV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -47950,11 +48049,11 @@ OSD3\_AVGCELLV\_Y: AVGCELLV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -47993,11 +48092,11 @@ OSD3\_RESTVOLT\_X: RESTVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48011,11 +48110,11 @@ OSD3\_RESTVOLT\_Y: RESTVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48054,11 +48153,11 @@ OSD3\_FENCE\_X: FENCE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48072,11 +48171,11 @@ OSD3\_FENCE\_Y: FENCE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48115,11 +48214,11 @@ OSD3\_RNGF\_X: RNGF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48133,11 +48232,11 @@ OSD3\_RNGF\_Y: RNGF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48176,11 +48275,11 @@ OSD3\_LINK\_Q\_X: LINK\_Q\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48194,11 +48293,11 @@ OSD3\_LINK\_Q\_Y: LINK\_Q\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48237,11 +48336,11 @@ OSD3\_NRG\_CONS\_X: NRG\_CONS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48255,11 +48354,11 @@ OSD3\_NRG\_CONS\_Y: NRG\_CONS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48298,11 +48397,11 @@ OSD3\_RC\_THR\_X: RC\_THR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48316,11 +48415,11 @@ OSD3\_RC\_THR\_Y: RC\_THR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48359,11 +48458,11 @@ OSD3\_ASPD\_DEM\_X: ASPD\_DEM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48377,11 +48476,11 @@ OSD3\_ASPD\_DEM\_Y: ASPD\_DEM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48420,11 +48519,11 @@ OSD3\_ACC\_LONG\_X: ACC\_LONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48438,11 +48537,11 @@ OSD3\_ACC\_LONG\_Y: ACC\_LONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48481,11 +48580,11 @@ OSD3\_ACC\_LAT\_X: ACC\_LAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48499,11 +48598,11 @@ OSD3\_ACC\_LAT\_Y: ACC\_LAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48542,11 +48641,11 @@ OSD3\_ACC\_VERT\_X: ACC\_VERT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48560,11 +48659,11 @@ OSD3\_ACC\_VERT\_Y: ACC\_VERT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48603,11 +48702,11 @@ OSD3\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48621,11 +48720,11 @@ OSD3\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48664,11 +48763,11 @@ OSD3\_AOA\_X: AOA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48682,11 +48781,11 @@ OSD3\_AOA\_Y: AOA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48725,11 +48824,11 @@ OSD3\_CRSFPWR\_X: CRSFPWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48743,11 +48842,11 @@ OSD3\_CRSFPWR\_Y: CRSFPWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48786,11 +48885,11 @@ OSD3\_CRSFRSSI\_X: CRSFRSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48804,11 +48903,11 @@ OSD3\_CRSFRSSI\_Y: CRSFRSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48847,11 +48946,11 @@ OSD3\_CRSFSNR\_X: CRSFSNR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48865,11 +48964,11 @@ OSD3\_CRSFSNR\_Y: CRSFSNR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48908,11 +49007,11 @@ OSD3\_CRSFANT\_X: CRSFANT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48926,11 +49025,11 @@ OSD3\_CRSFANT\_Y: CRSFANT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -48969,11 +49068,11 @@ OSD3\_BAT\_PCT\_X: BAT\_PCT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -48987,11 +49086,11 @@ OSD3\_BAT\_PCT\_Y: BAT\_PCT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49030,11 +49129,11 @@ OSD3\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49048,11 +49147,11 @@ OSD3\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49091,11 +49190,11 @@ OSD3\_NRG\_REM\_X: NRG\_REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49109,11 +49208,11 @@ OSD3\_NRG\_REM\_Y: NRG\_REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49152,11 +49251,11 @@ OSD3\_AVG\_EFFG\_X: AVG\_EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49170,11 +49269,11 @@ OSD3\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49213,11 +49312,11 @@ OSD3\_AVG\_EFFA\_X: AVG\_EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49231,11 +49330,11 @@ OSD3\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49274,11 +49373,11 @@ OSD3\_EFFA\_X: EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49292,11 +49391,11 @@ OSD3\_EFFA\_Y: EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49335,11 +49434,11 @@ OSD3\_BATREM\_X: BATREM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49353,11 +49452,11 @@ OSD3\_BATREM\_Y: BATREM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49396,11 +49495,11 @@ OSD3\_BAT2REM\_X: BAT2REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49414,11 +49513,11 @@ OSD3\_BAT2REM\_Y: BAT2REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49457,11 +49556,11 @@ OSD3\_TUNED\_PN\_X: TUNED\_PN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49475,11 +49574,11 @@ OSD3\_TUNED\_PN\_Y: TUNED\_PN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49518,11 +49617,11 @@ OSD3\_TUNED\_PV\_X: TUNED\_PV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49536,11 +49635,11 @@ OSD3\_TUNED\_PV\_Y: TUNED\_PV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49579,11 +49678,11 @@ OSD3\_PEAK\_RR\_X: PEAK\_RR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49597,11 +49696,11 @@ OSD3\_PEAK\_RR\_Y: PEAK\_RR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49640,11 +49739,11 @@ OSD3\_PEAK\_PR\_X: PEAK\_PR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49658,11 +49757,11 @@ OSD3\_PEAK\_PR\_Y: PEAK\_PR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49701,11 +49800,11 @@ OSD3\_CRS\_HEAD\_X: CRS\_HEAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49719,11 +49818,11 @@ OSD3\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49762,11 +49861,11 @@ OSD3\_CRS\_HADJ\_X: CRS\_HADJ\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49780,11 +49879,11 @@ OSD3\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49823,11 +49922,11 @@ OSD3\_RC\_FS\_X: RC\_FS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49841,11 +49940,11 @@ OSD3\_RC\_FS\_Y: RC\_FS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49884,11 +49983,11 @@ OSD3\_DEBUG\_X: DEBUG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49902,11 +50001,11 @@ OSD3\_DEBUG\_Y: DEBUG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -49945,11 +50044,11 @@ OSD3\_LOIT\_RAD\_X: LOIT\_RAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -49963,11 +50062,11 @@ OSD3\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50013,11 +50112,11 @@ OSD4\_CHAN\_MIN: Transmitter switch screen minimum pwm
 This sets the PWM lower limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -50031,11 +50130,11 @@ OSD4\_CHAN\_MAX: Transmitter switch screen maximum pwm
 This sets the PWM upper limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -50074,11 +50173,11 @@ OSD4\_ALTITUDE\_X: ALTITUDE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50092,11 +50191,11 @@ OSD4\_ALTITUDE\_Y: ALTITUDE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50135,11 +50234,11 @@ OSD4\_BAT\_VOLT\_X: BATVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50153,11 +50252,11 @@ OSD4\_BAT\_VOLT\_Y: BATVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50196,11 +50295,11 @@ OSD4\_RSSI\_X: RSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50214,11 +50313,11 @@ OSD4\_RSSI\_Y: RSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50257,11 +50356,11 @@ OSD4\_CURRENT\_X: CURRENT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50275,11 +50374,11 @@ OSD4\_CURRENT\_Y: CURRENT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50318,11 +50417,11 @@ OSD4\_BATUSED\_X: BATUSED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50336,11 +50435,11 @@ OSD4\_BATUSED\_Y: BATUSED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50379,11 +50478,11 @@ OSD4\_SATS\_X: SATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50397,11 +50496,11 @@ OSD4\_SATS\_Y: SATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50440,11 +50539,11 @@ OSD4\_FLTMODE\_X: FLTMODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50458,11 +50557,11 @@ OSD4\_FLTMODE\_Y: FLTMODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50501,11 +50600,11 @@ OSD4\_MESSAGE\_X: MESSAGE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50519,11 +50618,11 @@ OSD4\_MESSAGE\_Y: MESSAGE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50562,11 +50661,11 @@ OSD4\_GSPEED\_X: GSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50580,11 +50679,11 @@ OSD4\_GSPEED\_Y: GSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50623,11 +50722,11 @@ OSD4\_HORIZON\_X: HORIZON\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50641,11 +50740,11 @@ OSD4\_HORIZON\_Y: HORIZON\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50684,11 +50783,11 @@ OSD4\_HOME\_X: HOME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50702,11 +50801,11 @@ OSD4\_HOME\_Y: HOME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50745,11 +50844,11 @@ OSD4\_HEADING\_X: HEADING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50763,11 +50862,11 @@ OSD4\_HEADING\_Y: HEADING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50806,11 +50905,11 @@ OSD4\_THR\_OUT\_X: THR\_OUT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50824,11 +50923,11 @@ OSD4\_THR\_OUT\_Y: THR\_OUT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50867,11 +50966,11 @@ OSD4\_COMPASS\_X: COMPASS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50885,11 +50984,11 @@ OSD4\_COMPASS\_Y: COMPASS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50928,11 +51027,11 @@ OSD4\_WIND\_X: WIND\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -50946,11 +51045,11 @@ OSD4\_WIND\_Y: WIND\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -50989,11 +51088,11 @@ OSD4\_ASPEED\_X: ASPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51007,11 +51106,11 @@ OSD4\_ASPEED\_Y: ASPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51050,11 +51149,11 @@ OSD4\_VSPEED\_X: VSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51068,11 +51167,11 @@ OSD4\_VSPEED\_Y: VSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51111,11 +51210,11 @@ OSD4\_ESCTEMP\_X: ESCTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51129,11 +51228,11 @@ OSD4\_ESCTEMP\_Y: ESCTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51172,11 +51271,11 @@ OSD4\_ESCARPM\_X: ESCARPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51190,11 +51289,11 @@ OSD4\_ESCARPM\_Y: ESCARPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51233,11 +51332,11 @@ OSD4\_ESCHAMPS\_X: ESCHAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51251,11 +51350,11 @@ OSD4\_ESCHAMPS\_Y: ESCHAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51294,11 +51393,11 @@ OSD4\_ESCAAMPS\_X: ESCAAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51312,11 +51411,11 @@ OSD4\_ESCAAMPS\_Y: ESCAAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51355,11 +51454,11 @@ OSD4\_ESCTAMPS\_X: ESCTAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51373,11 +51472,11 @@ OSD4\_ESCTAMPS\_Y: ESCTAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51416,11 +51515,11 @@ OSD4\_ESCHRPM\_X: ESCHRPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51434,11 +51533,11 @@ OSD4\_ESCHRPM\_Y: ESCHRPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51477,11 +51576,11 @@ OSD4\_GPSLAT\_X: GPSLAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51495,11 +51594,11 @@ OSD4\_GPSLAT\_Y: GPSLAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51538,11 +51637,11 @@ OSD4\_GPSLONG\_X: GPSLONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51556,11 +51655,11 @@ OSD4\_GPSLONG\_Y: GPSLONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51599,11 +51698,11 @@ OSD4\_ROLL\_X: ROLL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51617,11 +51716,11 @@ OSD4\_ROLL\_Y: ROLL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51660,11 +51759,11 @@ OSD4\_PITCH\_X: PITCH\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51678,11 +51777,11 @@ OSD4\_PITCH\_Y: PITCH\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51721,11 +51820,11 @@ OSD4\_TEMP\_X: TEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51739,11 +51838,11 @@ OSD4\_TEMP\_Y: TEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51782,11 +51881,11 @@ OSD4\_HDOP\_X: HDOP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51800,11 +51899,11 @@ OSD4\_HDOP\_Y: HDOP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51843,11 +51942,11 @@ OSD4\_WAYPOINT\_X: WAYPOINT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51861,11 +51960,11 @@ OSD4\_WAYPOINT\_Y: WAYPOINT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51904,11 +52003,11 @@ OSD4\_XTRACK\_X: XTRACK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51922,11 +52021,11 @@ OSD4\_XTRACK\_Y: XTRACK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -51965,11 +52064,11 @@ OSD4\_GNDTRVL\_X: GNDTRVL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -51983,11 +52082,11 @@ OSD4\_GNDTRVL\_Y: GNDTRVL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52026,11 +52125,11 @@ OSD4\_STATS\_X: STATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52044,11 +52143,11 @@ OSD4\_STATS\_Y: STATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52087,11 +52186,11 @@ OSD4\_FLTIME\_X: FLTIME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52105,11 +52204,11 @@ OSD4\_FLTIME\_Y: FLTIME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52148,11 +52247,11 @@ OSD4\_CLIMBEFF\_X: CLIMBEFF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52166,11 +52265,11 @@ OSD4\_CLIMBEFF\_Y: CLIMBEFF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52209,11 +52308,11 @@ OSD4\_EFFG\_X: EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52227,11 +52326,11 @@ OSD4\_EFFG\_Y: EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52270,11 +52369,11 @@ OSD4\_BTEMP\_X: BTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52288,11 +52387,11 @@ OSD4\_BTEMP\_Y: BTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52331,11 +52430,11 @@ OSD4\_ATEMP\_X: ATEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52349,11 +52448,11 @@ OSD4\_ATEMP\_Y: ATEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52392,11 +52491,11 @@ OSD4\_BAT2\_VLT\_X: BAT2VLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52410,11 +52509,11 @@ OSD4\_BAT2\_VLT\_Y: BAT2VLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52453,11 +52552,11 @@ OSD4\_BAT2USED\_X: BAT2USED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52471,11 +52570,11 @@ OSD4\_BAT2USED\_Y: BAT2USED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52514,11 +52613,11 @@ OSD4\_ASPD2\_X: ASPD2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52532,11 +52631,11 @@ OSD4\_ASPD2\_Y: ASPD2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52575,11 +52674,11 @@ OSD4\_ASPD1\_X: ASPD1\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52593,11 +52692,11 @@ OSD4\_ASPD1\_Y: ASPD1\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52636,11 +52735,11 @@ OSD4\_CLK\_X: CLK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52654,11 +52753,11 @@ OSD4\_CLK\_Y: CLK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52697,11 +52796,11 @@ OSD4\_SIDEBARS\_X: SIDEBARS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52715,11 +52814,11 @@ OSD4\_SIDEBARS\_Y: SIDEBARS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52758,11 +52857,11 @@ OSD4\_CRSSHAIR\_X: CRSSHAIR\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52776,11 +52875,11 @@ OSD4\_CRSSHAIR\_Y: CRSSHAIR\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52819,11 +52918,11 @@ OSD4\_HOMEDIST\_X: HOMEDIST\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52837,11 +52936,11 @@ OSD4\_HOMEDIST\_Y: HOMEDIST\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52880,11 +52979,11 @@ OSD4\_HOMEDIR\_X: HOMEDIR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52898,11 +52997,11 @@ OSD4\_HOMEDIR\_Y: HOMEDIR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -52941,11 +53040,11 @@ OSD4\_CELLVOLT\_X: CELL\_VOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -52959,11 +53058,11 @@ OSD4\_CELLVOLT\_Y: CELL\_VOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53002,11 +53101,11 @@ OSD4\_BATTBAR\_X: BATT\_BAR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53020,11 +53119,11 @@ OSD4\_BATTBAR\_Y: BATT\_BAR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53063,11 +53162,11 @@ OSD4\_ARMING\_X: ARMING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53081,11 +53180,11 @@ OSD4\_ARMING\_Y: ARMING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53124,11 +53223,11 @@ OSD4\_POWER\_X: POWER\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53142,11 +53241,11 @@ OSD4\_POWER\_Y: POWER\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53185,11 +53284,11 @@ OSD4\_PLUSCODE\_X: PLUSCODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53203,11 +53302,11 @@ OSD4\_PLUSCODE\_Y: PLUSCODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53246,11 +53345,11 @@ OSD4\_CALLSIGN\_X: CALLSIGN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53264,11 +53363,11 @@ OSD4\_CALLSIGN\_Y: CALLSIGN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53307,11 +53406,11 @@ OSD4\_CURRENT2\_X: CURRENT2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53325,11 +53424,11 @@ OSD4\_CURRENT2\_Y: CURRENT2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53368,11 +53467,11 @@ OSD4\_VTX\_PWR\_X: VTX\_PWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53386,11 +53485,11 @@ OSD4\_VTX\_PWR\_Y: VTX\_PWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53429,11 +53528,11 @@ OSD4\_TER\_HGT\_X: TER\_HGT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53447,11 +53546,11 @@ OSD4\_TER\_HGT\_Y: TER\_HGT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53490,11 +53589,11 @@ OSD4\_AVGCELLV\_X: AVGCELLV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53508,11 +53607,11 @@ OSD4\_AVGCELLV\_Y: AVGCELLV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53551,11 +53650,11 @@ OSD4\_RESTVOLT\_X: RESTVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53569,11 +53668,11 @@ OSD4\_RESTVOLT\_Y: RESTVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53612,11 +53711,11 @@ OSD4\_FENCE\_X: FENCE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53630,11 +53729,11 @@ OSD4\_FENCE\_Y: FENCE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53673,11 +53772,11 @@ OSD4\_RNGF\_X: RNGF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53691,11 +53790,11 @@ OSD4\_RNGF\_Y: RNGF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53734,11 +53833,11 @@ OSD4\_LINK\_Q\_X: LINK\_Q\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53752,11 +53851,11 @@ OSD4\_LINK\_Q\_Y: LINK\_Q\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53795,11 +53894,11 @@ OSD4\_NRG\_CONS\_X: NRG\_CONS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53813,11 +53912,11 @@ OSD4\_NRG\_CONS\_Y: NRG\_CONS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53856,11 +53955,11 @@ OSD4\_RC\_THR\_X: RC\_THR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53874,11 +53973,11 @@ OSD4\_RC\_THR\_Y: RC\_THR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53917,11 +54016,11 @@ OSD4\_ASPD\_DEM\_X: ASPD\_DEM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53935,11 +54034,11 @@ OSD4\_ASPD\_DEM\_Y: ASPD\_DEM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -53978,11 +54077,11 @@ OSD4\_ACC\_LONG\_X: ACC\_LONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -53996,11 +54095,11 @@ OSD4\_ACC\_LONG\_Y: ACC\_LONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54039,11 +54138,11 @@ OSD4\_ACC\_LAT\_X: ACC\_LAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54057,11 +54156,11 @@ OSD4\_ACC\_LAT\_Y: ACC\_LAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54100,11 +54199,11 @@ OSD4\_ACC\_VERT\_X: ACC\_VERT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54118,11 +54217,11 @@ OSD4\_ACC\_VERT\_Y: ACC\_VERT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54161,11 +54260,11 @@ OSD4\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54179,11 +54278,11 @@ OSD4\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54222,11 +54321,11 @@ OSD4\_AOA\_X: AOA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54240,11 +54339,11 @@ OSD4\_AOA\_Y: AOA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54283,11 +54382,11 @@ OSD4\_CRSFPWR\_X: CRSFPWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54301,11 +54400,11 @@ OSD4\_CRSFPWR\_Y: CRSFPWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54344,11 +54443,11 @@ OSD4\_CRSFRSSI\_X: CRSFRSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54362,11 +54461,11 @@ OSD4\_CRSFRSSI\_Y: CRSFRSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54405,11 +54504,11 @@ OSD4\_CRSFSNR\_X: CRSFSNR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54423,11 +54522,11 @@ OSD4\_CRSFSNR\_Y: CRSFSNR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54466,11 +54565,11 @@ OSD4\_CRSFANT\_X: CRSFANT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54484,11 +54583,11 @@ OSD4\_CRSFANT\_Y: CRSFANT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54527,11 +54626,11 @@ OSD4\_BAT\_PCT\_X: BAT\_PCT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54545,11 +54644,11 @@ OSD4\_BAT\_PCT\_Y: BAT\_PCT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54588,11 +54687,11 @@ OSD4\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54606,11 +54705,11 @@ OSD4\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54649,11 +54748,11 @@ OSD4\_NRG\_REM\_X: NRG\_REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54667,11 +54766,11 @@ OSD4\_NRG\_REM\_Y: NRG\_REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54710,11 +54809,11 @@ OSD4\_AVG\_EFFG\_X: AVG\_EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54728,11 +54827,11 @@ OSD4\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54771,11 +54870,11 @@ OSD4\_AVG\_EFFA\_X: AVG\_EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54789,11 +54888,11 @@ OSD4\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54832,11 +54931,11 @@ OSD4\_EFFA\_X: EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54850,11 +54949,11 @@ OSD4\_EFFA\_Y: EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54893,11 +54992,11 @@ OSD4\_BATREM\_X: BATREM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54911,11 +55010,11 @@ OSD4\_BATREM\_Y: BATREM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -54954,11 +55053,11 @@ OSD4\_BAT2REM\_X: BAT2REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -54972,11 +55071,11 @@ OSD4\_BAT2REM\_Y: BAT2REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55015,11 +55114,11 @@ OSD4\_TUNED\_PN\_X: TUNED\_PN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55033,11 +55132,11 @@ OSD4\_TUNED\_PN\_Y: TUNED\_PN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55076,11 +55175,11 @@ OSD4\_TUNED\_PV\_X: TUNED\_PV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55094,11 +55193,11 @@ OSD4\_TUNED\_PV\_Y: TUNED\_PV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55137,11 +55236,11 @@ OSD4\_PEAK\_RR\_X: PEAK\_RR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55155,11 +55254,11 @@ OSD4\_PEAK\_RR\_Y: PEAK\_RR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55198,11 +55297,11 @@ OSD4\_PEAK\_PR\_X: PEAK\_PR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55216,11 +55315,11 @@ OSD4\_PEAK\_PR\_Y: PEAK\_PR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55259,11 +55358,11 @@ OSD4\_CRS\_HEAD\_X: CRS\_HEAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55277,11 +55376,11 @@ OSD4\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55320,11 +55419,11 @@ OSD4\_CRS\_HADJ\_X: CRS\_HADJ\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55338,11 +55437,11 @@ OSD4\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55381,11 +55480,11 @@ OSD4\_RC\_FS\_X: RC\_FS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55399,11 +55498,11 @@ OSD4\_RC\_FS\_Y: RC\_FS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55442,11 +55541,11 @@ OSD4\_DEBUG\_X: DEBUG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55460,11 +55559,11 @@ OSD4\_DEBUG\_Y: DEBUG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55503,11 +55602,11 @@ OSD4\_LOIT\_RAD\_X: LOIT\_RAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55521,11 +55620,11 @@ OSD4\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55571,11 +55670,11 @@ OSD5\_CHAN\_MIN: Transmitter switch screen minimum pwm
 This sets the PWM lower limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -55589,11 +55688,11 @@ OSD5\_CHAN\_MAX: Transmitter switch screen maximum pwm
 This sets the PWM upper limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -55632,11 +55731,11 @@ OSD5\_ALTITUDE\_X: ALTITUDE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55650,11 +55749,11 @@ OSD5\_ALTITUDE\_Y: ALTITUDE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55693,11 +55792,11 @@ OSD5\_BAT\_VOLT\_X: BATVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55711,11 +55810,11 @@ OSD5\_BAT\_VOLT\_Y: BATVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55754,11 +55853,11 @@ OSD5\_RSSI\_X: RSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55772,11 +55871,11 @@ OSD5\_RSSI\_Y: RSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55815,11 +55914,11 @@ OSD5\_CURRENT\_X: CURRENT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55833,11 +55932,11 @@ OSD5\_CURRENT\_Y: CURRENT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55876,11 +55975,11 @@ OSD5\_BATUSED\_X: BATUSED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55894,11 +55993,11 @@ OSD5\_BATUSED\_Y: BATUSED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55937,11 +56036,11 @@ OSD5\_SATS\_X: SATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -55955,11 +56054,11 @@ OSD5\_SATS\_Y: SATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -55998,11 +56097,11 @@ OSD5\_FLTMODE\_X: FLTMODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56016,11 +56115,11 @@ OSD5\_FLTMODE\_Y: FLTMODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56059,11 +56158,11 @@ OSD5\_MESSAGE\_X: MESSAGE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56077,11 +56176,11 @@ OSD5\_MESSAGE\_Y: MESSAGE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56120,11 +56219,11 @@ OSD5\_GSPEED\_X: GSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56138,11 +56237,11 @@ OSD5\_GSPEED\_Y: GSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56181,11 +56280,11 @@ OSD5\_HORIZON\_X: HORIZON\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56199,11 +56298,11 @@ OSD5\_HORIZON\_Y: HORIZON\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56242,11 +56341,11 @@ OSD5\_HOME\_X: HOME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56260,11 +56359,11 @@ OSD5\_HOME\_Y: HOME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56303,11 +56402,11 @@ OSD5\_HEADING\_X: HEADING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56321,11 +56420,11 @@ OSD5\_HEADING\_Y: HEADING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56364,11 +56463,11 @@ OSD5\_THR\_OUT\_X: THR\_OUT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56382,11 +56481,11 @@ OSD5\_THR\_OUT\_Y: THR\_OUT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56425,11 +56524,11 @@ OSD5\_COMPASS\_X: COMPASS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56443,11 +56542,11 @@ OSD5\_COMPASS\_Y: COMPASS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56486,11 +56585,11 @@ OSD5\_WIND\_X: WIND\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56504,11 +56603,11 @@ OSD5\_WIND\_Y: WIND\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56547,11 +56646,11 @@ OSD5\_ASPEED\_X: ASPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56565,11 +56664,11 @@ OSD5\_ASPEED\_Y: ASPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56608,11 +56707,11 @@ OSD5\_VSPEED\_X: VSPEED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56626,11 +56725,11 @@ OSD5\_VSPEED\_Y: VSPEED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56669,11 +56768,11 @@ OSD5\_ESCTEMP\_X: ESCTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56687,11 +56786,11 @@ OSD5\_ESCTEMP\_Y: ESCTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56730,11 +56829,11 @@ OSD5\_ESCARPM\_X: ESCARPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56748,11 +56847,11 @@ OSD5\_ESCARPM\_Y: ESCARPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56791,11 +56890,11 @@ OSD5\_ESCHAMPS\_X: ESCHAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56809,11 +56908,11 @@ OSD5\_ESCHAMPS\_Y: ESCHAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56852,11 +56951,11 @@ OSD5\_ESCAAMPS\_X: ESCAAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56870,11 +56969,11 @@ OSD5\_ESCAAMPS\_Y: ESCAAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56913,11 +57012,11 @@ OSD5\_ESCTAMPS\_X: ESCTAMPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56931,11 +57030,11 @@ OSD5\_ESCTAMPS\_Y: ESCTAMPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -56974,11 +57073,11 @@ OSD5\_ESCHRPM\_X: ESCHRPM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -56992,11 +57091,11 @@ OSD5\_ESCHRPM\_Y: ESCHRPM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57035,11 +57134,11 @@ OSD5\_GPSLAT\_X: GPSLAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57053,11 +57152,11 @@ OSD5\_GPSLAT\_Y: GPSLAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57096,11 +57195,11 @@ OSD5\_GPSLONG\_X: GPSLONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57114,11 +57213,11 @@ OSD5\_GPSLONG\_Y: GPSLONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57157,11 +57256,11 @@ OSD5\_ROLL\_X: ROLL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57175,11 +57274,11 @@ OSD5\_ROLL\_Y: ROLL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57218,11 +57317,11 @@ OSD5\_PITCH\_X: PITCH\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57236,11 +57335,11 @@ OSD5\_PITCH\_Y: PITCH\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57279,11 +57378,11 @@ OSD5\_TEMP\_X: TEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57297,11 +57396,11 @@ OSD5\_TEMP\_Y: TEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57340,11 +57439,11 @@ OSD5\_HDOP\_X: HDOP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57358,11 +57457,11 @@ OSD5\_HDOP\_Y: HDOP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57401,11 +57500,11 @@ OSD5\_WAYPOINT\_X: WAYPOINT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57419,11 +57518,11 @@ OSD5\_WAYPOINT\_Y: WAYPOINT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57462,11 +57561,11 @@ OSD5\_XTRACK\_X: XTRACK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57480,11 +57579,11 @@ OSD5\_XTRACK\_Y: XTRACK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57523,11 +57622,11 @@ OSD5\_GNDTRVL\_X: GNDTRVL\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57541,11 +57640,11 @@ OSD5\_GNDTRVL\_Y: GNDTRVL\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57584,11 +57683,11 @@ OSD5\_STATS\_X: STATS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57602,11 +57701,11 @@ OSD5\_STATS\_Y: STATS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57645,11 +57744,11 @@ OSD5\_FLTIME\_X: FLTIME\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57663,11 +57762,11 @@ OSD5\_FLTIME\_Y: FLTIME\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57706,11 +57805,11 @@ OSD5\_CLIMBEFF\_X: CLIMBEFF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57724,11 +57823,11 @@ OSD5\_CLIMBEFF\_Y: CLIMBEFF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57767,11 +57866,11 @@ OSD5\_EFFG\_X: EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57785,11 +57884,11 @@ OSD5\_EFFG\_Y: EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57828,11 +57927,11 @@ OSD5\_BTEMP\_X: BTEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57846,11 +57945,11 @@ OSD5\_BTEMP\_Y: BTEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57889,11 +57988,11 @@ OSD5\_ATEMP\_X: ATEMP\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57907,11 +58006,11 @@ OSD5\_ATEMP\_Y: ATEMP\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -57950,11 +58049,11 @@ OSD5\_BAT2\_VLT\_X: BAT2VLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -57968,11 +58067,11 @@ OSD5\_BAT2\_VLT\_Y: BAT2VLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58011,11 +58110,11 @@ OSD5\_BAT2USED\_X: BAT2USED\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58029,11 +58128,11 @@ OSD5\_BAT2USED\_Y: BAT2USED\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58072,11 +58171,11 @@ OSD5\_ASPD2\_X: ASPD2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58090,11 +58189,11 @@ OSD5\_ASPD2\_Y: ASPD2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58133,11 +58232,11 @@ OSD5\_ASPD1\_X: ASPD1\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58151,11 +58250,11 @@ OSD5\_ASPD1\_Y: ASPD1\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58194,11 +58293,11 @@ OSD5\_CLK\_X: CLK\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58212,11 +58311,11 @@ OSD5\_CLK\_Y: CLK\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58255,11 +58354,11 @@ OSD5\_SIDEBARS\_X: SIDEBARS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58273,11 +58372,11 @@ OSD5\_SIDEBARS\_Y: SIDEBARS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58316,11 +58415,11 @@ OSD5\_CRSSHAIR\_X: CRSSHAIR\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58334,11 +58433,11 @@ OSD5\_CRSSHAIR\_Y: CRSSHAIR\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58377,11 +58476,11 @@ OSD5\_HOMEDIST\_X: HOMEDIST\_X
 Horizontal position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58395,11 +58494,11 @@ OSD5\_HOMEDIST\_Y: HOMEDIST\_Y
 Vertical position on screen \(MSP OSD only\)
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58438,11 +58537,11 @@ OSD5\_HOMEDIR\_X: HOMEDIR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58456,11 +58555,11 @@ OSD5\_HOMEDIR\_Y: HOMEDIR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58499,11 +58598,11 @@ OSD5\_CELLVOLT\_X: CELL\_VOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58517,11 +58616,11 @@ OSD5\_CELLVOLT\_Y: CELL\_VOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58560,11 +58659,11 @@ OSD5\_BATTBAR\_X: BATT\_BAR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58578,11 +58677,11 @@ OSD5\_BATTBAR\_Y: BATT\_BAR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58621,11 +58720,11 @@ OSD5\_ARMING\_X: ARMING\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58639,11 +58738,11 @@ OSD5\_ARMING\_Y: ARMING\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58682,11 +58781,11 @@ OSD5\_POWER\_X: POWER\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58700,11 +58799,11 @@ OSD5\_POWER\_Y: POWER\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58743,11 +58842,11 @@ OSD5\_PLUSCODE\_X: PLUSCODE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58761,11 +58860,11 @@ OSD5\_PLUSCODE\_Y: PLUSCODE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58804,11 +58903,11 @@ OSD5\_CALLSIGN\_X: CALLSIGN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58822,11 +58921,11 @@ OSD5\_CALLSIGN\_Y: CALLSIGN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58865,11 +58964,11 @@ OSD5\_CURRENT2\_X: CURRENT2\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58883,11 +58982,11 @@ OSD5\_CURRENT2\_Y: CURRENT2\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58926,11 +59025,11 @@ OSD5\_VTX\_PWR\_X: VTX\_PWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -58944,11 +59043,11 @@ OSD5\_VTX\_PWR\_Y: VTX\_PWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -58987,11 +59086,11 @@ OSD5\_TER\_HGT\_X: TER\_HGT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59005,11 +59104,11 @@ OSD5\_TER\_HGT\_Y: TER\_HGT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59048,11 +59147,11 @@ OSD5\_AVGCELLV\_X: AVGCELLV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59066,11 +59165,11 @@ OSD5\_AVGCELLV\_Y: AVGCELLV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59109,11 +59208,11 @@ OSD5\_RESTVOLT\_X: RESTVOLT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59127,11 +59226,11 @@ OSD5\_RESTVOLT\_Y: RESTVOLT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59170,11 +59269,11 @@ OSD5\_FENCE\_X: FENCE\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59188,11 +59287,11 @@ OSD5\_FENCE\_Y: FENCE\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59231,11 +59330,11 @@ OSD5\_RNGF\_X: RNGF\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59249,11 +59348,11 @@ OSD5\_RNGF\_Y: RNGF\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59292,11 +59391,11 @@ OSD5\_LINK\_Q\_X: LINK\_Q\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59310,11 +59409,11 @@ OSD5\_LINK\_Q\_Y: LINK\_Q\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59353,11 +59452,11 @@ OSD5\_NRG\_CONS\_X: NRG\_CONS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59371,11 +59470,11 @@ OSD5\_NRG\_CONS\_Y: NRG\_CONS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59414,11 +59513,11 @@ OSD5\_RC\_THR\_X: RC\_THR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59432,11 +59531,11 @@ OSD5\_RC\_THR\_Y: RC\_THR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59475,11 +59574,11 @@ OSD5\_ASPD\_DEM\_X: ASPD\_DEM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59493,11 +59592,11 @@ OSD5\_ASPD\_DEM\_Y: ASPD\_DEM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59536,11 +59635,11 @@ OSD5\_ACC\_LONG\_X: ACC\_LONG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59554,11 +59653,11 @@ OSD5\_ACC\_LONG\_Y: ACC\_LONG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59597,11 +59696,11 @@ OSD5\_ACC\_LAT\_X: ACC\_LAT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59615,11 +59714,11 @@ OSD5\_ACC\_LAT\_Y: ACC\_LAT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59658,11 +59757,11 @@ OSD5\_ACC\_VERT\_X: ACC\_VERT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59676,11 +59775,11 @@ OSD5\_ACC\_VERT\_Y: ACC\_VERT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59719,11 +59818,11 @@ OSD5\_AUTO\_FLP\_X: AUTO\_FLAPS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59737,11 +59836,11 @@ OSD5\_AUTO\_FLP\_Y: AUTO\_FLAPS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59780,11 +59879,11 @@ OSD5\_AOA\_X: AOA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59798,11 +59897,11 @@ OSD5\_AOA\_Y: AOA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59841,11 +59940,11 @@ OSD5\_CRSFPWR\_X: CRSFPWR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59859,11 +59958,11 @@ OSD5\_CRSFPWR\_Y: CRSFPWR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59902,11 +60001,11 @@ OSD5\_CRSFRSSI\_X: CRSFRSSI\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59920,11 +60019,11 @@ OSD5\_CRSFRSSI\_Y: CRSFRSSI\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -59963,11 +60062,11 @@ OSD5\_CRSFSNR\_X: CRSFSNR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -59981,11 +60080,11 @@ OSD5\_CRSFSNR\_Y: CRSFSNR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60024,11 +60123,11 @@ OSD5\_CRSFANT\_X: CRSFANT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60042,11 +60141,11 @@ OSD5\_CRSFANT\_Y: CRSFANT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60085,11 +60184,11 @@ OSD5\_BAT\_PCT\_X: BAT\_PCT\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60103,11 +60202,11 @@ OSD5\_BAT\_PCT\_Y: BAT\_PCT\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60146,11 +60245,11 @@ OSD5\_R\_AVG\_CV\_X: R\_AVG\_CV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60164,11 +60263,11 @@ OSD5\_R\_AVG\_CV\_Y: R\_AVG\_CV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60207,11 +60306,11 @@ OSD5\_NRG\_REM\_X: NRG\_REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60225,11 +60324,11 @@ OSD5\_NRG\_REM\_Y: NRG\_REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60268,11 +60367,11 @@ OSD5\_AVG\_EFFG\_X: AVG\_EFFG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60286,11 +60385,11 @@ OSD5\_AVG\_EFFG\_Y: AVG\_EFFG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60329,11 +60428,11 @@ OSD5\_AVG\_EFFA\_X: AVG\_EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60347,11 +60446,11 @@ OSD5\_AVG\_EFFA\_Y: AVG\_EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60390,11 +60489,11 @@ OSD5\_EFFA\_X: EFFA\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60408,11 +60507,11 @@ OSD5\_EFFA\_Y: EFFA\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60451,11 +60550,11 @@ OSD5\_BATREM\_X: BATREM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60469,11 +60568,11 @@ OSD5\_BATREM\_Y: BATREM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60512,11 +60611,11 @@ OSD5\_BAT2REM\_X: BAT2REM\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60530,11 +60629,11 @@ OSD5\_BAT2REM\_Y: BAT2REM\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60573,11 +60672,11 @@ OSD5\_TUNED\_PN\_X: TUNED\_PN\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60591,11 +60690,11 @@ OSD5\_TUNED\_PN\_Y: TUNED\_PN\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60634,11 +60733,11 @@ OSD5\_TUNED\_PV\_X: TUNED\_PV\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60652,11 +60751,11 @@ OSD5\_TUNED\_PV\_Y: TUNED\_PV\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60695,11 +60794,11 @@ OSD5\_PEAK\_RR\_X: PEAK\_RR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60713,11 +60812,11 @@ OSD5\_PEAK\_RR\_Y: PEAK\_RR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60756,11 +60855,11 @@ OSD5\_PEAK\_PR\_X: PEAK\_PR\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60774,11 +60873,11 @@ OSD5\_PEAK\_PR\_Y: PEAK\_PR\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60817,11 +60916,11 @@ OSD5\_CRS\_HEAD\_X: CRS\_HEAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60835,11 +60934,11 @@ OSD5\_CRS\_HEAD\_Y: CRS\_HEAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60878,11 +60977,11 @@ OSD5\_CRS\_HADJ\_X: CRS\_HADJ\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60896,11 +60995,11 @@ OSD5\_CRS\_HADJ\_Y: CRS\_HADJ\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -60939,11 +61038,11 @@ OSD5\_RC\_FS\_X: RC\_FS\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -60957,11 +61056,11 @@ OSD5\_RC\_FS\_Y: RC\_FS\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61000,11 +61099,11 @@ OSD5\_DEBUG\_X: DEBUG\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61018,11 +61117,11 @@ OSD5\_DEBUG\_Y: DEBUG\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61061,11 +61160,11 @@ OSD5\_LOIT\_RAD\_X: LOIT\_RAD\_X
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61079,11 +61178,11 @@ OSD5\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61129,11 +61228,11 @@ OSD6\_CHAN\_MIN: Transmitter switch screen minimum pwm
 This sets the PWM lower limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -61147,11 +61246,11 @@ OSD6\_CHAN\_MAX: Transmitter switch screen maximum pwm
 This sets the PWM upper limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -61166,11 +61265,11 @@ OSD6\_SAVE\_X: SAVE\_X
 Horizontal position of Save button on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 25 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 25 |
++---------+
 
 
 
@@ -61185,11 +61284,11 @@ OSD6\_SAVE\_Y: SAVE\_Y
 Vertical position of Save button on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61235,11 +61334,11 @@ OSD6\_PARAM1\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61253,11 +61352,11 @@ OSD6\_PARAM1\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61366,11 +61465,11 @@ OSD6\_PARAM2\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61384,11 +61483,11 @@ OSD6\_PARAM2\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61497,11 +61596,11 @@ OSD6\_PARAM3\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61515,11 +61614,11 @@ OSD6\_PARAM3\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61628,11 +61727,11 @@ OSD6\_PARAM4\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61646,11 +61745,11 @@ OSD6\_PARAM4\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61759,11 +61858,11 @@ OSD6\_PARAM5\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61777,11 +61876,11 @@ OSD6\_PARAM5\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -61890,11 +61989,11 @@ OSD6\_PARAM6\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -61908,11 +62007,11 @@ OSD6\_PARAM6\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62021,11 +62120,11 @@ OSD6\_PARAM7\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -62039,11 +62138,11 @@ OSD6\_PARAM7\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62152,11 +62251,11 @@ OSD6\_PARAM8\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -62170,11 +62269,11 @@ OSD6\_PARAM8\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62283,11 +62382,11 @@ OSD6\_PARAM9\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -62301,11 +62400,11 @@ OSD6\_PARAM9\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62414,11 +62513,11 @@ OSD7\_CHAN\_MIN: Transmitter switch screen minimum pwm
 This sets the PWM lower limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -62432,11 +62531,11 @@ OSD7\_CHAN\_MAX: Transmitter switch screen maximum pwm
 This sets the PWM upper limit for this screen
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -62451,11 +62550,11 @@ OSD7\_SAVE\_X: SAVE\_X
 Horizontal position of Save button on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 25 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 25 |
++---------+
 
 
 
@@ -62470,11 +62569,11 @@ OSD7\_SAVE\_Y: SAVE\_Y
 Vertical position of Save button on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62520,11 +62619,11 @@ OSD7\_PARAM1\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -62538,11 +62637,11 @@ OSD7\_PARAM1\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62651,11 +62750,11 @@ OSD7\_PARAM2\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -62669,11 +62768,11 @@ OSD7\_PARAM2\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62782,11 +62881,11 @@ OSD7\_PARAM3\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -62800,11 +62899,11 @@ OSD7\_PARAM3\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -62913,11 +63012,11 @@ OSD7\_PARAM4\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -62931,11 +63030,11 @@ OSD7\_PARAM4\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -63044,11 +63143,11 @@ OSD7\_PARAM5\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -63062,11 +63161,11 @@ OSD7\_PARAM5\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -63175,11 +63274,11 @@ OSD7\_PARAM6\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -63193,11 +63292,11 @@ OSD7\_PARAM6\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -63306,11 +63405,11 @@ OSD7\_PARAM7\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -63324,11 +63423,11 @@ OSD7\_PARAM7\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -63437,11 +63536,11 @@ OSD7\_PARAM8\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -63455,11 +63554,11 @@ OSD7\_PARAM8\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -63568,11 +63667,11 @@ OSD7\_PARAM9\_X: X position
 Horizontal position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 29 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
 
 
 
@@ -63586,11 +63685,11 @@ OSD7\_PARAM9\_Y: Y position
 Vertical position on screen
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -63675,11 +63774,11 @@ PTCH\_AGL\_RMAX\_UP: Pitch up max rate
 This sets the maximum nose up pitch rate that the attitude controller will demand \(degrees\/sec\) in angle stabilized modes \(all but MANUAL and ACRO\)\. Setting it to zero disables the limit\.
 
 
-+-----------+---------+--------------------+
-| Increment | Range   | Units              |
-+===========+=========+====================+
-| 1         | 0 - 100 | degrees per second |
-+-----------+---------+--------------------+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | 0 to 100 | degrees per second |
++-----------+----------+--------------------+
 
 
 
@@ -63694,11 +63793,11 @@ PTCH\_AGL\_RMAX\_DN: Pitch down max rate
 This sets the maximum nose down pitch rate that the attitude controller will demand \(degrees\/sec\) in angle stabilized modes \(all but MANUAL and ACRO\)\. Setting it to zero disables the limit\.
 
 
-+-----------+---------+--------------------+
-| Increment | Range   | Units              |
-+===========+=========+====================+
-| 1         | 0 - 100 | degrees per second |
-+-----------+---------+--------------------+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | 0 to 100 | degrees per second |
++-----------+----------+--------------------+
 
 
 
@@ -63712,11 +63811,11 @@ PTCH\_AGL\_RLLCOMP: Roll compensation
 Gain added to pitch to keep aircraft from descending or ascending in turns\. Increase in increments of 0\.05 to reduce altitude loss\. Decrease for altitude gain\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.05      | 0.7 - 1.5 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.05      | 0.7 to 1.5 |
++-----------+------------+
 
 
 
@@ -63730,11 +63829,11 @@ PTCH\_RATE\_P: Pitch axis rate controller P gain
 Pitch axis rate controller P gain\. Converts the difference between desired pitch rate and actual pitch rate into a control surface angle
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.005     | 0.08 - 0.35 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.005     | 0.08 to 0.35 |
++-----------+--------------+
 
 
 
@@ -63748,11 +63847,11 @@ PTCH\_RATE\_I: Pitch axis rate controller I gain
 Pitch axis rate controller I gain\. Corrects long\-term difference in desired pitch rate vs actual pitch rate
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.01      | 0.01 - 0.6 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 to 0.6 |
++-----------+-------------+
 
 
 
@@ -63766,11 +63865,11 @@ PTCH\_RATE\_IMAX: Pitch axis rate controller I gain maximum
 Pitch axis rate controller I gain maximum\. Constrains the maximum control surface angle that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -63784,11 +63883,11 @@ PTCH\_RATE\_D: Pitch axis rate controller D gain
 Pitch axis rate controller D gain\. Compensates for short\-term change in desired pitch rate vs actual pitch rate
 
 
-+-----------+--------------+
-| Increment | Range        |
-+===========+==============+
-| 0.001     | 0.001 - 0.03 |
-+-----------+--------------+
++-----------+---------------+
+| Increment | Range         |
++===========+===============+
+| 0.001     | 0.001 to 0.03 |
++-----------+---------------+
 
 
 
@@ -63802,11 +63901,11 @@ PTCH\_RATE\_FF: Pitch axis rate controller feed forward
 Pitch axis rate controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 3.0 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 3.0 |
++-----------+----------+
 
 
 
@@ -63820,11 +63919,11 @@ PTCH\_RATE\_FLTT: Pitch axis rate controller target frequency in Hz
 Pitch axis rate controller target frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -63838,11 +63937,11 @@ PTCH\_RATE\_FLTE: Pitch axis rate controller error frequency in Hz
 Pitch axis rate controller error frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -63856,11 +63955,11 @@ PTCH\_RATE\_FLTD: Pitch axis rate controller derivative frequency in Hz
 Pitch axis rate controller derivative frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -63875,11 +63974,11 @@ PTCH\_RATE\_SMAX: Pitch slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -63893,11 +63992,11 @@ PTCH\_AGL\_P: Pitch axis angle controller P gain
 Pitch axis angle controller P gain\. Converts the difference between desired pitch angle and actual pitch angle into a pitch rate
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.005     | 0.08 - 0.35 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.005     | 0.08 to 0.35 |
++-----------+--------------+
 
 
 
@@ -63911,11 +64010,11 @@ PTCH\_AGL\_I: Pitch axis angle controller I gain
 Pitch axis angle controller I gain\. Corrects long\-term difference in desired pitch angle vs actual pitch angle
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.01      | 0.01 - 0.6 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 to 0.6 |
++-----------+-------------+
 
 
 
@@ -63929,11 +64028,11 @@ PTCH\_AGL\_IMAX: Pitch axis angle controller I gain maximum
 Pitch axis angle controller I gain maximum\. Constrains the maximum pitch rate that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -63947,11 +64046,11 @@ PTCH\_AGL\_D: Pitch axis angle controller D gain
 Pitch axis angle controller D gain\. Compensates for short\-term change in desired pitch rate vs actual pitch rate
 
 
-+-----------+--------------+
-| Increment | Range        |
-+===========+==============+
-| 0.001     | 0.001 - 0.03 |
-+-----------+--------------+
++-----------+---------------+
+| Increment | Range         |
++===========+===============+
+| 0.001     | 0.001 to 0.03 |
++-----------+---------------+
 
 
 
@@ -63965,11 +64064,11 @@ PTCH\_AGL\_FF: Pitch axis angle controller feed forward
 Pitch axis angle controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 3.0 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 3.0 |
++-----------+----------+
 
 
 
@@ -63983,11 +64082,11 @@ PTCH\_AGL\_FLTT: Pitch axis angle controller target frequency in Hz
 Pitch axis angle controller target frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -64001,11 +64100,11 @@ PTCH\_AGL\_FLTE: Pitch axis angle controller error frequency in Hz
 Pitch axis angle controller error frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -64019,11 +64118,11 @@ PTCH\_AGL\_FLTD: Pitch axis angle controller derivative frequency in Hz
 Pitch axis angle controller derivative frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -64038,11 +64137,11 @@ PTCH\_AGL\_SMAX: Requested pitch rate slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -64092,11 +64191,11 @@ Q\_ANGLE\_MAX: Angle Max
 Maximum lean angle in all VTOL flight modes
 
 
-+-----------+-------------+--------------+
-| Increment | Range       | Units        |
-+===========+=============+==============+
-| 10        | 1000 - 8000 | centidegrees |
-+-----------+-------------+--------------+
++-----------+--------------+--------------+
+| Increment | Range        | Units        |
++===========+==============+==============+
+| 10        | 1000 to 8000 | centidegrees |
++-----------+--------------+--------------+
 
 
 
@@ -64111,11 +64210,11 @@ Q\_TRANSITION\_MS: Transition time
 Transition time in milliseconds after minimum airspeed is reached
 
 
-+-----------+--------------+
-| Range     | Units        |
-+===========+==============+
-| 1 - 30000 | milliseconds |
-+-----------+--------------+
++------------+--------------+
+| Range      | Units        |
++============+==============+
+| 1 to 30000 | milliseconds |
++------------+--------------+
 
 
 
@@ -64129,11 +64228,11 @@ Q\_VELZ\_MAX: Pilot maximum vertical speed up
 The maximum ascending vertical velocity the pilot may request in cm\/s
 
 
-+-----------+----------+------------------------+
-| Increment | Range    | Units                  |
-+===========+==========+========================+
-| 10        | 50 - 500 | centimeters per second |
-+-----------+----------+------------------------+
++-----------+-----------+------------------------+
+| Increment | Range     | Units                  |
++===========+===========+========================+
+| 10        | 50 to 500 | centimeters per second |
++-----------+-----------+------------------------+
 
 
 
@@ -64147,11 +64246,11 @@ Q\_VELZ\_MAX\_DN: Pilot maximum vertical speed down
 The maximum vertical velocity the pilot may request in cm\/s going down\. If 0\, uses Q\_VELZ\_MAX value\.
 
 
-+-----------+----------+------------------------+
-| Increment | Range    | Units                  |
-+===========+==========+========================+
-| 10        | 50 - 500 | centimeters per second |
-+-----------+----------+------------------------+
++-----------+-----------+------------------------+
+| Increment | Range     | Units                  |
++===========+===========+========================+
+| 10        | 50 to 500 | centimeters per second |
++-----------+-----------+------------------------+
 
 
 
@@ -64165,11 +64264,11 @@ Q\_ACCEL\_Z: Pilot vertical acceleration
 The vertical acceleration used when pilot is controlling the altitude
 
 
-+-----------+----------+-------------------------------+
-| Increment | Range    | Units                         |
-+===========+==========+===============================+
-| 10        | 50 - 500 | centimeters per square second |
-+-----------+----------+-------------------------------+
++-----------+-----------+-------------------------------+
+| Increment | Range     | Units                         |
++===========+===========+===============================+
+| 10        | 50 to 500 | centimeters per square second |
++-----------+-----------+-------------------------------+
 
 
 
@@ -64183,11 +64282,11 @@ Q\_RC\_SPEED: RC output speed in Hz
 This is the PWM refresh rate in Hz for QuadPlane quad motors
 
 
-+-----------+----------+-------+
-| Increment | Range    | Units |
-+===========+==========+=======+
-| 10        | 50 - 500 | hertz |
-+-----------+----------+-------+
++-----------+-----------+-------+
+| Increment | Range     | Units |
++===========+===========+=======+
+| 10        | 50 to 500 | hertz |
++-----------+-----------+-------+
 
 
 
@@ -64201,11 +64300,11 @@ Q\_ASSIST\_SPEED: Quadplane assistance speed
 This is the speed below which the quad motors will provide stability and lift assistance in fixed wing modes\. Zero means no assistance except during transition\. Note that if this is set to zero then other Q\_ASSIST features are also disabled\. A higher value will lead to more false positives which can waste battery\. A lower value will result in less false positive\, but will result in assistance taking longer to trigger\. If unsure then set to 3 m\/s below the minimum airspeed you will fly at\. If you don\'t have an airspeed sensor then use 5 m\/s below the minimum airspeed you fly at\. If you want to disable the arming check Q\_ASSIST\_SPEED then set to \-1\.
 
 
-+-----------+---------+-------------------+
-| Increment | Range   | Units             |
-+===========+=========+===================+
-| 0.1       | 0 - 100 | meters per second |
-+-----------+---------+-------------------+
++-----------+----------+-------------------+
+| Increment | Range    | Units             |
++===========+==========+===================+
+| 0.1       | 0 to 100 | meters per second |
++-----------+----------+-------------------+
 
 
 
@@ -64219,11 +64318,11 @@ Q\_YAW\_RATE\_MAX: Maximum yaw rate
 This is the maximum yaw rate for pilot input on rudder stick in degrees\/second
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 50 - 500 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 50 to 500 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -64237,11 +64336,11 @@ Q\_LAND\_SPEED: Land speed
 The descent speed for the final stage of landing in cm\/s
 
 
-+-----------+----------+------------------------+
-| Increment | Range    | Units                  |
-+===========+==========+========================+
-| 10        | 30 - 200 | centimeters per second |
-+-----------+----------+------------------------+
++-----------+-----------+------------------------+
+| Increment | Range     | Units                  |
++===========+===========+========================+
+| 10        | 30 to 200 | centimeters per second |
++-----------+-----------+------------------------+
 
 
 
@@ -64255,11 +64354,11 @@ Q\_LAND\_FINAL\_ALT: Land final altitude
 The altitude at which we should switch to Q\_LAND\_SPEED descent rate
 
 
-+-----------+----------+--------+
-| Increment | Range    | Units  |
-+===========+==========+========+
-| 0.1       | 0.5 - 50 | meters |
-+-----------+----------+--------+
++-----------+-----------+--------+
+| Increment | Range     | Units  |
++===========+===========+========+
+| 0.1       | 0.5 to 50 | meters |
++-----------+-----------+--------+
 
 
 
@@ -64273,11 +64372,11 @@ Q\_TRAN\_PIT\_MAX: Transition max pitch
 Maximum pitch during transition to auto fixed wing flight
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 30 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 30 | degrees |
++-----------+---------+---------+
 
 
 
@@ -64387,11 +64486,11 @@ Q\_VFWD\_GAIN: Forward velocity hold gain
 Controls use of forward motor in vtol modes\. If this is zero then the forward motor will not be used for position control in VTOL modes\. A value of 0\.05 is a good place to start if you want to use the forward motor for position control\. No forward motor will be used in QSTABILIZE or QHOVER modes\. Use QLOITER for position hold with the forward motor\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.01      | 0 - 0.5 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.01      | 0 to 0.5 |
++-----------+----------+
 
 
 
@@ -64405,11 +64504,11 @@ Q\_RTL\_ALT: QRTL return altitude
 The altitude which QRTL mode heads to initially
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 1         | 1 - 200 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 1         | 1 to 200 | meters |
++-----------+----------+--------+
 
 
 
@@ -64504,11 +64603,11 @@ Q\_VFWD\_ALT: Forward velocity alt cutoff
 Controls altitude to disable forward velocity assist when below this relative altitude\. This is useful to keep the forward velocity propeller from hitting the ground\. Rangefinder height data is incorporated when available\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.25      | 0 - 10 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.25      | 0 to 10 | meters |
++-----------+---------+--------+
 
 
 
@@ -64547,11 +64646,11 @@ Q\_ASSIST\_ANGLE: Quadplane assistance angle
 This is the angular error in attitude beyond which the quadplane VTOL motors will provide stability assistance\. This will only be used if Q\_ASSIST\_SPEED is also non\-zero\. Assistance will be given if the attitude is outside the normal attitude limits by at least 5 degrees and the angular error in roll or pitch is greater than this angle for at least Q\_ASSIST\_DELAY seconds\. Set to zero to disable angle assistance\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 90 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 90 | degrees |
++-----------+---------+---------+
 
 
 
@@ -64679,11 +64778,11 @@ Q\_TRANS\_DECEL: Transition deceleration
 This is deceleration rate that will be used in calculating the stopping distance when transitioning from fixed wing flight to multicopter flight\.
 
 
-+-----------+---------+--------------------------+
-| Increment | Range   | Units                    |
-+===========+=========+==========================+
-| 0.1       | 0.2 - 5 | meters per square second |
-+-----------+---------+--------------------------+
++-----------+----------+--------------------------+
+| Increment | Range    | Units                    |
++===========+==========+==========================+
+| 0.1       | 0.2 to 5 | meters per square second |
++-----------+----------+--------------------------+
 
 
 
@@ -64699,11 +64798,11 @@ Q\_TRIM\_PITCH: Quadplane AHRS trim pitch
 This sets the compensation for the pitch angle trim difference between calibrated AHRS level and vertical flight pitch\. NOTE\! this is relative to calibrated AHRS trim\, not forward flight trim which includes TRIM\_PITCH\_CD\. For tailsitters\, this is relative to a baseline of 90 degrees in AHRS\.
 
 
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| 0.1       | -10 - +10 | degrees |
-+-----------+-----------+---------+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| 0.1       | -10 to +10 | degrees |
++-----------+------------+---------+
 
 
 
@@ -64718,11 +64817,11 @@ Q\_FW\_LND\_APR\_RAD: Quadplane fixed wing landing approach radius
 This provides the radius used\, when using a fixed wing landing approach\. If set to 0 then the WP\_LOITER\_RAD will be selected\.
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 5         | 0 - 200 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 5         | 0 to 200 | meters |
++-----------+----------+--------+
 
 
 
@@ -64737,11 +64836,11 @@ Q\_TRANS\_FAIL: Quadplane transition failure time
 Maximum time allowed for forward transitions\, exceeding this time will cancel the transition and the aircraft will immediately change to the mode set by Q\_TRANS\_FAIL\_ACT or finish the transition depending on Q\_OPTIONS bit 19\. 0 for no limit\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 20 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 20 | seconds |
++-----------+---------+---------+
 
 
 
@@ -64756,11 +64855,11 @@ Q\_THROTTLE\_EXPO: Throttle expo strength
 Amount of curvature in throttle curve\: 0 is linear\, 1 is cubic
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| .1        | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| .1        | 0 to 1 |
++-----------+--------+
 
 
 
@@ -64774,11 +64873,11 @@ Q\_ACRO\_RLL\_RATE: QACRO mode roll rate
 The maximum roll rate at full stick deflection in QACRO mode
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 500 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 500 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -64792,11 +64891,11 @@ Q\_ACRO\_PIT\_RATE: QACRO mode pitch rate
 The maximum pitch rate at full stick deflection in QACRO mode
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 500 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 500 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -64810,11 +64909,11 @@ Q\_ACRO\_YAW\_RATE: QACRO mode yaw rate
 The maximum yaw rate at full stick deflection in QACRO mode
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 500 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 500 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -64829,11 +64928,11 @@ Q\_TKOFF\_FAIL\_SCL: Takeoff time failure scalar
 Scalar for how long past the expected takeoff time a takeoff should be considered as failed and the vehicle will switch to QLAND\. If set to 0 there is no limit on takeoff time\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 5.1       | 1.1 - 5.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 5.1       | 1.1 to 5.0 |
++-----------+------------+
 
 
 
@@ -64848,11 +64947,11 @@ Q\_TKOFF\_ARSP\_LIM: Takeoff airspeed limit
 Airspeed limit during takeoff\. If the airspeed exceeds this level the vehicle will switch to QLAND\. This is useful for ensuring that you don\'t takeoff into excessively strong wind\. If set to 0 there is no limit on airspeed during takeoff\.
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 1         | 0 - 20 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 1         | 0 to 20 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -64866,11 +64965,11 @@ Q\_ASSIST\_ALT: Quadplane assistance altitude
 This is the altitude below which quadplane assistance will be triggered\. This acts the same way as Q\_ASSIST\_ANGLE and Q\_ASSIST\_SPEED\, but triggers if the aircraft drops below the given altitude while the VTOL motors are not running\. A value of zero disables this feature\. The altutude is calculated as being above ground level\. The height above ground is given from a Lidar used if available and RNGFND\_LANDING\=1\. Otherwise it comes from terrain data if TERRAIN\_FOLLOW\=1 and comes from height above home otherwise\.
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 1         | 0 - 120 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 1         | 0 to 120 | meters |
++-----------+----------+--------+
 
 
 
@@ -64884,11 +64983,11 @@ Q\_ASSIST\_DELAY: Quadplane assistance delay
 This is delay between the assistance thresholds being met and the assistance starting\.
 
 
-+-----------+-------+---------+
-| Increment | Range | Units   |
-+===========+=======+=========+
-| 0.1       | 0 - 2 | seconds |
-+-----------+-------+---------+
++-----------+--------+---------+
+| Increment | Range  | Units   |
++===========+========+=========+
+| 0.1       | 0 to 2 | seconds |
++-----------+--------+---------+
 
 
 
@@ -64902,11 +65001,11 @@ Q\_FWD\_MANTHR\_MAX: VTOL manual forward throttle max percent
 Maximum value for manual forward throttle\; used with RC option FWD\_THR \(209\)
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -64920,11 +65019,11 @@ Q\_BACKTRANS\_MS: SLT and Tiltrotor back transition pitch limit duration
 Pitch angle will increase from 0 to angle max over this duration when switching into VTOL flight in a postion control mode\. 0 Disables\.
 
 
-+-----------+--------------+
-| Range     | Units        |
-+===========+==============+
-| 0 - 10000 | milliseconds |
-+-----------+--------------+
++------------+--------------+
+| Range      | Units        |
++============+==============+
+| 0 to 10000 | milliseconds |
++------------+--------------+
 
 
 
@@ -64965,11 +65064,11 @@ Q\_LAND\_ALTCHG: Land detection altitude change threshold
 The maximum altitude change allowed during land detection\. You can raise this value if you find that landing detection takes a long time to complete\. It is the maximum change in altitude over a period of 4 seconds for landing to be detected
 
 
-+-----------+-----------+--------+
-| Increment | Range     | Units  |
-+===========+===========+========+
-| 0.05      | 0.1 - 0.6 | meters |
-+-----------+-----------+--------+
++-----------+------------+--------+
+| Increment | Range      | Units  |
++===========+============+========+
+| 0.05      | 0.1 to 0.6 | meters |
++-----------+------------+--------+
 
 
 
@@ -64984,11 +65083,94 @@ Q\_NAVALT\_MIN: Minimum navigation altitude
 This is the altitude in meters above which navigation begins in auto takeoff\. Below this altitude the target roll and pitch will be zero\. A value of zero disables the feature
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 5 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 5 |
++--------+
+
+
+
+
+.. _Q_PLT_Y_RATE:
+
+Q\_PLT\_Y\_RATE: Pilot controlled yaw rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pilot controlled yaw rate max\. Used in all pilot controlled modes except QAcro
+
+
++----------+--------------------+
+| Range    | Units              |
++==========+====================+
+| 1 to 360 | degrees per second |
++----------+--------------------+
+
+
+
+
+.. _Q_PLT_Y_EXPO:
+
+Q\_PLT\_Y\_EXPO: Pilot controlled yaw expo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Pilot controlled yaw expo to allow faster rotation when stick at edges
+
+
++-------------+-----------------------+
+| Range       | Values                |
++=============+=======================+
+| -0.5 to 1.0 | +-------+-----------+ |
+|             | | Value | Meaning   | |
+|             | +=======+===========+ |
+|             | | 0     | Disabled  | |
+|             | +-------+-----------+ |
+|             | | 0.1   | Very Low  | |
+|             | +-------+-----------+ |
+|             | | 0.2   | Low       | |
+|             | +-------+-----------+ |
+|             | | 0.3   | Medium    | |
+|             | +-------+-----------+ |
+|             | | 0.4   | High      | |
+|             | +-------+-----------+ |
+|             | | 0.5   | Very High | |
+|             | +-------+-----------+ |
+|             |                       |
++-------------+-----------------------+
+
+
+
+
+.. _Q_PLT_Y_RATE_TC:
+
+Q\_PLT\_Y\_RATE\_TC: Pilot yaw rate control input time constant
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pilot yaw rate control input time constant\. Low numbers lead to sharper response\, higher numbers to softer response\.
+
+
++-----------+--------+---------+------------------------+
+| Increment | Range  | Units   | Values                 |
++===========+========+=========+========================+
+| 0.01      | 0 to 1 | seconds | +-------+------------+ |
+|           |        |         | | Value | Meaning    | |
+|           |        |         | +=======+============+ |
+|           |        |         | | 0.5   | Very Soft  | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.2   | Soft       | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.15  | Medium     | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.1   | Crisp      | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.05  | Very Crisp | |
+|           |        |         | +-------+------------+ |
+|           |        |         |                        |
++-----------+--------+---------+------------------------+
 
 
 
@@ -65036,11 +65218,11 @@ Q\_AUTOTUNE\_AGGR: Autotune aggressiveness
 Autotune aggressiveness\. Defines the bounce back used to detect size of the D term\.
 
 
-+-------------+
-| Range       |
-+=============+
-| 0.05 - 0.10 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 0.05 to 0.10 |
++--------------+
 
 
 
@@ -65054,11 +65236,11 @@ Q\_AUTOTUNE\_MIN\_D: AutoTune minimum D
 Defines the minimum D gain
 
 
-+---------------+
-| Range         |
-+===============+
-| 0.001 - 0.006 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 0.001 to 0.006 |
++----------------+
 
 
 
@@ -65080,11 +65262,11 @@ Q\_A\_SLEW\_YAW: Yaw target slew rate
 Maximum rate the yaw target can be updated in Loiter\, RTL\, Auto flight modes
 
 
-+-----------+-------------+-------------------------+
-| Increment | Range       | Units                   |
-+===========+=============+=========================+
-| 100       | 500 - 18000 | centidegrees per second |
-+-----------+-------------+-------------------------+
++-----------+--------------+-------------------------+
+| Increment | Range        | Units                   |
++===========+==============+=========================+
+| 100       | 500 to 18000 | centidegrees per second |
++-----------+--------------+-------------------------+
 
 
 
@@ -65099,24 +65281,24 @@ Q\_A\_ACCEL\_Y\_MAX: Acceleration Max for Yaw
 Maximum acceleration in yaw axis
 
 
-+-----------+-----------+--------------------------------+----------------------+
-| Increment | Range     | Units                          | Values               |
-+===========+===========+================================+======================+
-| 1000      | 0 - 72000 | centidegrees per square second | +-------+----------+ |
-|           |           |                                | | Value | Meaning  | |
-|           |           |                                | +=======+==========+ |
-|           |           |                                | | 0     | Disabled | |
-|           |           |                                | +-------+----------+ |
-|           |           |                                | | 9000  | VerySlow | |
-|           |           |                                | +-------+----------+ |
-|           |           |                                | | 18000 | Slow     | |
-|           |           |                                | +-------+----------+ |
-|           |           |                                | | 36000 | Medium   | |
-|           |           |                                | +-------+----------+ |
-|           |           |                                | | 54000 | Fast     | |
-|           |           |                                | +-------+----------+ |
-|           |           |                                |                      |
-+-----------+-----------+--------------------------------+----------------------+
++-----------+------------+--------------------------------+----------------------+
+| Increment | Range      | Units                          | Values               |
++===========+============+================================+======================+
+| 1000      | 0 to 72000 | centidegrees per square second | +-------+----------+ |
+|           |            |                                | | Value | Meaning  | |
+|           |            |                                | +=======+==========+ |
+|           |            |                                | | 0     | Disabled | |
+|           |            |                                | +-------+----------+ |
+|           |            |                                | | 9000  | VerySlow | |
+|           |            |                                | +-------+----------+ |
+|           |            |                                | | 18000 | Slow     | |
+|           |            |                                | +-------+----------+ |
+|           |            |                                | | 36000 | Medium   | |
+|           |            |                                | +-------+----------+ |
+|           |            |                                | | 54000 | Fast     | |
+|           |            |                                | +-------+----------+ |
+|           |            |                                |                      |
++-----------+------------+--------------------------------+----------------------+
 
 
 
@@ -65157,24 +65339,24 @@ Q\_A\_ACCEL\_R\_MAX: Acceleration Max for Roll
 Maximum acceleration in roll axis
 
 
-+-----------+------------+--------------------------------+-----------------------+
-| Increment | Range      | Units                          | Values                |
-+===========+============+================================+=======================+
-| 1000      | 0 - 180000 | centidegrees per square second | +--------+----------+ |
-|           |            |                                | | Value  | Meaning  | |
-|           |            |                                | +========+==========+ |
-|           |            |                                | | 0      | Disabled | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 30000  | VerySlow | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 72000  | Slow     | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 108000 | Medium   | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 162000 | Fast     | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                |                       |
-+-----------+------------+--------------------------------+-----------------------+
++-----------+-------------+--------------------------------+-----------------------+
+| Increment | Range       | Units                          | Values                |
++===========+=============+================================+=======================+
+| 1000      | 0 to 180000 | centidegrees per square second | +--------+----------+ |
+|           |             |                                | | Value  | Meaning  | |
+|           |             |                                | +========+==========+ |
+|           |             |                                | | 0      | Disabled | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 30000  | VerySlow | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 72000  | Slow     | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 108000 | Medium   | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 162000 | Fast     | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                |                       |
++-----------+-------------+--------------------------------+-----------------------+
 
 
 
@@ -65189,24 +65371,24 @@ Q\_A\_ACCEL\_P\_MAX: Acceleration Max for Pitch
 Maximum acceleration in pitch axis
 
 
-+-----------+------------+--------------------------------+-----------------------+
-| Increment | Range      | Units                          | Values                |
-+===========+============+================================+=======================+
-| 1000      | 0 - 180000 | centidegrees per square second | +--------+----------+ |
-|           |            |                                | | Value  | Meaning  | |
-|           |            |                                | +========+==========+ |
-|           |            |                                | | 0      | Disabled | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 30000  | VerySlow | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 72000  | Slow     | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 108000 | Medium   | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                | | 162000 | Fast     | |
-|           |            |                                | +--------+----------+ |
-|           |            |                                |                       |
-+-----------+------------+--------------------------------+-----------------------+
++-----------+-------------+--------------------------------+-----------------------+
+| Increment | Range       | Units                          | Values                |
++===========+=============+================================+=======================+
+| 1000      | 0 to 180000 | centidegrees per square second | +--------+----------+ |
+|           |             |                                | | Value  | Meaning  | |
+|           |             |                                | +========+==========+ |
+|           |             |                                | | 0      | Disabled | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 30000  | VerySlow | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 72000  | Slow     | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 108000 | Medium   | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                | | 162000 | Fast     | |
+|           |             |                                | +--------+----------+ |
+|           |             |                                |                       |
++-----------+-------------+--------------------------------+-----------------------+
 
 
 
@@ -65246,11 +65428,11 @@ Q\_A\_ANG\_RLL\_P: Roll axis angle controller P gain
 Roll axis angle controller P gain\.  Converts the error between the desired roll angle and actual angle to a desired roll rate
 
 
-+----------------+
-| Range          |
-+================+
-| 3.000 - 12.000 |
-+----------------+
++-----------------+
+| Range           |
++=================+
+| 3.000 to 12.000 |
++-----------------+
 
 
 
@@ -65264,11 +65446,11 @@ Q\_A\_ANG\_PIT\_P: Pitch axis angle controller P gain
 Pitch axis angle controller P gain\.  Converts the error between the desired pitch angle and actual angle to a desired pitch rate
 
 
-+----------------+
-| Range          |
-+================+
-| 3.000 - 12.000 |
-+----------------+
++-----------------+
+| Range           |
++=================+
+| 3.000 to 12.000 |
++-----------------+
 
 
 
@@ -65282,11 +65464,11 @@ Q\_A\_ANG\_YAW\_P: Yaw axis angle controller P gain
 Yaw axis angle controller P gain\.  Converts the error between the desired yaw angle and actual angle to a desired yaw rate
 
 
-+----------------+
-| Range          |
-+================+
-| 3.000 - 12.000 |
-+----------------+
++-----------------+
+| Range           |
++=================+
+| 3.000 to 12.000 |
++-----------------+
 
 
 
@@ -65301,11 +65483,11 @@ Q\_A\_ANG\_LIM\_TC: Angle Limit \(to maintain altitude\) Time Constant
 Angle Limit \(to maintain altitude\) Time Constant
 
 
-+------------+
-| Range      |
-+============+
-| 0.5 - 10.0 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 0.5 to 10.0 |
++-------------+
 
 
 
@@ -65320,22 +65502,22 @@ Q\_A\_RATE\_R\_MAX: Angular Velocity Max for Roll
 Maximum angular velocity in roll axis
 
 
-+-----------+----------+--------------------+----------------------+
-| Increment | Range    | Units              | Values               |
-+===========+==========+====================+======================+
-| 1         | 0 - 1080 | degrees per second | +-------+----------+ |
-|           |          |                    | | Value | Meaning  | |
-|           |          |                    | +=======+==========+ |
-|           |          |                    | | 0     | Disabled | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 60    | Slow     | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 180   | Medium   | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 360   | Fast     | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    |                      |
-+-----------+----------+--------------------+----------------------+
++-----------+-----------+--------------------+----------------------+
+| Increment | Range     | Units              | Values               |
++===========+===========+====================+======================+
+| 1         | 0 to 1080 | degrees per second | +-------+----------+ |
+|           |           |                    | | Value | Meaning  | |
+|           |           |                    | +=======+==========+ |
+|           |           |                    | | 0     | Disabled | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 60    | Slow     | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 180   | Medium   | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 360   | Fast     | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    |                      |
++-----------+-----------+--------------------+----------------------+
 
 
 
@@ -65350,22 +65532,22 @@ Q\_A\_RATE\_P\_MAX: Angular Velocity Max for Pitch
 Maximum angular velocity in pitch axis
 
 
-+-----------+----------+--------------------+----------------------+
-| Increment | Range    | Units              | Values               |
-+===========+==========+====================+======================+
-| 1         | 0 - 1080 | degrees per second | +-------+----------+ |
-|           |          |                    | | Value | Meaning  | |
-|           |          |                    | +=======+==========+ |
-|           |          |                    | | 0     | Disabled | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 60    | Slow     | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 180   | Medium   | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 360   | Fast     | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    |                      |
-+-----------+----------+--------------------+----------------------+
++-----------+-----------+--------------------+----------------------+
+| Increment | Range     | Units              | Values               |
++===========+===========+====================+======================+
+| 1         | 0 to 1080 | degrees per second | +-------+----------+ |
+|           |           |                    | | Value | Meaning  | |
+|           |           |                    | +=======+==========+ |
+|           |           |                    | | 0     | Disabled | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 60    | Slow     | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 180   | Medium   | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 360   | Fast     | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    |                      |
++-----------+-----------+--------------------+----------------------+
 
 
 
@@ -65380,22 +65562,22 @@ Q\_A\_RATE\_Y\_MAX: Angular Velocity Max for Yaw
 Maximum angular velocity in yaw axis
 
 
-+-----------+----------+--------------------+----------------------+
-| Increment | Range    | Units              | Values               |
-+===========+==========+====================+======================+
-| 1         | 0 - 1080 | degrees per second | +-------+----------+ |
-|           |          |                    | | Value | Meaning  | |
-|           |          |                    | +=======+==========+ |
-|           |          |                    | | 0     | Disabled | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 60    | Slow     | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 180   | Medium   | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    | | 360   | Fast     | |
-|           |          |                    | +-------+----------+ |
-|           |          |                    |                      |
-+-----------+----------+--------------------+----------------------+
++-----------+-----------+--------------------+----------------------+
+| Increment | Range     | Units              | Values               |
++===========+===========+====================+======================+
+| 1         | 0 to 1080 | degrees per second | +-------+----------+ |
+|           |           |                    | | Value | Meaning  | |
+|           |           |                    | +=======+==========+ |
+|           |           |                    | | 0     | Disabled | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 60    | Slow     | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 180   | Medium   | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    | | 360   | Fast     | |
+|           |           |                    | +-------+----------+ |
+|           |           |                    |                      |
++-----------+-----------+--------------------+----------------------+
 
 
 
@@ -65409,24 +65591,24 @@ Q\_A\_INPUT\_TC: Attitude control input time constant
 Attitude control input time constant\.  Low numbers lead to sharper response\, higher numbers to softer response
 
 
-+-----------+-------+---------+------------------------+
-| Increment | Range | Units   | Values                 |
-+===========+=======+=========+========================+
-| 0.01      | 0 - 1 | seconds | +-------+------------+ |
-|           |       |         | | Value | Meaning    | |
-|           |       |         | +=======+============+ |
-|           |       |         | | 0.5   | Very Soft  | |
-|           |       |         | +-------+------------+ |
-|           |       |         | | 0.2   | Soft       | |
-|           |       |         | +-------+------------+ |
-|           |       |         | | 0.15  | Medium     | |
-|           |       |         | +-------+------------+ |
-|           |       |         | | 0.1   | Crisp      | |
-|           |       |         | +-------+------------+ |
-|           |       |         | | 0.05  | Very Crisp | |
-|           |       |         | +-------+------------+ |
-|           |       |         |                        |
-+-----------+-------+---------+------------------------+
++-----------+--------+---------+------------------------+
+| Increment | Range  | Units   | Values                 |
++===========+========+=========+========================+
+| 0.01      | 0 to 1 | seconds | +-------+------------+ |
+|           |        |         | | Value | Meaning    | |
+|           |        |         | +=======+============+ |
+|           |        |         | | 0.5   | Very Soft  | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.2   | Soft       | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.15  | Medium     | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.1   | Crisp      | |
+|           |        |         | +-------+------------+ |
+|           |        |         | | 0.05  | Very Crisp | |
+|           |        |         | +-------+------------+ |
+|           |        |         |                        |
++-----------+--------+---------+------------------------+
 
 
 
@@ -65440,11 +65622,11 @@ Q\_A\_RAT\_RLL\_P: Roll axis rate controller P gain
 Roll axis rate controller P gain\.  Converts the difference between desired roll rate and actual roll rate into a motor speed output
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.005     | 0.01 - 0.5 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.005     | 0.01 to 0.5 |
++-----------+-------------+
 
 
 
@@ -65458,11 +65640,11 @@ Q\_A\_RAT\_RLL\_I: Roll axis rate controller I gain
 Roll axis rate controller I gain\.  Corrects long\-term difference in desired roll rate vs actual roll rate
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.01      | 0.01 - 2.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 to 2.0 |
++-----------+-------------+
 
 
 
@@ -65476,11 +65658,11 @@ Q\_A\_RAT\_RLL\_IMAX: Roll axis rate controller I gain maximum
 Roll axis rate controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -65494,11 +65676,11 @@ Q\_A\_RAT\_RLL\_D: Roll axis rate controller D gain
 Roll axis rate controller D gain\.  Compensates for short\-term change in desired roll rate vs actual roll rate
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.001     | 0.0 - 0.05 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.001     | 0.0 to 0.05 |
++-----------+-------------+
 
 
 
@@ -65512,11 +65694,11 @@ Q\_A\_RAT\_RLL\_FF: Roll axis rate controller feed forward
 Roll axis rate controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 0.5 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 0.5 |
++-----------+----------+
 
 
 
@@ -65530,11 +65712,11 @@ Q\_A\_RAT\_RLL\_FLTT: Roll axis rate controller target frequency in Hz
 Roll axis rate controller target frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 5 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 5 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -65548,11 +65730,11 @@ Q\_A\_RAT\_RLL\_FLTE: Roll axis rate controller error frequency in Hz
 Roll axis rate controller error frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 0 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 0 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -65566,11 +65748,11 @@ Q\_A\_RAT\_RLL\_FLTD: Roll axis rate controller derivative frequency in Hz
 Roll axis rate controller derivative frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 5 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 5 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -65585,11 +65767,11 @@ Q\_A\_RAT\_RLL\_SMAX: Roll slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -65603,11 +65785,11 @@ Q\_A\_RAT\_PIT\_P: Pitch axis rate controller P gain
 Pitch axis rate controller P gain\.  Converts the difference between desired pitch rate and actual pitch rate into a motor speed output
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.005     | 0.01 - 0.50 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.005     | 0.01 to 0.50 |
++-----------+--------------+
 
 
 
@@ -65621,11 +65803,11 @@ Q\_A\_RAT\_PIT\_I: Pitch axis rate controller I gain
 Pitch axis rate controller I gain\.  Corrects long\-term difference in desired pitch rate vs actual pitch rate
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.01      | 0.01 - 2.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 to 2.0 |
++-----------+-------------+
 
 
 
@@ -65639,11 +65821,11 @@ Q\_A\_RAT\_PIT\_IMAX: Pitch axis rate controller I gain maximum
 Pitch axis rate controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -65657,11 +65839,11 @@ Q\_A\_RAT\_PIT\_D: Pitch axis rate controller D gain
 Pitch axis rate controller D gain\.  Compensates for short\-term change in desired pitch rate vs actual pitch rate
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.001     | 0.0 - 0.05 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.001     | 0.0 to 0.05 |
++-----------+-------------+
 
 
 
@@ -65675,11 +65857,11 @@ Q\_A\_RAT\_PIT\_FF: Pitch axis rate controller feed forward
 Pitch axis rate controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 0.5 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 0.5 |
++-----------+----------+
 
 
 
@@ -65693,11 +65875,11 @@ Q\_A\_RAT\_PIT\_FLTT: Pitch axis rate controller target frequency in Hz
 Pitch axis rate controller target frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 5 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 5 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -65711,11 +65893,11 @@ Q\_A\_RAT\_PIT\_FLTE: Pitch axis rate controller error frequency in Hz
 Pitch axis rate controller error frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 0 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 0 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -65729,11 +65911,11 @@ Q\_A\_RAT\_PIT\_FLTD: Pitch axis rate controller derivative frequency in Hz
 Pitch axis rate controller derivative frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 5 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 5 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -65748,11 +65930,11 @@ Q\_A\_RAT\_PIT\_SMAX: Pitch slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -65766,11 +65948,11 @@ Q\_A\_RAT\_YAW\_P: Yaw axis rate controller P gain
 Yaw axis rate controller P gain\.  Converts the difference between desired yaw rate and actual yaw rate into a motor speed output
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.005     | 0.10 - 2.50 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.005     | 0.10 to 2.50 |
++-----------+--------------+
 
 
 
@@ -65784,11 +65966,11 @@ Q\_A\_RAT\_YAW\_I: Yaw axis rate controller I gain
 Yaw axis rate controller I gain\.  Corrects long\-term difference in desired yaw rate vs actual yaw rate
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.01      | 0.010 - 1.0 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.01      | 0.010 to 1.0 |
++-----------+--------------+
 
 
 
@@ -65802,11 +65984,11 @@ Q\_A\_RAT\_YAW\_IMAX: Yaw axis rate controller I gain maximum
 Yaw axis rate controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -65820,11 +66002,11 @@ Q\_A\_RAT\_YAW\_D: Yaw axis rate controller D gain
 Yaw axis rate controller D gain\.  Compensates for short\-term change in desired yaw rate vs actual yaw rate
 
 
-+-----------+--------------+
-| Increment | Range        |
-+===========+==============+
-| 0.001     | 0.000 - 0.02 |
-+-----------+--------------+
++-----------+---------------+
+| Increment | Range         |
++===========+===============+
+| 0.001     | 0.000 to 0.02 |
++-----------+---------------+
 
 
 
@@ -65838,11 +66020,11 @@ Q\_A\_RAT\_YAW\_FF: Yaw axis rate controller feed forward
 Yaw axis rate controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 0.5 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 0.5 |
++-----------+----------+
 
 
 
@@ -65856,11 +66038,11 @@ Q\_A\_RAT\_YAW\_FLTT: Yaw axis rate controller target frequency in Hz
 Yaw axis rate controller target frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 1 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 1 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -65874,11 +66056,11 @@ Q\_A\_RAT\_YAW\_FLTE: Yaw axis rate controller error frequency in Hz
 Yaw axis rate controller error frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 20 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 20 | hertz |
++-----------+---------+-------+
 
 
 
@@ -65892,11 +66074,11 @@ Q\_A\_RAT\_YAW\_FLTD: Yaw axis rate controller derivative frequency in Hz
 Yaw axis rate controller derivative frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 5 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 5 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -65911,11 +66093,11 @@ Q\_A\_RAT\_YAW\_SMAX: Yaw slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -65930,11 +66112,11 @@ Q\_A\_THR\_MIX\_MIN: Throttle Mix Minimum
 Throttle vs attitude control prioritisation used when landing \(higher values mean we prioritise attitude control over throttle\)
 
 
-+------------+
-| Range      |
-+============+
-| 0.1 - 0.25 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 0.1 to 0.25 |
++-------------+
 
 
 
@@ -65949,11 +66131,11 @@ Q\_A\_THR\_MIX\_MAX: Throttle Mix Maximum
 Throttle vs attitude control prioritisation used during active flight \(higher values mean we prioritise attitude control over throttle\)
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.5 - 0.9 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.5 to 0.9 |
++------------+
 
 
 
@@ -65968,11 +66150,11 @@ Q\_A\_THR\_MIX\_MAN: Throttle Mix Manual
 Throttle vs attitude control prioritisation used during manual flight \(higher values mean we prioritise attitude control over throttle\)
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.1 - 0.9 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.1 to 0.9 |
++------------+
 
 
 
@@ -65994,11 +66176,11 @@ Q\_LOIT\_ANG\_MAX: Loiter pilot angle max
 Loiter maximum pilot requested lean angle\. Set to zero for 2\/3 of Q\_P\_ANGLE\_MAX\/Q\_ANGLE\_MAX\. The maximum vehicle lean angle is still limited by Q\_P\_ANGLE\_MAX\/Q\_ANGLE\_MAX
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 45 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 45 | degrees |
++-----------+---------+---------+
 
 
 
@@ -66012,11 +66194,11 @@ Q\_LOIT\_SPEED: Loiter Horizontal Maximum Speed
 Defines the maximum speed in cm\/s which the aircraft will travel horizontally while in loiter mode
 
 
-+-----------+-----------+------------------------+
-| Increment | Range     | Units                  |
-+===========+===========+========================+
-| 50        | 20 - 3500 | centimeters per second |
-+-----------+-----------+------------------------+
++-----------+------------+------------------------+
+| Increment | Range      | Units                  |
++===========+============+========================+
+| 50        | 20 to 3500 | centimeters per second |
++-----------+------------+------------------------+
 
 
 
@@ -66031,11 +66213,11 @@ Q\_LOIT\_ACC\_MAX: Loiter maximum correction acceleration
 Loiter maximum correction acceleration in cm\/s\/s\.  Higher values cause the copter to correct position errors more aggressively\.
 
 
-+-----------+-----------+-------------------------------+
-| Increment | Range     | Units                         |
-+===========+===========+===============================+
-| 1         | 100 - 981 | centimeters per square second |
-+-----------+-----------+-------------------------------+
++-----------+------------+-------------------------------+
+| Increment | Range      | Units                         |
++===========+============+===============================+
+| 1         | 100 to 981 | centimeters per square second |
++-----------+------------+-------------------------------+
 
 
 
@@ -66050,11 +66232,11 @@ Q\_LOIT\_BRK\_ACCEL: Loiter braking acceleration
 Loiter braking acceleration in cm\/s\/s\. Higher values stop the copter more quickly when the stick is centered\.
 
 
-+-----------+----------+-------------------------------+
-| Increment | Range    | Units                         |
-+===========+==========+===============================+
-| 1         | 25 - 250 | centimeters per square second |
-+-----------+----------+-------------------------------+
++-----------+-----------+-------------------------------+
+| Increment | Range     | Units                         |
++===========+===========+===============================+
+| 1         | 25 to 250 | centimeters per square second |
++-----------+-----------+-------------------------------+
 
 
 
@@ -66069,11 +66251,11 @@ Q\_LOIT\_BRK\_JERK: Loiter braking jerk
 Loiter braking jerk in cm\/s\/s\/s\. Higher values will remove braking faster if the pilot moves the sticks during a braking maneuver\.
 
 
-+-----------+------------+------------------------------+
-| Increment | Range      | Units                        |
-+===========+============+==============================+
-| 1         | 500 - 5000 | centimeters per cubic second |
-+-----------+------------+------------------------------+
++-----------+-------------+------------------------------+
+| Increment | Range       | Units                        |
++===========+=============+==============================+
+| 1         | 500 to 5000 | centimeters per cubic second |
++-----------+-------------+------------------------------+
 
 
 
@@ -66088,11 +66270,11 @@ Q\_LOIT\_BRK\_DELAY: Loiter brake start delay \(in seconds\)
 Loiter brake start delay \(in seconds\)
 
 
-+-----------+-------+---------+
-| Increment | Range | Units   |
-+===========+=======+=========+
-| 0.1       | 0 - 2 | seconds |
-+-----------+-------+---------+
++-----------+--------+---------+
+| Increment | Range  | Units   |
++===========+========+=========+
+| 0.1       | 0 to 2 | seconds |
++-----------+--------+---------+
 
 
 
@@ -66114,11 +66296,11 @@ Q\_M\_YAW\_HEADROOM: Matrix Yaw Min
 Yaw control is given at least this pwm in microseconds range
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 500 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 500 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -66133,11 +66315,11 @@ Q\_M\_THST\_EXPO: Thrust Curve Expo
 Motor thrust curve exponent \(0\.0 for linear to 1\.0 for second order curve\)
 
 
-+------------+
-| Range      |
-+============+
-| -1.0 - 1.0 |
-+------------+
++-------------+
+| Range       |
++=============+
+| -1.0 to 1.0 |
++-------------+
 
 
 
@@ -66180,11 +66362,11 @@ Q\_M\_BAT\_VOLT\_MAX: Battery voltage compensation maximum voltage
 Battery voltage compensation maximum voltage \(voltage above this will have no additional scaling effect on thrust\)\.  Recommend 4\.2 \* cell count\, 0 \= Disabled
 
 
-+--------+-------+
-| Range  | Units |
-+========+=======+
-| 6 - 53 | volt  |
-+--------+-------+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| 6 to 53 | volt  |
++---------+-------+
 
 
 
@@ -66199,11 +66381,11 @@ Q\_M\_BAT\_VOLT\_MIN: Battery voltage compensation minimum voltage
 Battery voltage compensation minimum voltage \(voltage below this will have no additional scaling effect on thrust\)\.  Recommend 3\.3 \* cell count\, 0 \= Disabled
 
 
-+--------+-------+
-| Range  | Units |
-+========+=======+
-| 6 - 42 | volt  |
-+--------+-------+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| 6 to 42 | volt  |
++---------+-------+
 
 
 
@@ -66218,11 +66400,11 @@ Q\_M\_BAT\_CURR\_MAX: Motor Current Max
 Maximum current over which maximum throttle is limited \(0 \= Disabled\)
 
 
-+---------+--------+
-| Range   | Units  |
-+=========+========+
-| 0 - 200 | ampere |
-+---------+--------+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 200 | ampere |
++----------+--------+
 
 
 
@@ -66278,11 +66460,11 @@ Q\_M\_PWM\_MIN: PWM output minimum
 This sets the min PWM output value in microseconds that will ever be output to the motors
 
 
-+----------+---------------------+
-| Range    | Units               |
-+==========+=====================+
-| 0 - 2000 | PWM in microseconds |
-+----------+---------------------+
++-----------+---------------------+
+| Range     | Units               |
++===========+=====================+
+| 0 to 2000 | PWM in microseconds |
++-----------+---------------------+
 
 
 
@@ -66297,11 +66479,11 @@ Q\_M\_PWM\_MAX: PWM output maximum
 This sets the max PWM value in microseconds that will ever be output to the motors
 
 
-+----------+---------------------+
-| Range    | Units               |
-+==========+=====================+
-| 0 - 2000 | PWM in microseconds |
-+----------+---------------------+
++-----------+---------------------+
+| Range     | Units               |
++===========+=====================+
+| 0 to 2000 | PWM in microseconds |
++-----------+---------------------+
 
 
 
@@ -66372,11 +66554,11 @@ Q\_M\_BAT\_CURR\_TC: Motor Current Max Time Constant
 Time constant used to limit the maximum current
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 0 - 10 | seconds |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 0 to 10 | seconds |
++---------+---------+
 
 
 
@@ -66391,11 +66573,11 @@ Q\_M\_THST\_HOVER: Thrust Hover Value
 Motor thrust needed to hover expressed as a number from 0 to 1
 
 
-+-----------+
-| Range     |
-+===========+
-| 0.2 - 0.8 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0.2 to 0.8 |
++------------+
 
 
 
@@ -66463,11 +66645,11 @@ Q\_M\_YAW\_SV\_ANGLE: Yaw Servo Max Lean Angle
 Yaw servo\'s maximum lean angle \(Tricopter only\)
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 5 - 80 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 5 to 80 | degrees |
++-----------+---------+---------+
 
 
 
@@ -66482,11 +66664,11 @@ Q\_M\_SPOOL\_TIME: Spool up time
 Time in seconds to spool up the motors from zero to min throttle\. 
 
 
-+-----------+-------+---------+
-| Increment | Range | Units   |
-+===========+=======+=========+
-| 0.1       | 0 - 2 | seconds |
-+-----------+-------+---------+
++-----------+--------+---------+
+| Increment | Range  | Units   |
++===========+========+=========+
+| 0.1       | 0 to 2 | seconds |
++-----------+--------+---------+
 
 
 
@@ -66501,11 +66683,11 @@ Q\_M\_BOOST\_SCALE: Motor boost scale
 Booster motor output scaling factor vs main throttle\.  The output to the BoostThrottle servo will be the main throttle times this scaling factor\. A higher scaling factor will put more of the load on the booster motor\. A value of 1 will set the BoostThrottle equal to the main throttle\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.1       | 0 - 5 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.1       | 0 to 5 |
++-----------+--------+
 
 
 
@@ -66546,11 +66728,11 @@ Q\_M\_SLEW\_UP\_TIME: Output slew time for increasing throttle
 Time in seconds to slew output from zero to full\. This is used to limit the rate at which output can change\. Range is constrained between 0 and 0\.5\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.001     | 0 - .5 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.001     | 0 to .5 | seconds |
++-----------+---------+---------+
 
 
 
@@ -66565,11 +66747,11 @@ Q\_M\_SLEW\_DN\_TIME: Output slew time for decreasing throttle
 Time in seconds to slew output from full to zero\. This is used to limit the rate at which output can change\.  Range is constrained between 0 and 0\.5\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.001     | 0 - .5 | seconds |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.001     | 0 to .5 | seconds |
++-----------+---------+---------+
 
 
 
@@ -66584,11 +66766,11 @@ Q\_M\_SAFE\_TIME: Time taken to disable and enable the motor PWM output when dis
 Time taken to disable and enable the motor PWM output when disarmed and armed\.
 
 
-+-----------+-------+---------+
-| Increment | Range | Units   |
-+===========+=======+=========+
-| 0.001     | 0 - 5 | seconds |
-+-----------+-------+---------+
++-----------+--------+---------+
+| Increment | Range  | Units   |
++===========+========+=========+
+| 0.001     | 0 to 5 | seconds |
++-----------+--------+---------+
 
 
 
@@ -66610,11 +66792,11 @@ Q\_P\_ACC\_XY\_FILT: XY Acceleration filter cutoff frequency
 Lower values will slow the response of the navigation controller and reduce twitchiness
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 0.1       | 0.5 - 5 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 0.1       | 0.5 to 5 | hertz |
++-----------+----------+-------+
 
 
 
@@ -66628,11 +66810,11 @@ Q\_P\_POSZ\_P: Position \(vertical\) controller P gain
 Position \(vertical\) controller P gain\.  Converts the difference between the desired altitude and actual altitude into a climb or descent rate which is passed to the throttle rate controller
 
 
-+---------------+
-| Range         |
-+===============+
-| 1.000 - 3.000 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 1.000 to 3.000 |
++----------------+
 
 
 
@@ -66646,11 +66828,11 @@ Q\_P\_VELZ\_P: Velocity \(vertical\) controller P gain
 Velocity \(vertical\) controller P gain\.  Converts the difference between desired vertical speed and actual speed into a desired acceleration that is passed to the throttle acceleration controller
 
 
-+---------------+
-| Range         |
-+===============+
-| 1.000 - 8.000 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 1.000 to 8.000 |
++----------------+
 
 
 
@@ -66665,11 +66847,11 @@ Q\_P\_VELZ\_I: Velocity \(vertical\) controller I gain
 Velocity \(vertical\) controller I gain\.  Corrects long\-term difference in desired velocity to a target acceleration
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.01      | 0.02 - 1.00 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.01      | 0.02 to 1.00 |
++-----------+--------------+
 
 
 
@@ -66683,11 +66865,11 @@ Q\_P\_VELZ\_IMAX: Velocity \(vertical\) controller I gain maximum
 Velocity \(vertical\) controller I gain maximum\.  Constrains the target acceleration that the I gain will output
 
 
-+---------------+
-| Range         |
-+===============+
-| 1.000 - 8.000 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 1.000 to 8.000 |
++----------------+
 
 
 
@@ -66702,11 +66884,11 @@ Q\_P\_VELZ\_D: Velocity \(vertical\) controller D gain
 Velocity \(vertical\) controller D gain\.  Corrects short\-term changes in velocity
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.001     | 0.00 - 1.00 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.001     | 0.00 to 1.00 |
++-----------+--------------+
 
 
 
@@ -66721,11 +66903,11 @@ Q\_P\_VELZ\_FF: Velocity \(vertical\) controller Feed Forward gain
 Velocity \(vertical\) controller Feed Forward gain\.  Produces an output that is proportional to the magnitude of the target
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -66740,11 +66922,11 @@ Q\_P\_VELZ\_FLTE: Velocity \(vertical\) error filter
 Velocity \(vertical\) error filter\.  This filter \(in Hz\) is applied to the input for P and I terms
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 100 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 100 | hertz |
++----------+-------+
 
 
 
@@ -66759,11 +66941,11 @@ Q\_P\_VELZ\_FLTD: Velocity \(vertical\) input filter for D term
 Velocity \(vertical\) input filter for D term\.  This filter \(in Hz\) is applied to the input for D terms
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 100 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 100 | hertz |
++----------+-------+
 
 
 
@@ -66777,11 +66959,11 @@ Q\_P\_ACCZ\_P: Acceleration \(vertical\) controller P gain
 Acceleration \(vertical\) controller P gain\.  Converts the difference between desired vertical acceleration and actual acceleration into a motor output
 
 
-+-----------+---------------+
-| Increment | Range         |
-+===========+===============+
-| 0.05      | 0.200 - 1.500 |
-+-----------+---------------+
++-----------+----------------+
+| Increment | Range          |
++===========+================+
+| 0.05      | 0.200 to 1.500 |
++-----------+----------------+
 
 
 
@@ -66795,11 +66977,11 @@ Q\_P\_ACCZ\_I: Acceleration \(vertical\) controller I gain
 Acceleration \(vertical\) controller I gain\.  Corrects long\-term difference in desired vertical acceleration and actual acceleration
 
 
-+---------------+
-| Range         |
-+===============+
-| 0.000 - 3.000 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 0.000 to 3.000 |
++----------------+
 
 
 
@@ -66813,11 +66995,11 @@ Q\_P\_ACCZ\_IMAX: Acceleration \(vertical\) controller I gain maximum
 Acceleration \(vertical\) controller I gain maximum\.  Constrains the maximum pwm that the I term will generate
 
 
-+----------+-------------+
-| Range    | Units       |
-+==========+=============+
-| 0 - 1000 | decipercent |
-+----------+-------------+
++-----------+-------------+
+| Range     | Units       |
++===========+=============+
+| 0 to 1000 | decipercent |
++-----------+-------------+
 
 
 
@@ -66831,11 +67013,11 @@ Q\_P\_ACCZ\_D: Acceleration \(vertical\) controller D gain
 Acceleration \(vertical\) controller D gain\.  Compensates for short\-term change in desired vertical acceleration vs actual acceleration
 
 
-+---------------+
-| Range         |
-+===============+
-| 0.000 - 0.400 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 0.000 to 0.400 |
++----------------+
 
 
 
@@ -66849,11 +67031,11 @@ Q\_P\_ACCZ\_FF: Acceleration \(vertical\) controller feed forward
 Acceleration \(vertical\) controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 0.5 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 0.5 |
++-----------+----------+
 
 
 
@@ -66867,11 +67049,11 @@ Q\_P\_ACCZ\_FLTT: Acceleration \(vertical\) controller target frequency in Hz
 Acceleration \(vertical\) controller target frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 1 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 1 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -66885,11 +67067,11 @@ Q\_P\_ACCZ\_FLTE: Acceleration \(vertical\) controller error frequency in Hz
 Acceleration \(vertical\) controller error frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 1 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 1 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -66903,11 +67085,11 @@ Q\_P\_ACCZ\_FLTD: Acceleration \(vertical\) controller derivative frequency in H
 Acceleration \(vertical\) controller derivative frequency in Hz
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 1         | 1 - 100 | hertz |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 1         | 1 to 100 | hertz |
++-----------+----------+-------+
 
 
 
@@ -66922,11 +67104,11 @@ Q\_P\_ACCZ\_SMAX: Accel \(vertical\) slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -66940,11 +67122,11 @@ Q\_P\_POSXY\_P: Position \(horizontal\) controller P gain
 Position controller P gain\.  Converts the distance \(in the latitude direction\) to the target location into a desired speed which is then passed to the loiter latitude rate controller
 
 
-+---------------+
-| Range         |
-+===============+
-| 0.500 - 2.000 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 0.500 to 2.000 |
++----------------+
 
 
 
@@ -66959,11 +67141,11 @@ Q\_P\_VELXY\_P: Velocity \(horizontal\) P gain
 Velocity \(horizontal\) P gain\.  Converts the difference between desired and actual velocity to a target acceleration
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.1 - 6.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.1 to 6.0 |
++-----------+------------+
 
 
 
@@ -66978,11 +67160,11 @@ Q\_P\_VELXY\_I: Velocity \(horizontal\) I gain
 Velocity \(horizontal\) I gain\.  Corrects long\-term difference between desired and actual velocity to a target acceleration
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.01      | 0.02 - 1.00 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.01      | 0.02 to 1.00 |
++-----------+--------------+
 
 
 
@@ -66997,11 +67179,11 @@ Q\_P\_VELXY\_D: Velocity \(horizontal\) D gain
 Velocity \(horizontal\) D gain\.  Corrects short\-term changes in velocity
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.001     | 0.00 - 1.00 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.001     | 0.00 to 1.00 |
++-----------+--------------+
 
 
 
@@ -67016,11 +67198,11 @@ Q\_P\_VELXY\_IMAX: Velocity \(horizontal\) integrator maximum
 Velocity \(horizontal\) integrator maximum\.  Constrains the target acceleration that the I gain will output
 
 
-+-----------+----------+-------------------------------+
-| Increment | Range    | Units                         |
-+===========+==========+===============================+
-| 10        | 0 - 4500 | centimeters per square second |
-+-----------+----------+-------------------------------+
++-----------+-----------+-------------------------------+
+| Increment | Range     | Units                         |
++===========+===========+===============================+
+| 10        | 0 to 4500 | centimeters per square second |
++-----------+-----------+-------------------------------+
 
 
 
@@ -67035,11 +67217,11 @@ Q\_P\_VELXY\_FLTE: Velocity \(horizontal\) input filter
 Velocity \(horizontal\) input filter\.  This filter \(in Hz\) is applied to the input for P and I terms
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 100 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 100 | hertz |
++----------+-------+
 
 
 
@@ -67054,11 +67236,11 @@ Q\_P\_VELXY\_FLTD: Velocity \(horizontal\) input filter
 Velocity \(horizontal\) input filter\.  This filter \(in Hz\) is applied to the input for D term
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 100 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 100 | hertz |
++----------+-------+
 
 
 
@@ -67073,11 +67255,11 @@ Q\_P\_VELXY\_FF: Velocity \(horizontal\) feed forward gain
 Velocity \(horizontal\) feed forward gain\.  Converts the difference between desired velocity to a target acceleration
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 6 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 6 |
++-----------+--------+
 
 
 
@@ -67092,11 +67274,11 @@ Q\_P\_ANGLE\_MAX: Position Control Angle Max
 Maximum lean angle autopilot can request\.  Set to zero to use ANGLE\_MAX parameter value
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 45 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 45 | degrees |
++-----------+---------+---------+
 
 
 
@@ -67111,11 +67293,11 @@ Q\_P\_JERK\_XY: Jerk limit for the horizontal kinematic input shaping
 Jerk limit of the horizontal kinematic path generation used to determine how quickly the aircraft varies the acceleration target
 
 
-+-----------+--------+-------------------------+
-| Increment | Range  | Units                   |
-+===========+========+=========================+
-| 1         | 1 - 20 | meters per cubic second |
-+-----------+--------+-------------------------+
++-----------+---------+-------------------------+
+| Increment | Range   | Units                   |
++===========+=========+=========================+
+| 1         | 1 to 20 | meters per cubic second |
++-----------+---------+-------------------------+
 
 
 
@@ -67130,11 +67312,11 @@ Q\_P\_JERK\_Z: Jerk limit for the vertical kinematic input shaping
 Jerk limit of the vertical kinematic path generation used to determine how quickly the aircraft varies the acceleration target
 
 
-+-----------+--------+-------------------------+
-| Increment | Range  | Units                   |
-+===========+========+=========================+
-| 1         | 5 - 50 | meters per cubic second |
-+-----------+--------+-------------------------+
++-----------+---------+-------------------------+
+| Increment | Range   | Units                   |
++===========+=========+=========================+
+| 1         | 5 to 50 | meters per cubic second |
++-----------+---------+-------------------------+
 
 
 
@@ -67183,11 +67365,11 @@ Q\_TAILSIT\_ANGLE: Tailsitter fixed wing transition angle
 This is the pitch angle at which tailsitter aircraft will change from VTOL control to fixed wing control\.
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 80 | degrees |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 5 to 80 | degrees |
++---------+---------+
 
 
 
@@ -67201,11 +67383,11 @@ Q\_TAILSIT\_ANG\_VT: Tailsitter VTOL transition angle
 This is the pitch angle at which tailsitter aircraft will change from fixed wing control to VTOL control\, if zero Q\_TAILSIT\_ANGLE will be used
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 5 - 80 | degrees |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 5 to 80 | degrees |
++---------+---------+
 
 
 
@@ -67244,11 +67426,11 @@ Q\_TAILSIT\_VFGAIN: Tailsitter vector thrust gain in forward flight
 This controls the amount of vectored thrust control used in forward flight for a vectored tailsitter
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -67262,11 +67444,11 @@ Q\_TAILSIT\_VHGAIN: Tailsitter vector thrust gain in hover
 This controls the amount of vectored thrust control used in hover for a vectored tailsitter
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -67280,11 +67462,11 @@ Q\_TAILSIT\_VHPOW: Tailsitter vector thrust gain power
 This controls the amount of extra pitch given to the vectored control when at high pitch errors
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.1       | 0 - 4 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.1       | 0 to 4 |
++-----------+--------+
 
 
 
@@ -67298,11 +67480,11 @@ Q\_TAILSIT\_GSCMAX: Maximum tailsitter gain scaling
 Maximum gain scaling for tailsitter Q\_TAILSIT\_GSCMSK options
 
 
-+-------+
-| Range |
-+=======+
-| 1 - 5 |
-+-------+
++--------+
+| Range  |
++========+
+| 1 to 5 |
++--------+
 
 
 
@@ -67316,11 +67498,11 @@ Q\_TAILSIT\_RLL\_MX: Maximum Roll angle
 Maximum Allowed roll angle for tailsitters\. If this is zero then Q\_ANGLE\_MAX is used\.
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 0 - 80 | degrees |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 0 to 80 | degrees |
++---------+---------+
 
 
 
@@ -67400,11 +67582,11 @@ Q\_TAILSIT\_GSCMIN: Minimum tailsitter gain scaling
 Minimum gain scaling for tailsitter Q\_TAILSIT\_GSCMSK options
 
 
-+---------+
-| Range   |
-+=========+
-| 0.1 - 1 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0.1 to 1 |
++----------+
 
 
 
@@ -67418,11 +67600,11 @@ Q\_TAILSIT\_DSKLD: Tailsitter disk loading
 This is the vehicle weight in kg divided by the total disk area of all propellers in m\^2\. Only used with Q\_TAILSIT\_GSCMSK \= 4
 
 
-+--------+----------------------------+
-| Range  | Units                      |
-+========+============================+
-| 0 - 50 | kilograms per square meter |
-+--------+----------------------------+
++---------+----------------------------+
+| Range   | Units                      |
++=========+============================+
+| 0 to 50 | kilograms per square meter |
++---------+----------------------------+
 
 
 
@@ -67436,11 +67618,11 @@ Q\_TAILSIT\_RAT\_FW: Tailsitter VTOL to forward flight transition rate
 The pitch rate at which tailsitter aircraft will pitch down in the transition from VTOL to forward flight
 
 
-+----------+--------------------+
-| Range    | Units              |
-+==========+====================+
-| 10 - 500 | degrees per second |
-+----------+--------------------+
++-----------+--------------------+
+| Range     | Units              |
++===========+====================+
+| 10 to 500 | degrees per second |
++-----------+--------------------+
 
 
 
@@ -67454,11 +67636,11 @@ Q\_TAILSIT\_RAT\_VT: Tailsitter forward flight to VTOL transition rate
 The pitch rate at which tailsitter aircraft will pitch up in the transition from forward flight to VTOL
 
 
-+----------+--------------------+
-| Range    | Units              |
-+==========+====================+
-| 10 - 500 | degrees per second |
-+----------+--------------------+
++-----------+--------------------+
+| Range     | Units              |
++===========+====================+
+| 10 to 500 | degrees per second |
++-----------+--------------------+
 
 
 
@@ -67472,11 +67654,11 @@ Q\_TAILSIT\_THR\_VT: Tailsitter forward flight to VTOL transition throttle
 Throttle used during FW\-\>VTOL transition\, \-1 uses hover throttle
 
 
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| -1 - 100 | percent |
-+----------+---------+
++-----------+---------+
+| Range     | Units   |
++===========+=========+
+| -1 to 100 | percent |
++-----------+---------+
 
 
 
@@ -67490,11 +67672,11 @@ Q\_TAILSIT\_VT\_R\_P: Tailsitter VTOL control surface roll gain
 Scale from PID output to control surface\, for use where a single axis is actuated by both motors and Tilt\/control surface on a copter style tailsitter\, increase to favor control surfaces and reduce motor output by reducing gains
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 2 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 2 |
++--------+
 
 
 
@@ -67508,11 +67690,11 @@ Q\_TAILSIT\_VT\_P\_P: Tailsitter VTOL control surface pitch gain
 Scale from PID output to control surface\, for use where a single axis is actuated by both motors and Tilt\/control surface on a copter style tailsitter\, increase to favor control surfaces and reduce motor output by reducing gains
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 2 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 2 |
++--------+
 
 
 
@@ -67526,11 +67708,11 @@ Q\_TAILSIT\_VT\_Y\_P: Tailsitter VTOL control surface yaw gain
 Scale from PID output to control surface\, for use where a single axis is actuated by both motors and Tilt\/control surface on a copter style tailsitter\, increase to favor control surfaces and reduce motor output by reducing gains
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 2 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 2 |
++--------+
 
 
 
@@ -67544,11 +67726,11 @@ Q\_TAILSIT\_MIN\_VO: Tailsitter Disk loading minimum outflow speed
 Use in conjunction with disk therory gain scaling and Q\_TAILSIT\_DSKLD to specify minumum airspeed over control surfaces\, this will be used to boost throttle\, when decending for example\, 0 disables
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 15 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
 
 
 
@@ -67604,11 +67786,11 @@ Q\_TILT\_RATE\_UP: Tiltrotor upwards tilt rate
 This is the maximum speed at which the motor angle will change for a tiltrotor when moving from forward flight to hover
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 300 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 300 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -67622,11 +67804,11 @@ Q\_TILT\_MAX: Tiltrotor maximum VTOL angle
 This is the maximum angle of the tiltable motors at which multicopter control will be enabled\. Beyond this angle the plane will fly solely as a fixed wing aircraft and the motors will tilt to their maximum angle at the TILT\_RATE
 
 
-+-----------+---------+---------+
-| Increment | Range   | Units   |
-+===========+=========+=========+
-| 1         | 20 - 80 | degrees |
-+-----------+---------+---------+
++-----------+----------+---------+
+| Increment | Range    | Units   |
++===========+==========+=========+
+| 1         | 20 to 80 | degrees |
++-----------+----------+---------+
 
 
 
@@ -67669,11 +67851,11 @@ Q\_TILT\_RATE\_DN: Tiltrotor downwards tilt rate
 This is the maximum speed at which the motor angle will change for a tiltrotor when moving from hover to forward flight\. When this is zero the Q\_TILT\_RATE\_UP value is used\.
 
 
-+-----------+----------+--------------------+
-| Increment | Range    | Units              |
-+===========+==========+====================+
-| 1         | 10 - 300 | degrees per second |
-+-----------+----------+--------------------+
++-----------+-----------+--------------------+
+| Increment | Range     | Units              |
++===========+===========+====================+
+| 1         | 10 to 300 | degrees per second |
++-----------+-----------+--------------------+
 
 
 
@@ -67687,11 +67869,11 @@ Q\_TILT\_YAW\_ANGLE: Tilt minimum angle for vectored yaw
 This is the angle of the tilt servos when in VTOL mode and at minimum output\. This needs to be set for Q\_TILT\_TYPE\=3 to enable vectored control for yaw of tricopter tilt quadplanes\. This is also used to limit the forwards travel of bicopter tilts when in VTOL modes
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 30 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 30 |
++---------+
 
 
 
@@ -67705,11 +67887,11 @@ Q\_TILT\_FIX\_ANGLE: Fixed wing tiltrotor angle
 This is the angle the motors tilt down when at maximum output for forward flight\. Set this to a non\-zero value to enable vectoring for roll\/pitch in forward flight on tilt\-vectored aircraft
 
 
-+--------+---------+
-| Range  | Units   |
-+========+=========+
-| 0 - 30 | degrees |
-+--------+---------+
++---------+---------+
+| Range   | Units   |
++=========+=========+
+| 0 to 30 | degrees |
++---------+---------+
 
 
 
@@ -67723,11 +67905,11 @@ Q\_TILT\_FIX\_GAIN: Fixed wing tiltrotor gain
 This is the gain for use of tilting motors in fixed wing flight for tilt vectored quadplanes
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -67741,11 +67923,11 @@ Q\_TILT\_WING\_FLAP: Tiltrotor tilt angle that will be used as flap
 For use on tilt wings\, the wing will tilt up to this angle for flap\, transition will be complete when the wing reaches this angle from the forward fight position\, 0 disables
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 15 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 15 | degrees |
++-----------+---------+---------+
 
 
 
@@ -67766,11 +67948,11 @@ Q\_WP\_SPEED: Waypoint Horizontal Speed Target
 Defines the speed in cm\/s which the aircraft will attempt to maintain horizontally during a WP mission
 
 
-+-----------+-----------+------------------------+
-| Increment | Range     | Units                  |
-+===========+===========+========================+
-| 50        | 20 - 2000 | centimeters per second |
-+-----------+-----------+------------------------+
++-----------+------------+------------------------+
+| Increment | Range      | Units                  |
++===========+============+========================+
+| 50        | 20 to 2000 | centimeters per second |
++-----------+------------+------------------------+
 
 
 
@@ -67784,11 +67966,11 @@ Q\_WP\_RADIUS: Waypoint Radius
 Defines the distance from a waypoint\, that when crossed indicates the wp has been hit\.
 
 
-+-----------+----------+-------------+
-| Increment | Range    | Units       |
-+===========+==========+=============+
-| 1         | 5 - 1000 | centimeters |
-+-----------+----------+-------------+
++-----------+-----------+-------------+
+| Increment | Range     | Units       |
++===========+===========+=============+
+| 1         | 5 to 1000 | centimeters |
++-----------+-----------+-------------+
 
 
 
@@ -67802,11 +67984,11 @@ Q\_WP\_SPEED\_UP: Waypoint Climb Speed Target
 Defines the speed in cm\/s which the aircraft will attempt to maintain while climbing during a WP mission
 
 
-+-----------+-----------+------------------------+
-| Increment | Range     | Units                  |
-+===========+===========+========================+
-| 50        | 10 - 1000 | centimeters per second |
-+-----------+-----------+------------------------+
++-----------+------------+------------------------+
+| Increment | Range      | Units                  |
++===========+============+========================+
+| 50        | 10 to 1000 | centimeters per second |
++-----------+------------+------------------------+
 
 
 
@@ -67820,11 +68002,11 @@ Q\_WP\_SPEED\_DN: Waypoint Descent Speed Target
 Defines the speed in cm\/s which the aircraft will attempt to maintain while descending during a WP mission
 
 
-+-----------+----------+------------------------+
-| Increment | Range    | Units                  |
-+===========+==========+========================+
-| 10        | 10 - 500 | centimeters per second |
-+-----------+----------+------------------------+
++-----------+-----------+------------------------+
+| Increment | Range     | Units                  |
++===========+===========+========================+
+| 10        | 10 to 500 | centimeters per second |
++-----------+-----------+------------------------+
 
 
 
@@ -67838,11 +68020,11 @@ Q\_WP\_ACCEL: Waypoint Acceleration
 Defines the horizontal acceleration in cm\/s\/s used during missions
 
 
-+-----------+----------+-------------------------------+
-| Increment | Range    | Units                         |
-+===========+==========+===============================+
-| 10        | 50 - 500 | centimeters per square second |
-+-----------+----------+-------------------------------+
++-----------+-----------+-------------------------------+
+| Increment | Range     | Units                         |
++===========+===========+===============================+
+| 10        | 50 to 500 | centimeters per square second |
++-----------+-----------+-------------------------------+
 
 
 
@@ -67856,11 +68038,11 @@ Q\_WP\_ACCEL\_Z: Waypoint Vertical Acceleration
 Defines the vertical acceleration in cm\/s\/s used during missions
 
 
-+-----------+----------+-------------------------------+
-| Increment | Range    | Units                         |
-+===========+==========+===============================+
-| 10        | 50 - 500 | centimeters per square second |
-+-----------+----------+-------------------------------+
++-----------+-----------+-------------------------------+
+| Increment | Range     | Units                         |
++===========+===========+===============================+
+| 10        | 50 to 500 | centimeters per square second |
++-----------+-----------+-------------------------------+
 
 
 
@@ -67900,11 +68082,11 @@ Q\_WP\_JERK: Waypoint Jerk
 Defines the horizontal jerk in m\/s\/s used during missions
 
 
-+--------+-------------------------+
-| Range  | Units                   |
-+========+=========================+
-| 1 - 20 | meters per cubic second |
-+--------+-------------------------+
++---------+-------------------------+
+| Range   | Units                   |
++=========+=========================+
+| 1 to 20 | meters per cubic second |
++---------+-------------------------+
 
 
 
@@ -67919,11 +68101,11 @@ Q\_WP\_TER\_MARGIN: Waypoint Terrain following altitude margin
 Waypoint Terrain following altitude margin\.  Vehicle will stop if distance from target altitude is larger than this margin \(in meters\)
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0.1 - 100 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0.1 to 100 | meters |
++------------+--------+
 
 
 
@@ -67975,11 +68157,11 @@ Q\_WVANE\_GAIN: Weathervaning gain
 This converts the target roll\/pitch angle of the aircraft into the correcting \(into wind\) yaw rate\. e\.g\. Gain \= 2\, roll \= 30 deg\, pitch \= 0 deg\, yaw rate \= 60 deg\/s\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.1       | 0.5 - 4 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.1       | 0.5 to 4 |
++-----------+----------+
 
 
 
@@ -67993,11 +68175,11 @@ Q\_WVANE\_ANG\_MIN: Weathervaning min angle
 The minimum target roll\/pitch angle before active weathervaning will start\.  This provides a dead zone that is particularly useful for poorly trimmed quadplanes\.
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 0.1       | 0 - 10 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 0.1       | 0 to 10 | degrees |
++-----------+---------+---------+
 
 
 
@@ -68011,11 +68193,11 @@ Q\_WVANE\_HGT\_MIN: Weathervaning min height
 Above this height weathervaning is permitted\.  If RNGFND\_LANDING is enabled or terrain is enabled then this parameter sets height AGL\. Otherwise this parameter sets height above home\.  Set zero to ignore minimum height requirement to activate weathervaning
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 1         | 0 - 50 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 1         | 0 to 50 | meters |
++-----------+---------+--------+
 
 
 
@@ -68029,11 +68211,11 @@ Q\_WVANE\_SPD\_MAX: Weathervaning max ground speed
 Below this ground speed weathervaning is permitted\. Set to 0 to ignore this condition when checking if vehicle should weathervane\.
 
 
-+-----------+--------+-------------------+
-| Increment | Range  | Units             |
-+===========+========+===================+
-| 0.1       | 0 - 50 | meters per second |
-+-----------+--------+-------------------+
++-----------+---------+-------------------+
+| Increment | Range   | Units             |
++===========+=========+===================+
+| 0.1       | 0 to 50 | meters per second |
++-----------+---------+-------------------+
 
 
 
@@ -68047,11 +68229,11 @@ Q\_WVANE\_VELZ\_MAX: Weathervaning max vertical speed
 The maximum climb or descent speed that the vehicle will still attempt to weathervane\. Set to 0 to ignore this condition to get the aircraft to weathervane at any climb\/descent rate\.  This is particularly useful for aircraft with low disc loading that struggle with yaw control in decent\.
 
 
-+-----------+-------+-------------------+
-| Increment | Range | Units             |
-+===========+=======+===================+
-| 0.1       | 0 - 5 | meters per second |
-+-----------+-------+-------------------+
++-----------+--------+-------------------+
+| Increment | Range  | Units             |
++===========+========+===================+
+| 0.1       | 0 to 5 | meters per second |
++-----------+--------+-------------------+
 
 
 
@@ -68223,11 +68405,11 @@ RC\_OVERRIDE\_TIME: RC override timeout
 Timeout after which RC overrides will no longer be used\, and RC input will resume\, 0 will disable RC overrides\, \-1 will never timeout\, and continue using overrides until they are disabled
 
 
-+-------------+---------+
-| Range       | Units   |
-+=============+=========+
-| 0.0 - 120.0 | seconds |
-+-------------+---------+
++--------------+---------+
+| Range        | Units   |
++==============+=========+
+| 0.0 to 120.0 | seconds |
++--------------+---------+
 
 
 
@@ -68351,11 +68533,11 @@ RC10\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68370,11 +68552,11 @@ RC10\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68389,11 +68571,11 @@ RC10\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68434,11 +68616,11 @@ RC10\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -68627,11 +68809,11 @@ RC11\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68646,11 +68828,11 @@ RC11\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68665,11 +68847,11 @@ RC11\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68710,11 +68892,11 @@ RC11\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -68903,11 +69085,11 @@ RC12\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68922,11 +69104,11 @@ RC12\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68941,11 +69123,11 @@ RC12\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -68986,11 +69168,11 @@ RC12\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -69179,11 +69361,11 @@ RC13\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69198,11 +69380,11 @@ RC13\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69217,11 +69399,11 @@ RC13\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69262,11 +69444,11 @@ RC13\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -69455,11 +69637,11 @@ RC14\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69474,11 +69656,11 @@ RC14\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69493,11 +69675,11 @@ RC14\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69538,11 +69720,11 @@ RC14\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -69731,11 +69913,11 @@ RC15\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69750,11 +69932,11 @@ RC15\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69769,11 +69951,11 @@ RC15\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -69814,11 +69996,11 @@ RC15\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -70007,11 +70189,11 @@ RC16\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70026,11 +70208,11 @@ RC16\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70045,11 +70227,11 @@ RC16\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70090,11 +70272,11 @@ RC16\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -70283,11 +70465,11 @@ RC1\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70302,11 +70484,11 @@ RC1\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70321,11 +70503,11 @@ RC1\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70366,11 +70548,11 @@ RC1\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -70559,11 +70741,11 @@ RC2\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70578,11 +70760,11 @@ RC2\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70597,11 +70779,11 @@ RC2\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70642,11 +70824,11 @@ RC2\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -70835,11 +71017,11 @@ RC3\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70854,11 +71036,11 @@ RC3\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70873,11 +71055,11 @@ RC3\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -70918,11 +71100,11 @@ RC3\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -71111,11 +71293,11 @@ RC4\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71130,11 +71312,11 @@ RC4\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71149,11 +71331,11 @@ RC4\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71194,11 +71376,11 @@ RC4\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -71387,11 +71569,11 @@ RC5\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71406,11 +71588,11 @@ RC5\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71425,11 +71607,11 @@ RC5\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71470,11 +71652,11 @@ RC5\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -71663,11 +71845,11 @@ RC6\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71682,11 +71864,11 @@ RC6\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71701,11 +71883,11 @@ RC6\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71746,11 +71928,11 @@ RC6\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -71939,11 +72121,11 @@ RC7\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71958,11 +72140,11 @@ RC7\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -71977,11 +72159,11 @@ RC7\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -72022,11 +72204,11 @@ RC7\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -72215,11 +72397,11 @@ RC8\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -72234,11 +72416,11 @@ RC8\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -72253,11 +72435,11 @@ RC8\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -72298,11 +72480,11 @@ RC8\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -72491,11 +72673,11 @@ RC9\_MIN: RC min PWM
 RC minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -72510,11 +72692,11 @@ RC9\_TRIM: RC trim PWM
 RC trim \(neutral\) PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -72529,11 +72711,11 @@ RC9\_MAX: RC max PWM
 RC maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -72574,11 +72756,11 @@ RC9\_DZ: RC dead\-zone
 PWM dead zone in microseconds around trim or bottom
 
 
-+---------+---------------------+
-| Range   | Units               |
-+=========+=====================+
-| 0 - 200 | PWM in microseconds |
-+---------+---------------------+
++----------+---------------------+
+| Range    | Units               |
++==========+=====================+
+| 0 to 200 | PWM in microseconds |
++----------+---------------------+
 
 
 
@@ -72768,11 +72950,11 @@ RCMAP\_ROLL: Roll channel
 Roll channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Roll is normally on channel 1\, but you can move it to any channel with this parameter\.  Reboot is required for changes to take effect\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 1 - 16 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 1 to 16 |
++-----------+---------+
 
 
 
@@ -72788,11 +72970,11 @@ RCMAP\_PITCH: Pitch channel
 Pitch channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Pitch is normally on channel 2\, but you can move it to any channel with this parameter\.  Reboot is required for changes to take effect\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 1 - 16 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 1 to 16 |
++-----------+---------+
 
 
 
@@ -72808,11 +72990,11 @@ RCMAP\_THROTTLE: Throttle channel
 Throttle channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Throttle is normally on channel 3\, but you can move it to any channel with this parameter\. Reboot is required for changes to take effect\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 1 - 16 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 1 to 16 |
++-----------+---------+
 
 
 
@@ -72828,11 +73010,11 @@ RCMAP\_YAW: Yaw channel
 Yaw channel number\. This is useful when you have a RC transmitter that can\'t change the channel order easily\. Yaw \(also known as rudder\) is normally on channel 4\, but you can move it to any channel with this parameter\.  Reboot is required for changes to take effect\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 1 - 16 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 1 to 16 |
++-----------+---------+
 
 
 
@@ -73254,11 +73436,11 @@ RLL\_AGL\_RMAX: Maximum Roll Rate
 This sets the maximum roll rate that the attitude controller will demand \(degrees\/sec\) in angle stabilized modes \(all but MANUAL and ACRO\)\. Setting it to zero disables this limit\.
 
 
-+-----------+---------+--------------------+
-| Increment | Range   | Units              |
-+===========+=========+====================+
-| 1         | 0 - 180 | degrees per second |
-+-----------+---------+--------------------+
++-----------+----------+--------------------+
+| Increment | Range    | Units              |
++===========+==========+====================+
+| 1         | 0 to 180 | degrees per second |
++-----------+----------+--------------------+
 
 
 
@@ -73272,11 +73454,11 @@ RLL\_RATE\_P: Roll axis rate controller P gain
 Roll axis rate controller P gain\. Converts the difference between desired roll rate and actual roll rate into a control surface angle
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.005     | 0.08 - 0.35 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.005     | 0.08 to 0.35 |
++-----------+--------------+
 
 
 
@@ -73290,11 +73472,11 @@ RLL\_RATE\_I: Roll axis rate controller I gain
 Roll axis rate controller I gain\. Corrects long\-term difference in desired roll rate vs actual roll rate
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.01      | 0.01 - 0.6 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 to 0.6 |
++-----------+-------------+
 
 
 
@@ -73308,11 +73490,11 @@ RLL\_RATE\_IMAX: Roll axis rate controller I gain maximum
 Roll axis rate controller I gain maximum\. Constrains the maximum control surface angle that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -73326,11 +73508,11 @@ RLL\_RATE\_D: Roll axis rate controller D gain
 Roll axis rate controller D gain\. Compensates for short\-term change in desired roll rate vs actual roll rate
 
 
-+-----------+--------------+
-| Increment | Range        |
-+===========+==============+
-| 0.001     | 0.001 - 0.03 |
-+-----------+--------------+
++-----------+---------------+
+| Increment | Range         |
++===========+===============+
+| 0.001     | 0.001 to 0.03 |
++-----------+---------------+
 
 
 
@@ -73344,11 +73526,11 @@ RLL\_RATE\_FF: Roll axis rate controller feed forward
 Roll axis rate controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 3.0 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 3.0 |
++-----------+----------+
 
 
 
@@ -73362,11 +73544,11 @@ RLL\_RATE\_FLTT: Roll axis rate controller target frequency in Hz
 Roll axis rate controller target frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -73380,11 +73562,11 @@ RLL\_RATE\_FLTE: Roll axis rate controller error frequency in Hz
 Roll axis rate controller error frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -73398,11 +73580,11 @@ RLL\_RATE\_FLTD: Roll axis rate controller derivative frequency in Hz
 Roll axis rate controller derivative frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -73417,11 +73599,11 @@ RLL\_RATE\_SMAX: Roll slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -73435,11 +73617,11 @@ RLL\_AGL\_P: Roll axis angle controller P gain
 Roll axis angle controller P gain\. Converts the difference between desired roll angle and actual roll angle into a roll rate
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.005     | 0.08 - 0.35 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.005     | 0.08 to 0.35 |
++-----------+--------------+
 
 
 
@@ -73453,11 +73635,11 @@ RLL\_AGL\_I: Roll axis angle controller I gain
 Roll axis angle controller I gain\. Corrects long\-term difference in desired roll angle vs actual roll angle
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.01      | 0.01 - 0.6 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 to 0.6 |
++-----------+-------------+
 
 
 
@@ -73471,11 +73653,11 @@ RLL\_AGL\_IMAX: Roll axis angle controller I gain maximum
 Roll axis angle controller I gain maximum\. Constrains the maximum roll rate that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -73489,11 +73671,11 @@ RLL\_AGL\_D: Roll axis angle controller D gain
 Roll axis angle controller D gain\. Compensates for short\-term change in desired roll angle vs actual roll angle
 
 
-+-----------+--------------+
-| Increment | Range        |
-+===========+==============+
-| 0.001     | 0.001 - 0.03 |
-+-----------+--------------+
++-----------+---------------+
+| Increment | Range         |
++===========+===============+
+| 0.001     | 0.001 to 0.03 |
++-----------+---------------+
 
 
 
@@ -73507,11 +73689,11 @@ RLL\_AGL\_FF: Roll axis angle controller feed forward \(not used\)
 Roll axis angle controller feed forward \(not used\)
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 3.0 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 3.0 |
++-----------+----------+
 
 
 
@@ -73525,11 +73707,11 @@ RLL\_AGL\_FLTT: Roll axis angle controller target frequency in Hz
 Roll axis angle controller target frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -73543,11 +73725,11 @@ RLL\_AGL\_FLTE: Roll axis angle controller error frequency in Hz
 Roll axis angle controller error frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -73561,11 +73743,11 @@ RLL\_AGL\_FLTD: Roll axis angle controller derivative frequency in Hz
 Roll axis angle controller derivative frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -73580,11 +73762,11 @@ RLL\_AGL\_SMAX: Requested roll rate slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 
@@ -73912,11 +74094,11 @@ RNGFND1\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -73930,11 +74112,11 @@ RNGFND1\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -73948,11 +74130,11 @@ RNGFND1\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -73967,11 +74149,11 @@ RNGFND1\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -73986,11 +74168,11 @@ RNGFND1\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -74005,11 +74187,11 @@ RNGFND1\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -74066,11 +74248,11 @@ RNGFND1\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -74085,11 +74267,11 @@ RNGFND1\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -74104,11 +74286,11 @@ RNGFND1\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -74123,11 +74305,11 @@ RNGFND1\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -74142,11 +74324,11 @@ RNGFND1\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -74187,11 +74369,11 @@ RNGFND1\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -74206,11 +74388,11 @@ RNGFND1\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -74538,11 +74720,11 @@ RNGFND2\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -74556,11 +74738,11 @@ RNGFND2\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -74574,11 +74756,11 @@ RNGFND2\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -74593,11 +74775,11 @@ RNGFND2\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -74612,11 +74794,11 @@ RNGFND2\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -74631,11 +74813,11 @@ RNGFND2\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -74692,11 +74874,11 @@ RNGFND2\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -74711,11 +74893,11 @@ RNGFND2\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -74730,11 +74912,11 @@ RNGFND2\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -74749,11 +74931,11 @@ RNGFND2\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -74768,11 +74950,11 @@ RNGFND2\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -74813,11 +74995,11 @@ RNGFND2\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -74832,11 +75014,11 @@ RNGFND2\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -75164,11 +75346,11 @@ RNGFND3\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -75182,11 +75364,11 @@ RNGFND3\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -75200,11 +75382,11 @@ RNGFND3\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -75219,11 +75401,11 @@ RNGFND3\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -75238,11 +75420,11 @@ RNGFND3\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -75257,11 +75439,11 @@ RNGFND3\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -75318,11 +75500,11 @@ RNGFND3\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -75337,11 +75519,11 @@ RNGFND3\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -75356,11 +75538,11 @@ RNGFND3\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -75375,11 +75557,11 @@ RNGFND3\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -75394,11 +75576,11 @@ RNGFND3\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -75439,11 +75621,11 @@ RNGFND3\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -75458,11 +75640,11 @@ RNGFND3\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -75790,11 +75972,11 @@ RNGFND4\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -75808,11 +75990,11 @@ RNGFND4\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -75826,11 +76008,11 @@ RNGFND4\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -75845,11 +76027,11 @@ RNGFND4\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -75864,11 +76046,11 @@ RNGFND4\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -75883,11 +76065,11 @@ RNGFND4\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -75944,11 +76126,11 @@ RNGFND4\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -75963,11 +76145,11 @@ RNGFND4\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -75982,11 +76164,11 @@ RNGFND4\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -76001,11 +76183,11 @@ RNGFND4\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -76020,11 +76202,11 @@ RNGFND4\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -76065,11 +76247,11 @@ RNGFND4\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -76084,11 +76266,11 @@ RNGFND4\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -76416,11 +76598,11 @@ RNGFND5\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -76434,11 +76616,11 @@ RNGFND5\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -76452,11 +76634,11 @@ RNGFND5\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -76471,11 +76653,11 @@ RNGFND5\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -76490,11 +76672,11 @@ RNGFND5\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -76509,11 +76691,11 @@ RNGFND5\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -76570,11 +76752,11 @@ RNGFND5\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -76589,11 +76771,11 @@ RNGFND5\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -76608,11 +76790,11 @@ RNGFND5\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -76627,11 +76809,11 @@ RNGFND5\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -76646,11 +76828,11 @@ RNGFND5\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -76691,11 +76873,11 @@ RNGFND5\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -76710,11 +76892,11 @@ RNGFND5\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -77042,11 +77224,11 @@ RNGFND6\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -77060,11 +77242,11 @@ RNGFND6\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -77078,11 +77260,11 @@ RNGFND6\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -77097,11 +77279,11 @@ RNGFND6\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -77116,11 +77298,11 @@ RNGFND6\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -77135,11 +77317,11 @@ RNGFND6\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -77196,11 +77378,11 @@ RNGFND6\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -77215,11 +77397,11 @@ RNGFND6\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -77234,11 +77416,11 @@ RNGFND6\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -77253,11 +77435,11 @@ RNGFND6\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -77272,11 +77454,11 @@ RNGFND6\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -77317,11 +77499,11 @@ RNGFND6\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -77336,11 +77518,11 @@ RNGFND6\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -77668,11 +77850,11 @@ RNGFND7\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -77686,11 +77868,11 @@ RNGFND7\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -77704,11 +77886,11 @@ RNGFND7\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -77723,11 +77905,11 @@ RNGFND7\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -77742,11 +77924,11 @@ RNGFND7\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -77761,11 +77943,11 @@ RNGFND7\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -77822,11 +78004,11 @@ RNGFND7\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -77841,11 +78023,11 @@ RNGFND7\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -77860,11 +78042,11 @@ RNGFND7\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -77879,11 +78061,11 @@ RNGFND7\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -77898,11 +78080,11 @@ RNGFND7\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -77943,11 +78125,11 @@ RNGFND7\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -77962,11 +78144,11 @@ RNGFND7\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -78294,11 +78476,11 @@ RNGFND8\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -78312,11 +78494,11 @@ RNGFND8\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -78330,11 +78512,11 @@ RNGFND8\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -78349,11 +78531,11 @@ RNGFND8\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -78368,11 +78550,11 @@ RNGFND8\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -78387,11 +78569,11 @@ RNGFND8\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -78448,11 +78630,11 @@ RNGFND8\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -78467,11 +78649,11 @@ RNGFND8\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -78486,11 +78668,11 @@ RNGFND8\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -78505,11 +78687,11 @@ RNGFND8\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -78524,11 +78706,11 @@ RNGFND8\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -78569,11 +78751,11 @@ RNGFND8\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -78588,11 +78770,11 @@ RNGFND8\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -78920,11 +79102,11 @@ RNGFND9\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -78938,11 +79120,11 @@ RNGFND9\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -78956,11 +79138,11 @@ RNGFND9\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -78975,11 +79157,11 @@ RNGFND9\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -78994,11 +79176,11 @@ RNGFND9\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -79013,11 +79195,11 @@ RNGFND9\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -79074,11 +79256,11 @@ RNGFND9\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -79093,11 +79275,11 @@ RNGFND9\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -79112,11 +79294,11 @@ RNGFND9\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -79131,11 +79313,11 @@ RNGFND9\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -79150,11 +79332,11 @@ RNGFND9\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -79195,11 +79377,11 @@ RNGFND9\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -79214,11 +79396,11 @@ RNGFND9\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -79546,11 +79728,11 @@ RNGFNDA\_PWRRNG: Powersave range
 This parameter sets the estimated terrain distance in meters above which the sensor will be put into a power saving mode \(if available\)\. A value of zero means power saving is not enabled
 
 
-+-----------+--------+
-| Range     | Units  |
-+===========+========+
-| 0 - 32767 | meters |
-+-----------+--------+
++------------+--------+
+| Range      | Units  |
++============+========+
+| 0 to 32767 | meters |
++------------+--------+
 
 
 
@@ -79564,11 +79746,11 @@ RNGFNDA\_GNDCLEAR: Distance \(in cm\) from the range finder to the ground
 This parameter sets the expected range measurement\(in cm\) that the range finder should return when the vehicle is on the ground\.
 
 
-+-----------+---------+-------------+
-| Increment | Range   | Units       |
-+===========+=========+=============+
-| 1         | 5 - 127 | centimeters |
-+-----------+---------+-------------+
++-----------+----------+-------------+
+| Increment | Range    | Units       |
++===========+==========+=============+
+| 1         | 5 to 127 | centimeters |
++-----------+----------+-------------+
 
 
 
@@ -79582,11 +79764,11 @@ RNGFNDA\_ADDR: Bus address of sensor
 This sets the bus address of the sensor\, where applicable\. Used for the I2C and DroneCAN sensors to allow for multiple sensors on different addresses\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 0 - 127 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | 0 to 127 |
++-----------+----------+
 
 
 
@@ -79601,11 +79783,11 @@ RNGFNDA\_POS\_X:  X position offset
 X position of the rangefinder in body frame\. Positive X is forward of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -79620,11 +79802,11 @@ RNGFNDA\_POS\_Y: Y position offset
 Y position of the rangefinder in body frame\. Positive Y is to the right of the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -79639,11 +79821,11 @@ RNGFNDA\_POS\_Z: Z position offset
 Z position of the rangefinder in body frame\. Positive Z is down from the origin\. Use the zero range datum point if supplied\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -79700,11 +79882,11 @@ RNGFNDA\_WSP\_MAVG: Moving Average Range
 Sets the number of historic range results to use for calculating the current range result\. When MAVG is greater than 1\, the current range result will be the current measured value averaged with the N\-1 previous results
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -79719,11 +79901,11 @@ RNGFNDA\_WSP\_MEDF: Moving Median Filter
 Sets the window size for the real\-time median filter\. When MEDF is greater than 0 the median filter is active
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -79738,11 +79920,11 @@ RNGFNDA\_WSP\_FRQ: Frequency
 Sets the repetition frequency of the ranging operation in Hertz\. Upon entering the desired frequency the system will calculate the nearest frequency that it can handle according to the resolution of internal timers\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 10000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -79757,11 +79939,11 @@ RNGFNDA\_WSP\_AVG: Multi\-pulse averages
 Sets the number of pulses to be used in multi\-pulse averaging mode\. In this mode\, a sequence of rapid fire ranges are taken and then averaged to improve the accuracy of the measurement
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 255 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
 
 
 
@@ -79776,11 +79958,11 @@ RNGFNDA\_WSP\_THR: Sensitivity threshold
 Sets the system sensitivity\. Larger values of THR represent higher sensitivity\. The system may limit the maximum value of THR to prevent excessive false alarm rates based on settings made at the factory\. Set to \-1 for automatic threshold adjustments
 
 
-+----------+
-| Range    |
-+==========+
-| -1 - 255 |
-+----------+
++-----------+
+| Range     |
++===========+
+| -1 to 255 |
++-----------+
 
 
 
@@ -79821,11 +80003,11 @@ RNGFNDA\_RECV\_ID: CAN receive ID
 The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -79840,11 +80022,11 @@ RNGFNDA\_SNR\_MIN: Minimum signal strength
 Minimum signal strength \(SNR\) to accept distance
 
 
-+-----------+
-| Range     |
-+===========+
-| 0 - 65535 |
-+-----------+
++------------+
+| Range      |
++============+
+| 0 to 65535 |
++------------+
 
 
 
@@ -80347,11 +80529,11 @@ RSSI\_PIN\_LOW: RSSI pin\'s lowest voltage
 RSSI pin\'s voltage received on the RSSI\_ANA\_PIN when the signal strength is the weakest\. Some radio receivers put out inverted values so this value may be higher than RSSI\_PIN\_HIGH\. When using pin 103\, the maximum value of the parameter is 3\.3V\.
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 0.01      | 0 - 5.0 | volt  |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 0.01      | 0 to 5.0 | volt  |
++-----------+----------+-------+
 
 
 
@@ -80365,11 +80547,11 @@ RSSI\_PIN\_HIGH: RSSI pin\'s highest voltage
 RSSI pin\'s voltage received on the RSSI\_ANA\_PIN when the signal strength is the strongest\. Some radio receivers put out inverted values so this value may be lower than RSSI\_PIN\_LOW\. When using pin 103\, the maximum value of the parameter is 3\.3V\.
 
 
-+-----------+---------+-------+
-| Increment | Range   | Units |
-+===========+=========+=======+
-| 0.01      | 0 - 5.0 | volt  |
-+-----------+---------+-------+
++-----------+----------+-------+
+| Increment | Range    | Units |
++===========+==========+=======+
+| 0.01      | 0 to 5.0 | volt  |
++-----------+----------+-------+
 
 
 
@@ -80383,11 +80565,11 @@ RSSI\_CHANNEL: Receiver RSSI channel number
 The channel number where RSSI will be output by the radio receiver \(5 and above\)\.
 
 
-+--------+
-| Range  |
-+========+
-| 0 - 16 |
-+--------+
++---------+
+| Range   |
++=========+
+| 0 to 16 |
++---------+
 
 
 
@@ -80401,11 +80583,11 @@ RSSI\_CHAN\_LOW: RSSI PWM low value
 PWM value that the radio receiver will put on the RSSI\_CHANNEL or RSSI\_ANA\_PIN when the signal strength is the weakest\. Some radio receivers output inverted values so this value may be lower than RSSI\_CHAN\_HIGH
 
 
-+----------+---------------------+
-| Range    | Units               |
-+==========+=====================+
-| 0 - 2000 | PWM in microseconds |
-+----------+---------------------+
++-----------+---------------------+
+| Range     | Units               |
++===========+=====================+
+| 0 to 2000 | PWM in microseconds |
++-----------+---------------------+
 
 
 
@@ -80419,11 +80601,11 @@ RSSI\_CHAN\_HIGH: Receiver RSSI PWM high value
 PWM value that the radio receiver will put on the RSSI\_CHANNEL or RSSI\_ANA\_PIN when the signal strength is the strongest\. Some radio receivers output inverted values so this value may be higher than RSSI\_CHAN\_LOW
 
 
-+----------+---------------------+
-| Range    | Units               |
-+==========+=====================+
-| 0 - 2000 | PWM in microseconds |
-+----------+---------------------+
++-----------+---------------------+
+| Range     | Units               |
++===========+=====================+
+| 0 to 2000 | PWM in microseconds |
++-----------+---------------------+
 
 
 
@@ -80566,11 +80748,11 @@ SCR\_VM\_I\_COUNT: Scripting Virtual Machine Instruction Count
 The number virtual machine instructions that can be run before considering a script to have taken an excessive amount of time
 
 
-+-----------+----------------+
-| Increment | Range          |
-+===========+================+
-| 10000     | 1000 - 1000000 |
-+-----------+----------------+
++-----------+-----------------+
+| Increment | Range           |
++===========+=================+
+| 10000     | 1000 to 1000000 |
++-----------+-----------------+
 
 
 
@@ -80586,11 +80768,11 @@ SCR\_HEAP\_SIZE: Scripting Heap Size
 Amount of memory available for scripting
 
 
-+-----------+----------------+
-| Increment | Range          |
-+===========+================+
-| 1024      | 1024 - 1048576 |
-+-----------+----------------+
++-----------+-----------------+
+| Increment | Range           |
++===========+=================+
+| 1024      | 1024 to 1048576 |
++-----------+-----------------+
 
 
 
@@ -80890,6 +81072,8 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -81046,6 +81230,8 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -81204,6 +81390,8 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -81360,6 +81548,8 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -81518,6 +81708,8 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -81674,6 +81866,8 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -82112,11 +82306,11 @@ SERIAL\_PASSTIMO: Serial passthru timeout
 This sets a timeout for serial pass\-through in seconds\. When the pass\-through is enabled by setting the SERIAL\_PASS1 and SERIAL\_PASS2 parameters then it remains in effect until no data comes from the first port for SERIAL\_PASSTIMO seconds\. This allows the port to revent to its normal usage \(such as MAVLink connection to a GCS\) when it is no longer needed\. A value of 0 means no timeout\.
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 120 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 120 | seconds |
++----------+---------+
 
 
 
@@ -82220,6 +82414,8 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 | | 42    | DisplayPort                      | |
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
+| +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
 | +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
@@ -82427,6 +82623,8 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -82633,6 +82831,8 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 43    | MAVLink High Latency             | |
 | +-------+----------------------------------+ |
+| | 44    | IRC Tramp                        | |
+| +-------+----------------------------------+ |
 |                                              |
 +----------------------------------------------+
 
@@ -82784,11 +82984,11 @@ SERVO\_RATE: Servo default output rate
 This sets the default output rate in Hz for all outputs\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 25 - 400 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 25 to 400 | hertz |
++-----------+-------+
 
 
 
@@ -82982,11 +83182,11 @@ SERVO10\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83000,11 +83200,11 @@ SERVO10\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83018,11 +83218,11 @@ SERVO10\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83303,11 +83503,11 @@ SERVO10\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83321,11 +83521,11 @@ SERVO10\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83346,11 +83546,11 @@ SERVO11\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83364,11 +83564,11 @@ SERVO11\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83382,11 +83582,11 @@ SERVO11\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83667,11 +83867,11 @@ SERVO11\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83685,11 +83885,11 @@ SERVO11\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83710,11 +83910,11 @@ SERVO12\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83728,11 +83928,11 @@ SERVO12\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -83746,11 +83946,11 @@ SERVO12\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84031,11 +84231,11 @@ SERVO12\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84049,11 +84249,11 @@ SERVO12\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84074,11 +84274,11 @@ SERVO13\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84092,11 +84292,11 @@ SERVO13\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84110,11 +84310,11 @@ SERVO13\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84395,11 +84595,11 @@ SERVO13\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84413,11 +84613,11 @@ SERVO13\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84438,11 +84638,11 @@ SERVO14\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84456,11 +84656,11 @@ SERVO14\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84474,11 +84674,11 @@ SERVO14\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84759,11 +84959,11 @@ SERVO14\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84777,11 +84977,11 @@ SERVO14\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84802,11 +85002,11 @@ SERVO15\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84820,11 +85020,11 @@ SERVO15\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -84838,11 +85038,11 @@ SERVO15\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85123,11 +85323,11 @@ SERVO15\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85141,11 +85341,11 @@ SERVO15\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85166,11 +85366,11 @@ SERVO16\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85184,11 +85384,11 @@ SERVO16\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85202,11 +85402,11 @@ SERVO16\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85487,11 +85687,11 @@ SERVO16\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85505,11 +85705,11 @@ SERVO16\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85530,11 +85730,11 @@ SERVO17\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85548,11 +85748,11 @@ SERVO17\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85566,11 +85766,11 @@ SERVO17\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85851,11 +86051,11 @@ SERVO17\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85869,11 +86069,11 @@ SERVO17\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85894,11 +86094,11 @@ SERVO18\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85912,11 +86112,11 @@ SERVO18\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -85930,11 +86130,11 @@ SERVO18\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86215,11 +86415,11 @@ SERVO18\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86233,11 +86433,11 @@ SERVO18\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86258,11 +86458,11 @@ SERVO19\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86276,11 +86476,11 @@ SERVO19\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86294,11 +86494,11 @@ SERVO19\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86579,11 +86779,11 @@ SERVO19\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86597,11 +86797,11 @@ SERVO19\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86622,11 +86822,11 @@ SERVO1\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86640,11 +86840,11 @@ SERVO1\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86658,11 +86858,11 @@ SERVO1\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86943,11 +87143,11 @@ SERVO1\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86961,11 +87161,11 @@ SERVO1\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -86986,11 +87186,11 @@ SERVO20\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87004,11 +87204,11 @@ SERVO20\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87022,11 +87222,11 @@ SERVO20\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87307,11 +87507,11 @@ SERVO20\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87325,11 +87525,11 @@ SERVO20\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87350,11 +87550,11 @@ SERVO21\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87368,11 +87568,11 @@ SERVO21\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87386,11 +87586,11 @@ SERVO21\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87671,11 +87871,11 @@ SERVO21\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87689,11 +87889,11 @@ SERVO21\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87714,11 +87914,11 @@ SERVO22\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87732,11 +87932,11 @@ SERVO22\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -87750,11 +87950,11 @@ SERVO22\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88035,11 +88235,11 @@ SERVO22\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88053,11 +88253,11 @@ SERVO22\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88078,11 +88278,11 @@ SERVO23\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88096,11 +88296,11 @@ SERVO23\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88114,11 +88314,11 @@ SERVO23\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88399,11 +88599,11 @@ SERVO23\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88417,11 +88617,11 @@ SERVO23\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88442,11 +88642,11 @@ SERVO24\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88460,11 +88660,11 @@ SERVO24\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88478,11 +88678,11 @@ SERVO24\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88763,11 +88963,11 @@ SERVO24\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88781,11 +88981,11 @@ SERVO24\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88806,11 +89006,11 @@ SERVO25\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88824,11 +89024,11 @@ SERVO25\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -88842,11 +89042,11 @@ SERVO25\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89127,11 +89327,11 @@ SERVO25\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89145,11 +89345,11 @@ SERVO25\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89170,11 +89370,11 @@ SERVO26\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89188,11 +89388,11 @@ SERVO26\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89206,11 +89406,11 @@ SERVO26\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89491,11 +89691,11 @@ SERVO26\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89509,11 +89709,11 @@ SERVO26\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89534,11 +89734,11 @@ SERVO27\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89552,11 +89752,11 @@ SERVO27\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89570,11 +89770,11 @@ SERVO27\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89855,11 +90055,11 @@ SERVO27\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89873,11 +90073,11 @@ SERVO27\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89898,11 +90098,11 @@ SERVO28\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89916,11 +90116,11 @@ SERVO28\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -89934,11 +90134,11 @@ SERVO28\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90219,11 +90419,11 @@ SERVO28\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90237,11 +90437,11 @@ SERVO28\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90262,11 +90462,11 @@ SERVO29\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90280,11 +90480,11 @@ SERVO29\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90298,11 +90498,11 @@ SERVO29\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90583,11 +90783,11 @@ SERVO29\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90601,11 +90801,11 @@ SERVO29\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90626,11 +90826,11 @@ SERVO2\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90644,11 +90844,11 @@ SERVO2\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90662,11 +90862,11 @@ SERVO2\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90947,11 +91147,11 @@ SERVO2\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90965,11 +91165,11 @@ SERVO2\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -90990,11 +91190,11 @@ SERVO30\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91008,11 +91208,11 @@ SERVO30\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91026,11 +91226,11 @@ SERVO30\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91311,11 +91511,11 @@ SERVO30\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91329,11 +91529,11 @@ SERVO30\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91354,11 +91554,11 @@ SERVO31\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91372,11 +91572,11 @@ SERVO31\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91390,11 +91590,11 @@ SERVO31\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91675,11 +91875,11 @@ SERVO31\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91693,11 +91893,11 @@ SERVO31\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91718,11 +91918,11 @@ SERVO32\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91736,11 +91936,11 @@ SERVO32\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -91754,11 +91954,11 @@ SERVO32\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92039,11 +92239,11 @@ SERVO32\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92057,11 +92257,11 @@ SERVO32\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92082,11 +92282,11 @@ SERVO3\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92100,11 +92300,11 @@ SERVO3\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92118,11 +92318,11 @@ SERVO3\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92403,11 +92603,11 @@ SERVO3\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92421,11 +92621,11 @@ SERVO3\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92446,11 +92646,11 @@ SERVO4\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92464,11 +92664,11 @@ SERVO4\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92482,11 +92682,11 @@ SERVO4\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92767,11 +92967,11 @@ SERVO4\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92785,11 +92985,11 @@ SERVO4\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92810,11 +93010,11 @@ SERVO5\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92828,11 +93028,11 @@ SERVO5\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -92846,11 +93046,11 @@ SERVO5\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93131,11 +93331,11 @@ SERVO5\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93149,11 +93349,11 @@ SERVO5\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93174,11 +93374,11 @@ SERVO6\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93192,11 +93392,11 @@ SERVO6\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93210,11 +93410,11 @@ SERVO6\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93495,11 +93695,11 @@ SERVO6\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93513,11 +93713,11 @@ SERVO6\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93538,11 +93738,11 @@ SERVO7\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93556,11 +93756,11 @@ SERVO7\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93574,11 +93774,11 @@ SERVO7\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93859,11 +94059,11 @@ SERVO7\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93877,11 +94077,11 @@ SERVO7\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93902,11 +94102,11 @@ SERVO8\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93920,11 +94120,11 @@ SERVO8\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -93938,11 +94138,11 @@ SERVO8\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94223,11 +94423,11 @@ SERVO8\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94241,11 +94441,11 @@ SERVO8\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94266,11 +94466,11 @@ SERVO9\_MIN: Minimum PWM
 minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94284,11 +94484,11 @@ SERVO9\_MAX: Maximum PWM
 maximum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94302,11 +94502,11 @@ SERVO9\_TRIM: Trim PWM
 Trim PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 is neutral and 2000 is upper limit\.
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 800 - 2200 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 800 to 2200 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94587,11 +94787,11 @@ SERVO9\_ABS\_MIN: Absolute minimum PWM
 Absolute minimum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94605,11 +94805,11 @@ SERVO9\_ABS\_MAX: Absolute maximum PWM
 Absolute maximum PWM pulse width in microseconds\. Used as limit for auto trim
 
 
-+-----------+------------+---------------------+
-| Increment | Range      | Units               |
-+===========+============+=====================+
-| 1         | 500 - 2500 | PWM in microseconds |
-+-----------+------------+---------------------+
++-----------+-------------+---------------------+
+| Increment | Range       | Units               |
++===========+=============+=====================+
+| 1         | 500 to 2500 | PWM in microseconds |
++-----------+-------------+---------------------+
 
 
 
@@ -94783,11 +94983,11 @@ SERVO\_BLH\_TMOUT: BLHeli protocol timeout
 This sets the inactivity timeout for the BLHeli protocol in seconds\. If no packets are received in this time normal MAVLink operations are resumed\. A value of 0 means no timeout
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 300 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 300 | seconds |
++----------+---------+
 
 
 
@@ -94801,11 +95001,11 @@ SERVO\_BLH\_TRATE: BLHeli telemetry rate
 This sets the rate in Hz for requesting telemetry from ESCs\. It is the rate per ESC\. Setting to zero disables telemetry requests
 
 
-+---------+-------+
-| Range   | Units |
-+=========+=======+
-| 0 - 500 | hertz |
-+---------+-------+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 0 to 500 | hertz |
++----------+-------+
 
 
 
@@ -94919,11 +95119,11 @@ SERVO\_BLH\_POLES: BLHeli Motor Poles
 This allows calculation of true RPM from ESC\'s eRPM\. The default is 14\.
 
 
-+---------+
-| Range   |
-+=========+
-| 1 - 127 |
-+---------+
++----------+
+| Range    |
++==========+
+| 1 to 127 |
++----------+
 
 
 
@@ -95296,11 +95496,11 @@ SERVO\_FTW\_POLES: Nr\. electrical poles
 Number of motor electrical poles
 
 
-+--------+
-| Range  |
-+========+
-| 2 - 50 |
-+--------+
++---------+
+| Range   |
++=========+
+| 2 to 50 |
++---------+
 
 
 
@@ -95321,11 +95521,11 @@ SERVO\_ROB\_POSMIN: Robotis servo position min
 Position minimum at servo min value\. This should be within the position control range of the servos\, normally 0 to 4095
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 4095 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 4095 |
++-----------+
 
 
 
@@ -95339,11 +95539,11 @@ SERVO\_ROB\_POSMAX: Robotis servo position max
 Position maximum at servo max value\. This should be within the position control range of the servos\, normally 0 to 4095
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 4095 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 4095 |
++-----------+
 
 
 
@@ -95365,11 +95565,11 @@ SERVO\_SBUS\_RATE: SBUS default output rate
 This sets the SBUS output frame rate in Hz\.
 
 
-+----------+-------+
-| Range    | Units |
-+==========+=======+
-| 25 - 250 | hertz |
-+----------+-------+
++-----------+-------+
+| Range     | Units |
++===========+=======+
+| 25 to 250 | hertz |
++-----------+-------+
 
 
 
@@ -95507,11 +95707,11 @@ SOAR\_VSPEED: Vertical v\-speed
 Rate of climb to trigger themalling speed
 
 
-+--------+-------------------+
-| Range  | Units             |
-+========+===================+
-| 0 - 10 | meters per second |
-+--------+-------------------+
++---------+-------------------+
+| Range   | Units             |
++=========+===================+
+| 0 to 10 | meters per second |
++---------+-------------------+
 
 
 
@@ -95526,11 +95726,11 @@ SOAR\_Q1: Process noise
 Standard deviation of noise in process for strength
 
 
-+---------------+
-| Range         |
-+===============+
-| 0.0001 - 0.01 |
-+---------------+
++----------------+
+| Range          |
++================+
+| 0.0001 to 0.01 |
++----------------+
 
 
 
@@ -95545,11 +95745,11 @@ SOAR\_Q2: Process noise
 Standard deviation of noise in process for position and radius
 
 
-+----------+
-| Range    |
-+==========+
-| 0.01 - 1 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0.01 to 1 |
++-----------+
 
 
 
@@ -95564,11 +95764,11 @@ SOAR\_R: Measurement noise
 Standard deviation of noise in measurement
 
 
-+----------+
-| Range    |
-+==========+
-| 0.01 - 1 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0.01 to 1 |
++-----------+
 
 
 
@@ -95583,11 +95783,11 @@ SOAR\_DIST\_AHEAD: Distance to thermal center
 Initial guess of the distance to the thermal center
 
 
-+---------+--------+
-| Range   | Units  |
-+=========+========+
-| 0 - 100 | meters |
-+---------+--------+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 100 | meters |
++----------+--------+
 
 
 
@@ -95602,11 +95802,11 @@ SOAR\_MIN\_THML\_S: Minimum thermalling time
 Minimum number of seconds to spend thermalling
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 600 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 600 | seconds |
++----------+---------+
 
 
 
@@ -95621,11 +95821,11 @@ SOAR\_MIN\_CRSE\_S: Minimum cruising time
 Minimum number of seconds to spend cruising
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 0 - 600 | seconds |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 600 | seconds |
++----------+---------+
 
 
 
@@ -95640,11 +95840,11 @@ SOAR\_POLAR\_CD0: Zero lift drag coef\.
 Zero lift drag coefficient
 
 
-+-------------+
-| Range       |
-+=============+
-| 0.005 - 0.5 |
-+-------------+
++--------------+
+| Range        |
++==============+
+| 0.005 to 0.5 |
++--------------+
 
 
 
@@ -95659,11 +95859,11 @@ SOAR\_POLAR\_B: Induced drag coeffient
 Induced drag coeffient
 
 
-+--------------+
-| Range        |
-+==============+
-| 0.005 - 0.05 |
-+--------------+
++---------------+
+| Range         |
++===============+
+| 0.005 to 0.05 |
++---------------+
 
 
 
@@ -95678,11 +95878,11 @@ SOAR\_POLAR\_K: Cl factor
 Cl factor 2\*m\*g\/\(rho\*S\)
 
 
-+----------+--------------------------------+
-| Range    | Units                          |
-+==========+================================+
-| 20 - 400 | square meter per square second |
-+----------+--------------------------------+
++-----------+--------------------------------+
+| Range     | Units                          |
++===========+================================+
+| 20 to 400 | square meter per square second |
++-----------+--------------------------------+
 
 
 
@@ -95697,11 +95897,11 @@ SOAR\_ALT\_MAX: Maximum soaring altitude\, relative to the home location
 Don\'t thermal any higher than this\.
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0 - 5000.0 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0 to 5000.0 | meters |
++-------------+--------+
 
 
 
@@ -95716,11 +95916,11 @@ SOAR\_ALT\_MIN: Minimum soaring altitude\, relative to the home location
 Don\'t get any lower than this\.
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0 - 1000.0 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0 to 1000.0 | meters |
++-------------+--------+
 
 
 
@@ -95735,11 +95935,11 @@ SOAR\_ALT\_CUTOFF: Maximum power altitude\, relative to the home location
 Cut off throttle at this alt\.
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0 - 5000.0 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0 to 5000.0 | meters |
++-------------+--------+
 
 
 
@@ -95754,11 +95954,11 @@ SOAR\_MAX\_DRIFT: \(Optional\) Maximum drift distance to allow when thermalling\
 The previous mode will be restored if the horizontal distance to the thermalling start location exceeds this value\. \-1 to disable\.
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 1000 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 1000 |
++-----------+
 
 
 
@@ -95773,11 +95973,11 @@ SOAR\_MAX\_RADIUS: \(Optional\) Maximum distance from home
 RTL will be entered when a thermal is exited and the plane is more than this distance from home\. \-1 to disable\.
 
 
-+----------+
-| Range    |
-+==========+
-| 0 - 1000 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 0 to 1000 |
++-----------+
 
 
 
@@ -95792,11 +95992,11 @@ SOAR\_THML\_BANK: Thermalling bank angle
 This parameter sets the bank angle to use when thermalling\. Typically 30 \- 45 degrees works well\.
 
 
-+---------+---------+
-| Range   | Units   |
-+=========+=========+
-| 20 - 50 | degrees |
-+---------+---------+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 20 to 50 | degrees |
++----------+---------+
 
 
 
@@ -95811,11 +96011,11 @@ SOAR\_THML\_ARSPD: Specific setting for airspeed when thermalling\.
 If non\-zero this airspeed will be used when thermalling\.
 
 
-+--------+
-| Range  |
-+========+
-| 5 - 50 |
-+--------+
++---------+
+| Range   |
++=========+
+| 5 to 50 |
++---------+
 
 
 
@@ -95830,11 +96030,11 @@ SOAR\_CRSE\_ARSPD: Specific setting for airspeed when cruising\.
 If non\-zero this airspeed will be used when cruising\. If set to \-1\, airspeed will be selected based on speed\-to\-fly theory\.
 
 
-+--------+
-| Range  |
-+========+
-| 5 - 50 |
-+--------+
++---------+
+| Range   |
++=========+
+| 5 to 50 |
++---------+
 
 
 
@@ -95849,11 +96049,11 @@ SOAR\_THML\_FLAP: Flap percent to be used during thermalling flight\.
 This sets the flap when in LOITER with soaring active\. Overrides the usual auto flap behaviour\.
 
 
-+---------+
-| Range   |
-+=========+
-| 0 - 100 |
-+---------+
++----------+
+| Range    |
++==========+
+| 0 to 100 |
++----------+
 
 
 
@@ -95876,11 +96076,11 @@ SR0\_RAW\_SENS: Raw sensor stream rate
 Raw sensor stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -95896,11 +96096,11 @@ SR0\_EXT\_STAT: Extended status stream rate to ground station
 Extended status stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -95916,11 +96116,11 @@ SR0\_RC\_CHAN: RC Channel stream rate to ground station
 RC Channel stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -95936,11 +96136,11 @@ SR0\_RAW\_CTRL: Raw Control stream rate to ground station
 Raw Control stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -95956,11 +96156,11 @@ SR0\_POSITION: Position stream rate to ground station
 Position stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -95976,11 +96176,11 @@ SR0\_EXTRA1: Extra data type 1 stream rate to ground station
 Extra data type 1 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -95996,11 +96196,11 @@ SR0\_EXTRA2: Extra data type 2 stream rate to ground station
 Extra data type 2 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96016,11 +96216,11 @@ SR0\_EXTRA3: Extra data type 3 stream rate to ground station
 Extra data type 3 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96036,11 +96236,11 @@ SR0\_PARAMS: Parameter stream rate to ground station
 Parameter stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96056,11 +96256,11 @@ SR0\_ADSB: ADSB stream rate to ground station
 ADSB stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96083,11 +96283,11 @@ SR1\_RAW\_SENS: Raw sensor stream rate
 Raw sensor stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96103,11 +96303,11 @@ SR1\_EXT\_STAT: Extended status stream rate to ground station
 Extended status stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96123,11 +96323,11 @@ SR1\_RC\_CHAN: RC Channel stream rate to ground station
 RC Channel stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96143,11 +96343,11 @@ SR1\_RAW\_CTRL: Raw Control stream rate to ground station
 Raw Control stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96163,11 +96363,11 @@ SR1\_POSITION: Position stream rate to ground station
 Position stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96183,11 +96383,11 @@ SR1\_EXTRA1: Extra data type 1 stream rate to ground station
 Extra data type 1 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96203,11 +96403,11 @@ SR1\_EXTRA2: Extra data type 2 stream rate to ground station
 Extra data type 2 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96223,11 +96423,11 @@ SR1\_EXTRA3: Extra data type 3 stream rate to ground station
 Extra data type 3 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96243,11 +96443,11 @@ SR1\_PARAMS: Parameter stream rate to ground station
 Parameter stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96263,11 +96463,11 @@ SR1\_ADSB: ADSB stream rate to ground station
 ADSB stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96290,11 +96490,11 @@ SR2\_RAW\_SENS: Raw sensor stream rate
 Raw sensor stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96310,11 +96510,11 @@ SR2\_EXT\_STAT: Extended status stream rate to ground station
 Extended status stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96330,11 +96530,11 @@ SR2\_RC\_CHAN: RC Channel stream rate to ground station
 RC Channel stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96350,11 +96550,11 @@ SR2\_RAW\_CTRL: Raw Control stream rate to ground station
 Raw Control stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96370,11 +96570,11 @@ SR2\_POSITION: Position stream rate to ground station
 Position stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96390,11 +96590,11 @@ SR2\_EXTRA1: Extra data type 1 stream rate to ground station
 Extra data type 1 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96410,11 +96610,11 @@ SR2\_EXTRA2: Extra data type 2 stream rate to ground station
 Extra data type 2 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96430,11 +96630,11 @@ SR2\_EXTRA3: Extra data type 3 stream rate to ground station
 Extra data type 3 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96450,11 +96650,11 @@ SR2\_PARAMS: Parameter stream rate to ground station
 Parameter stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96470,11 +96670,11 @@ SR2\_ADSB: ADSB stream rate to ground station
 ADSB stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96497,11 +96697,11 @@ SR3\_RAW\_SENS: Raw sensor stream rate
 Raw sensor stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96517,11 +96717,11 @@ SR3\_EXT\_STAT: Extended status stream rate to ground station
 Extended status stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96537,11 +96737,11 @@ SR3\_RC\_CHAN: RC Channel stream rate to ground station
 RC Channel stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96557,11 +96757,11 @@ SR3\_RAW\_CTRL: Raw Control stream rate to ground station
 Raw Control stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96577,11 +96777,11 @@ SR3\_POSITION: Position stream rate to ground station
 Position stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96597,11 +96797,11 @@ SR3\_EXTRA1: Extra data type 1 stream rate to ground station
 Extra data type 1 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96617,11 +96817,11 @@ SR3\_EXTRA2: Extra data type 2 stream rate to ground station
 Extra data type 2 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96637,11 +96837,11 @@ SR3\_EXTRA3: Extra data type 3 stream rate to ground station
 Extra data type 3 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96657,11 +96857,11 @@ SR3\_PARAMS: Parameter stream rate to ground station
 Parameter stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96677,11 +96877,11 @@ SR3\_ADSB: ADSB stream rate to ground station
 ADSB stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96704,11 +96904,11 @@ SR4\_RAW\_SENS: Raw sensor stream rate
 Raw sensor stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96724,11 +96924,11 @@ SR4\_EXT\_STAT: Extended status stream rate to ground station
 Extended status stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96744,11 +96944,11 @@ SR4\_RC\_CHAN: RC Channel stream rate to ground station
 RC Channel stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96764,11 +96964,11 @@ SR4\_RAW\_CTRL: Raw Control stream rate to ground station
 Raw Control stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96784,11 +96984,11 @@ SR4\_POSITION: Position stream rate to ground station
 Position stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96804,11 +97004,11 @@ SR4\_EXTRA1: Extra data type 1 stream rate to ground station
 Extra data type 1 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96824,11 +97024,11 @@ SR4\_EXTRA2: Extra data type 2 stream rate to ground station
 Extra data type 2 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96844,11 +97044,11 @@ SR4\_EXTRA3: Extra data type 3 stream rate to ground station
 Extra data type 3 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96864,11 +97064,11 @@ SR4\_PARAMS: Parameter stream rate to ground station
 Parameter stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96884,11 +97084,11 @@ SR4\_ADSB: ADSB stream rate to ground station
 ADSB stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96911,11 +97111,11 @@ SR5\_RAW\_SENS: Raw sensor stream rate
 Raw sensor stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96931,11 +97131,11 @@ SR5\_EXT\_STAT: Extended status stream rate to ground station
 Extended status stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96951,11 +97151,11 @@ SR5\_RC\_CHAN: RC Channel stream rate to ground station
 RC Channel stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96971,11 +97171,11 @@ SR5\_RAW\_CTRL: Raw Control stream rate to ground station
 Raw Control stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -96991,11 +97191,11 @@ SR5\_POSITION: Position stream rate to ground station
 Position stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97011,11 +97211,11 @@ SR5\_EXTRA1: Extra data type 1 stream rate to ground station
 Extra data type 1 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97031,11 +97231,11 @@ SR5\_EXTRA2: Extra data type 2 stream rate to ground station
 Extra data type 2 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97051,11 +97251,11 @@ SR5\_EXTRA3: Extra data type 3 stream rate to ground station
 Extra data type 3 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97071,11 +97271,11 @@ SR5\_PARAMS: Parameter stream rate to ground station
 Parameter stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97091,11 +97291,11 @@ SR5\_ADSB: ADSB stream rate to ground station
 ADSB stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97118,11 +97318,11 @@ SR6\_RAW\_SENS: Raw sensor stream rate
 Raw sensor stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97138,11 +97338,11 @@ SR6\_EXT\_STAT: Extended status stream rate to ground station
 Extended status stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97158,11 +97358,11 @@ SR6\_RC\_CHAN: RC Channel stream rate to ground station
 RC Channel stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97178,11 +97378,11 @@ SR6\_RAW\_CTRL: Raw Control stream rate to ground station
 Raw Control stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97198,11 +97398,11 @@ SR6\_POSITION: Position stream rate to ground station
 Position stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97218,11 +97418,11 @@ SR6\_EXTRA1: Extra data type 1 stream rate to ground station
 Extra data type 1 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97238,11 +97438,11 @@ SR6\_EXTRA2: Extra data type 2 stream rate to ground station
 Extra data type 2 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97258,11 +97458,11 @@ SR6\_EXTRA3: Extra data type 3 stream rate to ground station
 Extra data type 3 stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97278,11 +97478,11 @@ SR6\_PARAMS: Parameter stream rate to ground station
 Parameter stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97298,11 +97498,11 @@ SR6\_ADSB: ADSB stream rate to ground station
 ADSB stream rate to ground station
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -97772,11 +97972,11 @@ STEER2SRV\_TCONST: Steering Time Constant
 This controls the time constant in seconds from demanded to achieved steering angle\. A value of 0\.75 is a good default and will work with nearly all rovers\. Ground steering in aircraft needs a bit smaller time constant\, and a value of 0\.5 is recommended for best ground handling in fixed wing aircraft\. A value of 0\.75 means that the controller will try to correct any deviation between the desired and actual steering angle in 0\.75 seconds\. Advanced users may want to reduce this time to obtain a faster response but there is no point setting a time less than the vehicle can achieve\.
 
 
-+-----------+-----------+---------+
-| Increment | Range     | Units   |
-+===========+===========+=========+
-| 0.1       | 0.4 - 1.0 | seconds |
-+-----------+-----------+---------+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| 0.1       | 0.4 to 1.0 | seconds |
++-----------+------------+---------+
 
 
 
@@ -97790,11 +97990,11 @@ STEER2SRV\_P: Steering turning gain
 The proportional gain for steering\. This should be approximately equal to the diameter of the turning circle of the vehicle at low speed and maximum steering angle
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.1       | 0.1 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.1       | 0.1 to 10.0 |
++-----------+-------------+
 
 
 
@@ -97808,11 +98008,11 @@ STEER2SRV\_I: Integrator Gain
 This is the gain from the integral of steering angle\. Increasing this gain causes the controller to trim out steady offsets due to an out of trim vehicle\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.05      | 0 - 1.0 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.05      | 0 to 1.0 |
++-----------+----------+
 
 
 
@@ -97826,11 +98026,11 @@ STEER2SRV\_D: Damping Gain
 This adjusts the damping of the steering control loop\. This gain helps to reduce steering jitter with vibration\. It should be increased in 0\.01 increments as too high a value can lead to a high frequency steering oscillation that could overstress the vehicle\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.01      | 0 - 0.1 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.01      | 0 to 0.1 |
++-----------+----------+
 
 
 
@@ -97845,11 +98045,11 @@ STEER2SRV\_IMAX: Integrator limit
 This limits the number of degrees of steering in centi\-degrees over which the integrator will operate\. At the default setting of 1500 centi\-degrees\, the integrator will be limited to \+\- 15 degrees of servo travel\. The maximum servo deflection is \+\- 45 centi\-degrees\, so the default value represents a 1\/3rd of the total control throw which is adequate unless the vehicle is severely out of trim\.
 
 
-+-----------+----------+--------------+
-| Increment | Range    | Units        |
-+===========+==========+==============+
-| 10        | 0 - 4500 | centidegrees |
-+-----------+----------+--------------+
++-----------+-----------+--------------+
+| Increment | Range     | Units        |
++===========+===========+==============+
+| 10        | 0 to 4500 | centidegrees |
++-----------+-----------+--------------+
 
 
 
@@ -97863,11 +98063,11 @@ STEER2SRV\_MINSPD: Minimum speed
 This is the minimum assumed ground speed in meters\/second for steering\. Having a minimum speed prevents oscillations when the vehicle first starts moving\. The vehicle can still drive slower than this limit\, but the steering calculations will be done based on this minimum speed\.
 
 
-+-----------+-------+-------------------+
-| Increment | Range | Units             |
-+===========+=======+===================+
-| 0.1       | 0 - 5 | meters per second |
-+-----------+-------+-------------------+
++-----------+--------+-------------------+
+| Increment | Range  | Units             |
++===========+========+===================+
+| 0.1       | 0 to 5 | meters per second |
++-----------+--------+-------------------+
 
 
 
@@ -97881,11 +98081,11 @@ STEER2SRV\_FF: Steering feed forward
 The feed forward gain for steering this is the ratio of the achieved turn rate to applied steering\. A value of 1 means that the vehicle would yaw at a rate of 45 degrees per second with full steering deflection at 1m\/s ground speed\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.1       | 0.0 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.1       | 0.0 to 10.0 |
++-----------+-------------+
 
 
 
@@ -97900,11 +98100,11 @@ STEER2SRV\_DRTSPD: Derating speed
 Speed after that the maximum degree of steering will start to derate\. Set this speed to a maximum speed that a plane can do controlled turn at maximum angle of steering wheel without rolling to wing\. If 0 then no derating is used\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.1       | 0.0 - 30.0 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.1       | 0.0 to 30.0 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -97919,11 +98119,11 @@ STEER2SRV\_DRTFCT: Derating factor
 Degrees of steering wheel to derate at each additional m\/s of speed above \"Derating speed\"\. Should be set so that at higher speeds the plane does not roll to the wing in turns\.
 
 
-+-----------+------------+------------------------------+
-| Increment | Range      | Units                        |
-+===========+============+==============================+
-| 0.1       | 0.0 - 50.0 | degrees per meter per second |
-+-----------+------------+------------------------------+
++-----------+-------------+------------------------------+
+| Increment | Range       | Units                        |
++===========+=============+==============================+
+| 0.1       | 0.0 to 50.0 | degrees per meter per second |
++-----------+-------------+------------------------------+
 
 
 
@@ -97938,11 +98138,11 @@ STEER2SRV\_DRTMIN: Minimum angle of wheel
 The angle that limits smallest angle of steering wheel at maximum speed\. Even if it should derate below\, it will stop derating at this angle\.
 
 
-+-----------+----------+--------------+
-| Increment | Range    | Units        |
-+===========+==========+==============+
-| 10        | 0 - 4500 | centidegrees |
-+-----------+----------+--------------+
++-----------+-----------+--------------+
+| Increment | Range     | Units        |
++===========+===========+==============+
+| 10        | 0 to 4500 | centidegrees |
++-----------+-----------+--------------+
 
 
 
@@ -97963,11 +98163,11 @@ TECS\_CLMB\_MAX: Maximum Climb Rate \(metres\/sec\)
 Maximum demanded climb rate\. Do not set higher than the climb speed at THR\_MAX at TRIM\_ARSPD\_CM when the battery is at low voltage\. Reduce value if airspeed cannot be maintained on ascent\. Increase value if throttle does not increase significantly to ascend\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.1       | 0.1 - 20.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.1       | 0.1 to 20.0 |
++-----------+-------------+
 
 
 
@@ -97981,11 +98181,11 @@ TECS\_SINK\_MIN: Minimum Sink Rate \(metres\/sec\)
 Minimum sink rate when at THR\_MIN \(or zero throttle when THR\_MIN \< 0\) and TRIM\_ARSPD\_CM\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.1       | 0.1 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.1       | 0.1 to 10.0 |
++-----------+-------------+
 
 
 
@@ -98000,11 +98200,11 @@ TECS\_TIME\_CONST: Controller time constant \(sec\)
 Time constant of the TECS control algorithm\. Small values make faster altitude corrections but can cause overshoot and aggressive behavior\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.2       | 3.0 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.2       | 3.0 to 10.0 |
++-----------+-------------+
 
 
 
@@ -98019,11 +98219,11 @@ TECS\_THR\_DAMP: Controller throttle damping
 Damping gain for throttle demand loop\. Increase to add throttle activity to dampen oscillations in speed and height\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.1 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.1 to 1.0 |
++-----------+------------+
 
 
 
@@ -98038,11 +98238,11 @@ TECS\_INTEG\_GAIN: Controller integrator
 Integrator gain to trim out long\-term speed and height errors\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.02      | 0.0 - 0.5 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.02      | 0.0 to 0.5 |
++-----------+------------+
 
 
 
@@ -98057,11 +98257,11 @@ TECS\_VERT\_ACC: Vertical Acceleration Limit \(metres\/sec\^2\)
 Maximum vertical acceleration used to correct speed or height errors\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.5       | 1.0 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.5       | 1.0 to 10.0 |
++-----------+-------------+
 
 
 
@@ -98076,11 +98276,11 @@ TECS\_HGT\_OMEGA: Height complementary filter frequency \(radians\/sec\)
 This is the cross\-over frequency of the complementary filter used to fuse vertical acceleration and baro alt to obtain an estimate of height rate and height\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.05      | 1.0 - 5.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.05      | 1.0 to 5.0 |
++-----------+------------+
 
 
 
@@ -98095,11 +98295,11 @@ TECS\_SPD\_OMEGA: Speed complementary filter frequency \(radians\/sec\)
 This is the cross\-over frequency of the complementary filter used to fuse longitudinal acceleration and airspeed to obtain a lower noise and lag estimate of airspeed\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.05      | 0.5 - 2.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.05      | 0.5 to 2.0 |
++-----------+------------+
 
 
 
@@ -98114,11 +98314,11 @@ TECS\_RLL2THR: Bank angle compensation gain
 Gain from bank angle to throttle to compensate for loss of airspeed from drag in turns\. Set to approximately 10x the sink rate in m\/s caused by a 45\-degree turn\. High efficiency models may need less while less efficient aircraft may need more\. Should be tuned in an automatic mission with waypoints and turns greater than 90 degrees\. Tune with PTCH2SRV\_RLL and KFF\_RDDRMIX to achieve constant airspeed\, constant altitude turns\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 1.0       | 5.0 - 30.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 1.0       | 5.0 to 30.0 |
++-----------+-------------+
 
 
 
@@ -98133,11 +98333,11 @@ TECS\_SPDWEIGHT: Weighting applied to speed control
 Mixing of pitch and throttle correction for height and airspeed errors\. Pitch controls altitude and throttle controls airspeed if set to 0\. Pitch controls airspeed and throttle controls altitude if set to 2 \(good for gliders\)\. Blended if set to 1\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.0 - 2.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.0 to 2.0 |
++-----------+------------+
 
 
 
@@ -98152,11 +98352,11 @@ TECS\_PTCH\_DAMP: Controller pitch damping
 Damping gain for pitch control from TECS control\.  Increasing may correct for oscillations in speed and height\, but too much may cause additional oscillation and degraded control\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.1 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.1 to 1.0 |
++-----------+------------+
 
 
 
@@ -98170,11 +98370,11 @@ TECS\_SINK\_MAX: Maximum Descent Rate \(metres\/sec\)
 Maximum demanded descent rate\. Do not set higher than the vertical speed the aircraft can maintain at THR\_MIN \(or zero throttle when THR\_MIN \< 0\)\, TECS\_PITCH\_MIN\, and ARSPD\_FBW\_MAX\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.1       | 0.0 - 20.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.1       | 0.0 to 20.0 |
++-----------+-------------+
 
 
 
@@ -98188,11 +98388,11 @@ TECS\_LAND\_ARSPD: Airspeed during landing approach \(m\/s\)
 When performing an autonomus landing\, this value is used as the goal airspeed during approach\.  Note that this parameter is not useful if your platform does not have an airspeed sensor \(use TECS\_LAND\_THR instead\)\.  If negative then this value is not used during landing\.
 
 
-+-----------+----------+
-| Increment | Range    |
-+===========+==========+
-| 1         | -1 - 127 |
-+-----------+----------+
++-----------+-----------+
+| Increment | Range     |
++===========+===========+
+| 1         | -1 to 127 |
++-----------+-----------+
 
 
 
@@ -98206,11 +98406,11 @@ TECS\_LAND\_THR: Cruise throttle during landing approach \(percentage\)
 Use this parameter instead of LAND\_ARSPD if your platform does not have an airspeed sensor\.  It is the cruise throttle during landing approach\.  If this value is negative then it is disabled and TECS\_LAND\_ARSPD is used instead\.
 
 
-+-----------+----------+
-| Increment | Range    |
-+===========+==========+
-| 0.1       | -1 - 100 |
-+-----------+----------+
++-----------+-----------+
+| Increment | Range     |
++===========+===========+
+| 0.1       | -1 to 100 |
++-----------+-----------+
 
 
 
@@ -98225,11 +98425,11 @@ TECS\_LAND\_SPDWGT: Weighting applied to speed control during landing\.
 Same as SPDWEIGHT parameter\, with the exception that this parameter is applied during landing flight stages\.  A value closer to 2 will result in the plane ignoring height error during landing and our experience has been that the plane will therefore keep the nose up \-\- sometimes good for a glider landing \(with the side effect that you will likely glide a ways past the landing point\)\.  A value closer to 0 results in the plane ignoring speed error \-\- use caution when lowering the value below 1 \-\- ignoring speed could result in a stall\. Values between 0 and 2 are valid values for a fixed landing weight\. When using \-1 the weight will be scaled during the landing\. At the start of the landing approach it starts with TECS\_SPDWEIGHT and scales down to 0 by the time you reach the land point\. Example\: Halfway down the landing approach you\'ll effectively have a weight of TECS\_SPDWEIGHT\/2\.
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.1       | -1.0 - 2.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.1       | -1.0 to 2.0 |
++-----------+-------------+
 
 
 
@@ -98244,11 +98444,11 @@ TECS\_PITCH\_MAX: Maximum pitch in auto flight
 Overrides LIM\_PITCH\_MAX in automatic throttle modes to reduce climb rates\. Uses LIM\_PITCH\_MAX if set to 0\. For proper TECS tuning\, set to the angle that the aircraft can climb at TRIM\_ARSPD\_CM and THR\_MAX\.
 
 
-+-----------+--------+
-| Increment | Range  |
-+===========+========+
-| 1         | 0 - 45 |
-+-----------+--------+
++-----------+---------+
+| Increment | Range   |
++===========+=========+
+| 1         | 0 to 45 |
++-----------+---------+
 
 
 
@@ -98263,11 +98463,11 @@ TECS\_PITCH\_MIN: Minimum pitch in auto flight
 Overrides LIM\_PITCH\_MIN in automatic throttle modes to reduce descent rates\. Uses LIM\_PITCH\_MIN if set to 0\. For proper TECS tuning\, set to the angle that the aircraft can descend at without overspeeding\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | -45 - 0 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | -45 to 0 |
++-----------+----------+
 
 
 
@@ -98282,11 +98482,11 @@ TECS\_LAND\_SINK: Sink rate for final landing stage
 The sink rate in meters\/second for the final stage of landing\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.0 - 2.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.0 to 2.0 |
++-----------+------------+
 
 
 
@@ -98301,11 +98501,11 @@ TECS\_LAND\_TCONST: Land controller time constant \(sec\)
 This is the time constant of the TECS control algorithm when in final landing stage of flight\. It should be smaller than TECS\_TIME\_CONST to allow for faster flare
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.2       | 1.0 - 5.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.2       | 1.0 to 5.0 |
++-----------+------------+
 
 
 
@@ -98320,11 +98520,11 @@ TECS\_LAND\_DAMP: Controller sink rate to pitch gain during flare
 This is the sink rate gain for the pitch demand loop when in final landing stage of flight\. It should be larger than TECS\_PTCH\_DAMP to allow for better sink rate control during flare\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.1 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.1 to 1.0 |
++-----------+------------+
 
 
 
@@ -98339,11 +98539,11 @@ TECS\_LAND\_PMAX: Maximum pitch during final stage of landing
 This limits the pitch used during the final stage of automatic landing\. During the final landing stage most planes need to keep their pitch small to avoid stalling\. A maximum of 10 degrees is usually good\. A value of zero means to use the normal pitch limits\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | -5 - 40 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 1         | -5 to 40 |
++-----------+----------+
 
 
 
@@ -98358,11 +98558,11 @@ TECS\_APPR\_SMAX: Sink rate max for landing approach stage
 The sink rate max for the landing approach stage of landing\. This will need to be large for steep landing approaches especially when using reverse thrust\. If 0\, then use TECS\_SINK\_MAX\.
 
 
-+-----------+------------+-------------------+
-| Increment | Range      | Units             |
-+===========+============+===================+
-| 0.1       | 0.0 - 20.0 | meters per second |
-+-----------+------------+-------------------+
++-----------+-------------+-------------------+
+| Increment | Range       | Units             |
++===========+=============+===================+
+| 0.1       | 0.0 to 20.0 | meters per second |
++-----------+-------------+-------------------+
 
 
 
@@ -98377,11 +98577,11 @@ TECS\_LAND\_SRC: Land sink rate change
 When zero\, the flare sink rate \(TECS\_LAND\_SINK\) is a fixed sink demand\. With this enabled the flare sinkrate will increase\/decrease the flare sink demand as you get further beyond the LAND waypoint\. Has no effect before the waypoint\. This value is added to TECS\_LAND\_SINK proportional to distance traveled after wp\. With an increasing sink rate you can still land in a given distance if you\'re traveling too fast and cruise passed the land point\. A positive value will force the plane to land sooner proportional to distance passed land point\. A negative number will tell the plane to slowly climb allowing for a pitched\-up stall landing\. Recommend 0\.2 as initial value\.
 
 
-+-----------+------------+-----------------------------+
-| Increment | Range      | Units                       |
-+===========+============+=============================+
-| 0.1       | -2.0 - 2.0 | meters per second per meter |
-+-----------+------------+-----------------------------+
++-----------+-------------+-----------------------------+
+| Increment | Range       | Units                       |
++===========+=============+=============================+
+| 0.1       | -2.0 to 2.0 | meters per second per meter |
++-----------+-------------+-----------------------------+
 
 
 
@@ -98396,11 +98596,11 @@ TECS\_LAND\_TDAMP: Controller throttle damping when landing
 Damping gain for the throttle demand loop during an auto\-landing\. Same as TECS\_THR\_DAMP but only in effect during an auto\-land\. Increase to add throttle activity to dampen oscillations in speed and height\. When set to 0 landing throttle damping is controlled by TECS\_THR\_DAMP\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.1 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.1 to 1.0 |
++-----------+------------+
 
 
 
@@ -98415,11 +98615,11 @@ TECS\_LAND\_IGAIN: Controller integrator during landing
 This is the integrator gain on the control loop during landing\. When set to 0 then TECS\_INTEG\_GAIN is used\. Increase to increase the rate at which speed and height offsets are trimmed out\. Typically values lower than TECS\_INTEG\_GAIN work best
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.02      | 0.0 - 0.5 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.02      | 0.0 to 0.5 |
++-----------+------------+
 
 
 
@@ -98434,11 +98634,11 @@ TECS\_TKOFF\_IGAIN: Controller integrator during takeoff
 This is the integrator gain on the control loop during takeoff\. When set to 0 then TECS\_INTEG\_GAIN is used\. Increase to increase the rate at which speed and height offsets are trimmed out\. Typically values higher than TECS\_INTEG\_GAIN work best
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.02      | 0.0 - 0.5 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.02      | 0.0 to 0.5 |
++-----------+------------+
 
 
 
@@ -98453,11 +98653,11 @@ TECS\_LAND\_PDAMP: Pitch damping gain when landing
 This is the damping gain for the pitch demand loop during landing\. Increase to add damping  to correct for oscillations in speed and height\. If set to 0 then TECS\_PTCH\_DAMP will be used instead\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.1 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.1 to 1.0 |
++-----------+------------+
 
 
 
@@ -98522,11 +98722,11 @@ TECS\_PTCH\_FF\_V0: Baseline airspeed for pitch feed\-forward\.
 This parameter sets the airspeed at which no feed\-forward is applied between demanded airspeed and pitch\. It should correspond to the airspeed in metres per second at which the plane glides at neutral pitch including STAB\_PITCH\_DOWN\.
 
 
-+------------+
-| Range      |
-+============+
-| 5.0 - 50.0 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 5.0 to 50.0 |
++-------------+
 
 
 
@@ -98541,11 +98741,11 @@ TECS\_PTCH\_FF\_K: Gain for pitch feed\-forward\.
 This parameter sets the gain between demanded airspeed and pitch\. It has units of radians per metre per second and should generally be negative\. A good starting value is \-0\.04 for gliders and \-0\.08 for draggy airframes\. The default \(0\.0\) disables this feed\-forward\.
 
 
-+------------+
-| Range      |
-+============+
-| -5.0 - 0.0 |
-+------------+
++-------------+
+| Range       |
++=============+
+| -5.0 to 0.0 |
++-------------+
 
 
 
@@ -98560,11 +98760,11 @@ TECS\_THR\_FF\_FILT: Throttle FF component filter
 Throttle FF component filter value which determines what proportion of the current state vs newly calculated throttle FF value are used\. 1\.0 means used 100\% of the newly calculated value \(no filtering\)
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.2 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.2 to 1.0 |
++-----------+------------+
 
 
 
@@ -98579,11 +98779,11 @@ TECS\_THR\_FF\_DAMP: Throttle FF component dampening factor
 Throttle FF component dampening factor\. 0 means not use FF for throttle calculations\. 1 means use 100\% of the calculated throttle FF value\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.1       | 0.0 - 1.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.1       | 0.0 to 1.0 |
++-----------+------------+
 
 
 
@@ -98598,11 +98798,11 @@ TECS\_SPDRATE\_ACC: Speed demand rate acceleration \(m\/s\^3\)
 Speed demand rate acceleration \(m\/s\^3\)
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.05      | 0.1 - 2.0 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.05      | 0.1 to 2.0 |
++-----------+------------+
 
 
 
@@ -98617,11 +98817,11 @@ TECS\_SPDRATE\_MIN: Speed demand rate when demanding a decrease in speed \(m\/s\
 Speed demand rate when demanding a decrease in speed \(m\/s\^2\)\. Set to 0 \(default\) to calculate the rate based on the airplane\'s physical limits
 
 
-+-----------+--------------+
-| Increment | Range        |
-+===========+==============+
-| 0.5       | -1.0 - -10.0 |
-+-----------+--------------+
++-----------+---------------+
+| Increment | Range         |
++===========+===============+
+| 0.5       | -1.0 to -10.0 |
++-----------+---------------+
 
 
 
@@ -98636,11 +98836,11 @@ TECS\_SPDRATE\_MAX: Speed demand rate when demanding an increase in speed \(m\/s
 Speed demand rate when demanding an increase in speed \(m\/s\^2\)\. Set to 0 \(default\) to calculate the rate based on the airplane\'s physical limits
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.5       | 1.0 - 10.0 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.5       | 1.0 to 10.0 |
++-----------+-------------+
 
 
 
@@ -98731,11 +98931,11 @@ TERRAIN\_MARGIN: Acceptance margin
 Margin in centi\-meters to accept terrain data from the GCS\. This can be used to allow older terrain data generated with less accurate latitude\/longitude scaling to be used
 
 
-+--------------+--------+
-| Range        | Units  |
-+==============+========+
-| 0.05 - 50000 | meters |
-+--------------+--------+
++---------------+--------+
+| Range         | Units  |
++===============+========+
+| 0.05 to 50000 | meters |
++---------------+--------+
 
 
 
@@ -98750,11 +98950,11 @@ TERRAIN\_OFS\_MAX: Terrain reference offset maximum
 The maximum adjustment of terrain altitude based on the assumption that the vehicle is on the ground when it is armed\. When the vehicle is armed the location of the vehicle is recorded\, and when terrain data is available for that location a height adjustment for terrain data is calculated that aligns the terrain height at that location with the altitude recorded at arming\. This height adjustment is applied to all terrain data\. This parameter clamps the amount of adjustment\. A value of zero disables the use of terrain height adjustment\.
 
 
-+--------+--------+
-| Range  | Units  |
-+========+========+
-| 0 - 50 | meters |
-+--------+--------+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 to 50 | meters |
++---------+--------+
 
 
 
@@ -98775,11 +98975,11 @@ TKOFF\_ALT: Takeoff mode altitude
 This is the target altitude for TAKEOFF mode
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 1         | 0 - 200 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 1         | 0 to 200 | meters |
++-----------+----------+--------+
 
 
 
@@ -98793,11 +98993,11 @@ TKOFF\_LVL\_ALT: Takeoff mode altitude level altitude
 This is the altitude below which wings are held level for TAKEOFF mode
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 1         | 0 - 50 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 1         | 0 to 50 | meters |
++-----------+---------+--------+
 
 
 
@@ -98811,11 +99011,11 @@ TKOFF\_LVL\_PITCH: Takeoff mode altitude initial pitch
 This is the target pitch for the initial climb to TKOFF\_LVL\_ALT
 
 
-+-----------+--------+---------+
-| Increment | Range  | Units   |
-+===========+========+=========+
-| 1         | 0 - 30 | degrees |
-+-----------+--------+---------+
++-----------+---------+---------+
+| Increment | Range   | Units   |
++===========+=========+=========+
+| 1         | 0 to 30 | degrees |
++-----------+---------+---------+
 
 
 
@@ -98829,11 +99029,11 @@ TKOFF\_DIST: Takeoff mode distance
 This is the distance from the takeoff location where the plane will loiter\. The loiter point will be in the direction of takeoff \(the direction the plane is facing when the motor starts\)
 
 
-+-----------+---------+--------+
-| Increment | Range   | Units  |
-+===========+=========+========+
-| 1         | 0 - 500 | meters |
-+-----------+---------+--------+
++-----------+----------+--------+
+| Increment | Range    | Units  |
++===========+==========+========+
+| 1         | 0 to 500 | meters |
++-----------+----------+--------+
 
 
 
@@ -99104,11 +99304,11 @@ TUNE\_CHAN\_MIN: Transmitter tuning channel minimum pwm
 This sets the PWM lower limit for the tuning channel
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -99122,11 +99322,11 @@ TUNE\_CHAN\_MAX: Transmitter tuning channel maximum pwm
 This sets the PWM upper limit for the tuning channel
 
 
-+------------+
-| Range      |
-+============+
-| 900 - 2100 |
-+------------+
++-------------+
+| Range       |
++=============+
+| 900 to 2100 |
++-------------+
 
 
 
@@ -99229,11 +99429,11 @@ TUNE\_ERR\_THRESH: Controller error threshold
 This sets the controller error threshold above which an alarm will sound and a message will be sent to the GCS to warn of controller instability while tuning\. The error is the rms value of the P\+D corrections in the loop\. High values in hover indicate possible instability due to too high PID gains or excessively high D to P gain ratios\.\-1 will disable this message\.
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 1 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 1 |
++--------+
 
 
 
@@ -99286,11 +99486,11 @@ VISO\_POS\_X: Visual odometry camera X position offset
 X position of the camera in body frame\. Positive X is forward of the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -99305,11 +99505,11 @@ VISO\_POS\_Y: Visual odometry camera Y position offset
 Y position of the camera in body frame\. Positive Y is to the right of the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -99324,11 +99524,11 @@ VISO\_POS\_Z: Visual odometry camera Z position offset
 Z position of the camera in body frame\. Positive Z is down from the origin\.
 
 
-+-----------+--------+--------+
-| Increment | Range  | Units  |
-+===========+========+========+
-| 0.01      | -5 - 5 | meters |
-+-----------+--------+--------+
++-----------+---------+--------+
+| Increment | Range   | Units  |
++===========+=========+========+
+| 0.01      | -5 to 5 | meters |
++-----------+---------+--------+
 
 
 
@@ -99387,11 +99587,11 @@ VISO\_DELAY\_MS: Visual odometry sensor delay
 Visual odometry sensor delay relative to inertial measurements
 
 
-+---------+--------------+
-| Range   | Units        |
-+=========+==============+
-| 0 - 250 | milliseconds |
-+---------+--------------+
++----------+--------------+
+| Range    | Units        |
++==========+==============+
+| 0 to 250 | milliseconds |
++----------+--------------+
 
 
 
@@ -99406,11 +99606,11 @@ VISO\_VEL\_M\_NSE: Visual odometry velocity measurement noise
 Visual odometry velocity measurement noise in m\/s
 
 
-+------------+-------------------+
-| Range      | Units             |
-+============+===================+
-| 0.05 - 5.0 | meters per second |
-+------------+-------------------+
++-------------+-------------------+
+| Range       | Units             |
++=============+===================+
+| 0.05 to 5.0 | meters per second |
++-------------+-------------------+
 
 
 
@@ -99425,11 +99625,11 @@ VISO\_POS\_M\_NSE: Visual odometry position measurement noise
 Visual odometry position measurement noise minimum \(meters\)\. This value will be used if the sensor provides a lower noise value \(or no noise value\)
 
 
-+------------+--------+
-| Range      | Units  |
-+============+========+
-| 0.1 - 10.0 | meters |
-+------------+--------+
++-------------+--------+
+| Range       | Units  |
++=============+========+
+| 0.1 to 10.0 | meters |
++-------------+--------+
 
 
 
@@ -99444,11 +99644,11 @@ VISO\_YAW\_M\_NSE: Visual odometry yaw measurement noise
 Visual odometry yaw measurement noise minimum \(radians\)\, This value will be used if the sensor provides a lower noise value \(or no noise value\)
 
 
-+------------+---------+
-| Range      | Units   |
-+============+=========+
-| 0.05 - 1.0 | radians |
-+------------+---------+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| 0.05 to 1.0 | radians |
++-------------+---------+
 
 
 
@@ -99494,11 +99694,11 @@ VTX\_POWER: Video Transmitter Power Level
 Video Transmitter Power Level\. Different VTXs support different power levels\, the power level chosen will be rounded down to the nearest supported power level
 
 
-+----------+
-| Range    |
-+==========+
-| 1 - 1000 |
-+----------+
++-----------+
+| Range     |
++===========+
+| 1 to 1000 |
++-----------+
 
 
 
@@ -99512,11 +99712,11 @@ VTX\_CHANNEL: Video Transmitter Channel
 Video Transmitter Channel
 
 
-+-------+
-| Range |
-+=======+
-| 0 - 7 |
-+-------+
++--------+
+| Range  |
++========+
+| 0 to 7 |
++--------+
 
 
 
@@ -99563,11 +99763,11 @@ VTX\_FREQ: Video Transmitter Frequency
 Video Transmitter Frequency\. The frequency is derived from the setting of BAND and CHANNEL
 
 
-+-------------+----------+
-| Range       | ReadOnly |
-+=============+==========+
-| 5000 - 6000 | True     |
-+-------------+----------+
++--------------+----------+
+| Range        | ReadOnly |
++==============+==========+
+| 5000 to 6000 | True     |
++--------------+----------+
 
 
 
@@ -99613,11 +99813,11 @@ VTX\_MAX\_POWER: Video Transmitter Max Power Level
 Video Transmitter Maximum Power Level\. Different VTXs support different power levels\, this prevents the power aux switch from requesting too high a power level\. The switch supports 6 power levels and the selected power will be a subdivision between 0 and this setting\.
 
 
-+-----------+
-| Range     |
-+===========+
-| 25 - 1000 |
-+-----------+
++------------+
+| Range      |
++============+
+| 25 to 1000 |
++------------+
 
 
 
@@ -99639,11 +99839,11 @@ YAW2SRV\_SLIP: Sideslip control gain
 Gain from lateral acceleration to demanded yaw rate for aircraft with enough fuselage area to detect lateral acceleration and sideslips\. Do not enable for flying wings and gliders\. Actively coordinates flight more than just yaw damping\. Set after YAW2SRV\_DAMP and YAW2SRV\_INT are tuned\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.25      | 0 - 4 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.25      | 0 to 4 |
++-----------+--------+
 
 
 
@@ -99658,11 +99858,11 @@ YAW2SRV\_INT: Sideslip control integrator
 Integral gain from lateral acceleration error\. Effectively trims rudder to eliminate long\-term sideslip\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.25      | 0 - 2 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.25      | 0 to 2 |
++-----------+--------+
 
 
 
@@ -99677,11 +99877,11 @@ YAW2SRV\_DAMP: Yaw damping
 Gain from yaw rate to rudder\. Most effective at yaw damping and should be tuned after KFF\_RDDRMIX\. Also disables YAW2SRV\_INT if set to 0\.
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.25      | 0 - 2 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.25      | 0 to 2 |
++-----------+--------+
 
 
 
@@ -99696,11 +99896,11 @@ YAW2SRV\_RLL: Yaw coordination gain
 Gain to the yaw rate required to keep it consistent with the turn rate in a coordinated turn\. Corrects for yaw tendencies after the turn is established\. Increase yaw into the turn by raising\. Increase yaw out of the turn by decreasing\. Values outside of 0\.9\-1\.1 range indicate airspeed calibration problems\.
 
 
-+-----------+-----------+
-| Increment | Range     |
-+===========+===========+
-| 0.05      | 0.8 - 1.2 |
-+-----------+-----------+
++-----------+------------+
+| Increment | Range      |
++===========+============+
+| 0.05      | 0.8 to 1.2 |
++-----------+------------+
 
 
 
@@ -99715,11 +99915,11 @@ YAW2SRV\_IMAX: Integrator limit
 Limit of yaw integrator gain in centi\-degrees of servo travel\. Servos are assumed to have \+\/\- 4500 centi\-degrees of travel\, so a value of 1500 allows trim of up to 1\/3 of servo travel range\.
 
 
-+-----------+----------+
-| Increment | Range    |
-+===========+==========+
-| 1         | 0 - 4500 |
-+-----------+----------+
++-----------+-----------+
+| Increment | Range     |
++===========+===========+
+| 1         | 0 to 4500 |
++-----------+-----------+
 
 
 
@@ -99759,11 +99959,11 @@ YAW\_RATE\_P: Yaw axis rate controller P gain
 Yaw axis rate controller P gain\.  Converts the difference between desired yaw rate and actual yaw rate into a motor speed output
 
 
-+-----------+-------------+
-| Increment | Range       |
-+===========+=============+
-| 0.005     | 0.08 - 0.35 |
-+-----------+-------------+
++-----------+--------------+
+| Increment | Range        |
++===========+==============+
+| 0.005     | 0.08 to 0.35 |
++-----------+--------------+
 
 
 
@@ -99777,11 +99977,11 @@ YAW\_RATE\_I: Yaw axis rate controller I gain
 Yaw axis rate controller I gain\.  Corrects long\-term difference in desired yaw rate vs actual yaw rate
 
 
-+-----------+------------+
-| Increment | Range      |
-+===========+============+
-| 0.01      | 0.01 - 0.6 |
-+-----------+------------+
++-----------+-------------+
+| Increment | Range       |
++===========+=============+
+| 0.01      | 0.01 to 0.6 |
++-----------+-------------+
 
 
 
@@ -99795,11 +99995,11 @@ YAW\_RATE\_IMAX: Yaw axis rate controller I gain maximum
 Yaw axis rate controller I gain maximum\.  Constrains the maximum motor output that the I gain will output
 
 
-+-----------+-------+
-| Increment | Range |
-+===========+=======+
-| 0.01      | 0 - 1 |
-+-----------+-------+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.01      | 0 to 1 |
++-----------+--------+
 
 
 
@@ -99813,11 +100013,11 @@ YAW\_RATE\_D: Yaw axis rate controller D gain
 Yaw axis rate controller D gain\.  Compensates for short\-term change in desired yaw rate vs actual yaw rate
 
 
-+-----------+--------------+
-| Increment | Range        |
-+===========+==============+
-| 0.001     | 0.001 - 0.03 |
-+-----------+--------------+
++-----------+---------------+
+| Increment | Range         |
++===========+===============+
+| 0.001     | 0.001 to 0.03 |
++-----------+---------------+
 
 
 
@@ -99831,11 +100031,11 @@ YAW\_RATE\_FF: Yaw axis rate controller feed forward
 Yaw axis rate controller feed forward
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.001     | 0 - 3.0 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.001     | 0 to 3.0 |
++-----------+----------+
 
 
 
@@ -99849,11 +100049,11 @@ YAW\_RATE\_FLTT: Yaw axis rate controller target frequency in Hz
 Yaw axis rate controller target frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -99867,11 +100067,11 @@ YAW\_RATE\_FLTE: Yaw axis rate controller error frequency in Hz
 Yaw axis rate controller error frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 2 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 2 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -99885,11 +100085,11 @@ YAW\_RATE\_FLTD: Yaw axis rate controller derivative frequency in Hz
 Yaw axis rate controller derivative frequency in Hz
 
 
-+-----------+--------+-------+
-| Increment | Range  | Units |
-+===========+========+=======+
-| 1         | 0 - 50 | hertz |
-+-----------+--------+-------+
++-----------+---------+-------+
+| Increment | Range   | Units |
++===========+=========+=======+
+| 1         | 0 to 50 | hertz |
++-----------+---------+-------+
 
 
 
@@ -99904,11 +100104,11 @@ YAW\_RATE\_SMAX: Yaw slew rate limit
 Sets an upper limit on the slew rate produced by the combined P and D gains\. If the amplitude of the control action produced by the rate feedback exceeds this value\, then the D\+P gain is reduced to respect the limit\. This limits the amplitude of high frequency oscillations caused by an excessive gain\. The limit should be set to no more than 25\% of the actuators maximum slew rate to allow for load effects\. Note\: The gain will not be reduced to less than 10\% of the nominal value\. A value of zero will disable this feature\.
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 0.5       | 0 - 200 |
-+-----------+---------+
++-----------+----------+
+| Increment | Range    |
++===========+==========+
+| 0.5       | 0 to 200 |
++-----------+----------+
 
 
 

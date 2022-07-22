@@ -2356,6 +2356,46 @@ DO NOT EDIT
 </ul>
 
 
+<h1>AIS_ Parameters</h1>
+
+
+<h2>AIS receiver type (AIS_TYPE)</h2>
+
+<p>AIS receiver type</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>NMEA AIVDM message</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>AIS vessel list size (AIS_LIST_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>AIS list size of nearest vessels. Longer lists take longer to refresh with lower SRx_ADSB values.</p>
+<ul>
+<li>Range: 1 100</li>
+</ul>
+
+
+<h2>AIS vessel time out (AIS_TIME_OUT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>if no updates are received in this time a vessel will be removed from the list</p>
+<ul>
+<li>Units: seconds</li>
+<li>Range: 1 2000</li>
+</ul>
+
+
+<h2>AIS logging options (AIS_LOGGING)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bitmask of AIS logging options</p>
+<ul>
+<li>Bitmask: 0:Log all AIVDM messages,1:Log only unsupported AIVDM messages,2:Log decoded messages</li>
+</ul>
+
+
 <h1>ARMING_ Parameters</h1>
 
 
@@ -11973,9 +12013,9 @@ DO NOT EDIT
 
 <h2>ICE options (ICE_OPTIONS)</h2>
 
-<p>Options for ICE control</p>
+<p>Options for ICE control. The DisableIgnitionRCFailsafe option will cause the ignition to be set off on any R/C failsafe.</p>
 <ul>
-<li>Bitmask: 0:DisableIgnitionRCFailsafe,1:DisableRedlineRPMGovernor</li>
+<li>Bitmask: 0:DisableIgnitionRCFailsafe,1:DisableRedineGovernor</li>
 </ul>
 
 
@@ -29342,6 +29382,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Pilot controlled yaw rate (Q_PLT_Y_RATE)</h2>
+
+<p>Pilot controlled yaw rate max. Used in all pilot controlled modes except QAcro</p>
+<ul>
+<li>Units: degrees per second</li>
+<li>Range: 1 360</li>
+</ul>
+
+
+<h2>Pilot controlled yaw expo (Q_PLT_Y_EXPO)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Pilot controlled yaw expo to allow faster rotation when stick at edges</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>0.1</td><td>Very Low</td></tr>
+<tr><td>0.2</td><td>Low</td></tr>
+<tr><td>0.3</td><td>Medium</td></tr>
+<tr><td>0.4</td><td>High</td></tr>
+<tr><td>0.5</td><td>Very High</td></tr>
+</table>
+<li>Range: -0.5 1.0</li>
+</ul>
+
+
+<h2>Pilot yaw rate control input time constant (Q_PLT_Y_RATE_TC)</h2>
+
+<p>Pilot yaw rate control input time constant. Low numbers lead to sharper response, higher numbers to softer response.</p>
+<ul>
+<li>Units: seconds</li>
+<li>Range: 0 1</li>
+<li>Increment: 0.01</li>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0.5</td><td>Very Soft</td></tr>
+<tr><td>0.2</td><td>Soft</td></tr>
+<tr><td>0.15</td><td>Medium</td></tr>
+<tr><td>0.1</td><td>Crisp</td></tr>
+<tr><td>0.05</td><td>Very Crisp</td></tr>
+</table>
+</ul>
+
+
 <h1>Q_AUTOTUNE_ Parameters</h1>
 
 
@@ -36873,6 +36955,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36950,6 +37033,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -37026,6 +37110,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -37102,6 +37187,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -37178,6 +37264,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -37254,6 +37341,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -37427,6 +37515,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -37512,6 +37601,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
@@ -37597,6 +37687,7 @@ DO NOT EDIT
 <tr><td>41</td><td>CoDevESC</td></tr>
 <tr><td>42</td><td>DisplayPort</td></tr>
 <tr><td>43</td><td>MAVLink High Latency</td></tr>
+<tr><td>44</td><td>IRC Tramp</td></tr>
 </table>
 </ul>
 
