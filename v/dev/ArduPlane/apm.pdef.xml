@@ -26579,6 +26579,7 @@
           <value code="89">MIX_FLAP2ELEVCV</value>
           <value code="90">Ailerons diff</value>
           <value code="91">Elevator diff</value>
+          <value code="92">Q pitch trim</value>
           <value code="101">Set_RateRollPitch</value>
           <value code="102">Set_RateRoll</value>
           <value code="103">Set_RatePitch</value>

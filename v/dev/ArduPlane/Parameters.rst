@@ -99198,6 +99198,8 @@ This sets which parameter or set of parameters will be tuned\. Values greater th
 | +-------+------------------------------+ |
 | | 91    | Elevator diff                | |
 | +-------+------------------------------+ |
+| | 92    | Q pitch trim                 | |
+| +-------+------------------------------+ |
 | | 101   | Set_RateRollPitch            | |
 | +-------+------------------------------+ |
 | | 102   | Set_RateRoll                 | |

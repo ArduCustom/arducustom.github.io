@@ -44316,7 +44316,8 @@
         "89": "MIX_FLAP2ELEVCV",
         "9": "RateYawPI",
         "90": "Ailerons diff",
-        "91": "Elevator diff"
+        "91": "Elevator diff",
+        "92": "Q pitch trim"
       }
     },
     "TUNE_RANGE": {
