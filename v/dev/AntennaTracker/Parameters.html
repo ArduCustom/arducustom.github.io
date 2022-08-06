@@ -595,7 +595,7 @@ DO NOT EDIT
 
 <h2>Board Orientation (AHRS_ORIENTATION)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle.</p>
+<p>Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the AHRS_CUSTOM_ROLL/PIT/YAW angles for AHRS orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_ROT1_ROLL/PIT/YAW or CUST_ROT2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -4945,7 +4945,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -5112,7 +5112,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -5279,7 +5279,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -5601,7 +5601,7 @@ DO NOT EDIT
 
 <h2>Compass orientation (COMPASS_ORIENT)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation.</p>
+<p>The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -5831,7 +5831,7 @@ DO NOT EDIT
 
 <h2>Compass2 orientation (COMPASS_ORIENT2)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.</p>
+<p>The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -5909,7 +5909,7 @@ DO NOT EDIT
 
 <h2>Compass3 orientation (COMPASS_ORIENT3)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.</p>
+<p>The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -6556,6 +6556,57 @@ DO NOT EDIT
 <ul>
 <li>Increment: 1</li>
 <li>Range: 0 31</li>
+</ul>
+
+
+<h1>FENCE_ Parameters</h1>
+
+
+<h2>Fence enable/disable (FENCE_ENABLE)</h2>
+
+<p>Allows you to enable (1) or disable (0) the fence functionality</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>Fence Action (FENCE_ACTION)</h2>
+
+<p>What action should be taken when fence is breached</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Report Only</td></tr>
+<tr><td>1</td><td>RTL or Land</td></tr>
+</table>
+</ul>
+
+
+<h2>Circular Fence Radius (FENCE_RADIUS)</h2>
+
+<p>Circle fence radius which when breached will cause an RTL</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 30 10000</li>
+</ul>
+
+
+<h2>Fence Margin (FENCE_MARGIN)</h2>
+
+<p>Distance that autopilot&#x27;s should maintain from the fence to avoid a breach</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 1 10</li>
+</ul>
+
+
+<h2>Fence polygon point total (FENCE_TOTAL)</h2>
+
+<p>Number of polygon points saved in eeprom (do not update manually)</p>
+<ul>
+<li>Range: 1 20</li>
 </ul>
 
 
@@ -8771,6 +8822,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -8780,6 +8832,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -8789,6 +8842,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 

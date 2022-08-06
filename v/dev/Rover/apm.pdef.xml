@@ -518,7 +518,7 @@
         <field name="Range">-0.1745 +0.1745</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Board Orientation" name="AHRS_ORIENTATION" documentation="Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle." user="Advanced">
+      <param humanName="Board Orientation" name="AHRS_ORIENTATION" documentation="Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the AHRS_CUSTOM_ROLL/PIT/YAW angles for AHRS orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_ROT1_ROLL/PIT/YAW or CUST_ROT2_ROLL/PIT/YAW angles." user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Yaw45</value>
@@ -3392,6 +3392,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -3460,6 +3463,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -3528,6 +3534,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -3596,6 +3605,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -3795,7 +3807,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D1_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D1_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -3882,7 +3894,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D2_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D2_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -3969,7 +3981,7 @@
         <field name="UnitText">hertz</field>
       </param>
       <param humanName="UAVCAN options" name="CAN_D3_UC_OPTION" documentation="Option flags" user="Advanced">
-        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</field>
+        <field name="Bitmask">0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</field>
       </param>
       <param humanName="Notify State rate" name="CAN_D3_UC_NTF_RT" documentation="Maximum transmit rate for Notify State Message" user="Advanced">
         <field name="Range">1 200</field>
@@ -4155,7 +4167,7 @@
         <field name="UnitText">milligauss per ampere</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Compass orientation" name="COMPASS_ORIENT" documentation="The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation." user="Advanced">
+      <param humanName="Compass orientation" name="COMPASS_ORIENT" documentation="The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles." user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Yaw45</value>
@@ -4307,7 +4319,7 @@
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="Compass2 orientation" name="COMPASS_ORIENT2" documentation="The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used." user="Advanced">
+      <param humanName="Compass2 orientation" name="COMPASS_ORIENT2" documentation="The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles." user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Yaw45</value>
@@ -4370,7 +4382,7 @@
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="Compass3 orientation" name="COMPASS_ORIENT3" documentation="The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used." user="Advanced">
+      <param humanName="Compass3 orientation" name="COMPASS_ORIENT3" documentation="The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles." user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Yaw45</value>
@@ -5308,6 +5320,16 @@
       <param humanName="Primary core number" name="EK3_PRIMARY" documentation="The core number (index in IMU mask) that will be used as the primary EKF core on startup. While disarmed the EKF will force the use of this core. A value of 0 corresponds to the first IMU in EK3_IMU_MASK." user="Advanced">
         <field name="Range">0 2</field>
         <field name="Increment">1</field>
+      </param>
+      <param humanName="Logging Level" name="EK3_LOG_LEVEL" documentation="Determines how verbose the EKF3 streaming logging is. A value of 0 provides full logging(default), a value of 1 only XKF4 scaled innovations are logged, a value of 2 both XKF4 and GSF are logged, and a value of 3 disables all streaming logging of EKF3." user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="GPS vertical accuracy threshold" name="EK3_GPS_VACC_MAX" documentation="Vertical accuracy threshold for GPS as the altitude source. The GPS will not be used as an altitude source if the reported vertical accuracy of the GPS is larger than this threshold, falling back to baro instead. Set to zero to deactivate the threshold check." user="Advanced">
+        <field name="Range">0.0 10.0</field>
+        <field name="Increment">0.1</field>
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
       </param>
     </parameters>
     <parameters name="EK3_SRC">
@@ -6764,16 +6786,19 @@
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Maximum logging rate for mavlink backend" name="LOG_MAV_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled." user="Standard">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Maximum logging rate for block backend" name="LOG_BLK_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled." user="Standard">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
+        <field name="Increment">0.1</field>
       </param>
     </parameters>
     <parameters name="MIS_">
@@ -13751,6 +13776,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -13850,6 +13878,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -13949,6 +13980,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14048,6 +14082,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14147,6 +14184,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14246,6 +14286,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14345,6 +14388,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14444,6 +14490,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14543,6 +14592,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14642,6 +14694,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14741,6 +14796,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14840,6 +14898,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -14939,6 +15000,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -15038,6 +15102,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -15137,6 +15204,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>
@@ -15236,6 +15306,9 @@
           <value code="153">ArmDisarm (4.2 and higher)</value>
           <value code="155">set steering trim to current servo and RC</value>
           <value code="156">Torqeedo Clear Err</value>
+          <value code="162">FFT Tune</value>
+          <value code="163">Mount Lock</value>
+          <value code="164">Pause Stream Logging</value>
           <value code="201">Roll</value>
           <value code="202">Pitch</value>
           <value code="207">MainSail</value>

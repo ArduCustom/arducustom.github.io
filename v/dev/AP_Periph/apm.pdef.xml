@@ -2389,7 +2389,7 @@
         <field name="UnitText">milligauss per ampere</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Compass orientation" name="COMPASS_ORIENT" documentation="The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation." user="Advanced">
+      <param humanName="Compass orientation" name="COMPASS_ORIENT" documentation="The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles." user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Yaw45</value>
@@ -2541,7 +2541,7 @@
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="Compass2 orientation" name="COMPASS_ORIENT2" documentation="The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used." user="Advanced">
+      <param humanName="Compass2 orientation" name="COMPASS_ORIENT2" documentation="The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles." user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Yaw45</value>
@@ -2604,7 +2604,7 @@
           <value code="1">Enabled</value>
         </values>
       </param>
-      <param humanName="Compass3 orientation" name="COMPASS_ORIENT3" documentation="The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used." user="Advanced">
+      <param humanName="Compass3 orientation" name="COMPASS_ORIENT3" documentation="The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles." user="Advanced">
         <values>
           <value code="0">None</value>
           <value code="1">Yaw45</value>
@@ -2919,6 +2919,33 @@
       <param humanName="ESC Telemetry mavlink offset" name="ESC_TLM_MAV_OFS" documentation="Offset to apply to ESC numbers when reporting as ESC_TELEMETRY packets over MAVLink. This allows high numbered motors to be displayed as low numbered ESCs for convenience on GCS displays. A value of 4 would send ESC on output 5 as ESC number 1 in ESC_TELEMETRY packets" user="Standard">
         <field name="Increment">1</field>
         <field name="Range">0 31</field>
+      </param>
+    </parameters>
+    <parameters name="FENCE_">
+      <param humanName="Fence enable/disable" name="FENCE_ENABLE" documentation="Allows you to enable (1) or disable (0) the fence functionality" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="Fence Action" name="FENCE_ACTION" documentation="What action should be taken when fence is breached" user="Standard">
+        <values>
+          <value code="0">Report Only</value>
+          <value code="1">RTL or Land</value>
+        </values>
+      </param>
+      <param humanName="Circular Fence Radius" name="FENCE_RADIUS" documentation="Circle fence radius which when breached will cause an RTL" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">30 10000</field>
+      </param>
+      <param humanName="Fence Margin" name="FENCE_MARGIN" documentation="Distance that autopilot's should maintain from the fence to avoid a breach" user="Standard">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">1 10</field>
+      </param>
+      <param humanName="Fence polygon point total" name="FENCE_TOTAL" documentation="Number of polygon points saved in eeprom (do not update manually)" user="Standard">
+        <field name="Range">1 20</field>
       </param>
     </parameters>
     <parameters name="FFT_">
@@ -3443,16 +3470,19 @@
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Maximum logging rate for mavlink backend" name="LOG_MAV_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled." user="Standard">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
+        <field name="Increment">0.1</field>
       </param>
       <param humanName="Maximum logging rate for block backend" name="LOG_BLK_RATEMAX" documentation="This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled." user="Standard">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 1000</field>
+        <field name="Increment">0.1</field>
       </param>
     </parameters>
     <parameters name="MSP">

@@ -96,7 +96,7 @@
       }
     },
     "AHRS_ORIENTATION": {
-      "Description": "Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle.",
+      "Description": "Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the AHRS_CUSTOM_ROLL/PIT/YAW angles for AHRS orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_ROT1_ROLL/PIT/YAW or CUST_ROT2_ROLL/PIT/YAW angles.",
       "DisplayName": "Board Orientation",
       "User": "Advanced",
       "Values": {
@@ -4183,7 +4183,8 @@
       "Bitmask": {
         "0": "ClearDNADatabase",
         "1": "IgnoreDNANodeConflicts",
-        "2": "EnableCanfd"
+        "2": "EnableCanfd",
+        "3": "IgnoreDNANodeUnhealthy"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -4455,7 +4456,8 @@
       "Bitmask": {
         "0": "ClearDNADatabase",
         "1": "IgnoreDNANodeConflicts",
-        "2": "EnableCanfd"
+        "2": "EnableCanfd",
+        "3": "IgnoreDNANodeUnhealthy"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -4727,7 +4729,8 @@
       "Bitmask": {
         "0": "ClearDNADatabase",
         "1": "IgnoreDNANodeConflicts",
-        "2": "EnableCanfd"
+        "2": "EnableCanfd",
+        "3": "IgnoreDNANodeUnhealthy"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -5476,7 +5479,7 @@
       "User": "Advanced"
     },
     "COMPASS_ORIENT": {
-      "Description": "The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation.",
+      "Description": "The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.",
       "DisplayName": "Compass orientation",
       "User": "Advanced",
       "Values": {
@@ -5529,7 +5532,7 @@
       }
     },
     "COMPASS_ORIENT2": {
-      "Description": "The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.",
+      "Description": "The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.",
       "DisplayName": "Compass2 orientation",
       "User": "Advanced",
       "Values": {
@@ -5582,7 +5585,7 @@
       }
     },
     "COMPASS_ORIENT3": {
-      "Description": "The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.",
+      "Description": "The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.",
       "DisplayName": "Compass3 orientation",
       "User": "Advanced",
       "Values": {
@@ -5923,6 +5926,55 @@
       "Range": {
         "high": "31",
         "low": "0"
+      },
+      "User": "Standard"
+    }
+  },
+  "FENCE_": {
+    "FENCE_ACTION": {
+      "Description": "What action should be taken when fence is breached",
+      "DisplayName": "Fence Action",
+      "User": "Standard",
+      "Values": {
+        "0": "Report Only",
+        "1": "RTL or Land"
+      }
+    },
+    "FENCE_ENABLE": {
+      "Description": "Allows you to enable (1) or disable (0) the fence functionality",
+      "DisplayName": "Fence enable/disable",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "FENCE_MARGIN": {
+      "Description": "Distance that autopilot's should maintain from the fence to avoid a breach",
+      "DisplayName": "Fence Margin",
+      "Range": {
+        "high": "10",
+        "low": "1"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
+    "FENCE_RADIUS": {
+      "Description": "Circle fence radius which when breached will cause an RTL",
+      "DisplayName": "Circular Fence Radius",
+      "Range": {
+        "high": "10000",
+        "low": "30"
+      },
+      "Units": "m",
+      "User": "Standard"
+    },
+    "FENCE_TOTAL": {
+      "Description": "Number of polygon points saved in eeprom (do not update manually)",
+      "DisplayName": "Fence polygon point total",
+      "Range": {
+        "high": "20",
+        "low": "1"
       },
       "User": "Standard"
     }
@@ -7958,6 +8010,7 @@
     "LOG_BLK_RATEMAX": {
       "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for block backend",
+      "Increment": "0.1",
       "Range": {
         "high": "1000",
         "low": "0"
@@ -8001,6 +8054,7 @@
     "LOG_FILE_RATEMAX": {
       "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for file backend",
+      "Increment": "0.1",
       "Range": {
         "high": "1000",
         "low": "0"
@@ -8023,6 +8077,7 @@
     "LOG_MAV_RATEMAX": {
       "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for mavlink backend",
+      "Increment": "0.1",
       "Range": {
         "high": "1000",
         "low": "0"

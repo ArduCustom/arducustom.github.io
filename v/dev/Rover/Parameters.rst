@@ -1879,7 +1879,7 @@ AHRS\_ORIENTATION: Board Orientation
 
 | *Note: This parameter is for advanced users*
 
-Overall board orientation relative to the standard orientation for the board type\. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle\. The label for each option is specified in the order of rotations for that orientation\. This option takes affect on next boot\. After changing you will need to re\-level your vehicle\.
+Overall board orientation relative to the standard orientation for the board type\. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle\. The label for each option is specified in the order of rotations for that orientation\. This option takes affect on next boot\. After changing you will need to re\-level your vehicle\. Firmware versions 4\.2 and prior can use a CUSTOM \(100\) rotation to set the AHRS\_CUSTOM\_ROLL\/PIT\/YAW angles for AHRS orientation\. Later versions provide two general custom rotations which can be used\, Custom 1 and Custom 2\, with CUST\_ROT1\_ROLL\/PIT\/YAW or CUST\_ROT2\_ROLL\/PIT\/YAW angles\.
 
 
 +----------------------------------+
@@ -13158,6 +13158,12 @@ Auxiliary RC Options function executed on pin change
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -13306,6 +13312,12 @@ Auxiliary RC Options function executed on pin change
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -13456,6 +13468,12 @@ Auxiliary RC Options function executed on pin change
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -13604,6 +13622,12 @@ Auxiliary RC Options function executed on pin change
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -14643,6 +14667,8 @@ Option flags
 | +-----+------------------------+ |
 | | 2   | EnableCanfd            | |
 | +-----+------------------------+ |
+| | 3   | IgnoreDNANodeUnhealthy | |
+| +-----+------------------------+ |
 |                                  |
 +----------------------------------+
 
@@ -15257,6 +15283,8 @@ Option flags
 | +-----+------------------------+ |
 | | 2   | EnableCanfd            | |
 | +-----+------------------------+ |
+| | 3   | IgnoreDNANodeUnhealthy | |
+| +-----+------------------------+ |
 |                                  |
 +----------------------------------+
 
@@ -15870,6 +15898,8 @@ Option flags
 | | 1   | IgnoreDNANodeConflicts | |
 | +-----+------------------------+ |
 | | 2   | EnableCanfd            | |
+| +-----+------------------------+ |
+| | 3   | IgnoreDNANodeUnhealthy | |
 | +-----+------------------------+ |
 |                                  |
 +----------------------------------+
@@ -16562,7 +16592,7 @@ COMPASS\_ORIENT: Compass orientation
 
 | *Note: This parameter is for advanced users*
 
-The orientation of the first external compass relative to the vehicle frame\. This value will be ignored unless this compass is set as an external compass\. When set correctly in the northern hemisphere\, pointing the nose and right side down should increase the MagX and MagY values respectively\. Rolling the vehicle upside down should decrease the MagZ value\. For southern hemisphere\, switch increase and decrease\. NOTE\: For internal compasses\, AHRS\_ORIENT is used\. The label for each option is specified in the order of rotations for that orientation\.
+The orientation of the first external compass relative to the vehicle frame\. This value will be ignored unless this compass is set as an external compass\. When set correctly in the northern hemisphere\, pointing the nose and right side down should increase the MagX and MagY values respectively\. Rolling the vehicle upside down should decrease the MagZ value\. For southern hemisphere\, switch increase and decrease\. NOTE\: For internal compasses\, AHRS\_ORIENT is used\. The label for each option is specified in the order of rotations for that orientation\. Firmware versions 4\.2 and prior can use a CUSTOM \(100\) rotation to set the COMPASS\_CUS\_ROLL\/PIT\/YAW angles for Compass orientation\. Later versions provide two general custom rotations which can be used\, Custom 1 and Custom 2\, with CUST\_1\_ROLL\/PIT\/YAW or CUST\_2\_ROLL\/PIT\/YAW angles\.
 
 
 +----------------------------------+
@@ -17015,7 +17045,7 @@ COMPASS\_ORIENT2: Compass2 orientation
 
 | *Note: This parameter is for advanced users*
 
-The orientation of a second external compass relative to the vehicle frame\. This value will be ignored unless this compass is set as an external compass\. When set correctly in the northern hemisphere\, pointing the nose and right side down should increase the MagX and MagY values respectively\. Rolling the vehicle upside down should decrease the MagZ value\. For southern hemisphere\, switch increase and decrease\. NOTE\: For internal compasses\, AHRS\_ORIENT is used\.
+The orientation of a second external compass relative to the vehicle frame\. This value will be ignored unless this compass is set as an external compass\. When set correctly in the northern hemisphere\, pointing the nose and right side down should increase the MagX and MagY values respectively\. Rolling the vehicle upside down should decrease the MagZ value\. For southern hemisphere\, switch increase and decrease\. NOTE\: For internal compasses\, AHRS\_ORIENT is used\. The label for each option is specified in the order of rotations for that orientation\. Firmware versions 4\.2 and prior can use a CUSTOM \(100\) rotation to set the COMPASS\_CUS\_ROLL\/PIT\/YAW angles for Compass orientation\. Later versions provide two general custom rotations which can be used\, Custom 1 and Custom 2\, with CUST\_1\_ROLL\/PIT\/YAW or CUST\_2\_ROLL\/PIT\/YAW angles\.
 
 
 +----------------------------------+
@@ -17183,7 +17213,7 @@ COMPASS\_ORIENT3: Compass3 orientation
 
 | *Note: This parameter is for advanced users*
 
-The orientation of a third external compass relative to the vehicle frame\. This value will be ignored unless this compass is set as an external compass\. When set correctly in the northern hemisphere\, pointing the nose and right side down should increase the MagX and MagY values respectively\. Rolling the vehicle upside down should decrease the MagZ value\. For southern hemisphere\, switch increase and decrease\. NOTE\: For internal compasses\, AHRS\_ORIENT is used\.
+The orientation of a third external compass relative to the vehicle frame\. This value will be ignored unless this compass is set as an external compass\. When set correctly in the northern hemisphere\, pointing the nose and right side down should increase the MagX and MagY values respectively\. Rolling the vehicle upside down should decrease the MagZ value\. For southern hemisphere\, switch increase and decrease\. NOTE\: For internal compasses\, AHRS\_ORIENT is used\. The label for each option is specified in the order of rotations for that orientation\. Firmware versions 4\.2 and prior can use a CUSTOM \(100\) rotation to set the COMPASS\_CUS\_ROLL\/PIT\/YAW angles for Compass orientation\. Later versions provide two general custom rotations which can be used\, Custom 1 and Custom 2\, with CUST\_1\_ROLL\/PIT\/YAW or CUST\_2\_ROLL\/PIT\/YAW angles\.
 
 
 +----------------------------------+
@@ -21048,6 +21078,44 @@ The core number \(index in IMU mask\) that will be used as the primary EKF core 
 +===========+========+
 | 1         | 0 to 2 |
 +-----------+--------+
+
+
+
+
+.. _EK3_LOG_LEVEL:
+
+EK3\_LOG\_LEVEL: Logging Level
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Determines how verbose the EKF3 streaming logging is\. A value of 0 provides full logging\(default\)\, a value of 1 only XKF4 scaled innovations are logged\, a value of 2 both XKF4 and GSF are logged\, and a value of 3 disables all streaming logging of EKF3\.
+
+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 1         | 0 to 3 |
++-----------+--------+
+
+
+
+
+.. _EK3_GPS_VACC_MAX:
+
+EK3\_GPS\_VACC\_MAX: GPS vertical accuracy threshold
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Vertical accuracy threshold for GPS as the altitude source\. The GPS will not be used as an altitude source if the reported vertical accuracy of the GPS is larger than this threshold\, falling back to baro instead\. Set to zero to deactivate the threshold check\.
+
+
++-----------+-------------+--------+
+| Increment | Range       | Units  |
++===========+=============+========+
+| 0.1       | 0.0 to 10.0 | meters |
++-----------+-------------+--------+
 
 
 
@@ -27123,11 +27191,11 @@ LOG\_FILE\_RATEMAX: Maximum logging rate for file backend
 This sets the maximum rate that streaming log messages will be logged to the file backend\. A value of zero means that rate limiting is disabled\.
 
 
-+-----------+-------+
-| Range     | Units |
-+===========+=======+
-| 0 to 1000 | hertz |
-+-----------+-------+
++-----------+-----------+-------+
+| Increment | Range     | Units |
++===========+===========+=======+
+| 0.1       | 0 to 1000 | hertz |
++-----------+-----------+-------+
 
 
 
@@ -27141,11 +27209,11 @@ LOG\_MAV\_RATEMAX: Maximum logging rate for mavlink backend
 This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
-+-----------+-------+
-| Range     | Units |
-+===========+=======+
-| 0 to 1000 | hertz |
-+-----------+-------+
++-----------+-----------+-------+
+| Increment | Range     | Units |
++===========+===========+=======+
+| 0.1       | 0 to 1000 | hertz |
++-----------+-----------+-------+
 
 
 
@@ -27159,11 +27227,11 @@ LOG\_BLK\_RATEMAX: Maximum logging rate for block backend
 This sets the maximum rate that streaming log messages will be logged to the mavlink backend\. A value of zero means that rate limiting is disabled\.
 
 
-+-----------+-------+
-| Range     | Units |
-+===========+=======+
-| 0 to 1000 | hertz |
-+-----------+-------+
++-----------+-----------+-------+
+| Increment | Range     | Units |
++===========+===========+=======+
+| 0.1       | 0 to 1000 | hertz |
++-----------+-----------+-------+
 
 
 
@@ -61074,6 +61142,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -61331,6 +61405,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -61590,6 +61670,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -61847,6 +61933,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -62106,6 +62198,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -62363,6 +62461,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -62622,6 +62726,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -62879,6 +62989,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -63138,6 +63254,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -63395,6 +63517,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -63654,6 +63782,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -63911,6 +64045,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -64170,6 +64310,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -64427,6 +64573,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
@@ -64686,6 +64838,12 @@ Function assigned to this RC channel
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
 | +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
+| +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |
 | | 202   | Pitch                                     | |
@@ -64943,6 +65101,12 @@ Function assigned to this RC channel
 | | 155   | set steering trim to current servo and RC | |
 | +-------+-------------------------------------------+ |
 | | 156   | Torqeedo Clear Err                        | |
+| +-------+-------------------------------------------+ |
+| | 162   | FFT Tune                                  | |
+| +-------+-------------------------------------------+ |
+| | 163   | Mount Lock                                | |
+| +-------+-------------------------------------------+ |
+| | 164   | Pause Stream Logging                      | |
 | +-------+-------------------------------------------+ |
 | | 201   | Roll                                      | |
 | +-------+-------------------------------------------+ |

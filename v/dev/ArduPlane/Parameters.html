@@ -1113,7 +1113,7 @@ DO NOT EDIT
 
 <p>Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all log types by setting this to 65535. The individual bits are ATTITUDE_FAST=1, ATTITUDE_MEDIUM=2, GPS=4, PerformanceMonitoring=8, ControlTuning=16, NavigationTuning=32, Mode=64, IMU=128, Commands=256, Battery=512, Compass=1024, TECS=2048, Camera=4096, RCandServo=8192, Sonar=16384, Arming=32768, FullLogs=65535</p>
 <ul>
-<li>Bitmask: 0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:CTUN,5:NTUN,6:MODE,7:IMU,8:CMD,9:CURRENT,10:COMPASS,11:TECS,12:CAMERA,13:RC,14:SONAR,15:ARM/DISARM,19:IMU_RAW,20:ATTITUDE_FULLRATE,21:VideoStabilization</li>
+<li>Bitmask: 0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:CTUN,5:NTUN,6:MODE,7:IMU,8:CMD,9:BATT_MON,10:COMPASS,11:TECS,12:CAMERA,13:RC,14:RANGEFINDER,15:ARM/DISARM,19:IMU_RAW,20:ATTITUDE_FULLRATE,21:VideoStabilization</li>
 </ul>
 
 
@@ -2242,7 +2242,7 @@ DO NOT EDIT
 
 <h2>Board Orientation (AHRS_ORIENTATION)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle.</p>
+<p>Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the AHRS_CUSTOM_ROLL/PIT/YAW angles for AHRS orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_ROT1_ROLL/PIT/YAW or CUST_ROT2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -6955,7 +6955,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -7037,7 +7039,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -7119,7 +7123,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -7201,7 +7207,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -7556,7 +7564,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -7723,7 +7731,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -7890,7 +7898,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -8298,7 +8306,7 @@ DO NOT EDIT
 
 <h2>Compass orientation (COMPASS_ORIENT)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation.</p>
+<p>The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -8528,7 +8536,7 @@ DO NOT EDIT
 
 <h2>Compass2 orientation (COMPASS_ORIENT2)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.</p>
+<p>The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -8606,7 +8614,7 @@ DO NOT EDIT
 
 <h2>Compass3 orientation (COMPASS_ORIENT3)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.</p>
+<p>The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -10393,6 +10401,25 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Logging Level (EK3_LOG_LEVEL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Determines how verbose the EKF3 streaming logging is. A value of 0 provides full logging(default), a value of 1 only XKF4 scaled innovations are logged, a value of 2 both XKF4 and GSF are logged, and a value of 3 disables all streaming logging of EKF3.</p>
+<ul>
+<li>Range: 0 3</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>GPS vertical accuracy threshold (EK3_GPS_VACC_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Vertical accuracy threshold for GPS as the altitude source. The GPS will not be used as an altitude source if the reported vertical accuracy of the GPS is larger than this threshold, falling back to baro instead. Set to zero to deactivate the threshold check.</p>
+<ul>
+<li>Range: 0.0 10.0</li>
+<li>Increment: 0.1</li>
+<li>Units: meters</li>
+</ul>
+
+
 <h1>EK3_SRC Parameters</h1>
 
 
@@ -12013,9 +12040,9 @@ DO NOT EDIT
 
 <h2>ICE options (ICE_OPTIONS)</h2>
 
-<p>Options for ICE control. The DisableIgnitionRCFailsafe option will cause the ignition to be set off on any R/C failsafe.</p>
+<p>Options for ICE control. The DisableIgnitionRCFailsafe option will cause the ignition to be set off on any R/C failsafe. If ThrottleWhileDisarmed is set then throttle control will be allowed while disarmed for planes when in MANUAL mode.</p>
 <ul>
-<li>Bitmask: 0:DisableIgnitionRCFailsafe,1:DisableRedineGovernor</li>
+<li>Bitmask: 0:DisableIgnitionRCFailsafe,1:DisableRedineGovernor,2:ThrottleWhileDisarmed</li>
 </ul>
 
 
@@ -13501,7 +13528,7 @@ DO NOT EDIT
 
 <h2>Landing abort using throttle (LAND_ABORT_THR)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Allow a landing abort to trigger with a throttle &gt; 95%</p>
+<p>Allow a landing abort to trigger with an input throttle &gt;= 90%. This works with or without stick-mixing enabled.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -13891,6 +13918,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -13900,6 +13928,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -13909,6 +13938,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -31121,7 +31151,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -31256,7 +31288,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -31391,7 +31425,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -31526,7 +31562,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -31661,7 +31699,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -31796,7 +31836,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -31931,7 +31973,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -32066,7 +32110,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -32201,7 +32247,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -32336,7 +32384,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -32471,7 +32521,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -32606,7 +32658,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -32741,7 +32795,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -32876,7 +32932,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -33011,7 +33069,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -33146,7 +33206,9 @@ DO NOT EDIT
 <tr><td>157</td><td>Force FS Action to FBWA</td></tr>
 <tr><td>158</td><td>Optflow Calibration</td></tr>
 <tr><td>160</td><td>Weathervane Enable</td></tr>
-<tr><td>162</td><td>Servos auto trim</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>

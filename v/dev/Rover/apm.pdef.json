@@ -224,7 +224,7 @@
       }
     },
     "AHRS_ORIENTATION": {
-      "Description": "Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle.",
+      "Description": "Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the AHRS_CUSTOM_ROLL/PIT/YAW angles for AHRS orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_ROT1_ROLL/PIT/YAW or CUST_ROT2_ROLL/PIT/YAW angles.",
       "DisplayName": "Board Orientation",
       "User": "Advanced",
       "Values": {
@@ -4853,6 +4853,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -4924,6 +4927,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -4995,6 +5001,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -5066,6 +5075,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -5626,7 +5638,8 @@
       "Bitmask": {
         "0": "ClearDNADatabase",
         "1": "IgnoreDNANodeConflicts",
-        "2": "EnableCanfd"
+        "2": "EnableCanfd",
+        "3": "IgnoreDNANodeUnhealthy"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -5898,7 +5911,8 @@
       "Bitmask": {
         "0": "ClearDNADatabase",
         "1": "IgnoreDNANodeConflicts",
-        "2": "EnableCanfd"
+        "2": "EnableCanfd",
+        "3": "IgnoreDNANodeUnhealthy"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -6170,7 +6184,8 @@
       "Bitmask": {
         "0": "ClearDNADatabase",
         "1": "IgnoreDNANodeConflicts",
-        "2": "EnableCanfd"
+        "2": "EnableCanfd",
+        "3": "IgnoreDNANodeUnhealthy"
       },
       "Description": "Option flags",
       "DisplayName": "UAVCAN options",
@@ -6919,7 +6934,7 @@
       "User": "Advanced"
     },
     "COMPASS_ORIENT": {
-      "Description": "The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation.",
+      "Description": "The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.",
       "DisplayName": "Compass orientation",
       "User": "Advanced",
       "Values": {
@@ -6972,7 +6987,7 @@
       }
     },
     "COMPASS_ORIENT2": {
-      "Description": "The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.",
+      "Description": "The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.",
       "DisplayName": "Compass2 orientation",
       "User": "Advanced",
       "Values": {
@@ -7025,7 +7040,7 @@
       }
     },
     "COMPASS_ORIENT3": {
-      "Description": "The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.",
+      "Description": "The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.",
       "DisplayName": "Compass3 orientation",
       "User": "Advanced",
       "Values": {
@@ -8224,6 +8239,17 @@
       "DisplayName": "GPS preflight check",
       "User": "Advanced"
     },
+    "EK3_GPS_VACC_MAX": {
+      "Description": "Vertical accuracy threshold for GPS as the altitude source. The GPS will not be used as an altitude source if the reported vertical accuracy of the GPS is larger than this threshold, falling back to baro instead. Set to zero to deactivate the threshold check.",
+      "DisplayName": "GPS vertical accuracy threshold",
+      "Increment": "0.1",
+      "Range": {
+        "high": "10.0",
+        "low": "0.0"
+      },
+      "Units": "m",
+      "User": "Advanced"
+    },
     "EK3_GSF_RST_MAX": {
       "Description": "Sets the maximum number of times the EKF3 will be allowed to reset its yaw to the estimate from the EKF-GSF yaw estimator. No resets will be allowed unless the use of the EKF-GSF yaw estimate is enabled via the EK3_GSF_USE_MASK parameter.",
       "DisplayName": "Maximum number of resets to the EKF-GSF yaw estimate allowed",
@@ -8317,6 +8343,16 @@
       "Description": "1 byte bitmap of IMUs to use in EKF3. A separate instance of EKF3 will be started for each IMU selected. Set to 1 to use the first IMU only (default), set to 2 to use the second IMU only, set to 3 to use the first and second IMU. Additional IMU's can be used up to a maximum of 6 if memory and processing resources permit. There may be insufficient memory and processing resources to run multiple instances. If this occurs EKF3 will fail to start.",
       "DisplayName": "Bitmask of active IMUs",
       "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "EK3_LOG_LEVEL": {
+      "Description": "Determines how verbose the EKF3 streaming logging is. A value of 0 provides full logging(default), a value of 1 only XKF4 scaled innovations are logged, a value of 2 both XKF4 and GSF are logged, and a value of 3 disables all streaming logging of EKF3.",
+      "DisplayName": "Logging Level",
+      "Increment": "1",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
       "User": "Advanced"
     },
     "EK3_MAGB_P_NSE": {
@@ -11113,6 +11149,7 @@
     "LOG_BLK_RATEMAX": {
       "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for block backend",
+      "Increment": "0.1",
       "Range": {
         "high": "1000",
         "low": "0"
@@ -11156,6 +11193,7 @@
     "LOG_FILE_RATEMAX": {
       "Description": "This sets the maximum rate that streaming log messages will be logged to the file backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for file backend",
+      "Increment": "0.1",
       "Range": {
         "high": "1000",
         "low": "0"
@@ -11178,6 +11216,7 @@
     "LOG_MAV_RATEMAX": {
       "Description": "This sets the maximum rate that streaming log messages will be logged to the mavlink backend. A value of zero means that rate limiting is disabled.",
       "DisplayName": "Maximum logging rate for mavlink backend",
+      "Increment": "0.1",
       "Range": {
         "high": "1000",
         "low": "0"
@@ -25017,6 +25056,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -25142,6 +25184,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -25267,6 +25312,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -25392,6 +25440,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -25517,6 +25568,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -25642,6 +25696,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -25767,6 +25824,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -25892,6 +25952,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26017,6 +26080,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26142,6 +26208,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26267,6 +26336,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26392,6 +26464,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26517,6 +26592,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26642,6 +26720,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26767,6 +26848,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26892,6 +26976,9 @@
         "155": "set steering trim to current servo and RC",
         "156": "Torqeedo Clear Err",
         "16": "Auto",
+        "162": "FFT Tune",
+        "163": "Mount Lock",
+        "164": "Pause Stream Logging",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",

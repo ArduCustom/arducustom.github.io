@@ -907,7 +907,7 @@ DO NOT EDIT
 
 <h2>Board Orientation (AHRS_ORIENTATION)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle.</p>
+<p>Overall board orientation relative to the standard orientation for the board type. This rotates the IMU and compass readings to allow the board to be oriented in your vehicle at any 90 or 45 degree angle. The label for each option is specified in the order of rotations for that orientation. This option takes affect on next boot. After changing you will need to re-level your vehicle. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the AHRS_CUSTOM_ROLL/PIT/YAW angles for AHRS orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_ROT1_ROLL/PIT/YAW or CUST_ROT2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -5985,6 +5985,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -6058,6 +6061,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -6131,6 +6137,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -6204,6 +6213,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -6561,7 +6573,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -6728,7 +6740,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -6895,7 +6907,7 @@ DO NOT EDIT
 
 <p>Option flags</p>
 <ul>
-<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd</li>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts,2:EnableCanfd,3:IgnoreDNANodeUnhealthy</li>
 </ul>
 
 
@@ -7217,7 +7229,7 @@ DO NOT EDIT
 
 <h2>Compass orientation (COMPASS_ORIENT)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation.</p>
+<p>The orientation of the first external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -7447,7 +7459,7 @@ DO NOT EDIT
 
 <h2>Compass2 orientation (COMPASS_ORIENT2)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.</p>
+<p>The orientation of a second external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -7525,7 +7537,7 @@ DO NOT EDIT
 
 <h2>Compass3 orientation (COMPASS_ORIENT3)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used.</p>
+<p>The orientation of a third external compass relative to the vehicle frame. This value will be ignored unless this compass is set as an external compass. When set correctly in the northern hemisphere, pointing the nose and right side down should increase the MagX and MagY values respectively. Rolling the vehicle upside down should decrease the MagZ value. For southern hemisphere, switch increase and decrease. NOTE: For internal compasses, AHRS_ORIENT is used. The label for each option is specified in the order of rotations for that orientation. Firmware versions 4.2 and prior can use a CUSTOM (100) rotation to set the COMPASS_CUS_ROLL/PIT/YAW angles for Compass orientation. Later versions provide two general custom rotations which can be used, Custom 1 and Custom 2, with CUST_1_ROLL/PIT/YAW or CUST_2_ROLL/PIT/YAW angles.</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -9309,6 +9321,25 @@ DO NOT EDIT
 <ul>
 <li>Range: 0 2</li>
 <li>Increment: 1</li>
+</ul>
+
+
+<h2>Logging Level (EK3_LOG_LEVEL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Determines how verbose the EKF3 streaming logging is. A value of 0 provides full logging(default), a value of 1 only XKF4 scaled innovations are logged, a value of 2 both XKF4 and GSF are logged, and a value of 3 disables all streaming logging of EKF3.</p>
+<ul>
+<li>Range: 0 3</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>GPS vertical accuracy threshold (EK3_GPS_VACC_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Vertical accuracy threshold for GPS as the altitude source. The GPS will not be used as an altitude source if the reported vertical accuracy of the GPS is larger than this threshold, falling back to baro instead. Set to zero to deactivate the threshold check.</p>
+<ul>
+<li>Range: 0.0 10.0</li>
+<li>Increment: 0.1</li>
+<li>Units: meters</li>
 </ul>
 
 
@@ -11997,6 +12028,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -12006,6 +12038,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -12015,6 +12048,7 @@ DO NOT EDIT
 <ul>
 <li>Units: hertz</li>
 <li>Range: 0 1000</li>
+<li>Increment: 0.1</li>
 </ul>
 
 
@@ -27470,6 +27504,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -27596,6 +27633,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -27722,6 +27762,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -27848,6 +27891,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -27974,6 +28020,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28100,6 +28149,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28226,6 +28278,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28352,6 +28407,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28478,6 +28536,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28604,6 +28665,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28730,6 +28794,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28856,6 +28923,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -28982,6 +29052,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -29108,6 +29181,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -29234,6 +29310,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
@@ -29360,6 +29439,9 @@ DO NOT EDIT
 <tr><td>153</td><td>ArmDisarm (4.2 and higher)</td></tr>
 <tr><td>155</td><td>set steering trim to current servo and RC</td></tr>
 <tr><td>156</td><td>Torqeedo Clear Err</td></tr>
+<tr><td>162</td><td>FFT Tune</td></tr>
+<tr><td>163</td><td>Mount Lock</td></tr>
+<tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
