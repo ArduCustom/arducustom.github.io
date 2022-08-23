@@ -689,8 +689,8 @@
       <param humanName="Num Resets" name="ArduPlane:SYS_NUM_RESETS" documentation="Number of APM board resets" user="Advanced">
         <field name="ReadOnly">True</field>
       </param>
-      <param humanName="Log bitmask" name="ArduPlane:LOG_BITMASK" documentation="Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all log types by setting this to 65535. The individual bits are ATTITUDE_FAST=1, ATTITUDE_MEDIUM=2, GPS=4, PerformanceMonitoring=8, ControlTuning=16, NavigationTuning=32, Mode=64, IMU=128, Commands=256, Battery=512, Compass=1024, TECS=2048, Camera=4096, RCandServo=8192, Sonar=16384, Arming=32768, FullLogs=65535" user="Advanced">
-        <field name="Bitmask">0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:CTUN,5:NTUN,6:MODE,7:IMU,8:CMD,9:BATT_MON,10:COMPASS,11:TECS,12:CAMERA,13:RC,14:RANGEFINDER,15:ARM/DISARM,19:IMU_RAW,20:ATTITUDE_FULLRATE,21:VideoStabilization</field>
+      <param humanName="Log bitmask" name="ArduPlane:LOG_BITMASK" documentation="Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all basic log types by setting this to 65535." user="Advanced">
+        <field name="Bitmask">0:Fast Attitude,1:Medium Attitude,2:GPS,3:Performance,4:Control Tuning,5:Navigation Tuning,7:IMU,8:Mission Commands,9:Battery Monitor,10:Compass,11:TECS,12:Camera,13:RC Input-Output,14:Rangefinder,19:Raw IMU,20:Fullrate Attitude,21:Video Stabilization</field>
       </param>
       <param humanName="Target airspeed" name="ArduPlane:TRIM_ARSPD_CM" documentation="Target airspeed in cm/s in automatic throttle modes. Value is as an indicated (calibrated/apparent) airspeed." user="Standard">
         <field name="Units">cm/s</field>
@@ -1247,7 +1247,7 @@
           <value code="2">log all</value>
         </values>
       </param>
-      <param humanName="ADS-B Options" name="ADSB_OPTIONS" user="Advanced">
+      <param humanName="ADS-B Options" name="ADSB_OPTIONS" documentation="Options for emergency failsafe codes and device capabilities" user="Advanced">
         <field name="Bitmask">0:Ping200X Send GPS,1:Squawk 7400 on RC failsafe,2:Squawk 7400 on GCS failsafe,3:Sagetech MXS use External Config</field>
       </param>
     </parameters>
@@ -1879,6 +1879,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -2055,6 +2056,30 @@
       <param humanName="Scales reported power monitor current" name="BATT2_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT2_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT2_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT2_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT2_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT3_">
       <param humanName="Battery monitoring" name="BATT3_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2081,6 +2106,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -2257,6 +2283,30 @@
       <param humanName="Scales reported power monitor current" name="BATT3_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT3_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT3_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT3_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT3_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT4_">
       <param humanName="Battery monitoring" name="BATT4_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2283,6 +2333,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -2459,6 +2510,30 @@
       <param humanName="Scales reported power monitor current" name="BATT4_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT4_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT4_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT4_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT4_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT5_">
       <param humanName="Battery monitoring" name="BATT5_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2485,6 +2560,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -2661,6 +2737,30 @@
       <param humanName="Scales reported power monitor current" name="BATT5_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT5_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT5_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT5_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT5_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT6_">
       <param humanName="Battery monitoring" name="BATT6_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2687,6 +2787,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -2863,6 +2964,30 @@
       <param humanName="Scales reported power monitor current" name="BATT6_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT6_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT6_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT6_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT6_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT7_">
       <param humanName="Battery monitoring" name="BATT7_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -2889,6 +3014,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -3065,6 +3191,30 @@
       <param humanName="Scales reported power monitor current" name="BATT7_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT7_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT7_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT7_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT7_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT8_">
       <param humanName="Battery monitoring" name="BATT8_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -3091,6 +3241,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -3267,6 +3418,30 @@
       <param humanName="Scales reported power monitor current" name="BATT8_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT8_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT8_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT8_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT8_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT9_">
       <param humanName="Battery monitoring" name="BATT9_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -3293,6 +3468,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -3469,6 +3645,30 @@
       <param humanName="Scales reported power monitor current" name="BATT9_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
       </param>
+      <param humanName="Empty fuel level voltage" name="BATT9_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT9_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT9_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT9_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="BATT_">
       <param humanName="Battery monitoring" name="BATT_MONITOR" documentation="Controls enabling monitoring of the battery's voltage and current" user="Standard">
@@ -3495,6 +3695,7 @@
           <value code="21">INA2XX</value>
           <value code="22">LTC2946</value>
           <value code="23">Torqeedo</value>
+          <value code="24">FuelLevelAnalog</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -3670,6 +3871,30 @@
       </param>
       <param humanName="Scales reported power monitor current" name="BATT_CURR_MULT" documentation="Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications" user="Advanced">
         <field name="Range">.1 10</field>
+      </param>
+      <param humanName="Empty fuel level voltage" name="BATT_FL_VLT_MIN" documentation="The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+        <field name="Units">V</field>
+        <field name="UnitText">volt</field>
+      </param>
+      <param humanName="Fuel level voltage multiplier" name="BATT_FL_V_MULT" documentation="Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS." user="Advanced">
+        <field name="Range">0.01 10</field>
+      </param>
+      <param humanName="Fuel level filter frequency" name="BATT_FL_FLTR" documentation="Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz." user="Advanced">
+        <field name="Range">-1 1</field>
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Fuel level analog pin number" name="BATT_FL_PIN" documentation="Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.">
+        <values>
+          <value code="-1">Not Used</value>
+          <value code="11">Pixracer</value>
+          <value code="13">Pixhawk ADC4</value>
+          <value code="14">Pixhawk ADC3</value>
+          <value code="15">Pixhawk ADC6/Pixhawk2 ADC</value>
+          <value code="103">Pixhawk SBUS</value>
+        </values>
       </param>
     </parameters>
     <parameters name="BRD_">
@@ -4068,6 +4293,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4076,6 +4302,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
       <param humanName="Button Pin 2 RC Channel function" name="BTN_FUNC2" documentation="Auxiliary RC Options function executed on pin change" user="Standard">
@@ -4147,6 +4374,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4155,6 +4383,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
       <param humanName="Button Pin 3 RC Channel function" name="BTN_FUNC3" documentation="Auxiliary RC Options function executed on pin change" user="Standard">
@@ -4226,6 +4455,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4234,6 +4464,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
       <param humanName="Button Pin 4 RC Channel function" name="BTN_FUNC4" documentation="Auxiliary RC Options function executed on pin change" user="Standard">
@@ -4305,6 +4536,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4313,6 +4545,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -5404,6 +5637,40 @@
         <field name="RebootRequired">True</field>
       </param>
     </parameters>
+    <parameters name="DID_">
+      <param humanName="Enable ODID subsystem" name="DID_ENABLE" documentation="Enable ODID subsystem">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="MAVLink serial port" name="DID_MAVPORT" documentation="Serial port number to send OpenDroneID MAVLink messages to. Can be -1 if using DroneCAN.">
+        <values>
+          <value code="-1">Disabled</value>
+          <value code="0">Serial0</value>
+          <value code="1">Serial1</value>
+          <value code="2">Serial2</value>
+          <value code="3">Serial3</value>
+          <value code="4">Serial4</value>
+          <value code="5">Serial5</value>
+          <value code="6">Serial6</value>
+        </values>
+      </param>
+      <param humanName="DroneCAN driver number" name="DID_CANDRIVER" documentation="DroneCAN driver index, 0 to disable DroneCAN">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Driver1</value>
+          <value code="2">Driver2</value>
+        </values>
+      </param>
+      <param humanName="OpenDroneID options" name="DID_OPTIONS" documentation="Options for OpenDroneID subsystem. Bit 0 means to enforce arming checks">
+        <field name="Bitmask">0:EnforceArming</field>
+      </param>
+      <param humanName="Barometer vertical accuraacy" name="DID_BARO_ACC" documentation="Barometer Vertical Accuracy when installed in the vehicle. Note this is dependent upon installation conditions and thus disabled by default" user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+      </param>
+    </parameters>
     <parameters name="EAHRS">
       <param humanName="AHRS type" name="EAHRS_TYPE" documentation="Type of AHRS device" user="Standard">
         <values>
@@ -6290,6 +6557,9 @@
         <field name="Range">0 3</field>
         <field name="Increment">1</field>
       </param>
+      <param humanName="Fence options" name="FENCE_OPTIONS" documentation="0:Disable mode change following fence action until fence breach is cleared" user="Standard">
+        <field name="Bitmask">0:Disable mode change following fence action until fence breach is cleared</field>
+      </param>
     </parameters>
     <parameters name="FFT_">
       <param humanName="Enable" name="FFT_ENABLE" documentation="Enable Gyro FFT analyser" user="Advanced">
@@ -6910,13 +7180,18 @@
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
       </param>
-      <param humanName="Gripper Regrab interval" name="GRIP_REGRAB" documentation="Time in seconds that gripper will regrab the cargo to ensure grip has not weakened; 0 to disable" user="Advanced">
+      <param humanName="EPM Gripper Regrab interval" name="GRIP_REGRAB" documentation="Time in seconds that EPM gripper will regrab the cargo to ensure grip has not weakened; 0 to disable" user="Advanced">
         <field name="Range">0 255</field>
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
       </param>
       <param humanName="EPM UAVCAN Hardpoint ID" name="GRIP_CAN_ID" documentation="Refer to https://docs.zubax.com/opengrab_epm_v3#UAVCAN_interface" user="Standard">
         <field name="Range">0 255</field>
+      </param>
+      <param humanName="Gripper Autoclose time" name="GRIP_AUTOCLOSE" documentation="Time in seconds that gripper close the gripper after opening; 0 to disable" user="Advanced">
+        <field name="Range">0.25 255</field>
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
       </param>
     </parameters>
     <parameters name="GUIDED_">
@@ -14852,8 +15127,8 @@
           <value code="21">VTOL_TILTROTOR</value>
         </values>
       </param>
-      <param humanName="quadplane options" name="Q_OPTIONS" documentation="Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command's reference frame rather than a delta above current location, Use FW Approach:Use a fixed wing approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND. Force RTL mode: forces RTL mode on rc failsafe in VTOL modes overriding bit 5(USE_QRTL).">
-        <field name="Bitmask">0:Level Transition,1:Allow FW Takeoff,2:Allow FW Land,3:Vtol Takeoff Frame,4:Use FW Approach,5:Use QRTL,6:Use Governor,7:Force Qassist,8:Mtrs_Only_Qassist,10:Disarmed Yaw Tilt,11:Delay Spoolup,12:disable Qassist based on synthetic airspeed,13:Disable Ground Effect Compensation,14:Ignore forward flight angle limits in Qmodes,15:ThrLandControl,16:DisableApproach,17:EnableLandReposition,18:ARMVtol, 19: CompleteTransition if Q_TRANS_FAIL, 20: Force RTL mode on VTOL failsafes overriding bit 5(USE QRTL)</field>
+      <param humanName="quadplane options" name="Q_OPTIONS" documentation="Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command's reference frame rather than a delta above current location, Always use FW spiral approach:Always use Use a fixed wing spiral approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND. Force RTL mode: forces RTL mode on rc failsafe in VTOL modes overriding bit 5(USE_QRTL).">
+        <field name="Bitmask">0:Level Transition,1:Allow FW Takeoff,2:Allow FW Land,3:Vtol Takeoff Frame,4:Always use FW spiral approach,5:Use QRTL,6:Use Governor,7:Force Qassist,8:Mtrs_Only_Qassist,10:Disarmed Yaw Tilt,11:Delay Spoolup,12:disable Qassist based on synthetic airspeed,13:Disable Ground Effect Compensation,14:Ignore forward flight angle limits in Qmodes,15:ThrLandControl,16:DisableApproach,17:EnableLandReposition,18:ARMVtol, 19: CompleteTransition if Q_TRANS_FAIL, 20: Force RTL mode on VTOL failsafes overriding bit 5(USE QRTL)</field>
       </param>
       <param humanName="Transition deceleration" name="Q_TRANS_DECEL" documentation="This is deceleration rate that will be used in calculating the stopping distance when transitioning from fixed wing flight to multicopter flight." user="Standard">
         <field name="Units">m/s/s</field>
@@ -15927,6 +16202,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -15935,6 +16211,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16037,6 +16314,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16045,6 +16323,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16147,6 +16426,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16155,6 +16435,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16257,6 +16538,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16265,6 +16547,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16367,6 +16650,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16375,6 +16659,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16477,6 +16762,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16485,6 +16771,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16587,6 +16874,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16595,6 +16883,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16697,6 +16986,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16705,6 +16995,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16807,6 +17098,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16815,6 +17107,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -16917,6 +17210,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16925,6 +17219,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -17027,6 +17322,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17035,6 +17331,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -17137,6 +17434,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17145,6 +17443,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -17247,6 +17546,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17255,6 +17555,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -17357,6 +17658,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17365,6 +17667,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -17467,6 +17770,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17475,6 +17779,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -17577,6 +17882,7 @@
           <value code="164">Pause Stream Logging</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
+          <value code="210">Airbrakes</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17585,6 +17891,7 @@
           <value code="305">Scripting6</value>
           <value code="306">Scripting7</value>
           <value code="307">Scripting8</value>
+          <value code="165">Servo auto trim</value>
         </values>
       </param>
     </parameters>
@@ -17892,6 +18199,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -18073,6 +18381,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -18254,6 +18563,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -18435,6 +18745,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -18616,6 +18927,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -18797,6 +19109,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -18978,6 +19291,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -19159,6 +19473,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -19340,6 +19655,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -19521,6 +19837,7 @@
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
           <value code="34">Benewake_CAN</value>
+          <value code="35">TeraRangerSerial</value>
           <value code="100">SITL</value>
         </values>
       </param>
@@ -20594,7 +20911,7 @@
       <param humanName="Minimum PWM" name="SERVO10_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO10_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -20710,6 +21027,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -20727,6 +21045,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -20747,7 +21067,7 @@
       <param humanName="Minimum PWM" name="SERVO11_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO11_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -20863,6 +21183,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -20880,6 +21201,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -20900,7 +21223,7 @@
       <param humanName="Minimum PWM" name="SERVO12_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO12_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21016,6 +21339,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -21033,6 +21357,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21053,7 +21379,7 @@
       <param humanName="Minimum PWM" name="SERVO13_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO13_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21169,6 +21495,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -21186,6 +21513,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21206,7 +21535,7 @@
       <param humanName="Minimum PWM" name="SERVO14_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO14_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21322,6 +21651,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -21339,6 +21669,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21359,7 +21691,7 @@
       <param humanName="Minimum PWM" name="SERVO15_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO15_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21475,6 +21807,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -21492,6 +21825,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21512,7 +21847,7 @@
       <param humanName="Minimum PWM" name="SERVO16_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO16_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21628,6 +21963,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -21645,6 +21981,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21665,7 +22003,7 @@
       <param humanName="Minimum PWM" name="SERVO17_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO17_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21781,6 +22119,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -21798,6 +22137,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21818,7 +22159,7 @@
       <param humanName="Minimum PWM" name="SERVO18_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO18_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -21934,6 +22275,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -21951,6 +22293,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21971,7 +22315,7 @@
       <param humanName="Minimum PWM" name="SERVO19_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO19_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -22087,6 +22431,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -22104,6 +22449,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22124,7 +22471,7 @@
       <param humanName="Minimum PWM" name="SERVO1_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO1_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -22240,6 +22587,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -22257,6 +22605,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22277,7 +22627,7 @@
       <param humanName="Minimum PWM" name="SERVO20_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO20_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -22393,6 +22743,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -22410,6 +22761,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22430,7 +22783,7 @@
       <param humanName="Minimum PWM" name="SERVO21_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO21_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -22546,6 +22899,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -22563,6 +22917,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22583,7 +22939,7 @@
       <param humanName="Minimum PWM" name="SERVO22_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO22_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -22699,6 +23055,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -22716,6 +23073,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22736,7 +23095,7 @@
       <param humanName="Minimum PWM" name="SERVO23_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO23_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -22852,6 +23211,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -22869,6 +23229,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22889,7 +23251,7 @@
       <param humanName="Minimum PWM" name="SERVO24_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO24_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -23005,6 +23367,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -23022,6 +23385,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23042,7 +23407,7 @@
       <param humanName="Minimum PWM" name="SERVO25_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO25_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -23158,6 +23523,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -23175,6 +23541,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23195,7 +23563,7 @@
       <param humanName="Minimum PWM" name="SERVO26_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO26_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -23311,6 +23679,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -23328,6 +23697,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23348,7 +23719,7 @@
       <param humanName="Minimum PWM" name="SERVO27_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO27_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -23464,6 +23835,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -23481,6 +23853,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23501,7 +23875,7 @@
       <param humanName="Minimum PWM" name="SERVO28_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO28_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -23617,6 +23991,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -23634,6 +24009,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23654,7 +24031,7 @@
       <param humanName="Minimum PWM" name="SERVO29_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO29_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -23770,6 +24147,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -23787,6 +24165,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23807,7 +24187,7 @@
       <param humanName="Minimum PWM" name="SERVO2_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO2_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -23923,6 +24303,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -23940,6 +24321,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23960,7 +24343,7 @@
       <param humanName="Minimum PWM" name="SERVO30_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO30_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -24076,6 +24459,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -24093,6 +24477,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24113,7 +24499,7 @@
       <param humanName="Minimum PWM" name="SERVO31_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO31_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -24229,6 +24615,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -24246,6 +24633,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24266,7 +24655,7 @@
       <param humanName="Minimum PWM" name="SERVO32_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO32_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -24382,6 +24771,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -24399,6 +24789,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24419,7 +24811,7 @@
       <param humanName="Minimum PWM" name="SERVO3_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO3_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -24535,6 +24927,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -24552,6 +24945,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24572,7 +24967,7 @@
       <param humanName="Minimum PWM" name="SERVO4_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO4_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -24688,6 +25083,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -24705,6 +25101,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24725,7 +25123,7 @@
       <param humanName="Minimum PWM" name="SERVO5_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO5_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -24841,6 +25239,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -24858,6 +25257,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24878,7 +25279,7 @@
       <param humanName="Minimum PWM" name="SERVO6_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO6_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -24994,6 +25395,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -25011,6 +25413,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -25031,7 +25435,7 @@
       <param humanName="Minimum PWM" name="SERVO7_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO7_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -25147,6 +25551,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -25164,6 +25569,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -25184,7 +25591,7 @@
       <param humanName="Minimum PWM" name="SERVO8_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO8_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -25300,6 +25707,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -25317,6 +25725,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -25337,7 +25747,7 @@
       <param humanName="Minimum PWM" name="SERVO9_MIN" documentation="minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
         <field name="Units">PWM</field>
         <field name="UnitText">PWM in microseconds</field>
-        <field name="Range">500 2200</field>
+        <field name="Range">800 2200</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Maximum PWM" name="SERVO9_MAX" documentation="maximum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit." user="Standard">
@@ -25453,6 +25863,7 @@
           <value code="107">Script14</value>
           <value code="108">Script15</value>
           <value code="109">Script16</value>
+          <value code="110">Airbrakes</value>
           <value code="120">NeoPixel1</value>
           <value code="121">NeoPixel2</value>
           <value code="122">NeoPixel3</value>
@@ -25470,6 +25881,8 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">Aileron left</value>
+          <value code="141">Aileron right</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>

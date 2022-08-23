@@ -146,6 +146,7 @@
         "2": "Squawk 7400 on GCS failsafe",
         "3": "Sagetech MXS use External Config"
       },
+      "Description": "Options for emergency failsafe codes and device capabilities",
       "DisplayName": "ADS-B Options",
       "User": "Advanced"
     },
@@ -2202,6 +2203,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT2_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT2_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT2_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT2_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT2_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -2319,6 +2362,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -2511,6 +2555,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT3_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT3_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT3_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT3_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT3_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -2628,6 +2714,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -2820,6 +2907,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT4_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT4_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT4_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT4_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT4_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -2937,6 +3066,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -3129,6 +3259,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT5_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT5_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT5_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT5_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT5_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -3246,6 +3418,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -3438,6 +3611,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT6_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT6_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT6_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT6_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT6_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -3555,6 +3770,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -3747,6 +3963,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT7_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT7_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT7_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT7_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT7_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -3864,6 +4122,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -4056,6 +4315,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT8_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT8_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT8_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT8_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT8_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -4173,6 +4474,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -4365,6 +4667,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT9_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT9_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT9_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT9_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT9_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -4482,6 +4826,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -4674,6 +5019,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -4791,6 +5178,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -8859,28 +9247,28 @@
     },
     "LOG_BITMASK": {
       "Bitmask": {
-        "0": "ATTITUDE_FAST",
-        "1": "ATTITUDE_MED",
-        "10": "RCOUT",
-        "11": "OPTFLOW",
+        "0": "Fast Attitude",
+        "1": "Medium Attitude",
+        "10": "RC output",
+        "11": "Optical Flow",
         "12": "PID",
-        "13": "COMPASS",
-        "14": "INAV",
-        "15": "CAMERA",
-        "17": "MOTBATT",
-        "18": "IMU_FAST",
-        "19": "IMU_RAW",
+        "13": "Compass",
+        "15": "Camera",
+        "17": "Motors",
+        "18": "Fast IMU",
+        "19": "Raw IMU",
         "2": "GPS",
-        "20": "VideoStabilization",
-        "3": "PM",
-        "4": "CTUN",
-        "5": "NTUN",
-        "6": "RCIN",
+        "20": "Video Stabilization",
+        "21": "Fast harmonic notch logging",
+        "3": "System Performance",
+        "4": "Control Tuning",
+        "5": "Navigation Tuning",
+        "6": "RC input",
         "7": "IMU",
-        "8": "CMD",
-        "9": "CURRENT"
+        "8": "Mission Commands",
+        "9": "Battery Monitor"
       },
-      "Description": "4 byte bitmap of log types to enable",
+      "Description": "Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all basiclog types by setting this to 65535.",
       "DisplayName": "Log bitmask",
       "User": "Standard"
     },
@@ -9319,6 +9707,52 @@
         "2": "Face next waypoint except RTL",
         "3": "Face along GPS course"
       }
+    }
+  },
+  "DID_": {
+    "DID_BARO_ACC": {
+      "Description": "Barometer Vertical Accuracy when installed in the vehicle. Note this is dependent upon installation conditions and thus disabled by default",
+      "DisplayName": "Barometer vertical accuraacy",
+      "Units": "m",
+      "User": "Advanced"
+    },
+    "DID_CANDRIVER": {
+      "Description": "DroneCAN driver index, 0 to disable DroneCAN",
+      "DisplayName": "DroneCAN driver number",
+      "Values": {
+        "0": "Disabled",
+        "1": "Driver1",
+        "2": "Driver2"
+      }
+    },
+    "DID_ENABLE": {
+      "Description": "Enable ODID subsystem",
+      "DisplayName": "Enable ODID subsystem",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "DID_MAVPORT": {
+      "Description": "Serial port number to send OpenDroneID MAVLink messages to. Can be -1 if using DroneCAN.",
+      "DisplayName": "MAVLink serial port",
+      "Values": {
+        "-1": "Disabled",
+        "0": "Serial0",
+        "1": "Serial1",
+        "2": "Serial2",
+        "3": "Serial3",
+        "4": "Serial4",
+        "5": "Serial5",
+        "6": "Serial6"
+      }
+    },
+    "DID_OPTIONS": {
+      "Bitmask": {
+        "0": "EnforceArming"
+      },
+      "Description": "Options for OpenDroneID subsystem. Bit 0 means to enforce arming checks",
+      "DisplayName": "OpenDroneID options"
     }
   },
   "EAHRS": {
@@ -12022,6 +12456,16 @@
     }
   },
   "GRIP_": {
+    "GRIP_AUTOCLOSE": {
+      "Description": "Time in seconds that gripper close the gripper after opening; 0 to disable",
+      "DisplayName": "Gripper Autoclose time",
+      "Range": {
+        "high": "255",
+        "low": "0.25"
+      },
+      "Units": "s",
+      "User": "Advanced"
+    },
     "GRIP_CAN_ID": {
       "Description": "Refer to https://docs.zubax.com/opengrab_epm_v3#UAVCAN_interface",
       "DisplayName": "EPM UAVCAN Hardpoint ID",
@@ -12061,8 +12505,8 @@
       "User": "Advanced"
     },
     "GRIP_REGRAB": {
-      "Description": "Time in seconds that gripper will regrab the cargo to ensure grip has not weakened; 0 to disable",
-      "DisplayName": "Gripper Regrab interval",
+      "Description": "Time in seconds that EPM gripper will regrab the cargo to ensure grip has not weakened; 0 to disable",
+      "DisplayName": "EPM Gripper Regrab interval",
       "Range": {
         "high": "255",
         "low": "0"
@@ -31573,6 +32017,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -31856,6 +32301,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -32139,6 +32585,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -32422,6 +32869,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -32705,6 +33153,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -32988,6 +33437,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -33271,6 +33721,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -33554,6 +34005,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -33837,6 +34289,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -34120,6 +34573,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -35604,8 +36058,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -35682,7 +36134,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -35772,8 +36224,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -35850,7 +36300,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -35940,8 +36390,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -36018,7 +36466,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36108,8 +36556,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -36186,7 +36632,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36276,8 +36722,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -36354,7 +36798,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36444,8 +36888,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -36522,7 +36964,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36612,8 +37054,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -36690,7 +37130,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36780,8 +37220,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -36858,7 +37296,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36948,8 +37386,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -37026,7 +37462,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37116,8 +37552,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -37194,7 +37628,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37284,8 +37718,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -37362,7 +37794,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37452,8 +37884,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -37530,7 +37960,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37620,8 +38050,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -37698,7 +38126,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37788,8 +38216,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -37866,7 +38292,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37956,8 +38382,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -38034,7 +38458,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38124,8 +38548,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -38202,7 +38624,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38292,8 +38714,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -38370,7 +38790,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38460,8 +38880,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -38538,7 +38956,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38628,8 +39046,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -38706,7 +39122,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38796,8 +39212,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -38874,7 +39288,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38964,8 +39378,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -39042,7 +39454,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39132,8 +39544,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -39210,7 +39620,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39300,8 +39710,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -39378,7 +39786,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39468,8 +39876,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -39546,7 +39952,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39636,8 +40042,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -39714,7 +40118,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39804,8 +40208,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -39882,7 +40284,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39972,8 +40374,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -40050,7 +40450,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40140,8 +40540,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -40218,7 +40616,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40308,8 +40706,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -40386,7 +40782,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40476,8 +40872,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -40554,7 +40948,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40644,8 +41038,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -40722,7 +41114,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40812,8 +41204,6 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
-        "140": "Aileron left",
-        "141": "Aileron right",
         "15": "Mount2Open",
         "22": "SprayerPump",
         "23": "SprayerSpinner",
@@ -40890,7 +41280,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -41461,7 +41851,7 @@
       "User": "Advanced"
     },
     "SR0_EXTRA3": {
-      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, MOUNT_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -41583,7 +41973,7 @@
       "User": "Advanced"
     },
     "SR1_EXTRA3": {
-      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, MOUNT_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -41705,7 +42095,7 @@
       "User": "Advanced"
     },
     "SR2_EXTRA3": {
-      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, MOUNT_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -41827,7 +42217,7 @@
       "User": "Advanced"
     },
     "SR3_EXTRA3": {
-      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, MOUNT_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -41949,7 +42339,7 @@
       "User": "Advanced"
     },
     "SR4_EXTRA3": {
-      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, MOUNT_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -42071,7 +42461,7 @@
       "User": "Advanced"
     },
     "SR5_EXTRA3": {
-      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, MOUNT_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -42193,7 +42583,7 @@
       "User": "Advanced"
     },
     "SR6_EXTRA3": {
-      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, MOUNT_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {

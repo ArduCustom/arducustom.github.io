@@ -2258,55 +2258,51 @@ LOG\_BITMASK: Log bitmask
 
 | *Note: This parameter is for advanced users*
 
-Bitmap of what on\-board log types to enable\. This value is made up of the sum of each of the log types you want to be saved\. It is usually best just to enable all log types by setting this to 65535\. The individual bits are ATTITUDE\_FAST\=1\, ATTITUDE\_MEDIUM\=2\, GPS\=4\, PerformanceMonitoring\=8\, ControlTuning\=16\, NavigationTuning\=32\, Mode\=64\, IMU\=128\, Commands\=256\, Battery\=512\, Compass\=1024\, TECS\=2048\, Camera\=4096\, RCandServo\=8192\, Sonar\=16384\, Arming\=32768\, FullLogs\=65535
+Bitmap of what on\-board log types to enable\. This value is made up of the sum of each of the log types you want to be saved\. It is usually best just to enable all basic log types by setting this to 65535\.
 
 
-+------------------------------+
-| Bitmask                      |
-+==============================+
-| +-----+--------------------+ |
-| | Bit | Meaning            | |
-| +=====+====================+ |
-| | 0   | ATTITUDE_FAST      | |
-| +-----+--------------------+ |
-| | 1   | ATTITUDE_MED       | |
-| +-----+--------------------+ |
-| | 2   | GPS                | |
-| +-----+--------------------+ |
-| | 3   | PM                 | |
-| +-----+--------------------+ |
-| | 4   | CTUN               | |
-| +-----+--------------------+ |
-| | 5   | NTUN               | |
-| +-----+--------------------+ |
-| | 6   | MODE               | |
-| +-----+--------------------+ |
-| | 7   | IMU                | |
-| +-----+--------------------+ |
-| | 8   | CMD                | |
-| +-----+--------------------+ |
-| | 9   | BATT_MON           | |
-| +-----+--------------------+ |
-| | 10  | COMPASS            | |
-| +-----+--------------------+ |
-| | 11  | TECS               | |
-| +-----+--------------------+ |
-| | 12  | CAMERA             | |
-| +-----+--------------------+ |
-| | 13  | RC                 | |
-| +-----+--------------------+ |
-| | 14  | RANGEFINDER        | |
-| +-----+--------------------+ |
-| | 15  | ARM/DISARM         | |
-| +-----+--------------------+ |
-| | 19  | IMU_RAW            | |
-| +-----+--------------------+ |
-| | 20  | ATTITUDE_FULLRATE  | |
-| +-----+--------------------+ |
-| | 21  | VideoStabilization | |
-| +-----+--------------------+ |
-|                              |
-+------------------------------+
++-------------------------------+
+| Bitmask                       |
++===============================+
+| +-----+---------------------+ |
+| | Bit | Meaning             | |
+| +=====+=====================+ |
+| | 0   | Fast Attitude       | |
+| +-----+---------------------+ |
+| | 1   | Medium Attitude     | |
+| +-----+---------------------+ |
+| | 2   | GPS                 | |
+| +-----+---------------------+ |
+| | 3   | Performance         | |
+| +-----+---------------------+ |
+| | 4   | Control Tuning      | |
+| +-----+---------------------+ |
+| | 5   | Navigation Tuning   | |
+| +-----+---------------------+ |
+| | 7   | IMU                 | |
+| +-----+---------------------+ |
+| | 8   | Mission Commands    | |
+| +-----+---------------------+ |
+| | 9   | Battery Monitor     | |
+| +-----+---------------------+ |
+| | 10  | Compass             | |
+| +-----+---------------------+ |
+| | 11  | TECS                | |
+| +-----+---------------------+ |
+| | 12  | Camera              | |
+| +-----+---------------------+ |
+| | 13  | RC Input-Output     | |
+| +-----+---------------------+ |
+| | 14  | Rangefinder         | |
+| +-----+---------------------+ |
+| | 19  | Raw IMU             | |
+| +-----+---------------------+ |
+| | 20  | Fullrate Attitude   | |
+| +-----+---------------------+ |
+| | 21  | Video Stabilization | |
+| +-----+---------------------+ |
+|                               |
++-------------------------------+
 
 
 
@@ -4264,6 +4260,36 @@ ADSB\_LOG: ADS\-B logging
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
+
+
+
+
+.. _ADSB_OPTIONS:
+
+ADSB\_OPTIONS: ADS\-B Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Options for emergency failsafe codes and device capabilities
+
+
++--------------------------------------------+
+| Bitmask                                    |
++============================================+
+| +-----+----------------------------------+ |
+| | Bit | Meaning                          | |
+| +=====+==================================+ |
+| | 0   | Ping200X Send GPS                | |
+| +-----+----------------------------------+ |
+| | 1   | Squawk 7400 on RC failsafe       | |
+| +-----+----------------------------------+ |
+| | 2   | Squawk 7400 on GCS failsafe      | |
+| +-----+----------------------------------+ |
+| | 3   | Sagetech MXS use External Config | |
+| +-----+----------------------------------+ |
+|                                            |
++--------------------------------------------+
 
 
 
@@ -6818,6 +6844,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
 | +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
+| +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
 
@@ -7535,6 +7563,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT2_FL_VLT_MIN:
+
+BATT2\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT2_FL_V_MULT:
+
+BATT2\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT2_FL_FLTR:
+
+BATT2\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT2_FL_PIN:
+
+BATT2\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT3_:
 
@@ -7601,6 +7720,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -8319,6 +8440,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT3_FL_VLT_MIN:
+
+BATT3\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT3_FL_V_MULT:
+
+BATT3\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT3_FL_FLTR:
+
+BATT3\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT3_FL_PIN:
+
+BATT3\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT4_:
 
@@ -8385,6 +8597,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -9103,6 +9317,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT4_FL_VLT_MIN:
+
+BATT4\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT4_FL_V_MULT:
+
+BATT4\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT4_FL_FLTR:
+
+BATT4\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT4_FL_PIN:
+
+BATT4\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT5_:
 
@@ -9169,6 +9474,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -9887,6 +10194,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT5_FL_VLT_MIN:
+
+BATT5\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT5_FL_V_MULT:
+
+BATT5\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT5_FL_FLTR:
+
+BATT5\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT5_FL_PIN:
+
+BATT5\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT6_:
 
@@ -9953,6 +10351,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -10671,6 +11071,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT6_FL_VLT_MIN:
+
+BATT6\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT6_FL_V_MULT:
+
+BATT6\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT6_FL_FLTR:
+
+BATT6\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT6_FL_PIN:
+
+BATT6\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT7_:
 
@@ -10737,6 +11228,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -11455,6 +11948,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT7_FL_VLT_MIN:
+
+BATT7\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT7_FL_V_MULT:
+
+BATT7\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT7_FL_FLTR:
+
+BATT7\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT7_FL_PIN:
+
+BATT7\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT8_:
 
@@ -11521,6 +12105,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -12239,6 +12825,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT8_FL_VLT_MIN:
+
+BATT8\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT8_FL_V_MULT:
+
+BATT8\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT8_FL_FLTR:
+
+BATT8\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT8_FL_PIN:
+
+BATT8\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT9_:
 
@@ -12305,6 +12982,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -13023,6 +13702,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 
 
 
+.. _BATT9_FL_VLT_MIN:
+
+BATT9\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT9_FL_V_MULT:
+
+BATT9\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT9_FL_FLTR:
+
+BATT9\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT9_FL_PIN:
+
+BATT9\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
+
+
+
+
 
 .. _parameters_BATT_:
 
@@ -13089,6 +13859,8 @@ Controls enabling monitoring of the battery\'s voltage and current
 | | 22    | LTC2946                    | |
 | +-------+----------------------------+ |
 | | 23    | Torqeedo                   | |
+| +-------+----------------------------+ |
+| | 24    | FuelLevelAnalog            | |
 | +-------+----------------------------+ |
 |                                        |
 +----------------------------------------+
@@ -13803,6 +14575,97 @@ Multiplier applied to all current related reports to allow for adjustment if no 
 +==========+
 | .1 to 10 |
 +----------+
+
+
+
+
+.. _BATT_FL_VLT_MIN:
+
+BATT\_FL\_VLT\_MIN: Empty fuel level voltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The voltage seen on the analog pin when the fuel tank is empty\. Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+-------+
+| Range      | Units |
++============+=======+
+| 0.01 to 10 | volt  |
++------------+-------+
+
+
+
+
+.. _BATT_FL_V_MULT:
+
+BATT\_FL\_V\_MULT: Fuel level voltage multiplier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Voltage multiplier to determine what the full tank voltage reading is\. This is calculated as 1 \/ \(Voltage\_Full \- Voltage\_Empty\) Note\: For this type of battery monitor\, the voltage seen by the analog pin is displayed as battery voltage on a GCS\.
+
+
++------------+
+| Range      |
++============+
+| 0.01 to 10 |
++------------+
+
+
+
+
+.. _BATT_FL_FLTR:
+
+BATT\_FL\_FLTR: Fuel level filter frequency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Filter frequency in Hertz where a low pass filter is used\. This is used to filter out tank slosh from the fuel level reading\. A value of \-1 disables the filter and unfiltered voltage is used to determine the fuel level\. The suggested values at in the range of 0\.2 Hz to 0\.5 Hz\.
+
+
++---------+-------+
+| Range   | Units |
++=========+=======+
+| -1 to 1 | hertz |
++---------+-------+
+
+
+
+
+.. _BATT_FL_PIN:
+
+BATT\_FL\_PIN: Fuel level analog pin number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Analog input pin that fuel level sensor is connected to\. Airspeed ports can be used for Analog input\. When using analog pin 103\, the maximum value of the input in 3\.3V\.
+
+
++---------------------------------------+
+| Values                                |
++=======================================+
+| +-------+---------------------------+ |
+| | Value | Meaning                   | |
+| +=======+===========================+ |
+| | -1    | Not Used                  | |
+| +-------+---------------------------+ |
+| | 11    | Pixracer                  | |
+| +-------+---------------------------+ |
+| | 13    | Pixhawk ADC4              | |
+| +-------+---------------------------+ |
+| | 14    | Pixhawk ADC3              | |
+| +-------+---------------------------+ |
+| | 15    | Pixhawk ADC6/Pixhawk2 ADC | |
+| +-------+---------------------------+ |
+| | 103   | Pixhawk SBUS              | |
+| +-------+---------------------------+ |
+|                                       |
++---------------------------------------+
 
 
 
@@ -15373,6 +16236,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -15388,6 +16253,8 @@ Auxiliary RC Options function executed on pin change
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -15544,6 +16411,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -15559,6 +16428,8 @@ Auxiliary RC Options function executed on pin change
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -15715,6 +16586,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -15730,6 +16603,8 @@ Auxiliary RC Options function executed on pin change
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -15886,6 +16761,8 @@ Auxiliary RC Options function executed on pin change
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -15901,6 +16778,8 @@ Auxiliary RC Options function executed on pin change
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -20837,6 +21716,144 @@ Custom euler yaw\, euler 321 \(yaw\, pitch\, roll\) ordering
 
 
 
+.. _parameters_DID_:
+
+DID\_ Parameters
+----------------
+
+
+.. _DID_ENABLE:
+
+DID\_ENABLE: Enable ODID subsystem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Enable ODID subsystem
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _DID_MAVPORT:
+
+DID\_MAVPORT: MAVLink serial port
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Serial port number to send OpenDroneID MAVLink messages to\. Can be \-1 if using DroneCAN\.
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | -1    | Disabled | |
+| +-------+----------+ |
+| | 0     | Serial0  | |
+| +-------+----------+ |
+| | 1     | Serial1  | |
+| +-------+----------+ |
+| | 2     | Serial2  | |
+| +-------+----------+ |
+| | 3     | Serial3  | |
+| +-------+----------+ |
+| | 4     | Serial4  | |
+| +-------+----------+ |
+| | 5     | Serial5  | |
+| +-------+----------+ |
+| | 6     | Serial6  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _DID_CANDRIVER:
+
+DID\_CANDRIVER: DroneCAN driver number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+DroneCAN driver index\, 0 to disable DroneCAN
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Driver1  | |
+| +-------+----------+ |
+| | 2     | Driver2  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _DID_OPTIONS:
+
+DID\_OPTIONS: OpenDroneID options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Options for OpenDroneID subsystem\. Bit 0 means to enforce arming checks
+
+
++-------------------------+
+| Bitmask                 |
++=========================+
+| +-----+---------------+ |
+| | Bit | Meaning       | |
+| +=====+===============+ |
+| | 0   | EnforceArming | |
+| +-----+---------------+ |
+|                         |
++-------------------------+
+
+
+
+
+.. _DID_BARO_ACC:
+
+DID\_BARO\_ACC: Barometer vertical accuraacy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Barometer Vertical Accuracy when installed in the vehicle\. Note this is dependent upon installation conditions and thus disabled by default
+
+
++--------+
+| Units  |
++========+
+| meters |
++--------+
+
+
+
+
+
 .. _parameters_EAHRS:
 
 EAHRS Parameters
@@ -24337,6 +25354,29 @@ Auto\-enable of fence
 
 
 
+.. _FENCE_OPTIONS:
+
+FENCE\_OPTIONS: Fence options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+0\:Disable mode change following fence action until fence breach is cleared
+
+
++------------------------------------------------------------------------------------+
+| Bitmask                                                                            |
++====================================================================================+
+| +-----+--------------------------------------------------------------------------+ |
+| | Bit | Meaning                                                                  | |
+| +=====+==========================================================================+ |
+| | 0   | Disable mode change following fence action until fence breach is cleared | |
+| +-----+--------------------------------------------------------------------------+ |
+|                                                                                    |
++------------------------------------------------------------------------------------+
+
+
+
+
 
 .. _parameters_FFT_:
 
@@ -26591,12 +27631,12 @@ PWM value in microseconds sent to grabber when not grabbing or releasing
 
 .. _GRIP_REGRAB:
 
-GRIP\_REGRAB: Gripper Regrab interval
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GRIP\_REGRAB: EPM Gripper Regrab interval
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Time in seconds that gripper will regrab the cargo to ensure grip has not weakened\; 0 to disable
+Time in seconds that EPM gripper will regrab the cargo to ensure grip has not weakened\; 0 to disable
 
 
 +----------+---------+
@@ -26622,6 +27662,25 @@ Refer to https\:\/\/docs\.zubax\.com\/opengrab\_epm\_v3\#UAVCAN\_interface
 +==========+
 | 0 to 255 |
 +----------+
+
+
+
+
+.. _GRIP_AUTOCLOSE:
+
+GRIP\_AUTOCLOSE: Gripper Autoclose time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Time in seconds that gripper close the gripper after opening\; 0 to disable
+
+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| 0.25 to 255 | seconds |
++-------------+---------+
 
 
 
@@ -64776,7 +65835,7 @@ Q\_OPTIONS: quadplane options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Level Transition\:Keep wings within LEVEL\_ROLL\_LIMIT and only use forward motor\(s\) for climb during transition\, Allow FW Takeoff\: If bit is not set then NAV\_TAKEOFF command on quadplanes will instead perform a NAV\_VTOL takeoff\, Allow FW Land\:If bit is not set then NAV\_LAND command on quadplanes will instead perform a NAV\_VTOL\_LAND\, Vtol Takeoff Frame\: command NAV\_VTOL\_TAKEOFF altitude is as set by the command\'s reference frame rather than a delta above current location\, Use FW Approach\:Use a fixed wing approach for VTOL landings\, USE QRTL\:instead of QLAND for rc failsafe when in VTOL modes\, Use Governor\:Use ICE Idle Governor in MANUAL for forward motor\, Force Qassist\: on always\,Mtrs\_Only\_Qassist\: in tailsitters only\, uses VTOL motors and not flying surfaces for QASSIST\, Airmode\_On\_Arm\:Airmode enabled when arming by aux switch\, Disarmed Yaw Tilt\:Enable motor tilt for yaw when disarmed\, Delay Spoolup\:Delay VTOL spoolup for 2 seconds after arming\, ThrLandControl\: enable throttle stick control of landing rate\, DisableApproach\: Disable use of approach and airbrake stages in VTOL landing\, EnableLandResposition\: enable pilot controlled repositioning in AUTO land\. Descent will pause while repositioning\. ARMVTOL\: Arm only in VTOL or AUTO modes\. CompleteTransition\: to fixed wing if Q\_TRANS\_FAIL timer times out instead of QLAND\. Force RTL mode\: forces RTL mode on rc failsafe in VTOL modes overriding bit 5\(USE\_QRTL\)\.
+Level Transition\:Keep wings within LEVEL\_ROLL\_LIMIT and only use forward motor\(s\) for climb during transition\, Allow FW Takeoff\: If bit is not set then NAV\_TAKEOFF command on quadplanes will instead perform a NAV\_VTOL takeoff\, Allow FW Land\:If bit is not set then NAV\_LAND command on quadplanes will instead perform a NAV\_VTOL\_LAND\, Vtol Takeoff Frame\: command NAV\_VTOL\_TAKEOFF altitude is as set by the command\'s reference frame rather than a delta above current location\, Always use FW spiral approach\:Always use Use a fixed wing spiral approach for VTOL landings\, USE QRTL\:instead of QLAND for rc failsafe when in VTOL modes\, Use Governor\:Use ICE Idle Governor in MANUAL for forward motor\, Force Qassist\: on always\,Mtrs\_Only\_Qassist\: in tailsitters only\, uses VTOL motors and not flying surfaces for QASSIST\, Airmode\_On\_Arm\:Airmode enabled when arming by aux switch\, Disarmed Yaw Tilt\:Enable motor tilt for yaw when disarmed\, Delay Spoolup\:Delay VTOL spoolup for 2 seconds after arming\, ThrLandControl\: enable throttle stick control of landing rate\, DisableApproach\: Disable use of approach and airbrake stages in VTOL landing\, EnableLandResposition\: enable pilot controlled repositioning in AUTO land\. Descent will pause while repositioning\. ARMVTOL\: Arm only in VTOL or AUTO modes\. CompleteTransition\: to fixed wing if Q\_TRANS\_FAIL timer times out instead of QLAND\. Force RTL mode\: forces RTL mode on rc failsafe in VTOL modes overriding bit 5\(USE\_QRTL\)\.
 
 
 +-----------------------------------------------------------------------+
@@ -64793,7 +65852,7 @@ Level Transition\:Keep wings within LEVEL\_ROLL\_LIMIT and only use forward moto
 | +-----+-------------------------------------------------------------+ |
 | | 3   | Vtol Takeoff Frame                                          | |
 | +-----+-------------------------------------------------------------+ |
-| | 4   | Use FW Approach                                             | |
+| | 4   | Always use FW spiral approach                               | |
 | +-----+-------------------------------------------------------------+ |
 | | 5   | Use QRTL                                                    | |
 | +-----+-------------------------------------------------------------+ |
@@ -68836,6 +69895,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -68851,6 +69912,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -69116,6 +70179,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -69131,6 +70196,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -69396,6 +70463,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -69411,6 +70480,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -69676,6 +70747,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -69691,6 +70764,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -69956,6 +71031,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -69971,6 +71048,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -70236,6 +71315,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -70251,6 +71332,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -70516,6 +71599,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -70531,6 +71616,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -70796,6 +71883,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -70811,6 +71900,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -71076,6 +72167,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -71091,6 +72184,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -71356,6 +72451,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -71371,6 +72468,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -71636,6 +72735,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -71651,6 +72752,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -71916,6 +73019,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -71931,6 +73036,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -72196,6 +73303,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -72211,6 +73320,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -72476,6 +73587,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -72491,6 +73604,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -72756,6 +73871,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -72771,6 +73888,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -73036,6 +74155,8 @@ Function assigned to this RC channel
 | +-------+-----------------------------------------------------+ |
 | | 209   | Forward Throttle                                    | |
 | +-------+-----------------------------------------------------+ |
+| | 210   | Airbrakes                                           | |
+| +-------+-----------------------------------------------------+ |
 | | 300   | Scripting1                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 301   | Scripting2                                          | |
@@ -73051,6 +74172,8 @@ Function assigned to this RC channel
 | | 306   | Scripting7                                          | |
 | +-------+-----------------------------------------------------+ |
 | | 307   | Scripting8                                          | |
+| +-------+-----------------------------------------------------+ |
+| | 165   | Servo auto trim                                     | |
 | +-------+-----------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
@@ -73987,6 +75110,8 @@ Type of connected rangefinder
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
 | +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
+| +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -74612,6 +75737,8 @@ Type of connected rangefinder
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
 | +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
@@ -75239,6 +76366,8 @@ Type of connected rangefinder
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
 | +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
+| +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -75864,6 +76993,8 @@ Type of connected rangefinder
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
 | +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
@@ -76491,6 +77622,8 @@ Type of connected rangefinder
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
 | +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
+| +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -77116,6 +78249,8 @@ Type of connected rangefinder
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
 | +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
@@ -77743,6 +78878,8 @@ Type of connected rangefinder
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
 | +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
+| +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -78368,6 +79505,8 @@ Type of connected rangefinder
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
 | +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
@@ -78995,6 +80134,8 @@ Type of connected rangefinder
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
 | +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
+| +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -79620,6 +80761,8 @@ Type of connected rangefinder
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
 | | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+| | 35    | TeraRangerSerial       | |
 | +-------+------------------------+ |
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
@@ -83311,7 +84454,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -83580,6 +84723,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -83613,6 +84758,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -83675,7 +84824,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -83944,6 +85093,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -83977,6 +85128,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -84039,7 +85194,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -84308,6 +85463,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -84341,6 +85498,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -84403,7 +85564,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -84672,6 +85833,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -84705,6 +85868,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -84767,7 +85934,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -85036,6 +86203,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -85069,6 +86238,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -85131,7 +86304,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -85400,6 +86573,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -85433,6 +86608,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -85495,7 +86674,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -85764,6 +86943,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -85797,6 +86978,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -85859,7 +87044,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -86128,6 +87313,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -86161,6 +87348,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -86223,7 +87414,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -86492,6 +87683,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -86525,6 +87718,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -86587,7 +87784,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -86856,6 +88053,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -86889,6 +88088,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -86951,7 +88154,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -87220,6 +88423,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -87253,6 +88458,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -87315,7 +88524,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -87584,6 +88793,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -87617,6 +88828,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -87679,7 +88894,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -87948,6 +89163,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -87981,6 +89198,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -88043,7 +89264,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -88312,6 +89533,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -88345,6 +89568,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -88407,7 +89634,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -88676,6 +89903,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -88709,6 +89938,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -88771,7 +90004,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -89040,6 +90273,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -89073,6 +90308,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -89135,7 +90374,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -89404,6 +90643,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -89437,6 +90678,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -89499,7 +90744,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -89768,6 +91013,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -89801,6 +91048,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -89863,7 +91114,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -90132,6 +91383,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -90165,6 +91418,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -90227,7 +91484,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -90496,6 +91753,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -90529,6 +91788,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -90591,7 +91854,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -90860,6 +92123,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -90893,6 +92158,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -90955,7 +92224,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -91224,6 +92493,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -91257,6 +92528,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -91319,7 +92594,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -91588,6 +92863,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -91621,6 +92898,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -91683,7 +92964,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -91952,6 +93233,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -91985,6 +93268,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -92047,7 +93334,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -92316,6 +93603,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -92349,6 +93638,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -92411,7 +93704,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -92680,6 +93973,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -92713,6 +94008,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -92775,7 +94074,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -93044,6 +94343,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -93077,6 +94378,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -93139,7 +94444,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -93408,6 +94713,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -93441,6 +94748,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -93503,7 +94814,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -93772,6 +95083,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -93805,6 +95118,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -93867,7 +95184,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -94136,6 +95453,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -94169,6 +95488,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -94231,7 +95554,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -94500,6 +95823,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -94533,6 +95858,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+
@@ -94595,7 +95924,7 @@ minimum PWM pulse width in microseconds\. Typically 1000 is lower limit\, 1500 i
 +-----------+-------------+---------------------+
 | Increment | Range       | Units               |
 +===========+=============+=====================+
-| 1         | 500 to 2200 | PWM in microseconds |
+| 1         | 800 to 2200 | PWM in microseconds |
 +-----------+-------------+---------------------+
 
 
@@ -94864,6 +96193,8 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------------+ |
 | | 109   | Script16                  | |
 | +-------+---------------------------+ |
+| | 110   | Airbrakes                 | |
+| +-------+---------------------------+ |
 | | 120   | NeoPixel1                 | |
 | +-------+---------------------------+ |
 | | 121   | NeoPixel2                 | |
@@ -94897,6 +96228,10 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm                     | |
 | +-------+---------------------------+ |
 | | 139   | Alarm Inverted            | |
+| +-------+---------------------------+ |
+| | 140   | Aileron left              | |
+| +-------+---------------------------+ |
+| | 141   | Aileron right             | |
 | +-------+---------------------------+ |
 |                                       |
 +---------------------------------------+

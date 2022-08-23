@@ -146,6 +146,7 @@
         "2": "Squawk 7400 on GCS failsafe",
         "3": "Sagetech MXS use External Config"
       },
+      "Description": "Options for emergency failsafe codes and device capabilities",
       "DisplayName": "ADS-B Options",
       "User": "Advanced"
     },
@@ -1345,6 +1346,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT2_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT2_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT2_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT2_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT2_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -1461,6 +1504,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -1660,6 +1704,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT3_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT3_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT3_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT3_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT3_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -1776,6 +1862,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -1975,6 +2062,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT4_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT4_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT4_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT4_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT4_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -2091,6 +2220,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -2290,6 +2420,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT5_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT5_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT5_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT5_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT5_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -2406,6 +2578,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -2605,6 +2778,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT6_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT6_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT6_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT6_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT6_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -2721,6 +2936,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -2920,6 +3136,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT7_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT7_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT7_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT7_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT7_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -3036,6 +3294,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -3235,6 +3494,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT8_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT8_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT8_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT8_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT8_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -3351,6 +3652,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -3550,6 +3852,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT9_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT9_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT9_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT9_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT9_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -3666,6 +4010,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -3865,6 +4210,48 @@
         "4": "CubeOrange_PM2/Navigator"
       }
     },
+    "BATT_FL_FLTR": {
+      "Description": "Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.",
+      "DisplayName": "Fuel level filter frequency",
+      "Range": {
+        "high": "1",
+        "low": "-1"
+      },
+      "RebootRequired": "True",
+      "Units": "Hz",
+      "User": "Advanced"
+    },
+    "BATT_FL_PIN": {
+      "Description": "Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.",
+      "DisplayName": "Fuel level analog pin number",
+      "Values": {
+        "-1": "Not Used",
+        "103": "Pixhawk SBUS",
+        "11": "Pixracer",
+        "13": "Pixhawk ADC4",
+        "14": "Pixhawk ADC3",
+        "15": "Pixhawk ADC6/Pixhawk2 ADC"
+      }
+    },
+    "BATT_FL_VLT_MIN": {
+      "Description": "The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Empty fuel level voltage",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "Units": "V",
+      "User": "Advanced"
+    },
+    "BATT_FL_V_MULT": {
+      "Description": "Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.",
+      "DisplayName": "Fuel level voltage multiplier",
+      "Range": {
+        "high": "10",
+        "low": "0.01"
+      },
+      "User": "Advanced"
+    },
     "BATT_FS_CRT_ACT": {
       "Description": "What action the vehicle should perform if it hits a critical battery failsafe",
       "DisplayName": "Critical battery failsafe action",
@@ -3981,6 +4368,7 @@
         "21": "INA2XX",
         "22": "LTC2946",
         "23": "Torqeedo",
+        "24": "FuelLevelAnalog",
         "3": "Analog Voltage Only",
         "4": "Analog Voltage and Current",
         "5": "Solo",
@@ -4577,8 +4965,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -4659,8 +5049,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -4741,8 +5133,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -4823,8 +5217,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -7155,6 +7551,52 @@
       "Units": "deg"
     }
   },
+  "DID_": {
+    "DID_BARO_ACC": {
+      "Description": "Barometer Vertical Accuracy when installed in the vehicle. Note this is dependent upon installation conditions and thus disabled by default",
+      "DisplayName": "Barometer vertical accuraacy",
+      "Units": "m",
+      "User": "Advanced"
+    },
+    "DID_CANDRIVER": {
+      "Description": "DroneCAN driver index, 0 to disable DroneCAN",
+      "DisplayName": "DroneCAN driver number",
+      "Values": {
+        "0": "Disabled",
+        "1": "Driver1",
+        "2": "Driver2"
+      }
+    },
+    "DID_ENABLE": {
+      "Description": "Enable ODID subsystem",
+      "DisplayName": "Enable ODID subsystem",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "DID_MAVPORT": {
+      "Description": "Serial port number to send OpenDroneID MAVLink messages to. Can be -1 if using DroneCAN.",
+      "DisplayName": "MAVLink serial port",
+      "Values": {
+        "-1": "Disabled",
+        "0": "Serial0",
+        "1": "Serial1",
+        "2": "Serial2",
+        "3": "Serial3",
+        "4": "Serial4",
+        "5": "Serial5",
+        "6": "Serial6"
+      }
+    },
+    "DID_OPTIONS": {
+      "Bitmask": {
+        "0": "EnforceArming"
+      },
+      "Description": "Options for OpenDroneID subsystem. Bit 0 means to enforce arming checks",
+      "DisplayName": "OpenDroneID options"
+    }
+  },
   "EAHRS": {
     "EAHRS_RATE": {
       "Description": "Requested rate for AHRS device",
@@ -8787,6 +9229,14 @@
       "Units": "m",
       "User": "Standard"
     },
+    "FENCE_OPTIONS": {
+      "Bitmask": {
+        "0": "Disable mode change following fence action until fence breach is cleared"
+      },
+      "Description": "0:Disable mode change following fence action until fence breach is cleared",
+      "DisplayName": "Fence options",
+      "User": "Standard"
+    },
     "FENCE_RADIUS": {
       "Description": "Circle fence radius which when breached will cause an RTL",
       "DisplayName": "Circular Fence Radius",
@@ -9814,6 +10264,16 @@
     }
   },
   "GRIP_": {
+    "GRIP_AUTOCLOSE": {
+      "Description": "Time in seconds that gripper close the gripper after opening; 0 to disable",
+      "DisplayName": "Gripper Autoclose time",
+      "Range": {
+        "high": "255",
+        "low": "0.25"
+      },
+      "Units": "s",
+      "User": "Advanced"
+    },
     "GRIP_CAN_ID": {
       "Description": "Refer to https://docs.zubax.com/opengrab_epm_v3#UAVCAN_interface",
       "DisplayName": "EPM UAVCAN Hardpoint ID",
@@ -9853,8 +10313,8 @@
       "User": "Advanced"
     },
     "GRIP_REGRAB": {
-      "Description": "Time in seconds that gripper will regrab the cargo to ensure grip has not weakened; 0 to disable",
-      "DisplayName": "Gripper Regrab interval",
+      "Description": "Time in seconds that EPM gripper will regrab the cargo to ensure grip has not weakened; 0 to disable",
+      "DisplayName": "EPM Gripper Regrab interval",
       "Range": {
         "high": "255",
         "low": "0"
@@ -26437,27 +26897,25 @@
     },
     "LOG_BITMASK": {
       "Bitmask": {
-        "0": "ATTITUDE_FAST",
-        "1": "ATTITUDE_MED",
-        "10": "COMPASS",
+        "0": "Fast Attitude",
+        "1": "Medium Attitude",
+        "10": "Compass",
         "11": "TECS",
-        "12": "CAMERA",
-        "13": "RC",
-        "14": "RANGEFINDER",
-        "15": "ARM/DISARM",
-        "19": "IMU_RAW",
+        "12": "Camera",
+        "13": "RC Input-Output",
+        "14": "Rangefinder",
+        "19": "Raw IMU",
         "2": "GPS",
-        "20": "ATTITUDE_FULLRATE",
-        "21": "VideoStabilization",
-        "3": "PM",
-        "4": "CTUN",
-        "5": "NTUN",
-        "6": "MODE",
+        "20": "Fullrate Attitude",
+        "21": "Video Stabilization",
+        "3": "Performance",
+        "4": "Control Tuning",
+        "5": "Navigation Tuning",
         "7": "IMU",
-        "8": "CMD",
-        "9": "BATT_MON"
+        "8": "Mission Commands",
+        "9": "Battery Monitor"
       },
-      "Description": "Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all log types by setting this to 65535. The individual bits are ATTITUDE_FAST=1, ATTITUDE_MEDIUM=2, GPS=4, PerformanceMonitoring=8, ControlTuning=16, NavigationTuning=32, Mode=64, IMU=128, Commands=256, Battery=512, Compass=1024, TECS=2048, Camera=4096, RCandServo=8192, Sonar=16384, Arming=32768, FullLogs=65535",
+      "Description": "Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all basic log types by setting this to 65535.",
       "DisplayName": "Log bitmask",
       "User": "Advanced"
     },
@@ -27478,13 +27936,13 @@
         "2": "Allow FW Land",
         "20": "Force RTL mode on VTOL failsafes overriding bit 5(USE QRTL)",
         "3": "Vtol Takeoff Frame",
-        "4": "Use FW Approach",
+        "4": "Always use FW spiral approach",
         "5": "Use QRTL",
         "6": "Use Governor",
         "7": "Force Qassist",
         "8": "Mtrs_Only_Qassist"
       },
-      "Description": "Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command's reference frame rather than a delta above current location, Use FW Approach:Use a fixed wing approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND. Force RTL mode: forces RTL mode on rc failsafe in VTOL modes overriding bit 5(USE_QRTL).",
+      "Description": "Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command's reference frame rather than a delta above current location, Always use FW spiral approach:Always use Use a fixed wing spiral approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND. Force RTL mode: forces RTL mode on rc failsafe in VTOL modes overriding bit 5(USE_QRTL).",
       "DisplayName": "quadplane options"
     },
     "Q_PLT_Y_EXPO": {
@@ -29455,8 +29913,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -29591,8 +30051,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -29727,8 +30189,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -29863,8 +30327,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -29999,8 +30465,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -30135,8 +30603,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -30271,8 +30741,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -30407,8 +30879,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -30543,8 +31017,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -30679,8 +31155,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -30815,8 +31293,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -30951,8 +31431,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -31087,8 +31569,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -31223,8 +31707,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -31359,8 +31845,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -31495,8 +31983,10 @@
         "162": "FFT Tune",
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
+        "165": "Servo auto trim",
         "208": "Flap",
         "209": "Forward Throttle",
+        "210": "Airbrakes",
         "22": "Parachute Release",
         "24": "Auto Mission Reset",
         "27": "Retract Mount",
@@ -32213,6 +32703,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -32496,6 +32987,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -32779,6 +33271,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -33062,6 +33555,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -33345,6 +33839,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -33628,6 +34123,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -33911,6 +34407,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -34194,6 +34691,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -34477,6 +34975,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -34760,6 +35259,7 @@
         "32": "MSP",
         "33": "USD1_CAN",
         "34": "Benewake_CAN",
+        "35": "TeraRangerSerial",
         "5": "PWM",
         "6": "BBB-PRU",
         "7": "LightWareI2C",
@@ -36233,6 +36733,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -36253,6 +36754,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -36348,7 +36851,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36417,6 +36920,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -36437,6 +36941,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -36532,7 +37038,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36601,6 +37107,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -36621,6 +37128,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -36716,7 +37225,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36785,6 +37294,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -36805,6 +37315,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -36900,7 +37412,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -36969,6 +37481,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -36989,6 +37502,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -37084,7 +37599,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37153,6 +37668,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -37173,6 +37689,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -37268,7 +37786,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37337,6 +37855,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -37357,6 +37876,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -37452,7 +37973,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37521,6 +38042,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -37541,6 +38063,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -37636,7 +38160,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37705,6 +38229,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -37725,6 +38250,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -37820,7 +38347,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -37889,6 +38416,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -37909,6 +38437,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -38004,7 +38534,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38073,6 +38603,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -38093,6 +38624,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -38188,7 +38721,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38257,6 +38790,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -38277,6 +38811,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -38372,7 +38908,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38441,6 +38977,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -38461,6 +38998,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -38556,7 +39095,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38625,6 +39164,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -38645,6 +39185,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -38740,7 +39282,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38809,6 +39351,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -38829,6 +39372,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -38924,7 +39469,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -38993,6 +39538,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -39013,6 +39559,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -39108,7 +39656,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39177,6 +39725,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -39197,6 +39746,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -39292,7 +39843,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39361,6 +39912,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -39381,6 +39933,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -39476,7 +40030,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39545,6 +40099,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -39565,6 +40120,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -39660,7 +40217,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39729,6 +40286,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -39749,6 +40307,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -39844,7 +40404,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -39913,6 +40473,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -39933,6 +40494,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -40028,7 +40591,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40097,6 +40660,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -40117,6 +40681,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -40212,7 +40778,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40281,6 +40847,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -40301,6 +40868,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -40396,7 +40965,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40465,6 +41034,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -40485,6 +41055,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -40580,7 +41152,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40649,6 +41221,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -40669,6 +41242,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -40764,7 +41339,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -40833,6 +41408,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -40853,6 +41429,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -40948,7 +41526,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -41017,6 +41595,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -41037,6 +41616,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -41132,7 +41713,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -41201,6 +41782,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -41221,6 +41803,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -41316,7 +41900,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -41385,6 +41969,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -41405,6 +41990,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -41500,7 +42087,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -41569,6 +42156,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -41589,6 +42177,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -41684,7 +42274,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -41753,6 +42343,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -41773,6 +42364,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -41868,7 +42461,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"
@@ -41937,6 +42530,7 @@
         "107": "Script14",
         "108": "Script15",
         "109": "Script16",
+        "110": "Airbrakes",
         "12": "Mount2Pan",
         "120": "NeoPixel1",
         "121": "NeoPixel2",
@@ -41957,6 +42551,8 @@
         "138": "Alarm",
         "139": "Alarm Inverted",
         "14": "Mount2Roll",
+        "140": "Aileron left",
+        "141": "Aileron right",
         "15": "Mount2Open",
         "16": "DifferentialSpoilerLeft1",
         "17": "DifferentialSpoilerRight1",
@@ -42052,7 +42648,7 @@
       "Increment": "1",
       "Range": {
         "high": "2200",
-        "low": "500"
+        "low": "800"
       },
       "Units": "PWM",
       "User": "Standard"

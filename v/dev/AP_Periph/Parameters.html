@@ -516,6 +516,18 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Airspeed use (ARSP_USE)</h2>
+
+<p>Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>DoNotUse</td></tr>
+<tr><td>1</td><td>Use</td></tr>
+<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
+</table>
+</ul>
+
+
 <h2>Airspeed offset (ARSP_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Airspeed calibration offset</p>
@@ -599,6 +611,14 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Airspeed options bitmask (ARSP_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction</p>
+<ul>
+<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</li>
+</ul>
+
+
 <h2>Maximum airspeed and ground speed difference (ARSP_WIND_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor.</p>
@@ -640,6 +660,18 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Enable use of 2nd airspeed sensor (ARSP2_USE)</h2>
+
+<p>use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won&#x27;t be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Don't Use</td></tr>
+<tr><td>1</td><td>use</td></tr>
+<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
+</table>
+</ul>
+
+
 <h2>Airspeed offset for 2nd airspeed sensor (ARSP2_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Airspeed calibration offset</p>
@@ -659,6 +691,13 @@ DO NOT EDIT
 <h2>Airspeed pin for 2nd airspeed sensor (ARSP2_PIN)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Pin number indicating location of analog airspeed sensors. Pixhawk/Cube if set to 15. </p>
+<ul>
+</ul>
+
+
+<h2>Automatic airspeed ratio calibration for 2nd airspeed sensor (ARSP2_AUTOCAL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.</p>
 <ul>
 </ul>
 
@@ -750,6 +789,18 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Airspeed use (ARSPD_USE)</h2>
+
+<p>Enables airspeed use for automatic throttle modes and replaces control from THR_TRIM. Continues to display and log airspeed if set to 0. Uses airspeed for control if set to 1. Only uses airspeed when throttle = 0 if set to 2 (useful for gliders with airspeed sensors behind propellers).</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>DoNotUse</td></tr>
+<tr><td>1</td><td>Use</td></tr>
+<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
+</table>
+</ul>
+
+
 <h2>Airspeed offset (ARSPD_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Airspeed calibration offset</p>
@@ -833,6 +884,14 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Airspeed options bitmask (ARSPD_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction</p>
+<ul>
+<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</li>
+</ul>
+
+
 <h2>Maximum airspeed and ground speed difference (ARSPD_WIND_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor.</p>
@@ -874,6 +933,18 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Enable use of 2nd airspeed sensor (ARSPD2_USE)</h2>
+
+<p>use airspeed for flight control. When set to 0 airspeed sensor can be logged and displayed on a GCS but won&#x27;t be used for flight. When set to 1 it will be logged and used. When set to 2 it will be only used when the throttle is zero, which can be useful in gliders with airspeed sensors behind a propeller</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Don't Use</td></tr>
+<tr><td>1</td><td>use</td></tr>
+<tr><td>2</td><td>UseWhenZeroThrottle</td></tr>
+</table>
+</ul>
+
+
 <h2>Airspeed offset for 2nd airspeed sensor (ARSPD2_OFFSET)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Airspeed calibration offset</p>
@@ -893,6 +964,13 @@ DO NOT EDIT
 <h2>Airspeed pin for 2nd airspeed sensor (ARSPD2_PIN)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Pin number indicating location of analog airspeed sensors. Pixhawk/Cube if set to 15. </p>
+<ul>
+</ul>
+
+
+<h2>Automatic airspeed ratio calibration for 2nd airspeed sensor (ARSPD2_AUTOCAL)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>If this is enabled then the autopilot will automatically adjust the ARSPD_RATIO during flight, based upon an estimation filter using ground speed and true airspeed. The automatic calibration will save the new ratio to EEPROM every 2 minutes if it changes by more than 5%. This option should be enabled for a calibration flight then disabled again when calibration is complete. Leaving it enabled all the time is not recommended.</p>
 <ul>
 </ul>
 
@@ -1258,6 +1336,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -1541,6 +1620,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT2_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT2_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT2_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT2_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT3_ Parameters</h1>
 
 
@@ -1571,6 +1692,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -1854,6 +1976,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT3_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT3_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT3_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT3_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT4_ Parameters</h1>
 
 
@@ -1884,6 +2048,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -2167,6 +2332,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT4_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT4_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT4_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT4_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT5_ Parameters</h1>
 
 
@@ -2197,6 +2404,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -2480,6 +2688,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT5_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT5_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT5_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT5_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT6_ Parameters</h1>
 
 
@@ -2510,6 +2760,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -2793,6 +3044,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT6_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT6_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT6_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT6_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT7_ Parameters</h1>
 
 
@@ -2823,6 +3116,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -3106,6 +3400,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT7_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT7_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT7_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT7_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT8_ Parameters</h1>
 
 
@@ -3136,6 +3472,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -3419,6 +3756,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT8_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT8_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT8_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT8_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT9_ Parameters</h1>
 
 
@@ -3449,6 +3828,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -3732,6 +4112,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT9_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT9_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT9_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT9_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT_ Parameters</h1>
 
 
@@ -3762,6 +4184,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -4042,6 +4465,48 @@ DO NOT EDIT
 <p>Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications</p>
 <ul>
 <li>Range: .1 10</li>
+</ul>
+
+
+<h2>Empty fuel level voltage (BATT_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
 </ul>
 
 
@@ -5112,6 +5577,65 @@ DO NOT EDIT
 <ul>
 <li>Units: degrees</li>
 <li>RebootRequired: True</li>
+</ul>
+
+
+<h1>DID_ Parameters</h1>
+
+
+<h2>Enable ODID subsystem (DID_ENABLE)</h2>
+
+<p>Enable ODID subsystem</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>MAVLink serial port (DID_MAVPORT)</h2>
+
+<p>Serial port number to send OpenDroneID MAVLink messages to. Can be -1 if using DroneCAN.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Disabled</td></tr>
+<tr><td>0</td><td>Serial0</td></tr>
+<tr><td>1</td><td>Serial1</td></tr>
+<tr><td>2</td><td>Serial2</td></tr>
+<tr><td>3</td><td>Serial3</td></tr>
+<tr><td>4</td><td>Serial4</td></tr>
+<tr><td>5</td><td>Serial5</td></tr>
+<tr><td>6</td><td>Serial6</td></tr>
+</table>
+</ul>
+
+
+<h2>DroneCAN driver number (DID_CANDRIVER)</h2>
+
+<p>DroneCAN driver index, 0 to disable DroneCAN</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Driver1</td></tr>
+<tr><td>2</td><td>Driver2</td></tr>
+</table>
+</ul>
+
+
+<h2>OpenDroneID options (DID_OPTIONS)</h2>
+
+<p>Options for OpenDroneID subsystem. Bit 0 means to enforce arming checks</p>
+<ul>
+<li>Bitmask: 0:EnforceArming</li>
+</ul>
+
+
+<h2>Barometer vertical accuraacy (DID_BARO_ACC)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Barometer Vertical Accuracy when installed in the vehicle. Note this is dependent upon installation conditions and thus disabled by default</p>
+<ul>
+<li>Units: meters</li>
 </ul>
 
 
@@ -6556,7 +7080,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -6717,6 +7241,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -6750,7 +7276,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -6911,6 +7437,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -6944,7 +7472,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -7105,6 +7633,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -7138,7 +7668,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -7299,6 +7829,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -7332,7 +7864,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -7493,6 +8025,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -7526,7 +8060,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -7687,6 +8221,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -7720,7 +8256,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -7881,6 +8417,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -7914,7 +8452,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -8075,6 +8613,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -8108,7 +8648,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -8269,6 +8809,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -8302,7 +8844,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -8463,6 +9005,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -8496,7 +9040,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -8657,6 +9201,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -8690,7 +9236,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -8851,6 +9397,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -8884,7 +9432,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -9045,6 +9593,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -9078,7 +9628,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -9239,6 +9789,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -9272,7 +9824,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -9433,6 +9985,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -9466,7 +10020,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -9627,6 +10181,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -9660,7 +10216,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -9821,6 +10377,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -9854,7 +10412,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -10015,6 +10573,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -10048,7 +10608,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -10209,6 +10769,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -10242,7 +10804,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -10403,6 +10965,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -10436,7 +11000,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -10597,6 +11161,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -10630,7 +11196,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -10791,6 +11357,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -10824,7 +11392,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -10985,6 +11553,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11018,7 +11588,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -11179,6 +11749,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11212,7 +11784,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -11373,6 +11945,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11406,7 +11980,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -11567,6 +12141,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11600,7 +12176,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -11761,6 +12337,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11794,7 +12372,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -11955,6 +12533,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11988,7 +12568,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -12149,6 +12729,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12182,7 +12764,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -12343,6 +12925,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12376,7 +12960,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -12537,6 +13121,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12570,7 +13156,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -12731,6 +13317,8 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -13008,6 +13596,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -13301,6 +13890,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -13594,6 +14184,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -13887,6 +14478,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -14180,6 +14772,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -14473,6 +15066,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -14766,6 +15360,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -15059,6 +15654,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -15352,6 +15948,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -15645,6 +16242,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>

@@ -363,12 +363,12 @@ Allows you to enable \(1\) or disable \(0\) the Preland simulation
 
 .. _SIM_PLD_LAT:
 
-SIM\_PLD\_LAT: Precland device origin\'s latitude
+SIM\_PLD\_LAT: Precland device center\'s latitude
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Precland device origin\'s latitude
+Precland device center\'s latitude
 
 
 +-----------+-----------+---------+
@@ -382,12 +382,12 @@ Precland device origin\'s latitude
 
 .. _SIM_PLD_LON:
 
-SIM\_PLD\_LON: Precland device origin\'s longitude
+SIM\_PLD\_LON: Precland device center\'s longitude
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Precland device origin\'s longitude
+Precland device center\'s longitude
 
 
 +-----------+-------------+---------+
@@ -401,12 +401,12 @@ Precland device origin\'s longitude
 
 .. _SIM_PLD_HEIGHT:
 
-SIM\_PLD\_HEIGHT: Precland device origin\'s height above sealevel
+SIM\_PLD\_HEIGHT: Precland device center\'s height above sealevel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
-Precland device origin\'s height above sealevel assume a 2x2m square as station base
+Precland device center\'s height above sealevel assume a 2x2m square as station base
 
 
 +-----------+------------+-------------+
@@ -546,6 +546,30 @@ Precland device orientation vector
 | +-------+---------+ |
 |                     |
 +---------------------+
+
+
+
+
+.. _SIM_PLD_OPTIONS:
+
+SIM\_PLD\_OPTIONS: SIM\_Precland extra options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+SIM\_Precland extra options
+
+
++----------------------------------+
+| Bitmask                          |
++==================================+
+| +-----+------------------------+ |
+| | Bit | Meaning                | |
+| +=====+========================+ |
+| | 0   | Enable target distance | |
+| +-----+------------------------+ |
+|                                  |
++----------------------------------+
 
 
 

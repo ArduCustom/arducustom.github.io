@@ -1111,9 +1111,9 @@ DO NOT EDIT
 
 <h2>Log bitmask (ArduPlane:LOG_BITMASK)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all log types by setting this to 65535. The individual bits are ATTITUDE_FAST=1, ATTITUDE_MEDIUM=2, GPS=4, PerformanceMonitoring=8, ControlTuning=16, NavigationTuning=32, Mode=64, IMU=128, Commands=256, Battery=512, Compass=1024, TECS=2048, Camera=4096, RCandServo=8192, Sonar=16384, Arming=32768, FullLogs=65535</p>
+<p>Bitmap of what on-board log types to enable. This value is made up of the sum of each of the log types you want to be saved. It is usually best just to enable all basic log types by setting this to 65535.</p>
 <ul>
-<li>Bitmask: 0:ATTITUDE_FAST,1:ATTITUDE_MED,2:GPS,3:PM,4:CTUN,5:NTUN,6:MODE,7:IMU,8:CMD,9:BATT_MON,10:COMPASS,11:TECS,12:CAMERA,13:RC,14:RANGEFINDER,15:ARM/DISARM,19:IMU_RAW,20:ATTITUDE_FULLRATE,21:VideoStabilization</li>
+<li>Bitmask: 0:Fast Attitude,1:Medium Attitude,2:GPS,3:Performance,4:Control Tuning,5:Navigation Tuning,7:IMU,8:Mission Commands,9:Battery Monitor,10:Compass,11:TECS,12:Camera,13:RC Input-Output,14:Rangefinder,19:Raw IMU,20:Fullrate Attitude,21:Video Stabilization</li>
 </ul>
 
 
@@ -1988,6 +1988,14 @@ DO NOT EDIT
 <tr><td>1</td><td>log only special ID</td></tr>
 <tr><td>2</td><td>log all</td></tr>
 </table>
+</ul>
+
+
+<h2>ADS-B Options (ADSB_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Options for emergency failsafe codes and device capabilities</p>
+<ul>
+<li>Bitmask: 0:Ping200X Send GPS,1:Squawk 7400 on RC failsafe,2:Squawk 7400 on GCS failsafe,3:Sagetech MXS use External Config</li>
 </ul>
 
 
@@ -3149,6 +3157,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -3472,6 +3481,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT2_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT2_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT2_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT2_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT3_ Parameters</h1>
 
 
@@ -3502,6 +3553,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -3825,6 +3877,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT3_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT3_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT3_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT3_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT4_ Parameters</h1>
 
 
@@ -3855,6 +3949,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -4178,6 +4273,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT4_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT4_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT4_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT4_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT5_ Parameters</h1>
 
 
@@ -4208,6 +4345,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -4531,6 +4669,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT5_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT5_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT5_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT5_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT6_ Parameters</h1>
 
 
@@ -4561,6 +4741,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -4884,6 +5065,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT6_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT6_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT6_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT6_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT7_ Parameters</h1>
 
 
@@ -4914,6 +5137,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -5237,6 +5461,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT7_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT7_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT7_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT7_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT8_ Parameters</h1>
 
 
@@ -5267,6 +5533,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -5590,6 +5857,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT8_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT8_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT8_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT8_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT9_ Parameters</h1>
 
 
@@ -5620,6 +5929,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -5943,6 +6253,48 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Empty fuel level voltage (BATT9_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT9_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT9_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT9_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
+</ul>
+
+
 <h1>BATT_ Parameters</h1>
 
 
@@ -5973,6 +6325,7 @@ DO NOT EDIT
 <tr><td>21</td><td>INA2XX</td></tr>
 <tr><td>22</td><td>LTC2946</td></tr>
 <tr><td>23</td><td>Torqeedo</td></tr>
+<tr><td>24</td><td>FuelLevelAnalog</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -6293,6 +6646,48 @@ DO NOT EDIT
 <p>Multiplier applied to all current related reports to allow for adjustment if no UAVCAN param access or current splitting applications</p>
 <ul>
 <li>Range: .1 10</li>
+</ul>
+
+
+<h2>Empty fuel level voltage (BATT_FL_VLT_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The voltage seen on the analog pin when the fuel tank is empty. Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+<li>Units: volt</li>
+</ul>
+
+
+<h2>Fuel level voltage multiplier (BATT_FL_V_MULT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Voltage multiplier to determine what the full tank voltage reading is. This is calculated as 1 / (Voltage_Full - Voltage_Empty) Note: For this type of battery monitor, the voltage seen by the analog pin is displayed as battery voltage on a GCS.</p>
+<ul>
+<li>Range: 0.01 10</li>
+</ul>
+
+
+<h2>Fuel level filter frequency (BATT_FL_FLTR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Filter frequency in Hertz where a low pass filter is used. This is used to filter out tank slosh from the fuel level reading. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level. The suggested values at in the range of 0.2 Hz to 0.5 Hz.</p>
+<ul>
+<li>Range: -1 1</li>
+<li>Units: hertz</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Fuel level analog pin number (BATT_FL_PIN)</h2>
+
+<p>Analog input pin that fuel level sensor is connected to. Airspeed ports can be used for Analog input. When using analog pin 103, the maximum value of the input in 3.3V.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Not Used</td></tr>
+<tr><td>11</td><td>Pixracer</td></tr>
+<tr><td>13</td><td>Pixhawk ADC4</td></tr>
+<tr><td>14</td><td>Pixhawk ADC3</td></tr>
+<tr><td>15</td><td>Pixhawk ADC6/Pixhawk2 ADC</td></tr>
+<tr><td>103</td><td>Pixhawk SBUS</td></tr>
+</table>
 </ul>
 
 
@@ -6960,6 +7355,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6968,6 +7364,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -7044,6 +7441,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -7052,6 +7450,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -7128,6 +7527,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -7136,6 +7536,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -7212,6 +7613,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -7220,6 +7622,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -9195,6 +9598,65 @@ DO NOT EDIT
 </ul>
 
 
+<h1>DID_ Parameters</h1>
+
+
+<h2>Enable ODID subsystem (DID_ENABLE)</h2>
+
+<p>Enable ODID subsystem</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>MAVLink serial port (DID_MAVPORT)</h2>
+
+<p>Serial port number to send OpenDroneID MAVLink messages to. Can be -1 if using DroneCAN.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>Disabled</td></tr>
+<tr><td>0</td><td>Serial0</td></tr>
+<tr><td>1</td><td>Serial1</td></tr>
+<tr><td>2</td><td>Serial2</td></tr>
+<tr><td>3</td><td>Serial3</td></tr>
+<tr><td>4</td><td>Serial4</td></tr>
+<tr><td>5</td><td>Serial5</td></tr>
+<tr><td>6</td><td>Serial6</td></tr>
+</table>
+</ul>
+
+
+<h2>DroneCAN driver number (DID_CANDRIVER)</h2>
+
+<p>DroneCAN driver index, 0 to disable DroneCAN</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Driver1</td></tr>
+<tr><td>2</td><td>Driver2</td></tr>
+</table>
+</ul>
+
+
+<h2>OpenDroneID options (DID_OPTIONS)</h2>
+
+<p>Options for OpenDroneID subsystem. Bit 0 means to enforce arming checks</p>
+<ul>
+<li>Bitmask: 0:EnforceArming</li>
+</ul>
+
+
+<h2>Barometer vertical accuraacy (DID_BARO_ACC)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Barometer Vertical Accuracy when installed in the vehicle. Note this is dependent upon installation conditions and thus disabled by default</p>
+<ul>
+<li>Units: meters</li>
+</ul>
+
+
 <h1>EAHRS Parameters</h1>
 
 
@@ -10775,6 +11237,14 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Fence options (FENCE_OPTIONS)</h2>
+
+<p>0:Disable mode change following fence action until fence breach is cleared</p>
+<ul>
+<li>Bitmask: 0:Disable mode change following fence action until fence breach is cleared</li>
+</ul>
+
+
 <h1>FFT_ Parameters</h1>
 
 
@@ -11803,9 +12273,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Gripper Regrab interval (GRIP_REGRAB)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>EPM Gripper Regrab interval (GRIP_REGRAB)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Time in seconds that gripper will regrab the cargo to ensure grip has not weakened; 0 to disable</p>
+<p>Time in seconds that EPM gripper will regrab the cargo to ensure grip has not weakened; 0 to disable</p>
 <ul>
 <li>Range: 0 255</li>
 <li>Units: seconds</li>
@@ -11817,6 +12287,15 @@ DO NOT EDIT
 <p>Refer to https://docs.zubax.com/opengrab_epm_v3#UAVCAN_interface</p>
 <ul>
 <li>Range: 0 255</li>
+</ul>
+
+
+<h2>Gripper Autoclose time (GRIP_AUTOCLOSE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Time in seconds that gripper close the gripper after opening; 0 to disable</p>
+<ul>
+<li>Range: 0.25 255</li>
+<li>Units: seconds</li>
 </ul>
 
 
@@ -29240,9 +29719,9 @@ DO NOT EDIT
 
 <h2>quadplane options (Q_OPTIONS)</h2>
 
-<p>Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command&#x27;s reference frame rather than a delta above current location, Use FW Approach:Use a fixed wing approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND. Force RTL mode: forces RTL mode on rc failsafe in VTOL modes overriding bit 5(USE_QRTL).</p>
+<p>Level Transition:Keep wings within LEVEL_ROLL_LIMIT and only use forward motor(s) for climb during transition, Allow FW Takeoff: If bit is not set then NAV_TAKEOFF command on quadplanes will instead perform a NAV_VTOL takeoff, Allow FW Land:If bit is not set then NAV_LAND command on quadplanes will instead perform a NAV_VTOL_LAND, Vtol Takeoff Frame: command NAV_VTOL_TAKEOFF altitude is as set by the command&#x27;s reference frame rather than a delta above current location, Always use FW spiral approach:Always use Use a fixed wing spiral approach for VTOL landings, USE QRTL:instead of QLAND for rc failsafe when in VTOL modes, Use Governor:Use ICE Idle Governor in MANUAL for forward motor, Force Qassist: on always,Mtrs_Only_Qassist: in tailsitters only, uses VTOL motors and not flying surfaces for QASSIST, Airmode_On_Arm:Airmode enabled when arming by aux switch, Disarmed Yaw Tilt:Enable motor tilt for yaw when disarmed, Delay Spoolup:Delay VTOL spoolup for 2 seconds after arming, ThrLandControl: enable throttle stick control of landing rate, DisableApproach: Disable use of approach and airbrake stages in VTOL landing, EnableLandResposition: enable pilot controlled repositioning in AUTO land. Descent will pause while repositioning. ARMVTOL: Arm only in VTOL or AUTO modes. CompleteTransition: to fixed wing if Q_TRANS_FAIL timer times out instead of QLAND. Force RTL mode: forces RTL mode on rc failsafe in VTOL modes overriding bit 5(USE_QRTL).</p>
 <ul>
-<li>Bitmask: 0:Level Transition,1:Allow FW Takeoff,2:Allow FW Land,3:Vtol Takeoff Frame,4:Use FW Approach,5:Use QRTL,6:Use Governor,7:Force Qassist,8:Mtrs_Only_Qassist,10:Disarmed Yaw Tilt,11:Delay Spoolup,12:disable Qassist based on synthetic airspeed,13:Disable Ground Effect Compensation,14:Ignore forward flight angle limits in Qmodes,15:ThrLandControl,16:DisableApproach,17:EnableLandReposition,18:ARMVtol, 19: CompleteTransition if Q_TRANS_FAIL, 20: Force RTL mode on VTOL failsafes overriding bit 5(USE QRTL)</li>
+<li>Bitmask: 0:Level Transition,1:Allow FW Takeoff,2:Allow FW Land,3:Vtol Takeoff Frame,4:Always use FW spiral approach,5:Use QRTL,6:Use Governor,7:Force Qassist,8:Mtrs_Only_Qassist,10:Disarmed Yaw Tilt,11:Delay Spoolup,12:disable Qassist based on synthetic airspeed,13:Disable Ground Effect Compensation,14:Ignore forward flight angle limits in Qmodes,15:ThrLandControl,16:DisableApproach,17:EnableLandReposition,18:ARMVtol, 19: CompleteTransition if Q_TRANS_FAIL, 20: Force RTL mode on VTOL failsafes overriding bit 5(USE QRTL)</li>
 </ul>
 
 
@@ -31156,6 +31635,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -31164,6 +31644,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -31293,6 +31774,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -31301,6 +31783,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -31430,6 +31913,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -31438,6 +31922,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -31567,6 +32052,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -31575,6 +32061,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -31704,6 +32191,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -31712,6 +32200,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -31841,6 +32330,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -31849,6 +32339,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -31978,6 +32469,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -31986,6 +32478,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -32115,6 +32608,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -32123,6 +32617,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -32252,6 +32747,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -32260,6 +32756,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -32389,6 +32886,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -32397,6 +32895,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -32526,6 +33025,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -32534,6 +33034,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -32663,6 +33164,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -32671,6 +33173,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -32800,6 +33303,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -32808,6 +33312,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -32937,6 +33442,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -32945,6 +33451,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -33074,6 +33581,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -33082,6 +33590,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -33211,6 +33720,7 @@ DO NOT EDIT
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
+<tr><td>210</td><td>Airbrakes</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -33219,6 +33729,7 @@ DO NOT EDIT
 <tr><td>305</td><td>Scripting6</td></tr>
 <tr><td>306</td><td>Scripting7</td></tr>
 <tr><td>307</td><td>Scripting8</td></tr>
+<tr><td>165</td><td>Servo auto trim</td></tr>
 </table>
 </ul>
 
@@ -33678,6 +34189,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -33971,6 +34483,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -34264,6 +34777,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -34557,6 +35071,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -34850,6 +35365,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -35143,6 +35659,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -35436,6 +35953,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -35729,6 +36247,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -36022,6 +36541,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -36315,6 +36835,7 @@ DO NOT EDIT
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
 <tr><td>34</td><td>Benewake_CAN</td></tr>
+<tr><td>35</td><td>TeraRangerSerial</td></tr>
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -37865,7 +38386,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -37999,6 +38520,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -38016,6 +38538,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38049,7 +38573,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -38183,6 +38707,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -38200,6 +38725,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38233,7 +38760,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -38367,6 +38894,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -38384,6 +38912,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38417,7 +38947,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -38551,6 +39081,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -38568,6 +39099,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38601,7 +39134,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -38735,6 +39268,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -38752,6 +39286,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38785,7 +39321,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -38919,6 +39455,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -38936,6 +39473,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38969,7 +39508,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -39103,6 +39642,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -39120,6 +39660,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -39153,7 +39695,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -39287,6 +39829,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -39304,6 +39847,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -39337,7 +39882,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -39471,6 +40016,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -39488,6 +40034,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -39521,7 +40069,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -39655,6 +40203,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -39672,6 +40221,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -39705,7 +40256,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -39839,6 +40390,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -39856,6 +40408,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -39889,7 +40443,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -40023,6 +40577,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -40040,6 +40595,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -40073,7 +40630,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -40207,6 +40764,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -40224,6 +40782,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -40257,7 +40817,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -40391,6 +40951,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -40408,6 +40969,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -40441,7 +41004,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -40575,6 +41138,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -40592,6 +41156,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -40625,7 +41191,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -40759,6 +41325,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -40776,6 +41343,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -40809,7 +41378,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -40943,6 +41512,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -40960,6 +41530,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -40993,7 +41565,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -41127,6 +41699,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -41144,6 +41717,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -41177,7 +41752,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -41311,6 +41886,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -41328,6 +41904,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -41361,7 +41939,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -41495,6 +42073,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -41512,6 +42091,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -41545,7 +42126,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -41679,6 +42260,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -41696,6 +42278,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -41729,7 +42313,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -41863,6 +42447,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -41880,6 +42465,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -41913,7 +42500,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -42047,6 +42634,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -42064,6 +42652,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -42097,7 +42687,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -42231,6 +42821,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -42248,6 +42839,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -42281,7 +42874,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -42415,6 +43008,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -42432,6 +43026,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -42465,7 +43061,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -42599,6 +43195,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -42616,6 +43213,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -42649,7 +43248,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -42783,6 +43382,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -42800,6 +43400,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -42833,7 +43435,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -42967,6 +43569,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -42984,6 +43587,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -43017,7 +43622,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -43151,6 +43756,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -43168,6 +43774,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -43201,7 +43809,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -43335,6 +43943,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -43352,6 +43961,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -43385,7 +43996,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -43519,6 +44130,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -43536,6 +44148,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -43569,7 +44183,7 @@ DO NOT EDIT
 <p>minimum PWM pulse width in microseconds. Typically 1000 is lower limit, 1500 is neutral and 2000 is upper limit.</p>
 <ul>
 <li>Units: PWM in microseconds</li>
-<li>Range: 500 2200</li>
+<li>Range: 800 2200</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -43703,6 +44317,7 @@ DO NOT EDIT
 <tr><td>107</td><td>Script14</td></tr>
 <tr><td>108</td><td>Script15</td></tr>
 <tr><td>109</td><td>Script16</td></tr>
+<tr><td>110</td><td>Airbrakes</td></tr>
 <tr><td>120</td><td>NeoPixel1</td></tr>
 <tr><td>121</td><td>NeoPixel2</td></tr>
 <tr><td>122</td><td>NeoPixel3</td></tr>
@@ -43720,6 +44335,8 @@ DO NOT EDIT
 <tr><td>136</td><td>SERVOn_MAX</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>Aileron left</td></tr>
+<tr><td>141</td><td>Aileron right</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
