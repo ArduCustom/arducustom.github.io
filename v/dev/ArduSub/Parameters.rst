@@ -4463,7 +4463,7 @@ BATT2\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -5307,7 +5307,7 @@ BATT3\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -6151,7 +6151,7 @@ BATT4\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -6995,7 +6995,7 @@ BATT5\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -7839,7 +7839,7 @@ BATT6\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -8683,7 +8683,7 @@ BATT7\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -9527,7 +9527,7 @@ BATT8\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -10371,7 +10371,7 @@ BATT9\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+
@@ -11215,7 +11215,7 @@ BATT\_CELL\_COUNT: Battery cell count
 
 | *Note: This parameter is for advanced users*
 
-Overrides cell count autodetection if not \-1
+Set to \-1 to disable cell count\. Set to 0 for automatic cell count detection\, the detected cell count is the integral part of voltage\/CELL\_DT\_V\+1\. Or set to the number of cells\.
 
 
 +-----------+

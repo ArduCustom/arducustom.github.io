@@ -1056,7 +1056,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT2_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT2_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT2_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -1269,7 +1269,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT3_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT3_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT3_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -1482,7 +1482,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT4_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT4_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT4_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -1695,7 +1695,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT5_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT5_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT5_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -1908,7 +1908,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT6_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT6_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT6_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -2121,7 +2121,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT7_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT7_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT7_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -2334,7 +2334,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT8_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT8_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT8_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -2547,7 +2547,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT9_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT9_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT9_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">
@@ -2760,7 +2760,7 @@
         <field name="UnitText">volt</field>
         <field name="Increment">0.01</field>
       </param>
-      <param humanName="Battery cell count" name="BATT_CELL_COUNT" documentation="Overrides cell count autodetection if not -1" user="Advanced">
+      <param humanName="Battery cell count" name="BATT_CELL_COUNT" documentation="Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells." user="Advanced">
         <field name="Increment">1</field>
       </param>
       <param humanName="Battery Voltage sensing pin" name="BATT_VOLT_PIN" documentation="Sets the analog input pin that should be used for voltage monitoring." user="Standard">

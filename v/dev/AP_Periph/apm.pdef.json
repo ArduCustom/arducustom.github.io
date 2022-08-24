@@ -1222,7 +1222,7 @@
       "User": "Standard"
     },
     "BATT2_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -1546,7 +1546,7 @@
       "User": "Standard"
     },
     "BATT3_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -1870,7 +1870,7 @@
       "User": "Standard"
     },
     "BATT4_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -2194,7 +2194,7 @@
       "User": "Standard"
     },
     "BATT5_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -2518,7 +2518,7 @@
       "User": "Standard"
     },
     "BATT6_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -2842,7 +2842,7 @@
       "User": "Standard"
     },
     "BATT7_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -3166,7 +3166,7 @@
       "User": "Standard"
     },
     "BATT8_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -3490,7 +3490,7 @@
       "User": "Standard"
     },
     "BATT9_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
@@ -3814,7 +3814,7 @@
       "User": "Standard"
     },
     "BATT_CELL_COUNT": {
-      "Description": "Overrides cell count autodetection if not -1",
+      "Description": "Set to -1 to disable cell count. Set to 0 for automatic cell count detection, the detected cell count is the integral part of voltage/CELL_DT_V+1. Or set to the number of cells.",
       "DisplayName": "Battery cell count",
       "Increment": "1",
       "User": "Advanced"
