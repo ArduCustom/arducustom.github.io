@@ -9818,7 +9818,7 @@
       <param humanName="BAT2REM_Y" name="OSD1_BAT2REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PN_EN" name="OSD1_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PN_EN" name="OSD1_TUNED_PN_EN" documentation="Displays the currently tuned parameter name when the parameter value is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -9830,7 +9830,7 @@
       <param humanName="TUNED_PN_Y" name="OSD1_TUNED_PN_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PV_EN" name="OSD1_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PV_EN" name="OSD1_TUNED_PV_EN" documentation="Displays the currently tuned parameter value when it is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -10912,7 +10912,7 @@
       <param humanName="BAT2REM_Y" name="OSD2_BAT2REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PN_EN" name="OSD2_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PN_EN" name="OSD2_TUNED_PN_EN" documentation="Displays the currently tuned parameter name when the parameter value is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -10924,7 +10924,7 @@
       <param humanName="TUNED_PN_Y" name="OSD2_TUNED_PN_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PV_EN" name="OSD2_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PV_EN" name="OSD2_TUNED_PV_EN" documentation="Displays the currently tuned parameter value when it is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -12006,7 +12006,7 @@
       <param humanName="BAT2REM_Y" name="OSD3_BAT2REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PN_EN" name="OSD3_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PN_EN" name="OSD3_TUNED_PN_EN" documentation="Displays the currently tuned parameter name when the parameter value is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -12018,7 +12018,7 @@
       <param humanName="TUNED_PN_Y" name="OSD3_TUNED_PN_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PV_EN" name="OSD3_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PV_EN" name="OSD3_TUNED_PV_EN" documentation="Displays the currently tuned parameter value when it is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -13100,7 +13100,7 @@
       <param humanName="BAT2REM_Y" name="OSD4_BAT2REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PN_EN" name="OSD4_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PN_EN" name="OSD4_TUNED_PN_EN" documentation="Displays the currently tuned parameter name when the parameter value is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -13112,7 +13112,7 @@
       <param humanName="TUNED_PN_Y" name="OSD4_TUNED_PN_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PV_EN" name="OSD4_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PV_EN" name="OSD4_TUNED_PV_EN" documentation="Displays the currently tuned parameter value when it is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -14194,7 +14194,7 @@
       <param humanName="BAT2REM_Y" name="OSD5_BAT2REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PN_EN" name="OSD5_TUNED_PN_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PN_EN" name="OSD5_TUNED_PN_EN" documentation="Displays the currently tuned parameter name when the parameter value is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -14206,7 +14206,7 @@
       <param humanName="TUNED_PN_Y" name="OSD5_TUNED_PN_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="TUNED_PV_EN" name="OSD5_TUNED_PV_EN" documentation="Displays secondary battery mAh consumed">
+      <param humanName="TUNED_PV_EN" name="OSD5_TUNED_PV_EN" documentation="Displays the currently tuned parameter value when it is changing">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>

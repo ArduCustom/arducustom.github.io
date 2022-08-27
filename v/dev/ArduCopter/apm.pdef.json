@@ -18146,7 +18146,7 @@
       }
     },
     "OSD1_TUNED_PN_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter name when the parameter value is changing",
       "DisplayName": "TUNED_PN_EN",
       "Values": {
         "0": "Disabled",
@@ -18170,7 +18170,7 @@
       }
     },
     "OSD1_TUNED_PV_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter value when it is changing",
       "DisplayName": "TUNED_PV_EN",
       "Values": {
         "0": "Disabled",
@@ -20335,7 +20335,7 @@
       }
     },
     "OSD2_TUNED_PN_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter name when the parameter value is changing",
       "DisplayName": "TUNED_PN_EN",
       "Values": {
         "0": "Disabled",
@@ -20359,7 +20359,7 @@
       }
     },
     "OSD2_TUNED_PV_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter value when it is changing",
       "DisplayName": "TUNED_PV_EN",
       "Values": {
         "0": "Disabled",
@@ -22524,7 +22524,7 @@
       }
     },
     "OSD3_TUNED_PN_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter name when the parameter value is changing",
       "DisplayName": "TUNED_PN_EN",
       "Values": {
         "0": "Disabled",
@@ -22548,7 +22548,7 @@
       }
     },
     "OSD3_TUNED_PV_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter value when it is changing",
       "DisplayName": "TUNED_PV_EN",
       "Values": {
         "0": "Disabled",
@@ -24713,7 +24713,7 @@
       }
     },
     "OSD4_TUNED_PN_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter name when the parameter value is changing",
       "DisplayName": "TUNED_PN_EN",
       "Values": {
         "0": "Disabled",
@@ -24737,7 +24737,7 @@
       }
     },
     "OSD4_TUNED_PV_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter value when it is changing",
       "DisplayName": "TUNED_PV_EN",
       "Values": {
         "0": "Disabled",
@@ -26902,7 +26902,7 @@
       }
     },
     "OSD5_TUNED_PN_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter name when the parameter value is changing",
       "DisplayName": "TUNED_PN_EN",
       "Values": {
         "0": "Disabled",
@@ -26926,7 +26926,7 @@
       }
     },
     "OSD5_TUNED_PV_EN": {
-      "Description": "Displays secondary battery mAh consumed",
+      "Description": "Displays the currently tuned parameter value when it is changing",
       "DisplayName": "TUNED_PV_EN",
       "Values": {
         "0": "Disabled",

@@ -41948,7 +41948,7 @@ OSD1\_TUNED\_PN\_EN: TUNED\_PN\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter name when the parameter value is changing
 
 
 +----------------------+
@@ -42009,7 +42009,7 @@ OSD1\_TUNED\_PV\_EN: TUNED\_PV\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter value when it is changing
 
 
 +----------------------+
@@ -47506,7 +47506,7 @@ OSD2\_TUNED\_PN\_EN: TUNED\_PN\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter name when the parameter value is changing
 
 
 +----------------------+
@@ -47567,7 +47567,7 @@ OSD2\_TUNED\_PV\_EN: TUNED\_PV\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter value when it is changing
 
 
 +----------------------+
@@ -53064,7 +53064,7 @@ OSD3\_TUNED\_PN\_EN: TUNED\_PN\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter name when the parameter value is changing
 
 
 +----------------------+
@@ -53125,7 +53125,7 @@ OSD3\_TUNED\_PV\_EN: TUNED\_PV\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter value when it is changing
 
 
 +----------------------+
@@ -58622,7 +58622,7 @@ OSD4\_TUNED\_PN\_EN: TUNED\_PN\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter name when the parameter value is changing
 
 
 +----------------------+
@@ -58683,7 +58683,7 @@ OSD4\_TUNED\_PV\_EN: TUNED\_PV\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter value when it is changing
 
 
 +----------------------+
@@ -64180,7 +64180,7 @@ OSD5\_TUNED\_PN\_EN: TUNED\_PN\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter name when the parameter value is changing
 
 
 +----------------------+
@@ -64241,7 +64241,7 @@ OSD5\_TUNED\_PV\_EN: TUNED\_PV\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays secondary battery mAh consumed
+Displays the currently tuned parameter value when it is changing
 
 
 +----------------------+
