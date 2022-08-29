@@ -11039,7 +11039,8 @@
       "Bitmask": {
         "0": "EnableTelemetryMode",
         "1": "DisableDJIWorkarounds",
-        "2": "EnableBTFLFonts"
+        "2": "EnableBTFLFonts",
+        "6": "replace RSSI with LQ"
       },
       "Description": "A bitmask to set some MSP specific options",
       "DisplayName": "MSP OSD Options",

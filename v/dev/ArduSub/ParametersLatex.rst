@@ -33210,6 +33210,8 @@ A bitmask to set some MSP specific options
 +-----+-----------------------+
 | 2   | EnableBTFLFonts       |
 +-----+-----------------------+
+| 6   | replace RSSI with LQ  |
++-----+-----------------------+
 
 
 

@@ -9969,7 +9969,7 @@
         </values>
       </param>
       <param humanName="MSP OSD Options" name="MSP_OPTIONS" documentation="A bitmask to set some MSP specific options" user="Standard">
-        <field name="Bitmask">0:EnableTelemetryMode, 1: DisableDJIWorkarounds, 2:EnableBTFLFonts</field>
+        <field name="Bitmask">0:EnableTelemetryMode, 1: DisableDJIWorkarounds, 2:EnableBTFLFonts, 6: replace RSSI with LQ</field>
       </param>
     </parameters>
     <parameters name="NTF_">
