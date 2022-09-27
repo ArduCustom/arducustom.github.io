@@ -13649,7 +13649,7 @@
       }
     },
     "OSD1_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -13673,7 +13673,7 @@
       }
     },
     "OSD1_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -15838,7 +15838,7 @@
       }
     },
     "OSD2_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -15862,7 +15862,7 @@
       }
     },
     "OSD2_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -18027,7 +18027,7 @@
       }
     },
     "OSD3_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -18051,7 +18051,7 @@
       }
     },
     "OSD3_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -20216,7 +20216,7 @@
       }
     },
     "OSD4_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -20240,7 +20240,7 @@
       }
     },
     "OSD4_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -22405,7 +22405,7 @@
       }
     },
     "OSD5_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -22429,7 +22429,7 @@
       }
     },
     "OSD5_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -44894,30 +44894,30 @@
         "0": "None",
         "1": "RateRollPI",
         "10": "RateYawP",
-        "101": "Set_RateRollPitch",
-        "102": "Set_RateRoll",
-        "103": "Set_RatePitch",
-        "104": "Set_RateYaw",
-        "105": "Set_AngleRollPitch",
-        "106": "Set_VelXY",
-        "107": "Set_AccelZ",
-        "108": "Set_RatePitchDP",
-        "109": "Set_RateRollDP",
+        "101": "Set_RateRollPitch (RATE_ROLL_D / RATE_ROLL_PI / RATE_PITCH_D / RATE_PITCH_PI)",
+        "102": "Set_RateRoll (RATE_ROLL_D / RATE_ROLL_PI)",
+        "103": "Set_RatePitch(RATE_PITCH_D / RATE_PITCH_PI)",
+        "104": "Set_RateYaw (RATE_YAW_P / RATE_YAW_I / RATE_YAW_D)",
+        "105": "Set_AngleRollPitch (ANG_ROLL_P / ANG_PITCH_P)",
+        "106": "Set_VelXY (VXY_P / VXY_I)",
+        "107": "Set_AccelZ (AZ_P / AZ_I / AZ_D)",
+        "108": "Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)",
+        "109": "Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)",
         "11": "RateYawI",
-        "110": "Set_RateYawDP",
-        "111": "Set_THR2PTCH",
-        "112": "Set turn coordination",
-        "113": "TECS THR FF",
-        "114": "Set_AglRollPitch",
-        "115": "Set_AglRoll",
-        "116": "Set_AglPitch",
-        "117": "Set_Mixing",
-        "118": "Set_THRExpo",
-        "119": "Set_flap",
+        "110": "Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)",
+        "111": "Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)",
+        "112": "Set turn coordination (RLL2PTCH / KFF_RDDRMIX)",
+        "113": "TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)",
+        "114": "Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)",
+        "115": "Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)",
+        "116": "Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)",
+        "117": "Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)",
+        "118": "Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)",
+        "119": "Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)",
         "12": "RateYawD",
-        "120": "Set_FW_Roll_Pitch",
-        "121": "Set_FW_Roll",
-        "122": "Set_FW_Pitch",
+        "120": "Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)",
+        "121": "Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)",
+        "122": "Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)",
         "13": "AngleRollP",
         "14": "AnglePitchP",
         "15": "AngleYawP",
@@ -44982,7 +44982,8 @@
         "9": "RateYawPI",
         "90": "Ailerons diff",
         "91": "Elevator diff",
-        "92": "Q pitch trim"
+        "92": "Q pitch trim",
+        "93": "THR_AUTO_SRATE"
       }
     },
     "TUNE_RANGE": {

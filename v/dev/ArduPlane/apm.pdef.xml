@@ -9758,7 +9758,7 @@
       <param humanName="NRG_REM_Y" name="OSD1_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD1_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD1_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -9770,7 +9770,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD1_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD1_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD1_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -10852,7 +10852,7 @@
       <param humanName="NRG_REM_Y" name="OSD2_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD2_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD2_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -10864,7 +10864,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD2_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD2_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD2_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -11946,7 +11946,7 @@
       <param humanName="NRG_REM_Y" name="OSD3_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD3_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD3_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -11958,7 +11958,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD3_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD3_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD3_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -13040,7 +13040,7 @@
       <param humanName="NRG_REM_Y" name="OSD4_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD4_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD4_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -13052,7 +13052,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD4_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD4_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD4_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -14134,7 +14134,7 @@
       <param humanName="NRG_REM_Y" name="OSD5_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD5_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD5_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -14146,7 +14146,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD5_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD5_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD5_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -27046,28 +27046,29 @@
           <value code="90">Ailerons diff</value>
           <value code="91">Elevator diff</value>
           <value code="92">Q pitch trim</value>
-          <value code="101">Set_RateRollPitch</value>
-          <value code="102">Set_RateRoll</value>
-          <value code="103">Set_RatePitch</value>
-          <value code="104">Set_RateYaw</value>
-          <value code="105">Set_AngleRollPitch</value>
-          <value code="106">Set_VelXY</value>
-          <value code="107">Set_AccelZ</value>
-          <value code="108">Set_RatePitchDP</value>
-          <value code="109">Set_RateRollDP</value>
-          <value code="110">Set_RateYawDP</value>
-          <value code="111">Set_THR2PTCH</value>
-          <value code="112">Set turn coordination</value>
-          <value code="113">TECS THR FF</value>
-          <value code="114">Set_AglRollPitch</value>
-          <value code="115">Set_AglRoll</value>
-          <value code="116">Set_AglPitch</value>
-          <value code="117">Set_Mixing</value>
-          <value code="118">Set_THRExpo</value>
-          <value code="119">Set_flap</value>
-          <value code="120">Set_FW_Roll_Pitch</value>
-          <value code="121">Set_FW_Roll</value>
-          <value code="122">Set_FW_Pitch</value>
+          <value code="93">THR_AUTO_SRATE</value>
+          <value code="101">Set_RateRollPitch (RATE_ROLL_D / RATE_ROLL_PI / RATE_PITCH_D / RATE_PITCH_PI)</value>
+          <value code="102">Set_RateRoll (RATE_ROLL_D / RATE_ROLL_PI)</value>
+          <value code="103">Set_RatePitch(RATE_PITCH_D / RATE_PITCH_PI)</value>
+          <value code="104">Set_RateYaw (RATE_YAW_P / RATE_YAW_I / RATE_YAW_D)</value>
+          <value code="105">Set_AngleRollPitch (ANG_ROLL_P / ANG_PITCH_P)</value>
+          <value code="106">Set_VelXY (VXY_P / VXY_I)</value>
+          <value code="107">Set_AccelZ (AZ_P / AZ_I / AZ_D)</value>
+          <value code="108">Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)</value>
+          <value code="109">Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)</value>
+          <value code="110">Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)</value>
+          <value code="111">Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</value>
+          <value code="112">Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</value>
+          <value code="113">TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</value>
+          <value code="114">Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</value>
+          <value code="115">Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</value>
+          <value code="116">Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)</value>
+          <value code="117">Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</value>
+          <value code="118">Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</value>
+          <value code="119">Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</value>
+          <value code="120">Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
+          <value code="121">Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</value>
+          <value code="122">Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
         </values>
       </param>
       <param humanName="Transmitter tuning channel" name="TUNE_CHAN" documentation="This sets the channel for transmitter tuning. This should be connected to a knob or slider on your transmitter. It needs to be setup to use the PWM range given by TUNE_CHAN_MIN to TUNE_CHAN_MAX" user="Standard">

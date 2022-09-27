@@ -41645,7 +41645,7 @@ OSD1\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -41706,7 +41706,7 @@ OSD1\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average air flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -47203,7 +47203,7 @@ OSD2\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -47264,7 +47264,7 @@ OSD2\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average air flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -52761,7 +52761,7 @@ OSD3\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -52822,7 +52822,7 @@ OSD3\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average air flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -58319,7 +58319,7 @@ OSD4\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -58380,7 +58380,7 @@ OSD4\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average air flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -63877,7 +63877,7 @@ OSD5\_AVG\_EFFG\_EN: AVG\_EFFG\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average ground flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+
@@ -63938,7 +63938,7 @@ OSD5\_AVG\_EFFA\_EN: AVG\_EFFA\_EN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Displays average flight efficiency \(mAh or Wh \/ km or mi\)
+Displays average air flight efficiency \(mAh or Wh \/ km or mi\)
 
 
 +----------------------+

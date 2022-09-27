@@ -13215,7 +13215,7 @@
       }
     },
     "OSD1_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -13239,7 +13239,7 @@
       }
     },
     "OSD1_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -15404,7 +15404,7 @@
       }
     },
     "OSD2_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -15428,7 +15428,7 @@
       }
     },
     "OSD2_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -17593,7 +17593,7 @@
       }
     },
     "OSD3_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -17617,7 +17617,7 @@
       }
     },
     "OSD3_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -19782,7 +19782,7 @@
       }
     },
     "OSD4_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -19806,7 +19806,7 @@
       }
     },
     "OSD4_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",
@@ -21971,7 +21971,7 @@
       }
     },
     "OSD5_AVG_EFFA_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average air flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFA_EN",
       "Values": {
         "0": "Disabled",
@@ -21995,7 +21995,7 @@
       }
     },
     "OSD5_AVG_EFFG_EN": {
-      "Description": "Displays average flight efficiency (mAh or Wh / km or mi)",
+      "Description": "Displays average ground flight efficiency (mAh or Wh / km or mi)",
       "DisplayName": "AVG_EFFG_EN",
       "Values": {
         "0": "Disabled",

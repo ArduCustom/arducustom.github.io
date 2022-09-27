@@ -10436,7 +10436,7 @@
       <param humanName="NRG_REM_Y" name="OSD1_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD1_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD1_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -10448,7 +10448,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD1_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD1_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD1_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -11530,7 +11530,7 @@
       <param humanName="NRG_REM_Y" name="OSD2_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD2_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD2_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -11542,7 +11542,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD2_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD2_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD2_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -12624,7 +12624,7 @@
       <param humanName="NRG_REM_Y" name="OSD3_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD3_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD3_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -12636,7 +12636,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD3_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD3_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD3_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -13718,7 +13718,7 @@
       <param humanName="NRG_REM_Y" name="OSD4_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD4_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD4_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -13730,7 +13730,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD4_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD4_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD4_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -14812,7 +14812,7 @@
       <param humanName="NRG_REM_Y" name="OSD5_NRG_REM_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFG_EN" name="OSD5_AVG_EFFG_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFG_EN" name="OSD5_AVG_EFFG_EN" documentation="Displays average ground flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -14824,7 +14824,7 @@
       <param humanName="AVG_EFFG_Y" name="OSD5_AVG_EFFG_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
-      <param humanName="AVG_EFFA_EN" name="OSD5_AVG_EFFA_EN" documentation="Displays average flight efficiency (mAh or Wh / km or mi)">
+      <param humanName="AVG_EFFA_EN" name="OSD5_AVG_EFFA_EN" documentation="Displays average air flight efficiency (mAh or Wh / km or mi)">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
