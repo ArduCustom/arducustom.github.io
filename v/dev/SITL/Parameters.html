@@ -1148,7 +1148,7 @@ DO NOT EDIT
 
 <p>Bitmask of mission items that are required to be planned in order to arm the aircraft</p>
 <ul>
-<li>Bitmask: 0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint</li>
+<li>Bitmask: 0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint,6:RTL</li>
 </ul>
 
 
@@ -1307,7 +1307,7 @@ DO NOT EDIT
 
 <p>This parameter and function is not used by this vehicle. Always set to 0.</p>
 <ul>
-<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</li>
+<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection, 3:UseEkf3Consistency</li>
 </ul>
 
 
@@ -1324,6 +1324,14 @@ DO NOT EDIT
 <p>This parameter and function is not used by this vehicle. Always set to 0.</p>
 <ul>
 <li>Units: meters per second</li>
+</ul>
+
+
+<h2>Re-enable Consistency Check Gate Size (ARSPD_WIND_GATE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This parameter and function is not used by this vehicle.</p>
+<ul>
+<li>Range: 0.0 10.0</li>
 </ul>
 
 
@@ -5743,6 +5751,23 @@ DO NOT EDIT
 </ul>
 
 
+<h2>ECU Node ID (CAN_D1_PC_ECU_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.</p>
+<ul>
+<li>Range: 0 255</li>
+</ul>
+
+
+<h2>ECU command output rate (CAN_D1_PC_ECU_RT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Output rate of ECU command messages</p>
+<ul>
+<li>Units: hertz</li>
+<li>Range: 1 500</li>
+</ul>
+
+
 <h1>CAN_D1_TST_ Parameters</h1>
 
 
@@ -5910,6 +5935,23 @@ DO NOT EDIT
 </ul>
 
 
+<h2>ECU Node ID (CAN_D2_PC_ECU_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.</p>
+<ul>
+<li>Range: 0 255</li>
+</ul>
+
+
+<h2>ECU command output rate (CAN_D2_PC_ECU_RT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Output rate of ECU command messages</p>
+<ul>
+<li>Units: hertz</li>
+<li>Range: 1 500</li>
+</ul>
+
+
 <h1>CAN_D2_TST_ Parameters</h1>
 
 
@@ -6071,6 +6113,23 @@ DO NOT EDIT
 <h2>Servo command output rate (CAN_D3_PC_SRV_RT)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Output rate of servo command messages</p>
+<ul>
+<li>Units: hertz</li>
+<li>Range: 1 500</li>
+</ul>
+
+
+<h2>ECU Node ID (CAN_D3_PC_ECU_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.</p>
+<ul>
+<li>Range: 0 255</li>
+</ul>
+
+
+<h2>ECU command output rate (CAN_D3_PC_ECU_RT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Output rate of ECU command messages</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 1 500</li>
@@ -7451,6 +7510,8 @@ DO NOT EDIT
 <tr><td>2</td><td>NWPMU</td></tr>
 <tr><td>3</td><td>Serial-Lutan</td></tr>
 <tr><td>5</td><td>DroneCAN</td></tr>
+<tr><td>6</td><td>Currawong-ECU</td></tr>
+<tr><td>7</td><td>Scripting</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -7469,6 +7530,15 @@ DO NOT EDIT
 <p>Used to calibrate fuel flow for MS protocol (Offset). This can be used to correct for a non-zero offset in the fuel consumption calculation of EFI_COEF1</p>
 <ul>
 <li>Range: 0 10</li>
+</ul>
+
+
+<h2>ECU Fuel Density (EFI_FUEL_DENS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Used to calculate fuel consumption</p>
+<ul>
+<li>Units: kilograms per cubic meter</li>
+<li>Range: 0 10000</li>
 </ul>
 
 
@@ -11422,6 +11492,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11494,6 +11568,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11566,6 +11644,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11638,6 +11720,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11710,6 +11796,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11782,6 +11872,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11854,6 +11948,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11926,6 +12024,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -11998,6 +12100,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -12070,6 +12176,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -12142,6 +12252,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -12214,6 +12328,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -12286,6 +12404,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -12358,6 +12480,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -12430,6 +12556,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -12502,6 +12632,10 @@ DO NOT EDIT
 <tr><td>101</td><td>KillIMU2</td></tr>
 <tr><td>153</td><td>ArmDisarm</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 </table>
 </ul>
 
@@ -21708,9 +21842,9 @@ DO NOT EDIT
 
 <h2>Video Transmitter Options (VTX_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels.</p>
+<p>Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels. One stop-bit may be required for VTXs that erroneously mimic iNav behaviour.</p>
 <ul>
-<li>Bitmask: 0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests</li>
+<li>Bitmask: 0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests,5:Use 1 stop-bit in SmartAudio,6:Ignore CRC in SmartAudio,7:Ignore status updates in CRSF and blindly set VTX options</li>
 </ul>
 
 

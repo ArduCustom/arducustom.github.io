@@ -411,7 +411,7 @@
         </values>
       </param>
       <param humanName="Required mission items" name="ARMING_MIS_ITEMS" documentation="Bitmask of mission items that are required to be planned in order to arm the aircraft" user="Advanced">
-        <field name="Bitmask">0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint</field>
+        <field name="Bitmask">0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint,6:RTL</field>
       </param>
       <param humanName="Arm Checks to Perform (bitmask)" name="ARMING_CHECK" documentation="Checks prior to arming motor. This is a bitmask of checks that will be performed before allowing arming. For most users it is recommended to leave this at the default of 1 (all checks enabled). You can select whatever checks you prefer by adding together the values of each check type to set this parameter. For example, to only allow arming when you have GPS lock and no RC failsafe you would set ARMING_CHECK to 72." user="Standard">
         <field name="Bitmask">0:All,1:Barometer,2:Compass,3:GPS lock,4:INS,5:Parameters,6:RC Channels,7:Board voltage,8:Battery Level,10:Logging Available,11:Hardware safety switch,12:GPS Configuration,13:System,14:Mission,15:Rangefinder,16:Camera,17:AuxAuth,18:VisualOdometry,19:FFT</field>
@@ -494,7 +494,7 @@
         </values>
       </param>
       <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
-        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</field>
+        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection, 3:UseEkf3Consistency</field>
       </param>
       <param humanName="Maximum airspeed and ground speed difference" name="ARSPD_WIND_MAX" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
         <field name="Units">m/s</field>
@@ -503,6 +503,9 @@
       <param humanName="Airspeed and ground speed difference that gives a warning" name="ARSPD_WIND_WARN" documentation="This parameter and function is not used by this vehicle. Always set to 0." user="Advanced">
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
+      </param>
+      <param humanName="Re-enable Consistency Check Gate Size" name="ARSPD_WIND_GATE" documentation="This parameter and function is not used by this vehicle." user="Advanced">
+        <field name="Range">0.0 10.0</field>
       </param>
       <param humanName="Second Airspeed type" name="ARSPD2_TYPE" documentation="Type of 2nd airspeed sensor" user="Standard">
         <values>
@@ -6065,6 +6068,7 @@
           <value code="0">Servo</value>
           <value code="1">Relay</value>
           <value code="2">GoPro in Solo Gimbal</value>
+          <value code="3">Mount (Siyi)</value>
         </values>
       </param>
       <param humanName="Duration that shutter is held open" name="CAM_DURATION" documentation="How long the shutter will be held open in 10ths of a second (i.e. enter 10 for 1second, 50 for 5seconds)" user="Standard">
@@ -6207,6 +6211,14 @@
         <field name="UnitText">hertz</field>
         <field name="Range">1 500</field>
       </param>
+      <param humanName="ECU Node ID" name="CAN_D1_PC_ECU_ID" documentation="Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs." user="Advanced">
+        <field name="Range">0 255</field>
+      </param>
+      <param humanName="ECU command output rate" name="CAN_D1_PC_ECU_RT" documentation="Output rate of ECU command messages" user="Advanced">
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="Range">1 500</field>
+      </param>
     </parameters>
     <parameters name="CAN_D1_TST_">
       <param humanName="CAN Test Index" name="CAN_D1_TST_ID" documentation="Selects the Index of Test that needs to be run recursively, this value gets reset to 0 at boot." user="Advanced">
@@ -6294,6 +6306,14 @@
         <field name="UnitText">hertz</field>
         <field name="Range">1 500</field>
       </param>
+      <param humanName="ECU Node ID" name="CAN_D2_PC_ECU_ID" documentation="Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs." user="Advanced">
+        <field name="Range">0 255</field>
+      </param>
+      <param humanName="ECU command output rate" name="CAN_D2_PC_ECU_RT" documentation="Output rate of ECU command messages" user="Advanced">
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="Range">1 500</field>
+      </param>
     </parameters>
     <parameters name="CAN_D2_TST_">
       <param humanName="CAN Test Index" name="CAN_D2_TST_ID" documentation="Selects the Index of Test that needs to be run recursively, this value gets reset to 0 at boot." user="Advanced">
@@ -6377,6 +6397,14 @@
         <field name="Bitmask">0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15, 15: Servo 16</field>
       </param>
       <param humanName="Servo command output rate" name="CAN_D3_PC_SRV_RT" documentation="Output rate of servo command messages" user="Advanced">
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="Range">1 500</field>
+      </param>
+      <param humanName="ECU Node ID" name="CAN_D3_PC_ECU_ID" documentation="Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs." user="Advanced">
+        <field name="Range">0 255</field>
+      </param>
+      <param humanName="ECU command output rate" name="CAN_D3_PC_ECU_RT" documentation="Output rate of ECU command messages" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">1 500</field>
@@ -7169,6 +7197,8 @@
           <value code="2">NWPMU</value>
           <value code="3">Serial-Lutan</value>
           <value code="5">DroneCAN</value>
+          <value code="6">Currawong-ECU</value>
+          <value code="7">Scripting</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -7177,6 +7207,11 @@
       </param>
       <param humanName="EFI Calibration Coefficient 2" name="EFI_COEF2" documentation="Used to calibrate fuel flow for MS protocol (Offset). This can be used to correct for a non-zero offset in the fuel consumption calculation of EFI_COEF1" user="Advanced">
         <field name="Range">0 10</field>
+      </param>
+      <param humanName="ECU Fuel Density" name="EFI_FUEL_DENS" documentation="Used to calculate fuel consumption" user="Advanced">
+        <field name="Units">kg/m/m/m</field>
+        <field name="UnitText">kilograms per cubic meter</field>
+        <field name="Range">0 10000</field>
       </param>
     </parameters>
     <parameters name="EK2_">
@@ -9427,6 +9462,7 @@
           <value code="5">SToRM32 Serial</value>
           <value code="6">Gremsy</value>
           <value code="7">BrushlessPWM</value>
+          <value code="8">Siyi</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9542,6 +9578,7 @@
           <value code="5">SToRM32 Serial</value>
           <value code="6">Gremsy</value>
           <value code="7">BrushlessPWM</value>
+          <value code="8">Siyi</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -20153,8 +20190,8 @@
         <field name="ReadOnly">True</field>
         <field name="Range">5000 6000</field>
       </param>
-      <param humanName="Video Transmitter Options" name="VTX_OPTIONS" documentation="Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels." user="Advanced">
-        <field name="Bitmask">0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests</field>
+      <param humanName="Video Transmitter Options" name="VTX_OPTIONS" documentation="Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels. One stop-bit may be required for VTXs that erroneously mimic iNav behaviour." user="Advanced">
+        <field name="Bitmask">0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests,5:Use 1 stop-bit in SmartAudio,6:Ignore CRC in SmartAudio,7:Ignore status updates in CRSF and blindly set VTX options</field>
       </param>
       <param humanName="Video Transmitter Max Power Level" name="VTX_MAX_POWER" documentation="Video Transmitter Maximum Power Level. Different VTXs support different power levels, this prevents the power aux switch from requesting too high a power level. The switch supports 6 power levels and the selected power will be a subdivision between 0 and this setting.">
         <field name="Range">25 1000</field>

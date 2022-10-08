@@ -1784,7 +1784,7 @@ ARSPD\_OPTIONS: Airspeed options bitmask
 
 | *Note: This parameter is for advanced users*
 
-Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction\, 3\:Check that the airspeed is statistically consistent with the navigation EKF vehicle and wind velocity estimates using EKF3 \(requires AHRS\_EKF\_TYPE \= 3\)
 
 
 +--------------------------------------+
@@ -1798,6 +1798,8 @@ Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/grou
 | | 1   | AllowSpeedMismatchRecovery | |
 | +-----+----------------------------+ |
 | | 2   | DisableVoltageCorrection   | |
+| +-----+----------------------------+ |
+| | 3   | UseEkf3Consistency         | |
 | +-----+----------------------------+ |
 |                                      |
 +--------------------------------------+
@@ -1839,6 +1841,25 @@ If the difference between airspeed and ground speed is greater than this value t
 +===================+
 | meters per second |
 +-------------------+
+
+
+
+
+.. _ARSPD_WIND_GATE:
+
+ARSPD\_WIND\_GATE: Re\-enable Consistency Check Gate Size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Number of standard deviations applied to the re\-enable EKF consistency check that is used when ARSPD\_OPTIONS bit position 3 is set\. Larger values will make the re\-enabling of the airspeed sensor faster\, but increase the likelihood of re\-enabling a degraded sensor\. The value can be tuned by using the ARSP\.TR log message by setting ARSP\_WIND\_GATE to a value that is higher than the value for ARSP\.TR observed with a healthy airspeed sensor\. Occasional transients in ARSP\.TR above the value set by ARSP\_WIND\_GATE can be tolerated provided they are less than 5 seconds in duration and less than 10\% duty cycle\.
+
+
++-------------+
+| Range       |
++=============+
+| 0.0 to 10.0 |
++-------------+
 
 
 
@@ -11797,6 +11818,44 @@ Output rate of servo command messages
 
 
 
+.. _CAN_D1_PC_ECU_ID:
+
+CAN\_D1\_PC\_ECU\_ID: ECU Node ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Node ID to send ECU throttle messages to\. Set to zero to disable ECU throttle messages\. Set to 255 to broadcast to all ECUs\.
+
+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
+
+
+
+
+.. _CAN_D1_PC_ECU_RT:
+
+CAN\_D1\_PC\_ECU\_RT: ECU command output rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Output rate of ECU command messages
+
+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
+
+
+
+
 
 .. _parameters_CAN_D1_TST_:
 
@@ -12413,6 +12472,44 @@ Output rate of servo command messages
 
 
 
+.. _CAN_D2_PC_ECU_ID:
+
+CAN\_D2\_PC\_ECU\_ID: ECU Node ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Node ID to send ECU throttle messages to\. Set to zero to disable ECU throttle messages\. Set to 255 to broadcast to all ECUs\.
+
+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
+
+
+
+
+.. _CAN_D2_PC_ECU_RT:
+
+CAN\_D2\_PC\_ECU\_RT: ECU command output rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Output rate of ECU command messages
+
+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
+
+
+
+
 
 .. _parameters_CAN_D2_TST_:
 
@@ -13018,6 +13115,44 @@ CAN\_D3\_PC\_SRV\_RT: Servo command output rate
 | *Note: This parameter is for advanced users*
 
 Output rate of servo command messages
+
+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
+
+
+
+
+.. _CAN_D3_PC_ECU_ID:
+
+CAN\_D3\_PC\_ECU\_ID: ECU Node ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Node ID to send ECU throttle messages to\. Set to zero to disable ECU throttle messages\. Set to 255 to broadcast to all ECUs\.
+
+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
+
+
+
+
+.. _CAN_D3_PC_ECU_RT:
+
+CAN\_D3\_PC\_ECU\_RT: ECU command output rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Output rate of ECU command messages
 
 
 +----------+-------+
@@ -16051,24 +16186,28 @@ EFI\_TYPE: EFI communication type
 What method of communication is used for EFI \#1
 
 
-+--------------------------+
-| Values                   |
-+==========================+
-| +-------+--------------+ |
-| | Value | Meaning      | |
-| +=======+==============+ |
-| | 0     | None         | |
-| +-------+--------------+ |
-| | 1     | Serial-MS    | |
-| +-------+--------------+ |
-| | 2     | NWPMU        | |
-| +-------+--------------+ |
-| | 3     | Serial-Lutan | |
-| +-------+--------------+ |
-| | 5     | DroneCAN     | |
-| +-------+--------------+ |
-|                          |
-+--------------------------+
++---------------------------+
+| Values                    |
++===========================+
+| +-------+---------------+ |
+| | Value | Meaning       | |
+| +=======+===============+ |
+| | 0     | None          | |
+| +-------+---------------+ |
+| | 1     | Serial-MS     | |
+| +-------+---------------+ |
+| | 2     | NWPMU         | |
+| +-------+---------------+ |
+| | 3     | Serial-Lutan  | |
+| +-------+---------------+ |
+| | 5     | DroneCAN      | |
+| +-------+---------------+ |
+| | 6     | Currawong-ECU | |
+| +-------+---------------+ |
+| | 7     | Scripting     | |
+| +-------+---------------+ |
+|                           |
++---------------------------+
 
 
 
@@ -16107,6 +16246,25 @@ Used to calibrate fuel flow for MS protocol \(Offset\)\. This can be used to cor
 +=========+
 | 0 to 10 |
 +---------+
+
+
+
+
+.. _EFI_FUEL_DENS:
+
+EFI\_FUEL\_DENS: ECU Fuel Density
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Used to calculate fuel consumption
+
+
++------------+---------------------------+
+| Range      | Units                     |
++============+===========================+
+| 0 to 10000 | kilograms per cubic meter |
++------------+---------------------------+
 
 
 
@@ -42345,27 +42503,33 @@ VTX\_OPTIONS: Video Transmitter Options
 
 | *Note: This parameter is for advanced users*
 
-Video Transmitter Options\. Pitmode puts the VTX in a low power state\. Unlocked enables certain restricted frequencies and power levels\. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels\.
+Video Transmitter Options\. Pitmode puts the VTX in a low power state\. Unlocked enables certain restricted frequencies and power levels\. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels\. One stop\-bit may be required for VTXs that erroneously mimic iNav behaviour\.
 
 
-+---------------------------------------------+
-| Bitmask                                     |
-+=============================================+
-| +-----+-----------------------------------+ |
-| | Bit | Meaning                           | |
-| +=====+===================================+ |
-| | 0   | Pitmode                           | |
-| +-----+-----------------------------------+ |
-| | 1   | Pitmode until armed               | |
-| +-----+-----------------------------------+ |
-| | 2   | Pitmode when disarmed             | |
-| +-----+-----------------------------------+ |
-| | 3   | Unlocked                          | |
-| +-----+-----------------------------------+ |
-| | 4   | Add leading zero byte to requests | |
-| +-----+-----------------------------------+ |
-|                                             |
-+---------------------------------------------+
++---------------------------------------------------------------------+
+| Bitmask                                                             |
++=====================================================================+
+| +-----+-----------------------------------------------------------+ |
+| | Bit | Meaning                                                   | |
+| +=====+===========================================================+ |
+| | 0   | Pitmode                                                   | |
+| +-----+-----------------------------------------------------------+ |
+| | 1   | Pitmode until armed                                       | |
+| +-----+-----------------------------------------------------------+ |
+| | 2   | Pitmode when disarmed                                     | |
+| +-----+-----------------------------------------------------------+ |
+| | 3   | Unlocked                                                  | |
+| +-----+-----------------------------------------------------------+ |
+| | 4   | Add leading zero byte to requests                         | |
+| +-----+-----------------------------------------------------------+ |
+| | 5   | Use 1 stop-bit in SmartAudio                              | |
+| +-----+-----------------------------------------------------------+ |
+| | 6   | Ignore CRC in SmartAudio                                  | |
+| +-----+-----------------------------------------------------------+ |
+| | 7   | Ignore status updates in CRSF and blindly set VTX options | |
+| +-----+-----------------------------------------------------------+ |
+|                                                                     |
++---------------------------------------------------------------------+
 
 
 

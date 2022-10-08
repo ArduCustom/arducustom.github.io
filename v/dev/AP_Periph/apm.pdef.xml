@@ -210,6 +210,11 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
+      <param humanName="ESC Telemetry update rate" name="AP_Periph:ESC_TELEM_RATE" documentation="This is the rate at which ESC Telemetry will be sent across the CAN bus" user="Advanced">
+        <field name="Range">0 1000</field>
+        <field name="Increment">1</field>
+        <field name="RebootRequired">True</field>
+      </param>
       <param humanName="MSP Serial Port" name="AP_Periph:MSP_PORT" documentation="This is the serial port number where SERIALx_PROTOCOL will be set to MSP" user="Advanced">
         <field name="Range">0 10</field>
         <field name="Increment">1</field>
@@ -345,8 +350,8 @@
           <value code="1">2ndSensor</value>
         </values>
       </param>
-      <param humanName="Airspeed options bitmask" name="ARSP_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction" user="Advanced">
-        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</field>
+      <param humanName="Airspeed options bitmask" name="ARSP_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction, 3:Check that the airspeed is statistically consistent with the navigation EKF vehicle and wind velocity estimates using EKF3 (requires AHRS_EKF_TYPE = 3)" user="Advanced">
+        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection, 3:UseEkf3Consistency</field>
       </param>
       <param humanName="Maximum airspeed and ground speed difference" name="ARSP_WIND_MAX" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor." user="Advanced">
         <field name="Units">m/s</field>
@@ -355,6 +360,9 @@
       <param humanName="Airspeed and ground speed difference that gives a warning" name="ARSP_WIND_WARN" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used." user="Advanced">
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
+      </param>
+      <param humanName="Re-enable Consistency Check Gate Size" name="ARSP_WIND_GATE" documentation="Number of standard deviations applied to the re-enable EKF consistency check that is used when ARSPD_OPTIONS bit position 3 is set. Larger values will make the re-enabling of the airspeed sensor faster, but increase the likelihood of re-enabling a degraded sensor. The value can be tuned by using the ARSP.TR log message by setting ARSP_WIND_GATE to a value that is higher than the value for ARSP.TR observed with a healthy airspeed sensor. Occasional transients in ARSP.TR above the value set by ARSP_WIND_GATE can be tolerated provided they are less than 5 seconds in duration and less than 10% duty cycle." user="Advanced">
+        <field name="Range">0.0 10.0</field>
       </param>
       <param humanName="Second Airspeed type" name="ARSP2_TYPE" documentation="Type of 2nd airspeed sensor" user="Standard">
         <values>
@@ -489,8 +497,8 @@
           <value code="1">2ndSensor</value>
         </values>
       </param>
-      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction" user="Advanced">
-        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</field>
+      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction, 3:Check that the airspeed is statistically consistent with the navigation EKF vehicle and wind velocity estimates using EKF3 (requires AHRS_EKF_TYPE = 3)" user="Advanced">
+        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection, 3:UseEkf3Consistency</field>
       </param>
       <param humanName="Maximum airspeed and ground speed difference" name="ARSPD_WIND_MAX" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor." user="Advanced">
         <field name="Units">m/s</field>
@@ -499,6 +507,9 @@
       <param humanName="Airspeed and ground speed difference that gives a warning" name="ARSPD_WIND_WARN" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used." user="Advanced">
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
+      </param>
+      <param humanName="Re-enable Consistency Check Gate Size" name="ARSPD_WIND_GATE" documentation="Number of standard deviations applied to the re-enable EKF consistency check that is used when ARSPD_OPTIONS bit position 3 is set. Larger values will make the re-enabling of the airspeed sensor faster, but increase the likelihood of re-enabling a degraded sensor. The value can be tuned by using the ARSP.TR log message by setting ARSP_WIND_GATE to a value that is higher than the value for ARSP.TR observed with a healthy airspeed sensor. Occasional transients in ARSP.TR above the value set by ARSP_WIND_GATE can be tolerated provided they are less than 5 seconds in duration and less than 10% duty cycle." user="Advanced">
+        <field name="Range">0.0 10.0</field>
       </param>
       <param humanName="Second Airspeed type" name="ARSPD2_TYPE" documentation="Type of 2nd airspeed sensor" user="Standard">
         <values>
@@ -3164,6 +3175,8 @@
           <value code="2">NWPMU</value>
           <value code="3">Serial-Lutan</value>
           <value code="5">DroneCAN</value>
+          <value code="6">Currawong-ECU</value>
+          <value code="7">Scripting</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -3172,6 +3185,11 @@
       </param>
       <param humanName="EFI Calibration Coefficient 2" name="EFI_COEF2" documentation="Used to calibrate fuel flow for MS protocol (Offset). This can be used to correct for a non-zero offset in the fuel consumption calculation of EFI_COEF1" user="Advanced">
         <field name="Range">0 10</field>
+      </param>
+      <param humanName="ECU Fuel Density" name="EFI_FUEL_DENS" documentation="Used to calculate fuel consumption" user="Advanced">
+        <field name="Units">kg/m/m/m</field>
+        <field name="UnitText">kilograms per cubic meter</field>
+        <field name="Range">0 10000</field>
       </param>
     </parameters>
     <parameters name="ESC_TLM">
@@ -12461,8 +12479,8 @@
         <field name="ReadOnly">True</field>
         <field name="Range">5000 6000</field>
       </param>
-      <param humanName="Video Transmitter Options" name="VTX_OPTIONS" documentation="Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels." user="Advanced">
-        <field name="Bitmask">0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests</field>
+      <param humanName="Video Transmitter Options" name="VTX_OPTIONS" documentation="Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels. One stop-bit may be required for VTXs that erroneously mimic iNav behaviour." user="Advanced">
+        <field name="Bitmask">0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests,5:Use 1 stop-bit in SmartAudio,6:Ignore CRC in SmartAudio,7:Ignore status updates in CRSF and blindly set VTX options</field>
       </param>
       <param humanName="Video Transmitter Max Power Level" name="VTX_MAX_POWER" documentation="Video Transmitter Maximum Power Level. Different VTXs support different power levels, this prevents the power aux switch from requesting too high a power level. The switch supports 6 power levels and the selected power will be a subdivision between 0 and this setting.">
         <field name="Range">25 1000</field>

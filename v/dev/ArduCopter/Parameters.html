@@ -1831,7 +1831,7 @@ DO NOT EDIT
 
 <p>Bitmask of mission items that are required to be planned in order to arm the aircraft</p>
 <ul>
-<li>Bitmask: 0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint</li>
+<li>Bitmask: 0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint,6:RTL</li>
 </ul>
 
 
@@ -2101,7 +2101,7 @@ DO NOT EDIT
 
 <p>This parameter and function is not used by this vehicle. Always set to 0.</p>
 <ul>
-<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</li>
+<li>Bitmask: 0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection, 3:UseEkf3Consistency</li>
 </ul>
 
 
@@ -2118,6 +2118,14 @@ DO NOT EDIT
 <p>This parameter and function is not used by this vehicle. Always set to 0.</p>
 <ul>
 <li>Units: meters per second</li>
+</ul>
+
+
+<h2>Re-enable Consistency Check Gate Size (ARSPD_WIND_GATE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This parameter and function is not used by this vehicle.</p>
+<ul>
+<li>Range: 0.0 10.0</li>
 </ul>
 
 
@@ -7738,6 +7746,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -7786,6 +7795,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -7848,6 +7861,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -7896,6 +7910,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -7958,6 +7976,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -8006,6 +8025,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -8068,6 +8091,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -8116,6 +8140,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -8145,6 +8173,7 @@ DO NOT EDIT
 <tr><td>0</td><td>Servo</td></tr>
 <tr><td>1</td><td>Relay</td></tr>
 <tr><td>2</td><td>GoPro in Solo Gimbal</td></tr>
+<tr><td>3</td><td>Mount (Siyi)</td></tr>
 </table>
 </ul>
 
@@ -8406,6 +8435,23 @@ DO NOT EDIT
 </ul>
 
 
+<h2>ECU Node ID (CAN_D1_PC_ECU_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.</p>
+<ul>
+<li>Range: 0 255</li>
+</ul>
+
+
+<h2>ECU command output rate (CAN_D1_PC_ECU_RT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Output rate of ECU command messages</p>
+<ul>
+<li>Units: hertz</li>
+<li>Range: 1 500</li>
+</ul>
+
+
 <h1>CAN_D1_TST_ Parameters</h1>
 
 
@@ -8573,6 +8619,23 @@ DO NOT EDIT
 </ul>
 
 
+<h2>ECU Node ID (CAN_D2_PC_ECU_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.</p>
+<ul>
+<li>Range: 0 255</li>
+</ul>
+
+
+<h2>ECU command output rate (CAN_D2_PC_ECU_RT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Output rate of ECU command messages</p>
+<ul>
+<li>Units: hertz</li>
+<li>Range: 1 500</li>
+</ul>
+
+
 <h1>CAN_D2_TST_ Parameters</h1>
 
 
@@ -8734,6 +8797,23 @@ DO NOT EDIT
 <h2>Servo command output rate (CAN_D3_PC_SRV_RT)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Output rate of servo command messages</p>
+<ul>
+<li>Units: hertz</li>
+<li>Range: 1 500</li>
+</ul>
+
+
+<h2>ECU Node ID (CAN_D3_PC_ECU_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.</p>
+<ul>
+<li>Range: 0 255</li>
+</ul>
+
+
+<h2>ECU command output rate (CAN_D3_PC_ECU_RT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Output rate of ECU command messages</p>
 <ul>
 <li>Units: hertz</li>
 <li>Range: 1 500</li>
@@ -10255,6 +10335,8 @@ DO NOT EDIT
 <tr><td>2</td><td>NWPMU</td></tr>
 <tr><td>3</td><td>Serial-Lutan</td></tr>
 <tr><td>5</td><td>DroneCAN</td></tr>
+<tr><td>6</td><td>Currawong-ECU</td></tr>
+<tr><td>7</td><td>Scripting</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -10273,6 +10355,15 @@ DO NOT EDIT
 <p>Used to calibrate fuel flow for MS protocol (Offset). This can be used to correct for a non-zero offset in the fuel consumption calculation of EFI_COEF1</p>
 <ul>
 <li>Range: 0 10</li>
+</ul>
+
+
+<h2>ECU Fuel Density (EFI_FUEL_DENS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Used to calculate fuel consumption</p>
+<ul>
+<li>Units: kilograms per cubic meter</li>
+<li>Range: 0 10000</li>
 </ul>
 
 
@@ -15346,6 +15437,7 @@ DO NOT EDIT
 <tr><td>5</td><td>SToRM32 Serial</td></tr>
 <tr><td>6</td><td>Gremsy</td></tr>
 <tr><td>7</td><td>BrushlessPWM</td></tr>
+<tr><td>8</td><td>Siyi</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -15532,6 +15624,7 @@ DO NOT EDIT
 <tr><td>5</td><td>SToRM32 Serial</td></tr>
 <tr><td>6</td><td>Gremsy</td></tr>
 <tr><td>7</td><td>BrushlessPWM</td></tr>
+<tr><td>8</td><td>Siyi</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -18166,6 +18259,25 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Sets the overlay text resolution (MSP DisplayPort only) (OSD1_TXT_RES)</h2>
+
+<p>Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>30x16</td></tr>
+<tr><td>1</td><td>50x18</td></tr>
+</table>
+</ul>
+
+
+<h2>Sets the font index for this screen (MSP DisplayPort only) (OSD1_FONT)</h2>
+
+<p>Sets the font index for this screen (MSP DisplayPort only)</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h2>NRG_CONS_EN (OSD1_NRG_CONS_EN)</h2>
 
 <p>Displays total energy consumed from primary battery</p>
@@ -20621,6 +20733,25 @@ DO NOT EDIT
 <h2>LINK_Q_Y (OSD2_LINK_Q_Y)</h2>
 
 <p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Sets the overlay text resolution (MSP DisplayPort only) (OSD2_TXT_RES)</h2>
+
+<p>Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>30x16</td></tr>
+<tr><td>1</td><td>50x18</td></tr>
+</table>
+</ul>
+
+
+<h2>Sets the font index for this screen (MSP DisplayPort only) (OSD2_FONT)</h2>
+
+<p>Sets the font index for this screen (MSP DisplayPort only)</p>
 <ul>
 <li>Range: 0 15</li>
 </ul>
@@ -23086,6 +23217,25 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Sets the overlay text resolution (MSP DisplayPort only) (OSD3_TXT_RES)</h2>
+
+<p>Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>30x16</td></tr>
+<tr><td>1</td><td>50x18</td></tr>
+</table>
+</ul>
+
+
+<h2>Sets the font index for this screen (MSP DisplayPort only) (OSD3_FONT)</h2>
+
+<p>Sets the font index for this screen (MSP DisplayPort only)</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h2>NRG_CONS_EN (OSD3_NRG_CONS_EN)</h2>
 
 <p>Displays total energy consumed from primary battery</p>
@@ -25546,6 +25696,25 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Sets the overlay text resolution (MSP DisplayPort only) (OSD4_TXT_RES)</h2>
+
+<p>Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>30x16</td></tr>
+<tr><td>1</td><td>50x18</td></tr>
+</table>
+</ul>
+
+
+<h2>Sets the font index for this screen (MSP DisplayPort only) (OSD4_FONT)</h2>
+
+<p>Sets the font index for this screen (MSP DisplayPort only)</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
 <h2>NRG_CONS_EN (OSD4_NRG_CONS_EN)</h2>
 
 <p>Displays total energy consumed from primary battery</p>
@@ -28001,6 +28170,25 @@ DO NOT EDIT
 <h2>LINK_Q_Y (OSD5_LINK_Q_Y)</h2>
 
 <p>Vertical position on screen</p>
+<ul>
+<li>Range: 0 15</li>
+</ul>
+
+
+<h2>Sets the overlay text resolution (MSP DisplayPort only) (OSD5_TXT_RES)</h2>
+
+<p>Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>30x16</td></tr>
+<tr><td>1</td><td>50x18</td></tr>
+</table>
+</ul>
+
+
+<h2>Sets the font index for this screen (MSP DisplayPort only) (OSD5_FONT)</h2>
+
+<p>Sets the font index for this screen (MSP DisplayPort only)</p>
 <ul>
 <li>Range: 0 15</li>
 </ul>
@@ -31522,6 +31710,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -31570,6 +31759,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -31685,6 +31878,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -31733,6 +31927,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -31848,6 +32046,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -31896,6 +32095,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -32011,6 +32214,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -32059,6 +32263,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -32174,6 +32382,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -32222,6 +32431,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -32337,6 +32550,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -32385,6 +32599,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -32500,6 +32718,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -32548,6 +32767,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -32663,6 +32886,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -32711,6 +32935,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -32826,6 +33054,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -32874,6 +33103,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -32989,6 +33222,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -33037,6 +33271,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -33152,6 +33390,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -33200,6 +33439,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -33315,6 +33558,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -33363,6 +33607,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -33478,6 +33726,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -33526,6 +33775,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -33641,6 +33894,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -33689,6 +33943,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -33804,6 +34062,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -33852,6 +34111,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -33967,6 +34230,7 @@ DO NOT EDIT
 <tr><td>41</td><td>ArmDisarm (4.1 and lower)</td></tr>
 <tr><td>42</td><td>SmartRTL</td></tr>
 <tr><td>43</td><td>InvertedFlight</td></tr>
+<tr><td>44</td><td>Winch Enable</td></tr>
 <tr><td>46</td><td>RC Override Enable</td></tr>
 <tr><td>47</td><td>User Function 1</td></tr>
 <tr><td>48</td><td>User Function 2</td></tr>
@@ -34015,6 +34279,10 @@ DO NOT EDIT
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
 <tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
+<tr><td>166</td><td>Camera Record Video</td></tr>
+<tr><td>167</td><td>Camera Zoom</td></tr>
+<tr><td>168</td><td>Camera Manual Focus</td></tr>
+<tr><td>169</td><td>Camera Auto Focus</td></tr>
 <tr><td>212</td><td>Mount1 Roll</td></tr>
 <tr><td>213</td><td>Mount1 Pitch</td></tr>
 <tr><td>214</td><td>Mount1 Yaw</td></tr>
@@ -46402,9 +46670,9 @@ DO NOT EDIT
 
 <h2>Video Transmitter Options (VTX_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels.</p>
+<p>Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels. One stop-bit may be required for VTXs that erroneously mimic iNav behaviour.</p>
 <ul>
-<li>Bitmask: 0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests</li>
+<li>Bitmask: 0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests,5:Use 1 stop-bit in SmartAudio,6:Ignore CRC in SmartAudio,7:Ignore status updates in CRSF and blindly set VTX options</li>
 </ul>
 
 

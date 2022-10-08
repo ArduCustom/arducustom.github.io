@@ -407,8 +407,25 @@
         </values>
       </param>
       <param humanName="Flightmode channel" name="ArduPlane:FLTMODE_CH" documentation="RC Channel to use for flight mode control" user="Advanced">
-        <field name="Range">1 16</field>
-        <field name="Increment">1</field>
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Channel 1</value>
+          <value code="2">Channel 2</value>
+          <value code="3">Channel 3</value>
+          <value code="4">Channel 4</value>
+          <value code="5">Channel 5</value>
+          <value code="6">Channel 6</value>
+          <value code="7">Channel 7</value>
+          <value code="8">Channel 8</value>
+          <value code="9">Channel 9</value>
+          <value code="10">Channel 10</value>
+          <value code="11">Channel 11</value>
+          <value code="12">Channel 12</value>
+          <value code="13">Channel 13</value>
+          <value code="14">Channel 14</value>
+          <value code="15">Channel 15</value>
+          <value code="16">Channel 16</value>
+        </values>
       </param>
       <param humanName="FlightMode1" name="ArduPlane:FLTMODE1" documentation="Flight mode for switch position 1 (910 to 1230 and above 2049)" user="Standard">
         <values>
@@ -1497,7 +1514,7 @@
         </values>
       </param>
       <param humanName="Required mission items" name="ARMING_MIS_ITEMS" documentation="Bitmask of mission items that are required to be planned in order to arm the aircraft" user="Advanced">
-        <field name="Bitmask">0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint</field>
+        <field name="Bitmask">0:Land,1:VTOL Land,2:DO_LAND_START,3:Takeoff,4:VTOL Takeoff,5:Rallypoint,6:RTL</field>
       </param>
       <param humanName="Arm Checks to Perform (bitmask)" name="ARMING_CHECK" documentation="Checks prior to arming motor. This is a bitmask of checks that will be performed before allowing arming. For most users it is recommended to leave this at the default of 1 (all checks enabled). You can select whatever checks you prefer by adding together the values of each check type to set this parameter. For example, to only allow arming when you have GPS lock and no RC failsafe you would set ARMING_CHECK to 72." user="Standard">
         <field name="Bitmask">0:All,1:Barometer,2:Compass,3:GPS lock,4:INS,5:Parameters,6:RC Channels,7:Board voltage,8:Battery Level,9:Airspeed,10:Logging Available,11:Hardware safety switch,12:GPS Configuration,13:System,14:Mission,15:Rangefinder,16:Camera,17:AuxAuth,19:FFT</field>
@@ -1579,8 +1596,8 @@
           <value code="1">2ndSensor</value>
         </values>
       </param>
-      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction" user="Advanced">
-        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection</field>
+      <param humanName="Airspeed options bitmask" name="ARSPD_OPTIONS" documentation="Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction, 3:Check that the airspeed is statistically consistent with the navigation EKF vehicle and wind velocity estimates using EKF3 (requires AHRS_EKF_TYPE = 3)" user="Advanced">
+        <field name="Bitmask">0:SpeedMismatchDisable, 1:AllowSpeedMismatchRecovery, 2:DisableVoltageCorrection, 3:UseEkf3Consistency</field>
       </param>
       <param humanName="Maximum airspeed and ground speed difference" name="ARSPD_WIND_MAX" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor." user="Advanced">
         <field name="Units">m/s</field>
@@ -1589,6 +1606,9 @@
       <param humanName="Airspeed and ground speed difference that gives a warning" name="ARSPD_WIND_WARN" documentation="If the difference between airspeed and ground speed is greater than this value the sensor will issue a warning. If 0 ARSPD_WIND_MAX is used." user="Advanced">
         <field name="Units">m/s</field>
         <field name="UnitText">meters per second</field>
+      </param>
+      <param humanName="Re-enable Consistency Check Gate Size" name="ARSPD_WIND_GATE" documentation="Number of standard deviations applied to the re-enable EKF consistency check that is used when ARSPD_OPTIONS bit position 3 is set. Larger values will make the re-enabling of the airspeed sensor faster, but increase the likelihood of re-enabling a degraded sensor. The value can be tuned by using the ARSP.TR log message by setting ARSP_WIND_GATE to a value that is higher than the value for ARSP.TR observed with a healthy airspeed sensor. Occasional transients in ARSP.TR above the value set by ARSP_WIND_GATE can be tolerated provided they are less than 5 seconds in duration and less than 10% duty cycle." user="Advanced">
+        <field name="Range">0.0 10.0</field>
       </param>
       <param humanName="Second Airspeed type" name="ARSPD2_TYPE" documentation="Type of 2nd airspeed sensor" user="Standard">
         <values>
@@ -4298,6 +4318,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -4386,6 +4410,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -4474,6 +4502,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -4562,6 +4594,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -4589,6 +4625,7 @@
           <value code="0">Servo</value>
           <value code="1">Relay</value>
           <value code="2">GoPro in Solo Gimbal</value>
+          <value code="3">Mount (Siyi)</value>
         </values>
       </param>
       <param humanName="Duration that shutter is held open" name="CAM_DURATION" documentation="How long the shutter will be held open in 10ths of a second (i.e. enter 10 for 1second, 50 for 5seconds)" user="Standard">
@@ -4731,6 +4768,14 @@
         <field name="UnitText">hertz</field>
         <field name="Range">1 500</field>
       </param>
+      <param humanName="ECU Node ID" name="CAN_D1_PC_ECU_ID" documentation="Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs." user="Advanced">
+        <field name="Range">0 255</field>
+      </param>
+      <param humanName="ECU command output rate" name="CAN_D1_PC_ECU_RT" documentation="Output rate of ECU command messages" user="Advanced">
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="Range">1 500</field>
+      </param>
     </parameters>
     <parameters name="CAN_D1_TST_">
       <param humanName="CAN Test Index" name="CAN_D1_TST_ID" documentation="Selects the Index of Test that needs to be run recursively, this value gets reset to 0 at boot." user="Advanced">
@@ -4818,6 +4863,14 @@
         <field name="UnitText">hertz</field>
         <field name="Range">1 500</field>
       </param>
+      <param humanName="ECU Node ID" name="CAN_D2_PC_ECU_ID" documentation="Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs." user="Advanced">
+        <field name="Range">0 255</field>
+      </param>
+      <param humanName="ECU command output rate" name="CAN_D2_PC_ECU_RT" documentation="Output rate of ECU command messages" user="Advanced">
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="Range">1 500</field>
+      </param>
     </parameters>
     <parameters name="CAN_D2_TST_">
       <param humanName="CAN Test Index" name="CAN_D2_TST_ID" documentation="Selects the Index of Test that needs to be run recursively, this value gets reset to 0 at boot." user="Advanced">
@@ -4901,6 +4954,14 @@
         <field name="Bitmask">0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15, 15: Servo 16</field>
       </param>
       <param humanName="Servo command output rate" name="CAN_D3_PC_SRV_RT" documentation="Output rate of servo command messages" user="Advanced">
+        <field name="Units">Hz</field>
+        <field name="UnitText">hertz</field>
+        <field name="Range">1 500</field>
+      </param>
+      <param humanName="ECU Node ID" name="CAN_D3_PC_ECU_ID" documentation="Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs." user="Advanced">
+        <field name="Range">0 255</field>
+      </param>
+      <param humanName="ECU command output rate" name="CAN_D3_PC_ECU_RT" documentation="Output rate of ECU command messages" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">1 500</field>
@@ -5726,6 +5787,8 @@
           <value code="2">NWPMU</value>
           <value code="3">Serial-Lutan</value>
           <value code="5">DroneCAN</value>
+          <value code="6">Currawong-ECU</value>
+          <value code="7">Scripting</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -5734,6 +5797,11 @@
       </param>
       <param humanName="EFI Calibration Coefficient 2" name="EFI_COEF2" documentation="Used to calibrate fuel flow for MS protocol (Offset). This can be used to correct for a non-zero offset in the fuel consumption calculation of EFI_COEF1" user="Advanced">
         <field name="Range">0 10</field>
+      </param>
+      <param humanName="ECU Fuel Density" name="EFI_FUEL_DENS" documentation="Used to calculate fuel consumption" user="Advanced">
+        <field name="Units">kg/m/m/m</field>
+        <field name="UnitText">kilograms per cubic meter</field>
+        <field name="Range">0 10000</field>
       </param>
     </parameters>
     <parameters name="EK2_">
@@ -8308,6 +8376,7 @@
           <value code="5">SToRM32 Serial</value>
           <value code="6">Gremsy</value>
           <value code="7">BrushlessPWM</value>
+          <value code="8">Siyi</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -8423,6 +8492,7 @@
           <value code="5">SToRM32 Serial</value>
           <value code="6">Gremsy</value>
           <value code="7">BrushlessPWM</value>
+          <value code="8">Siyi</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9508,6 +9578,15 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="LINK_Q_Y" name="OSD1_LINK_Q_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Sets the overlay text resolution (MSP DisplayPort only)" name="OSD1_TXT_RES" documentation="Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)" user="Standard">
+        <values>
+          <value code="0">30x16</value>
+          <value code="1">50x18</value>
+        </values>
+      </param>
+      <param humanName="Sets the font index for this screen (MSP DisplayPort only)" name="OSD1_FONT" documentation="Sets the font index for this screen (MSP DisplayPort only)" user="Standard">
         <field name="Range">0 15</field>
       </param>
       <param humanName="NRG_CONS_EN" name="OSD1_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
@@ -10604,6 +10683,15 @@
       <param humanName="LINK_Q_Y" name="OSD2_LINK_Q_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="Sets the overlay text resolution (MSP DisplayPort only)" name="OSD2_TXT_RES" documentation="Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)" user="Standard">
+        <values>
+          <value code="0">30x16</value>
+          <value code="1">50x18</value>
+        </values>
+      </param>
+      <param humanName="Sets the font index for this screen (MSP DisplayPort only)" name="OSD2_FONT" documentation="Sets the font index for this screen (MSP DisplayPort only)" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
       <param humanName="NRG_CONS_EN" name="OSD2_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
         <values>
           <value code="0">Disabled</value>
@@ -11696,6 +11784,15 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="LINK_Q_Y" name="OSD3_LINK_Q_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Sets the overlay text resolution (MSP DisplayPort only)" name="OSD3_TXT_RES" documentation="Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)" user="Standard">
+        <values>
+          <value code="0">30x16</value>
+          <value code="1">50x18</value>
+        </values>
+      </param>
+      <param humanName="Sets the font index for this screen (MSP DisplayPort only)" name="OSD3_FONT" documentation="Sets the font index for this screen (MSP DisplayPort only)" user="Standard">
         <field name="Range">0 15</field>
       </param>
       <param humanName="NRG_CONS_EN" name="OSD3_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
@@ -12792,6 +12889,15 @@
       <param humanName="LINK_Q_Y" name="OSD4_LINK_Q_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="Sets the overlay text resolution (MSP DisplayPort only)" name="OSD4_TXT_RES" documentation="Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)" user="Standard">
+        <values>
+          <value code="0">30x16</value>
+          <value code="1">50x18</value>
+        </values>
+      </param>
+      <param humanName="Sets the font index for this screen (MSP DisplayPort only)" name="OSD4_FONT" documentation="Sets the font index for this screen (MSP DisplayPort only)" user="Standard">
+        <field name="Range">0 15</field>
+      </param>
       <param humanName="NRG_CONS_EN" name="OSD4_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
         <values>
           <value code="0">Disabled</value>
@@ -13884,6 +13990,15 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="LINK_Q_Y" name="OSD5_LINK_Q_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="Sets the overlay text resolution (MSP DisplayPort only)" name="OSD5_TXT_RES" documentation="Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)" user="Standard">
+        <values>
+          <value code="0">30x16</value>
+          <value code="1">50x18</value>
+        </values>
+      </param>
+      <param humanName="Sets the font index for this screen (MSP DisplayPort only)" name="OSD5_FONT" documentation="Sets the font index for this screen (MSP DisplayPort only)" user="Standard">
         <field name="Range">0 15</field>
       </param>
       <param humanName="NRG_CONS_EN" name="OSD5_NRG_CONS_EN" documentation="Displays total energy consumed from primary battery">
@@ -16133,6 +16248,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -16252,6 +16371,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -16371,6 +16494,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -16490,6 +16617,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -16609,6 +16740,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -16728,6 +16863,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -16847,6 +16986,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -16966,6 +17109,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17085,6 +17232,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17204,6 +17355,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17323,6 +17478,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17442,6 +17601,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17561,6 +17724,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17680,6 +17847,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17799,6 +17970,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -17918,6 +18093,10 @@
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
           <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="166">Camera Record Video</value>
+          <value code="167">Camera Zoom</value>
+          <value code="168">Camera Manual Focus</value>
+          <value code="169">Camera Auto Focus</value>
           <value code="200">Servos auto trim</value>
           <value code="208">Flap</value>
           <value code="209">Forward Throttle</value>
@@ -27773,8 +27952,8 @@
         <field name="ReadOnly">True</field>
         <field name="Range">5000 6000</field>
       </param>
-      <param humanName="Video Transmitter Options" name="VTX_OPTIONS" documentation="Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels." user="Advanced">
-        <field name="Bitmask">0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests</field>
+      <param humanName="Video Transmitter Options" name="VTX_OPTIONS" documentation="Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels. One stop-bit may be required for VTXs that erroneously mimic iNav behaviour." user="Advanced">
+        <field name="Bitmask">0:Pitmode,1:Pitmode until armed,2:Pitmode when disarmed,3:Unlocked,4:Add leading zero byte to requests,5:Use 1 stop-bit in SmartAudio,6:Ignore CRC in SmartAudio,7:Ignore status updates in CRSF and blindly set VTX options</field>
       </param>
       <param humanName="Video Transmitter Max Power Level" name="VTX_MAX_POWER" documentation="Video Transmitter Maximum Power Level. Different VTXs support different power levels, this prevents the power aux switch from requesting too high a power level. The switch supports 6 power levels and the selected power will be a subdivision between 0 and this setting.">
         <field name="Range">25 1000</field>

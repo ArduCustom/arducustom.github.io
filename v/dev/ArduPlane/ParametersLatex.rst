@@ -1440,11 +1440,43 @@ FLTMODE\_CH: Flightmode channel
 RC Channel to use for flight mode control
 
 
-+-----------+---------+
-| Increment | Range   |
-+===========+=========+
-| 1         | 1 to 16 |
-+-----------+---------+
++-------+------------+
+| Value | Meaning    |
++=======+============+
+| 0     | Disabled   |
++-------+------------+
+| 1     | Channel 1  |
++-------+------------+
+| 2     | Channel 2  |
++-------+------------+
+| 3     | Channel 3  |
++-------+------------+
+| 4     | Channel 4  |
++-------+------------+
+| 5     | Channel 5  |
++-------+------------+
+| 6     | Channel 6  |
++-------+------------+
+| 7     | Channel 7  |
++-------+------------+
+| 8     | Channel 8  |
++-------+------------+
+| 9     | Channel 9  |
++-------+------------+
+| 10    | Channel 10 |
++-------+------------+
+| 11    | Channel 11 |
++-------+------------+
+| 12    | Channel 12 |
++-------+------------+
+| 13    | Channel 13 |
++-------+------------+
+| 14    | Channel 14 |
++-------+------------+
+| 15    | Channel 15 |
++-------+------------+
+| 16    | Channel 16 |
++-------+------------+
 
 
 
@@ -4975,6 +5007,8 @@ Bitmask of mission items that are required to be planned in order to arm the air
 +-----+---------------+
 | 5   | Rallypoint    |
 +-----+---------------+
+| 6   | RTL           |
++-----+---------------+
 
 
 
@@ -5315,7 +5349,7 @@ ARSPD\_OPTIONS: Airspeed options bitmask
 
 | *Note: This parameter is for advanced users*
 
-Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction
+Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/groundspeed mismatch \(see ARSPD\_WIND\_MAX\)\, 1\:Automatically reenable use based on airspeed\/groundspeed mismatch recovery \(see ARSPD\_WIND\_MAX\) 2\:Disable voltage correction\, 3\:Check that the airspeed is statistically consistent with the navigation EKF vehicle and wind velocity estimates using EKF3 \(requires AHRS\_EKF\_TYPE \= 3\)
 
 
 +-----+----------------------------+
@@ -5326,6 +5360,8 @@ Bitmask of options to use with airspeed\. 0\:Disable use based on airspeed\/grou
 | 1   | AllowSpeedMismatchRecovery |
 +-----+----------------------------+
 | 2   | DisableVoltageCorrection   |
++-----+----------------------------+
+| 3   | UseEkf3Consistency         |
 +-----+----------------------------+
 
 
@@ -5365,6 +5401,25 @@ If the difference between airspeed and ground speed is greater than this value t
 +===================+
 | meters per second |
 +-------------------+
+
+
+
+
+.. _ARSPD_WIND_GATE:
+
+ARSPD\_WIND\_GATE: Re\-enable Consistency Check Gate Size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Number of standard deviations applied to the re\-enable EKF consistency check that is used when ARSPD\_OPTIONS bit position 3 is set\. Larger values will make the re\-enabling of the airspeed sensor faster\, but increase the likelihood of re\-enabling a degraded sensor\. The value can be tuned by using the ARSP\.TR log message by setting ARSP\_WIND\_GATE to a value that is higher than the value for ARSP\.TR observed with a healthy airspeed sensor\. Occasional transients in ARSP\.TR above the value set by ARSP\_WIND\_GATE can be tolerated provided they are less than 5 seconds in duration and less than 10\% duty cycle\.
+
+
++-------------+
+| Range       |
++=============+
+| 0.0 to 10.0 |
++-------------+
 
 
 
@@ -15337,6 +15392,14 @@ Auxiliary RC Options function executed on pin change
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -15520,6 +15583,14 @@ Auxiliary RC Options function executed on pin change
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -15705,6 +15776,14 @@ Auxiliary RC Options function executed on pin change
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -15889,6 +15968,14 @@ Auxiliary RC Options function executed on pin change
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -15953,6 +16040,8 @@ how to trigger the camera to take a picture
 | 1     | Relay                |
 +-------+----------------------+
 | 2     | GoPro in Solo Gimbal |
++-------+----------------------+
+| 3     | Mount (Siyi)         |
 +-------+----------------------+
 
 
@@ -16579,6 +16668,44 @@ Output rate of servo command messages
 
 
 
+.. _CAN_D1_PC_ECU_ID:
+
+CAN\_D1\_PC\_ECU\_ID: ECU Node ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Node ID to send ECU throttle messages to\. Set to zero to disable ECU throttle messages\. Set to 255 to broadcast to all ECUs\.
+
+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
+
+
+
+
+.. _CAN_D1_PC_ECU_RT:
+
+CAN\_D1\_PC\_ECU\_RT: ECU command output rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Output rate of ECU command messages
+
+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
+
+
+
+
 
 .. _parameters_CAN_D1_TST_:
 
@@ -17169,6 +17296,44 @@ Output rate of servo command messages
 
 
 
+.. _CAN_D2_PC_ECU_ID:
+
+CAN\_D2\_PC\_ECU\_ID: ECU Node ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Node ID to send ECU throttle messages to\. Set to zero to disable ECU throttle messages\. Set to 255 to broadcast to all ECUs\.
+
+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
+
+
+
+
+.. _CAN_D2_PC_ECU_RT:
+
+CAN\_D2\_PC\_ECU\_RT: ECU command output rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Output rate of ECU command messages
+
+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
+
+
+
+
 
 .. _parameters_CAN_D2_TST_:
 
@@ -17748,6 +17913,44 @@ CAN\_D3\_PC\_SRV\_RT: Servo command output rate
 | *Note: This parameter is for advanced users*
 
 Output rate of servo command messages
+
+
++----------+-------+
+| Range    | Units |
++==========+=======+
+| 1 to 500 | hertz |
++----------+-------+
+
+
+
+
+.. _CAN_D3_PC_ECU_ID:
+
+CAN\_D3\_PC\_ECU\_ID: ECU Node ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Node ID to send ECU throttle messages to\. Set to zero to disable ECU throttle messages\. Set to 255 to broadcast to all ECUs\.
+
+
++----------+
+| Range    |
++==========+
+| 0 to 255 |
++----------+
+
+
+
+
+.. _CAN_D3_PC_ECU_RT:
+
+CAN\_D3\_PC\_ECU\_RT: ECU command output rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Output rate of ECU command messages
 
 
 +----------+-------+
@@ -20789,19 +20992,23 @@ EFI\_TYPE: EFI communication type
 What method of communication is used for EFI \#1
 
 
-+-------+--------------+
-| Value | Meaning      |
-+=======+==============+
-| 0     | None         |
-+-------+--------------+
-| 1     | Serial-MS    |
-+-------+--------------+
-| 2     | NWPMU        |
-+-------+--------------+
-| 3     | Serial-Lutan |
-+-------+--------------+
-| 5     | DroneCAN     |
-+-------+--------------+
++-------+---------------+
+| Value | Meaning       |
++=======+===============+
+| 0     | None          |
++-------+---------------+
+| 1     | Serial-MS     |
++-------+---------------+
+| 2     | NWPMU         |
++-------+---------------+
+| 3     | Serial-Lutan  |
++-------+---------------+
+| 5     | DroneCAN      |
++-------+---------------+
+| 6     | Currawong-ECU |
++-------+---------------+
+| 7     | Scripting     |
++-------+---------------+
 
 
 
@@ -20840,6 +21047,25 @@ Used to calibrate fuel flow for MS protocol \(Offset\)\. This can be used to cor
 +=========+
 | 0 to 10 |
 +---------+
+
+
+
+
+.. _EFI_FUEL_DENS:
+
+EFI\_FUEL\_DENS: ECU Fuel Density
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Used to calculate fuel consumption
+
+
++------------+---------------------------+
+| Range      | Units                     |
++============+===========================+
+| 0 to 10000 | kilograms per cubic meter |
++------------+---------------------------+
 
 
 
@@ -30789,6 +31015,8 @@ Mount Type
 +-------+-----------------+
 | 7     | BrushlessPWM    |
 +-------+-----------------+
+| 8     | Siyi            |
++-------+-----------------+
 
 
 
@@ -31126,6 +31354,8 @@ Mount Type
 | 6     | Gremsy          |
 +-------+-----------------+
 | 7     | BrushlessPWM    |
++-------+-----------------+
+| 8     | Siyi            |
 +-------+-----------------+
 
 
@@ -35840,6 +36070,44 @@ OSD1\_LINK\_Q\_Y: LINK\_Q\_Y
 
 
 Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
+.. _OSD1_TXT_RES:
+
+OSD1\_TXT\_RES: Sets the overlay text resolution \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 \(MSP DisplayPort only\)
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 0     | 30x16   |
++-------+---------+
+| 1     | 50x18   |
++-------+---------+
+
+
+
+
+.. _OSD1_FONT:
+
+OSD1\_FONT: Sets the font index for this screen \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the font index for this screen \(MSP DisplayPort only\)
 
 
 +---------+
@@ -40954,6 +41222,44 @@ Vertical position on screen
 
 
 
+.. _OSD2_TXT_RES:
+
+OSD2\_TXT\_RES: Sets the overlay text resolution \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 \(MSP DisplayPort only\)
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 0     | 30x16   |
++-------+---------+
+| 1     | 50x18   |
++-------+---------+
+
+
+
+
+.. _OSD2_FONT:
+
+OSD2\_FONT: Sets the font index for this screen \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the font index for this screen \(MSP DisplayPort only\)
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
 .. _OSD2_NRG_CONS_EN:
 
 OSD2\_NRG\_CONS\_EN: NRG\_CONS\_EN
@@ -46046,6 +46352,44 @@ OSD3\_LINK\_Q\_Y: LINK\_Q\_Y
 
 
 Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
+.. _OSD3_TXT_RES:
+
+OSD3\_TXT\_RES: Sets the overlay text resolution \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 \(MSP DisplayPort only\)
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 0     | 30x16   |
++-------+---------+
+| 1     | 50x18   |
++-------+---------+
+
+
+
+
+.. _OSD3_FONT:
+
+OSD3\_FONT: Sets the font index for this screen \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the font index for this screen \(MSP DisplayPort only\)
 
 
 +---------+
@@ -51160,6 +51504,44 @@ Vertical position on screen
 
 
 
+.. _OSD4_TXT_RES:
+
+OSD4\_TXT\_RES: Sets the overlay text resolution \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 \(MSP DisplayPort only\)
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 0     | 30x16   |
++-------+---------+
+| 1     | 50x18   |
++-------+---------+
+
+
+
+
+.. _OSD4_FONT:
+
+OSD4\_FONT: Sets the font index for this screen \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the font index for this screen \(MSP DisplayPort only\)
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
 .. _OSD4_NRG_CONS_EN:
 
 OSD4\_NRG\_CONS\_EN: NRG\_CONS\_EN
@@ -56252,6 +56634,44 @@ OSD5\_LINK\_Q\_Y: LINK\_Q\_Y
 
 
 Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
+.. _OSD5_TXT_RES:
+
+OSD5\_TXT\_RES: Sets the overlay text resolution \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 \(MSP DisplayPort only\)
+
+
++-------+---------+
+| Value | Meaning |
++=======+=========+
+| 0     | 30x16   |
++-------+---------+
+| 1     | 50x18   |
++-------+---------+
+
+
+
+
+.. _OSD5_FONT:
+
+OSD5\_FONT: Sets the font index for this screen \(MSP DisplayPort only\)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sets the font index for this screen \(MSP DisplayPort only\)
 
 
 +---------+
@@ -65230,6 +65650,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -65517,6 +65945,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -65806,6 +66242,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -66093,6 +66537,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -66382,6 +66834,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -66669,6 +67129,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -66958,6 +67426,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -67245,6 +67721,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -67534,6 +68018,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -67821,6 +68313,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -68110,6 +68610,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -68397,6 +68905,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -68686,6 +69202,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -68973,6 +69497,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -69262,6 +69794,14 @@ Function assigned to this RC channel
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
 +-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
++-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
 | 208   | Flap                                                |
@@ -69549,6 +70089,14 @@ Function assigned to this RC channel
 | 164   | Pause Stream Logging                                |
 +-------+-----------------------------------------------------+
 | 165   | Arm/Emergency Motor Stop                            |
++-------+-----------------------------------------------------+
+| 166   | Camera Record Video                                 |
++-------+-----------------------------------------------------+
+| 167   | Camera Zoom                                         |
++-------+-----------------------------------------------------+
+| 168   | Camera Manual Focus                                 |
++-------+-----------------------------------------------------+
+| 169   | Camera Auto Focus                                   |
 +-------+-----------------------------------------------------+
 | 200   | Servos auto trim                                    |
 +-------+-----------------------------------------------------+
@@ -96603,22 +97151,28 @@ VTX\_OPTIONS: Video Transmitter Options
 
 | *Note: This parameter is for advanced users*
 
-Video Transmitter Options\. Pitmode puts the VTX in a low power state\. Unlocked enables certain restricted frequencies and power levels\. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels\.
+Video Transmitter Options\. Pitmode puts the VTX in a low power state\. Unlocked enables certain restricted frequencies and power levels\. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels\. One stop\-bit may be required for VTXs that erroneously mimic iNav behaviour\.
 
 
-+-----+-----------------------------------+
-| Bit | Meaning                           |
-+=====+===================================+
-| 0   | Pitmode                           |
-+-----+-----------------------------------+
-| 1   | Pitmode until armed               |
-+-----+-----------------------------------+
-| 2   | Pitmode when disarmed             |
-+-----+-----------------------------------+
-| 3   | Unlocked                          |
-+-----+-----------------------------------+
-| 4   | Add leading zero byte to requests |
-+-----+-----------------------------------+
++-----+-----------------------------------------------------------+
+| Bit | Meaning                                                   |
++=====+===========================================================+
+| 0   | Pitmode                                                   |
++-----+-----------------------------------------------------------+
+| 1   | Pitmode until armed                                       |
++-----+-----------------------------------------------------------+
+| 2   | Pitmode when disarmed                                     |
++-----+-----------------------------------------------------------+
+| 3   | Unlocked                                                  |
++-----+-----------------------------------------------------------+
+| 4   | Add leading zero byte to requests                         |
++-----+-----------------------------------------------------------+
+| 5   | Use 1 stop-bit in SmartAudio                              |
++-----+-----------------------------------------------------------+
+| 6   | Ignore CRC in SmartAudio                                  |
++-----+-----------------------------------------------------------+
+| 7   | Ignore status updates in CRSF and blindly set VTX options |
++-----+-----------------------------------------------------------+
 
 
 

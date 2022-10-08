@@ -426,7 +426,8 @@
         "2": "DO_LAND_START",
         "3": "Takeoff",
         "4": "VTOL Takeoff",
-        "5": "Rallypoint"
+        "5": "Rallypoint",
+        "6": "RTL"
       },
       "Description": "Bitmask of mission items that are required to be planned in order to arm the aircraft",
       "DisplayName": "Required mission items",
@@ -589,7 +590,8 @@
       "Bitmask": {
         "0": "SpeedMismatchDisable",
         "1": "AllowSpeedMismatchRecovery",
-        "2": "DisableVoltageCorrection"
+        "2": "DisableVoltageCorrection",
+        "3": "UseEkf3Consistency"
       },
       "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
       "DisplayName": "Airspeed options bitmask",
@@ -672,6 +674,15 @@
         "1": "Use",
         "2": "UseWhenZeroThrottle"
       }
+    },
+    "ARSPD_WIND_GATE": {
+      "Description": "This parameter and function is not used by this vehicle.",
+      "DisplayName": "Re-enable Consistency Check Gate Size",
+      "Range": {
+        "high": "10.0",
+        "low": "0.0"
+      },
+      "User": "Advanced"
     },
     "ARSPD_WIND_MAX": {
       "Description": "This parameter and function is not used by this vehicle. Always set to 0.",
@@ -5253,6 +5264,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -5334,6 +5349,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -5415,6 +5434,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -5496,6 +5519,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -5768,7 +5795,8 @@
       "Values": {
         "0": "Servo",
         "1": "Relay",
-        "2": "GoPro in Solo Gimbal"
+        "2": "GoPro in Solo Gimbal",
+        "3": "Mount (Siyi)"
       }
     },
     "CAM_TYPE": {
@@ -5881,6 +5909,25 @@
     }
   },
   "CAN_D1_PC_": {
+    "CAN_D1_PC_ECU_ID": {
+      "Description": "Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.",
+      "DisplayName": "ECU Node ID",
+      "Range": {
+        "high": "255",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "CAN_D1_PC_ECU_RT": {
+      "Description": "Output rate of ECU command messages",
+      "DisplayName": "ECU command output rate",
+      "Range": {
+        "high": "500",
+        "low": "1"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
     "CAN_D1_PC_ESC_BM": {
       "Bitmask": {
         "0": "ESC 1",
@@ -6154,6 +6201,25 @@
     }
   },
   "CAN_D2_PC_": {
+    "CAN_D2_PC_ECU_ID": {
+      "Description": "Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.",
+      "DisplayName": "ECU Node ID",
+      "Range": {
+        "high": "255",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "CAN_D2_PC_ECU_RT": {
+      "Description": "Output rate of ECU command messages",
+      "DisplayName": "ECU command output rate",
+      "Range": {
+        "high": "500",
+        "low": "1"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
     "CAN_D2_PC_ESC_BM": {
       "Bitmask": {
         "0": "ESC 1",
@@ -6427,6 +6493,25 @@
     }
   },
   "CAN_D3_PC_": {
+    "CAN_D3_PC_ECU_ID": {
+      "Description": "Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.",
+      "DisplayName": "ECU Node ID",
+      "Range": {
+        "high": "255",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "CAN_D3_PC_ECU_RT": {
+      "Description": "Output rate of ECU command messages",
+      "DisplayName": "ECU command output rate",
+      "Range": {
+        "high": "500",
+        "low": "1"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
     "CAN_D3_PC_ESC_BM": {
       "Bitmask": {
         "0": "ESC 1",
@@ -7883,6 +7968,16 @@
       },
       "User": "Advanced"
     },
+    "EFI_FUEL_DENS": {
+      "Description": "Used to calculate fuel consumption",
+      "DisplayName": "ECU Fuel Density",
+      "Range": {
+        "high": "10000",
+        "low": "0"
+      },
+      "Units": "kg/m/m/m",
+      "User": "Advanced"
+    },
     "EFI_TYPE": {
       "Description": "What method of communication is used for EFI #1",
       "DisplayName": "EFI communication type",
@@ -7893,7 +7988,9 @@
         "1": "Serial-MS",
         "2": "NWPMU",
         "3": "Serial-Lutan",
-        "5": "DroneCAN"
+        "5": "DroneCAN",
+        "6": "Currawong-ECU",
+        "7": "Scripting"
       }
     }
   },
@@ -11968,7 +12065,8 @@
         "4": "SToRM32 MAVLink",
         "5": "SToRM32 Serial",
         "6": "Gremsy",
-        "7": "BrushlessPWM"
+        "7": "BrushlessPWM",
+        "8": "Siyi"
       }
     },
     "MNT1_YAW_MAX": {
@@ -12164,7 +12262,8 @@
         "4": "SToRM32 MAVLink",
         "5": "SToRM32 Serial",
         "6": "Gremsy",
-        "7": "BrushlessPWM"
+        "7": "BrushlessPWM",
+        "8": "Siyi"
       }
     },
     "MNT2_YAW_MAX": {
@@ -14087,6 +14186,15 @@
         "low": "0"
       }
     },
+    "OSD1_FONT": {
+      "Description": "Sets the font index for this screen (MSP DisplayPort only)",
+      "DisplayName": "Sets the font index for this screen (MSP DisplayPort only)",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
     "OSD1_GNDTRVL_EN": {
       "Description": "Displays ground distance traveled",
       "DisplayName": "GNDTRVL_EN",
@@ -14925,6 +15033,15 @@
       "Range": {
         "high": "15",
         "low": "0"
+      }
+    },
+    "OSD1_TXT_RES": {
+      "Description": "Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)",
+      "DisplayName": "Sets the overlay text resolution (MSP DisplayPort only)",
+      "User": "Standard",
+      "Values": {
+        "0": "30x16",
+        "1": "50x18"
       }
     },
     "OSD1_VSPEED_EN": {
@@ -16276,6 +16393,15 @@
         "low": "0"
       }
     },
+    "OSD2_FONT": {
+      "Description": "Sets the font index for this screen (MSP DisplayPort only)",
+      "DisplayName": "Sets the font index for this screen (MSP DisplayPort only)",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
     "OSD2_GNDTRVL_EN": {
       "Description": "Displays ground distance traveled",
       "DisplayName": "GNDTRVL_EN",
@@ -17114,6 +17240,15 @@
       "Range": {
         "high": "15",
         "low": "0"
+      }
+    },
+    "OSD2_TXT_RES": {
+      "Description": "Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)",
+      "DisplayName": "Sets the overlay text resolution (MSP DisplayPort only)",
+      "User": "Standard",
+      "Values": {
+        "0": "30x16",
+        "1": "50x18"
       }
     },
     "OSD2_VSPEED_EN": {
@@ -18465,6 +18600,15 @@
         "low": "0"
       }
     },
+    "OSD3_FONT": {
+      "Description": "Sets the font index for this screen (MSP DisplayPort only)",
+      "DisplayName": "Sets the font index for this screen (MSP DisplayPort only)",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
     "OSD3_GNDTRVL_EN": {
       "Description": "Displays ground distance traveled",
       "DisplayName": "GNDTRVL_EN",
@@ -19303,6 +19447,15 @@
       "Range": {
         "high": "15",
         "low": "0"
+      }
+    },
+    "OSD3_TXT_RES": {
+      "Description": "Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)",
+      "DisplayName": "Sets the overlay text resolution (MSP DisplayPort only)",
+      "User": "Standard",
+      "Values": {
+        "0": "30x16",
+        "1": "50x18"
       }
     },
     "OSD3_VSPEED_EN": {
@@ -20654,6 +20807,15 @@
         "low": "0"
       }
     },
+    "OSD4_FONT": {
+      "Description": "Sets the font index for this screen (MSP DisplayPort only)",
+      "DisplayName": "Sets the font index for this screen (MSP DisplayPort only)",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
     "OSD4_GNDTRVL_EN": {
       "Description": "Displays ground distance traveled",
       "DisplayName": "GNDTRVL_EN",
@@ -21492,6 +21654,15 @@
       "Range": {
         "high": "15",
         "low": "0"
+      }
+    },
+    "OSD4_TXT_RES": {
+      "Description": "Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)",
+      "DisplayName": "Sets the overlay text resolution (MSP DisplayPort only)",
+      "User": "Standard",
+      "Values": {
+        "0": "30x16",
+        "1": "50x18"
       }
     },
     "OSD4_VSPEED_EN": {
@@ -22843,6 +23014,15 @@
         "low": "0"
       }
     },
+    "OSD5_FONT": {
+      "Description": "Sets the font index for this screen (MSP DisplayPort only)",
+      "DisplayName": "Sets the font index for this screen (MSP DisplayPort only)",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      },
+      "User": "Standard"
+    },
     "OSD5_GNDTRVL_EN": {
       "Description": "Displays ground distance traveled",
       "DisplayName": "GNDTRVL_EN",
@@ -23681,6 +23861,15 @@
       "Range": {
         "high": "15",
         "low": "0"
+      }
+    },
+    "OSD5_TXT_RES": {
+      "Description": "Sets the overlay text resolution for this screen to either LD 30x16 or HD 50x18 (MSP DisplayPort only)",
+      "DisplayName": "Sets the overlay text resolution (MSP DisplayPort only)",
+      "User": "Standard",
+      "Values": {
+        "0": "30x16",
+        "1": "50x18"
       }
     },
     "OSD5_VSPEED_EN": {
@@ -26055,6 +26244,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26190,6 +26383,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26325,6 +26522,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26460,6 +26661,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26595,6 +26800,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26730,6 +26939,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -26865,6 +27078,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27000,6 +27217,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27135,6 +27356,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27270,6 +27495,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27405,6 +27634,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27540,6 +27773,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27675,6 +27912,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27810,6 +28051,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -27945,6 +28190,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -28080,6 +28329,10 @@
         "163": "Mount Lock",
         "164": "Pause Stream Logging",
         "165": "Arm/Emergency Motor Stop",
+        "166": "Camera Record Video",
+        "167": "Camera Zoom",
+        "168": "Camera Manual Focus",
+        "169": "Camera Auto Focus",
         "19": "Gripper",
         "201": "Roll",
         "202": "Pitch",
@@ -40373,9 +40626,12 @@
         "1": "Pitmode until armed",
         "2": "Pitmode when disarmed",
         "3": "Unlocked",
-        "4": "Add leading zero byte to requests"
+        "4": "Add leading zero byte to requests",
+        "5": "Use 1 stop-bit in SmartAudio",
+        "6": "Ignore CRC in SmartAudio",
+        "7": "Ignore status updates in CRSF and blindly set VTX options"
       },
-      "Description": "Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels.",
+      "Description": "Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels. One stop-bit may be required for VTXs that erroneously mimic iNav behaviour.",
       "DisplayName": "Video Transmitter Options",
       "User": "Advanced"
     },

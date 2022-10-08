@@ -381,9 +381,10 @@
       "Bitmask": {
         "0": "SpeedMismatchDisable",
         "1": "AllowSpeedMismatchRecovery",
-        "2": "DisableVoltageCorrection"
+        "2": "DisableVoltageCorrection",
+        "3": "UseEkf3Consistency"
       },
-      "Description": "Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction",
+      "Description": "Bitmask of options to use with airspeed. 0:Disable use based on airspeed/groundspeed mismatch (see ARSPD_WIND_MAX), 1:Automatically reenable use based on airspeed/groundspeed mismatch recovery (see ARSPD_WIND_MAX) 2:Disable voltage correction, 3:Check that the airspeed is statistically consistent with the navigation EKF vehicle and wind velocity estimates using EKF3 (requires AHRS_EKF_TYPE = 3)",
       "DisplayName": "Airspeed options bitmask",
       "User": "Advanced"
     },
@@ -464,6 +465,15 @@
         "1": "Use",
         "2": "UseWhenZeroThrottle"
       }
+    },
+    "ARSPD_WIND_GATE": {
+      "Description": "Number of standard deviations applied to the re-enable EKF consistency check that is used when ARSPD_OPTIONS bit position 3 is set. Larger values will make the re-enabling of the airspeed sensor faster, but increase the likelihood of re-enabling a degraded sensor. The value can be tuned by using the ARSP.TR log message by setting ARSP_WIND_GATE to a value that is higher than the value for ARSP.TR observed with a healthy airspeed sensor. Occasional transients in ARSP.TR above the value set by ARSP_WIND_GATE can be tolerated provided they are less than 5 seconds in duration and less than 10% duty cycle.",
+      "DisplayName": "Re-enable Consistency Check Gate Size",
+      "Range": {
+        "high": "10.0",
+        "low": "0.0"
+      },
+      "User": "Advanced"
     },
     "ARSPD_WIND_MAX": {
       "Description": "If the difference between airspeed and ground speed is greater than this value the sensor will be marked unhealthy. Using ARSPD_OPTION this health value can be used to disable the sensor.",
@@ -4393,6 +4403,25 @@
     }
   },
   "CAN_D1_PC_": {
+    "CAN_D1_PC_ECU_ID": {
+      "Description": "Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.",
+      "DisplayName": "ECU Node ID",
+      "Range": {
+        "high": "255",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "CAN_D1_PC_ECU_RT": {
+      "Description": "Output rate of ECU command messages",
+      "DisplayName": "ECU command output rate",
+      "Range": {
+        "high": "500",
+        "low": "1"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
     "CAN_D1_PC_ESC_BM": {
       "Bitmask": {
         "0": "ESC 1",
@@ -4666,6 +4695,25 @@
     }
   },
   "CAN_D2_PC_": {
+    "CAN_D2_PC_ECU_ID": {
+      "Description": "Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.",
+      "DisplayName": "ECU Node ID",
+      "Range": {
+        "high": "255",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "CAN_D2_PC_ECU_RT": {
+      "Description": "Output rate of ECU command messages",
+      "DisplayName": "ECU command output rate",
+      "Range": {
+        "high": "500",
+        "low": "1"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
     "CAN_D2_PC_ESC_BM": {
       "Bitmask": {
         "0": "ESC 1",
@@ -4939,6 +4987,25 @@
     }
   },
   "CAN_D3_PC_": {
+    "CAN_D3_PC_ECU_ID": {
+      "Description": "Node ID to send ECU throttle messages to. Set to zero to disable ECU throttle messages. Set to 255 to broadcast to all ECUs.",
+      "DisplayName": "ECU Node ID",
+      "Range": {
+        "high": "255",
+        "low": "0"
+      },
+      "User": "Advanced"
+    },
+    "CAN_D3_PC_ECU_RT": {
+      "Description": "Output rate of ECU command messages",
+      "DisplayName": "ECU command output rate",
+      "Range": {
+        "high": "500",
+        "low": "1"
+      },
+      "Units": "Hz",
+      "User": "Advanced"
+    },
     "CAN_D3_PC_ESC_BM": {
       "Bitmask": {
         "0": "ESC 1",
@@ -6341,6 +6408,16 @@
       },
       "User": "Advanced"
     },
+    "EFI_FUEL_DENS": {
+      "Description": "Used to calculate fuel consumption",
+      "DisplayName": "ECU Fuel Density",
+      "Range": {
+        "high": "10000",
+        "low": "0"
+      },
+      "Units": "kg/m/m/m",
+      "User": "Advanced"
+    },
     "EFI_TYPE": {
       "Description": "What method of communication is used for EFI #1",
       "DisplayName": "EFI communication type",
@@ -6351,7 +6428,9 @@
         "1": "Serial-MS",
         "2": "NWPMU",
         "3": "Serial-Lutan",
-        "5": "DroneCAN"
+        "5": "DroneCAN",
+        "6": "Currawong-ECU",
+        "7": "Scripting"
       }
     }
   },
@@ -19439,9 +19518,12 @@
         "1": "Pitmode until armed",
         "2": "Pitmode when disarmed",
         "3": "Unlocked",
-        "4": "Add leading zero byte to requests"
+        "4": "Add leading zero byte to requests",
+        "5": "Use 1 stop-bit in SmartAudio",
+        "6": "Ignore CRC in SmartAudio",
+        "7": "Ignore status updates in CRSF and blindly set VTX options"
       },
-      "Description": "Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels.",
+      "Description": "Video Transmitter Options. Pitmode puts the VTX in a low power state. Unlocked enables certain restricted frequencies and power levels. Do not enable the Unlocked option unless you have appropriate permissions in your jurisdiction to transmit at high power levels. One stop-bit may be required for VTXs that erroneously mimic iNav behaviour.",
       "DisplayName": "Video Transmitter Options",
       "User": "Advanced"
     },
