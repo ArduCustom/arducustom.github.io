@@ -634,6 +634,12 @@
       <param humanName="Arm Checks to Perform (bitmask)" name="ARMING_CHECK" documentation="Checks prior to arming motor. This is a bitmask of checks that will be performed before allowing arming. For most users it is recommended to leave this at the default of 1 (all checks enabled). You can select whatever checks you prefer by adding together the values of each check type to set this parameter. For example, to only allow arming when you have GPS lock and no RC failsafe you would set ARMING_CHECK to 72." user="Standard">
         <field name="Bitmask">0:All,1:Barometer,2:Compass,3:GPS lock,4:INS,5:Parameters,6:RC Channels,7:Board voltage,8:Battery Level,10:Logging Available,11:Hardware safety switch,12:GPS Configuration,13:System,14:Mission,15:Rangefinder,16:Camera,17:AuxAuth,18:VisualOdometry,19:FFT</field>
       </param>
+      <param humanName="Arming options" name="ARMING_OPTIONS" documentation="Options that can be applied to change arming behaviour" user="Advanced">
+        <values>
+          <value code="0">None</value>
+          <value code="1">Disable prearm display</value>
+        </values>
+      </param>
     </parameters>
     <parameters name="ARSPD">
       <param humanName="Airspeed type" name="ARSPD_TYPE" documentation="Type of airspeed sensor" user="Standard">
@@ -7075,7 +7081,7 @@
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Scripting Debug Level" name="SCR_DEBUG_OPTS" documentation="Debugging options" user="Advanced">
-        <field name="Bitmask">0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time</field>
+        <field name="Bitmask">0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time, 4:Disable pre-arm check</field>
       </param>
       <param humanName="Scripting User Parameter1" name="SCR_USER1" documentation="General purpose user variable input for scripts" user="Standard">
 </param>
@@ -7145,7 +7151,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7213,7 +7219,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7280,7 +7286,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7347,7 +7353,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7414,7 +7420,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7481,7 +7487,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7601,7 +7607,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7672,7 +7678,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7743,7 +7749,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -7812,7 +7818,7 @@
           <value code="2">BLHeli_S</value>
         </values>
       </param>
-      <param humanName="Servo GPIO mask" name="SERVO_GPIO_MASK" documentation="This sets a bitmask of outputs which will be available as GPIOs. Any auxiliary output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin" user="Advanced">
+      <param humanName="Servo GPIO mask" name="SERVO_GPIO_MASK" documentation="This sets a bitmask of outputs which will be available as GPIOs. Any output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin" user="Advanced">
         <field name="Bitmask">0:Servo 1, 1:Servo 2, 2:Servo 3, 3:Servo 4, 4:Servo 5, 5:Servo 6, 6:Servo 7, 7:Servo 8, 8:Servo 9, 9:Servo 10, 10:Servo 11, 11:Servo 12, 12:Servo 13, 13:Servo 14, 14:Servo 15, 15:Servo 16, 16:Servo 17, 17:Servo 18, 18:Servo 19, 19:Servo 20, 20:Servo 21, 21:Servo 22, 22:Servo 23, 23:Servo 24, 24:Servo 25, 25:Servo 26, 26:Servo 27, 27:Servo 28, 28:Servo 29, 29:Servo 30, 30:Servo 31, 31:Servo 32</field>
         <field name="RebootRequired">True</field>
       </param>
@@ -7856,15 +7862,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -7970,8 +7976,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -8021,15 +8041,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -8135,8 +8155,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -8186,15 +8220,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -8300,8 +8334,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -8351,15 +8399,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -8465,8 +8513,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -8516,15 +8578,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -8630,8 +8692,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -8681,15 +8757,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -8795,8 +8871,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -8846,15 +8936,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -8960,8 +9050,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9011,15 +9115,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -9125,8 +9229,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9176,15 +9294,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -9290,8 +9408,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9341,15 +9473,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -9455,8 +9587,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9506,15 +9652,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -9620,8 +9766,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9671,15 +9831,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -9785,8 +9945,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -9836,15 +10010,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -9950,8 +10124,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -10001,15 +10189,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -10115,8 +10303,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -10166,15 +10368,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -10280,8 +10482,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -10331,15 +10547,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -10445,8 +10661,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -10496,15 +10726,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -10610,8 +10840,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -10661,15 +10905,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -10775,8 +11019,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -10826,15 +11084,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -10940,8 +11198,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -10991,15 +11263,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -11105,8 +11377,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -11156,15 +11442,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -11270,8 +11556,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -11321,15 +11621,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -11435,8 +11735,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -11486,15 +11800,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -11600,8 +11914,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -11651,15 +11979,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -11765,8 +12093,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -11816,15 +12158,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -11930,8 +12272,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -11981,15 +12337,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -12095,8 +12451,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -12146,15 +12516,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -12260,8 +12630,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -12311,15 +12695,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -12425,8 +12809,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -12476,15 +12874,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -12590,8 +12988,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -12641,15 +13053,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -12755,8 +13167,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -12806,15 +13232,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -12920,8 +13346,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -12971,15 +13411,15 @@
           <value code="2">Flap</value>
           <value code="3">FlapAuto</value>
           <value code="4">Aileron</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="16">DifferentialSpoilerLeft1</value>
           <value code="17">DifferentialSpoilerRight1</value>
           <value code="19">Elevator</value>
@@ -13085,8 +13525,22 @@
           <value code="137">SailMastRotation</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
-          <value code="140">Aileron left</value>
-          <value code="141">Aileron right</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -13266,7 +13720,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR0_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR0_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 10</field>
@@ -13331,7 +13785,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR1_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR1_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 10</field>
@@ -13396,7 +13850,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR2_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR2_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 10</field>
@@ -13461,7 +13915,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR3_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR3_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 10</field>
@@ -13526,7 +13980,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR4_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR4_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 10</field>
@@ -13591,7 +14045,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR5_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR5_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 10</field>
@@ -13656,7 +14110,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR6_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR6_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 10</field>

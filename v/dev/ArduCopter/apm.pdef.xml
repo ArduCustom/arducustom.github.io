@@ -457,7 +457,7 @@
         </values>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Disarm delay" name="ArduCopter:DISARM_DELAY" documentation="Delay before automatic disarm in seconds. A value of zero disables auto disarm." user="Advanced">
+      <param humanName="Disarm delay" name="ArduCopter:DISARM_DELAY" documentation="Delay before automatic disarm in seconds after landing touchdown detection. A value of zero disables auto disarm. If Emergency Motor stop active, delay time is half this value." user="Advanced">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
         <field name="Range">0 127</field>
@@ -492,7 +492,7 @@
           <value code="3">Land even in Stabilize</value>
         </values>
       </param>
-      <param humanName="EKF failsafe variance threshold" name="ArduCopter:FS_EKF_THRESH" documentation="Allows setting the maximum acceptable compass and velocity variance" user="Advanced">
+      <param humanName="EKF failsafe variance threshold" name="ArduCopter:FS_EKF_THRESH" documentation="Allows setting the maximum acceptable compass, velocity, position and height variances. Used in arming check and EKF failsafe." user="Advanced">
         <values>
           <value code="0.6">Strict</value>
           <value code="0.8">Default</value>
@@ -767,6 +767,14 @@
           <value code="0.1">Crisp</value>
           <value code="0.05">Very Crisp</value>
         </values>
+      </param>
+      <param humanName="Slew time of throttle during take-off" name="ArduCopter:TKOFF_SLEW_TIME" documentation="Time to slew the throttle from minimum to maximum while checking for a succsessful takeoff." user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0.25 5.0</field>
+      </param>
+      <param humanName="Takeoff Check RPM minimum" name="ArduCopter:TKOFF_RPM_MIN" documentation="Takeoff is not permitted until motors report at least this RPM.  Set to zero to disable check" user="Standard">
+        <field name="Range">0 10000</field>
       </param>
     </parameters>
   </vehicles>
@@ -4425,7 +4433,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -4489,6 +4497,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4523,7 +4538,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -4587,6 +4602,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4621,7 +4643,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -4685,6 +4707,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -4719,7 +4748,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -4783,6 +4812,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -5260,6 +5296,19 @@
       </param>
       <param humanName="SLCAN Start Delay" name="CAN_SLCAN_SDELAY" documentation="Duration after which slcan starts after setting SERNUM in seconds." user="Standard">
         <field name="Range">0 127</field>
+      </param>
+    </parameters>
+    <parameters name="CC">
+      <param humanName="Custom control type" name="CC_TYPE" documentation="Custom control type to be used" user="Advanced">
+        <values>
+          <value code="0">None</value>
+          <value code="1">Empty</value>
+          <value code="2">PID</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Custom Controller bitmask" name="CC_AXIS_MASK" documentation="Custom Controller bitmask to chose which axis to run" user="Advanced">
+        <field name="Bitmask">0:Roll, 1:Pitch, 2:Yaw</field>
       </param>
     </parameters>
     <parameters name="CHUTE_">
@@ -8745,8 +8794,8 @@
         <field name="Bitmask">0:Clear Mission on reboot, 2:ContinueAfterLand</field>
       </param>
     </parameters>
-    <parameters name="MNT">
-      <param humanName="Mount Type" name="MNT_TYPE" documentation="Mount Type (None, Servo or MAVLink)" user="Standard">
+    <parameters name="MNT1">
+      <param humanName="Mount Type" name="MNT1_TYPE" documentation="Mount Type" user="Standard">
         <values>
           <value code="0">None</value>
           <value code="1">Servo</value>
@@ -8755,10 +8804,11 @@
           <value code="4">SToRM32 MAVLink</value>
           <value code="5">SToRM32 Serial</value>
           <value code="6">Gremsy</value>
+          <value code="7">BrushlessPWM</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Mount default operating mode" name="MNT_DEFLT_MODE" documentation="Mount default operating mode on startup and after control is returned from autopilot" user="Standard">
+      <param humanName="Mount default operating mode" name="MNT1_DEFLT_MODE" documentation="Mount default operating mode on startup and after control is returned from autopilot" user="Standard">
         <values>
           <value code="0">Retracted</value>
           <value code="1">Neutral</value>
@@ -8768,152 +8818,110 @@
           <value code="6">Home Location</value>
         </values>
       </param>
-      <param humanName="Mount roll angle when in retracted position" name="MNT_RETRACT_X" documentation="Mount roll angle when in retracted position" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
-        <field name="Increment">1</field>
-      </param>
-      <param humanName="Mount tilt/pitch angle when in retracted position" name="MNT_RETRACT_Y" documentation="Mount tilt/pitch angle when in retracted position" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
-        <field name="Increment">1</field>
-      </param>
-      <param humanName="Mount yaw/pan angle when in retracted position" name="MNT_RETRACT_Z" documentation="Mount yaw/pan angle when in retracted position" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
-        <field name="Increment">1</field>
-      </param>
-      <param humanName="Mount roll angle when in neutral position" name="MNT_NEUTRAL_X" documentation="Mount roll angle when in neutral position" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
-        <field name="Increment">1</field>
-      </param>
-      <param humanName="Mount tilt/pitch angle when in neutral position" name="MNT_NEUTRAL_Y" documentation="Mount tilt/pitch angle when in neutral position" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
-        <field name="Increment">1</field>
-      </param>
-      <param humanName="Mount pan/yaw angle when in neutral position" name="MNT_NEUTRAL_Z" documentation="Mount pan/yaw angle when in neutral position" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
-        <field name="Increment">1</field>
-      </param>
-      <param humanName="Stabilize mount's roll angle" name="MNT_STAB_ROLL" documentation="enable roll stabilisation relative to Earth" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
-      </param>
-      <param humanName="Stabilize mount's pitch/tilt angle" name="MNT_STAB_TILT" documentation="enable tilt/pitch stabilisation relative to Earth" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
-      </param>
-      <param humanName="Stabilize mount pan/yaw angle" name="MNT_STAB_PAN" documentation="enable pan/yaw stabilisation relative to Earth" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
-      </param>
-      <param humanName="roll RC input channel" name="MNT_RC_IN_ROLL" documentation="0 for none, any other for the RC channel to be used to control roll movements" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="5">RC5</value>
-          <value code="6">RC6</value>
-          <value code="7">RC7</value>
-          <value code="8">RC8</value>
-          <value code="9">RC9</value>
-          <value code="10">RC10</value>
-          <value code="11">RC11</value>
-          <value code="12">RC12</value>
-        </values>
-      </param>
-      <param humanName="Minimum roll angle" name="MNT_ANGMIN_ROL" documentation="Minimum physical roll angular position of mount." user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Maximum roll angle" name="MNT_ANGMAX_ROL" documentation="Maximum physical roll angular position of the mount" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="tilt (pitch) RC input channel" name="MNT_RC_IN_TILT" documentation="0 for none, any other for the RC channel to be used to control tilt (pitch) movements" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="5">RC5</value>
-          <value code="6">RC6</value>
-          <value code="7">RC7</value>
-          <value code="8">RC8</value>
-          <value code="9">RC9</value>
-          <value code="10">RC10</value>
-          <value code="11">RC11</value>
-          <value code="12">RC12</value>
-        </values>
-      </param>
-      <param humanName="Minimum tilt angle" name="MNT_ANGMIN_TIL" documentation="Minimum physical tilt (pitch) angular position of mount." user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Maximum tilt angle" name="MNT_ANGMAX_TIL" documentation="Maximum physical tilt (pitch) angular position of the mount" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="pan (yaw) RC input channel" name="MNT_RC_IN_PAN" documentation="0 for none, any other for the RC channel to be used to control pan (yaw) movements" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="5">RC5</value>
-          <value code="6">RC6</value>
-          <value code="7">RC7</value>
-          <value code="8">RC8</value>
-          <value code="9">RC9</value>
-          <value code="10">RC10</value>
-          <value code="11">RC11</value>
-          <value code="12">RC12</value>
-        </values>
-      </param>
-      <param humanName="Minimum pan angle" name="MNT_ANGMIN_PAN" documentation="Minimum physical pan (yaw) angular position of mount." user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Maximum pan angle" name="MNT_ANGMAX_PAN" documentation="Maximum physical pan (yaw) angular position of the mount" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Roll stabilization lead time" name="MNT_LEAD_RLL" documentation="Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate, compensating for servo delay. Increase until the servo is responsive but doesn't overshoot. Does nothing with pan stabilization enabled." user="Standard">
-        <field name="Units">s</field>
-        <field name="UnitText">seconds</field>
-        <field name="Range">0.0 0.2</field>
-        <field name="Increment">.005</field>
-      </param>
-      <param humanName="Pitch stabilization lead time" name="MNT_LEAD_PTCH" documentation="Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate. Increase until the servo is responsive but doesn't overshoot. Does nothing with pan stabilization enabled." user="Standard">
-        <field name="Units">s</field>
-        <field name="UnitText">seconds</field>
-        <field name="Range">0.0 0.2</field>
-        <field name="Increment">.005</field>
-      </param>
-      <param humanName="Mount RC Rate" name="MNT_RC_RATE" documentation="Pilot rate control's maximum rate.  Set to zero to use angle control" user="Standard">
+      <param humanName="Mount RC Rate" name="MNT1_RC_RATE" documentation="Pilot rate control's maximum rate.  Set to zero to use angle control" user="Standard">
         <field name="Units">deg/s</field>
         <field name="UnitText">degrees per second</field>
         <field name="Range">0 90</field>
         <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount Roll angle minimum" name="MNT1_ROLL_MIN" documentation="Mount Roll angle minimum" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount Roll angle maximum" name="MNT1_ROLL_MAX" documentation="Mount Roll angle maximum" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount Pitch angle minimum" name="MNT1_PITCH_MIN" documentation="Mount Pitch angle minimum" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-90 90</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount Pitch angle maximum" name="MNT1_PITCH_MAX" documentation="Mount Pitch angle maximum" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-90 90</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount Yaw angle minimum" name="MNT1_YAW_MIN" documentation="Mount Yaw angle minimum" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount Yaw angle maximum" name="MNT1_YAW_MAX" documentation="Mount Yaw angle maximum" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount roll angle when in retracted position" name="MNT1_RETRACT_X" documentation="Mount roll angle when in retracted position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount pitch angle when in retracted position" name="MNT1_RETRACT_Y" documentation="Mount pitch angle when in retracted position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount yaw angle when in retracted position" name="MNT1_RETRACT_Z" documentation="Mount yaw angle when in retracted position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount roll angle when in neutral position" name="MNT1_NEUTRAL_X" documentation="Mount roll angle when in neutral position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount pitch angle when in neutral position" name="MNT1_NEUTRAL_Y" documentation="Mount pitch angle when in neutral position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount yaw angle when in neutral position" name="MNT1_NEUTRAL_Z" documentation="Mount yaw angle when in neutral position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
+      </param>
+      <param humanName="Mount Roll stabilization lead time" name="MNT1_LEAD_RLL" documentation="Servo mount roll angle output leads the vehicle angle by this amount of time based on current roll rate. Increase until the servo is responsive but does not overshoot" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0.0 0.2</field>
+        <field name="Increment">.005</field>
+      </param>
+      <param humanName="Mount Pitch stabilization lead time" name="MNT1_LEAD_PTCH" documentation="Servo mount pitch angle output leads the vehicle angle by this amount of time based on current pitch rate. Increase until the servo is responsive but does not overshoot" user="Standard">
+        <field name="Units">s</field>
+        <field name="UnitText">seconds</field>
+        <field name="Range">0.0 0.2</field>
+        <field name="Increment">.005</field>
+      </param>
+    </parameters>
+    <parameters name="MNT2">
+      <param humanName="Mount Type" name="MNT2_TYPE" documentation="Mount Type" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">Servo</value>
+          <value code="2">3DR Solo</value>
+          <value code="3">Alexmos Serial</value>
+          <value code="4">SToRM32 MAVLink</value>
+          <value code="5">SToRM32 Serial</value>
+          <value code="6">Gremsy</value>
+          <value code="7">BrushlessPWM</value>
+        </values>
+        <field name="RebootRequired">True</field>
       </param>
       <param humanName="Mount default operating mode" name="MNT2_DEFLT_MODE" documentation="Mount default operating mode on startup and after control is returned from autopilot" user="Standard">
         <values>
@@ -8925,157 +8933,95 @@
           <value code="6">Home Location</value>
         </values>
       </param>
-      <param humanName="Mount2 roll angle when in retracted position" name="MNT2_RETRACT_X" documentation="Mount2 roll angle when in retracted position" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
+      <param humanName="Mount RC Rate" name="MNT2_RC_RATE" documentation="Pilot rate control's maximum rate.  Set to zero to use angle control" user="Standard">
+        <field name="Units">deg/s</field>
+        <field name="UnitText">degrees per second</field>
+        <field name="Range">0 90</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2 tilt/pitch angle when in retracted position" name="MNT2_RETRACT_Y" documentation="Mount2 tilt/pitch angle when in retracted position" user="Standard">
+      <param humanName="Mount Roll angle minimum" name="MNT2_ROLL_MIN" documentation="Mount Roll angle minimum" user="Standard">
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
+        <field name="Range">-180 180</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2 yaw/pan angle when in retracted position" name="MNT2_RETRACT_Z" documentation="Mount2 yaw/pan angle when in retracted position" user="Standard">
+      <param humanName="Mount Roll angle maximum" name="MNT2_ROLL_MAX" documentation="Mount Roll angle maximum" user="Standard">
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
+        <field name="Range">-180 180</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2 roll angle when in neutral position" name="MNT2_NEUTRAL_X" documentation="Mount2 roll angle when in neutral position" user="Standard">
+      <param humanName="Mount Pitch angle minimum" name="MNT2_PITCH_MIN" documentation="Mount Pitch angle minimum" user="Standard">
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
+        <field name="Range">-90 90</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2 tilt/pitch angle when in neutral position" name="MNT2_NEUTRAL_Y" documentation="Mount2 tilt/pitch angle when in neutral position" user="Standard">
+      <param humanName="Mount Pitch angle maximum" name="MNT2_PITCH_MAX" documentation="Mount Pitch angle maximum" user="Standard">
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
+        <field name="Range">-90 90</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2 pan/yaw angle when in neutral position" name="MNT2_NEUTRAL_Z" documentation="Mount2 pan/yaw angle when in neutral position" user="Standard">
+      <param humanName="Mount Yaw angle minimum" name="MNT2_YAW_MIN" documentation="Mount Yaw angle minimum" user="Standard">
         <field name="Units">deg</field>
         <field name="UnitText">degrees</field>
-        <field name="Range">-180.00 179.99</field>
+        <field name="Range">-180 180</field>
         <field name="Increment">1</field>
       </param>
-      <param humanName="Stabilize Mount2's roll angle" name="MNT2_STAB_ROLL" documentation="enable roll stabilisation relative to Earth" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
+      <param humanName="Mount Yaw angle maximum" name="MNT2_YAW_MAX" documentation="Mount Yaw angle maximum" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+        <field name="Increment">1</field>
       </param>
-      <param humanName="Stabilize Mount2's pitch/tilt angle" name="MNT2_STAB_TILT" documentation="enable tilt/pitch stabilisation relative to Earth" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
+      <param humanName="Mount roll angle when in retracted position" name="MNT2_RETRACT_X" documentation="Mount roll angle when in retracted position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
       </param>
-      <param humanName="Stabilize mount2 pan/yaw angle" name="MNT2_STAB_PAN" documentation="enable pan/yaw stabilisation relative to Earth" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="1">Enabled</value>
-        </values>
+      <param humanName="Mount pitch angle when in retracted position" name="MNT2_RETRACT_Y" documentation="Mount pitch angle when in retracted position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2's roll RC input channel" name="MNT2_RC_IN_ROLL" documentation="0 for none, any other for the RC channel to be used to control roll movements" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="5">RC5</value>
-          <value code="6">RC6</value>
-          <value code="7">RC7</value>
-          <value code="8">RC8</value>
-          <value code="9">RC9</value>
-          <value code="10">RC10</value>
-          <value code="11">RC11</value>
-          <value code="12">RC12</value>
-        </values>
+      <param humanName="Mount yaw angle when in retracted position" name="MNT2_RETRACT_Z" documentation="Mount yaw angle when in retracted position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2's minimum roll angle" name="MNT2_ANGMIN_ROL" documentation="Mount2's minimum physical roll angular position" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
+      <param humanName="Mount roll angle when in neutral position" name="MNT2_NEUTRAL_X" documentation="Mount roll angle when in neutral position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2's maximum roll angle" name="MNT2_ANGMAX_ROL" documentation="Mount2's maximum physical roll angular position" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
+      <param humanName="Mount pitch angle when in neutral position" name="MNT2_NEUTRAL_Y" documentation="Mount pitch angle when in neutral position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2's tilt (pitch) RC input channel" name="MNT2_RC_IN_TILT" documentation="0 for none, any other for the RC channel to be used to control tilt (pitch) movements" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="5">RC5</value>
-          <value code="6">RC6</value>
-          <value code="7">RC7</value>
-          <value code="8">RC8</value>
-          <value code="9">RC9</value>
-          <value code="10">RC10</value>
-          <value code="11">RC11</value>
-          <value code="12">RC12</value>
-        </values>
+      <param humanName="Mount yaw angle when in neutral position" name="MNT2_NEUTRAL_Z" documentation="Mount yaw angle when in neutral position" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180.0 180.0</field>
+        <field name="Increment">1</field>
       </param>
-      <param humanName="Mount2's minimum tilt angle" name="MNT2_ANGMIN_TIL" documentation="Mount2's minimum physical tilt (pitch) angular position" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Mount2's maximum tilt angle" name="MNT2_ANGMAX_TIL" documentation="Mount2's maximum physical tilt (pitch) angular position" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Mount2's pan (yaw) RC input channel" name="MNT2_RC_IN_PAN" documentation="0 for none, any other for the RC channel to be used to control pan (yaw) movements" user="Standard">
-        <values>
-          <value code="0">Disabled</value>
-          <value code="5">RC5</value>
-          <value code="6">RC6</value>
-          <value code="7">RC7</value>
-          <value code="8">RC8</value>
-          <value code="9">RC9</value>
-          <value code="10">RC10</value>
-          <value code="11">RC11</value>
-          <value code="12">RC12</value>
-        </values>
-      </param>
-      <param humanName="Mount2's minimum pan angle" name="MNT2_ANGMIN_PAN" documentation="Mount2's minimum physical pan (yaw) angular position" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Mount2's maximum pan angle" name="MNT2_ANGMAX_PAN" documentation="MOunt2's maximum physical pan (yaw) angular position" user="Standard">
-        <field name="Units">cdeg</field>
-        <field name="UnitText">centidegrees</field>
-        <field name="Range">-18000 17999</field>
-        <field name="Increment">10</field>
-      </param>
-      <param humanName="Mount2's Roll stabilization lead time" name="MNT2_LEAD_RLL" documentation="Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate, compensating for servo delay. Increase until the servo is responsive but doesn't overshoot. Does nothing with pan stabilization enabled." user="Standard">
+      <param humanName="Mount Roll stabilization lead time" name="MNT2_LEAD_RLL" documentation="Servo mount roll angle output leads the vehicle angle by this amount of time based on current roll rate. Increase until the servo is responsive but does not overshoot" user="Standard">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
         <field name="Range">0.0 0.2</field>
         <field name="Increment">.005</field>
       </param>
-      <param humanName="Mount2's Pitch stabilization lead time" name="MNT2_LEAD_PTCH" documentation="Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate. Increase until the servo is responsive but doesn't overshoot. Does nothing with pan stabilization enabled." user="Standard">
+      <param humanName="Mount Pitch stabilization lead time" name="MNT2_LEAD_PTCH" documentation="Servo mount pitch angle output leads the vehicle angle by this amount of time based on current pitch rate. Increase until the servo is responsive but does not overshoot" user="Standard">
         <field name="Units">s</field>
         <field name="UnitText">seconds</field>
         <field name="Range">0.0 0.2</field>
         <field name="Increment">.005</field>
-      </param>
-      <param humanName="Mount2 Type" name="MNT2_TYPE" documentation="Mount Type (None, Servo or MAVLink)" user="Standard">
-        <values>
-          <value code="0">None</value>
-          <value code="1">Servo</value>
-          <value code="2">3DR Solo</value>
-          <value code="3">Alexmos Serial</value>
-          <value code="4">SToRM32 MAVLink</value>
-          <value code="5">SToRM32 Serial</value>
-          <value code="6">Gremsy</value>
-        </values>
       </param>
     </parameters>
     <parameters name="MOT_">
@@ -9137,7 +9083,7 @@
         <values>
           <value code="0.0">Low</value>
           <value code="0.15">Default</value>
-          <value code="0.3">High</value>
+          <value code="0.25">High</value>
         </values>
       </param>
       <param humanName="Motor Spin armed" name="MOT_SPIN_ARM" documentation="Point at which the motors start to spin expressed as a number from 0 to 1 in the entire output range.  Should be lower than MOT_SPIN_MIN." user="Advanced">
@@ -9386,6 +9332,7 @@
           <value code="2">SITL</value>
           <value code="3">MSP</value>
           <value code="4">TXONLY</value>
+          <value code="5">MSP_DISPLAYPORT</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -15640,95 +15587,16 @@
       <param humanName="Precision Landing Extra Options" name="PLND_OPTIONS" documentation="Precision Landing Extra Options" user="Advanced">
         <field name="Bitmask">0: Moving Landing Target</field>
       </param>
-    </parameters>
-    <parameters name="PRX">
-      <param humanName="Proximity type" name="PRX_TYPE" documentation="What type of proximity sensor is connected" user="Standard">
+      <param humanName="Camera Orientation" name="PLND_ORIENT" documentation="Orientation of camera/sensor on body" user="Advanced">
         <values>
-          <value code="0">None</value>
-          <value code="7">LightwareSF40c</value>
-          <value code="2">MAVLink</value>
-          <value code="3">TeraRangerTower</value>
-          <value code="4">RangeFinder</value>
-          <value code="5">RPLidarA2</value>
-          <value code="6">TeraRangerTowerEvo</value>
-          <value code="8">LightwareSF45B</value>
-          <value code="10">SITL</value>
-          <value code="12">AirSimSITL</value>
-          <value code="13">CygbotD1</value>
+          <value code="0">Forward</value>
+          <value code="4">Back</value>
+          <value code="25">Down</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Proximity sensor orientation" name="PRX_ORIENT" documentation="Proximity sensor orientation" user="Standard">
-        <values>
-          <value code="0">Default</value>
-          <value code="1">Upside Down</value>
-        </values>
-      </param>
-      <param humanName="Proximity sensor yaw correction" name="PRX_YAW_CORR" documentation="Proximity sensor yaw correction" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">-180 180</field>
-      </param>
-      <param humanName="Proximity sensor ignore angle 1" name="PRX_IGN_ANG1" documentation="Proximity sensor ignore angle 1" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 360</field>
-      </param>
-      <param humanName="Proximity sensor ignore width 1" name="PRX_IGN_WID1" documentation="Proximity sensor ignore width 1" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 127</field>
-      </param>
-      <param humanName="Proximity sensor ignore angle 2" name="PRX_IGN_ANG2" documentation="Proximity sensor ignore angle 2" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 360</field>
-      </param>
-      <param humanName="Proximity sensor ignore width 2" name="PRX_IGN_WID2" documentation="Proximity sensor ignore width 2" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 127</field>
-      </param>
-      <param humanName="Proximity sensor ignore angle 3" name="PRX_IGN_ANG3" documentation="Proximity sensor ignore angle 3" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 360</field>
-      </param>
-      <param humanName="Proximity sensor ignore width 3" name="PRX_IGN_WID3" documentation="Proximity sensor ignore width 3" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 127</field>
-      </param>
-      <param humanName="Proximity sensor ignore angle 4" name="PRX_IGN_ANG4" documentation="Proximity sensor ignore angle 4" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 360</field>
-      </param>
-      <param humanName="Proximity sensor ignore width 4" name="PRX_IGN_WID4" documentation="Proximity sensor ignore width 4" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 127</field>
-      </param>
-      <param humanName="Proximity sensor ignore angle 5" name="PRX_IGN_ANG5" documentation="Proximity sensor ignore angle 5" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 360</field>
-      </param>
-      <param humanName="Proximity sensor ignore width 5" name="PRX_IGN_WID5" documentation="Proximity sensor ignore width 5" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 127</field>
-      </param>
-      <param humanName="Proximity sensor ignore angle 6" name="PRX_IGN_ANG6" documentation="Proximity sensor ignore angle 6" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 360</field>
-      </param>
-      <param humanName="Proximity sensor ignore width 6" name="PRX_IGN_WID6" documentation="Proximity sensor ignore width 6" user="Standard">
-        <field name="Units">deg</field>
-        <field name="UnitText">degrees</field>
-        <field name="Range">0 127</field>
-      </param>
+    </parameters>
+    <parameters name="PRX">
       <param humanName="Proximity sensor land detection" name="PRX_IGN_GND" documentation="Ignore proximity data that is within 1 meter of the ground below the vehicle. This requires a downward facing rangefinder" user="Standard">
         <values>
           <value code="0">Disabled</value>
@@ -15746,12 +15614,323 @@
         <field name="UnitText">hertz</field>
         <field name="Range">0 20</field>
       </param>
-      <param humanName="Proximity minimum range" name="PRX_MIN" documentation="Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+      <param humanName="Proximity lowest altitude." name="PRX_ALT_MIN" documentation="Minimum altitude below which proximity should not work." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 10</field>
+      </param>
+    </parameters>
+    <parameters name="PRX1">
+      <param humanName="Proximity type" name="PRX1_TYPE" documentation="What type of proximity sensor is connected" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="7">LightwareSF40c</value>
+          <value code="2">MAVLink</value>
+          <value code="3">TeraRangerTower</value>
+          <value code="4">RangeFinder</value>
+          <value code="5">RPLidarA2</value>
+          <value code="6">TeraRangerTowerEvo</value>
+          <value code="8">LightwareSF45B</value>
+          <value code="10">SITL</value>
+          <value code="12">AirSimSITL</value>
+          <value code="13">CygbotD1</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Proximity sensor orientation" name="PRX1_ORIENT" documentation="Proximity sensor orientation" user="Standard">
+        <values>
+          <value code="0">Default</value>
+          <value code="1">Upside Down</value>
+        </values>
+      </param>
+      <param humanName="Proximity sensor yaw correction" name="PRX1_YAW_CORR" documentation="Proximity sensor yaw correction" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 1" name="PRX1_IGN_ANG1" documentation="Proximity sensor ignore angle 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 1" name="PRX1_IGN_WID1" documentation="Proximity sensor ignore width 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 2" name="PRX1_IGN_ANG2" documentation="Proximity sensor ignore angle 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 2" name="PRX1_IGN_WID2" documentation="Proximity sensor ignore width 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 3" name="PRX1_IGN_ANG3" documentation="Proximity sensor ignore angle 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 3" name="PRX1_IGN_WID3" documentation="Proximity sensor ignore width 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 4" name="PRX1_IGN_ANG4" documentation="Proximity sensor ignore angle 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 4" name="PRX1_IGN_WID4" documentation="Proximity sensor ignore width 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity minimum range" name="PRX1_MIN" documentation="Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
         <field name="Range">0 500</field>
       </param>
-      <param humanName="Proximity maximum range" name="PRX_MAX" documentation="Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+      <param humanName="Proximity maximum range" name="PRX1_MAX" documentation="Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
+    </parameters>
+    <parameters name="PRX2">
+      <param humanName="Proximity type" name="PRX2_TYPE" documentation="What type of proximity sensor is connected" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="7">LightwareSF40c</value>
+          <value code="2">MAVLink</value>
+          <value code="3">TeraRangerTower</value>
+          <value code="4">RangeFinder</value>
+          <value code="5">RPLidarA2</value>
+          <value code="6">TeraRangerTowerEvo</value>
+          <value code="8">LightwareSF45B</value>
+          <value code="10">SITL</value>
+          <value code="12">AirSimSITL</value>
+          <value code="13">CygbotD1</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Proximity sensor orientation" name="PRX2_ORIENT" documentation="Proximity sensor orientation" user="Standard">
+        <values>
+          <value code="0">Default</value>
+          <value code="1">Upside Down</value>
+        </values>
+      </param>
+      <param humanName="Proximity sensor yaw correction" name="PRX2_YAW_CORR" documentation="Proximity sensor yaw correction" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 1" name="PRX2_IGN_ANG1" documentation="Proximity sensor ignore angle 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 1" name="PRX2_IGN_WID1" documentation="Proximity sensor ignore width 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 2" name="PRX2_IGN_ANG2" documentation="Proximity sensor ignore angle 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 2" name="PRX2_IGN_WID2" documentation="Proximity sensor ignore width 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 3" name="PRX2_IGN_ANG3" documentation="Proximity sensor ignore angle 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 3" name="PRX2_IGN_WID3" documentation="Proximity sensor ignore width 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 4" name="PRX2_IGN_ANG4" documentation="Proximity sensor ignore angle 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 4" name="PRX2_IGN_WID4" documentation="Proximity sensor ignore width 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity minimum range" name="PRX2_MIN" documentation="Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
+      <param humanName="Proximity maximum range" name="PRX2_MAX" documentation="Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
+    </parameters>
+    <parameters name="PRX3">
+      <param humanName="Proximity type" name="PRX3_TYPE" documentation="What type of proximity sensor is connected" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="7">LightwareSF40c</value>
+          <value code="2">MAVLink</value>
+          <value code="3">TeraRangerTower</value>
+          <value code="4">RangeFinder</value>
+          <value code="5">RPLidarA2</value>
+          <value code="6">TeraRangerTowerEvo</value>
+          <value code="8">LightwareSF45B</value>
+          <value code="10">SITL</value>
+          <value code="12">AirSimSITL</value>
+          <value code="13">CygbotD1</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Proximity sensor orientation" name="PRX3_ORIENT" documentation="Proximity sensor orientation" user="Standard">
+        <values>
+          <value code="0">Default</value>
+          <value code="1">Upside Down</value>
+        </values>
+      </param>
+      <param humanName="Proximity sensor yaw correction" name="PRX3_YAW_CORR" documentation="Proximity sensor yaw correction" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 1" name="PRX3_IGN_ANG1" documentation="Proximity sensor ignore angle 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 1" name="PRX3_IGN_WID1" documentation="Proximity sensor ignore width 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 2" name="PRX3_IGN_ANG2" documentation="Proximity sensor ignore angle 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 2" name="PRX3_IGN_WID2" documentation="Proximity sensor ignore width 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 3" name="PRX3_IGN_ANG3" documentation="Proximity sensor ignore angle 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 3" name="PRX3_IGN_WID3" documentation="Proximity sensor ignore width 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 4" name="PRX3_IGN_ANG4" documentation="Proximity sensor ignore angle 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 4" name="PRX3_IGN_WID4" documentation="Proximity sensor ignore width 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity minimum range" name="PRX3_MIN" documentation="Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
+      <param humanName="Proximity maximum range" name="PRX3_MAX" documentation="Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
+    </parameters>
+    <parameters name="PRX4">
+      <param humanName="Proximity type" name="PRX4_TYPE" documentation="What type of proximity sensor is connected" user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="7">LightwareSF40c</value>
+          <value code="2">MAVLink</value>
+          <value code="3">TeraRangerTower</value>
+          <value code="4">RangeFinder</value>
+          <value code="5">RPLidarA2</value>
+          <value code="6">TeraRangerTowerEvo</value>
+          <value code="8">LightwareSF45B</value>
+          <value code="10">SITL</value>
+          <value code="12">AirSimSITL</value>
+          <value code="13">CygbotD1</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Proximity sensor orientation" name="PRX4_ORIENT" documentation="Proximity sensor orientation" user="Standard">
+        <values>
+          <value code="0">Default</value>
+          <value code="1">Upside Down</value>
+        </values>
+      </param>
+      <param humanName="Proximity sensor yaw correction" name="PRX4_YAW_CORR" documentation="Proximity sensor yaw correction" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">-180 180</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 1" name="PRX4_IGN_ANG1" documentation="Proximity sensor ignore angle 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 1" name="PRX4_IGN_WID1" documentation="Proximity sensor ignore width 1" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 2" name="PRX4_IGN_ANG2" documentation="Proximity sensor ignore angle 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 2" name="PRX4_IGN_WID2" documentation="Proximity sensor ignore width 2" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 3" name="PRX4_IGN_ANG3" documentation="Proximity sensor ignore angle 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 3" name="PRX4_IGN_WID3" documentation="Proximity sensor ignore width 3" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity sensor ignore angle 4" name="PRX4_IGN_ANG4" documentation="Proximity sensor ignore angle 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 360</field>
+      </param>
+      <param humanName="Proximity sensor ignore width 4" name="PRX4_IGN_WID4" documentation="Proximity sensor ignore width 4" user="Standard">
+        <field name="Units">deg</field>
+        <field name="UnitText">degrees</field>
+        <field name="Range">0 127</field>
+      </param>
+      <param humanName="Proximity minimum range" name="PRX4_MIN" documentation="Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
+        <field name="Units">m</field>
+        <field name="UnitText">meters</field>
+        <field name="Range">0 500</field>
+      </param>
+      <param humanName="Proximity maximum range" name="PRX4_MAX" documentation="Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range." user="Advanced">
         <field name="Units">m</field>
         <field name="UnitText">meters</field>
         <field name="Range">0 500</field>
@@ -15972,7 +16151,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16036,6 +16215,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16101,7 +16287,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16165,6 +16351,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16230,7 +16423,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16294,6 +16487,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16359,7 +16559,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16423,6 +16623,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16488,7 +16695,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16552,6 +16759,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16617,7 +16831,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16681,6 +16895,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16746,7 +16967,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16810,6 +17031,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -16875,7 +17103,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -16939,6 +17167,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17004,7 +17239,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17068,6 +17303,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17133,7 +17375,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17197,6 +17439,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17262,7 +17511,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17326,6 +17575,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17391,7 +17647,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17455,6 +17711,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17520,7 +17783,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17584,6 +17847,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17649,7 +17919,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17713,6 +17983,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17778,7 +18055,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17842,6 +18119,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -17907,7 +18191,7 @@
           <value code="24">Auto Mission Reset</value>
           <value code="25">AttCon Feed Forward</value>
           <value code="26">AttCon Accel Limits</value>
-          <value code="27">Retract Mount</value>
+          <value code="27">Retract Mount1</value>
           <value code="28">Relay On/Off</value>
           <value code="29">Landing Gear</value>
           <value code="30">Lost Copter Sound</value>
@@ -17971,6 +18255,13 @@
           <value code="162">FFT Tune</value>
           <value code="163">Mount Lock</value>
           <value code="164">Pause Stream Logging</value>
+          <value code="165">Arm/Emergency Motor Stop</value>
+          <value code="212">Mount1 Roll</value>
+          <value code="213">Mount1 Pitch</value>
+          <value code="214">Mount1 Yaw</value>
+          <value code="215">Mount2 Roll</value>
+          <value code="216">Mount2 Pitch</value>
+          <value code="217">Mount2 Yaw</value>
           <value code="300">Scripting1</value>
           <value code="301">Scripting2</value>
           <value code="302">Scripting3</value>
@@ -19986,6 +20277,7 @@
           <value code="3">EFI</value>
           <value code="4">Harmonic Notch</value>
           <value code="5">ESC Telemetry Motors Bitmask</value>
+          <value code="6">Generator</value>
         </values>
       </param>
       <param humanName="RPM scaling" name="RPM1_SCALING" documentation="Scaling factor between sensor reading and RPM." user="Standard">
@@ -20024,6 +20316,7 @@
           <value code="3">EFI</value>
           <value code="4">Harmonic Notch</value>
           <value code="5">ESC Telemetry Motors Bitmask</value>
+          <value code="6">Generator</value>
         </values>
       </param>
       <param humanName="RPM scaling" name="RPM2_SCALING" documentation="Scaling factor between sensor reading and RPM." user="Standard">
@@ -20147,7 +20440,7 @@
         <field name="RebootRequired">True</field>
       </param>
       <param humanName="Scripting Debug Level" name="SCR_DEBUG_OPTS" documentation="Debugging options" user="Advanced">
-        <field name="Bitmask">0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time</field>
+        <field name="Bitmask">0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time, 4:Disable pre-arm check</field>
       </param>
       <param humanName="Scripting User Parameter1" name="SCR_USER1" documentation="General purpose user variable input for scripts" user="Standard">
 </param>
@@ -20217,7 +20510,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20285,7 +20578,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20352,7 +20645,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20419,7 +20712,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20486,7 +20779,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20553,7 +20846,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20673,7 +20966,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20744,7 +21037,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20815,7 +21108,7 @@
           <value code="21">WindVane</value>
           <value code="22">SLCAN</value>
           <value code="23">RCIN</value>
-          <value code="24">MegaSquirt EFI</value>
+          <value code="24">EFI Serial</value>
           <value code="25">LTM</value>
           <value code="26">RunCam</value>
           <value code="27">HottTelem</value>
@@ -20884,7 +21177,7 @@
           <value code="2">BLHeli_S</value>
         </values>
       </param>
-      <param humanName="Servo GPIO mask" name="SERVO_GPIO_MASK" documentation="This sets a bitmask of outputs which will be available as GPIOs. Any auxiliary output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin" user="Advanced">
+      <param humanName="Servo GPIO mask" name="SERVO_GPIO_MASK" documentation="This sets a bitmask of outputs which will be available as GPIOs. Any output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin" user="Advanced">
         <field name="Bitmask">0:Servo 1, 1:Servo 2, 2:Servo 3, 3:Servo 4, 4:Servo 5, 5:Servo 6, 6:Servo 7, 7:Servo 8, 8:Servo 9, 9:Servo 10, 10:Servo 11, 11:Servo 12, 12:Servo 13, 13:Servo 14, 14:Servo 15, 15:Servo 16, 16:Servo 17, 17:Servo 18, 18:Servo 19, 19:Servo 20, 20:Servo 21, 21:Servo 22, 22:Servo 23, 23:Servo 24, 24:Servo 25, 25:Servo 26, 26:Servo 27, 27:Servo 28, 28:Servo 29, 29:Servo 30, 30:Servo 31, 31:Servo 32</field>
         <field name="RebootRequired">True</field>
       </param>
@@ -20925,15 +21218,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21014,6 +21307,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21060,15 +21369,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21149,6 +21458,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21195,15 +21520,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21284,6 +21609,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21330,15 +21671,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21419,6 +21760,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21465,15 +21822,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21554,6 +21911,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21600,15 +21973,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21689,6 +22062,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21735,15 +22124,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21824,6 +22213,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -21870,15 +22275,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -21959,6 +22364,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22005,15 +22426,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -22094,6 +22515,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22140,15 +22577,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -22229,6 +22666,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22275,15 +22728,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -22364,6 +22817,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22410,15 +22879,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -22499,6 +22968,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22545,15 +23030,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -22634,6 +23119,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22680,15 +23181,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -22769,6 +23270,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22815,15 +23332,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -22904,6 +23421,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -22950,15 +23483,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23039,6 +23572,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23085,15 +23634,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23174,6 +23723,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23220,15 +23785,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23309,6 +23874,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23355,15 +23936,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23444,6 +24025,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23490,15 +24087,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23579,6 +24176,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23625,15 +24238,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23714,6 +24327,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23760,15 +24389,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23849,6 +24478,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -23895,15 +24540,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -23984,6 +24629,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24030,15 +24691,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -24119,6 +24780,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24165,15 +24842,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -24254,6 +24931,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24300,15 +24993,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -24389,6 +25082,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24435,15 +25144,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -24524,6 +25233,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24570,15 +25295,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -24659,6 +25384,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24705,15 +25446,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -24794,6 +25535,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24840,15 +25597,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -24929,6 +25686,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -24975,15 +25748,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -25064,6 +25837,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -25110,15 +25899,15 @@
           <value code="-1">GPIO</value>
           <value code="0">Disabled</value>
           <value code="1">RCPassThru</value>
-          <value code="6">MountPan</value>
-          <value code="7">MountTilt</value>
-          <value code="8">MountRoll</value>
-          <value code="9">MountOpen</value>
+          <value code="6">Mount1Yaw</value>
+          <value code="7">Mount1Pitch</value>
+          <value code="8">Mount1Roll</value>
+          <value code="9">Mount1Retract</value>
           <value code="10">CameraTrigger</value>
-          <value code="12">Mount2Pan</value>
-          <value code="13">Mount2Tilt</value>
+          <value code="12">Mount2Yaw</value>
+          <value code="13">Mount2Pitch</value>
           <value code="14">Mount2Roll</value>
-          <value code="15">Mount2Open</value>
+          <value code="15">Mount2Retract</value>
           <value code="22">SprayerPump</value>
           <value code="23">SprayerSpinner</value>
           <value code="27">Parachute</value>
@@ -25199,6 +25988,22 @@
           <value code="136">SERVOn_MAX</value>
           <value code="138">Alarm</value>
           <value code="139">Alarm Inverted</value>
+          <value code="140">RCIN1Scaled</value>
+          <value code="141">RCIN2Scaled</value>
+          <value code="142">RCIN3Scaled</value>
+          <value code="143">RCIN4Scaled</value>
+          <value code="144">RCIN5Scaled</value>
+          <value code="145">RCIN6Scaled</value>
+          <value code="146">RCIN7Scaled</value>
+          <value code="147">RCIN8Scaled</value>
+          <value code="148">RCIN9Scaled</value>
+          <value code="149">RCIN10Scaled</value>
+          <value code="150">RCIN11Scaled</value>
+          <value code="151">RCIN12Scaled</value>
+          <value code="152">RCIN13Scaled</value>
+          <value code="153">RCIN14Scaled</value>
+          <value code="154">RCIN15Scaled</value>
+          <value code="155">RCIN16Scaled</value>
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -25453,7 +26258,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR0_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR0_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
@@ -25525,7 +26330,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR1_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR1_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
@@ -25597,7 +26402,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR2_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR2_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
@@ -25669,7 +26474,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR3_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR3_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
@@ -25741,7 +26546,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR4_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR4_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
@@ -25813,7 +26618,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR5_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR5_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>
@@ -25885,7 +26690,7 @@
         <field name="Increment">1</field>
         <field name="RebootRequired">True</field>
       </param>
-      <param humanName="Extra data type 3 stream rate to ground station" name="SR6_EXTRA3" documentation="Stream rate of AHRS, HWSTATUS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
+      <param humanName="Extra data type 3 stream rate to ground station" name="SR6_EXTRA3" documentation="Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station" user="Advanced">
         <field name="Units">Hz</field>
         <field name="UnitText">hertz</field>
         <field name="Range">0 50</field>

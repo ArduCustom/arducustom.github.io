@@ -1414,7 +1414,7 @@ DISARM\_DELAY: Disarm delay
 
 | *Note: This parameter is for advanced users*
 
-Delay before automatic disarm in seconds\. A value of zero disables auto disarm\.
+Delay before automatic disarm in seconds after landing touchdown detection\. A value of zero disables auto disarm\. If Emergency Motor stop active\, delay time is half this value\.
 
 
 +----------+---------+
@@ -1544,7 +1544,7 @@ FS\_EKF\_THRESH: EKF failsafe variance threshold
 
 | *Note: This parameter is for advanced users*
 
-Allows setting the maximum acceptable compass and velocity variance
+Allows setting the maximum acceptable compass\, velocity\, position and height variances\. Used in arming check and EKF failsafe\.
 
 
 +---------------------+
@@ -2572,6 +2572,42 @@ Pilot yaw rate control input time constant\.  Low numbers lead to sharper respon
 |           |        |         | +-------+------------+ |
 |           |        |         |                        |
 +-----------+--------+---------+------------------------+
+
+
+
+
+.. _TKOFF_SLEW_TIME:
+
+TKOFF\_SLEW\_TIME: Slew time of throttle during take\-off
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Time to slew the throttle from minimum to maximum while checking for a succsessful takeoff\.
+
+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| 0.25 to 5.0 | seconds |
++-------------+---------+
+
+
+
+
+.. _TKOFF_RPM_MIN:
+
+TKOFF\_RPM\_MIN: Takeoff Check RPM minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Takeoff is not permitted until motors report at least this RPM\.  Set to zero to disable check
+
+
++------------+
+| Range      |
++============+
+| 0 to 10000 |
++------------+
 
 
 
@@ -16964,7 +17000,7 @@ Auxiliary RC Options function executed on pin change
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -17091,6 +17127,20 @@ Auxiliary RC Options function executed on pin change
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -17173,7 +17223,7 @@ Auxiliary RC Options function executed on pin change
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -17300,6 +17350,20 @@ Auxiliary RC Options function executed on pin change
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -17382,7 +17446,7 @@ Auxiliary RC Options function executed on pin change
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -17509,6 +17573,20 @@ Auxiliary RC Options function executed on pin change
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -17591,7 +17669,7 @@ Auxiliary RC Options function executed on pin change
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -17718,6 +17796,20 @@ Auxiliary RC Options function executed on pin change
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -20412,6 +20504,70 @@ Duration after which slcan starts after setting SERNUM in seconds\.
 +==========+
 | 0 to 127 |
 +----------+
+
+
+
+
+
+.. _parameters_CC:
+
+CC Parameters
+-------------
+
+
+.. _CC_TYPE:
+
+CC\_TYPE: Custom control type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Custom control type to be used
+
+
++---------------------+
+| Values              |
++=====================+
+| +-------+---------+ |
+| | Value | Meaning | |
+| +=======+=========+ |
+| | 0     | None    | |
+| +-------+---------+ |
+| | 1     | Empty   | |
+| +-------+---------+ |
+| | 2     | PID     | |
+| +-------+---------+ |
+|                     |
++---------------------+
+
+
+
+
+.. _CC_AXIS_MASK:
+
+CC\_AXIS\_MASK: Custom Controller bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Custom Controller bitmask to chose which axis to run
+
+
++-------------------+
+| Bitmask           |
++===================+
+| +-----+---------+ |
+| | Bit | Meaning | |
+| +=====+=========+ |
+| | 0   | Roll    | |
+| +-----+---------+ |
+| | 1   | Pitch   | |
+| +-----+---------+ |
+| | 2   | Yaw     | |
+| +-----+---------+ |
+|                   |
++-------------------+
 
 
 
@@ -34115,20 +34271,20 @@ Bitmask of what options to use in missions\.
 
 
 
-.. _parameters_MNT:
+.. _parameters_MNT1:
 
-MNT Parameters
---------------
+MNT1 Parameters
+---------------
 
 
-.. _MNT_TYPE:
+.. _MNT1_TYPE:
 
-MNT\_TYPE: Mount Type
-~~~~~~~~~~~~~~~~~~~~~
+MNT1\_TYPE: Mount Type
+~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: Reboot required after change*
 
-Mount Type \(None\, Servo or MAVLink\)
+Mount Type
 
 
 +-----------------------------+
@@ -34151,16 +34307,18 @@ Mount Type \(None\, Servo or MAVLink\)
 | +-------+-----------------+ |
 | | 6     | Gremsy          | |
 | +-------+-----------------+ |
+| | 7     | BrushlessPWM    | |
+| +-------+-----------------+ |
 |                             |
 +-----------------------------+
 
 
 
 
-.. _MNT_DEFLT_MODE:
+.. _MNT1_DEFLT_MODE:
 
-MNT\_DEFLT\_MODE: Mount default operating mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT1\_DEFLT\_MODE: Mount default operating mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Mount default operating mode on startup and after control is returned from autopilot
@@ -34190,454 +34348,10 @@ Mount default operating mode on startup and after control is returned from autop
 
 
 
-.. _MNT_RETRACT_X:
+.. _MNT1_RC_RATE:
 
-MNT\_RETRACT\_X: Mount roll angle when in retracted position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount roll angle when in retracted position
-
-
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
-
-
-
-
-.. _MNT_RETRACT_Y:
-
-MNT\_RETRACT\_Y: Mount tilt\/pitch angle when in retracted position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount tilt\/pitch angle when in retracted position
-
-
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
-
-
-
-
-.. _MNT_RETRACT_Z:
-
-MNT\_RETRACT\_Z: Mount yaw\/pan angle when in retracted position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount yaw\/pan angle when in retracted position
-
-
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
-
-
-
-
-.. _MNT_NEUTRAL_X:
-
-MNT\_NEUTRAL\_X: Mount roll angle when in neutral position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount roll angle when in neutral position
-
-
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
-
-
-
-
-.. _MNT_NEUTRAL_Y:
-
-MNT\_NEUTRAL\_Y: Mount tilt\/pitch angle when in neutral position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount tilt\/pitch angle when in neutral position
-
-
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
-
-
-
-
-.. _MNT_NEUTRAL_Z:
-
-MNT\_NEUTRAL\_Z: Mount pan\/yaw angle when in neutral position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount pan\/yaw angle when in neutral position
-
-
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
-
-
-
-
-.. _MNT_STAB_ROLL:
-
-MNT\_STAB\_ROLL: Stabilize mount\'s roll angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-enable roll stabilisation relative to Earth
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT_STAB_TILT:
-
-MNT\_STAB\_TILT: Stabilize mount\'s pitch\/tilt angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-enable tilt\/pitch stabilisation relative to Earth
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT_STAB_PAN:
-
-MNT\_STAB\_PAN: Stabilize mount pan\/yaw angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-enable pan\/yaw stabilisation relative to Earth
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT_RC_IN_ROLL:
-
-MNT\_RC\_IN\_ROLL: roll RC input channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-0 for none\, any other for the RC channel to be used to control roll movements
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 5     | RC5      | |
-| +-------+----------+ |
-| | 6     | RC6      | |
-| +-------+----------+ |
-| | 7     | RC7      | |
-| +-------+----------+ |
-| | 8     | RC8      | |
-| +-------+----------+ |
-| | 9     | RC9      | |
-| +-------+----------+ |
-| | 10    | RC10     | |
-| +-------+----------+ |
-| | 11    | RC11     | |
-| +-------+----------+ |
-| | 12    | RC12     | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT_ANGMIN_ROL:
-
-MNT\_ANGMIN\_ROL: Minimum roll angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum physical roll angular position of mount\.
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT_ANGMAX_ROL:
-
-MNT\_ANGMAX\_ROL: Maximum roll angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum physical roll angular position of the mount
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT_RC_IN_TILT:
-
-MNT\_RC\_IN\_TILT: tilt \(pitch\) RC input channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-0 for none\, any other for the RC channel to be used to control tilt \(pitch\) movements
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 5     | RC5      | |
-| +-------+----------+ |
-| | 6     | RC6      | |
-| +-------+----------+ |
-| | 7     | RC7      | |
-| +-------+----------+ |
-| | 8     | RC8      | |
-| +-------+----------+ |
-| | 9     | RC9      | |
-| +-------+----------+ |
-| | 10    | RC10     | |
-| +-------+----------+ |
-| | 11    | RC11     | |
-| +-------+----------+ |
-| | 12    | RC12     | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT_ANGMIN_TIL:
-
-MNT\_ANGMIN\_TIL: Minimum tilt angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum physical tilt \(pitch\) angular position of mount\.
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT_ANGMAX_TIL:
-
-MNT\_ANGMAX\_TIL: Maximum tilt angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum physical tilt \(pitch\) angular position of the mount
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT_RC_IN_PAN:
-
-MNT\_RC\_IN\_PAN: pan \(yaw\) RC input channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-0 for none\, any other for the RC channel to be used to control pan \(yaw\) movements
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 5     | RC5      | |
-| +-------+----------+ |
-| | 6     | RC6      | |
-| +-------+----------+ |
-| | 7     | RC7      | |
-| +-------+----------+ |
-| | 8     | RC8      | |
-| +-------+----------+ |
-| | 9     | RC9      | |
-| +-------+----------+ |
-| | 10    | RC10     | |
-| +-------+----------+ |
-| | 11    | RC11     | |
-| +-------+----------+ |
-| | 12    | RC12     | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT_ANGMIN_PAN:
-
-MNT\_ANGMIN\_PAN: Minimum pan angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Minimum physical pan \(yaw\) angular position of mount\.
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT_ANGMAX_PAN:
-
-MNT\_ANGMAX\_PAN: Maximum pan angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Maximum physical pan \(yaw\) angular position of the mount
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT_LEAD_RLL:
-
-MNT\_LEAD\_RLL: Roll stabilization lead time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\, compensating for servo delay\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
-
-
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| .005      | 0.0 to 0.2 | seconds |
-+-----------+------------+---------+
-
-
-
-
-.. _MNT_LEAD_PTCH:
-
-MNT\_LEAD\_PTCH: Pitch stabilization lead time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
-
-
-+-----------+------------+---------+
-| Increment | Range      | Units   |
-+===========+============+=========+
-| .005      | 0.0 to 0.2 | seconds |
-+-----------+------------+---------+
-
-
-
-
-.. _MNT_RC_RATE:
-
-MNT\_RC\_RATE: Mount RC Rate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT1\_RC\_RATE: Mount RC Rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Pilot rate control\'s maximum rate\.  Set to zero to use angle control
@@ -34648,6 +34362,303 @@ Pilot rate control\'s maximum rate\.  Set to zero to use angle control
 +===========+=========+====================+
 | 1         | 0 to 90 | degrees per second |
 +-----------+---------+--------------------+
+
+
+
+
+.. _MNT1_ROLL_MIN:
+
+MNT1\_ROLL\_MIN: Mount Roll angle minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Roll angle minimum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+.. _MNT1_ROLL_MAX:
+
+MNT1\_ROLL\_MAX: Mount Roll angle maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Roll angle maximum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+.. _MNT1_PITCH_MIN:
+
+MNT1\_PITCH\_MIN: Mount Pitch angle minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Pitch angle minimum
+
+
++-----------+-----------+---------+
+| Increment | Range     | Units   |
++===========+===========+=========+
+| 1         | -90 to 90 | degrees |
++-----------+-----------+---------+
+
+
+
+
+.. _MNT1_PITCH_MAX:
+
+MNT1\_PITCH\_MAX: Mount Pitch angle maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Pitch angle maximum
+
+
++-----------+-----------+---------+
+| Increment | Range     | Units   |
++===========+===========+=========+
+| 1         | -90 to 90 | degrees |
++-----------+-----------+---------+
+
+
+
+
+.. _MNT1_YAW_MIN:
+
+MNT1\_YAW\_MIN: Mount Yaw angle minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Yaw angle minimum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+.. _MNT1_YAW_MAX:
+
+MNT1\_YAW\_MAX: Mount Yaw angle maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Yaw angle maximum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+.. _MNT1_RETRACT_X:
+
+MNT1\_RETRACT\_X: Mount roll angle when in retracted position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount roll angle when in retracted position
+
+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
+
+
+
+
+.. _MNT1_RETRACT_Y:
+
+MNT1\_RETRACT\_Y: Mount pitch angle when in retracted position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount pitch angle when in retracted position
+
+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
+
+
+
+
+.. _MNT1_RETRACT_Z:
+
+MNT1\_RETRACT\_Z: Mount yaw angle when in retracted position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount yaw angle when in retracted position
+
+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
+
+
+
+
+.. _MNT1_NEUTRAL_X:
+
+MNT1\_NEUTRAL\_X: Mount roll angle when in neutral position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount roll angle when in neutral position
+
+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
+
+
+
+
+.. _MNT1_NEUTRAL_Y:
+
+MNT1\_NEUTRAL\_Y: Mount pitch angle when in neutral position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount pitch angle when in neutral position
+
+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
+
+
+
+
+.. _MNT1_NEUTRAL_Z:
+
+MNT1\_NEUTRAL\_Z: Mount yaw angle when in neutral position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount yaw angle when in neutral position
+
+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
+
+
+
+
+.. _MNT1_LEAD_RLL:
+
+MNT1\_LEAD\_RLL: Mount Roll stabilization lead time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo mount roll angle output leads the vehicle angle by this amount of time based on current roll rate\. Increase until the servo is responsive but does not overshoot
+
+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| .005      | 0.0 to 0.2 | seconds |
++-----------+------------+---------+
+
+
+
+
+.. _MNT1_LEAD_PTCH:
+
+MNT1\_LEAD\_PTCH: Mount Pitch stabilization lead time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo mount pitch angle output leads the vehicle angle by this amount of time based on current pitch rate\. Increase until the servo is responsive but does not overshoot
+
+
++-----------+------------+---------+
+| Increment | Range      | Units   |
++===========+============+=========+
+| .005      | 0.0 to 0.2 | seconds |
++-----------+------------+---------+
+
+
+
+
+
+.. _parameters_MNT2:
+
+MNT2 Parameters
+---------------
+
+
+.. _MNT2_TYPE:
+
+MNT2\_TYPE: Mount Type
+~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Mount Type
+
+
++-----------------------------+
+| Values                      |
++=============================+
+| +-------+-----------------+ |
+| | Value | Meaning         | |
+| +=======+=================+ |
+| | 0     | None            | |
+| +-------+-----------------+ |
+| | 1     | Servo           | |
+| +-------+-----------------+ |
+| | 2     | 3DR Solo        | |
+| +-------+-----------------+ |
+| | 3     | Alexmos Serial  | |
+| +-------+-----------------+ |
+| | 4     | SToRM32 MAVLink | |
+| +-------+-----------------+ |
+| | 5     | SToRM32 Serial  | |
+| +-------+-----------------+ |
+| | 6     | Gremsy          | |
+| +-------+-----------------+ |
+| | 7     | BrushlessPWM    | |
+| +-------+-----------------+ |
+|                             |
++-----------------------------+
 
 
 
@@ -34685,421 +34696,247 @@ Mount default operating mode on startup and after control is returned from autop
 
 
 
+.. _MNT2_RC_RATE:
+
+MNT2\_RC\_RATE: Mount RC Rate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Pilot rate control\'s maximum rate\.  Set to zero to use angle control
+
+
++-----------+---------+--------------------+
+| Increment | Range   | Units              |
++===========+=========+====================+
+| 1         | 0 to 90 | degrees per second |
++-----------+---------+--------------------+
+
+
+
+
+.. _MNT2_ROLL_MIN:
+
+MNT2\_ROLL\_MIN: Mount Roll angle minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Roll angle minimum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+.. _MNT2_ROLL_MAX:
+
+MNT2\_ROLL\_MAX: Mount Roll angle maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Roll angle maximum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+.. _MNT2_PITCH_MIN:
+
+MNT2\_PITCH\_MIN: Mount Pitch angle minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Pitch angle minimum
+
+
++-----------+-----------+---------+
+| Increment | Range     | Units   |
++===========+===========+=========+
+| 1         | -90 to 90 | degrees |
++-----------+-----------+---------+
+
+
+
+
+.. _MNT2_PITCH_MAX:
+
+MNT2\_PITCH\_MAX: Mount Pitch angle maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Pitch angle maximum
+
+
++-----------+-----------+---------+
+| Increment | Range     | Units   |
++===========+===========+=========+
+| 1         | -90 to 90 | degrees |
++-----------+-----------+---------+
+
+
+
+
+.. _MNT2_YAW_MIN:
+
+MNT2\_YAW\_MIN: Mount Yaw angle minimum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Yaw angle minimum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
+.. _MNT2_YAW_MAX:
+
+MNT2\_YAW\_MAX: Mount Yaw angle maximum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Mount Yaw angle maximum
+
+
++-----------+-------------+---------+
+| Increment | Range       | Units   |
++===========+=============+=========+
+| 1         | -180 to 180 | degrees |
++-----------+-------------+---------+
+
+
+
+
 .. _MNT2_RETRACT_X:
 
-MNT2\_RETRACT\_X: Mount2 roll angle when in retracted position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_RETRACT\_X: Mount roll angle when in retracted position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Mount2 roll angle when in retracted position
+Mount roll angle when in retracted position
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
 
 
 
 
 .. _MNT2_RETRACT_Y:
 
-MNT2\_RETRACT\_Y: Mount2 tilt\/pitch angle when in retracted position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_RETRACT\_Y: Mount pitch angle when in retracted position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Mount2 tilt\/pitch angle when in retracted position
+Mount pitch angle when in retracted position
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
 
 
 
 
 .. _MNT2_RETRACT_Z:
 
-MNT2\_RETRACT\_Z: Mount2 yaw\/pan angle when in retracted position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_RETRACT\_Z: Mount yaw angle when in retracted position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Mount2 yaw\/pan angle when in retracted position
+Mount yaw angle when in retracted position
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
 
 
 
 
 .. _MNT2_NEUTRAL_X:
 
-MNT2\_NEUTRAL\_X: Mount2 roll angle when in neutral position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_NEUTRAL\_X: Mount roll angle when in neutral position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Mount2 roll angle when in neutral position
+Mount roll angle when in neutral position
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
 
 
 
 
 .. _MNT2_NEUTRAL_Y:
 
-MNT2\_NEUTRAL\_Y: Mount2 tilt\/pitch angle when in neutral position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_NEUTRAL\_Y: Mount pitch angle when in neutral position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Mount2 tilt\/pitch angle when in neutral position
+Mount pitch angle when in neutral position
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
 
 
 
 
 .. _MNT2_NEUTRAL_Z:
 
-MNT2\_NEUTRAL\_Z: Mount2 pan\/yaw angle when in neutral position
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_NEUTRAL\_Z: Mount yaw angle when in neutral position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Mount2 pan\/yaw angle when in neutral position
+Mount yaw angle when in neutral position
 
 
-+-----------+-------------------+---------+
-| Increment | Range             | Units   |
-+===========+===================+=========+
-| 1         | -180.00 to 179.99 | degrees |
-+-----------+-------------------+---------+
-
-
-
-
-.. _MNT2_STAB_ROLL:
-
-MNT2\_STAB\_ROLL: Stabilize Mount2\'s roll angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-enable roll stabilisation relative to Earth
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT2_STAB_TILT:
-
-MNT2\_STAB\_TILT: Stabilize Mount2\'s pitch\/tilt angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-enable tilt\/pitch stabilisation relative to Earth
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT2_STAB_PAN:
-
-MNT2\_STAB\_PAN: Stabilize mount2 pan\/yaw angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-enable pan\/yaw stabilisation relative to Earth
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 1     | Enabled  | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT2_RC_IN_ROLL:
-
-MNT2\_RC\_IN\_ROLL: Mount2\'s roll RC input channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-0 for none\, any other for the RC channel to be used to control roll movements
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 5     | RC5      | |
-| +-------+----------+ |
-| | 6     | RC6      | |
-| +-------+----------+ |
-| | 7     | RC7      | |
-| +-------+----------+ |
-| | 8     | RC8      | |
-| +-------+----------+ |
-| | 9     | RC9      | |
-| +-------+----------+ |
-| | 10    | RC10     | |
-| +-------+----------+ |
-| | 11    | RC11     | |
-| +-------+----------+ |
-| | 12    | RC12     | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT2_ANGMIN_ROL:
-
-MNT2\_ANGMIN\_ROL: Mount2\'s minimum roll angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount2\'s minimum physical roll angular position
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT2_ANGMAX_ROL:
-
-MNT2\_ANGMAX\_ROL: Mount2\'s maximum roll angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount2\'s maximum physical roll angular position
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT2_RC_IN_TILT:
-
-MNT2\_RC\_IN\_TILT: Mount2\'s tilt \(pitch\) RC input channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-0 for none\, any other for the RC channel to be used to control tilt \(pitch\) movements
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 5     | RC5      | |
-| +-------+----------+ |
-| | 6     | RC6      | |
-| +-------+----------+ |
-| | 7     | RC7      | |
-| +-------+----------+ |
-| | 8     | RC8      | |
-| +-------+----------+ |
-| | 9     | RC9      | |
-| +-------+----------+ |
-| | 10    | RC10     | |
-| +-------+----------+ |
-| | 11    | RC11     | |
-| +-------+----------+ |
-| | 12    | RC12     | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT2_ANGMIN_TIL:
-
-MNT2\_ANGMIN\_TIL: Mount2\'s minimum tilt angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount2\'s minimum physical tilt \(pitch\) angular position
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT2_ANGMAX_TIL:
-
-MNT2\_ANGMAX\_TIL: Mount2\'s maximum tilt angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount2\'s maximum physical tilt \(pitch\) angular position
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT2_RC_IN_PAN:
-
-MNT2\_RC\_IN\_PAN: Mount2\'s pan \(yaw\) RC input channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-0 for none\, any other for the RC channel to be used to control pan \(yaw\) movements
-
-
-+----------------------+
-| Values               |
-+======================+
-| +-------+----------+ |
-| | Value | Meaning  | |
-| +=======+==========+ |
-| | 0     | Disabled | |
-| +-------+----------+ |
-| | 5     | RC5      | |
-| +-------+----------+ |
-| | 6     | RC6      | |
-| +-------+----------+ |
-| | 7     | RC7      | |
-| +-------+----------+ |
-| | 8     | RC8      | |
-| +-------+----------+ |
-| | 9     | RC9      | |
-| +-------+----------+ |
-| | 10    | RC10     | |
-| +-------+----------+ |
-| | 11    | RC11     | |
-| +-------+----------+ |
-| | 12    | RC12     | |
-| +-------+----------+ |
-|                      |
-+----------------------+
-
-
-
-
-.. _MNT2_ANGMIN_PAN:
-
-MNT2\_ANGMIN\_PAN: Mount2\'s minimum pan angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount2\'s minimum physical pan \(yaw\) angular position
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
-
-
-
-
-.. _MNT2_ANGMAX_PAN:
-
-MNT2\_ANGMAX\_PAN: Mount2\'s maximum pan angle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-MOunt2\'s maximum physical pan \(yaw\) angular position
-
-
-+-----------+-----------------+--------------+
-| Increment | Range           | Units        |
-+===========+=================+==============+
-| 10        | -18000 to 17999 | centidegrees |
-+-----------+-----------------+--------------+
++-----------+-----------------+---------+
+| Increment | Range           | Units   |
++===========+=================+=========+
+| 1         | -180.0 to 180.0 | degrees |
++-----------+-----------------+---------+
 
 
 
 
 .. _MNT2_LEAD_RLL:
 
-MNT2\_LEAD\_RLL: Mount2\'s Roll stabilization lead time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_LEAD\_RLL: Mount Roll stabilization lead time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\, compensating for servo delay\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
+Servo mount roll angle output leads the vehicle angle by this amount of time based on current roll rate\. Increase until the servo is responsive but does not overshoot
 
 
 +-----------+------------+---------+
@@ -35113,11 +34950,11 @@ Causes the servo angle output to lead the current angle of the vehicle by some a
 
 .. _MNT2_LEAD_PTCH:
 
-MNT2\_LEAD\_PTCH: Mount2\'s Pitch stabilization lead time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MNT2\_LEAD\_PTCH: Mount Pitch stabilization lead time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate\. Increase until the servo is responsive but doesn\'t overshoot\. Does nothing with pan stabilization enabled\.
+Servo mount pitch angle output leads the vehicle angle by this amount of time based on current pitch rate\. Increase until the servo is responsive but does not overshoot
 
 
 +-----------+------------+---------+
@@ -35125,41 +34962,6 @@ Causes the servo angle output to lead the current angle of the vehicle by some a
 +===========+============+=========+
 | .005      | 0.0 to 0.2 | seconds |
 +-----------+------------+---------+
-
-
-
-
-.. _MNT2_TYPE:
-
-MNT2\_TYPE: Mount2 Type
-~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Mount Type \(None\, Servo or MAVLink\)
-
-
-+-----------------------------+
-| Values                      |
-+=============================+
-| +-------+-----------------+ |
-| | Value | Meaning         | |
-| +=======+=================+ |
-| | 0     | None            | |
-| +-------+-----------------+ |
-| | 1     | Servo           | |
-| +-------+-----------------+ |
-| | 2     | 3DR Solo        | |
-| +-------+-----------------+ |
-| | 3     | Alexmos Serial  | |
-| +-------+-----------------+ |
-| | 4     | SToRM32 MAVLink | |
-| +-------+-----------------+ |
-| | 5     | SToRM32 Serial  | |
-| +-------+-----------------+ |
-| | 6     | Gremsy          | |
-| +-------+-----------------+ |
-|                             |
-+-----------------------------+
 
 
 
@@ -35393,7 +35195,7 @@ Point at which the thrust starts expressed as a number from 0 to 1 in the entire
 | +-------+---------+ |
 | | 0.15  | Default | |
 | +-------+---------+ |
-| | 0.3   | High    | |
+| | 0.25  | High    | |
 | +-------+---------+ |
 |                     |
 +---------------------+
@@ -36389,24 +36191,26 @@ OSD\_TYPE: OSD type
 OSD type\. TXONLY makes the OSD parameter selection available to other modules even if there is no native OSD support on the board\, for instance CRSF\.
 
 
-+---------------------+
-| Values              |
-+=====================+
-| +-------+---------+ |
-| | Value | Meaning | |
-| +=======+=========+ |
-| | 0     | None    | |
-| +-------+---------+ |
-| | 1     | MAX7456 | |
-| +-------+---------+ |
-| | 2     | SITL    | |
-| +-------+---------+ |
-| | 3     | MSP     | |
-| +-------+---------+ |
-| | 4     | TXONLY  | |
-| +-------+---------+ |
-|                     |
-+---------------------+
++-----------------------------+
+| Values                      |
++=============================+
+| +-------+-----------------+ |
+| | Value | Meaning         | |
+| +=======+=================+ |
+| | 0     | None            | |
+| +-------+-----------------+ |
+| | 1     | MAX7456         | |
+| +-------+-----------------+ |
+| | 2     | SITL            | |
+| +-------+-----------------+ |
+| | 3     | MSP             | |
+| +-------+-----------------+ |
+| | 4     | TXONLY          | |
+| +-------+-----------------+ |
+| | 5     | MSP_DISPLAYPORT | |
+| +-------+-----------------+ |
+|                             |
++-----------------------------+
 
 
 
@@ -67734,314 +67538,40 @@ Precision Landing Extra Options
 
 
 
+.. _PLND_ORIENT:
+
+PLND\_ORIENT: Camera Orientation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Orientation of camera\/sensor on body
+
+
++---------------------+
+| Values              |
++=====================+
+| +-------+---------+ |
+| | Value | Meaning | |
+| +=======+=========+ |
+| | 0     | Forward | |
+| +-------+---------+ |
+| | 4     | Back    | |
+| +-------+---------+ |
+| | 25    | Down    | |
+| +-------+---------+ |
+|                     |
++---------------------+
+
+
+
+
 
 .. _parameters_PRX:
 
 PRX Parameters
 --------------
-
-
-.. _PRX_TYPE:
-
-PRX\_TYPE: Proximity type
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| *Note: Reboot required after change*
-
-What type of proximity sensor is connected
-
-
-+--------------------------------+
-| Values                         |
-+================================+
-| +-------+--------------------+ |
-| | Value | Meaning            | |
-| +=======+====================+ |
-| | 0     | None               | |
-| +-------+--------------------+ |
-| | 7     | LightwareSF40c     | |
-| +-------+--------------------+ |
-| | 2     | MAVLink            | |
-| +-------+--------------------+ |
-| | 3     | TeraRangerTower    | |
-| +-------+--------------------+ |
-| | 4     | RangeFinder        | |
-| +-------+--------------------+ |
-| | 5     | RPLidarA2          | |
-| +-------+--------------------+ |
-| | 6     | TeraRangerTowerEvo | |
-| +-------+--------------------+ |
-| | 8     | LightwareSF45B     | |
-| +-------+--------------------+ |
-| | 10    | SITL               | |
-| +-------+--------------------+ |
-| | 12    | AirSimSITL         | |
-| +-------+--------------------+ |
-| | 13    | CygbotD1           | |
-| +-------+--------------------+ |
-|                                |
-+--------------------------------+
-
-
-
-
-.. _PRX_ORIENT:
-
-PRX\_ORIENT: Proximity sensor orientation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor orientation
-
-
-+-------------------------+
-| Values                  |
-+=========================+
-| +-------+-------------+ |
-| | Value | Meaning     | |
-| +=======+=============+ |
-| | 0     | Default     | |
-| +-------+-------------+ |
-| | 1     | Upside Down | |
-| +-------+-------------+ |
-|                         |
-+-------------------------+
-
-
-
-
-.. _PRX_YAW_CORR:
-
-PRX\_YAW\_CORR: Proximity sensor yaw correction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor yaw correction
-
-
-+-------------+---------+
-| Range       | Units   |
-+=============+=========+
-| -180 to 180 | degrees |
-+-------------+---------+
-
-
-
-
-.. _PRX_IGN_ANG1:
-
-PRX\_IGN\_ANG1: Proximity sensor ignore angle 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore angle 1
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 360 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_WID1:
-
-PRX\_IGN\_WID1: Proximity sensor ignore width 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore width 1
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 127 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_ANG2:
-
-PRX\_IGN\_ANG2: Proximity sensor ignore angle 2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore angle 2
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 360 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_WID2:
-
-PRX\_IGN\_WID2: Proximity sensor ignore width 2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore width 2
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 127 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_ANG3:
-
-PRX\_IGN\_ANG3: Proximity sensor ignore angle 3
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore angle 3
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 360 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_WID3:
-
-PRX\_IGN\_WID3: Proximity sensor ignore width 3
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore width 3
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 127 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_ANG4:
-
-PRX\_IGN\_ANG4: Proximity sensor ignore angle 4
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore angle 4
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 360 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_WID4:
-
-PRX\_IGN\_WID4: Proximity sensor ignore width 4
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore width 4
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 127 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_ANG5:
-
-PRX\_IGN\_ANG5: Proximity sensor ignore angle 5
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore angle 5
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 360 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_WID5:
-
-PRX\_IGN\_WID5: Proximity sensor ignore width 5
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore width 5
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 127 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_ANG6:
-
-PRX\_IGN\_ANG6: Proximity sensor ignore angle 6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore angle 6
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 360 | degrees |
-+----------+---------+
-
-
-
-
-.. _PRX_IGN_WID6:
-
-PRX\_IGN\_WID6: Proximity sensor ignore width 6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Proximity sensor ignore width 6
-
-
-+----------+---------+
-| Range    | Units   |
-+==========+=========+
-| 0 to 127 | degrees |
-+----------+---------+
-
-
 
 
 .. _PRX_IGN_GND:
@@ -68114,10 +67644,267 @@ Cutoff frequency for low pass filter applied to each face in the proximity bound
 
 
 
-.. _PRX_MIN:
+.. _PRX_ALT_MIN:
 
-PRX\_MIN: Proximity minimum range
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRX\_ALT\_MIN: Proximity lowest altitude\.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum altitude below which proximity should not work\.
+
+
++---------+--------+
+| Range   | Units  |
++=========+========+
+| 0 to 10 | meters |
++---------+--------+
+
+
+
+
+
+.. _parameters_PRX1:
+
+PRX1 Parameters
+---------------
+
+
+.. _PRX1_TYPE:
+
+PRX1\_TYPE: Proximity type
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+What type of proximity sensor is connected
+
+
++--------------------------------+
+| Values                         |
++================================+
+| +-------+--------------------+ |
+| | Value | Meaning            | |
+| +=======+====================+ |
+| | 0     | None               | |
+| +-------+--------------------+ |
+| | 7     | LightwareSF40c     | |
+| +-------+--------------------+ |
+| | 2     | MAVLink            | |
+| +-------+--------------------+ |
+| | 3     | TeraRangerTower    | |
+| +-------+--------------------+ |
+| | 4     | RangeFinder        | |
+| +-------+--------------------+ |
+| | 5     | RPLidarA2          | |
+| +-------+--------------------+ |
+| | 6     | TeraRangerTowerEvo | |
+| +-------+--------------------+ |
+| | 8     | LightwareSF45B     | |
+| +-------+--------------------+ |
+| | 10    | SITL               | |
+| +-------+--------------------+ |
+| | 12    | AirSimSITL         | |
+| +-------+--------------------+ |
+| | 13    | CygbotD1           | |
+| +-------+--------------------+ |
+|                                |
++--------------------------------+
+
+
+
+
+.. _PRX1_ORIENT:
+
+PRX1\_ORIENT: Proximity sensor orientation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor orientation
+
+
++-------------------------+
+| Values                  |
++=========================+
+| +-------+-------------+ |
+| | Value | Meaning     | |
+| +=======+=============+ |
+| | 0     | Default     | |
+| +-------+-------------+ |
+| | 1     | Upside Down | |
+| +-------+-------------+ |
+|                         |
++-------------------------+
+
+
+
+
+.. _PRX1_YAW_CORR:
+
+PRX1\_YAW\_CORR: Proximity sensor yaw correction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor yaw correction
+
+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| -180 to 180 | degrees |
++-------------+---------+
+
+
+
+
+.. _PRX1_IGN_ANG1:
+
+PRX1\_IGN\_ANG1: Proximity sensor ignore angle 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_IGN_WID1:
+
+PRX1\_IGN\_WID1: Proximity sensor ignore width 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_IGN_ANG2:
+
+PRX1\_IGN\_ANG2: Proximity sensor ignore angle 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_IGN_WID2:
+
+PRX1\_IGN\_WID2: Proximity sensor ignore width 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_IGN_ANG3:
+
+PRX1\_IGN\_ANG3: Proximity sensor ignore angle 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_IGN_WID3:
+
+PRX1\_IGN\_WID3: Proximity sensor ignore width 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_IGN_ANG4:
+
+PRX1\_IGN\_ANG4: Proximity sensor ignore angle 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_IGN_WID4:
+
+PRX1\_IGN\_WID4: Proximity sensor ignore width 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX1_MIN:
+
+PRX1\_MIN: Proximity minimum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -68133,10 +67920,838 @@ Minimum expected range for Proximity Sensor\. Setting this to 0 will set value t
 
 
 
-.. _PRX_MAX:
+.. _PRX1_MAX:
 
-PRX\_MAX: Proximity maximum range
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRX1\_MAX: Proximity maximum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Maximum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 500 | meters |
++----------+--------+
+
+
+
+
+
+.. _parameters_PRX2:
+
+PRX2 Parameters
+---------------
+
+
+.. _PRX2_TYPE:
+
+PRX2\_TYPE: Proximity type
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+What type of proximity sensor is connected
+
+
++--------------------------------+
+| Values                         |
++================================+
+| +-------+--------------------+ |
+| | Value | Meaning            | |
+| +=======+====================+ |
+| | 0     | None               | |
+| +-------+--------------------+ |
+| | 7     | LightwareSF40c     | |
+| +-------+--------------------+ |
+| | 2     | MAVLink            | |
+| +-------+--------------------+ |
+| | 3     | TeraRangerTower    | |
+| +-------+--------------------+ |
+| | 4     | RangeFinder        | |
+| +-------+--------------------+ |
+| | 5     | RPLidarA2          | |
+| +-------+--------------------+ |
+| | 6     | TeraRangerTowerEvo | |
+| +-------+--------------------+ |
+| | 8     | LightwareSF45B     | |
+| +-------+--------------------+ |
+| | 10    | SITL               | |
+| +-------+--------------------+ |
+| | 12    | AirSimSITL         | |
+| +-------+--------------------+ |
+| | 13    | CygbotD1           | |
+| +-------+--------------------+ |
+|                                |
++--------------------------------+
+
+
+
+
+.. _PRX2_ORIENT:
+
+PRX2\_ORIENT: Proximity sensor orientation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor orientation
+
+
++-------------------------+
+| Values                  |
++=========================+
+| +-------+-------------+ |
+| | Value | Meaning     | |
+| +=======+=============+ |
+| | 0     | Default     | |
+| +-------+-------------+ |
+| | 1     | Upside Down | |
+| +-------+-------------+ |
+|                         |
++-------------------------+
+
+
+
+
+.. _PRX2_YAW_CORR:
+
+PRX2\_YAW\_CORR: Proximity sensor yaw correction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor yaw correction
+
+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| -180 to 180 | degrees |
++-------------+---------+
+
+
+
+
+.. _PRX2_IGN_ANG1:
+
+PRX2\_IGN\_ANG1: Proximity sensor ignore angle 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_IGN_WID1:
+
+PRX2\_IGN\_WID1: Proximity sensor ignore width 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_IGN_ANG2:
+
+PRX2\_IGN\_ANG2: Proximity sensor ignore angle 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_IGN_WID2:
+
+PRX2\_IGN\_WID2: Proximity sensor ignore width 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_IGN_ANG3:
+
+PRX2\_IGN\_ANG3: Proximity sensor ignore angle 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_IGN_WID3:
+
+PRX2\_IGN\_WID3: Proximity sensor ignore width 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_IGN_ANG4:
+
+PRX2\_IGN\_ANG4: Proximity sensor ignore angle 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_IGN_WID4:
+
+PRX2\_IGN\_WID4: Proximity sensor ignore width 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX2_MIN:
+
+PRX2\_MIN: Proximity minimum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 500 | meters |
++----------+--------+
+
+
+
+
+.. _PRX2_MAX:
+
+PRX2\_MAX: Proximity maximum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Maximum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 500 | meters |
++----------+--------+
+
+
+
+
+
+.. _parameters_PRX3:
+
+PRX3 Parameters
+---------------
+
+
+.. _PRX3_TYPE:
+
+PRX3\_TYPE: Proximity type
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+What type of proximity sensor is connected
+
+
++--------------------------------+
+| Values                         |
++================================+
+| +-------+--------------------+ |
+| | Value | Meaning            | |
+| +=======+====================+ |
+| | 0     | None               | |
+| +-------+--------------------+ |
+| | 7     | LightwareSF40c     | |
+| +-------+--------------------+ |
+| | 2     | MAVLink            | |
+| +-------+--------------------+ |
+| | 3     | TeraRangerTower    | |
+| +-------+--------------------+ |
+| | 4     | RangeFinder        | |
+| +-------+--------------------+ |
+| | 5     | RPLidarA2          | |
+| +-------+--------------------+ |
+| | 6     | TeraRangerTowerEvo | |
+| +-------+--------------------+ |
+| | 8     | LightwareSF45B     | |
+| +-------+--------------------+ |
+| | 10    | SITL               | |
+| +-------+--------------------+ |
+| | 12    | AirSimSITL         | |
+| +-------+--------------------+ |
+| | 13    | CygbotD1           | |
+| +-------+--------------------+ |
+|                                |
++--------------------------------+
+
+
+
+
+.. _PRX3_ORIENT:
+
+PRX3\_ORIENT: Proximity sensor orientation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor orientation
+
+
++-------------------------+
+| Values                  |
++=========================+
+| +-------+-------------+ |
+| | Value | Meaning     | |
+| +=======+=============+ |
+| | 0     | Default     | |
+| +-------+-------------+ |
+| | 1     | Upside Down | |
+| +-------+-------------+ |
+|                         |
++-------------------------+
+
+
+
+
+.. _PRX3_YAW_CORR:
+
+PRX3\_YAW\_CORR: Proximity sensor yaw correction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor yaw correction
+
+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| -180 to 180 | degrees |
++-------------+---------+
+
+
+
+
+.. _PRX3_IGN_ANG1:
+
+PRX3\_IGN\_ANG1: Proximity sensor ignore angle 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_IGN_WID1:
+
+PRX3\_IGN\_WID1: Proximity sensor ignore width 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_IGN_ANG2:
+
+PRX3\_IGN\_ANG2: Proximity sensor ignore angle 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_IGN_WID2:
+
+PRX3\_IGN\_WID2: Proximity sensor ignore width 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_IGN_ANG3:
+
+PRX3\_IGN\_ANG3: Proximity sensor ignore angle 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_IGN_WID3:
+
+PRX3\_IGN\_WID3: Proximity sensor ignore width 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_IGN_ANG4:
+
+PRX3\_IGN\_ANG4: Proximity sensor ignore angle 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_IGN_WID4:
+
+PRX3\_IGN\_WID4: Proximity sensor ignore width 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX3_MIN:
+
+PRX3\_MIN: Proximity minimum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 500 | meters |
++----------+--------+
+
+
+
+
+.. _PRX3_MAX:
+
+PRX3\_MAX: Proximity maximum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Maximum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 500 | meters |
++----------+--------+
+
+
+
+
+
+.. _parameters_PRX4:
+
+PRX4 Parameters
+---------------
+
+
+.. _PRX4_TYPE:
+
+PRX4\_TYPE: Proximity type
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+What type of proximity sensor is connected
+
+
++--------------------------------+
+| Values                         |
++================================+
+| +-------+--------------------+ |
+| | Value | Meaning            | |
+| +=======+====================+ |
+| | 0     | None               | |
+| +-------+--------------------+ |
+| | 7     | LightwareSF40c     | |
+| +-------+--------------------+ |
+| | 2     | MAVLink            | |
+| +-------+--------------------+ |
+| | 3     | TeraRangerTower    | |
+| +-------+--------------------+ |
+| | 4     | RangeFinder        | |
+| +-------+--------------------+ |
+| | 5     | RPLidarA2          | |
+| +-------+--------------------+ |
+| | 6     | TeraRangerTowerEvo | |
+| +-------+--------------------+ |
+| | 8     | LightwareSF45B     | |
+| +-------+--------------------+ |
+| | 10    | SITL               | |
+| +-------+--------------------+ |
+| | 12    | AirSimSITL         | |
+| +-------+--------------------+ |
+| | 13    | CygbotD1           | |
+| +-------+--------------------+ |
+|                                |
++--------------------------------+
+
+
+
+
+.. _PRX4_ORIENT:
+
+PRX4\_ORIENT: Proximity sensor orientation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor orientation
+
+
++-------------------------+
+| Values                  |
++=========================+
+| +-------+-------------+ |
+| | Value | Meaning     | |
+| +=======+=============+ |
+| | 0     | Default     | |
+| +-------+-------------+ |
+| | 1     | Upside Down | |
+| +-------+-------------+ |
+|                         |
++-------------------------+
+
+
+
+
+.. _PRX4_YAW_CORR:
+
+PRX4\_YAW\_CORR: Proximity sensor yaw correction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor yaw correction
+
+
++-------------+---------+
+| Range       | Units   |
++=============+=========+
+| -180 to 180 | degrees |
++-------------+---------+
+
+
+
+
+.. _PRX4_IGN_ANG1:
+
+PRX4\_IGN\_ANG1: Proximity sensor ignore angle 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_IGN_WID1:
+
+PRX4\_IGN\_WID1: Proximity sensor ignore width 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 1
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_IGN_ANG2:
+
+PRX4\_IGN\_ANG2: Proximity sensor ignore angle 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_IGN_WID2:
+
+PRX4\_IGN\_WID2: Proximity sensor ignore width 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 2
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_IGN_ANG3:
+
+PRX4\_IGN\_ANG3: Proximity sensor ignore angle 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_IGN_WID3:
+
+PRX4\_IGN\_WID3: Proximity sensor ignore width 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 3
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_IGN_ANG4:
+
+PRX4\_IGN\_ANG4: Proximity sensor ignore angle 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore angle 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 360 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_IGN_WID4:
+
+PRX4\_IGN\_WID4: Proximity sensor ignore width 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Proximity sensor ignore width 4
+
+
++----------+---------+
+| Range    | Units   |
++==========+=========+
+| 0 to 127 | degrees |
++----------+---------+
+
+
+
+
+.. _PRX4_MIN:
+
+PRX4\_MIN: Proximity minimum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum expected range for Proximity Sensor\. Setting this to 0 will set value to manufacturer reported range\.
+
+
++----------+--------+
+| Range    | Units  |
++==========+========+
+| 0 to 500 | meters |
++----------+--------+
+
+
+
+
+.. _PRX4_MAX:
+
+PRX4\_MAX: Proximity maximum range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 
@@ -69055,7 +69670,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -69182,6 +69797,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -69373,7 +70002,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -69500,6 +70129,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -69691,7 +70334,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -69818,6 +70461,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -70009,7 +70666,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -70136,6 +70793,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -70327,7 +70998,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -70454,6 +71125,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -70645,7 +71330,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -70772,6 +71457,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -70963,7 +71662,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -71090,6 +71789,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -71281,7 +71994,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -71408,6 +72121,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -71599,7 +72326,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -71726,6 +72453,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -71917,7 +72658,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -72044,6 +72785,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -72235,7 +72990,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -72362,6 +73117,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -72553,7 +73322,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -72680,6 +73449,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -72871,7 +73654,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -72998,6 +73781,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -73189,7 +73986,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -73316,6 +74113,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -73507,7 +74318,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -73634,6 +74445,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -73825,7 +74650,7 @@ Function assigned to this RC channel
 | +-------+------------------------------------------+ |
 | | 26    | AttCon Accel Limits                      | |
 | +-------+------------------------------------------+ |
-| | 27    | Retract Mount                            | |
+| | 27    | Retract Mount1                           | |
 | +-------+------------------------------------------+ |
 | | 28    | Relay On/Off                             | |
 | +-------+------------------------------------------+ |
@@ -73952,6 +74777,20 @@ Function assigned to this RC channel
 | | 163   | Mount Lock                               | |
 | +-------+------------------------------------------+ |
 | | 164   | Pause Stream Logging                     | |
+| +-------+------------------------------------------+ |
+| | 165   | Arm/Emergency Motor Stop                 | |
+| +-------+------------------------------------------+ |
+| | 212   | Mount1 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 213   | Mount1 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 214   | Mount1 Yaw                               | |
+| +-------+------------------------------------------+ |
+| | 215   | Mount2 Roll                              | |
+| +-------+------------------------------------------+ |
+| | 216   | Mount2 Pitch                             | |
+| +-------+------------------------------------------+ |
+| | 217   | Mount2 Yaw                               | |
 | +-------+------------------------------------------+ |
 | | 300   | Scripting1                               | |
 | +-------+------------------------------------------+ |
@@ -80776,6 +81615,8 @@ What type of RPM sensor is connected
 | +-------+------------------------------+ |
 | | 5     | ESC Telemetry Motors Bitmask | |
 | +-------+------------------------------+ |
+| | 6     | Generator                    | |
+| +-------+------------------------------+ |
 |                                          |
 +------------------------------------------+
 
@@ -80977,6 +81818,8 @@ What type of RPM sensor is connected
 | | 4     | Harmonic Notch               | |
 | +-------+------------------------------+ |
 | | 5     | ESC Telemetry Motors Bitmask | |
+| +-------+------------------------------+ |
+| | 6     | Generator                    | |
 | +-------+------------------------------+ |
 |                                          |
 +------------------------------------------+
@@ -81512,6 +82355,8 @@ Debugging options
 | +-----+-------------------------------------------------------+ |
 | | 3   | log runtime memory usage and execution time           | |
 | +-----+-------------------------------------------------------+ |
+| | 4   | Disable pre-arm check                                 | |
+| +-----+-------------------------------------------------------+ |
 |                                                                 |
 +-----------------------------------------------------------------+
 
@@ -81743,7 +82588,7 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -81902,7 +82747,7 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -82061,7 +82906,7 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -82220,7 +83065,7 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -82379,7 +83224,7 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -82538,7 +83383,7 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -83086,7 +83931,7 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -83294,7 +84139,7 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -83502,7 +84347,7 @@ Control what protocol Serial9 port should be used for\. Note that the Frsky opti
 | +-------+----------------------------------+ |
 | | 23    | RCIN                             | |
 | +-------+----------------------------------+ |
-| | 24    | MegaSquirt EFI                   | |
+| | 24    | EFI Serial                       | |
 | +-------+----------------------------------+ |
 | | 25    | LTM                              | |
 | +-------+----------------------------------+ |
@@ -83744,7 +84589,7 @@ SERVO\_GPIO\_MASK: Servo GPIO mask
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-This sets a bitmask of outputs which will be available as GPIOs\. Any auxiliary output with either the function set to \-1 or with the corresponding bit set in this mask will be available for use as a GPIO pin
+This sets a bitmask of outputs which will be available as GPIOs\. Any output with either the function set to \-1 or with the corresponding bit set in this mask will be available for use as a GPIO pin
 
 
 +--------------------+
@@ -83957,23 +84802,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -84134,6 +84979,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -84285,23 +85162,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -84462,6 +85339,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -84613,23 +85522,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -84790,6 +85699,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -84941,23 +85882,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -85118,6 +86059,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -85269,23 +86242,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -85446,6 +86419,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -85597,23 +86602,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -85774,6 +86779,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -85925,23 +86962,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -86102,6 +87139,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -86253,23 +87322,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -86430,6 +87499,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -86581,23 +87682,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -86758,6 +87859,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -86909,23 +88042,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -87086,6 +88219,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -87237,23 +88402,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -87414,6 +88579,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -87565,23 +88762,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -87742,6 +88939,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -87893,23 +89122,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -88070,6 +89299,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -88221,23 +89482,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -88398,6 +89659,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -88549,23 +89842,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -88726,6 +90019,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -88877,23 +90202,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -89054,6 +90379,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -89205,23 +90562,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -89382,6 +90739,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -89533,23 +90922,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -89710,6 +91099,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -89861,23 +91282,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -90038,6 +91459,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -90189,23 +91642,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -90366,6 +91819,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -90517,23 +92002,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -90694,6 +92179,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -90845,23 +92362,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -91022,6 +92539,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -91173,23 +92722,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -91350,6 +92899,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -91501,23 +93082,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -91678,6 +93259,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -91829,23 +93442,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -92006,6 +93619,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -92157,23 +93802,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -92334,6 +93979,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -92485,23 +94162,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -92662,6 +94339,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -92813,23 +94522,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -92990,6 +94699,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -93141,23 +94882,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -93318,6 +95059,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -93469,23 +95242,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -93646,6 +95419,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -93797,23 +95602,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -93974,6 +95779,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -94125,23 +95962,23 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | +-------+---------------------+ |
 | | 1     | RCPassThru          | |
 | +-------+---------------------+ |
-| | 6     | MountPan            | |
+| | 6     | Mount1Yaw           | |
 | +-------+---------------------+ |
-| | 7     | MountTilt           | |
+| | 7     | Mount1Pitch         | |
 | +-------+---------------------+ |
-| | 8     | MountRoll           | |
+| | 8     | Mount1Roll          | |
 | +-------+---------------------+ |
-| | 9     | MountOpen           | |
+| | 9     | Mount1Retract       | |
 | +-------+---------------------+ |
 | | 10    | CameraTrigger       | |
 | +-------+---------------------+ |
-| | 12    | Mount2Pan           | |
+| | 12    | Mount2Yaw           | |
 | +-------+---------------------+ |
-| | 13    | Mount2Tilt          | |
+| | 13    | Mount2Pitch         | |
 | +-------+---------------------+ |
 | | 14    | Mount2Roll          | |
 | +-------+---------------------+ |
-| | 15    | Mount2Open          | |
+| | 15    | Mount2Retract       | |
 | +-------+---------------------+ |
 | | 22    | SprayerPump         | |
 | +-------+---------------------+ |
@@ -94302,6 +96139,38 @@ Function assigned to this servo\. Setting this to Disabled\(0\) will setup this 
 | | 138   | Alarm               | |
 | +-------+---------------------+ |
 | | 139   | Alarm Inverted      | |
+| +-------+---------------------+ |
+| | 140   | RCIN1Scaled         | |
+| +-------+---------------------+ |
+| | 141   | RCIN2Scaled         | |
+| +-------+---------------------+ |
+| | 142   | RCIN3Scaled         | |
+| +-------+---------------------+ |
+| | 143   | RCIN4Scaled         | |
+| +-------+---------------------+ |
+| | 144   | RCIN5Scaled         | |
+| +-------+---------------------+ |
+| | 145   | RCIN6Scaled         | |
+| +-------+---------------------+ |
+| | 146   | RCIN7Scaled         | |
+| +-------+---------------------+ |
+| | 147   | RCIN8Scaled         | |
+| +-------+---------------------+ |
+| | 148   | RCIN9Scaled         | |
+| +-------+---------------------+ |
+| | 149   | RCIN10Scaled        | |
+| +-------+---------------------+ |
+| | 150   | RCIN11Scaled        | |
+| +-------+---------------------+ |
+| | 151   | RCIN12Scaled        | |
+| +-------+---------------------+ |
+| | 152   | RCIN13Scaled        | |
+| +-------+---------------------+ |
+| | 153   | RCIN14Scaled        | |
+| +-------+---------------------+ |
+| | 154   | RCIN15Scaled        | |
+| +-------+---------------------+ |
+| | 155   | RCIN16Scaled        | |
 | +-------+---------------------+ |
 |                                 |
 +---------------------------------+
@@ -95609,7 +97478,7 @@ SR0\_EXTRA3: Extra data type 3 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of AHRS\, HWSTATUS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
+Stream rate of AHRS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
 
 
 +-----------+---------+-------+
@@ -95816,7 +97685,7 @@ SR1\_EXTRA3: Extra data type 3 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of AHRS\, HWSTATUS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
+Stream rate of AHRS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
 
 
 +-----------+---------+-------+
@@ -96023,7 +97892,7 @@ SR2\_EXTRA3: Extra data type 3 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of AHRS\, HWSTATUS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
+Stream rate of AHRS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
 
 
 +-----------+---------+-------+
@@ -96230,7 +98099,7 @@ SR3\_EXTRA3: Extra data type 3 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of AHRS\, HWSTATUS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
+Stream rate of AHRS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
 
 
 +-----------+---------+-------+
@@ -96437,7 +98306,7 @@ SR4\_EXTRA3: Extra data type 3 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of AHRS\, HWSTATUS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
+Stream rate of AHRS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
 
 
 +-----------+---------+-------+
@@ -96644,7 +98513,7 @@ SR5\_EXTRA3: Extra data type 3 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of AHRS\, HWSTATUS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
+Stream rate of AHRS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
 
 
 +-----------+---------+-------+
@@ -96851,7 +98720,7 @@ SR6\_EXTRA3: Extra data type 3 stream rate to ground station
 | *Note: This parameter is for advanced users*
 | *Note: Reboot required after change*
 
-Stream rate of AHRS\, HWSTATUS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
+Stream rate of AHRS\, SYSTEM\_TIME\, RANGEFINDER\, DISTANCE\_SENSOR\, TERRAIN\_REQUEST\, BATTERY2\, GIMBAL\_DEVICE\_ATTITUDE\_STATUS\, OPTICAL\_FLOW\, MAG\_CAL\_REPORT\, MAG\_CAL\_PROGRESS\, EKF\_STATUS\_REPORT\, VIBRATION and RPM to ground station
 
 
 +-----------+---------+-------+

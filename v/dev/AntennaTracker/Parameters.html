@@ -10428,7 +10428,7 @@ DO NOT EDIT
 
 <p>Debugging options</p>
 <ul>
-<li>Bitmask: 0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time</li>
+<li>Bitmask: 0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time, 4:Disable pre-arm check</li>
 </ul>
 
 
@@ -10549,7 +10549,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -10627,7 +10627,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -10704,7 +10704,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -10781,7 +10781,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -10858,7 +10858,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -10935,7 +10935,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -11109,7 +11109,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -11195,7 +11195,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -11281,7 +11281,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -11379,7 +11379,7 @@ DO NOT EDIT
 
 <h2>Servo GPIO mask (SERVO_GPIO_MASK)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>This sets a bitmask of outputs which will be available as GPIOs. Any auxiliary output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin</p>
+<p>This sets a bitmask of outputs which will be available as GPIOs. Any output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin</p>
 <ul>
 <li>Bitmask: 0:Servo 1, 1:Servo 2, 2:Servo 3, 3:Servo 4, 4:Servo 5, 5:Servo 6, 6:Servo 7, 7:Servo 8, 8:Servo 9, 9:Servo 10, 10:Servo 11, 11:Servo 12, 12:Servo 13, 13:Servo 14, 14:Servo 15, 15:Servo 16, 16:Servo 17, 17:Servo 18, 18:Servo 19, 19:Servo 20, 20:Servo 21, 21:Servo 22, 22:Servo 23, 23:Servo 24, 24:Servo 25, 25:Servo 26, 26:Servo 27, 27:Servo 28, 28:Servo 29, 29:Servo 30, 30:Servo 31, 31:Servo 32</li>
 <li>RebootRequired: True</li>
@@ -11452,15 +11452,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -11566,8 +11566,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11648,15 +11662,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -11762,8 +11776,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -11844,15 +11872,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -11958,8 +11986,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12040,15 +12082,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -12154,8 +12196,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12236,15 +12292,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -12350,8 +12406,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12432,15 +12502,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -12546,8 +12616,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12628,15 +12712,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -12742,8 +12826,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -12824,15 +12922,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -12938,8 +13036,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -13020,15 +13132,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -13134,8 +13246,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -13216,15 +13342,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -13330,8 +13456,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -13412,15 +13552,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -13526,8 +13666,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -13608,15 +13762,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -13722,8 +13876,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -13804,15 +13972,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -13918,8 +14086,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -14000,15 +14182,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -14114,8 +14296,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -14196,15 +14392,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -14310,8 +14506,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -14392,15 +14602,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -14506,8 +14716,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -14588,15 +14812,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -14702,8 +14926,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -14784,15 +15022,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -14898,8 +15136,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -14980,15 +15232,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -15094,8 +15346,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -15176,15 +15442,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -15290,8 +15556,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -15372,15 +15652,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -15486,8 +15766,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -15568,15 +15862,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -15682,8 +15976,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -15764,15 +16072,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -15878,8 +16186,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -15960,15 +16282,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -16074,8 +16396,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -16156,15 +16492,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -16270,8 +16606,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -16352,15 +16702,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -16466,8 +16816,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -16548,15 +16912,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -16662,8 +17026,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -16744,15 +17122,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -16858,8 +17236,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -16940,15 +17332,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -17054,8 +17446,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -17136,15 +17542,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -17250,8 +17656,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -17332,15 +17752,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -17446,8 +17866,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -17528,15 +17962,15 @@ DO NOT EDIT
 <tr><td>2</td><td>Flap</td></tr>
 <tr><td>3</td><td>FlapAuto</td></tr>
 <tr><td>4</td><td>Aileron</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>16</td><td>DifferentialSpoilerLeft1</td></tr>
 <tr><td>17</td><td>DifferentialSpoilerRight1</td></tr>
 <tr><td>19</td><td>Elevator</td></tr>
@@ -17642,8 +18076,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
-<tr><td>140</td><td>Aileron left</td></tr>
-<tr><td>141</td><td>Aileron right</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>

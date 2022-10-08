@@ -1113,6 +1113,17 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Arming options (ARMING_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Options that can be applied to change arming behaviour</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>Disable prearm display</td></tr>
+</table>
+</ul>
+
+
 <h1>ARSPD Parameters</h1>
 
 
@@ -6330,7 +6341,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -6375,11 +6386,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6406,7 +6424,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -6451,11 +6469,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6482,7 +6507,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -6527,11 +6552,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -6558,7 +6590,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -6603,11 +6635,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -8561,6 +8600,59 @@ DO NOT EDIT
 <p>Barometer Vertical Accuracy when installed in the vehicle. Note this is dependent upon installation conditions and thus disabled by default</p>
 <ul>
 <li>Units: meters</li>
+</ul>
+
+
+<h1>DOCK Parameters</h1>
+
+
+<h2>Dock mode speed (DOCK_SPEED)</h2>
+
+<p>Vehicle speed limit in dock mode</p>
+<ul>
+<li>Units: meters per second</li>
+<li>Range: 0 100</li>
+<li>Increment: 0.1</li>
+</ul>
+
+
+<h2>Dock mode direction of approach (DOCK_DIR)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Compass direction in which vehicle should approach towards dock. -1 value represents unset parameter</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Dock mode heading correction enable/disable (DOCK_HDG_CORR_EN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>When enabled, the autopilot modifies the path to approach the target head-on along desired line of approch in dock mode</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>Dock mode heading correction weight (DOCK_HDG_CORR_WT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>This value describes how aggressively vehicle tries to correct its heading to be on desired line of approach</p>
+<ul>
+<li>Range: 0.00 0.90</li>
+<li>Increment: 0.05</li>
+</ul>
+
+
+<h2>Distance from docking target when we should stop (DOCK_STOP_DIST)</h2>
+
+<p>The vehicle starts stopping when it is this distance away from docking target</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 2</li>
+<li>Increment: 0.01</li>
 </ul>
 
 
@@ -12539,12 +12631,12 @@ DO NOT EDIT
 </ul>
 
 
-<h1>MNT Parameters</h1>
+<h1>MNT1 Parameters</h1>
 
 
-<h2>Mount Type (MNT_TYPE)</h2>
+<h2>Mount Type (MNT1_TYPE)</h2>
 
-<p>Mount Type (None, Servo or MAVLink)</p>
+<p>Mount Type</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
@@ -12554,12 +12646,13 @@ DO NOT EDIT
 <tr><td>4</td><td>SToRM32 MAVLink</td></tr>
 <tr><td>5</td><td>SToRM32 Serial</td></tr>
 <tr><td>6</td><td>Gremsy</td></tr>
+<tr><td>7</td><td>BrushlessPWM</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
 
 
-<h2>Mount default operating mode (MNT_DEFLT_MODE)</h2>
+<h2>Mount default operating mode (MNT1_DEFLT_MODE)</h2>
 
 <p>Mount default operating mode on startup and after control is returned from autopilot</p>
 <ul>
@@ -12574,240 +12667,174 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Mount roll angle when in retracted position (MNT_RETRACT_X)</h2>
-
-<p>Mount roll angle when in retracted position</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
-<li>Increment: 1</li>
-</ul>
-
-
-<h2>Mount tilt/pitch angle when in retracted position (MNT_RETRACT_Y)</h2>
-
-<p>Mount tilt/pitch angle when in retracted position</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
-<li>Increment: 1</li>
-</ul>
-
-
-<h2>Mount yaw/pan angle when in retracted position (MNT_RETRACT_Z)</h2>
-
-<p>Mount yaw/pan angle when in retracted position</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
-<li>Increment: 1</li>
-</ul>
-
-
-<h2>Mount roll angle when in neutral position (MNT_NEUTRAL_X)</h2>
-
-<p>Mount roll angle when in neutral position</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
-<li>Increment: 1</li>
-</ul>
-
-
-<h2>Mount tilt/pitch angle when in neutral position (MNT_NEUTRAL_Y)</h2>
-
-<p>Mount tilt/pitch angle when in neutral position</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
-<li>Increment: 1</li>
-</ul>
-
-
-<h2>Mount pan/yaw angle when in neutral position (MNT_NEUTRAL_Z)</h2>
-
-<p>Mount pan/yaw angle when in neutral position</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
-<li>Increment: 1</li>
-</ul>
-
-
-<h2>Stabilize mount's roll angle (MNT_STAB_ROLL)</h2>
-
-<p>enable roll stabilisation relative to Earth</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Enabled</td></tr>
-</table>
-</ul>
-
-
-<h2>Stabilize mount's pitch/tilt angle (MNT_STAB_TILT)</h2>
-
-<p>enable tilt/pitch stabilisation relative to Earth</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Enabled</td></tr>
-</table>
-</ul>
-
-
-<h2>Stabilize mount pan/yaw angle (MNT_STAB_PAN)</h2>
-
-<p>enable pan/yaw stabilisation relative to Earth</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Enabled</td></tr>
-</table>
-</ul>
-
-
-<h2>roll RC input channel (MNT_RC_IN_ROLL)</h2>
-
-<p>0 for none, any other for the RC channel to be used to control roll movements</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>5</td><td>RC5</td></tr>
-<tr><td>6</td><td>RC6</td></tr>
-<tr><td>7</td><td>RC7</td></tr>
-<tr><td>8</td><td>RC8</td></tr>
-<tr><td>9</td><td>RC9</td></tr>
-<tr><td>10</td><td>RC10</td></tr>
-<tr><td>11</td><td>RC11</td></tr>
-<tr><td>12</td><td>RC12</td></tr>
-</table>
-</ul>
-
-
-<h2>Minimum roll angle (MNT_ANGMIN_ROL)</h2>
-
-<p>Minimum physical roll angular position of mount.</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Maximum roll angle (MNT_ANGMAX_ROL)</h2>
-
-<p>Maximum physical roll angular position of the mount</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>tilt (pitch) RC input channel (MNT_RC_IN_TILT)</h2>
-
-<p>0 for none, any other for the RC channel to be used to control tilt (pitch) movements</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>5</td><td>RC5</td></tr>
-<tr><td>6</td><td>RC6</td></tr>
-<tr><td>7</td><td>RC7</td></tr>
-<tr><td>8</td><td>RC8</td></tr>
-<tr><td>9</td><td>RC9</td></tr>
-<tr><td>10</td><td>RC10</td></tr>
-<tr><td>11</td><td>RC11</td></tr>
-<tr><td>12</td><td>RC12</td></tr>
-</table>
-</ul>
-
-
-<h2>Minimum tilt angle (MNT_ANGMIN_TIL)</h2>
-
-<p>Minimum physical tilt (pitch) angular position of mount.</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Maximum tilt angle (MNT_ANGMAX_TIL)</h2>
-
-<p>Maximum physical tilt (pitch) angular position of the mount</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>pan (yaw) RC input channel (MNT_RC_IN_PAN)</h2>
-
-<p>0 for none, any other for the RC channel to be used to control pan (yaw) movements</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>5</td><td>RC5</td></tr>
-<tr><td>6</td><td>RC6</td></tr>
-<tr><td>7</td><td>RC7</td></tr>
-<tr><td>8</td><td>RC8</td></tr>
-<tr><td>9</td><td>RC9</td></tr>
-<tr><td>10</td><td>RC10</td></tr>
-<tr><td>11</td><td>RC11</td></tr>
-<tr><td>12</td><td>RC12</td></tr>
-</table>
-</ul>
-
-
-<h2>Minimum pan angle (MNT_ANGMIN_PAN)</h2>
-
-<p>Minimum physical pan (yaw) angular position of mount.</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Maximum pan angle (MNT_ANGMAX_PAN)</h2>
-
-<p>Maximum physical pan (yaw) angular position of the mount</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Roll stabilization lead time (MNT_LEAD_RLL)</h2>
-
-<p>Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate, compensating for servo delay. Increase until the servo is responsive but doesn&#x27;t overshoot. Does nothing with pan stabilization enabled.</p>
-<ul>
-<li>Units: seconds</li>
-<li>Range: 0.0 0.2</li>
-<li>Increment: .005</li>
-</ul>
-
-
-<h2>Pitch stabilization lead time (MNT_LEAD_PTCH)</h2>
-
-<p>Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate. Increase until the servo is responsive but doesn&#x27;t overshoot. Does nothing with pan stabilization enabled.</p>
-<ul>
-<li>Units: seconds</li>
-<li>Range: 0.0 0.2</li>
-<li>Increment: .005</li>
-</ul>
-
-
-<h2>Mount RC Rate (MNT_RC_RATE)</h2>
+<h2>Mount RC Rate (MNT1_RC_RATE)</h2>
 
 <p>Pilot rate control&#x27;s maximum rate.  Set to zero to use angle control</p>
 <ul>
 <li>Units: degrees per second</li>
 <li>Range: 0 90</li>
 <li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount Roll angle minimum (MNT1_ROLL_MIN)</h2>
+
+<p>Mount Roll angle minimum</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount Roll angle maximum (MNT1_ROLL_MAX)</h2>
+
+<p>Mount Roll angle maximum</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount Pitch angle minimum (MNT1_PITCH_MIN)</h2>
+
+<p>Mount Pitch angle minimum</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -90 90</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount Pitch angle maximum (MNT1_PITCH_MAX)</h2>
+
+<p>Mount Pitch angle maximum</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -90 90</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount Yaw angle minimum (MNT1_YAW_MIN)</h2>
+
+<p>Mount Yaw angle minimum</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount Yaw angle maximum (MNT1_YAW_MAX)</h2>
+
+<p>Mount Yaw angle maximum</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount roll angle when in retracted position (MNT1_RETRACT_X)</h2>
+
+<p>Mount roll angle when in retracted position</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount pitch angle when in retracted position (MNT1_RETRACT_Y)</h2>
+
+<p>Mount pitch angle when in retracted position</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount yaw angle when in retracted position (MNT1_RETRACT_Z)</h2>
+
+<p>Mount yaw angle when in retracted position</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount roll angle when in neutral position (MNT1_NEUTRAL_X)</h2>
+
+<p>Mount roll angle when in neutral position</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount pitch angle when in neutral position (MNT1_NEUTRAL_Y)</h2>
+
+<p>Mount pitch angle when in neutral position</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount yaw angle when in neutral position (MNT1_NEUTRAL_Z)</h2>
+
+<p>Mount yaw angle when in neutral position</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>Mount Roll stabilization lead time (MNT1_LEAD_RLL)</h2>
+
+<p>Servo mount roll angle output leads the vehicle angle by this amount of time based on current roll rate. Increase until the servo is responsive but does not overshoot</p>
+<ul>
+<li>Units: seconds</li>
+<li>Range: 0.0 0.2</li>
+<li>Increment: .005</li>
+</ul>
+
+
+<h2>Mount Pitch stabilization lead time (MNT1_LEAD_PTCH)</h2>
+
+<p>Servo mount pitch angle output leads the vehicle angle by this amount of time based on current pitch rate. Increase until the servo is responsive but does not overshoot</p>
+<ul>
+<li>Units: seconds</li>
+<li>Range: 0.0 0.2</li>
+<li>Increment: .005</li>
+</ul>
+
+
+<h1>MNT2 Parameters</h1>
+
+
+<h2>Mount Type (MNT2_TYPE)</h2>
+
+<p>Mount Type</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>Servo</td></tr>
+<tr><td>2</td><td>3DR Solo</td></tr>
+<tr><td>3</td><td>Alexmos Serial</td></tr>
+<tr><td>4</td><td>SToRM32 MAVLink</td></tr>
+<tr><td>5</td><td>SToRM32 Serial</td></tr>
+<tr><td>6</td><td>Gremsy</td></tr>
+<tr><td>7</td><td>BrushlessPWM</td></tr>
+</table>
+<li>RebootRequired: True</li>
 </ul>
 
 
@@ -12826,216 +12853,139 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Mount2 roll angle when in retracted position (MNT2_RETRACT_X)</h2>
+<h2>Mount RC Rate (MNT2_RC_RATE)</h2>
 
-<p>Mount2 roll angle when in retracted position</p>
+<p>Pilot rate control&#x27;s maximum rate.  Set to zero to use angle control</p>
 <ul>
-<li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
+<li>Units: degrees per second</li>
+<li>Range: 0 90</li>
 <li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2 tilt/pitch angle when in retracted position (MNT2_RETRACT_Y)</h2>
+<h2>Mount Roll angle minimum (MNT2_ROLL_MIN)</h2>
 
-<p>Mount2 tilt/pitch angle when in retracted position</p>
+<p>Mount Roll angle minimum</p>
 <ul>
 <li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
+<li>Range: -180 180</li>
 <li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2 yaw/pan angle when in retracted position (MNT2_RETRACT_Z)</h2>
+<h2>Mount Roll angle maximum (MNT2_ROLL_MAX)</h2>
 
-<p>Mount2 yaw/pan angle when in retracted position</p>
+<p>Mount Roll angle maximum</p>
 <ul>
 <li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
+<li>Range: -180 180</li>
 <li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2 roll angle when in neutral position (MNT2_NEUTRAL_X)</h2>
+<h2>Mount Pitch angle minimum (MNT2_PITCH_MIN)</h2>
 
-<p>Mount2 roll angle when in neutral position</p>
+<p>Mount Pitch angle minimum</p>
 <ul>
 <li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
+<li>Range: -90 90</li>
 <li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2 tilt/pitch angle when in neutral position (MNT2_NEUTRAL_Y)</h2>
+<h2>Mount Pitch angle maximum (MNT2_PITCH_MAX)</h2>
 
-<p>Mount2 tilt/pitch angle when in neutral position</p>
+<p>Mount Pitch angle maximum</p>
 <ul>
 <li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
+<li>Range: -90 90</li>
 <li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2 pan/yaw angle when in neutral position (MNT2_NEUTRAL_Z)</h2>
+<h2>Mount Yaw angle minimum (MNT2_YAW_MIN)</h2>
 
-<p>Mount2 pan/yaw angle when in neutral position</p>
+<p>Mount Yaw angle minimum</p>
 <ul>
 <li>Units: degrees</li>
-<li>Range: -180.00 179.99</li>
+<li>Range: -180 180</li>
 <li>Increment: 1</li>
 </ul>
 
 
-<h2>Stabilize Mount2's roll angle (MNT2_STAB_ROLL)</h2>
+<h2>Mount Yaw angle maximum (MNT2_YAW_MAX)</h2>
 
-<p>enable roll stabilisation relative to Earth</p>
+<p>Mount Yaw angle maximum</p>
 <ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Enabled</td></tr>
-</table>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+<li>Increment: 1</li>
 </ul>
 
 
-<h2>Stabilize Mount2's pitch/tilt angle (MNT2_STAB_TILT)</h2>
+<h2>Mount roll angle when in retracted position (MNT2_RETRACT_X)</h2>
 
-<p>enable tilt/pitch stabilisation relative to Earth</p>
+<p>Mount roll angle when in retracted position</p>
 <ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Enabled</td></tr>
-</table>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
 </ul>
 
 
-<h2>Stabilize mount2 pan/yaw angle (MNT2_STAB_PAN)</h2>
+<h2>Mount pitch angle when in retracted position (MNT2_RETRACT_Y)</h2>
 
-<p>enable pan/yaw stabilisation relative to Earth</p>
+<p>Mount pitch angle when in retracted position</p>
 <ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>1</td><td>Enabled</td></tr>
-</table>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2's roll RC input channel (MNT2_RC_IN_ROLL)</h2>
+<h2>Mount yaw angle when in retracted position (MNT2_RETRACT_Z)</h2>
 
-<p>0 for none, any other for the RC channel to be used to control roll movements</p>
+<p>Mount yaw angle when in retracted position</p>
 <ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>5</td><td>RC5</td></tr>
-<tr><td>6</td><td>RC6</td></tr>
-<tr><td>7</td><td>RC7</td></tr>
-<tr><td>8</td><td>RC8</td></tr>
-<tr><td>9</td><td>RC9</td></tr>
-<tr><td>10</td><td>RC10</td></tr>
-<tr><td>11</td><td>RC11</td></tr>
-<tr><td>12</td><td>RC12</td></tr>
-</table>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2's minimum roll angle (MNT2_ANGMIN_ROL)</h2>
+<h2>Mount roll angle when in neutral position (MNT2_NEUTRAL_X)</h2>
 
-<p>Mount2&#x27;s minimum physical roll angular position</p>
+<p>Mount roll angle when in neutral position</p>
 <ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2's maximum roll angle (MNT2_ANGMAX_ROL)</h2>
+<h2>Mount pitch angle when in neutral position (MNT2_NEUTRAL_Y)</h2>
 
-<p>Mount2&#x27;s maximum physical roll angular position</p>
+<p>Mount pitch angle when in neutral position</p>
 <ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2's tilt (pitch) RC input channel (MNT2_RC_IN_TILT)</h2>
+<h2>Mount yaw angle when in neutral position (MNT2_NEUTRAL_Z)</h2>
 
-<p>0 for none, any other for the RC channel to be used to control tilt (pitch) movements</p>
+<p>Mount yaw angle when in neutral position</p>
 <ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>5</td><td>RC5</td></tr>
-<tr><td>6</td><td>RC6</td></tr>
-<tr><td>7</td><td>RC7</td></tr>
-<tr><td>8</td><td>RC8</td></tr>
-<tr><td>9</td><td>RC9</td></tr>
-<tr><td>10</td><td>RC10</td></tr>
-<tr><td>11</td><td>RC11</td></tr>
-<tr><td>12</td><td>RC12</td></tr>
-</table>
+<li>Units: degrees</li>
+<li>Range: -180.0 180.0</li>
+<li>Increment: 1</li>
 </ul>
 
 
-<h2>Mount2's minimum tilt angle (MNT2_ANGMIN_TIL)</h2>
+<h2>Mount Roll stabilization lead time (MNT2_LEAD_RLL)</h2>
 
-<p>Mount2&#x27;s minimum physical tilt (pitch) angular position</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Mount2's maximum tilt angle (MNT2_ANGMAX_TIL)</h2>
-
-<p>Mount2&#x27;s maximum physical tilt (pitch) angular position</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Mount2's pan (yaw) RC input channel (MNT2_RC_IN_PAN)</h2>
-
-<p>0 for none, any other for the RC channel to be used to control pan (yaw) movements</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Disabled</td></tr>
-<tr><td>5</td><td>RC5</td></tr>
-<tr><td>6</td><td>RC6</td></tr>
-<tr><td>7</td><td>RC7</td></tr>
-<tr><td>8</td><td>RC8</td></tr>
-<tr><td>9</td><td>RC9</td></tr>
-<tr><td>10</td><td>RC10</td></tr>
-<tr><td>11</td><td>RC11</td></tr>
-<tr><td>12</td><td>RC12</td></tr>
-</table>
-</ul>
-
-
-<h2>Mount2's minimum pan angle (MNT2_ANGMIN_PAN)</h2>
-
-<p>Mount2&#x27;s minimum physical pan (yaw) angular position</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Mount2's maximum pan angle (MNT2_ANGMAX_PAN)</h2>
-
-<p>MOunt2&#x27;s maximum physical pan (yaw) angular position</p>
-<ul>
-<li>Units: centidegrees</li>
-<li>Range: -18000 17999</li>
-<li>Increment: 10</li>
-</ul>
-
-
-<h2>Mount2's Roll stabilization lead time (MNT2_LEAD_RLL)</h2>
-
-<p>Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate, compensating for servo delay. Increase until the servo is responsive but doesn&#x27;t overshoot. Does nothing with pan stabilization enabled.</p>
+<p>Servo mount roll angle output leads the vehicle angle by this amount of time based on current roll rate. Increase until the servo is responsive but does not overshoot</p>
 <ul>
 <li>Units: seconds</li>
 <li>Range: 0.0 0.2</li>
@@ -13043,29 +12993,13 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Mount2's Pitch stabilization lead time (MNT2_LEAD_PTCH)</h2>
+<h2>Mount Pitch stabilization lead time (MNT2_LEAD_PTCH)</h2>
 
-<p>Causes the servo angle output to lead the current angle of the vehicle by some amount of time based on current angular rate. Increase until the servo is responsive but doesn&#x27;t overshoot. Does nothing with pan stabilization enabled.</p>
+<p>Servo mount pitch angle output leads the vehicle angle by this amount of time based on current pitch rate. Increase until the servo is responsive but does not overshoot</p>
 <ul>
 <li>Units: seconds</li>
 <li>Range: 0.0 0.2</li>
 <li>Increment: .005</li>
-</ul>
-
-
-<h2>Mount2 Type (MNT2_TYPE)</h2>
-
-<p>Mount Type (None, Servo or MAVLink)</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>None</td></tr>
-<tr><td>1</td><td>Servo</td></tr>
-<tr><td>2</td><td>3DR Solo</td></tr>
-<tr><td>3</td><td>Alexmos Serial</td></tr>
-<tr><td>4</td><td>SToRM32 MAVLink</td></tr>
-<tr><td>5</td><td>SToRM32 Serial</td></tr>
-<tr><td>6</td><td>Gremsy</td></tr>
-</table>
 </ul>
 
 
@@ -13471,6 +13405,7 @@ DO NOT EDIT
 <tr><td>2</td><td>SITL</td></tr>
 <tr><td>3</td><td>MSP</td></tr>
 <tr><td>4</td><td>TXONLY</td></tr>
+<tr><td>5</td><td>MSP_DISPLAYPORT</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -27527,156 +27462,226 @@ DO NOT EDIT
 </ul>
 
 
-<h1>PRX Parameters</h1>
+<h1>PLND_ Parameters</h1>
 
 
-<h2>Proximity type (PRX_TYPE)</h2>
+<h2>Precision Land enabled/disabled (PLND_ENABLED)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>What type of proximity sensor is connected</p>
+<p>Precision Land enabled/disabled</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Disabled</td></tr>
+<tr><td>1</td><td>Enabled</td></tr>
+</table>
+</ul>
+
+
+<h2>Precision Land Type (PLND_TYPE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Precision Land Type</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>None</td></tr>
-<tr><td>7</td><td>LightwareSF40c</td></tr>
-<tr><td>2</td><td>MAVLink</td></tr>
-<tr><td>3</td><td>TeraRangerTower</td></tr>
-<tr><td>4</td><td>RangeFinder</td></tr>
-<tr><td>5</td><td>RPLidarA2</td></tr>
-<tr><td>6</td><td>TeraRangerTowerEvo</td></tr>
-<tr><td>8</td><td>LightwareSF45B</td></tr>
-<tr><td>10</td><td>SITL</td></tr>
-<tr><td>12</td><td>AirSimSITL</td></tr>
-<tr><td>13</td><td>CygbotD1</td></tr>
+<tr><td>1</td><td>CompanionComputer</td></tr>
+<tr><td>2</td><td>IRLock</td></tr>
+<tr><td>3</td><td>SITL_Gazebo</td></tr>
+<tr><td>4</td><td>SITL</td></tr>
+</table>
+</ul>
+
+
+<h2>Sensor yaw alignment (PLND_YAW_ALIGN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Yaw angle from body x-axis to sensor x-axis.</p>
+<ul>
+<li>Range: 0 36000</li>
+<li>Increment: 10</li>
+<li>Units: centidegrees</li>
+</ul>
+
+
+<h2>Land offset forward (PLND_LAND_OFS_X)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Desired landing position of the camera forward of the target in vehicle body frame</p>
+<ul>
+<li>Range: -20 20</li>
+<li>Increment: 1</li>
+<li>Units: centimeters</li>
+</ul>
+
+
+<h2>Land offset right (PLND_LAND_OFS_Y)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>desired landing position of the camera right of the target in vehicle body frame</p>
+<ul>
+<li>Range: -20 20</li>
+<li>Increment: 1</li>
+<li>Units: centimeters</li>
+</ul>
+
+
+<h2>Precision Land Estimator Type (PLND_EST_TYPE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Specifies the estimation method to be used</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>RawSensor</td></tr>
+<tr><td>1</td><td>KalmanFilter</td></tr>
+</table>
+</ul>
+
+
+<h2>Kalman Filter Accelerometer Noise (PLND_ACC_P_NSE)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Kalman Filter Accelerometer Noise, higher values weight the input from the camera more, accels less</p>
+<ul>
+<li>Range: 0.5 5</li>
+</ul>
+
+
+<h2>Camera X position offset (PLND_CAM_POS_X)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>X position of the camera in body frame. Positive X is forward of the origin.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: -5 5</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Camera Y position offset (PLND_CAM_POS_Y)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Y position of the camera in body frame. Positive Y is to the right of the origin.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: -5 5</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Camera Z position offset (PLND_CAM_POS_Z)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Z position of the camera in body frame. Positive Z is down from the origin.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: -5 5</li>
+<li>Increment: 0.01</li>
+</ul>
+
+
+<h2>Sensor Bus (PLND_BUS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Precland sensor bus for I2C sensors.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>-1</td><td>DefaultBus</td></tr>
+<tr><td>0</td><td>InternalI2C</td></tr>
+<tr><td>1</td><td>ExternalI2C</td></tr>
+</table>
+</ul>
+
+
+<h2>Precision Landing sensor lag (PLND_LAG)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Precision Landing sensor lag, to cope with variable landing_target latency</p>
+<ul>
+<li>Range: 0.02 0.250</li>
+<li>Increment: 1</li>
+<li>Units: seconds</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Precision Landing maximum distance to target before descending (PLND_XY_DIST_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The vehicle will not start descending if the landing target is detected and it is further than this many meters away. Set 0 to always descend.</p>
+<ul>
+<li>Range: 0 10</li>
+<li>Units: meters</li>
+</ul>
+
+
+<h2>PrecLand strictness (PLND_STRICT)</h2>
+
+<p>How strictly should the vehicle land on the target if target is lost</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Land Vertically (Not strict)</td></tr>
+<tr><td>1</td><td>Retry Landing(Normal Strictness)</td></tr>
+<tr><td>2</td><td>Do not land (just Hover) (Very Strict)</td></tr>
+</table>
+</ul>
+
+
+<h2>PrecLand Maximum number of retires for a failed landing (PLND_RET_MAX)</h2>
+
+<p>PrecLand Maximum number of retires for a failed landing. Set to zero to disable landing retry.</p>
+<ul>
+<li>Range: 0 10</li>
+<li>Increment: 1</li>
+</ul>
+
+
+<h2>PrecLand retry timeout (PLND_TIMEOUT)</h2>
+
+<p>Time for which vehicle continues descend even if target is lost. After this time period, vehicle will attemp a landing retry depending on PLND_STRICT parameter.</p>
+<ul>
+<li>Range: 0 20</li>
+<li>Units: seconds</li>
+</ul>
+
+
+<h2>PrecLand retry behaviour (PLND_RET_BEHAVE)</h2>
+
+<p>Prec Land will do the action selected by this parameter if a retry to a landing is needed</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Go to the last location where landing target was detected</td></tr>
+<tr><td>1</td><td>Go towards the approximate location of the detected landing target</td></tr>
+</table>
+</ul>
+
+
+<h2>PrecLand minimum alt for retry (PLND_ALT_MIN)</h2>
+
+<p>Vehicle will continue landing vertically even if target is lost below this height. This needs a rangefinder to work. Set to zero to disable this.</p>
+<ul>
+<li>Range: 0 5</li>
+<li>Units: meters</li>
+</ul>
+
+
+<h2>PrecLand maximum alt for retry (PLND_ALT_MAX)</h2>
+
+<p>Vehicle will continue landing vertically until this height if target is not found. Below this height if landing target is not found, landing retry/failsafe might be attempted. This needs a rangefinder to work. Set to zero to disable this.</p>
+<ul>
+<li>Range: 0 50</li>
+<li>Units: meters</li>
+</ul>
+
+
+<h2>Precision Landing Extra Options (PLND_OPTIONS)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Precision Landing Extra Options</p>
+<ul>
+<li>Bitmask: 0: Moving Landing Target</li>
+</ul>
+
+
+<h2>Camera Orientation (PLND_ORIENT)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Orientation of camera/sensor on body</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Forward</td></tr>
+<tr><td>4</td><td>Back</td></tr>
+<tr><td>25</td><td>Down</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
 
 
-<h2>Proximity sensor orientation (PRX_ORIENT)</h2>
-
-<p>Proximity sensor orientation</p>
-<ul>
-<table><th>Value</th><th>Meaning</th>
-<tr><td>0</td><td>Default</td></tr>
-<tr><td>1</td><td>Upside Down</td></tr>
-</table>
-</ul>
-
-
-<h2>Proximity sensor yaw correction (PRX_YAW_CORR)</h2>
-
-<p>Proximity sensor yaw correction</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: -180 180</li>
-</ul>
-
-
-<h2>Proximity sensor ignore angle 1 (PRX_IGN_ANG1)</h2>
-
-<p>Proximity sensor ignore angle 1</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 360</li>
-</ul>
-
-
-<h2>Proximity sensor ignore width 1 (PRX_IGN_WID1)</h2>
-
-<p>Proximity sensor ignore width 1</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 127</li>
-</ul>
-
-
-<h2>Proximity sensor ignore angle 2 (PRX_IGN_ANG2)</h2>
-
-<p>Proximity sensor ignore angle 2</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 360</li>
-</ul>
-
-
-<h2>Proximity sensor ignore width 2 (PRX_IGN_WID2)</h2>
-
-<p>Proximity sensor ignore width 2</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 127</li>
-</ul>
-
-
-<h2>Proximity sensor ignore angle 3 (PRX_IGN_ANG3)</h2>
-
-<p>Proximity sensor ignore angle 3</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 360</li>
-</ul>
-
-
-<h2>Proximity sensor ignore width 3 (PRX_IGN_WID3)</h2>
-
-<p>Proximity sensor ignore width 3</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 127</li>
-</ul>
-
-
-<h2>Proximity sensor ignore angle 4 (PRX_IGN_ANG4)</h2>
-
-<p>Proximity sensor ignore angle 4</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 360</li>
-</ul>
-
-
-<h2>Proximity sensor ignore width 4 (PRX_IGN_WID4)</h2>
-
-<p>Proximity sensor ignore width 4</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 127</li>
-</ul>
-
-
-<h2>Proximity sensor ignore angle 5 (PRX_IGN_ANG5)</h2>
-
-<p>Proximity sensor ignore angle 5</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 360</li>
-</ul>
-
-
-<h2>Proximity sensor ignore width 5 (PRX_IGN_WID5)</h2>
-
-<p>Proximity sensor ignore width 5</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 127</li>
-</ul>
-
-
-<h2>Proximity sensor ignore angle 6 (PRX_IGN_ANG6)</h2>
-
-<p>Proximity sensor ignore angle 6</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 360</li>
-</ul>
-
-
-<h2>Proximity sensor ignore width 6 (PRX_IGN_WID6)</h2>
-
-<p>Proximity sensor ignore width 6</p>
-<ul>
-<li>Units: degrees</li>
-<li>Range: 0 127</li>
-</ul>
+<h1>PRX Parameters</h1>
 
 
 <h2>Proximity raw distances log (PRX_LOG_RAW)</h2><em>Note: This parameter is for advanced users</em><br>
@@ -27699,7 +27704,123 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Proximity minimum range (PRX_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+<h1>PRX1 Parameters</h1>
+
+
+<h2>Proximity type (PRX1_TYPE)</h2>
+
+<p>What type of proximity sensor is connected</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>7</td><td>LightwareSF40c</td></tr>
+<tr><td>2</td><td>MAVLink</td></tr>
+<tr><td>3</td><td>TeraRangerTower</td></tr>
+<tr><td>4</td><td>RangeFinder</td></tr>
+<tr><td>5</td><td>RPLidarA2</td></tr>
+<tr><td>6</td><td>TeraRangerTowerEvo</td></tr>
+<tr><td>8</td><td>LightwareSF45B</td></tr>
+<tr><td>10</td><td>SITL</td></tr>
+<tr><td>12</td><td>AirSimSITL</td></tr>
+<tr><td>13</td><td>CygbotD1</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Proximity sensor orientation (PRX1_ORIENT)</h2>
+
+<p>Proximity sensor orientation</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Default</td></tr>
+<tr><td>1</td><td>Upside Down</td></tr>
+</table>
+</ul>
+
+
+<h2>Proximity sensor yaw correction (PRX1_YAW_CORR)</h2>
+
+<p>Proximity sensor yaw correction</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 1 (PRX1_IGN_ANG1)</h2>
+
+<p>Proximity sensor ignore angle 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 1 (PRX1_IGN_WID1)</h2>
+
+<p>Proximity sensor ignore width 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 2 (PRX1_IGN_ANG2)</h2>
+
+<p>Proximity sensor ignore angle 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 2 (PRX1_IGN_WID2)</h2>
+
+<p>Proximity sensor ignore width 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 3 (PRX1_IGN_ANG3)</h2>
+
+<p>Proximity sensor ignore angle 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 3 (PRX1_IGN_WID3)</h2>
+
+<p>Proximity sensor ignore width 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 4 (PRX1_IGN_ANG4)</h2>
+
+<p>Proximity sensor ignore angle 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 4 (PRX1_IGN_WID4)</h2>
+
+<p>Proximity sensor ignore width 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity minimum range (PRX1_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
 <ul>
@@ -27708,7 +27829,409 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Proximity maximum range (PRX_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Proximity maximum range (PRX1_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h1>PRX2 Parameters</h1>
+
+
+<h2>Proximity type (PRX2_TYPE)</h2>
+
+<p>What type of proximity sensor is connected</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>7</td><td>LightwareSF40c</td></tr>
+<tr><td>2</td><td>MAVLink</td></tr>
+<tr><td>3</td><td>TeraRangerTower</td></tr>
+<tr><td>4</td><td>RangeFinder</td></tr>
+<tr><td>5</td><td>RPLidarA2</td></tr>
+<tr><td>6</td><td>TeraRangerTowerEvo</td></tr>
+<tr><td>8</td><td>LightwareSF45B</td></tr>
+<tr><td>10</td><td>SITL</td></tr>
+<tr><td>12</td><td>AirSimSITL</td></tr>
+<tr><td>13</td><td>CygbotD1</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Proximity sensor orientation (PRX2_ORIENT)</h2>
+
+<p>Proximity sensor orientation</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Default</td></tr>
+<tr><td>1</td><td>Upside Down</td></tr>
+</table>
+</ul>
+
+
+<h2>Proximity sensor yaw correction (PRX2_YAW_CORR)</h2>
+
+<p>Proximity sensor yaw correction</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 1 (PRX2_IGN_ANG1)</h2>
+
+<p>Proximity sensor ignore angle 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 1 (PRX2_IGN_WID1)</h2>
+
+<p>Proximity sensor ignore width 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 2 (PRX2_IGN_ANG2)</h2>
+
+<p>Proximity sensor ignore angle 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 2 (PRX2_IGN_WID2)</h2>
+
+<p>Proximity sensor ignore width 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 3 (PRX2_IGN_ANG3)</h2>
+
+<p>Proximity sensor ignore angle 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 3 (PRX2_IGN_WID3)</h2>
+
+<p>Proximity sensor ignore width 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 4 (PRX2_IGN_ANG4)</h2>
+
+<p>Proximity sensor ignore angle 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 4 (PRX2_IGN_WID4)</h2>
+
+<p>Proximity sensor ignore width 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity minimum range (PRX2_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h2>Proximity maximum range (PRX2_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h1>PRX3 Parameters</h1>
+
+
+<h2>Proximity type (PRX3_TYPE)</h2>
+
+<p>What type of proximity sensor is connected</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>7</td><td>LightwareSF40c</td></tr>
+<tr><td>2</td><td>MAVLink</td></tr>
+<tr><td>3</td><td>TeraRangerTower</td></tr>
+<tr><td>4</td><td>RangeFinder</td></tr>
+<tr><td>5</td><td>RPLidarA2</td></tr>
+<tr><td>6</td><td>TeraRangerTowerEvo</td></tr>
+<tr><td>8</td><td>LightwareSF45B</td></tr>
+<tr><td>10</td><td>SITL</td></tr>
+<tr><td>12</td><td>AirSimSITL</td></tr>
+<tr><td>13</td><td>CygbotD1</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Proximity sensor orientation (PRX3_ORIENT)</h2>
+
+<p>Proximity sensor orientation</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Default</td></tr>
+<tr><td>1</td><td>Upside Down</td></tr>
+</table>
+</ul>
+
+
+<h2>Proximity sensor yaw correction (PRX3_YAW_CORR)</h2>
+
+<p>Proximity sensor yaw correction</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 1 (PRX3_IGN_ANG1)</h2>
+
+<p>Proximity sensor ignore angle 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 1 (PRX3_IGN_WID1)</h2>
+
+<p>Proximity sensor ignore width 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 2 (PRX3_IGN_ANG2)</h2>
+
+<p>Proximity sensor ignore angle 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 2 (PRX3_IGN_WID2)</h2>
+
+<p>Proximity sensor ignore width 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 3 (PRX3_IGN_ANG3)</h2>
+
+<p>Proximity sensor ignore angle 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 3 (PRX3_IGN_WID3)</h2>
+
+<p>Proximity sensor ignore width 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 4 (PRX3_IGN_ANG4)</h2>
+
+<p>Proximity sensor ignore angle 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 4 (PRX3_IGN_WID4)</h2>
+
+<p>Proximity sensor ignore width 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity minimum range (PRX3_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h2>Proximity maximum range (PRX3_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h1>PRX4 Parameters</h1>
+
+
+<h2>Proximity type (PRX4_TYPE)</h2>
+
+<p>What type of proximity sensor is connected</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>7</td><td>LightwareSF40c</td></tr>
+<tr><td>2</td><td>MAVLink</td></tr>
+<tr><td>3</td><td>TeraRangerTower</td></tr>
+<tr><td>4</td><td>RangeFinder</td></tr>
+<tr><td>5</td><td>RPLidarA2</td></tr>
+<tr><td>6</td><td>TeraRangerTowerEvo</td></tr>
+<tr><td>8</td><td>LightwareSF45B</td></tr>
+<tr><td>10</td><td>SITL</td></tr>
+<tr><td>12</td><td>AirSimSITL</td></tr>
+<tr><td>13</td><td>CygbotD1</td></tr>
+</table>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Proximity sensor orientation (PRX4_ORIENT)</h2>
+
+<p>Proximity sensor orientation</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>Default</td></tr>
+<tr><td>1</td><td>Upside Down</td></tr>
+</table>
+</ul>
+
+
+<h2>Proximity sensor yaw correction (PRX4_YAW_CORR)</h2>
+
+<p>Proximity sensor yaw correction</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: -180 180</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 1 (PRX4_IGN_ANG1)</h2>
+
+<p>Proximity sensor ignore angle 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 1 (PRX4_IGN_WID1)</h2>
+
+<p>Proximity sensor ignore width 1</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 2 (PRX4_IGN_ANG2)</h2>
+
+<p>Proximity sensor ignore angle 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 2 (PRX4_IGN_WID2)</h2>
+
+<p>Proximity sensor ignore width 2</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 3 (PRX4_IGN_ANG3)</h2>
+
+<p>Proximity sensor ignore angle 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 3 (PRX4_IGN_WID3)</h2>
+
+<p>Proximity sensor ignore width 3</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity sensor ignore angle 4 (PRX4_IGN_ANG4)</h2>
+
+<p>Proximity sensor ignore angle 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 360</li>
+</ul>
+
+
+<h2>Proximity sensor ignore width 4 (PRX4_IGN_WID4)</h2>
+
+<p>Proximity sensor ignore width 4</p>
+<ul>
+<li>Units: degrees</li>
+<li>Range: 0 127</li>
+</ul>
+
+
+<h2>Proximity minimum range (PRX4_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
+<ul>
+<li>Units: meters</li>
+<li>Range: 0 500</li>
+</ul>
+
+
+<h2>Proximity maximum range (PRX4_MAX)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Maximum expected range for Proximity Sensor. Setting this to 0 will set value to manufacturer reported range.</p>
 <ul>
@@ -27917,7 +28440,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -27962,11 +28485,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28046,7 +28576,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28091,11 +28621,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28175,7 +28712,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28220,11 +28757,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28304,7 +28848,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28349,11 +28893,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28433,7 +28984,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28478,11 +29029,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28562,7 +29120,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28607,11 +29165,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28691,7 +29256,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28736,11 +29301,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28820,7 +29392,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28865,11 +29437,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -28949,7 +29528,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -28994,11 +29573,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -29078,7 +29664,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -29123,11 +29709,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -29207,7 +29800,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -29252,11 +29845,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -29336,7 +29936,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -29381,11 +29981,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -29465,7 +30072,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -29510,11 +30117,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -29594,7 +30208,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -29639,11 +30253,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -29723,7 +30344,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -29768,11 +30389,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -29852,7 +30480,7 @@ DO NOT EDIT
 <tr><td>16</td><td>Auto</td></tr>
 <tr><td>19</td><td>Gripper</td></tr>
 <tr><td>24</td><td>Auto Mission Reset</td></tr>
-<tr><td>27</td><td>Retract Mount</td></tr>
+<tr><td>27</td><td>Retract Mount1</td></tr>
 <tr><td>28</td><td>Relay On/Off</td></tr>
 <tr><td>30</td><td>Lost Rover Sound</td></tr>
 <tr><td>31</td><td>Motor Emergency Stop</td></tr>
@@ -29897,11 +30525,18 @@ DO NOT EDIT
 <tr><td>162</td><td>FFT Tune</td></tr>
 <tr><td>163</td><td>Mount Lock</td></tr>
 <tr><td>164</td><td>Pause Stream Logging</td></tr>
+<tr><td>165</td><td>Arm/Emergency Motor Stop</td></tr>
 <tr><td>201</td><td>Roll</td></tr>
 <tr><td>202</td><td>Pitch</td></tr>
 <tr><td>207</td><td>MainSail</td></tr>
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>211</td><td>Walking Height</td></tr>
+<tr><td>212</td><td>Mount1 Roll</td></tr>
+<tr><td>213</td><td>Mount1 Pitch</td></tr>
+<tr><td>214</td><td>Mount1 Yaw</td></tr>
+<tr><td>215</td><td>Mount2 Roll</td></tr>
+<tr><td>216</td><td>Mount2 Pitch</td></tr>
+<tr><td>217</td><td>Mount2 Yaw</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
 <tr><td>301</td><td>Scripting2</td></tr>
 <tr><td>302</td><td>Scripting3</td></tr>
@@ -33100,6 +33735,7 @@ DO NOT EDIT
 <tr><td>3</td><td>EFI</td></tr>
 <tr><td>4</td><td>Harmonic Notch</td></tr>
 <tr><td>5</td><td>ESC Telemetry Motors Bitmask</td></tr>
+<tr><td>6</td><td>Generator</td></tr>
 </table>
 </ul>
 
@@ -33174,6 +33810,7 @@ DO NOT EDIT
 <tr><td>3</td><td>EFI</td></tr>
 <tr><td>4</td><td>Harmonic Notch</td></tr>
 <tr><td>5</td><td>ESC Telemetry Motors Bitmask</td></tr>
+<tr><td>6</td><td>Generator</td></tr>
 </table>
 </ul>
 
@@ -33491,7 +34128,7 @@ DO NOT EDIT
 
 <p>Debugging options</p>
 <ul>
-<li>Bitmask: 0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time</li>
+<li>Bitmask: 0:No Scripts to run message if all scripts have stopped, 1:Runtime messages for memory usage and execution time, 2:Suppress logging scripts to dataflash, 3:log runtime memory usage and execution time, 4:Disable pre-arm check</li>
 </ul>
 
 
@@ -33612,7 +34249,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -33690,7 +34327,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -33767,7 +34404,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -33844,7 +34481,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -33921,7 +34558,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -33998,7 +34635,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -34172,7 +34809,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -34258,7 +34895,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -34344,7 +34981,7 @@ DO NOT EDIT
 <tr><td>21</td><td>WindVane</td></tr>
 <tr><td>22</td><td>SLCAN</td></tr>
 <tr><td>23</td><td>RCIN</td></tr>
-<tr><td>24</td><td>MegaSquirt EFI</td></tr>
+<tr><td>24</td><td>EFI Serial</td></tr>
 <tr><td>25</td><td>LTM</td></tr>
 <tr><td>26</td><td>RunCam</td></tr>
 <tr><td>27</td><td>HottTelem</td></tr>
@@ -34442,7 +35079,7 @@ DO NOT EDIT
 
 <h2>Servo GPIO mask (SERVO_GPIO_MASK)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>This sets a bitmask of outputs which will be available as GPIOs. Any auxiliary output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin</p>
+<p>This sets a bitmask of outputs which will be available as GPIOs. Any output with either the function set to -1 or with the corresponding bit set in this mask will be available for use as a GPIO pin</p>
 <ul>
 <li>Bitmask: 0:Servo 1, 1:Servo 2, 2:Servo 3, 3:Servo 4, 4:Servo 5, 5:Servo 6, 6:Servo 7, 7:Servo 8, 8:Servo 9, 9:Servo 10, 10:Servo 11, 11:Servo 12, 12:Servo 13, 13:Servo 14, 14:Servo 15, 15:Servo 16, 16:Servo 17, 17:Servo 18, 18:Servo 19, 19:Servo 20, 20:Servo 21, 21:Servo 22, 22:Servo 23, 23:Servo 24, 24:Servo 25, 25:Servo 26, 26:Servo 27, 27:Servo 28, 28:Servo 29, 29:Servo 30, 30:Servo 31, 31:Servo 32</li>
 <li>RebootRequired: True</li>
@@ -34512,15 +35149,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -34586,6 +35223,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -34663,15 +35316,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -34737,6 +35390,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -34814,15 +35483,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -34888,6 +35557,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -34965,15 +35650,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -35039,6 +35724,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -35116,15 +35817,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -35190,6 +35891,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -35267,15 +35984,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -35341,6 +36058,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -35418,15 +36151,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -35492,6 +36225,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -35569,15 +36318,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -35643,6 +36392,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -35720,15 +36485,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -35794,6 +36559,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -35871,15 +36652,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -35945,6 +36726,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36022,15 +36819,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -36096,6 +36893,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36173,15 +36986,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -36247,6 +37060,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36324,15 +37153,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -36398,6 +37227,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36475,15 +37320,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -36549,6 +37394,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36626,15 +37487,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -36700,6 +37561,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36777,15 +37654,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -36851,6 +37728,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -36928,15 +37821,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -37002,6 +37895,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -37079,15 +37988,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -37153,6 +38062,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -37230,15 +38155,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -37304,6 +38229,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -37381,15 +38322,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -37455,6 +38396,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -37532,15 +38489,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -37606,6 +38563,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -37683,15 +38656,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -37757,6 +38730,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -37834,15 +38823,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -37908,6 +38897,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -37985,15 +38990,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -38059,6 +39064,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38136,15 +39157,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -38210,6 +39231,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38287,15 +39324,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -38361,6 +39398,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38438,15 +39491,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -38512,6 +39565,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38589,15 +39658,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -38663,6 +39732,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38740,15 +39825,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -38814,6 +39899,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -38891,15 +39992,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -38965,6 +40066,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -39042,15 +40159,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -39116,6 +40233,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -39193,15 +40326,15 @@ DO NOT EDIT
 <tr><td>-1</td><td>GPIO</td></tr>
 <tr><td>0</td><td>Disabled</td></tr>
 <tr><td>1</td><td>RCPassThru</td></tr>
-<tr><td>6</td><td>MountPan</td></tr>
-<tr><td>7</td><td>MountTilt</td></tr>
-<tr><td>8</td><td>MountRoll</td></tr>
-<tr><td>9</td><td>MountOpen</td></tr>
+<tr><td>6</td><td>Mount1Yaw</td></tr>
+<tr><td>7</td><td>Mount1Pitch</td></tr>
+<tr><td>8</td><td>Mount1Roll</td></tr>
+<tr><td>9</td><td>Mount1Retract</td></tr>
 <tr><td>10</td><td>CameraTrigger</td></tr>
-<tr><td>12</td><td>Mount2Pan</td></tr>
-<tr><td>13</td><td>Mount2Tilt</td></tr>
+<tr><td>12</td><td>Mount2Yaw</td></tr>
+<tr><td>13</td><td>Mount2Pitch</td></tr>
 <tr><td>14</td><td>Mount2Roll</td></tr>
-<tr><td>15</td><td>Mount2Open</td></tr>
+<tr><td>15</td><td>Mount2Retract</td></tr>
 <tr><td>22</td><td>SprayerPump</td></tr>
 <tr><td>23</td><td>SprayerSpinner</td></tr>
 <tr><td>26</td><td>GroundSteering</td></tr>
@@ -39267,6 +40400,22 @@ DO NOT EDIT
 <tr><td>137</td><td>SailMastRotation</td></tr>
 <tr><td>138</td><td>Alarm</td></tr>
 <tr><td>139</td><td>Alarm Inverted</td></tr>
+<tr><td>140</td><td>RCIN1Scaled</td></tr>
+<tr><td>141</td><td>RCIN2Scaled</td></tr>
+<tr><td>142</td><td>RCIN3Scaled</td></tr>
+<tr><td>143</td><td>RCIN4Scaled</td></tr>
+<tr><td>144</td><td>RCIN5Scaled</td></tr>
+<tr><td>145</td><td>RCIN6Scaled</td></tr>
+<tr><td>146</td><td>RCIN7Scaled</td></tr>
+<tr><td>147</td><td>RCIN8Scaled</td></tr>
+<tr><td>148</td><td>RCIN9Scaled</td></tr>
+<tr><td>149</td><td>RCIN10Scaled</td></tr>
+<tr><td>150</td><td>RCIN11Scaled</td></tr>
+<tr><td>151</td><td>RCIN12Scaled</td></tr>
+<tr><td>152</td><td>RCIN13Scaled</td></tr>
+<tr><td>153</td><td>RCIN14Scaled</td></tr>
+<tr><td>154</td><td>RCIN15Scaled</td></tr>
+<tr><td>155</td><td>RCIN16Scaled</td></tr>
 </table>
 <li>RebootRequired: True</li>
 </ul>
