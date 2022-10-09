@@ -10617,6 +10617,18 @@
       <param humanName="LOIT_RAD_Y" name="OSD1_LOIT_RAD_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="GNDTRVL_EN" name="OSD1_PGNDTRVL_EN" documentation="Displays persistent ground distance traveled">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="GNDTRVL_X" name="OSD1_PGNDTRVL_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="GNDTRVL_Y" name="OSD1_PGNDTRVL_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD2_">
       <param humanName="Enable screen" name="OSD2_ENABLE" documentation="Enable this screen" user="Standard">
@@ -11718,6 +11730,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="LOIT_RAD_Y" name="OSD2_LOIT_RAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="GNDTRVL_EN" name="OSD2_PGNDTRVL_EN" documentation="Displays persistent ground distance traveled">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="GNDTRVL_X" name="OSD2_PGNDTRVL_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="GNDTRVL_Y" name="OSD2_PGNDTRVL_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>
@@ -12823,6 +12847,18 @@
       <param humanName="LOIT_RAD_Y" name="OSD3_LOIT_RAD_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="GNDTRVL_EN" name="OSD3_PGNDTRVL_EN" documentation="Displays persistent ground distance traveled">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="GNDTRVL_X" name="OSD3_PGNDTRVL_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="GNDTRVL_Y" name="OSD3_PGNDTRVL_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD4_">
       <param humanName="Enable screen" name="OSD4_ENABLE" documentation="Enable this screen" user="Standard">
@@ -13926,6 +13962,18 @@
       <param humanName="LOIT_RAD_Y" name="OSD4_LOIT_RAD_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
+      <param humanName="GNDTRVL_EN" name="OSD4_PGNDTRVL_EN" documentation="Displays persistent ground distance traveled">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="GNDTRVL_X" name="OSD4_PGNDTRVL_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="GNDTRVL_Y" name="OSD4_PGNDTRVL_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
     </parameters>
     <parameters name="OSD5_">
       <param humanName="Enable screen" name="OSD5_ENABLE" documentation="Enable this screen" user="Standard">
@@ -15027,6 +15075,18 @@
         <field name="Range">0 29</field>
       </param>
       <param humanName="LOIT_RAD_Y" name="OSD5_LOIT_RAD_Y" documentation="Vertical position on screen">
+        <field name="Range">0 15</field>
+      </param>
+      <param humanName="GNDTRVL_EN" name="OSD5_PGNDTRVL_EN" documentation="Displays persistent ground distance traveled">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="GNDTRVL_X" name="OSD5_PGNDTRVL_X" documentation="Horizontal position on screen">
+        <field name="Range">0 29</field>
+      </param>
+      <param humanName="GNDTRVL_Y" name="OSD5_PGNDTRVL_Y" documentation="Vertical position on screen">
         <field name="Range">0 15</field>
       </param>
     </parameters>

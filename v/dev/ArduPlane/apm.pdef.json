@@ -14983,6 +14983,30 @@
         "low": "0"
       }
     },
+    "OSD1_PGNDTRVL_EN": {
+      "Description": "Displays persistent ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD1_PGNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD1_PGNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD1_PITCH_EN": {
       "Description": "Displays degrees of pitch from level",
       "DisplayName": "PITCH_EN",
@@ -17185,6 +17209,30 @@
     "OSD2_PEAK_RR_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "PEAK_RR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD2_PGNDTRVL_EN": {
+      "Description": "Displays persistent ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD2_PGNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD2_PGNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
       "Range": {
         "high": "15",
         "low": "0"
@@ -19397,6 +19445,30 @@
         "low": "0"
       }
     },
+    "OSD3_PGNDTRVL_EN": {
+      "Description": "Displays persistent ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD3_PGNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD3_PGNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD3_PITCH_EN": {
       "Description": "Displays degrees of pitch from level",
       "DisplayName": "PITCH_EN",
@@ -21604,6 +21676,30 @@
         "low": "0"
       }
     },
+    "OSD4_PGNDTRVL_EN": {
+      "Description": "Displays persistent ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD4_PGNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD4_PGNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
     "OSD4_PITCH_EN": {
       "Description": "Displays degrees of pitch from level",
       "DisplayName": "PITCH_EN",
@@ -23806,6 +23902,30 @@
     "OSD5_PEAK_RR_Y": {
       "Description": "Vertical position on screen",
       "DisplayName": "PEAK_RR_Y",
+      "Range": {
+        "high": "15",
+        "low": "0"
+      }
+    },
+    "OSD5_PGNDTRVL_EN": {
+      "Description": "Displays persistent ground distance traveled",
+      "DisplayName": "GNDTRVL_EN",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    },
+    "OSD5_PGNDTRVL_X": {
+      "Description": "Horizontal position on screen",
+      "DisplayName": "GNDTRVL_X",
+      "Range": {
+        "high": "29",
+        "low": "0"
+      }
+    },
+    "OSD5_PGNDTRVL_Y": {
+      "Description": "Vertical position on screen",
+      "DisplayName": "GNDTRVL_Y",
       "Range": {
         "high": "15",
         "low": "0"

@@ -36446,6 +36446,67 @@ Vertical position on screen
 
 
 
+.. _OSD1_PGNDTRVL_EN:
+
+OSD1\_PGNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays persistent ground distance traveled
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD1_PGNDTRVL_X:
+
+OSD1\_PGNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
+
+
+
+
+.. _OSD1_PGNDTRVL_Y:
+
+OSD1\_PGNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
 
 .. _parameters_OSD2_:
 
@@ -42033,6 +42094,67 @@ Horizontal position on screen
 
 OSD2\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
+.. _OSD2_PGNDTRVL_EN:
+
+OSD2\_PGNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays persistent ground distance traveled
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD2_PGNDTRVL_X:
+
+OSD2\_PGNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
+
+
+
+
+.. _OSD2_PGNDTRVL_Y:
+
+OSD2\_PGNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
@@ -47648,6 +47770,67 @@ Vertical position on screen
 
 
 
+.. _OSD3_PGNDTRVL_EN:
+
+OSD3\_PGNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays persistent ground distance traveled
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD3_PGNDTRVL_X:
+
+OSD3\_PGNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
+
+
+
+
+.. _OSD3_PGNDTRVL_Y:
+
+OSD3\_PGNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
 
 .. _parameters_OSD4_:
 
@@ -53249,6 +53432,67 @@ Vertical position on screen
 
 
 
+.. _OSD4_PGNDTRVL_EN:
+
+OSD4\_PGNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays persistent ground distance traveled
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD4_PGNDTRVL_X:
+
+OSD4\_PGNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
+
+
+
+
+.. _OSD4_PGNDTRVL_Y:
+
+OSD4\_PGNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
 
 .. _parameters_OSD5_:
 
@@ -58836,6 +59080,67 @@ Horizontal position on screen
 
 OSD5\_LOIT\_RAD\_Y: LOIT\_RAD\_Y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Vertical position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 15 |
++---------+
+
+
+
+
+.. _OSD5_PGNDTRVL_EN:
+
+OSD5\_PGNDTRVL\_EN: GNDTRVL\_EN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Displays persistent ground distance traveled
+
+
++----------------------+
+| Values               |
++======================+
+| +-------+----------+ |
+| | Value | Meaning  | |
+| +=======+==========+ |
+| | 0     | Disabled | |
+| +-------+----------+ |
+| | 1     | Enabled  | |
+| +-------+----------+ |
+|                      |
++----------------------+
+
+
+
+
+.. _OSD5_PGNDTRVL_X:
+
+OSD5\_PGNDTRVL\_X: GNDTRVL\_X
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Horizontal position on screen
+
+
++---------+
+| Range   |
++=========+
+| 0 to 29 |
++---------+
+
+
+
+
+.. _OSD5_PGNDTRVL_Y:
+
+OSD5\_PGNDTRVL\_Y: GNDTRVL\_Y
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Vertical position on screen
