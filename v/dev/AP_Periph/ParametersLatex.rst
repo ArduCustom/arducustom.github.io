@@ -72,6 +72,29 @@ Bit rate can be set up to from 10000 to 1000000
 
 
 
+.. _CAN_SLCAN_CPORT:
+
+CAN\_SLCAN\_CPORT: SLCAN Route
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+CAN Interface ID to be routed to SLCAN\, 0 means no routing
+
+
++-------+------------------+
+| Value | Meaning          |
++=======+==================+
+| 0     | Disabled         |
++-------+------------------+
+| 1     | First interface  |
++-------+------------------+
+| 2     | Second interface |
++-------+------------------+
+
+
+
+
 .. _CAN_PROTOCOL:
 
 CAN\_PROTOCOL: Enable use of specific protocol to be used on this port
@@ -14056,7 +14079,7 @@ Enables to connect active buzzer to arbitrary pin\. Requires 3\-pin buzzer or ad
 +-------+----------+
 | Value | Meaning  |
 +=======+==========+
-| 0     | Disabled |
+| -1    | Disabled |
 +-------+----------+
 
 
@@ -36568,6 +36591,978 @@ Control over UART options\. The InvertRX option controls invert of the receive p
 +-----+-------------------------------+
 
 
+
+
+
+.. _parameters_TEMP:
+
+TEMP Parameters
+---------------
+
+
+.. _TEMP_LOG:
+
+TEMP\_LOG: Logging
+~~~~~~~~~~~~~~~~~~
+
+
+Enables temperature sensor logging
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | Enabled  |
++-------+----------+
+
+
+
+
+
+.. _parameters_TEMP1_:
+
+TEMP1\_ Parameters
+------------------
+
+
+.. _TEMP1_TYPE:
+
+TEMP1\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP1_BUS:
+
+TEMP1\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP1_ADDR:
+
+TEMP1\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP1_SRC:
+
+TEMP1\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP1_SRC_ID:
+
+TEMP1\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP2_:
+
+TEMP2\_ Parameters
+------------------
+
+
+.. _TEMP2_TYPE:
+
+TEMP2\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP2_BUS:
+
+TEMP2\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP2_ADDR:
+
+TEMP2\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP2_SRC:
+
+TEMP2\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP2_SRC_ID:
+
+TEMP2\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP3_:
+
+TEMP3\_ Parameters
+------------------
+
+
+.. _TEMP3_TYPE:
+
+TEMP3\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP3_BUS:
+
+TEMP3\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP3_ADDR:
+
+TEMP3\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP3_SRC:
+
+TEMP3\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP3_SRC_ID:
+
+TEMP3\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP4_:
+
+TEMP4\_ Parameters
+------------------
+
+
+.. _TEMP4_TYPE:
+
+TEMP4\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP4_BUS:
+
+TEMP4\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP4_ADDR:
+
+TEMP4\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP4_SRC:
+
+TEMP4\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP4_SRC_ID:
+
+TEMP4\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP5_:
+
+TEMP5\_ Parameters
+------------------
+
+
+.. _TEMP5_TYPE:
+
+TEMP5\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP5_BUS:
+
+TEMP5\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP5_ADDR:
+
+TEMP5\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP5_SRC:
+
+TEMP5\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP5_SRC_ID:
+
+TEMP5\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP6_:
+
+TEMP6\_ Parameters
+------------------
+
+
+.. _TEMP6_TYPE:
+
+TEMP6\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP6_BUS:
+
+TEMP6\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP6_ADDR:
+
+TEMP6\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP6_SRC:
+
+TEMP6\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP6_SRC_ID:
+
+TEMP6\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP7_:
+
+TEMP7\_ Parameters
+------------------
+
+
+.. _TEMP7_TYPE:
+
+TEMP7\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP7_BUS:
+
+TEMP7\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP7_ADDR:
+
+TEMP7\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP7_SRC:
+
+TEMP7\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP7_SRC_ID:
+
+TEMP7\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP8_:
+
+TEMP8\_ Parameters
+------------------
+
+
+.. _TEMP8_TYPE:
+
+TEMP8\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP8_BUS:
+
+TEMP8\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP8_ADDR:
+
+TEMP8\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP8_SRC:
+
+TEMP8\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP8_SRC_ID:
+
+TEMP8\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
+
+
+
+.. _parameters_TEMP9_:
+
+TEMP9\_ Parameters
+------------------
+
+
+.. _TEMP9_TYPE:
+
+TEMP9\_TYPE: Temperature Sensor Type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: Reboot required after change*
+
+Enables temperature sensors
+
+
++-------+----------+
+| Value | Meaning  |
++=======+==========+
+| 0     | Disabled |
++-------+----------+
+| 1     | TSYS01   |
++-------+----------+
+| 2     | MCP9600  |
++-------+----------+
+
+
+
+
+.. _TEMP9_BUS:
+
+TEMP9\_BUS: Temperature sensor bus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor bus number\, typically used to select from multiple I2C buses
+
+
++--------+
+| Range  |
++========+
+| 0 to 3 |
++--------+
+
+
+
+
+.. _TEMP9_ADDR:
+
+TEMP9\_ADDR: Temperature sensor address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+| *Note: Reboot required after change*
+
+Temperature sensor address\, typically used for I2C address
+
+
++----------+
+| Range    |
++==========+
+| 0 to 127 |
++----------+
+
+
+
+
+.. _TEMP9_SRC:
+
+TEMP9\_SRC: Sensor Source
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source is used to match up the source of the temperature data and populate the appropriate system\-component\. If 0 \(None\) then the data is only available via log\.
+
+
++-------+-------------------------+
+| Value | Meaning                 |
++=======+=========================+
+| 0     | None                    |
++-------+-------------------------+
+| 1     | ESC                     |
++-------+-------------------------+
+| 2     | Motor                   |
++-------+-------------------------+
+| 3     | Battery Index           |
++-------+-------------------------+
+| 4     | Battery ID/SerialNumber |
++-------+-------------------------+
+
+
+
+
+.. _TEMP9_SRC_ID:
+
+TEMP9\_SRC\_ID: Sensor Source Identification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Sensor Source Identification is used to populate a specific instance of a system component\. Examples\: TEMP\_SRC \= 1 \(ESC\)\, TEMP\_SRC\_INDEX \= 1 will set the temp of ESC1\. TEMP\_SRC \= 3 \(BatteryIndex\)\,TEMP\_SRC\_INDEX\=2 will set the temp of BATT2\. TEMP\_SRC \= 4 \(BatteryId\?SerialNum\)\,TEMP\_SRC\_INDEX\=42 will set the temp of all batteries that have param BATTn\_SERIAL \= 42\.
 
 
 

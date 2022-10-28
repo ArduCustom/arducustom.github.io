@@ -11173,7 +11173,7 @@
       "DisplayName": "Buzzer pin",
       "User": "Advanced",
       "Values": {
-        "0": "Disabled"
+        "-1": "Disabled"
       }
     },
     "NTF_BUZZ_TYPES": {
@@ -20901,7 +20901,7 @@
       "User": "Advanced"
     },
     "SR0_EXTRA3": {
-      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -21011,7 +21011,7 @@
       "User": "Advanced"
     },
     "SR1_EXTRA3": {
-      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -21121,7 +21121,7 @@
       "User": "Advanced"
     },
     "SR2_EXTRA3": {
-      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -21231,7 +21231,7 @@
       "User": "Advanced"
     },
     "SR3_EXTRA3": {
-      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -21341,7 +21341,7 @@
       "User": "Advanced"
     },
     "SR4_EXTRA3": {
-      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -21451,7 +21451,7 @@
       "User": "Advanced"
     },
     "SR5_EXTRA3": {
-      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -21561,7 +21561,7 @@
       "User": "Advanced"
     },
     "SR6_EXTRA3": {
-      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, BATTERY2, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
+      "Description": "Stream rate of AHRS, SYSTEM_TIME, RANGEFINDER, DISTANCE_SENSOR, TERRAIN_REQUEST, GIMBAL_DEVICE_ATTITUDE_STATUS, OPTICAL_FLOW, MAG_CAL_REPORT, MAG_CAL_PROGRESS, EKF_STATUS_REPORT, VIBRATION and RPM to ground station",
       "DisplayName": "Extra data type 3 stream rate to ground station",
       "Increment": "1",
       "Range": {
@@ -21815,6 +21815,458 @@
       "ReadOnly": "True",
       "Units": "m/s",
       "User": "Standard"
+    }
+  },
+  "TEMP": {
+    "TEMP_LOG": {
+      "Description": "Enables temperature sensor logging",
+      "DisplayName": "Logging",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "Enabled"
+      }
+    }
+  },
+  "TEMP1_": {
+    "TEMP1_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP1_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP1_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP1_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP1_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP2_": {
+    "TEMP2_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP2_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP2_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP2_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP2_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP3_": {
+    "TEMP3_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP3_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP3_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP3_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP3_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP4_": {
+    "TEMP4_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP4_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP4_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP4_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP4_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP5_": {
+    "TEMP5_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP5_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP5_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP5_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP5_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP6_": {
+    "TEMP6_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP6_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP6_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP6_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP6_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP7_": {
+    "TEMP7_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP7_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP7_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP7_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP7_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP8_": {
+    "TEMP8_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP8_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP8_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP8_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP8_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
+    }
+  },
+  "TEMP9_": {
+    "TEMP9_ADDR": {
+      "Description": "Temperature sensor address, typically used for I2C address",
+      "DisplayName": "Temperature sensor address",
+      "Range": {
+        "high": "127",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP9_BUS": {
+      "Description": "Temperature sensor bus number, typically used to select from multiple I2C buses",
+      "DisplayName": "Temperature sensor bus",
+      "Range": {
+        "high": "3",
+        "low": "0"
+      },
+      "RebootRequired": "True",
+      "User": "Advanced"
+    },
+    "TEMP9_SRC": {
+      "Description": "Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log.",
+      "DisplayName": "Sensor Source",
+      "User": "Standard",
+      "Values": {
+        "0": "None",
+        "1": "ESC",
+        "2": "Motor",
+        "3": "Battery Index",
+        "4": "Battery ID/SerialNumber"
+      }
+    },
+    "TEMP9_SRC_ID": {
+      "Description": "Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.",
+      "DisplayName": "Sensor Source Identification"
+    },
+    "TEMP9_TYPE": {
+      "Description": "Enables temperature sensors",
+      "DisplayName": "Temperature Sensor Type",
+      "RebootRequired": "True",
+      "User": "Standard",
+      "Values": {
+        "0": "Disabled",
+        "1": "TSYS01",
+        "2": "MCP9600"
+      }
     }
   },
   "VISO": {

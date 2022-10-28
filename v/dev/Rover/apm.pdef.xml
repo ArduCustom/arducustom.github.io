@@ -7552,7 +7552,7 @@
       </param>
       <param humanName="Buzzer pin" name="NTF_BUZZ_PIN" documentation="Enables to connect active buzzer to arbitrary pin. Requires 3-pin buzzer or additional MOSFET! Some the Wiki's &quot;GPIOs&quot; page for how to determine the pin number for a given autopilot." user="Advanced">
         <values>
-          <value code="0">Disabled</value>
+          <value code="-1">Disabled</value>
         </values>
       </param>
       <param humanName="LED Driver Types" name="NTF_LED_TYPES" documentation="Controls what types of LEDs will be enabled" user="Advanced">
@@ -24329,6 +24329,275 @@
         <field name="UnitText">seconds</field>
         <field name="ReadOnly">True</field>
       </param>
+    </parameters>
+    <parameters name="TEMP">
+      <param humanName="Logging" name="TEMP_LOG" documentation="Enables temperature sensor logging" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+    </parameters>
+    <parameters name="TEMP1_">
+      <param humanName="Temperature Sensor Type" name="TEMP1_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP1_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP1_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP1_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP1_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP2_">
+      <param humanName="Temperature Sensor Type" name="TEMP2_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP2_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP2_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP2_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP2_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP3_">
+      <param humanName="Temperature Sensor Type" name="TEMP3_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP3_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP3_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP3_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP3_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP4_">
+      <param humanName="Temperature Sensor Type" name="TEMP4_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP4_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP4_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP4_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP4_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP5_">
+      <param humanName="Temperature Sensor Type" name="TEMP5_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP5_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP5_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP5_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP5_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP6_">
+      <param humanName="Temperature Sensor Type" name="TEMP6_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP6_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP6_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP6_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP6_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP7_">
+      <param humanName="Temperature Sensor Type" name="TEMP7_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP7_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP7_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP7_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP7_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP8_">
+      <param humanName="Temperature Sensor Type" name="TEMP8_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP8_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP8_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP8_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP8_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
+    </parameters>
+    <parameters name="TEMP9_">
+      <param humanName="Temperature Sensor Type" name="TEMP9_TYPE" documentation="Enables temperature sensors" user="Standard">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">TSYS01</value>
+          <value code="2">MCP9600</value>
+        </values>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor bus" name="TEMP9_BUS" documentation="Temperature sensor bus number, typically used to select from multiple I2C buses" user="Advanced">
+        <field name="Range">0 3</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Temperature sensor address" name="TEMP9_ADDR" documentation="Temperature sensor address, typically used for I2C address" user="Advanced">
+        <field name="Range">0 127</field>
+        <field name="RebootRequired">True</field>
+      </param>
+      <param humanName="Sensor Source" name="TEMP9_SRC" documentation="Sensor Source is used to match up the source of the temperature data and populate the appropriate system-component. If 0 (None) then the data is only available via log." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">ESC</value>
+          <value code="2">Motor</value>
+          <value code="3">Battery Index</value>
+          <value code="4">Battery ID/SerialNumber</value>
+        </values>
+      </param>
+      <param humanName="Sensor Source Identification" name="TEMP9_SRC_ID" documentation="Sensor Source Identification is used to populate a specific instance of a system component. Examples: TEMP_SRC = 1 (ESC), TEMP_SRC_INDEX = 1 will set the temp of ESC1. TEMP_SRC = 3 (BatteryIndex),TEMP_SRC_INDEX=2 will set the temp of BATT2. TEMP_SRC = 4 (BatteryId?SerialNum),TEMP_SRC_INDEX=42 will set the temp of all batteries that have param BATTn_SERIAL = 42.">
+</param>
     </parameters>
     <parameters name="TRQD_">
       <param humanName="Torqeedo connection type" name="TRQD_TYPE" documentation="Torqeedo connection type" user="Standard">
