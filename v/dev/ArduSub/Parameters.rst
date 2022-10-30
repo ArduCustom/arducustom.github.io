@@ -34741,10 +34741,10 @@ Time taken to disable and enable the motor PWM output when disarmed and armed\.
 
 
 
-.. _MOT_FR_T_B_RATIO:
+.. _MOT_FRTB_RATIO:
 
-MOT\_FR\_T\_B\_RATIO: Front\/rear thrust balance ratio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MOT\_FRTB\_RATIO: Front\/rear thrust balance ratio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | *Note: This parameter is for advanced users*
 

@@ -15420,7 +15420,7 @@
       },
       "User": "Advanced"
     },
-    "MOT_FR_T_B_RATIO": {
+    "MOT_FRTB_RATIO": {
       "Description": "Front/rear thrust balance ratio. Higher than one will result in more throttle applied to the front motor(s) compared to the rear motor(s)Lower than one will result in more throttle applied to the rear motor(s) compared to the front motor(s). Only available for the TRI frame class for now.",
       "DisplayName": "Front/rear thrust balance ratio",
       "Increment": "0.001",
