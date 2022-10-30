@@ -68383,6 +68383,25 @@ Time taken to disable and enable the motor PWM output when disarmed and armed\.
 
 
 
+.. _Q_M_FR_T_B_RATIO:
+
+Q\_M\_FR\_T\_B\_RATIO: Front\/rear thrust balance ratio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Front\/rear thrust balance ratio\. Higher than one will result in more throttle applied to the front motor\(s\) compared to the rear motor\(s\)Lower than one will result in more throttle applied to the rear motor\(s\) compared to the front motor\(s\)\. Only available for the TRI frame class for now\.
+
+
++-----------+--------+
+| Increment | Range  |
++===========+========+
+| 0.001     | 0 to 1 |
++-----------+--------+
+
+
+
+
 
 .. _parameters_Q_P:
 

@@ -15794,6 +15794,10 @@
         <field name="UnitText">seconds</field>
         <field name="Increment">0.001</field>
       </param>
+      <param humanName="Front/rear thrust balance ratio" name="Q_M_FR_T_B_RATIO" documentation="Front/rear thrust balance ratio. Higher than one will result in more throttle applied to the front motor(s) compared to the rear motor(s)Lower than one will result in more throttle applied to the rear motor(s) compared to the front motor(s). Only available for the TRI frame class for now." user="Advanced">
+        <field name="Range">0 1</field>
+        <field name="Increment">0.001</field>
+      </param>
     </parameters>
     <parameters name="Q_P">
       <param humanName="XY Acceleration filter cutoff frequency" name="Q_P_ACC_XY_FILT" documentation="Lower values will slow the response of the navigation controller and reduce twitchiness" user="Advanced">
