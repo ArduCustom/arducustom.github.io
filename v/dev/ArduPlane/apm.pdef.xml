@@ -160,7 +160,7 @@
       <param humanName="Takeoff throttle slew rate" name="ArduPlane:TKOFF_THR_SRATE" documentation="This parameter sets the slew rate for the throttle during auto takeoff. When this is zero the THR_SLEWRATE parameter is used during takeoff. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control. The value is a percentage throttle change per second, so a value of 20 means to advance the throttle over 5 seconds on takeoff. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle. A value of -1 means no limit on slew rate in takeoff." user="Standard">
         <field name="Units">%/s</field>
         <field name="UnitText">percent per second</field>
-        <field name="Range">-1 127</field>
+        <field name="Range">-1 1000</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Takeoff pitch limit reduction" name="ArduPlane:TKOFF_PLIM_SEC" documentation="This parameter reduces the pitch minimum limit of an auto-takeoff just a few seconds before it reaches the target altitude. This reduces overshoot by allowing the flight controller to start leveling off a few seconds before reaching the target height. When set to zero, the mission pitch min is enforced all the way to and through the target altitude, otherwise the pitch min slowly reduces to zero in the final segment. This is the pitch_min, not the demand. The flight controller should still be commanding to gain altitude to finish the takeoff but with this param it is not forcing it higher than it wants to be." user="Advanced">
@@ -299,7 +299,7 @@
       <param humanName="Throttle slew rate" name="ArduPlane:THR_AUTO_SRATE" documentation="Maximum change in throttle percentage per second. Lower limit  based on 1 microsend of servo increase per loop. Divide SCHED_LOOP_RATE by approximately 10 to determine minimum achievable value." user="Standard">
         <field name="Units">%/s</field>
         <field name="UnitText">percent per second</field>
-        <field name="Range">0 127</field>
+        <field name="Range">0 1000</field>
         <field name="Increment">1</field>
       </param>
       <param humanName="Flap slew rate" name="ArduPlane:FLAP_SLEWRATE" documentation="maximum percentage change in flap output per second. A setting of 25 means to not change the flap by more than 25% of the full flap range in one second. A value of 0 means no rate limiting." user="Advanced">
@@ -903,6 +903,9 @@
       <param humanName="Oneshot output mask" name="ArduPlane:ONESHOT_MASK" documentation="Mask of output channels to use oneshot on" user="Advanced">
         <field name="Bitmask">0: Servo 1, 1: Servo 2, 2: Servo 3, 3: Servo 4, 4: Servo 5, 5: Servo 6, 6: Servo 7, 7: Servo 8, 8: Servo 9, 9: Servo 10, 10: Servo 11, 11: Servo 12, 12: Servo 13, 13: Servo 14, 14: Servo 15</field>
       </param>
+      <param humanName="Number of microseconds of servo trim adjustment during 10s under which the auto trim is considered finished" name="ArduPlane:SAT_FINISHTHRESH" documentation="Number of microseconds of servo trim adjustment during 10s under which the auto trim is considered finished" user="Advanced">
+        <field name="Range">0 255</field>
+      </param>
       <param humanName="Selects what mode to switch to after arming" name="ArduPlane:ARMING_MODE_SW" documentation="Selects what mode to switch to after arming" user="Advanced">
         <values>
           <value code="0">Disabled</value>
@@ -978,7 +981,7 @@
         <field name="UnitText">percent</field>
         <field name="Range">0 100</field>
       </param>
-      <param humanName="Enable extra modes" name="ArduPlane:FLTMODE_EXT" documentation="This enables 14 extra modes. Be careful when enabling this on PPM/analog, as each mode channel is only 45 usec wide (starting from 1050, then 1095, and so on)." user="Advanced">
+      <param humanName="Extended mode switch" name="ArduPlane:FLTMODE_EXT" documentation="Setting this parameter to one allow to have up to 12 flight modes selectable with the flight mode channel instead of 6. Mode ranges: 901-1125, 1126-1200, 1201-1275, 1276-1350, 1351-1425, 1426-1500, 1501-1575, 1576-1650, 1651-1725, 1726-1800, 1801-1875, 1876-2199" user="Advanced">
         <values>
           <value code="0">Disabled</value>
           <value code="1">Enabled</value>
@@ -28134,18 +28137,218 @@
           <value code="108">Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)</value>
           <value code="109">Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)</value>
           <value code="110">Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)</value>
-          <value code="111">Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</value>
-          <value code="112">Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</value>
-          <value code="113">TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</value>
-          <value code="114">Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</value>
-          <value code="115">Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</value>
+          <value code="111">Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV)</value>
+          <value code="112">Set_THR2PTCH_full (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</value>
+          <value code="113">Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</value>
+          <value code="114">TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</value>
+          <value code="115">Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</value>
           <value code="116">Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)</value>
-          <value code="117">Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</value>
-          <value code="118">Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</value>
-          <value code="119">Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</value>
-          <value code="120">Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
-          <value code="121">Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</value>
+          <value code="117">Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</value>
+          <value code="118">Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</value>
+          <value code="119">Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</value>
+          <value code="120">Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</value>
+          <value code="121">Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
           <value code="122">Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
+          <value code="123">Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</value>
+          <value code="124">Set_FW_Pitch_Roll_PIDS (TUNING_PIT_D / TUNING_PIT_P / TUNING_PIT_I / TUNING_AGL_PITCH_P / TUNING_AGL_PITCH_D / TUNING_AGL_PITCH_FLTT / TUNING_RLL_D / TUNING_RLL_P / TUNING_RLL_I / TUNING_AGL_ROLL_P / TUNING_AGL_ROLL_D / TUNING_AGL_ROLL_FLTT)</value>
+        </values>
+      </param>
+      <param humanName="Transmitter tuning parameter or set of parameters" name="TUNE_PARAM2" documentation="This sets which parameter or set of parameters will be tuned. Values greater than 100 indicate a set of parameters rather than a single parameter. Parameters less than 50 are for QuadPlane vertical lift motors only." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">RateRollPI</value>
+          <value code="2">RateRollP</value>
+          <value code="3">RateRollI</value>
+          <value code="4">RateRollD</value>
+          <value code="5">RatePitchPI</value>
+          <value code="6">RatePitchP</value>
+          <value code="7">RatePitchI</value>
+          <value code="8">RatePitchD</value>
+          <value code="9">RateYawPI</value>
+          <value code="10">RateYawP</value>
+          <value code="11">RateYawI</value>
+          <value code="12">RateYawD</value>
+          <value code="13">AngleRollP</value>
+          <value code="14">AnglePitchP</value>
+          <value code="15">AngleYawP</value>
+          <value code="16">PosXYP</value>
+          <value code="17">PosZP</value>
+          <value code="18">VelXYP</value>
+          <value code="19">VelXYI</value>
+          <value code="20">VelZP</value>
+          <value code="21">AccelZP</value>
+          <value code="22">AccelZI</value>
+          <value code="23">AccelZD</value>
+          <value code="24">RatePitchFF</value>
+          <value code="25">RateRollFF</value>
+          <value code="26">RateYawFF</value>
+          <value code="50">FixedWingRollP</value>
+          <value code="51">FixedWingRollI</value>
+          <value code="52">FixedWingRollD</value>
+          <value code="53">FixedWingRollFF</value>
+          <value code="54">FixedWingPitchP</value>
+          <value code="55">FixedWingPitchI</value>
+          <value code="56">FixedWingPitchD</value>
+          <value code="57">FixedWingPitchFF</value>
+          <value code="58">TRIM_THROTTLE</value>
+          <value code="59">TRIM_PITCH</value>
+          <value code="60">KFF_THRAT2PTCH</value>
+          <value code="61">FBWA max pitch down comp</value>
+          <value code="62">FBWA max pitch down comp thr</value>
+          <value code="63">FWBA pitch down comp curve</value>
+          <value code="64">FBWA max pitch up comp</value>
+          <value code="65">FBWA max pitch up comp thr</value>
+          <value code="66">FWBA pitch up comp curve</value>
+          <value code="67">RLL2PTCH</value>
+          <value code="68">KFF_RDDRMIX</value>
+          <value code="69">TECSTFFDAMP</value>
+          <value code="70">TECSTFF_FILT</value>
+          <value code="71">FWAglRollP</value>
+          <value code="72">FWAglRollI</value>
+          <value code="73">AglRollD</value>
+          <value code="74">AglRollFLTT</value>
+          <value code="75">FWAglPitchP</value>
+          <value code="76">FWAglPitchI</value>
+          <value code="77">AglPitchD</value>
+          <value code="78">AglPitchFLTT</value>
+          <value code="79">MixingDiff</value>
+          <value code="80">MixingOffset</value>
+          <value code="81">THR EXPO MANUAL</value>
+          <value code="82">THR EXPO AUTO</value>
+          <value code="83">FLAP_RETED_SPD</value>
+          <value code="84">FLAP_EXTED_SPD</value>
+          <value code="85">FLAP_EXTED_PCT</value>
+          <value code="86">KFF_THRAT2ELEV</value>
+          <value code="87">MIX_THRAT2ELEVCV</value>
+          <value code="88">KFF_FLAP2ELEV</value>
+          <value code="89">MIX_FLAP2ELEVCV</value>
+          <value code="90">Ailerons diff</value>
+          <value code="91">Elevator diff</value>
+          <value code="92">Q pitch trim</value>
+          <value code="93">THR_AUTO_SRATE</value>
+          <value code="101">Set_RateRollPitch (RATE_ROLL_D / RATE_ROLL_PI / RATE_PITCH_D / RATE_PITCH_PI)</value>
+          <value code="102">Set_RateRoll (RATE_ROLL_D / RATE_ROLL_PI)</value>
+          <value code="103">Set_RatePitch(RATE_PITCH_D / RATE_PITCH_PI)</value>
+          <value code="104">Set_RateYaw (RATE_YAW_P / RATE_YAW_I / RATE_YAW_D)</value>
+          <value code="105">Set_AngleRollPitch (ANG_ROLL_P / ANG_PITCH_P)</value>
+          <value code="106">Set_VelXY (VXY_P / VXY_I)</value>
+          <value code="107">Set_AccelZ (AZ_P / AZ_I / AZ_D)</value>
+          <value code="108">Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)</value>
+          <value code="109">Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)</value>
+          <value code="110">Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)</value>
+          <value code="111">Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV)</value>
+          <value code="112">Set_THR2PTCH_full (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</value>
+          <value code="113">Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</value>
+          <value code="114">TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</value>
+          <value code="115">Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</value>
+          <value code="116">Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)</value>
+          <value code="117">Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</value>
+          <value code="118">Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</value>
+          <value code="119">Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</value>
+          <value code="120">Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</value>
+          <value code="121">Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
+          <value code="122">Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
+          <value code="123">Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</value>
+          <value code="124">Set_FW_Pitch_Roll_PIDS (TUNING_PIT_D / TUNING_PIT_P / TUNING_PIT_I / TUNING_AGL_PITCH_P / TUNING_AGL_PITCH_D / TUNING_AGL_PITCH_FLTT / TUNING_RLL_D / TUNING_RLL_P / TUNING_RLL_I / TUNING_AGL_ROLL_P / TUNING_AGL_ROLL_D / TUNING_AGL_ROLL_FLTT)</value>
+        </values>
+      </param>
+      <param humanName="Transmitter tuning parameter or set of parameters" name="TUNE_PARAM" documentation="This sets which parameter or set of parameters will be tuned. Values greater than 100 indicate a set of parameters rather than a single parameter. Parameters less than 50 are for QuadPlane vertical lift motors only." user="Standard">
+        <values>
+          <value code="0">None</value>
+          <value code="1">RateRollPI</value>
+          <value code="2">RateRollP</value>
+          <value code="3">RateRollI</value>
+          <value code="4">RateRollD</value>
+          <value code="5">RatePitchPI</value>
+          <value code="6">RatePitchP</value>
+          <value code="7">RatePitchI</value>
+          <value code="8">RatePitchD</value>
+          <value code="9">RateYawPI</value>
+          <value code="10">RateYawP</value>
+          <value code="11">RateYawI</value>
+          <value code="12">RateYawD</value>
+          <value code="13">AngleRollP</value>
+          <value code="14">AnglePitchP</value>
+          <value code="15">AngleYawP</value>
+          <value code="16">PosXYP</value>
+          <value code="17">PosZP</value>
+          <value code="18">VelXYP</value>
+          <value code="19">VelXYI</value>
+          <value code="20">VelZP</value>
+          <value code="21">AccelZP</value>
+          <value code="22">AccelZI</value>
+          <value code="23">AccelZD</value>
+          <value code="24">RatePitchFF</value>
+          <value code="25">RateRollFF</value>
+          <value code="26">RateYawFF</value>
+          <value code="50">FixedWingRollP</value>
+          <value code="51">FixedWingRollI</value>
+          <value code="52">FixedWingRollD</value>
+          <value code="53">FixedWingRollFF</value>
+          <value code="54">FixedWingPitchP</value>
+          <value code="55">FixedWingPitchI</value>
+          <value code="56">FixedWingPitchD</value>
+          <value code="57">FixedWingPitchFF</value>
+          <value code="58">TRIM_THROTTLE</value>
+          <value code="59">TRIM_PITCH</value>
+          <value code="60">KFF_THRAT2PTCH</value>
+          <value code="61">FBWA max pitch down comp</value>
+          <value code="62">FBWA max pitch down comp thr</value>
+          <value code="63">FWBA pitch down comp curve</value>
+          <value code="64">FBWA max pitch up comp</value>
+          <value code="65">FBWA max pitch up comp thr</value>
+          <value code="66">FWBA pitch up comp curve</value>
+          <value code="67">RLL2PTCH</value>
+          <value code="68">KFF_RDDRMIX</value>
+          <value code="69">TECSTFFDAMP</value>
+          <value code="70">TECSTFF_FILT</value>
+          <value code="71">FWAglRollP</value>
+          <value code="72">FWAglRollI</value>
+          <value code="73">AglRollD</value>
+          <value code="74">AglRollFLTT</value>
+          <value code="75">FWAglPitchP</value>
+          <value code="76">FWAglPitchI</value>
+          <value code="77">AglPitchD</value>
+          <value code="78">AglPitchFLTT</value>
+          <value code="79">MixingDiff</value>
+          <value code="80">MixingOffset</value>
+          <value code="81">THR EXPO MANUAL</value>
+          <value code="82">THR EXPO AUTO</value>
+          <value code="83">FLAP_RETED_SPD</value>
+          <value code="84">FLAP_EXTED_SPD</value>
+          <value code="85">FLAP_EXTED_PCT</value>
+          <value code="86">KFF_THRAT2ELEV</value>
+          <value code="87">MIX_THRAT2ELEVCV</value>
+          <value code="88">KFF_FLAP2ELEV</value>
+          <value code="89">MIX_FLAP2ELEVCV</value>
+          <value code="90">Ailerons diff</value>
+          <value code="91">Elevator diff</value>
+          <value code="92">Q pitch trim</value>
+          <value code="93">THR_AUTO_SRATE</value>
+          <value code="101">Set_RateRollPitch (RATE_ROLL_D / RATE_ROLL_PI / RATE_PITCH_D / RATE_PITCH_PI)</value>
+          <value code="102">Set_RateRoll (RATE_ROLL_D / RATE_ROLL_PI)</value>
+          <value code="103">Set_RatePitch(RATE_PITCH_D / RATE_PITCH_PI)</value>
+          <value code="104">Set_RateYaw (RATE_YAW_P / RATE_YAW_I / RATE_YAW_D)</value>
+          <value code="105">Set_AngleRollPitch (ANG_ROLL_P / ANG_PITCH_P)</value>
+          <value code="106">Set_VelXY (VXY_P / VXY_I)</value>
+          <value code="107">Set_AccelZ (AZ_P / AZ_I / AZ_D)</value>
+          <value code="108">Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)</value>
+          <value code="109">Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)</value>
+          <value code="110">Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)</value>
+          <value code="111">Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV)</value>
+          <value code="112">Set_THR2PTCH_full (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</value>
+          <value code="113">Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</value>
+          <value code="114">TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</value>
+          <value code="115">Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</value>
+          <value code="116">Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)</value>
+          <value code="117">Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</value>
+          <value code="118">Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</value>
+          <value code="119">Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</value>
+          <value code="120">Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</value>
+          <value code="121">Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
+          <value code="122">Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</value>
+          <value code="123">Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</value>
+          <value code="124">Set_FW_Pitch_Roll_PIDS (TUNING_PIT_D / TUNING_PIT_P / TUNING_PIT_I / TUNING_AGL_PITCH_P / TUNING_AGL_PITCH_D / TUNING_AGL_PITCH_FLTT / TUNING_RLL_D / TUNING_RLL_P / TUNING_RLL_I / TUNING_AGL_ROLL_P / TUNING_AGL_ROLL_D / TUNING_AGL_ROLL_FLTT)</value>
         </values>
       </param>
       <param humanName="Transmitter tuning channel" name="TUNE_CHAN" documentation="This sets the channel for transmitter tuning. This should be connected to a knob or slider on your transmitter. It needs to be setup to use the PWM range given by TUNE_CHAN_MIN to TUNE_CHAN_MAX" user="Standard">

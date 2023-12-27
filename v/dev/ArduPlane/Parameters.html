@@ -305,7 +305,7 @@ DO NOT EDIT
 <p>This parameter sets the slew rate for the throttle during auto takeoff. When this is zero the THR_SLEWRATE parameter is used during takeoff. For rolling takeoffs it can be a good idea to set a lower slewrate for takeoff to give a slower acceleration which can improve ground steering control. The value is a percentage throttle change per second, so a value of 20 means to advance the throttle over 5 seconds on takeoff. Values below 20 are not recommended as they may cause the plane to try to climb out with too little throttle. A value of -1 means no limit on slew rate in takeoff.</p>
 <ul>
 <li>Units: percent per second</li>
-<li>Range: -1 127</li>
+<li>Range: -1 1000</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -540,7 +540,7 @@ DO NOT EDIT
 <p>Maximum change in throttle percentage per second. Lower limit  based on 1 microsend of servo increase per loop. Divide SCHED_LOOP_RATE by approximately 10 to determine minimum achievable value.</p>
 <ul>
 <li>Units: percent per second</li>
-<li>Range: 0 127</li>
+<li>Range: 0 1000</li>
 <li>Increment: 1</li>
 </ul>
 
@@ -1487,6 +1487,14 @@ DO NOT EDIT
 </ul>
 
 
+<h2>Number of microseconds of servo trim adjustment during 10s under which the auto trim is considered finished (ArduPlane:SAT_FINISHTHRESH)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Number of microseconds of servo trim adjustment during 10s under which the auto trim is considered finished</p>
+<ul>
+<li>Range: 0 255</li>
+</ul>
+
+
 <h2>Selects what mode to switch to after arming (ArduPlane:ARMING_MODE_SW)</h2><em>Note: This parameter is for advanced users</em><br>
 
 <p>Selects what mode to switch to after arming</p>
@@ -1615,9 +1623,9 @@ DO NOT EDIT
 </ul>
 
 
-<h2>Enable extra modes (ArduPlane:FLTMODE_EXT)</h2><em>Note: This parameter is for advanced users</em><br>
+<h2>Extended mode switch (ArduPlane:FLTMODE_EXT)</h2><em>Note: This parameter is for advanced users</em><br>
 
-<p>This enables 14 extra modes. Be careful when enabling this on PPM/analog, as each mode channel is only 45 usec wide (starting from 1050, then 1095, and so on).</p>
+<p>Setting this parameter to one allow to have up to 12 flight modes selectable with the flight mode channel instead of 6. Mode ranges: 901-1125, 1126-1200, 1201-1275, 1276-1350, 1351-1425, 1426-1500, 1501-1575, 1576-1650, 1651-1725, 1726-1800, 1801-1875, 1876-2199</p>
 <ul>
 <table><th>Value</th><th>Meaning</th>
 <tr><td>0</td><td>Disabled</td></tr>
@@ -47802,18 +47810,228 @@ DO NOT EDIT
 <tr><td>108</td><td>Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)</td></tr>
 <tr><td>109</td><td>Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)</td></tr>
 <tr><td>110</td><td>Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)</td></tr>
-<tr><td>111</td><td>Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</td></tr>
-<tr><td>112</td><td>Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</td></tr>
-<tr><td>113</td><td>TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</td></tr>
-<tr><td>114</td><td>Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</td></tr>
-<tr><td>115</td><td>Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</td></tr>
+<tr><td>111</td><td>Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV)</td></tr>
+<tr><td>112</td><td>Set_THR2PTCH_full (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</td></tr>
+<tr><td>113</td><td>Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</td></tr>
+<tr><td>114</td><td>TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</td></tr>
+<tr><td>115</td><td>Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</td></tr>
 <tr><td>116</td><td>Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)</td></tr>
-<tr><td>117</td><td>Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</td></tr>
-<tr><td>118</td><td>Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</td></tr>
-<tr><td>119</td><td>Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</td></tr>
-<tr><td>120</td><td>Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</td></tr>
-<tr><td>121</td><td>Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</td></tr>
+<tr><td>117</td><td>Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</td></tr>
+<tr><td>118</td><td>Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</td></tr>
+<tr><td>119</td><td>Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</td></tr>
+<tr><td>120</td><td>Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</td></tr>
+<tr><td>121</td><td>Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</td></tr>
 <tr><td>122</td><td>Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</td></tr>
+<tr><td>123</td><td>Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</td></tr>
+<tr><td>124</td><td>Set_FW_Pitch_Roll_PIDS (TUNING_PIT_D / TUNING_PIT_P / TUNING_PIT_I / TUNING_AGL_PITCH_P / TUNING_AGL_PITCH_D / TUNING_AGL_PITCH_FLTT / TUNING_RLL_D / TUNING_RLL_P / TUNING_RLL_I / TUNING_AGL_ROLL_P / TUNING_AGL_ROLL_D / TUNING_AGL_ROLL_FLTT)</td></tr>
+</table>
+</ul>
+
+
+<h2>Transmitter tuning parameter or set of parameters (TUNE_PARAM2)</h2>
+
+<p>This sets which parameter or set of parameters will be tuned. Values greater than 100 indicate a set of parameters rather than a single parameter. Parameters less than 50 are for QuadPlane vertical lift motors only.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>RateRollPI</td></tr>
+<tr><td>2</td><td>RateRollP</td></tr>
+<tr><td>3</td><td>RateRollI</td></tr>
+<tr><td>4</td><td>RateRollD</td></tr>
+<tr><td>5</td><td>RatePitchPI</td></tr>
+<tr><td>6</td><td>RatePitchP</td></tr>
+<tr><td>7</td><td>RatePitchI</td></tr>
+<tr><td>8</td><td>RatePitchD</td></tr>
+<tr><td>9</td><td>RateYawPI</td></tr>
+<tr><td>10</td><td>RateYawP</td></tr>
+<tr><td>11</td><td>RateYawI</td></tr>
+<tr><td>12</td><td>RateYawD</td></tr>
+<tr><td>13</td><td>AngleRollP</td></tr>
+<tr><td>14</td><td>AnglePitchP</td></tr>
+<tr><td>15</td><td>AngleYawP</td></tr>
+<tr><td>16</td><td>PosXYP</td></tr>
+<tr><td>17</td><td>PosZP</td></tr>
+<tr><td>18</td><td>VelXYP</td></tr>
+<tr><td>19</td><td>VelXYI</td></tr>
+<tr><td>20</td><td>VelZP</td></tr>
+<tr><td>21</td><td>AccelZP</td></tr>
+<tr><td>22</td><td>AccelZI</td></tr>
+<tr><td>23</td><td>AccelZD</td></tr>
+<tr><td>24</td><td>RatePitchFF</td></tr>
+<tr><td>25</td><td>RateRollFF</td></tr>
+<tr><td>26</td><td>RateYawFF</td></tr>
+<tr><td>50</td><td>FixedWingRollP</td></tr>
+<tr><td>51</td><td>FixedWingRollI</td></tr>
+<tr><td>52</td><td>FixedWingRollD</td></tr>
+<tr><td>53</td><td>FixedWingRollFF</td></tr>
+<tr><td>54</td><td>FixedWingPitchP</td></tr>
+<tr><td>55</td><td>FixedWingPitchI</td></tr>
+<tr><td>56</td><td>FixedWingPitchD</td></tr>
+<tr><td>57</td><td>FixedWingPitchFF</td></tr>
+<tr><td>58</td><td>TRIM_THROTTLE</td></tr>
+<tr><td>59</td><td>TRIM_PITCH</td></tr>
+<tr><td>60</td><td>KFF_THRAT2PTCH</td></tr>
+<tr><td>61</td><td>FBWA max pitch down comp</td></tr>
+<tr><td>62</td><td>FBWA max pitch down comp thr</td></tr>
+<tr><td>63</td><td>FWBA pitch down comp curve</td></tr>
+<tr><td>64</td><td>FBWA max pitch up comp</td></tr>
+<tr><td>65</td><td>FBWA max pitch up comp thr</td></tr>
+<tr><td>66</td><td>FWBA pitch up comp curve</td></tr>
+<tr><td>67</td><td>RLL2PTCH</td></tr>
+<tr><td>68</td><td>KFF_RDDRMIX</td></tr>
+<tr><td>69</td><td>TECSTFFDAMP</td></tr>
+<tr><td>70</td><td>TECSTFF_FILT</td></tr>
+<tr><td>71</td><td>FWAglRollP</td></tr>
+<tr><td>72</td><td>FWAglRollI</td></tr>
+<tr><td>73</td><td>AglRollD</td></tr>
+<tr><td>74</td><td>AglRollFLTT</td></tr>
+<tr><td>75</td><td>FWAglPitchP</td></tr>
+<tr><td>76</td><td>FWAglPitchI</td></tr>
+<tr><td>77</td><td>AglPitchD</td></tr>
+<tr><td>78</td><td>AglPitchFLTT</td></tr>
+<tr><td>79</td><td>MixingDiff</td></tr>
+<tr><td>80</td><td>MixingOffset</td></tr>
+<tr><td>81</td><td>THR EXPO MANUAL</td></tr>
+<tr><td>82</td><td>THR EXPO AUTO</td></tr>
+<tr><td>83</td><td>FLAP_RETED_SPD</td></tr>
+<tr><td>84</td><td>FLAP_EXTED_SPD</td></tr>
+<tr><td>85</td><td>FLAP_EXTED_PCT</td></tr>
+<tr><td>86</td><td>KFF_THRAT2ELEV</td></tr>
+<tr><td>87</td><td>MIX_THRAT2ELEVCV</td></tr>
+<tr><td>88</td><td>KFF_FLAP2ELEV</td></tr>
+<tr><td>89</td><td>MIX_FLAP2ELEVCV</td></tr>
+<tr><td>90</td><td>Ailerons diff</td></tr>
+<tr><td>91</td><td>Elevator diff</td></tr>
+<tr><td>92</td><td>Q pitch trim</td></tr>
+<tr><td>93</td><td>THR_AUTO_SRATE</td></tr>
+<tr><td>101</td><td>Set_RateRollPitch (RATE_ROLL_D / RATE_ROLL_PI / RATE_PITCH_D / RATE_PITCH_PI)</td></tr>
+<tr><td>102</td><td>Set_RateRoll (RATE_ROLL_D / RATE_ROLL_PI)</td></tr>
+<tr><td>103</td><td>Set_RatePitch(RATE_PITCH_D / RATE_PITCH_PI)</td></tr>
+<tr><td>104</td><td>Set_RateYaw (RATE_YAW_P / RATE_YAW_I / RATE_YAW_D)</td></tr>
+<tr><td>105</td><td>Set_AngleRollPitch (ANG_ROLL_P / ANG_PITCH_P)</td></tr>
+<tr><td>106</td><td>Set_VelXY (VXY_P / VXY_I)</td></tr>
+<tr><td>107</td><td>Set_AccelZ (AZ_P / AZ_I / AZ_D)</td></tr>
+<tr><td>108</td><td>Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)</td></tr>
+<tr><td>109</td><td>Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)</td></tr>
+<tr><td>110</td><td>Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)</td></tr>
+<tr><td>111</td><td>Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV)</td></tr>
+<tr><td>112</td><td>Set_THR2PTCH_full (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</td></tr>
+<tr><td>113</td><td>Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</td></tr>
+<tr><td>114</td><td>TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</td></tr>
+<tr><td>115</td><td>Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</td></tr>
+<tr><td>116</td><td>Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)</td></tr>
+<tr><td>117</td><td>Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</td></tr>
+<tr><td>118</td><td>Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</td></tr>
+<tr><td>119</td><td>Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</td></tr>
+<tr><td>120</td><td>Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</td></tr>
+<tr><td>121</td><td>Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</td></tr>
+<tr><td>122</td><td>Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</td></tr>
+<tr><td>123</td><td>Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</td></tr>
+<tr><td>124</td><td>Set_FW_Pitch_Roll_PIDS (TUNING_PIT_D / TUNING_PIT_P / TUNING_PIT_I / TUNING_AGL_PITCH_P / TUNING_AGL_PITCH_D / TUNING_AGL_PITCH_FLTT / TUNING_RLL_D / TUNING_RLL_P / TUNING_RLL_I / TUNING_AGL_ROLL_P / TUNING_AGL_ROLL_D / TUNING_AGL_ROLL_FLTT)</td></tr>
+</table>
+</ul>
+
+
+<h2>Transmitter tuning parameter or set of parameters (TUNE_PARAM)</h2>
+
+<p>This sets which parameter or set of parameters will be tuned. Values greater than 100 indicate a set of parameters rather than a single parameter. Parameters less than 50 are for QuadPlane vertical lift motors only.</p>
+<ul>
+<table><th>Value</th><th>Meaning</th>
+<tr><td>0</td><td>None</td></tr>
+<tr><td>1</td><td>RateRollPI</td></tr>
+<tr><td>2</td><td>RateRollP</td></tr>
+<tr><td>3</td><td>RateRollI</td></tr>
+<tr><td>4</td><td>RateRollD</td></tr>
+<tr><td>5</td><td>RatePitchPI</td></tr>
+<tr><td>6</td><td>RatePitchP</td></tr>
+<tr><td>7</td><td>RatePitchI</td></tr>
+<tr><td>8</td><td>RatePitchD</td></tr>
+<tr><td>9</td><td>RateYawPI</td></tr>
+<tr><td>10</td><td>RateYawP</td></tr>
+<tr><td>11</td><td>RateYawI</td></tr>
+<tr><td>12</td><td>RateYawD</td></tr>
+<tr><td>13</td><td>AngleRollP</td></tr>
+<tr><td>14</td><td>AnglePitchP</td></tr>
+<tr><td>15</td><td>AngleYawP</td></tr>
+<tr><td>16</td><td>PosXYP</td></tr>
+<tr><td>17</td><td>PosZP</td></tr>
+<tr><td>18</td><td>VelXYP</td></tr>
+<tr><td>19</td><td>VelXYI</td></tr>
+<tr><td>20</td><td>VelZP</td></tr>
+<tr><td>21</td><td>AccelZP</td></tr>
+<tr><td>22</td><td>AccelZI</td></tr>
+<tr><td>23</td><td>AccelZD</td></tr>
+<tr><td>24</td><td>RatePitchFF</td></tr>
+<tr><td>25</td><td>RateRollFF</td></tr>
+<tr><td>26</td><td>RateYawFF</td></tr>
+<tr><td>50</td><td>FixedWingRollP</td></tr>
+<tr><td>51</td><td>FixedWingRollI</td></tr>
+<tr><td>52</td><td>FixedWingRollD</td></tr>
+<tr><td>53</td><td>FixedWingRollFF</td></tr>
+<tr><td>54</td><td>FixedWingPitchP</td></tr>
+<tr><td>55</td><td>FixedWingPitchI</td></tr>
+<tr><td>56</td><td>FixedWingPitchD</td></tr>
+<tr><td>57</td><td>FixedWingPitchFF</td></tr>
+<tr><td>58</td><td>TRIM_THROTTLE</td></tr>
+<tr><td>59</td><td>TRIM_PITCH</td></tr>
+<tr><td>60</td><td>KFF_THRAT2PTCH</td></tr>
+<tr><td>61</td><td>FBWA max pitch down comp</td></tr>
+<tr><td>62</td><td>FBWA max pitch down comp thr</td></tr>
+<tr><td>63</td><td>FWBA pitch down comp curve</td></tr>
+<tr><td>64</td><td>FBWA max pitch up comp</td></tr>
+<tr><td>65</td><td>FBWA max pitch up comp thr</td></tr>
+<tr><td>66</td><td>FWBA pitch up comp curve</td></tr>
+<tr><td>67</td><td>RLL2PTCH</td></tr>
+<tr><td>68</td><td>KFF_RDDRMIX</td></tr>
+<tr><td>69</td><td>TECSTFFDAMP</td></tr>
+<tr><td>70</td><td>TECSTFF_FILT</td></tr>
+<tr><td>71</td><td>FWAglRollP</td></tr>
+<tr><td>72</td><td>FWAglRollI</td></tr>
+<tr><td>73</td><td>AglRollD</td></tr>
+<tr><td>74</td><td>AglRollFLTT</td></tr>
+<tr><td>75</td><td>FWAglPitchP</td></tr>
+<tr><td>76</td><td>FWAglPitchI</td></tr>
+<tr><td>77</td><td>AglPitchD</td></tr>
+<tr><td>78</td><td>AglPitchFLTT</td></tr>
+<tr><td>79</td><td>MixingDiff</td></tr>
+<tr><td>80</td><td>MixingOffset</td></tr>
+<tr><td>81</td><td>THR EXPO MANUAL</td></tr>
+<tr><td>82</td><td>THR EXPO AUTO</td></tr>
+<tr><td>83</td><td>FLAP_RETED_SPD</td></tr>
+<tr><td>84</td><td>FLAP_EXTED_SPD</td></tr>
+<tr><td>85</td><td>FLAP_EXTED_PCT</td></tr>
+<tr><td>86</td><td>KFF_THRAT2ELEV</td></tr>
+<tr><td>87</td><td>MIX_THRAT2ELEVCV</td></tr>
+<tr><td>88</td><td>KFF_FLAP2ELEV</td></tr>
+<tr><td>89</td><td>MIX_FLAP2ELEVCV</td></tr>
+<tr><td>90</td><td>Ailerons diff</td></tr>
+<tr><td>91</td><td>Elevator diff</td></tr>
+<tr><td>92</td><td>Q pitch trim</td></tr>
+<tr><td>93</td><td>THR_AUTO_SRATE</td></tr>
+<tr><td>101</td><td>Set_RateRollPitch (RATE_ROLL_D / RATE_ROLL_PI / RATE_PITCH_D / RATE_PITCH_PI)</td></tr>
+<tr><td>102</td><td>Set_RateRoll (RATE_ROLL_D / RATE_ROLL_PI)</td></tr>
+<tr><td>103</td><td>Set_RatePitch(RATE_PITCH_D / RATE_PITCH_PI)</td></tr>
+<tr><td>104</td><td>Set_RateYaw (RATE_YAW_P / RATE_YAW_I / RATE_YAW_D)</td></tr>
+<tr><td>105</td><td>Set_AngleRollPitch (ANG_ROLL_P / ANG_PITCH_P)</td></tr>
+<tr><td>106</td><td>Set_VelXY (VXY_P / VXY_I)</td></tr>
+<tr><td>107</td><td>Set_AccelZ (AZ_P / AZ_I / AZ_D)</td></tr>
+<tr><td>108</td><td>Set_RatePitchDP (RATE_PITCH_D / RATE_PITCH_P)</td></tr>
+<tr><td>109</td><td>Set_RateRollDP (RATE_ROLL_D / RATE_ROLL_P)</td></tr>
+<tr><td>110</td><td>Set_RateYawDP (RATE_YAW_D / RATE_YAW_P)</td></tr>
+<tr><td>111</td><td>Set_THR2PTCH (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV)</td></tr>
+<tr><td>112</td><td>Set_THR2PTCH_full (TRIM_THROTTLE / TRIM_PITCH / KFF_THRAT2PTCH / FBWA_PITCH_DOWN / FBWA_MXPTCHD_THR / FBWA_PTCHDN_CRV / FBWA_PITCH_UP / FBWA_MXPTCHU_THR / FBWA_PTCHUP_CRV)</td></tr>
+<tr><td>113</td><td>Set turn coordination (RLL2PTCH / KFF_RDDRMIX)</td></tr>
+<tr><td>114</td><td>TECS THR FF (TECS_THR_FF_DAMP / TECS_THR_FF_FILT)</td></tr>
+<tr><td>115</td><td>Set_AglRollPitch (AGL_ROLL_P / AGL_ROLL_D / AGL_ROLL_FLTT / AGL_PITCH_P / AGL_PITCH_D / AGL_PITCH_FLTT)</td></tr>
+<tr><td>116</td><td>Set_AglPitch (AGL_PITCH_D / AGL_PITCH_P / AGL_PITCH_FLTT)</td></tr>
+<tr><td>117</td><td>Set_AglRoll (AGL_ROLL_D / AGL_ROLL_P / AGL_ROLL_FLTT)</td></tr>
+<tr><td>118</td><td>Set_Mixing (MIXING_DIFF / AILERONS_DIFF / ELEVATOR_DIFF / MIXING_OFFSET / MIX_THRAT2ELEV / MIX_THRAT2ELEVCV / MIX_FLAP2ELEV / MIX_FLAP2ELEVCV)</td></tr>
+<tr><td>119</td><td>Set_THR (THR_EXPO_MANUAL / THR_EXPO_AUTO / THR_AUTO_SRATE)</td></tr>
+<tr><td>120</td><td>Set_flap (FLAP_RETED_SPD / FLAP_EXTED_SPD / FLAP_EXTED_PCT)</td></tr>
+<tr><td>121</td><td>Set_FW_Roll_Pitch (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I / RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</td></tr>
+<tr><td>122</td><td>Set_FW_Pitch (RATE_PITCH_D / RATE_PITCH_P / RATE_PITCH_I)</td></tr>
+<tr><td>123</td><td>Set_FW_Roll (RATE_ROLL_D / RATE_ROLL_P / RATE_ROLL_I)</td></tr>
+<tr><td>124</td><td>Set_FW_Pitch_Roll_PIDS (TUNING_PIT_D / TUNING_PIT_P / TUNING_PIT_I / TUNING_AGL_PITCH_P / TUNING_AGL_PITCH_D / TUNING_AGL_PITCH_FLTT / TUNING_RLL_D / TUNING_RLL_P / TUNING_RLL_I / TUNING_AGL_ROLL_P / TUNING_AGL_ROLL_D / TUNING_AGL_ROLL_FLTT)</td></tr>
 </table>
 </ul>
 
