@@ -16008,7 +16008,9 @@
     "OSD_OPTIONS": {
       "Bitmask": {
         "0": "UseDecimalPack",
-        "1": "InvertedWindPointer",
+        "1": "InvertedWindArrow",
+        "17": "wide Sidebar",
+        "18": "Two decimal vertical speed",
         "19": "Right justify TUNED_PN element",
         "2": "InvertedAHRoll",
         "20": "Prefix LQ with RF Mode",
@@ -16016,7 +16018,8 @@
         "22": "One decimal throttle",
         "23": "Shorten Pluscode",
         "3": "Convert feet to miles at 5280ft instead of 10000ft",
-        "4": "DisableCrosshair"
+        "4": "DisableCrosshair",
+        "5": "TranslateArrows"
       },
       "Description": "This sets options that change the display",
       "DisplayName": "OSD Options",
@@ -29722,7 +29725,6 @@
         "4": "Log RC input bytes",
         "5": "Arming check throttle for 0 input",
         "6": "Skip the arming check for neutral Roll/Pitch/Yaw sticks",
-        "7": "Allow Switch reverse",
         "8": "Use passthrough for CRSF telemetry",
         "9": "Suppress CRSF mode/rate message for ELRS systems"
       },

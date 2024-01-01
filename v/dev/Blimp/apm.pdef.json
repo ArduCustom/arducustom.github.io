@@ -11286,7 +11286,6 @@
         "4": "Log RC input bytes",
         "5": "Arming check throttle for 0 input",
         "6": "Skip the arming check for neutral Roll/Pitch/Yaw sticks",
-        "7": "Allow Switch reverse",
         "8": "Use passthrough for CRSF telemetry",
         "9": "Suppress CRSF mode/rate message for ELRS systems"
       },
