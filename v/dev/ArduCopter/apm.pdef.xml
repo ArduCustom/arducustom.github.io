@@ -776,6 +776,174 @@
       <param humanName="Takeoff Check RPM minimum" name="ArduCopter:TKOFF_RPM_MIN" documentation="Takeoff is not permitted until motors report at least this RPM.  Set to zero to disable check" user="Standard">
         <field name="Range">0 10000</field>
       </param>
+      <param humanName="Extended mode switch" name="ArduCopter:FLTMODE_EXT" documentation="Setting this parameter to one allow to have up to 12 flight modes selectable with the flight mode channel instead of 6. Mode ranges: 901-1125, 1126-1200, 1201-1275, 1276-1350, 1351-1425, 1426-1500, 1501-1575, 1576-1650, 1651-1725, 1726-1800, 1801-1875, 1876-2199" user="Advanced">
+        <values>
+          <value code="0">Disabled</value>
+          <value code="1">Enabled</value>
+        </values>
+      </param>
+      <param humanName="FlightMode7" name="ArduCopter:FLTMODE7" documentation="Flight mode for switch position 7 (1501 to 1575), enabled with FLTMODE_EXT" user="Advanced">
+        <values>
+          <value code="0">Manual</value>
+          <value code="1">CIRCLE</value>
+          <value code="2">STABILIZE</value>
+          <value code="3">TRAINING</value>
+          <value code="4">ACRO</value>
+          <value code="5">FBWA</value>
+          <value code="6">FBWB</value>
+          <value code="7">CRUISE</value>
+          <value code="8">AUTOTUNE</value>
+          <value code="10">Auto</value>
+          <value code="11">RTL</value>
+          <value code="12">Loiter</value>
+          <value code="13">TAKEOFF</value>
+          <value code="14">AVOID_ADSB</value>
+          <value code="15">Guided</value>
+          <value code="17">QSTABILIZE</value>
+          <value code="18">QHOVER</value>
+          <value code="19">QLOITER</value>
+          <value code="20">QLAND</value>
+          <value code="21">QRTL</value>
+          <value code="22">QAUTOTUNE</value>
+          <value code="23">QACRO</value>
+          <value code="24">THERMAL</value>
+        </values>
+      </param>
+      <param humanName="FlightMode8" name="ArduCopter:FLTMODE8" documentation="Flight mode for switch position 8 (1576 to 1650), enabled with FLTMODE_EXT" user="Advanced">
+        <values>
+          <value code="0">Manual</value>
+          <value code="1">CIRCLE</value>
+          <value code="2">STABILIZE</value>
+          <value code="3">TRAINING</value>
+          <value code="4">ACRO</value>
+          <value code="5">FBWA</value>
+          <value code="6">FBWB</value>
+          <value code="7">CRUISE</value>
+          <value code="8">AUTOTUNE</value>
+          <value code="10">Auto</value>
+          <value code="11">RTL</value>
+          <value code="12">Loiter</value>
+          <value code="13">TAKEOFF</value>
+          <value code="14">AVOID_ADSB</value>
+          <value code="15">Guided</value>
+          <value code="17">QSTABILIZE</value>
+          <value code="18">QHOVER</value>
+          <value code="19">QLOITER</value>
+          <value code="20">QLAND</value>
+          <value code="21">QRTL</value>
+          <value code="22">QAUTOTUNE</value>
+          <value code="23">QACRO</value>
+          <value code="24">THERMAL</value>
+        </values>
+      </param>
+      <param humanName="FlightMode9" name="ArduCopter:FLTMODE9" documentation="Flight mode for switch position 9 (1651 to 1725), enabled with FLTMODE_EXT" user="Advanced">
+        <values>
+          <value code="0">Manual</value>
+          <value code="1">CIRCLE</value>
+          <value code="2">STABILIZE</value>
+          <value code="3">TRAINING</value>
+          <value code="4">ACRO</value>
+          <value code="5">FBWA</value>
+          <value code="6">FBWB</value>
+          <value code="7">CRUISE</value>
+          <value code="8">AUTOTUNE</value>
+          <value code="10">Auto</value>
+          <value code="11">RTL</value>
+          <value code="12">Loiter</value>
+          <value code="13">TAKEOFF</value>
+          <value code="14">AVOID_ADSB</value>
+          <value code="15">Guided</value>
+          <value code="17">QSTABILIZE</value>
+          <value code="18">QHOVER</value>
+          <value code="19">QLOITER</value>
+          <value code="20">QLAND</value>
+          <value code="21">QRTL</value>
+          <value code="22">QAUTOTUNE</value>
+          <value code="23">QACRO</value>
+          <value code="24">THERMAL</value>
+        </values>
+      </param>
+      <param humanName="FlightMode10" name="ArduCopter:FLTMODE10" documentation="Flight mode for switch position 10 (1726 to 1800), enabled with FLTMODE_EXT" user="Advanced">
+        <values>
+          <value code="0">Manual</value>
+          <value code="1">CIRCLE</value>
+          <value code="2">STABILIZE</value>
+          <value code="3">TRAINING</value>
+          <value code="4">ACRO</value>
+          <value code="5">FBWA</value>
+          <value code="6">FBWB</value>
+          <value code="7">CRUISE</value>
+          <value code="8">AUTOTUNE</value>
+          <value code="10">Auto</value>
+          <value code="11">RTL</value>
+          <value code="12">Loiter</value>
+          <value code="13">TAKEOFF</value>
+          <value code="14">AVOID_ADSB</value>
+          <value code="15">Guided</value>
+          <value code="17">QSTABILIZE</value>
+          <value code="18">QHOVER</value>
+          <value code="19">QLOITER</value>
+          <value code="20">QLAND</value>
+          <value code="21">QRTL</value>
+          <value code="22">QAUTOTUNE</value>
+          <value code="23">QACRO</value>
+          <value code="24">THERMAL</value>
+        </values>
+      </param>
+      <param humanName="FlightMode11" name="ArduCopter:FLTMODE11" documentation="Flight mode for switch position 11 (1801 to 1875), enabled with FLTMODE_EXT" user="Advanced">
+        <values>
+          <value code="0">Manual</value>
+          <value code="1">CIRCLE</value>
+          <value code="2">STABILIZE</value>
+          <value code="3">TRAINING</value>
+          <value code="4">ACRO</value>
+          <value code="5">FBWA</value>
+          <value code="6">FBWB</value>
+          <value code="7">CRUISE</value>
+          <value code="8">AUTOTUNE</value>
+          <value code="10">Auto</value>
+          <value code="11">RTL</value>
+          <value code="12">Loiter</value>
+          <value code="13">TAKEOFF</value>
+          <value code="14">AVOID_ADSB</value>
+          <value code="15">Guided</value>
+          <value code="17">QSTABILIZE</value>
+          <value code="18">QHOVER</value>
+          <value code="19">QLOITER</value>
+          <value code="20">QLAND</value>
+          <value code="21">QRTL</value>
+          <value code="22">QAUTOTUNE</value>
+          <value code="23">QACRO</value>
+          <value code="24">THERMAL</value>
+        </values>
+      </param>
+      <param humanName="FlightMode12" name="ArduCopter:FLTMODE12" documentation="Flight mode for switch position 12 (1876 to 2049), enabled with FLTMODE_EXT" user="Advanced">
+        <values>
+          <value code="0">Manual</value>
+          <value code="1">CIRCLE</value>
+          <value code="2">STABILIZE</value>
+          <value code="3">TRAINING</value>
+          <value code="4">ACRO</value>
+          <value code="5">FBWA</value>
+          <value code="6">FBWB</value>
+          <value code="7">CRUISE</value>
+          <value code="8">AUTOTUNE</value>
+          <value code="10">Auto</value>
+          <value code="11">RTL</value>
+          <value code="12">Loiter</value>
+          <value code="13">TAKEOFF</value>
+          <value code="14">AVOID_ADSB</value>
+          <value code="15">Guided</value>
+          <value code="17">QSTABILIZE</value>
+          <value code="18">QHOVER</value>
+          <value code="19">QLOITER</value>
+          <value code="20">QLAND</value>
+          <value code="21">QRTL</value>
+          <value code="22">QAUTOTUNE</value>
+          <value code="23">QACRO</value>
+          <value code="24">THERMAL</value>
+        </values>
+      </param>
     </parameters>
   </vehicles>
   <libraries>
@@ -16257,7 +16425,7 @@
         <field name="UnitText">seconds</field>
       </param>
       <param humanName="RC options" name="RC_OPTIONS" documentation="RC input options" user="Advanced">
-        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:Use Link Quality for RSSI with CRSF, 12:Annotate CRSF flight mode with * on disarm, 13: Use 420kbaud for ELRS protocol, 21: Switch to manual after disarming (plane only), 22:Disable throttle battery compensation in manual mode (plane only), 23:Disable throttle expo in manual mode (plane only)</field>
+        <field name="Bitmask">0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yaw sticks, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems,10:Enable multiple receiver support, 11:Use Link Quality for RSSI with CRSF, 12:Annotate CRSF flight mode with * on disarm, 13: Use 420kbaud for ELRS protocol, 20: While in AUTO mode switch to FBWA if the roll or pitch stick is moved more than 10%, 21: Switch to manual after disarming (plane only), 22:Disable throttle battery compensation in manual mode (plane only), 23:Disable throttle expo in manual mode (plane only)</field>
       </param>
       <param humanName="RC protocols enabled" name="RC_PROTOCOLS" documentation="Bitmask of enabled RC protocols. Allows narrowing the protocol detection to only specific types of RC receivers which can avoid issues with incorrect detection. Set to 1 to enable all protocols." user="Advanced">
         <field name="Bitmask">0:All,1:PPM,2:IBUS,3:SBUS,4:SBUS_NI,5:DSM,6:SUMD,7:SRXL,8:SRXL2,9:CRSF,10:ST24,11:FPORT,12:FPORT2,13:FastSBUS</field>
